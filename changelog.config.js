@@ -2,8 +2,8 @@ const changelog = require('./packages/semantic/src/changelog.config.js')
 
 const format = '{emoji}{scope} {branchName}{subject}'
 // const questions = ['branchPrefix', 'breaking', 'type', 'subject', 'body']
-const questions = ['breaking', 'type', 'subject', 'body', 'scope', 'lerna']
-const scopes = ['', 'codestyle', 'semantic', 'release']
+const questions = ['breaking', 'scope', 'lerna', 'type', 'subject', 'body']
+const scopes = ['', 'codestyle', 'semantic']
 const theme = 'gitmoji'
 const branch = {
   format: '{branchType}{branchName}',
