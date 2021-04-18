@@ -1,0 +1,25 @@
+# .kodiak.toml
+# docs: https://kodiakhq.com/docs/config-reference
+
+version = 1
+
+[merge]
+automerge_label = [" 🥳️ LGTM", "🥳️ LGTM","🥳️  LGTM","LGTM"]
+require_automerge_label = true
+blocking_labels = ["🚧️ WIP"]
+method = "rebase"
+optimistic_updates = true
+
+[merge.automerge_dependencies]
+versions=["minor", "patch"]
+usernames=["dependabot","dependabot[bot]","dependabot%5Bbot%5D"]
+
+[merge.message]
+title = "pull_request_title"
+body = "pull_request_body"
+include_pr_number = true
+body_type = "markdown"
+strip_html_comments = true
+
+[update]
+autoupdate_label = "🔄️ Conflict"

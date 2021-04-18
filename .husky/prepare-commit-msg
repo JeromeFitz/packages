@@ -1,0 +1,5 @@
+[ -n "$CI" ] && exit 0
+
+yarn pretty-quick --staged
+exec < /dev/tty
+yarn git-cz --hook || true

@@ -1,0 +1,36 @@
+name: '🚀️ Semantic Release'
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+  push:
+    branches:
+      - main
+      - develop
+      - release/**
+jobs:
+  release:
+    name: '🚀️ Semantic Release'
+    runs-on: ubuntu-latest
+    steps:
+      - name: '🐙️  Git Checkout'
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: '🌵️  Cache-tus'
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+      - name: '📦️  Dependecies 🏷️  Semantic Release'
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          echo "registry=http://registry.npmjs.org/" >> .npmrc
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
+          echo "@jeromefitz:registry=https://registry.npmjs.org/" >> .npmrc
+          yarn install --frozen-lockfile --ignore-engines --network-concurrency 1
+          yarn run semantic-release

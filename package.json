@@ -1,0 +1,47 @@
+{
+  "name": "@jeromefitz/packages",
+  "workspaces": [
+    "packages/*"
+  ],
+  "author": {
+    "name": "Jerome Fitzgerald",
+    "email": "j@jeromefitzgerald.com",
+    "url": "https://jeromefitzgerald.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/jeromefitz/packages.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "private": true,
+  "scripts": {
+    "boostrap": "lerna bootstrap",
+    "branch": "git-cz --branch --allow-empty",
+    "lint:eslint": "eslint . --ext js,jsx,ts,tsx --max-warnings=0",
+    "lint:fix": "yarn lint:prettier --write && yarn lint:eslint --fix",
+    "lint:prettier": "prettier \"./*.{js,jsx,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\"",
+    "lint:typescript": "yarn typescript",
+    "lint": "yarn typescript && yarn lint:prettier --check && yarn lint:eslint",
+    "prepare": "is-ci || husky install",
+    "postpublish": "pinst --enable",
+    "prepublishOnly": "pinst --disable",
+    "pretty-quick": "pretty-quick",
+    "semantic-release": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo --tag-format='${LERNA_PACKAGE_NAME}-v\\${version}'",
+    "typescript": "tsc --noEmit --declaration"
+  },
+  "devDependencies": {
+    "dotenv": "8.2.0",
+    "husky": "6.0.0",
+    "is-ci": "3.0.0",
+    "lerna": "4.0.0",
+    "pinst": "2.1.6"
+  },
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
+  }
+}

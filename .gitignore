@@ -1,0 +1,32 @@
+# Build Outputs -------------
+.cache
+.dist
+.next
+.vercel
+dist
+out
+# Webpack Analyzer ----------
+bundles
+# Packages ------------------
+node_modules
+# Folders -------------------
+.idea
+# Files ---------------------
+# Logs ----------------------
+*.log
+# Local SSL -----------------
+*.pem
+# Misc ----------------------
+.DS_Store
+.note
+.backup
+.todo
+# Custom --------------------
+.env
+.env.*
+!.env.example
+vercel-required.json
+vercel-secrets.json
+!vercel-secrets.example.json
+size-snapshot.json
+release
