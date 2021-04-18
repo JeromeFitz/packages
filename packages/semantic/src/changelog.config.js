@@ -10,7 +10,6 @@ const branch = {
   questions: ['branchName', 'branchPrefix', 'branchType'],
   ticketUrl: 'https://jeromefitzgerald.com?issue=',
 }
-// const tempTypes = gitmojis.gitmojiTypes
 
 module.exports = {
   branch,
@@ -21,5 +20,4 @@ module.exports = {
   questions,
   scopes,
   theme,
-  // types: tempTypes,
 }
