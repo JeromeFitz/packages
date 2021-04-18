@@ -1,0 +1,41 @@
+{
+  "name": "@jeromefitz/semantic",
+  "version": "2.1.5",
+  "description": "Semantic Versioning, Conventional Commits with CI/CD for GitHub Actions.",
+  "author": {
+    "name": "Jerome Fitzgerald",
+    "email": "j@jeromefitzgerald.com",
+    "url": "https://jeromefitzgerald.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/jeromefitz/packages.git",
+    "directory": "packages/semantic"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "private": false,
+  "dependencies": {
+    "@jeromefitz/git-cz": "6.2.0",
+    "@jeromefitz/semantic-release-git": "10.0.0-develop.2",
+    "@semantic-release/commit-analyzer": "8.0.1",
+    "@semantic-release/exec": "5.0.0",
+    "@semantic-release/github": "7.2.1",
+    "@semantic-release/npm": "7.1.1",
+    "@semantic-release/release-notes-generator": "9.0.2",
+    "grapheme-splitter": "1.0.4",
+    "lodash": "4.17.21",
+    "semantic-release": "17.4.2",
+    "semantic-release-commit-filter": "1.0.2",
+    "semantic-release-monorepo": "7.0.4"
+  },
+  "main": "release.config.js",
+  "files": [
+    "src/changelog.config.js",
+    "package.json",
+    "release.config.js",
+    "yarn.lock"
+  ]
+}
