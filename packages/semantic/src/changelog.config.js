@@ -1,5 +1,3 @@
-// const gitmojis = require('@jeromefitz/git-cz/data/gitmoji/index.json')
-
 const format = '{emoji}{scope} {branchName}{subject}'
 const questions = ['branchPrefix', 'breaking', 'type', 'scope', 'subject', 'body']
 const scopes = ['', 'codestyle', 'release', 'semantic']
@@ -10,7 +8,6 @@ const branch = {
   questions: ['branchName', 'branchPrefix', 'branchType'],
   ticketUrl: 'https://jeromefitzgerald.com?issue=',
 }
-// const tempTypes = gitmojis.gitmojiTypes
 
 module.exports = {
   branch,
@@ -21,5 +18,4 @@ module.exports = {
   questions,
   scopes,
   theme,
-  // types: tempTypes,
 }

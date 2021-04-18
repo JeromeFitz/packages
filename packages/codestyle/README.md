@@ -17,7 +17,7 @@ yarn add @jeromefitz/codestyle --dev
 
 ### Husky
 
-I tend to use this with `husky` (w/ `is-ci` `pinst`), feel free to look at how this monorepo has it set up to follow / alter how you would like to implement.
+I tend to use this with [`husky`](https://github.com/typicode/husky) (w/ [`is-ci`](https://github.com/watson/is-ci) [`pinst`](https://github.com/typicode/pinst)), feel free to look at how this monorepo has it set up to follow / alter how you would like to implement.
 
 - `./husky`
 
@@ -86,7 +86,7 @@ If you want to add the following to your `package.json` scripts, these are the c
       "lint:fix": "yarn lint:prettier --write && yarn lint:eslint --fix",
       "lint:prettier": "prettier \"./*.{js,jsx,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\"",
       "lint:typescript": "yarn typescript",
-      "lint": "yarn typescript && yarn lint:prettier --check && yarn lint:eslint",
+      "lint": "yarn lint:typescript && yarn lint:prettier --check && yarn lint:eslint",
       "pretty-quick": "pretty-quick",
       "typescript": "tsc --noEmit --declaration"
   }

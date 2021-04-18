@@ -2,4 +2,4 @@
 
 yarn pretty-quick --staged
 exec < /dev/tty
-yarn git-cz --hook || true
+yarn git-cz --hook $ALLOW_EMPTY || true

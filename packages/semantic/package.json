@@ -1,6 +1,6 @@
 {
   "name": "@jeromefitz/semantic",
-  "version": "2.1.5",
+  "version": "0.0.1",
   "description": "Semantic Versioning, Conventional Commits with CI/CD for GitHub Actions.",
   "author": {
     "name": "Jerome Fitzgerald",
@@ -18,7 +18,7 @@
   },
   "private": false,
   "dependencies": {
-    "@jeromefitz/git-cz": "6.2.0",
+    "@jeromefitz/git-cz": "6.2.1",
     "@jeromefitz/semantic-release-git": "10.0.0-develop.2",
     "@semantic-release/commit-analyzer": "8.0.1",
     "@semantic-release/exec": "5.0.0",

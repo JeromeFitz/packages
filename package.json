@@ -20,6 +20,7 @@
   "scripts": {
     "boostrap": "lerna bootstrap",
     "branch": "git-cz --branch --allow-empty",
+    "commit": "ALLOW_EMPTY=--allow-empty git commit --allow-empty",
     "lint:eslint": "eslint . --ext js,jsx,ts,tsx --max-warnings=0",
     "lint:fix": "yarn lint:prettier --write && yarn lint:eslint --fix",
     "lint:prettier": "prettier \"./*.{js,jsx,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\"",
