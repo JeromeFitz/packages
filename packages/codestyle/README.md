@@ -86,7 +86,7 @@ If you want to add the following to your `package.json` scripts, these are the c
       "lint:fix": "yarn lint:prettier --write && yarn lint:eslint --fix",
       "lint:prettier": "prettier \"./*.{js,jsx,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\"",
       "lint:typescript": "yarn typescript",
-      "lint": "yarn typescript && yarn lint:prettier --check && yarn lint:eslint",
+      "lint": "yarn lint:typescript && yarn lint:prettier --check && yarn lint:eslint",
       "pretty-quick": "pretty-quick",
       "typescript": "tsc --noEmit --declaration"
   }
