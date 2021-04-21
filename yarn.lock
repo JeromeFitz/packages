@@ -240,10 +240,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@jeromefitz/git-cz@6.2.0":
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/@jeromefitz/git-cz/-/git-cz-6.2.0.tgz#2d46f969746d631a2526057ab5da2e8842b108f5"
-  integrity sha512-WBqe248UH/gOaceHSQFn2n9poUx13WIgKk6F1JVLyWKyuiEWLNNt3q/GrNosAiaKzxBLZJKoJtPsUMWP8FaGdw==
+"@jeromefitz/git-cz@6.2.1":
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/@jeromefitz/git-cz/-/git-cz-6.2.1.tgz#6d6bd260bd2a0bd39e7f553799cf4352cba1ab6c"
+  integrity sha512-WxpfX32UxZgq9vn1iZSI7DDrCNpAwjnzxauOg8oVtfRoWRatItTo8dbTMA2u8NMBUGNM05rD3nhuPPNvgkgw9A==
 
 "@jeromefitz/semantic-release-git@10.0.0-develop.2":
   version "10.0.0-develop.2"
