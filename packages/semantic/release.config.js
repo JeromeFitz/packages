@@ -102,7 +102,7 @@ module.exports = {
   ],
   // ci: false,
   // dryRun: true,
-  extends: ['semantic-release-commit-filter', 'semantic-release-monorepo'],
+  extends: ['semantic-release-commit-filter'],
   plugins: [
     [
       '@semantic-release/commit-analyzer',
@@ -121,7 +121,7 @@ module.exports = {
     [
       '@semantic-release/npm',
       {
-        npmPublish: true,
+        npmPublish: false,
         tarballDir: 'release',
       },
     ],

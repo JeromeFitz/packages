@@ -30,7 +30,8 @@
     "postpublish": "pinst --enable",
     "prepublishOnly": "pinst --disable",
     "pretty-quick": "pretty-quick",
-    "semantic-release": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo --tag-format='${LERNA_PACKAGE_NAME}-v\\${version}'",
+    "semantic-release": "multi-semantic-release",
+    "semantic-release:old": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo --tag-format='${LERNA_PACKAGE_NAME}-v\\${version}'",
     "typescript": "tsc --noEmit --declaration"
   },
   "devDependencies": {
