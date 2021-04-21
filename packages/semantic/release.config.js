@@ -135,7 +135,7 @@ module.exports = {
       '@jeromefitz/semantic-release-git',
       {
         assets: ['package.json'],
-        message: `🔖️ {PACKAGE_NAME}@{VERSION} [skip ci]\n\n{RELEASE_URL}/releases/tag/{RELEASE_TAG}\n\n{RELEASE_NOTES}`,
+        message: `🔖️ {RELEASE_TAG} [skip ci]\n\n{RELEASE_URL}/releases/tag/{RELEASE_TAG}\n\n{RELEASE_NOTES}`,
       },
     ],
   ],
