@@ -33,5 +33,4 @@ jobs:
           echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
           echo "@jeromefitz:registry=https://registry.npmjs.org/" >> .npmrc
           yarn install --frozen-lockfile --ignore-engines --network-concurrency 1
-          # yarn run semantic-release
-          echo semantic-relase turned off for now
+          yarn run semantic-release
