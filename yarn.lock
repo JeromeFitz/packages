@@ -1131,6 +1131,19 @@
   dependencies:
     "@octokit/types" "^6.0.3"
 
+"@octokit/core@3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@octokit/core/-/core-3.4.0.tgz#b48aa27d755b339fe7550548b340dcc2b513b742"
+  integrity sha512-6/vlKPP8NF17cgYXqucdshWqmMZGXkuvtcrWCgU5NOI0Pl2GjlmZyWgBMrU8zJ3v2MJlM6++CiB45VKYmhiWWg==
+  dependencies:
+    "@octokit/auth-token" "^2.4.4"
+    "@octokit/graphql" "^4.5.8"
+    "@octokit/request" "^5.4.12"
+    "@octokit/request-error" "^2.0.5"
+    "@octokit/types" "^6.0.3"
+    before-after-hook "^2.2.0"
+    universal-user-agent "^6.0.0"
+
 "@octokit/core@^3.2.3":
   version "3.2.5"
   resolved "https://registry.yarnpkg.com/@octokit/core/-/core-3.2.5.tgz#57becbd5fd789b0592b915840855f3a5f233d554"
@@ -1196,7 +1209,7 @@
     "@octokit/types" "^6.11.1"
     deprecation "^2.3.1"
 
-"@octokit/request-error@^2.0.0":
+"@octokit/request-error@^2.0.0", "@octokit/request-error@^2.0.5":
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/@octokit/request-error/-/request-error-2.0.5.tgz#72cc91edc870281ad583a42619256b380c600143"
   integrity sha512-T/2wcCFyM7SkXzNoyVNWjyVlUwBvW3igM3Btr/eKYiPmucXTtkxt2RBsf6gn3LTzaLSLTQtNmvg+dGsOxQrjZg==
@@ -1744,6 +1757,11 @@ before-after-hook@^2.1.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/before-after-hook/-/before-after-hook-2.1.1.tgz#99ae36992b5cfab4a83f6bee74ab27835f28f405"
   integrity sha512-5ekuQOvO04MDj7kYZJaMab2S8SPjGJbotVNyv7QYFCOAwrGZs/YnoDNlh1U+m5hl7H2D/+n0taaAV/tfyd3KMA==
+
+before-after-hook@^2.2.0:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/before-after-hook/-/before-after-hook-2.2.1.tgz#73540563558687586b52ed217dad6a802ab1549c"
+  integrity sha512-/6FKxSTWoJdbsLDF8tdIjaRiFXiE6UHsEHE3OPI/cwPURCVi1ukP0gmLn7XWEiFk5TcwQjjY5PWsU+j+tgXgmw==
 
 bin-links@^2.2.1:
   version "2.2.1"
