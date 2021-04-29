@@ -52,7 +52,11 @@
   },
   "files": [
     ".eslintrc.js",
+    ".eslintrc.react.js",
+    ".eslintrc.react-native.js",
     ".prettierrc.js",
+    ".prettierrc.react.js",
+    ".prettierrc.react-native.js",
     "dist/index.js",
     "index.js",
     "lint-staged.config.js",
