@@ -1,5 +1,11 @@
 #!/bin/sh
+
 [ -n "$CI" ] && exit 0
 . "$(dirname "$0")/_/husky.sh"
 
-yarn lint-staged
+if ps -o args= $PPID | grep -E -q ' --no-verify| -n | -n$' ; then
+:
+else
+:
+    yarn lint-staged
+fi

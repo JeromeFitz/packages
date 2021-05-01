@@ -1,5 +1,14 @@
+#!/bin/sh
+
 [ -n "$CI" ] && exit 0
 
-yarn pretty-quick --staged
-exec < /dev/tty
-yarn git-cz --hook $ALLOW_EMPTY || true
+if ps -o args= $PPID | grep -E -q ' --no-verify| -n | -n$' ; then
+:
+elif ps -o args= $PPID | grep -E -q ' --continue| -c | -c$' ; then
+:
+else
+:
+    yarn pretty-quick --staged
+    exec < /dev/tty
+    yarn git-cz --hook || true
+fi
