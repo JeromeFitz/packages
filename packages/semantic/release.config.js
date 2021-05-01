@@ -57,10 +57,10 @@ const writerOpts = {
     commit.type = `${typeSpec.emoji}  ${typeSpec.section}`
     commit.typeSpecIndex = typeSpecIndex
     // @semver
-    if (typeSpec.semver === 'major') {
+    if (typeSpec.semver === 'major' || typeSpec.semver === 'breaking') {
       commit.order = 1
     }
-    if (typeSpec.semver === 'minor') {
+    if (typeSpec.semver === 'minor' || typeSpec.semver === 'feature') {
       commit.order = 3
     }
     if (typeSpec.semver === 'patch') {
