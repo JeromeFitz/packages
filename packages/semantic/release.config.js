@@ -20,15 +20,15 @@ const releaseRules = []
 
 Object.keys(types).map((type, index) => {
   typeSpecs.push({
-    type: types[type].value,
     emoji: types[type].emoji,
     section: types[type].section,
     semver: types[type].semver,
-    value: types[type].value,
+    type: types[type].commit,
+    value: types[type].commit,
   })
   releaseRules.push({
+    release: types[type].semver,
     type: types[type].emoji,
-    release: types[type].release,
   })
   return true
 })
@@ -90,7 +90,7 @@ const writerOpts = {
     return commit
   },
   // groupBy: 'order',
-  // commitGroupsSort: ['order'],
+  commitGroupsSort: ['order'],
   commitsSort: ['order'],
 }
 

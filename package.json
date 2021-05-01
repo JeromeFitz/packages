@@ -19,7 +19,7 @@
   "private": true,
   "scripts": {
     "boostrap": "lerna bootstrap",
-    "branch": "git-cz --branch --allow-empty",
+    "branch": "git-cz -m branch --allow-empty",
     "commit": "ALLOW_EMPTY=--allow-empty git commit --allow-empty",
     "lint:eslint": "eslint . --ext js,jsx,ts,tsx --max-warnings=0",
     "lint:fix": "yarn lint:prettier --write && yarn lint:eslint --fix",
