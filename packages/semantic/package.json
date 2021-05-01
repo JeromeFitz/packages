@@ -1,6 +1,6 @@
 {
   "name": "@jeromefitz/semantic",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Semantic Versioning, Conventional Commits with CI/CD for GitHub Actions.",
   "author": {
     "name": "Jerome Fitzgerald",
