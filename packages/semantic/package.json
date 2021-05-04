@@ -1,6 +1,6 @@
 {
   "name": "@jeromefitz/semantic",
-  "version": "2.0.0-canary.2",
+  "version": "2.0.0-canary.3",
   "description": "Semantic Versioning, Conventional Commits with CI/CD for GitHub Actions.",
   "author": {
     "name": "Jerome Fitzgerald",
