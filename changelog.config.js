@@ -1,14 +1,22 @@
-const changelog = require('./packages/semantic/src/changelog.config.js')
+const config = require('./packages/semantic/src/changelog.config.js')
+
+const commit = {
+  ...config.commit,
+  questions: [
+    'commitScopes',
+    'commitTypes',
+    'commitSubject',
+    'commitBodyFlag',
+    'commitBody',
+  ],
+  scopes: ['', 'codestyle', 'packages', 'semantic'],
+}
 
 const branch = {
-  ticketUrl: 'https://github.com/JeromeFitz/packages/issues/',
+  ...config.branch,
+  url: 'https://github.com/JeromeFitz/packages/issues/',
 }
-const questions = ['breaking', 'scope', 'lerna', 'type', 'subject', 'body']
-const scopes = ['', 'codestyle', 'packages', 'semantic']
 
-module.exports = {
-  ...changelog,
-  branch: { ...changelog.branch, ...branch },
-  questions,
-  scopes,
-}
+const changelog = { ...config, branch, commit }
+
+module.exports = changelog

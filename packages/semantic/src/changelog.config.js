@@ -9,13 +9,11 @@ const commit = {
     'commitBodyFlag',
     'commitBody',
   ],
-  scopes: ['', 'codestyle', 'packages', 'release', 'semantic'],
+  scopes: [],
 }
 
 const branch = {
   ...config.branch,
-  prefix: 'ABC-',
-  url: 'https://jeromefitzgerald.com?issue=',
 }
 
 const changelog = { ...config, branch, commit }
