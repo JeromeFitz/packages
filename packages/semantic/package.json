@@ -18,7 +18,7 @@
   },
   "private": false,
   "dependencies": {
-    "@jeromefitz/git-cz": "8.0.0-canary.4",
+    "@jeromefitz/git-cz": "8.0.0-canary.5",
     "@jeromefitz/semantic-release-git": "10.0.0-develop.2",
     "@octokit/core": "3.4.0",
     "@semantic-release/commit-analyzer": "8.0.1",
