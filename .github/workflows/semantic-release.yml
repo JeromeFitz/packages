@@ -3,11 +3,11 @@ on:
   pull_request:
     branches:
       - main
-      - develop
+      - canary
   push:
     branches:
       - main
-      - develop
+      - canary
       - release/**
 jobs:
   release:
