@@ -2,6 +2,7 @@ const config = require('@jeromefitz/git-cz/dist/themes/gitmoji').default
 
 const commit = {
   ...config.commit,
+  maxMessageLength: 75,
   questions: [
     'commitScopes',
     'commitTypes',
