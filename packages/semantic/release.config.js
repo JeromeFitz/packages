@@ -1,6 +1,7 @@
 const { types } = require('@jeromefitz/git-cz/dist/themes/gitmoji').default
 const GraphemeSplitter = require('grapheme-splitter')
 const isCI = require('is-ci')
+const title = require('title')
 // const _map = require('lodash/map')
 // const _orderBy = require('lodash/orderBy')
 const _pullAt = require('lodash/pullAt')
@@ -21,7 +22,7 @@ const releaseRules = []
 Object.keys(types).map((type, index) => {
   typeSpecs.push({
     emoji: types[type].emoji,
-    section: types[type].section,
+    section: title(types[type].commit) + '\n#### ' + types[type].section,
     semver: types[type].semver,
     type: types[type].commit,
     value: types[type].commit,
