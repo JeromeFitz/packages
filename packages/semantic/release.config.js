@@ -98,7 +98,7 @@ const writerOpts = {
 module.exports = {
   branches: [
     { name: 'main' },
-    { name: 'develop', prerelease: 'develop' },
+    { name: 'canary', prerelease: 'canary' },
     // ...releaseBranches,
   ],
   // ci: false,
