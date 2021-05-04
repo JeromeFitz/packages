@@ -30,7 +30,8 @@
     "lodash": "4.17.21",
     "multi-semantic-release": "2.8.0",
     "semantic-release": "17.4.2",
-    "semantic-release-commit-filter": "1.0.2"
+    "semantic-release-commit-filter": "1.0.2",
+    "title": "3.4.3"
   },
   "main": "release.config.js",
   "files": [
