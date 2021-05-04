@@ -1,4 +1,4 @@
-const types = require('@jeromefitz/git-cz/data/gitmoji').types
+const { types } = require('@jeromefitz/git-cz/dist/themes/gitmoji').default
 const GraphemeSplitter = require('grapheme-splitter')
 const isCI = require('is-ci')
 // const _map = require('lodash/map')
