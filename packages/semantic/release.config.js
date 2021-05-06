@@ -27,9 +27,14 @@ Object.keys(types).map((type, index) => {
     type: types[type].commit,
     value: types[type].commit,
   })
+  // @note This needs to cover either scenarios based on repo implementation
   releaseRules.push({
     release: types[type].semver,
     type: types[type].emoji,
+  })
+  releaseRules.push({
+    release: types[type].semver,
+    type: types[type].commit,
   })
   return true
 })
