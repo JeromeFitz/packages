@@ -45,6 +45,12 @@ Object.keys(types).map((type, index) => {
 
 const parserOpts = {
   headerPattern: /^(.*?)(?:\((.*)\))?:?\s(.*)$/,
+  noteKeywords: [
+    '💥️  BREAKING CHANGE',
+    '💥️ BREAKING CHANGE',
+    'BREAKING CHANGE',
+    'BREAKING CHANGES',
+  ],
   referenceActions: typeSpecs.map(({ type }) => type),
   revertPattern: /^Revert\s"([\s\S]*)"\s*This reverts commit (\w*)\./,
 }
