@@ -9,7 +9,7 @@ const commit = {
     'commitBodyFlag',
     'commitBody',
   ],
-  scopes: ['', 'codestyle', 'packages', 'semantic'],
+  scopes: ['', 'codestyle', 'packages', 'scripts', 'semantic'],
 }
 
 const branch = {
