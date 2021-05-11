@@ -1,10 +1,10 @@
 const { types } = require('@jeromefitz/git-cz/dist/themes/gitmoji').default
 const GraphemeSplitter = require('grapheme-splitter')
 const isCI = require('is-ci')
+const _pullAt = require('lodash/pullAt')
 const title = require('title')
 // const _map = require('lodash/map')
 // const _orderBy = require('lodash/orderBy')
-const _pullAt = require('lodash/pullAt')
 !isCI && require('dotenv').config({ path: '../../.env' })
 
 var splitter = new GraphemeSplitter()

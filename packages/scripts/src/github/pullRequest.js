@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 
-import chalkPipe from 'chalk-pipe'
 import { Octokit } from '@octokit/rest'
+import chalkPipe from 'chalk-pipe'
 import isCI from 'is-ci'
-import PULL_REQUEST__RELEASE from '../templates/PULL_REQUEST__RELEASE'
+
 import { version } from '../package.json'
+import PULL_REQUEST__RELEASE from '../templates/PULL_REQUEST__RELEASE'
 !isCI && require('dotenv').config({ path: './.env' })
 
 const octokit = new Octokit({ auth: process.env.GH_TOKEN })

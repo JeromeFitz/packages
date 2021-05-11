@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
-import chalkPipe from 'chalk-pipe'
 import { Octokit } from '@octokit/rest'
+import chalkPipe from 'chalk-pipe'
 import isCI from 'is-ci'
+
 import getLabels from '../data/labels'
 !isCI && require('dotenv').config({ path: './.env' })
 
