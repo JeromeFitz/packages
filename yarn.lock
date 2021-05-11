@@ -251,10 +251,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@jeromefitz/git-cz@8.0.0-canary.5":
-  version "8.0.0-canary.5"
-  resolved "https://registry.yarnpkg.com/@jeromefitz/git-cz/-/git-cz-8.0.0-canary.5.tgz#70d561ca4ae494445a5c80a0e3d5ade0cc24c8e3"
-  integrity sha512-njDP2mYKek9nkqZVuleNhC9ZBEj6jOT8aOcTB0o6XpPmgR1/d9+Qg5B0BrVRk4boi8CtjpvaM/ZZvbePOua3FA==
+"@jeromefitz/git-cz@8.0.0":
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/@jeromefitz/git-cz/-/git-cz-8.0.0.tgz#752f3e772f52d6a9d4ce04a52c75a6d84d6271a5"
+  integrity sha512-MsP0Nu5ALIRF/QwdsUdPvKFeeeCETnUI9VvwaEz3kJUpKcRodLGLnlqxjy/N+u13+gXZcp5Kz6ksie9IWMZYzA==
   dependencies:
     any-shell-escape "0.1.1"
     chalk "4.1.1"
