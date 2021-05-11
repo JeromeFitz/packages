@@ -45,12 +45,7 @@ Object.keys(types).map((type, index) => {
 
 const parserOpts = {
   headerPattern: /^(.*?)(?:\((.*)\))?:?\s(.*)$/,
-  noteKeywords: [
-    '💥️  BREAKING CHANGE',
-    '💥️ BREAKING CHANGE',
-    'BREAKING CHANGE',
-    'BREAKING CHANGES',
-  ],
+  noteKeywords: ['💥️  BREAKING CHANGE', 'BREAKING CHANGE'],
   referenceActions: typeSpecs.map(({ type }) => type),
   revertPattern: /^Revert\s"([\s\S]*)"\s*This reverts commit (\w*)\./,
 }
@@ -98,6 +93,8 @@ const writerOpts = {
       : commit.subject
 
     commit.subject = subject
+
+    console.dir(commit)
 
     return commit
   },
