@@ -26,8 +26,6 @@ module.exports = {
         'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
-        'plugin:import/errors',
-        'plugin:import/warnings',
         'plugin:import/typescript',
       ],
       // Set ESLint rule to "never" if TypeScript overrides

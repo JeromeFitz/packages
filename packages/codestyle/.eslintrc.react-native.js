@@ -3,14 +3,12 @@ module.exports = {
   overrides: [
     {
       files: ['*.ts', '*.tsx'],
-      plugins: ['@typescript-eslint', 'react', 'react-hooks', 'import'],
+      plugins: ['@typescript-eslint', 'react', 'react-hooks'],
       extends: [
         'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
         'prettier',
-        'plugin:import/errors',
-        'plugin:import/warnings',
         'plugin:import/typescript',
       ],
       parser: '@typescript-eslint/parser',
