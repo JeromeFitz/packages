@@ -1,14 +1,17 @@
 module.exports = {
-  extends: ['prettier'],
+  extends: ['prettier', 'plugin:import/errors', 'plugin:import/warnings'],
   overrides: [
     {
       files: ['*.ts', '*.tsx'],
-      plugins: ['@typescript-eslint', 'react', 'react-hooks'],
+      plugins: ['@typescript-eslint', 'react', 'react-hooks', 'import'],
       extends: [
         'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
         'prettier',
+        'plugin:import/errors',
+        'plugin:import/warnings',
+        'plugin:import/typescript',
       ],
       parser: '@typescript-eslint/parser',
       parserOptions: {
@@ -38,11 +41,30 @@ module.exports = {
     },
   ],
   parser: '@babel/eslint-parser',
-  plugins: ['react', 'react-hooks'],
+  plugins: ['react', 'react-hooks', 'import'],
   // 0 off, 1 warn, 2 error
   rules: {
     complexity: [2, 10],
     'handle-callback-err': 2,
+    'import/default': 0, // @todo
+    'import/named': 0, // @todo
+    'import/namespace': 0, // @todo
+    'import/no-unresolved': 0, // @todo
+    'import/order': [
+      'error',
+      {
+        alphabetize: { order: 'asc', caseInsensitive: true },
+        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+        'newlines-between': 'always',
+        pathGroups: [
+          {
+            pattern: '~**/**',
+            group: 'sibling',
+            position: 'before',
+          },
+        ],
+      },
+    ],
     'max-len': [
       2,
       {
