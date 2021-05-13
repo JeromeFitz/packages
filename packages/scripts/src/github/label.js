@@ -9,8 +9,8 @@ import getLabels from '../data/labels'
 
 const octokit = new Octokit({ auth: process.env.GH_TOKEN })
 
-const owner = process.env.REPO_OWNER
-const repo = process.env.REPO_REPO
+// const owner = process.env.REPO_OWNER
+// const repo = process.env.REPO_REPO
 
 const labels = getLabels.map((label) => ({
   name: `${label.emoji} ${label.name}`,
@@ -21,7 +21,7 @@ const labels = getLabels.map((label) => ({
 // @note
 // - Potentialy may be to do a`listLabelsForRepo` then `deleteLabel` and just`createLabel` fresh
 // - Or `listLabelsForRepo` then create a migration script instead.
-async function createLabels() {
+async function createLabels({ owner, repo }) {
   try {
     labels.map(async (label) => {
       await octokit.rest.issues.createLabel({
@@ -41,4 +41,4 @@ async function createLabels() {
   }
 }
 
-createLabels()
+export default createLabels

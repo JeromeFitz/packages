@@ -1,6 +1,6 @@
 import { space } from '../utils/getChars'
 
-const PULL_REQUEST__RELEASE = () => {
+const PULL_REQUEST__GITFLOW = () => {
   return `### 🔀️ ${space} **Gitflow Automation:** \`{version} => {base}\`
 
   - [x] 📦️ ${space} **Version**: \`{version}\`
@@ -15,4 +15,4 @@ const PULL_REQUEST__RELEASE = () => {
   `
 }
 
-export default PULL_REQUEST__RELEASE
+export default PULL_REQUEST__GITFLOW

@@ -57,6 +57,12 @@ const labels = [
     color: '5e0b82',
   },
   {
+    name: 'Gitflow',
+    emoji: ':octocat:',
+    description: 'Gitflow Standards',
+    color: 'd4c5f9',
+  },
+  {
     name: 'Help Wanted',
     emoji: '🤝️',
     description: 'Extra attention is needed',

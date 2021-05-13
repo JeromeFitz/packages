@@ -9,8 +9,8 @@ import getMilestones from '../data/milestones'
 
 const octokit = new Octokit({ auth: process.env.GH_TOKEN })
 
-const owner = process.env.REPO_OWNER
-const repo = process.env.REPO_REPO
+// const owner = process.env.REPO_OWNER
+// const repo = process.env.REPO_REPO
 
 const milestones = getMilestones.map((milestone) => ({
   title: `${milestone.emoji} ${milestone.name}`,
@@ -18,7 +18,7 @@ const milestones = getMilestones.map((milestone) => ({
   state: milestone.state,
 }))
 
-async function createMilestones() {
+async function createMilestones({ owner, repo }) {
   try {
     milestones.map(async (milestone) => {
       await octokit.rest.issues.createMilestone({
@@ -40,4 +40,4 @@ async function createMilestones() {
   }
 }
 
-createMilestones()
+export default createMilestones
