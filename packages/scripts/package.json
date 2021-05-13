@@ -1,0 +1,41 @@
+{
+  "name": "@jeromefitz/scripts",
+  "version": "1.0.0-canary.5",
+  "description": "Scripts",
+  "author": {
+    "name": "Jerome Fitzgerald",
+    "email": "j@jeromefitzgerald.com",
+    "url": "https://jeromefitzgerald.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/jeromefitz/packages.git",
+    "directory": "packages/scripts"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "private": false,
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc --build src",
+    "lint-eslint": "eslint . --ext js,jsx,ts,tsx --max-warnings=0",
+    "lint-fix": "yarn prettier-fix && eslint . --ext js,jsx,ts,tsx --fix --max-warnings=0",
+    "lint-typescript": "yarn typescript",
+    "lint": "yarn lint-typescript && yarn prettier-check && yarn lint-eslint",
+    "tsc:watch": "tsc -w --preserveWatchOutput",
+    "prepublish": "yarn build",
+    "prettier-check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\"",
+    "prettier-fix": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\"",
+    "pretty-quick": "pretty-quick",
+    "typescript": "tsc --noEmit --declaration"
+  },
+  "dependencies": {
+    "@octokit/rest": "18.5.3"
+  },
+  "files": [
+    "dist/",
+    "index.js"
+  ]
+}

@@ -30,3 +30,4 @@ vercel-secrets.json
 !vercel-secrets.example.json
 size-snapshot.json
 release
+tsconfig.tsbuildinfo

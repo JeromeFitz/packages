@@ -6,12 +6,12 @@ module.exports = {
     jest: true,
     node: true,
   },
-  extends: ['prettier'],
+  extends: ['prettier', 'plugin:import/errors', 'plugin:import/warnings'],
   overrides: [
     {
       files: ['**/*.ts?(x)'],
       parser: '@typescript-eslint/parser',
-      plugins: ['@typescript-eslint'],
+      plugins: ['@typescript-eslint', 'import'],
       parserOptions: {
         ecmaFeatures: {
           jsx: true,
@@ -26,6 +26,7 @@ module.exports = {
         'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
+        'plugin:import/typescript',
       ],
       // Set ESLint rule to "never" if TypeScript overrides
       rules: {
@@ -60,6 +61,25 @@ module.exports = {
   root: true,
   // http://eslint.org/docs/rules/
   rules: {
+    'import/default': 0, // @todo
+    'import/named': 0, // @todo
+    'import/namespace': 0, // @todo
+    'import/no-unresolved': 0, // @todo
+    'import/order': [
+      'error',
+      {
+        alphabetize: { order: 'asc', caseInsensitive: true },
+        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+        'newlines-between': 'always',
+        pathGroups: [
+          {
+            pattern: '~**/**',
+            group: 'sibling',
+            position: 'before',
+          },
+        ],
+      },
+    ],
     'react-hooks/exhaustive-deps': 'warn',
     'react-hooks/rules-of-hooks': 'error',
   },

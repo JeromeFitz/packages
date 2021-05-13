@@ -1,6 +1,6 @@
 {
   "name": "@jeromefitz/semantic",
-  "version": "1.1.2",
+  "version": "2.0.0-canary.9",
   "description": "Semantic Versioning, Conventional Commits with CI/CD for GitHub Actions.",
   "author": {
     "name": "Jerome Fitzgerald",
@@ -18,7 +18,7 @@
   },
   "private": false,
   "dependencies": {
-    "@jeromefitz/git-cz": "7.0.2",
+    "@jeromefitz/git-cz": "8.0.0",
     "@jeromefitz/semantic-release-git": "10.0.0-develop.2",
     "@octokit/core": "3.4.0",
     "@semantic-release/commit-analyzer": "8.0.1",
@@ -30,7 +30,8 @@
     "lodash": "4.17.21",
     "multi-semantic-release": "2.8.0",
     "semantic-release": "17.4.3",
-    "semantic-release-commit-filter": "1.0.2"
+    "semantic-release-commit-filter": "1.0.2",
+    "title": "3.4.3"
   },
   "main": "release.config.js",
   "files": [

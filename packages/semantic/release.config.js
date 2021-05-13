@@ -1,9 +1,10 @@
-const types = require('@jeromefitz/git-cz/data/gitmoji').types
+const { types } = require('@jeromefitz/git-cz/dist/themes/gitmoji').default
 const GraphemeSplitter = require('grapheme-splitter')
 const isCI = require('is-ci')
+const _pullAt = require('lodash/pullAt')
+const title = require('title')
 // const _map = require('lodash/map')
 // const _orderBy = require('lodash/orderBy')
-const _pullAt = require('lodash/pullAt')
 !isCI && require('dotenv').config({ path: '../../.env' })
 
 var splitter = new GraphemeSplitter()
@@ -20,15 +21,20 @@ const releaseRules = []
 
 Object.keys(types).map((type, index) => {
   typeSpecs.push({
-    type: types[type].value,
     emoji: types[type].emoji,
-    section: types[type].section,
+    section: title(types[type].commit) + '\n#### ' + types[type].section,
     semver: types[type].semver,
-    value: types[type].value,
+    type: types[type].commit,
+    value: types[type].commit,
+  })
+  // @note This needs to cover either scenarios based on repo implementation
+  releaseRules.push({
+    release: types[type].semver,
+    type: types[type].emoji,
   })
   releaseRules.push({
-    type: types[type].emoji,
-    release: types[type].release,
+    release: types[type].semver,
+    type: types[type].commit,
   })
   return true
 })
@@ -39,6 +45,7 @@ Object.keys(types).map((type, index) => {
 
 const parserOpts = {
   headerPattern: /^(.*?)(?:\((.*)\))?:?\s(.*)$/,
+  noteKeywords: ['💥️  BREAKING CHANGE', 'BREAKING CHANGE'],
   referenceActions: typeSpecs.map(({ type }) => type),
   revertPattern: /^Revert\s"([\s\S]*)"\s*This reverts commit (\w*)\./,
 }
@@ -87,17 +94,19 @@ const writerOpts = {
 
     commit.subject = subject
 
+    console.dir(commit)
+
     return commit
   },
   // groupBy: 'order',
-  // commitGroupsSort: ['order'],
+  commitGroupsSort: ['order'],
   commitsSort: ['order'],
 }
 
 module.exports = {
   branches: [
     { name: 'main' },
-    { name: 'develop', prerelease: 'develop' },
+    { name: 'canary', prerelease: 'canary' },
     // ...releaseBranches,
   ],
   // ci: false,
