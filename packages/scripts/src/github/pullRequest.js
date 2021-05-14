@@ -14,7 +14,14 @@ const getVersion = (version) => {
   return [parseInt(major), parseInt(minor), parseInt(patch)].join('.')
 }
 
-async function setPullRequest({ head, labels, repo_id, version, q }) {
+async function setPullRequest({
+  dryRun = false,
+  head,
+  labels,
+  repo_id,
+  version,
+  q,
+}) {
   try {
     // @note(ci) assumes travis keeps us honest when this runs
     const base = isMain ? 'develop' : 'main'
@@ -75,21 +82,25 @@ async function setPullRequest({ head, labels, repo_id, version, q }) {
       console.log(chalkPipe('blue.bold')(`🤠️  Yee-haw, Create a Pee-Ahr`))
       console.log(chalkPipe('blue.bold')(`🤓️  ${title}`))
 
-      const pull = await octokit.rest.pulls.create({
-        owner,
-        repo,
-        head,
-        base,
-        title,
-        body,
-      })
+      if (dryRun) {
+        const pull = await octokit.rest.pulls.create({
+          owner,
+          repo,
+          head,
+          base,
+          title,
+          body,
+        })
 
-      octokit.rest.issues.addLabels({
-        owner,
-        repo,
-        issue_number: pull.data.number,
-        labels,
-      })
+        octokit.rest.issues.addLabels({
+          owner,
+          repo,
+          issue_number: pull.data.number,
+          labels,
+        })
+      } else {
+        console.log(chalkPipe('orange.bold')(`🏃️  dryRun`))
+      }
     }
   } catch (error) {
     console.log(chalkPipe('red.bold')(`❎️  error: ${owner}/${repo} => pulls.list`))

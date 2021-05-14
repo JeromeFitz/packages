@@ -35,7 +35,8 @@
     "@octokit/rest": "18.5.3"
   },
   "files": [
-    "dist/**",
-    "index.js"
+    "dist/*",
+    "package.json",
+    "yarn.lock"
   ]
 }
