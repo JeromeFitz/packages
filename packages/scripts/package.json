@@ -40,7 +40,7 @@
     "dist/github/label.js",
     "dist/github/milestone.js",
     "dist/github/pullRequest.js",
-    "dist/templates/PULL_REQUEST__GITFLOW.js",
+    "dist/templates/PULL_REQUEST.js",
     "dist/utils/getChars.js",
     "dist/utils/getPackageJson.js",
     "dist/index.js",
