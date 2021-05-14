@@ -18,11 +18,13 @@ async function setPullRequest({
   dryRun = false,
   head,
   labels,
-  repo_id,
+  owner,
+  repo,
   version,
   q,
 }) {
   try {
+    const repo_id = `${owner}/${repo}`
     // @note(ci) assumes travis keeps us honest when this runs
     const base = isMain ? 'develop' : 'main'
     const bodyTemplate = PULL_REQUEST__GITFLOW()
