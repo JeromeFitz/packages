@@ -35,7 +35,15 @@
     "@octokit/rest": "18.5.3"
   },
   "files": [
-    "dist/*",
+    "dist/data/labels.js",
+    "dist/data/milestone.js",
+    "dist/github/label.js",
+    "dist/github/milestone.js",
+    "dist/github/pullRequest.js",
+    "dist/templates/PULL_REQUEST__GITFLOW.js",
+    "dist/utils/getChars.js",
+    "dist/utils/getPackageJson.js",
+    "dist/index.js",
     "package.json",
     "yarn.lock"
   ]
