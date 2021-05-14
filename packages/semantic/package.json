@@ -17,6 +17,9 @@
     "registry": "https://registry.npmjs.org/"
   },
   "private": false,
+  "scripts": {
+    "build": "echo @jeromefitz/semantic"
+  },
   "dependencies": {
     "@jeromefitz/git-cz": "8.0.0",
     "@jeromefitz/semantic-release-git": "10.0.0-develop.2",
