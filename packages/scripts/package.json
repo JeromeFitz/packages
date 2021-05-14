@@ -35,7 +35,7 @@
     "@octokit/rest": "18.5.3"
   },
   "files": [
-    "dist/",
+    "dist/**",
     "index.js"
   ]
 }
