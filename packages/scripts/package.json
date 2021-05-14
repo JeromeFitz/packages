@@ -36,7 +36,7 @@
   },
   "files": [
     "dist/data/labels.js",
-    "dist/data/milestone.js",
+    "dist/data/milestones.js",
     "dist/github/label.js",
     "dist/github/milestone.js",
     "dist/github/pullRequest.js",
