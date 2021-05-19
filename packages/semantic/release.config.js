@@ -1,26 +1,48 @@
 const { types } = require('@jeromefitz/git-cz/dist/themes/gitmoji').default
 const GraphemeSplitter = require('grapheme-splitter')
 const isCI = require('is-ci')
+const _map = require('lodash/map')
 const _pullAt = require('lodash/pullAt')
 const title = require('title')
-// const _map = require('lodash/map')
 // const _orderBy = require('lodash/orderBy')
 !isCI && require('dotenv').config({ path: '../../.env' })
 
 var splitter = new GraphemeSplitter()
 
-// // @todo(sprintNames)
-// const sprintNames = ['akuma', 'blanka', 'chun-li', 'dhalism']
-// const releaseBranches = _map(sprintNames, (sprintName) => ({
-//   name: `release/${sprintName}`,
-//   prerelease: sprintName,
-// }))
+const releaseBranchTypes = {
+  ci: [],
+  feature: [],
+  fix: ['code-pull-in'],
+  // @note this is "sprint"
+  release: [],
+}
+
+const branchTypes = _map(
+  releaseBranchTypes,
+  (releaseBranchType, releaseBranchTypeIndex) => {
+    return _map(releaseBranchType, (branchType) => {
+      return (
+        !!branchType && {
+          name: `${releaseBranchTypeIndex}/${branchType}`,
+          prerelease: branchType,
+        }
+      )
+    })[0]
+  }
+).filter((branchType) => !!branchType)
+
+const branches = [
+  { name: 'main' },
+  { name: 'canary', prerelease: 'canary' },
+  ...branchTypes,
+]
 
 let typeSpecs = []
 const releaseRules = []
 
 Object.keys(types).map((type, _index) => {
   typeSpecs.push({
+    code: types[type].code,
     emoji: types[type].emoji,
     section: title(types[type].commit) + '\n#### ' + types[type].section,
     semver: types[type].semver,
@@ -61,9 +83,18 @@ const writerOpts = {
     const { type } = commit
 
     // Rewrite types
-    const typeSpecIndex = typeSpecs.findIndex(({ emoji: e, type: t, value: v }) => {
-      return type === e || type === t || type === v
-    })
+    const typeSpecIndex = typeSpecs.findIndex(
+      ({ code: c, emoji: e, type: t, value: v }) => {
+        return (
+          // @note this strips ":" as `type` was only brining back first colon
+          type.replace(/\:/g, '') === c.replace(/\:/g, '') ||
+          type === e ||
+          type === t ||
+          type === v
+        )
+      }
+    )
+
     if (typeSpecIndex === -1) return
     const typeSpec = typeSpecs[typeSpecIndex]
 
@@ -100,8 +131,6 @@ const writerOpts = {
 
     commit.subject = subject
 
-    console.dir(commit)
-
     return commit
   },
   // groupBy: 'order',
@@ -110,11 +139,7 @@ const writerOpts = {
 }
 
 module.exports = {
-  branches: [
-    { name: 'main' },
-    { name: 'canary', prerelease: 'canary' },
-    // ...releaseBranches,
-  ],
+  branches,
   // ci: false,
   // dryRun: true,
   extends: ['semantic-release-commit-filter'],
