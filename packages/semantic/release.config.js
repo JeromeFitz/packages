@@ -42,6 +42,7 @@ const releaseRules = []
 
 Object.keys(types).map((type, _index) => {
   typeSpecs.push({
+    code: types[type].code,
     emoji: types[type].emoji,
     section: title(types[type].commit) + '\n#### ' + types[type].section,
     semver: types[type].semver,
@@ -84,9 +85,19 @@ const writerOpts = {
     const { type } = commit
 
     // Rewrite types
+    console.dir(typeSpecs)
     const typeSpecIndex = typeSpecs.findIndex(
       ({ code: c, emoji: e, type: t, value: v }) => {
-        return type === c || type === e || type === t || type === v
+        // console.dir(c.replace(/\:/g, ''))
+        console.dir(c)
+        console.dir(code)
+        console.dir(code === c)
+        console.dir(code == c)
+        console.dir(type)
+        console.dir(`---`)
+        // console.dir(t)
+        // console.dir(v)
+        return code === c || type === e || type === t || type === v
       }
     )
     console.dir(`typeSpecIndex:`)
