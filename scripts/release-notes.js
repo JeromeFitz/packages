@@ -9,5 +9,3 @@ const notes = multirelease([
   `${packageDir}/scripts/package.json`,
   `${packageDir}/semantic/package.json`,
 ])
-
-console.dir(notes)
