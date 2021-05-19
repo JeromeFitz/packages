@@ -67,8 +67,6 @@ Object.keys(types).map((type, _index) => {
   return true
 })
 
-console.dir(releaseRules)
-
 // // semver: major, minor, patch, null
 // // sort by above
 // typeSpecs = _orderBy(typeSpecs, ['semver'], ['desc'])
@@ -85,27 +83,20 @@ const writerOpts = {
     const { type } = commit
 
     // Rewrite types
-    console.dir(typeSpecs)
     const typeSpecIndex = typeSpecs.findIndex(
       ({ code: c, emoji: e, type: t, value: v }) => {
-        // console.dir(c.replace(/\:/g, ''))
-        console.dir(c)
-        console.dir(code)
-        console.dir(code === c)
-        console.dir(code == c)
-        console.dir(type)
-        console.dir(`---`)
-        // console.dir(t)
-        // console.dir(v)
-        return code === c || type === e || type === t || type === v
+        return (
+          // @note this strips ":" as `type` was only brining back first colon
+          type.replace(/\:/g, '') === c.replace(/\:/g, '') ||
+          type === e ||
+          type === t ||
+          type === v
+        )
       }
     )
-    console.dir(`typeSpecIndex:`)
-    console.dir(typeSpecIndex)
+
     if (typeSpecIndex === -1) return
     const typeSpec = typeSpecs[typeSpecIndex]
-    console.dir(`typeSpec:`)
-    console.dir(typeSpec)
 
     commit.type = `${typeSpec.emoji}  ${typeSpec.section}`
     commit.typeSpecIndex = typeSpecIndex
