@@ -89,8 +89,12 @@ const writerOpts = {
         return type === c || type === e || type === t || type === v
       }
     )
+    console.dir(`typeSpecIndex:`)
+    console.dir(typeSpecIndex)
     if (typeSpecIndex === -1) return
     const typeSpec = typeSpecs[typeSpecIndex]
+    console.dir(`typeSpec:`)
+    console.dir(typeSpec)
 
     commit.type = `${typeSpec.emoji}  ${typeSpec.section}`
     commit.typeSpecIndex = typeSpecIndex
