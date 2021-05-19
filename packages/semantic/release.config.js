@@ -1,20 +1,40 @@
 const { types } = require('@jeromefitz/git-cz/dist/themes/gitmoji').default
 const GraphemeSplitter = require('grapheme-splitter')
 const isCI = require('is-ci')
+const _map = require('lodash/map')
 const _pullAt = require('lodash/pullAt')
 const title = require('title')
-// const _map = require('lodash/map')
 // const _orderBy = require('lodash/orderBy')
 !isCI && require('dotenv').config({ path: '../../.env' })
 
 var splitter = new GraphemeSplitter()
 
-// // @todo(sprintNames)
-// const sprintNames = ['akuma', 'blanka', 'chun-li', 'dhalism']
-// const releaseBranches = _map(sprintNames, (sprintName) => ({
-//   name: `release/${sprintName}`,
-//   prerelease: sprintName,
-// }))
+const releaseBranchTypes = {
+  ci: [],
+  feature: [],
+  fix: ['code-pull-in'],
+  sprint: [],
+}
+
+const branchTypes = _map(
+  releaseBranchTypes,
+  (releaseBranchType, releaseBranchTypeIndex) => {
+    return _map(releaseBranchType, (branchType) => {
+      return (
+        !!branchType && {
+          name: `${releaseBranchTypeIndex}/${branchType}`,
+          prerelease: branchType,
+        }
+      )
+    })[0]
+  }
+).filter((branchType) => !!branchType)
+
+const branches = [
+  { name: 'main' },
+  { name: 'canary', prerelease: 'canary' },
+  ...branchTypes,
+]
 
 let typeSpecs = []
 const releaseRules = []
@@ -112,11 +132,7 @@ const writerOpts = {
 }
 
 module.exports = {
-  branches: [
-    { name: 'main' },
-    { name: 'canary', prerelease: 'canary' },
-    // ...releaseBranches,
-  ],
+  branches,
   // ci: false,
   // dryRun: true,
   extends: ['semantic-release-commit-filter'],
