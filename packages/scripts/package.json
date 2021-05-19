@@ -1,6 +1,6 @@
 {
   "name": "@jeromefitz/scripts",
-  "version": "1.0.3",
+  "version": "1.0.4-canary.1",
   "description": "Scripts",
   "author": {
     "name": "Jerome Fitzgerald",
@@ -36,14 +36,23 @@
   },
   "files": [
     "dist/data/labels.js",
+    "dist/data/labels.js.map",
     "dist/data/milestones.js",
+    "dist/data/milestones.js.map",
     "dist/github/label.js",
+    "dist/github/label.js.map",
     "dist/github/milestone.js",
+    "dist/github/milestone.js.map",
     "dist/github/pullRequest.js",
-    "dist/templates/PULL_REQUEST__GITFLOW.js",
+    "dist/github/pullRequest.js.map",
+    "dist/templates/PULL_REQUEST.js",
+    "dist/templates/PULL_REQUEST.js.map",
     "dist/utils/getChars.js",
+    "dist/utils/getChars.js.map",
     "dist/utils/getPackageJson.js",
+    "dist/utils/getPackageJson.js.map",
     "dist/index.js",
+    "dist/index.js.map",
     "package.json",
     "yarn.lock"
   ]

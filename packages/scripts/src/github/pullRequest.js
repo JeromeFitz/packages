@@ -6,7 +6,7 @@ const chalkPipe = require('chalk-pipe')
 const isCI = require('is-ci')
 
 !isCI && require('dotenv').config({ path: './.env' })
-const PULL_REQUEST__GITFLOW = require('../templates/PULL_REQUEST__GITFLOW')
+const PULL_REQUEST = require('../templates/PULL_REQUEST').default
 
 const octokit = new Octokit({ auth: process.env.GH_TOKEN })
 const getVersion = (version) => {
@@ -15,31 +15,29 @@ const getVersion = (version) => {
 }
 
 async function setPullRequest({
+  base,
   dryRun = false,
   head,
   labels,
-  repo_id,
+  owner,
+  repo,
   version,
   q,
 }) {
   try {
-    // @note(ci) assumes travis keeps us honest when this runs
-    const base = isMain ? 'develop' : 'main'
-    const bodyTemplate = PULL_REQUEST__GITFLOW()
+    const repo_id = `${owner}/${repo}`
+    const { gitflow } = PULL_REQUEST
+    const bodyTemplate = gitflow
     const titleTemplate = `merge: 🔀️ v{version} => {base} [gitflow] [skip ci]`
-
-    const toStore = isMain ? 'Release' : 'Submit'
 
     const body = bodyTemplate
       .replace(/\{base\}/g, base)
       .replace(/\{head\}/g, head)
-      .replace(/\{toStore\}/g, toStore)
       .replace(/\{version\}/g, version)
 
     const title = titleTemplate
       .replace(/\{base\}/g, base)
       .replace(/\{head\}/g, head)
-      .replace(/\{toStore\}/g, toStore)
       .replace(/\{version\}/g, version)
 
     const response = await octokit.rest.search.issuesAndPullRequests({
@@ -83,23 +81,22 @@ async function setPullRequest({
       console.log(chalkPipe('blue.bold')(`🤓️  ${title}`))
 
       if (dryRun) {
-        const pull = await octokit.rest.pulls.create({
-          owner,
-          repo,
-          head,
-          base,
-          title,
-          body,
-        })
-
-        octokit.rest.issues.addLabels({
-          owner,
-          repo,
-          issue_number: pull.data.number,
-          labels,
-        })
-      } else {
         console.log(chalkPipe('orange.bold')(`🏃️  dryRun`))
+      } else {
+        // const pull = await octokit.rest.pulls.create({
+        //   owner,
+        //   repo,
+        //   head,
+        //   base,
+        //   title,
+        //   body,
+        // })
+        // octokit.rest.issues.addLabels({
+        //   owner,
+        //   repo,
+        //   issue_number: pull.data.number,
+        //   labels,
+        // })
       }
     }
   } catch (error) {

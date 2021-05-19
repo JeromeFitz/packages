@@ -19,7 +19,7 @@ var splitter = new GraphemeSplitter()
 let typeSpecs = []
 const releaseRules = []
 
-Object.keys(types).map((type, index) => {
+Object.keys(types).map((type, _index) => {
   typeSpecs.push({
     emoji: types[type].emoji,
     section: title(types[type].commit) + '\n#### ' + types[type].section,
@@ -27,14 +27,20 @@ Object.keys(types).map((type, index) => {
     type: types[type].commit,
     value: types[type].commit,
   })
-  // @note This needs to cover either scenarios based on repo implementation
+  /**
+   * @note Need to cover (code|commit|emoji) for semver based on repo choice
+   */
   releaseRules.push({
     release: types[type].semver,
-    type: types[type].emoji,
+    type: types[type].code,
   })
   releaseRules.push({
     release: types[type].semver,
     type: types[type].commit,
+  })
+  releaseRules.push({
+    release: types[type].semver,
+    type: types[type].emoji,
   })
   return true
 })
