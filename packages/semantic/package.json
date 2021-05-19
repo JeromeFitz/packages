@@ -1,6 +1,6 @@
 {
   "name": "@jeromefitz/semantic",
-  "version": "2.1.0-code-pull-in.1",
+  "version": "2.1.0-code-pull-in.2",
   "description": "Semantic Versioning, Conventional Commits with CI/CD for GitHub Actions.",
   "author": {
     "name": "Jerome Fitzgerald",
