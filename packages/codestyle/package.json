@@ -1,6 +1,6 @@
 {
   "name": "@jeromefitz/codestyle",
-  "version": "2.0.5",
+  "version": "2.1.0-code-pull-in.1",
   "description": "ESLint + TypeScript + Prettier + Lint Staged",
   "author": {
     "name": "Jerome Fitzgerald",
