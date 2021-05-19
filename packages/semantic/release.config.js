@@ -122,8 +122,6 @@ const writerOpts = {
 
     commit.subject = subject
 
-    console.dir(commit)
-
     return commit
   },
   // groupBy: 'order',
