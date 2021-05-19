@@ -8,6 +8,9 @@ on:
     branches:
       - main
       - canary
+      - ci/**
+      - feature/**
+      - fix/**
       - release/**
 jobs:
   release:

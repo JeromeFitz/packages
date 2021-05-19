@@ -13,7 +13,8 @@ const releaseBranchTypes = {
   ci: [],
   feature: [],
   fix: ['code-pull-in'],
-  sprint: [],
+  // @note this is "sprint"
+  release: [],
 }
 
 const branchTypes = _map(
