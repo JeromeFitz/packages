@@ -66,6 +66,8 @@ Object.keys(types).map((type, _index) => {
   return true
 })
 
+console.dir(releaseRules)
+
 // // semver: major, minor, patch, null
 // // sort by above
 // typeSpecs = _orderBy(typeSpecs, ['semver'], ['desc'])
@@ -133,7 +135,7 @@ const writerOpts = {
 module.exports = {
   branches,
   // ci: false,
-  // dryRun: true,
+  dryRun: true,
   extends: ['semantic-release-commit-filter'],
   plugins: [
     [
