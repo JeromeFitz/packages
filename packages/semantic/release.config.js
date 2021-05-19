@@ -61,9 +61,11 @@ const writerOpts = {
     const { type } = commit
 
     // Rewrite types
-    const typeSpecIndex = typeSpecs.findIndex(({ emoji: e, type: t, value: v }) => {
-      return type === e || type === t || type === v
-    })
+    const typeSpecIndex = typeSpecs.findIndex(
+      ({ code: c, emoji: e, type: t, value: v }) => {
+        return type === c || type === e || type === t || type === v
+      }
+    )
     if (typeSpecIndex === -1) return
     const typeSpec = typeSpecs[typeSpecIndex]
 
