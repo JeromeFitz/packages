@@ -141,7 +141,7 @@ const writerOpts = {
 module.exports = {
   branches,
   // ci: false,
-  dryRun: true,
+  // dryRun: true,
   extends: ['semantic-release-commit-filter'],
   plugins: [
     [
