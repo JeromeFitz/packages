@@ -69,6 +69,24 @@ const labels = [
     color: '008672',
   },
   {
+    name: `kodiak: merge.method = 'merge'`,
+    emoji: '',
+    description: 'Kodiak: Merge (Override)',
+    color: 'BB145E',
+  },
+  {
+    name: `kodiak: merge.method = 'rebase'`,
+    emoji: '',
+    description: 'Kodiak: Rebase (Override)',
+    color: 'BB145E',
+  },
+  {
+    name: `kodiak: merge.method = 'squash'`,
+    emoji: '',
+    description: 'Kodiak: Squash (Override)',
+    color: 'BB145E',
+  },
+  {
     name: 'LGTM',
     emoji: '🥳️',
     description: 'Automerge: Let’s Get This Merged',

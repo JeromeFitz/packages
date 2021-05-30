@@ -22,6 +22,7 @@
     "branch": "git-cz -m branch --allow-empty",
     "build": "yarn workspaces run build",
     "commit": "ALLOW_EMPTY=--allow-empty git commit --allow-empty",
+    "generate:releaseRules": "node ./packages/semantic/scripts/generateReleaseRules.js && yarn lint:fix",
     "lint:eslint": "eslint . --ext js,jsx,ts,tsx --max-warnings=0",
     "lint:fix": "yarn lint:prettier --write && yarn lint:eslint --fix",
     "lint:prettier": "prettier \"./*.{js,jsx,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\"",
@@ -32,11 +33,12 @@
     "prepublishOnly": "pinst --disable",
     "pretty-quick": "pretty-quick",
     "semantic-release": "multi-semantic-release",
+    "semantic-release:lerna": "lerna run semantic-release",
     "semantic-release:old": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo --tag-format='${LERNA_PACKAGE_NAME}-v\\${version}'",
     "typescript": "tsc --noEmit --declaration"
   },
   "devDependencies": {
-    "dotenv": "9.0.2",
+    "dotenv": "10.0.0",
     "husky": "6.0.0",
     "is-ci": "3.0.0",
     "lerna": "4.0.0",
