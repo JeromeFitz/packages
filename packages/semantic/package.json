@@ -18,7 +18,8 @@
   },
   "private": false,
   "scripts": {
-    "build": "echo @jeromefitz/semantic"
+    "build": "echo @jeromefitz/semantic",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "@jeromefitz/git-cz": "8.1.0",
