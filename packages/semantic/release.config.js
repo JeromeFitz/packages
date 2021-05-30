@@ -19,29 +19,21 @@ const parserOpts = {
   revertPattern: /^Revert\s"([\s\S]*)"\s*This reverts commit (\w*)\./,
 }
 
-// console.dir(releaseRules)
-
 const writerOpts = {
   transform: (commit, _context) => {
     // let discard = true
-    // console.dir(`writerOpts...`)
     const { type } = commit
-
-    // console.dir(`type: ${type}`)
 
     // Rewrite types
     const typeSpecIndex = typeSpecs.findIndex(
       ({ code: c, emoji: e, type: t, value: v }) => {
-        console.dir(`type:       ${type}`)
-        console.dir(`c:          ${c}`)
-        console.dir(`e:          ${e}`)
-        console.dir(`t:          ${t}`)
-        console.dir(`v:          ${v}`)
-        // @note this strips ":" as `type` was only brining back first colon
-        const isCodeType = type.replace(/\:/g, '') === c.replace(/\:/g, '')
-        console.dir(`isCodeType: ${isCodeType}`)
-        console.dir(`---`)
-        return isCodeType || type === e || type === t || type === v
+        return (
+          // @hack(semantic-release) strip colon from :type: for stricter comparison
+          type.replace(/\:/g, '') === c.replace(/\:/g, '') ||
+          type === e ||
+          type === t ||
+          type === v
+        )
       }
     )
 

@@ -1,7 +1,7 @@
 const releaseRules = [
   {
     release: 'patch',
-    type: ':wheelchair:',
+    type: ':wheelchair',
   },
   {
     release: 'patch',
@@ -13,7 +13,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':chart_with_upwards_trend:',
+    type: ':chart_with_upwards_trend',
   },
   {
     release: 'patch',
@@ -25,7 +25,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':dizzy:',
+    type: ':dizzy',
   },
   {
     release: 'patch',
@@ -37,7 +37,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':building_construction:',
+    type: ':building_construction',
   },
   {
     release: null,
@@ -49,7 +49,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':bento:',
+    type: ':bento',
   },
   {
     release: 'patch',
@@ -61,7 +61,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':beers:',
+    type: ':beers',
   },
   {
     release: null,
@@ -73,7 +73,7 @@ const releaseRules = [
   },
   {
     release: 'major',
-    type: ':boom:',
+    type: ':boom',
   },
   {
     release: 'major',
@@ -85,7 +85,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':hammer:',
+    type: ':hammer',
   },
   {
     release: null,
@@ -97,7 +97,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':goal_net:',
+    type: ':goal_net',
   },
   {
     release: 'patch',
@@ -109,7 +109,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':computer_disk:',
+    type: ':computer_disk',
   },
   {
     release: null,
@@ -121,7 +121,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':construction_worker:',
+    type: ':construction_worker',
   },
   {
     release: null,
@@ -133,7 +133,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':wastebasket:',
+    type: ':wastebasket',
   },
   {
     release: 'patch',
@@ -145,7 +145,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':alien:',
+    type: ':alien',
   },
   {
     release: 'patch',
@@ -157,7 +157,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':wrench:',
+    type: ':wrench',
   },
   {
     release: 'patch',
@@ -169,7 +169,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':busts_in_silhouette:',
+    type: ':busts_in_silhouette',
   },
   {
     release: null,
@@ -181,7 +181,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':monocle_face:',
+    type: ':monocle_face',
   },
   {
     release: null,
@@ -193,7 +193,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':card_file_box:',
+    type: ':card_file_box',
   },
   {
     release: 'patch',
@@ -205,7 +205,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':heavy_plus_sign:',
+    type: ':heavy_plus_sign',
   },
   {
     release: 'patch',
@@ -217,7 +217,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':heavy_minus_sign:',
+    type: ':heavy_minus_sign',
   },
   {
     release: 'patch',
@@ -229,7 +229,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':package:',
+    type: ':package',
   },
   {
     release: 'patch',
@@ -241,7 +241,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':rocket:',
+    type: ':rocket',
   },
   {
     release: null,
@@ -253,7 +253,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':memo:',
+    type: ':memo',
   },
   {
     release: null,
@@ -265,7 +265,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':bulb:',
+    type: ':bulb',
   },
   {
     release: null,
@@ -277,7 +277,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':arrow_down:',
+    type: ':arrow_down',
   },
   {
     release: 'patch',
@@ -289,7 +289,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':egg:',
+    type: ':egg',
   },
   {
     release: 'patch',
@@ -301,7 +301,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':alembic:',
+    type: ':alembic',
   },
   {
     release: 'patch',
@@ -313,7 +313,7 @@ const releaseRules = [
   },
   {
     release: 'minor',
-    type: ':sparkles:',
+    type: ':sparkles',
   },
   {
     release: 'minor',
@@ -325,7 +325,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':bug:',
+    type: ':bug',
   },
   {
     release: 'patch',
@@ -337,7 +337,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':green_heart:',
+    type: ':green_heart',
   },
   {
     release: null,
@@ -349,7 +349,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':triangular_flag_on_post:',
+    type: ':triangular_flag_on_post',
   },
   {
     release: 'patch',
@@ -361,7 +361,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':ambulance:',
+    type: ':ambulance',
   },
   {
     release: 'patch',
@@ -373,7 +373,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':globe_with_meridians:',
+    type: ':globe_with_meridians',
   },
   {
     release: 'patch',
@@ -385,7 +385,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':see_no_evil:',
+    type: ':see_no_evil',
   },
   {
     release: null,
@@ -397,7 +397,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':tada:',
+    type: ':tada',
   },
   {
     release: null,
@@ -409,7 +409,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':iphone:',
+    type: ':iphone',
   },
   {
     release: 'patch',
@@ -421,7 +421,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':page_facing_up:',
+    type: ':page_facing_up',
   },
   {
     release: null,
@@ -433,7 +433,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':rotating_light:',
+    type: ':rotating_light',
   },
   {
     release: null,
@@ -445,7 +445,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':loud_sound:',
+    type: ':loud_sound',
   },
   {
     release: null,
@@ -457,7 +457,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':mute:',
+    type: ':mute',
   },
   {
     release: null,
@@ -469,7 +469,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':twisted_rightwards_arrows:',
+    type: ':twisted_rightwards_arrows',
   },
   {
     release: null,
@@ -481,7 +481,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':clown_face:',
+    type: ':clown_face',
   },
   {
     release: null,
@@ -493,7 +493,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':truck:',
+    type: ':truck',
   },
   {
     release: null,
@@ -505,7 +505,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':adhesive_bandage:',
+    type: ':adhesive_bandage',
   },
   {
     release: 'patch',
@@ -517,7 +517,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':zap:',
+    type: ':zap',
   },
   {
     release: 'patch',
@@ -529,7 +529,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':poop:',
+    type: ':poop',
   },
   {
     release: null,
@@ -541,7 +541,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':fire:',
+    type: ':fire',
   },
   {
     release: null,
@@ -553,7 +553,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':pushpin:',
+    type: ':pushpin',
   },
   {
     release: 'patch',
@@ -565,7 +565,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':recycle:',
+    type: ':recycle',
   },
   {
     release: null,
@@ -577,7 +577,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':bookmark:',
+    type: ':bookmark',
   },
   {
     release: null,
@@ -589,7 +589,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':rewind:',
+    type: ':rewind',
   },
   {
     release: 'patch',
@@ -601,7 +601,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':coffin:',
+    type: ':coffin',
   },
   {
     release: null,
@@ -613,7 +613,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':passport_control:',
+    type: ':passport_control',
   },
   {
     release: 'patch',
@@ -625,7 +625,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':fast_forward:',
+    type: ':fast_forward',
   },
   {
     release: null,
@@ -637,7 +637,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':rocket:',
+    type: ':rocket',
   },
   {
     release: null,
@@ -649,7 +649,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':lock:',
+    type: ':lock',
   },
   {
     release: 'patch',
@@ -661,7 +661,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':seedling:',
+    type: ':seedling',
   },
   {
     release: null,
@@ -673,7 +673,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':mag:',
+    type: ':mag',
   },
   {
     release: 'patch',
@@ -685,7 +685,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':camera_flash:',
+    type: ':camera_flash',
   },
   {
     release: null,
@@ -697,7 +697,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':art:',
+    type: ':art',
   },
   {
     release: null,
@@ -709,7 +709,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':white_check_mark:',
+    type: ':white_check_mark',
   },
   {
     release: null,
@@ -721,7 +721,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':speech_balloon:',
+    type: ':speech_balloon',
   },
   {
     release: 'patch',
@@ -733,7 +733,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':label:',
+    type: ':label',
   },
   {
     release: 'patch',
@@ -745,7 +745,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':pencil2:',
+    type: ':pencil2',
   },
   {
     release: 'patch',
@@ -757,7 +757,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':lipstick:',
+    type: ':lipstick',
   },
   {
     release: 'patch',
@@ -769,7 +769,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':arrow_up:',
+    type: ':arrow_up',
   },
   {
     release: 'patch',
@@ -781,7 +781,7 @@ const releaseRules = [
   },
   {
     release: 'patch',
-    type: ':children_crossing:',
+    type: ':children_crossing',
   },
   {
     release: 'patch',
@@ -793,7 +793,7 @@ const releaseRules = [
   },
   {
     release: null,
-    type: ':construction:',
+    type: ':construction',
   },
   {
     release: null,

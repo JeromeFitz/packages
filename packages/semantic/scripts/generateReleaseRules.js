@@ -23,23 +23,22 @@ Object.keys(types).map((type, _index) => {
   /**
    * @note Need to cover (code|commit|emoji) for semver based on repo choice
    */
-  // const foo = types[type].semver
-  const foo = true
-  if (foo) {
-    releaseRules.push({
-      release: types[type].semver,
-      // type: types[type].code.replace(/\:/g, ''),
-      type: types[type].code,
-    })
-    releaseRules.push({
-      release: types[type].semver,
-      type: types[type].commit,
-    })
-    releaseRules.push({
-      release: types[type].semver,
-      type: types[type].emoji,
-    })
-  }
+
+  releaseRules.push({
+    release: types[type].semver,
+    // @hack(semantic-release) is turning in commit.type
+    //       :arrow_up: => :arrow_up
+    //       accounting for that here "fixes"
+    type: types[type].code.replace(/(:[^:]*):/g, '$1'),
+  })
+  releaseRules.push({
+    release: types[type].semver,
+    type: types[type].commit,
+  })
+  releaseRules.push({
+    release: types[type].semver,
+    type: types[type].emoji,
+  })
 
   return true
 })
