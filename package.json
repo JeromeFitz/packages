@@ -38,7 +38,7 @@
     "typescript": "tsc --noEmit --declaration"
   },
   "devDependencies": {
-    "dotenv": "9.0.2",
+    "dotenv": "10.0.0",
     "husky": "6.0.0",
     "is-ci": "3.0.0",
     "lerna": "4.0.0",
