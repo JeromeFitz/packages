@@ -85,8 +85,7 @@ module.exports = {
   // ci: false,
   // debug: true,
   // dryRun: true,
-  // @note turn off for now
-  // extends: ['semantic-release-commit-filter'],
+  extends: ['semantic-release-commit-filter'],
   plugins: [
     [
       '@semantic-release/commit-analyzer',
