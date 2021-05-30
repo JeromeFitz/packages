@@ -1,78 +1,19 @@
-const { types } = require('@jeromefitz/git-cz/dist/themes/gitmoji').default
 const GraphemeSplitter = require('grapheme-splitter')
 const isCI = require('is-ci')
-const _map = require('lodash/map')
 const _pullAt = require('lodash/pullAt')
-const title = require('title')
-// const _orderBy = require('lodash/orderBy')
+
+const { name } = require('./package.json')
+const branches = require('./src/branches')
+const releaseRules = require('./src/releaseRules')
+const typeSpecs = require('./src/typeSpecs')
+
 !isCI && require('dotenv').config({ path: '../../.env' })
 
 var splitter = new GraphemeSplitter()
 
-const releaseBranchTypes = {
-  ci: [],
-  feature: [],
-  fix: ['code-pull-in'],
-  // @note this is "sprint"
-  release: [],
-}
-
-const branchTypes = _map(
-  releaseBranchTypes,
-  (releaseBranchType, releaseBranchTypeIndex) => {
-    return _map(releaseBranchType, (branchType) => {
-      return (
-        !!branchType && {
-          name: `${releaseBranchTypeIndex}/${branchType}`,
-          prerelease: branchType,
-        }
-      )
-    })[0]
-  }
-).filter((branchType) => !!branchType)
-
-const branches = [
-  { name: 'main' },
-  { name: 'canary', prerelease: 'canary' },
-  ...branchTypes,
-]
-
-let typeSpecs = []
-const releaseRules = []
-
-Object.keys(types).map((type, _index) => {
-  typeSpecs.push({
-    code: types[type].code,
-    emoji: types[type].emoji,
-    section: title(types[type].commit) + '\n#### ' + types[type].section,
-    semver: types[type].semver,
-    type: types[type].commit,
-    value: types[type].commit,
-  })
-  /**
-   * @note Need to cover (code|commit|emoji) for semver based on repo choice
-   */
-  releaseRules.push({
-    release: types[type].semver,
-    type: types[type].code,
-  })
-  releaseRules.push({
-    release: types[type].semver,
-    type: types[type].commit,
-  })
-  releaseRules.push({
-    release: types[type].semver,
-    type: types[type].emoji,
-  })
-  return true
-})
-
-// // semver: major, minor, patch, null
-// // sort by above
-// typeSpecs = _orderBy(typeSpecs, ['semver'], ['desc'])
-
 const parserOpts = {
   headerPattern: /^(.*?)(?:\((.*)\))?:?\s(.*)$/,
+  headerCorrespondence: ['type', 'scope', 'subject'],
   noteKeywords: ['💥️  BREAKING CHANGE', 'BREAKING CHANGE'],
   referenceActions: typeSpecs.map(({ type }) => type),
   revertPattern: /^Revert\s"([\s\S]*)"\s*This reverts commit (\w*)\./,
@@ -80,13 +21,14 @@ const parserOpts = {
 
 const writerOpts = {
   transform: (commit, _context) => {
+    // let discard = true
     const { type } = commit
 
     // Rewrite types
     const typeSpecIndex = typeSpecs.findIndex(
       ({ code: c, emoji: e, type: t, value: v }) => {
         return (
-          // @note this strips ":" as `type` was only brining back first colon
+          // @hack(semantic-release) strip colon from :type: for stricter comparison
           type.replace(/\:/g, '') === c.replace(/\:/g, '') ||
           type === e ||
           type === t ||
@@ -141,14 +83,16 @@ const writerOpts = {
 module.exports = {
   branches,
   // ci: false,
+  // debug: true,
   // dryRun: true,
-  extends: ['semantic-release-commit-filter'],
+  // @note turn off for now
+  // extends: ['semantic-release-commit-filter'],
   plugins: [
     [
       '@semantic-release/commit-analyzer',
       {
-        releaseRules,
         parserOpts,
+        releaseRules,
       },
     ],
     [
@@ -171,12 +115,14 @@ module.exports = {
         assets: 'release/*.tgz',
       },
     ],
-    [
-      '@jeromefitz/semantic-release-git',
-      {
-        assets: ['package.json'],
-        message: `🔖️ {RELEASE_TAG} [skip ci]\n\n{RELEASE_URL}/releases/tag/{RELEASE_TAG}\n\n{RELEASE_NOTES}`,
-      },
-    ],
+    // [
+    //   '@jeromefitz/semantic-release-git',
+    //   {
+    //     assets: ['package.json'],
+    //     message: `🔖️ {RELEASE_TAG} [skip ci]\n\n{RELEASE_URL}/releases/tag/{RELEASE_TAG}\n\n{RELEASE_NOTES}`,
+    //   },
+    // ],
   ],
+  //
+  tagFormat: `${name}@\${version}`,
 }

@@ -1,6 +1,6 @@
 {
   "name": "@jeromefitz/scripts",
-  "version": "1.0.5",
+  "version": "0.0.0",
   "description": "Scripts",
   "author": {
     "name": "Jerome Fitzgerald",
@@ -29,10 +29,11 @@
     "prettier-check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\"",
     "prettier-fix": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\"",
     "pretty-quick": "pretty-quick",
+    "semantic-release": "echo semantic-release",
     "typescript": "tsc --noEmit --declaration"
   },
   "dependencies": {
-    "@octokit/rest": "18.5.4"
+    "@octokit/rest": "18.5.5"
   },
   "files": [
     "dist/data/labels.js",
