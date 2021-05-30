@@ -36,6 +36,18 @@ const releaseRules = [
     type: '💫',
   },
   {
+    release: null,
+    type: ':building_construction:',
+  },
+  {
+    release: null,
+    type: 'arch',
+  },
+  {
+    release: null,
+    type: '🏗️',
+  },
+  {
     release: 'patch',
     type: ':bento:',
   },
@@ -46,6 +58,18 @@ const releaseRules = [
   {
     release: 'patch',
     type: '🍱',
+  },
+  {
+    release: null,
+    type: ':beers:',
+  },
+  {
+    release: null,
+    type: 'beer',
+  },
+  {
+    release: null,
+    type: '🍻',
   },
   {
     release: 'major',
@@ -60,6 +84,18 @@ const releaseRules = [
     type: '💥',
   },
   {
+    release: null,
+    type: ':hammer:',
+  },
+  {
+    release: null,
+    type: 'build',
+  },
+  {
+    release: null,
+    type: '🔨',
+  },
+  {
     release: 'patch',
     type: ':goal_net:',
   },
@@ -70,6 +106,30 @@ const releaseRules = [
   {
     release: 'patch',
     type: '🥅',
+  },
+  {
+    release: null,
+    type: ':computer_disk:',
+  },
+  {
+    release: null,
+    type: 'chore',
+  },
+  {
+    release: null,
+    type: '💽️',
+  },
+  {
+    release: null,
+    type: ':construction_worker:',
+  },
+  {
+    release: null,
+    type: 'ci',
+  },
+  {
+    release: null,
+    type: '👷',
   },
   {
     release: 'patch',
@@ -106,6 +166,30 @@ const releaseRules = [
   {
     release: 'patch',
     type: '🔧',
+  },
+  {
+    release: null,
+    type: ':busts_in_silhouette:',
+  },
+  {
+    release: null,
+    type: 'contrib-add',
+  },
+  {
+    release: null,
+    type: '👥',
+  },
+  {
+    release: null,
+    type: ':monocle_face:',
+  },
+  {
+    release: null,
+    type: 'data',
+  },
+  {
+    release: null,
+    type: '🧐',
   },
   {
     release: 'patch',
@@ -154,6 +238,42 @@ const releaseRules = [
   {
     release: 'patch',
     type: '📦️',
+  },
+  {
+    release: null,
+    type: ':rocket:',
+  },
+  {
+    release: null,
+    type: 'deploy',
+  },
+  {
+    release: null,
+    type: '🚀',
+  },
+  {
+    release: null,
+    type: ':memo:',
+  },
+  {
+    release: null,
+    type: 'docs',
+  },
+  {
+    release: null,
+    type: '📝',
+  },
+  {
+    release: null,
+    type: ':bulb:',
+  },
+  {
+    release: null,
+    type: 'docs-code',
+  },
+  {
+    release: null,
+    type: '💡',
   },
   {
     release: 'patch',
@@ -216,6 +336,18 @@ const releaseRules = [
     type: '🐛',
   },
   {
+    release: null,
+    type: ':green_heart:',
+  },
+  {
+    release: null,
+    type: 'fix-ci',
+  },
+  {
+    release: null,
+    type: '💚',
+  },
+  {
     release: 'patch',
     type: ':triangular_flag_on_post:',
   },
@@ -252,6 +384,30 @@ const releaseRules = [
     type: '🌐',
   },
   {
+    release: null,
+    type: ':see_no_evil:',
+  },
+  {
+    release: null,
+    type: 'ignore',
+  },
+  {
+    release: null,
+    type: '🙈',
+  },
+  {
+    release: null,
+    type: ':tada:',
+  },
+  {
+    release: null,
+    type: 'init',
+  },
+  {
+    release: null,
+    type: '🎉',
+  },
+  {
     release: 'patch',
     type: ':iphone:',
   },
@@ -262,6 +418,90 @@ const releaseRules = [
   {
     release: 'patch',
     type: '📱',
+  },
+  {
+    release: null,
+    type: ':page_facing_up:',
+  },
+  {
+    release: null,
+    type: 'license',
+  },
+  {
+    release: null,
+    type: '📄',
+  },
+  {
+    release: null,
+    type: ':rotating_light:',
+  },
+  {
+    release: null,
+    type: 'lint',
+  },
+  {
+    release: null,
+    type: '🚨',
+  },
+  {
+    release: null,
+    type: ':loud_sound:',
+  },
+  {
+    release: null,
+    type: 'log-add',
+  },
+  {
+    release: null,
+    type: '🔊',
+  },
+  {
+    release: null,
+    type: ':mute:',
+  },
+  {
+    release: null,
+    type: 'log-rm',
+  },
+  {
+    release: null,
+    type: '🔇',
+  },
+  {
+    release: null,
+    type: ':twisted_rightwards_arrows:',
+  },
+  {
+    release: null,
+    type: 'merge',
+  },
+  {
+    release: null,
+    type: '🔀',
+  },
+  {
+    release: null,
+    type: ':clown_face:',
+  },
+  {
+    release: null,
+    type: 'mock',
+  },
+  {
+    release: null,
+    type: '🤡',
+  },
+  {
+    release: null,
+    type: ':truck:',
+  },
+  {
+    release: null,
+    type: 'mv',
+  },
+  {
+    release: null,
+    type: '🚚',
   },
   {
     release: 'patch',
@@ -288,6 +528,30 @@ const releaseRules = [
     type: '⚡️',
   },
   {
+    release: null,
+    type: ':poop:',
+  },
+  {
+    release: null,
+    type: 'poo',
+  },
+  {
+    release: null,
+    type: '💩',
+  },
+  {
+    release: null,
+    type: ':fire:',
+  },
+  {
+    release: null,
+    type: 'prune',
+  },
+  {
+    release: null,
+    type: '🔥',
+  },
+  {
     release: 'patch',
     type: ':pushpin:',
   },
@@ -298,6 +562,30 @@ const releaseRules = [
   {
     release: 'patch',
     type: '📌',
+  },
+  {
+    release: null,
+    type: ':recycle:',
+  },
+  {
+    release: null,
+    type: 'refactor',
+  },
+  {
+    release: null,
+    type: '♻️',
+  },
+  {
+    release: null,
+    type: ':bookmark:',
+  },
+  {
+    release: null,
+    type: 'release',
+  },
+  {
+    release: null,
+    type: '🔖',
   },
   {
     release: 'patch',
@@ -312,6 +600,18 @@ const releaseRules = [
     type: '⏪️',
   },
   {
+    release: null,
+    type: ':coffin:',
+  },
+  {
+    release: null,
+    type: 'rip',
+  },
+  {
+    release: null,
+    type: '⚰️',
+  },
+  {
     release: 'patch',
     type: ':passport_control:',
   },
@@ -322,6 +622,30 @@ const releaseRules = [
   {
     release: 'patch',
     type: '🛂',
+  },
+  {
+    release: null,
+    type: ':fast_forward:',
+  },
+  {
+    release: null,
+    type: 'rollforward',
+  },
+  {
+    release: null,
+    type: '⏩️',
+  },
+  {
+    release: null,
+    type: ':rocket:',
+  },
+  {
+    release: null,
+    type: 'run-build',
+  },
+  {
+    release: null,
+    type: '🚀️',
   },
   {
     release: 'patch',
@@ -336,6 +660,18 @@ const releaseRules = [
     type: '🔒️',
   },
   {
+    release: null,
+    type: ':seedling:',
+  },
+  {
+    release: null,
+    type: 'seed',
+  },
+  {
+    release: null,
+    type: '🌱',
+  },
+  {
     release: 'patch',
     type: ':mag:',
   },
@@ -346,6 +682,42 @@ const releaseRules = [
   {
     release: 'patch',
     type: '🔍️',
+  },
+  {
+    release: null,
+    type: ':camera_flash:',
+  },
+  {
+    release: null,
+    type: 'snapshot',
+  },
+  {
+    release: null,
+    type: '📸',
+  },
+  {
+    release: null,
+    type: ':art:',
+  },
+  {
+    release: null,
+    type: 'style',
+  },
+  {
+    release: null,
+    type: '🎨',
+  },
+  {
+    release: null,
+    type: ':white_check_mark:',
+  },
+  {
+    release: null,
+    type: 'test',
+  },
+  {
+    release: null,
+    type: '✅',
   },
   {
     release: 'patch',
@@ -418,6 +790,18 @@ const releaseRules = [
   {
     release: 'patch',
     type: '🚸',
+  },
+  {
+    release: null,
+    type: ':construction:',
+  },
+  {
+    release: null,
+    type: 'wip',
+  },
+  {
+    release: null,
+    type: '🚧',
   },
 ]
 

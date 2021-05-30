@@ -23,7 +23,9 @@ Object.keys(types).map((type, _index) => {
   /**
    * @note Need to cover (code|commit|emoji) for semver based on repo choice
    */
-  if (types[type].semver) {
+  // const foo = types[type].semver
+  const foo = true
+  if (foo) {
     releaseRules.push({
       release: types[type].semver,
       // type: types[type].code.replace(/\:/g, ''),
