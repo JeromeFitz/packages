@@ -13,7 +13,7 @@ var splitter = new GraphemeSplitter()
 
 const parserOpts = {
   headerPattern: /^(.*?)(?:\((.*)\))?:?\s(.*)$/,
-  // headerCorrespondence: ['type', 'scope', 'subject'],
+  headerCorrespondence: ['type', 'scope', 'subject'],
   noteKeywords: ['💥️  BREAKING CHANGE', 'BREAKING CHANGE'],
   referenceActions: typeSpecs.map(({ type }) => type),
   revertPattern: /^Revert\s"([\s\S]*)"\s*This reverts commit (\w*)\./,
@@ -32,12 +32,12 @@ const writerOpts = {
     // Rewrite types
     const typeSpecIndex = typeSpecs.findIndex(
       ({ code: c, emoji: e, type: t, value: v }) => {
-        // console.dir(`t:    ${t}`)
-        // console.dir(`c:    ${c}`)
+        console.dir(`t:    ${t}`)
+        console.dir(`c:    ${c}`)
         // @note this strips ":" as `type` was only brining back first colon
         const isCodeType = type.replace(/\:/g, '') === c.replace(/\:/g, '')
-        // console.dir(`isCodeType: ${isCodeType}`)
-        // console.dir(`---`)
+        console.dir(`isCodeType: ${isCodeType}`)
+        console.dir(`---`)
         return isCodeType || type === e || type === t || type === v
       }
     )
@@ -90,7 +90,8 @@ module.exports = {
   // ci: false,
   // debug: true,
   // dryRun: true,
-  extends: ['semantic-release-commit-filter'],
+  // @note turn off for now
+  // extends: ['semantic-release-commit-filter'],
   plugins: [
     [
       '@semantic-release/commit-analyzer',
