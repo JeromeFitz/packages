@@ -23,24 +23,22 @@ const parserOpts = {
 
 const writerOpts = {
   transform: (commit, _context) => {
-    let discard = true
+    // let discard = true
     // console.dir(`writerOpts...`)
     const { type } = commit
 
-    console.dir(`type: ${type}`)
+    // console.dir(`type: ${type}`)
 
     // Rewrite types
     const typeSpecIndex = typeSpecs.findIndex(
       ({ code: c, emoji: e, type: t, value: v }) => {
         // console.dir(`t:    ${t}`)
         // console.dir(`c:    ${c}`)
+        // @note this strips ":" as `type` was only brining back first colon
         const isCodeType = type.replace(/\:/g, '') === c.replace(/\:/g, '')
         // console.dir(`isCodeType: ${isCodeType}`)
         // console.dir(`---`)
-        return (
-          // @note this strips ":" as `type` was only brining back first colon
-          isCodeType || type === e || type === t || type === v
-        )
+        return isCodeType || type === e || type === t || type === v
       }
     )
 
