@@ -32,8 +32,11 @@ const writerOpts = {
     // Rewrite types
     const typeSpecIndex = typeSpecs.findIndex(
       ({ code: c, emoji: e, type: t, value: v }) => {
-        console.dir(`t:    ${t}`)
-        console.dir(`c:    ${c}`)
+        console.dir(`type:       ${type}`)
+        console.dir(`c:          ${c}`)
+        console.dir(`e:          ${e}`)
+        console.dir(`t:          ${t}`)
+        console.dir(`v:          ${v}`)
         // @note this strips ":" as `type` was only brining back first colon
         const isCodeType = type.replace(/\:/g, '') === c.replace(/\:/g, '')
         console.dir(`isCodeType: ${isCodeType}`)
