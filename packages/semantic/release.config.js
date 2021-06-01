@@ -121,7 +121,7 @@ module.exports = {
       '@semantic-release/exec',
       {
         prepareCmd:
-          'sh ./scripts/postSemanticRelease.sh ${nextRelease.version} ${nextRelease.channel} ${nextRelease.gitHead} ${nextRelease.gitTag}',
+          'echo sh ./scripts/postSemanticRelease.sh ${nextRelease.version} ${nextRelease.channel} ${nextRelease.gitHead} ${nextRelease.gitTag}',
       },
     ],
     // [
