@@ -114,6 +114,13 @@ module.exports = {
         assets: 'release/*.tgz',
       },
     ],
+    [
+      '@semantic-release/exec',
+      {
+        prepareCmd:
+          'sh ./scripts/postSemanticRelease.sh ${nextRelease.version} ${nextRelease.channel} ${nextRelease.gitHead} ${nextRelease.gitTag} ${nextRelease.notes}',
+      },
+    ],
     // [
     //   '@jeromefitz/semantic-release-git',
     //   {
