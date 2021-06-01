@@ -251,10 +251,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@jeromefitz/git-cz@8.2.0":
-  version "8.2.0"
-  resolved "https://registry.yarnpkg.com/@jeromefitz/git-cz/-/git-cz-8.2.0.tgz#02738631b25dcd2d7f290108e8ae5f12d1e15f8b"
-  integrity sha512-rbRDLisb41dxQCLngKwUJj6F7VPKZB0gEVrHTq9DdEF1QbXKUtNflz0MoxxGepXnu8jgDSxqAUlI8FcxBzrd0w==
+"@jeromefitz/git-cz@8.2.1":
+  version "8.2.1"
+  resolved "https://registry.yarnpkg.com/@jeromefitz/git-cz/-/git-cz-8.2.1.tgz#d865abb8e1d642461d6a08b83b62195c73e9b797"
+  integrity sha512-col2xZoOVSGqRav3Xli2Sz3l0Yo7Py1RJz2NaiJlv8DXcAGCzxFnEFafClaxnhTG/cMiuD9mLXaYUYgmbN19RA==
   dependencies:
     any-shell-escape "0.1.1"
     chalk "4.1.1"
