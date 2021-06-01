@@ -2,7 +2,7 @@ const _map = require('lodash/map')
 
 const releaseBranchTypes = {
   ci: [],
-  feature: ['semantic-release-exec'],
+  feature: [],
   fix: [],
   // @note this is "sprint"
   release: [],
