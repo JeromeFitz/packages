@@ -2,6 +2,7 @@ const typeSpecs = [
   {
     code: ':wheelchair:',
     emoji: '♿️',
+    releaseNotes: false,
     section: 'Access\n#### Improve accessibility.',
     semver: 'patch',
     type: 'access',
@@ -10,6 +11,7 @@ const typeSpecs = [
   {
     code: ':chart_with_upwards_trend:',
     emoji: '📈',
+    releaseNotes: false,
     section: 'Analytics\n#### Add or update analytics or track code.',
     semver: 'patch',
     type: 'analytics',
@@ -18,6 +20,7 @@ const typeSpecs = [
   {
     code: ':dizzy:',
     emoji: '💫',
+    releaseNotes: false,
     section: 'Animation\n#### Add or update animations and transitions.',
     semver: 'patch',
     type: 'animation',
@@ -26,6 +29,7 @@ const typeSpecs = [
   {
     code: ':building_construction:',
     emoji: '🏗️',
+    releaseNotes: false,
     section: 'Arch\n#### Make architectural changes.',
     semver: null,
     type: 'arch',
@@ -34,6 +38,7 @@ const typeSpecs = [
   {
     code: ':bento:',
     emoji: '🍱',
+    releaseNotes: false,
     section: 'Assets\n#### Add or update assets.',
     semver: 'patch',
     type: 'assets',
@@ -42,6 +47,7 @@ const typeSpecs = [
   {
     code: ':beers:',
     emoji: '🍻',
+    releaseNotes: false,
     section: 'Beer\n#### Write code drunkenly.',
     semver: null,
     type: 'beer',
@@ -50,6 +56,7 @@ const typeSpecs = [
   {
     code: ':boom:',
     emoji: '💥',
+    releaseNotes: false,
     section: 'Breaking\n#### Introduce breaking changes.',
     semver: 'major',
     type: 'breaking',
@@ -58,6 +65,7 @@ const typeSpecs = [
   {
     code: ':hammer:',
     emoji: '🔨',
+    releaseNotes: false,
     section: 'Build\n#### Add or update development scripts.',
     semver: null,
     type: 'build',
@@ -66,6 +74,7 @@ const typeSpecs = [
   {
     code: ':goal_net:',
     emoji: '🥅',
+    releaseNotes: false,
     section: 'Catch\n#### Catch errors.',
     semver: 'patch',
     type: 'catch',
@@ -74,6 +83,7 @@ const typeSpecs = [
   {
     code: ':computer_disk:',
     emoji: '💽️',
+    releaseNotes: false,
     section: 'Chore\n#### Changes that don’t modify src or test files',
     semver: null,
     type: 'chore',
@@ -82,6 +92,7 @@ const typeSpecs = [
   {
     code: ':construction_worker:',
     emoji: '👷',
+    releaseNotes: false,
     section: 'CI\n#### Add or update CI build system.',
     semver: null,
     type: 'ci',
@@ -90,6 +101,7 @@ const typeSpecs = [
   {
     code: ':wastebasket:',
     emoji: '🗑️',
+    releaseNotes: false,
     section: 'Clean\n#### Deprecate code that needs to be cleaned up.',
     semver: 'patch',
     type: 'clean',
@@ -98,6 +110,7 @@ const typeSpecs = [
   {
     code: ':alien:',
     emoji: '👽️',
+    releaseNotes: false,
     section: 'Compat\n#### Update code due to external API changes.',
     semver: 'patch',
     type: 'compat',
@@ -106,6 +119,7 @@ const typeSpecs = [
   {
     code: ':wrench:',
     emoji: '🔧',
+    releaseNotes: false,
     section: 'Config\n#### Add or update configuration files.',
     semver: 'patch',
     type: 'config',
@@ -114,6 +128,7 @@ const typeSpecs = [
   {
     code: ':busts_in_silhouette:',
     emoji: '👥',
+    releaseNotes: false,
     section: 'Contrib-Add\n#### Add or update contributor(s).',
     semver: null,
     type: 'contrib-add',
@@ -122,6 +137,7 @@ const typeSpecs = [
   {
     code: ':monocle_face:',
     emoji: '🧐',
+    releaseNotes: false,
     section: 'Data\n#### Data exploration/inspection.',
     semver: null,
     type: 'data',
@@ -130,6 +146,7 @@ const typeSpecs = [
   {
     code: ':card_file_box:',
     emoji: '🗃️',
+    releaseNotes: false,
     section: 'Db\n#### Perform database related changes.',
     semver: 'patch',
     type: 'db',
@@ -138,6 +155,7 @@ const typeSpecs = [
   {
     code: ':heavy_plus_sign:',
     emoji: '➕',
+    releaseNotes: false,
     section: 'Dep-Add\n#### Add a dependency.',
     semver: 'patch',
     type: 'dep-add',
@@ -146,6 +164,7 @@ const typeSpecs = [
   {
     code: ':heavy_minus_sign:',
     emoji: '➖',
+    releaseNotes: false,
     section: 'Dep-Rm\n#### Remove a dependency.',
     semver: 'patch',
     type: 'dep-rm',
@@ -154,6 +173,7 @@ const typeSpecs = [
   {
     code: ':package:',
     emoji: '📦️',
+    releaseNotes: false,
     section: 'Dep-Up\n#### Add or update compiled files or packages.',
     semver: 'patch',
     type: 'dep-up',
@@ -162,6 +182,7 @@ const typeSpecs = [
   {
     code: ':rocket:',
     emoji: '🚀',
+    releaseNotes: false,
     section: 'Deploy\n#### Deploy stuff.',
     semver: null,
     type: 'deploy',
@@ -170,6 +191,7 @@ const typeSpecs = [
   {
     code: ':memo:',
     emoji: '📝',
+    releaseNotes: false,
     section: 'Docs\n#### Add or update documentation.',
     semver: null,
     type: 'docs',
@@ -178,6 +200,7 @@ const typeSpecs = [
   {
     code: ':bulb:',
     emoji: '💡',
+    releaseNotes: false,
     section: 'Docs-Code\n#### Add or update comments in source code.',
     semver: null,
     type: 'docs-code',
@@ -186,6 +209,7 @@ const typeSpecs = [
   {
     code: ':arrow_down:',
     emoji: '⬇️',
+    releaseNotes: false,
     section: 'Downgrade\n#### Downgrade dependencies.',
     semver: 'patch',
     type: 'downgrade',
@@ -194,6 +218,7 @@ const typeSpecs = [
   {
     code: ':egg:',
     emoji: '🥚',
+    releaseNotes: false,
     section: 'Egg\n#### Add or update an easter egg.',
     semver: 'patch',
     type: 'egg',
@@ -202,6 +227,7 @@ const typeSpecs = [
   {
     code: ':alembic:',
     emoji: '⚗️',
+    releaseNotes: false,
     section: 'Experiment\n#### Perform experiments.',
     semver: 'patch',
     type: 'experiment',
@@ -210,6 +236,7 @@ const typeSpecs = [
   {
     code: ':sparkles:',
     emoji: '✨',
+    releaseNotes: true,
     section: 'Feat\n#### Introduce new features.',
     semver: 'minor',
     type: 'feat',
@@ -218,6 +245,7 @@ const typeSpecs = [
   {
     code: ':bug:',
     emoji: '🐛',
+    releaseNotes: true,
     section: 'Fix\n#### Fix a bug.',
     semver: 'patch',
     type: 'fix',
@@ -226,6 +254,7 @@ const typeSpecs = [
   {
     code: ':green_heart:',
     emoji: '💚',
+    releaseNotes: false,
     section: 'Fix-CI\n#### Fix CI Build.',
     semver: null,
     type: 'fix-ci',
@@ -234,6 +263,7 @@ const typeSpecs = [
   {
     code: ':triangular_flag_on_post:',
     emoji: '🚩',
+    releaseNotes: false,
     section: 'Flags\n#### Add, update, or remove feature flags.',
     semver: 'patch',
     type: 'flags',
@@ -242,6 +272,7 @@ const typeSpecs = [
   {
     code: ':ambulance:',
     emoji: '🚑️',
+    releaseNotes: false,
     section: 'Hotfix\n#### Critical hotfix.',
     semver: 'patch',
     type: 'hotfix',
@@ -250,6 +281,7 @@ const typeSpecs = [
   {
     code: ':globe_with_meridians:',
     emoji: '🌐',
+    releaseNotes: false,
     section: 'I18n\n#### Internationalization and localization.',
     semver: 'patch',
     type: 'i18n',
@@ -258,6 +290,7 @@ const typeSpecs = [
   {
     code: ':see_no_evil:',
     emoji: '🙈',
+    releaseNotes: false,
     section: 'Ignore\n#### Add or update a .gitignore file.',
     semver: null,
     type: 'ignore',
@@ -266,6 +299,7 @@ const typeSpecs = [
   {
     code: ':tada:',
     emoji: '🎉',
+    releaseNotes: false,
     section: 'Init\n#### Begin a project.',
     semver: null,
     type: 'init',
@@ -274,6 +308,7 @@ const typeSpecs = [
   {
     code: ':iphone:',
     emoji: '📱',
+    releaseNotes: false,
     section: 'iPhone\n#### Work on responsive design.',
     semver: 'patch',
     type: 'iphone',
@@ -282,6 +317,7 @@ const typeSpecs = [
   {
     code: ':page_facing_up:',
     emoji: '📄',
+    releaseNotes: false,
     section: 'License\n#### Add or update license.',
     semver: null,
     type: 'license',
@@ -290,6 +326,7 @@ const typeSpecs = [
   {
     code: ':rotating_light:',
     emoji: '🚨',
+    releaseNotes: false,
     section: 'Lint\n#### Fix compiler / linter warnings.',
     semver: null,
     type: 'lint',
@@ -298,6 +335,7 @@ const typeSpecs = [
   {
     code: ':loud_sound:',
     emoji: '🔊',
+    releaseNotes: false,
     section: 'Log-Add\n#### Add or update logs.',
     semver: null,
     type: 'log-add',
@@ -306,6 +344,7 @@ const typeSpecs = [
   {
     code: ':mute:',
     emoji: '🔇',
+    releaseNotes: false,
     section: 'Log-Rm\n#### Remove logs.',
     semver: null,
     type: 'log-rm',
@@ -314,6 +353,7 @@ const typeSpecs = [
   {
     code: ':twisted_rightwards_arrows:',
     emoji: '🔀',
+    releaseNotes: false,
     section: 'Merge\n#### Merge branches.',
     semver: null,
     type: 'merge',
@@ -322,6 +362,7 @@ const typeSpecs = [
   {
     code: ':clown_face:',
     emoji: '🤡',
+    releaseNotes: false,
     section: 'Mock\n#### Mock things.',
     semver: null,
     type: 'mock',
@@ -330,6 +371,7 @@ const typeSpecs = [
   {
     code: ':truck:',
     emoji: '🚚',
+    releaseNotes: false,
     section: 'Mv\n#### Move or rename resources (e.g.: files, paths, routes).',
     semver: null,
     type: 'mv',
@@ -338,6 +380,7 @@ const typeSpecs = [
   {
     code: ':adhesive_bandage:',
     emoji: '🩹',
+    releaseNotes: false,
     section: 'Patch\n#### Simple fix for a non-critical issue.',
     semver: 'patch',
     type: 'patch',
@@ -346,6 +389,7 @@ const typeSpecs = [
   {
     code: ':zap:',
     emoji: '⚡️',
+    releaseNotes: false,
     section: 'Perf\n#### Improve performance.',
     semver: 'patch',
     type: 'perf',
@@ -354,6 +398,7 @@ const typeSpecs = [
   {
     code: ':poop:',
     emoji: '💩',
+    releaseNotes: false,
     section: 'Poo\n#### Write bad code that needs to be improved.',
     semver: null,
     type: 'poo',
@@ -362,6 +407,7 @@ const typeSpecs = [
   {
     code: ':fire:',
     emoji: '🔥',
+    releaseNotes: false,
     section: 'Prune\n#### Remove code or files.',
     semver: null,
     type: 'prune',
@@ -370,6 +416,7 @@ const typeSpecs = [
   {
     code: ':pushpin:',
     emoji: '📌',
+    releaseNotes: false,
     section: 'Pushpin\n#### Pin dependencies to specific versions.',
     semver: 'patch',
     type: 'pushpin',
@@ -378,6 +425,7 @@ const typeSpecs = [
   {
     code: ':recycle:',
     emoji: '♻️',
+    releaseNotes: false,
     section: 'Refactor\n#### Refactor code.',
     semver: null,
     type: 'refactor',
@@ -386,6 +434,7 @@ const typeSpecs = [
   {
     code: ':bookmark:',
     emoji: '🔖',
+    releaseNotes: false,
     section: 'Release\n#### Release / Version tags.',
     semver: null,
     type: 'release',
@@ -394,6 +443,7 @@ const typeSpecs = [
   {
     code: ':rewind:',
     emoji: '⏪️',
+    releaseNotes: false,
     section: 'Revert\n#### Revert changes.',
     semver: 'patch',
     type: 'revert',
@@ -402,6 +452,7 @@ const typeSpecs = [
   {
     code: ':coffin:',
     emoji: '⚰️',
+    releaseNotes: false,
     section: 'Rip\n#### Remove dead code.',
     semver: null,
     type: 'rip',
@@ -410,6 +461,7 @@ const typeSpecs = [
   {
     code: ':passport_control:',
     emoji: '🛂',
+    releaseNotes: false,
     section:
       'Roles\n#### Work on code related to authorization, roles and permissions.',
     semver: 'patch',
@@ -419,6 +471,7 @@ const typeSpecs = [
   {
     code: ':fast_forward:',
     emoji: '⏩️',
+    releaseNotes: false,
     section: 'Rollforward\n#### Create rollforward version.',
     semver: null,
     type: 'rollforward',
@@ -427,6 +480,7 @@ const typeSpecs = [
   {
     code: ':rocket:',
     emoji: '🚀️',
+    releaseNotes: false,
     section:
       'Run-Build\n#### Custom type for CI/CD to hook into run build override.',
     semver: null,
@@ -436,6 +490,7 @@ const typeSpecs = [
   {
     code: ':lock:',
     emoji: '🔒️',
+    releaseNotes: false,
     section: 'Security\n#### Fix security issues.',
     semver: 'patch',
     type: 'security',
@@ -444,6 +499,7 @@ const typeSpecs = [
   {
     code: ':seedling:',
     emoji: '🌱',
+    releaseNotes: false,
     section: 'Seed\n#### Add or update seed files.',
     semver: null,
     type: 'seed',
@@ -452,6 +508,7 @@ const typeSpecs = [
   {
     code: ':mag:',
     emoji: '🔍️',
+    releaseNotes: false,
     section: 'Seo\n#### Improve SEO.',
     semver: 'patch',
     type: 'seo',
@@ -460,6 +517,7 @@ const typeSpecs = [
   {
     code: ':camera_flash:',
     emoji: '📸',
+    releaseNotes: false,
     section: 'Snapshot\n#### Add or update snapshots.',
     semver: null,
     type: 'snapshot',
@@ -468,6 +526,7 @@ const typeSpecs = [
   {
     code: ':art:',
     emoji: '🎨',
+    releaseNotes: false,
     section: 'Style\n#### Improve structure / format of the code.',
     semver: null,
     type: 'style',
@@ -476,6 +535,7 @@ const typeSpecs = [
   {
     code: ':white_check_mark:',
     emoji: '✅',
+    releaseNotes: false,
     section: 'Test\n#### Add or update tests.',
     semver: null,
     type: 'test',
@@ -484,6 +544,7 @@ const typeSpecs = [
   {
     code: ':speech_balloon:',
     emoji: '💬',
+    releaseNotes: false,
     section: 'Texts\n#### Add or update text and literals.',
     semver: 'patch',
     type: 'texts',
@@ -492,6 +553,7 @@ const typeSpecs = [
   {
     code: ':label:',
     emoji: '🏷️',
+    releaseNotes: false,
     section: 'Types\n#### Add or update types.',
     semver: 'patch',
     type: 'types',
@@ -500,6 +562,7 @@ const typeSpecs = [
   {
     code: ':pencil2:',
     emoji: '✏️',
+    releaseNotes: false,
     section: 'Typo\n#### Fix typos.',
     semver: 'patch',
     type: 'typo',
@@ -508,6 +571,7 @@ const typeSpecs = [
   {
     code: ':lipstick:',
     emoji: '💄',
+    releaseNotes: false,
     section: 'UI\n#### Add or update the UI and style files.',
     semver: 'patch',
     type: 'ui',
@@ -516,6 +580,7 @@ const typeSpecs = [
   {
     code: ':arrow_up:',
     emoji: '⬆️',
+    releaseNotes: false,
     section: 'Upgrade\n#### Upgrade dependencies.',
     semver: 'patch',
     type: 'upgrade',
@@ -524,6 +589,7 @@ const typeSpecs = [
   {
     code: ':children_crossing:',
     emoji: '🚸',
+    releaseNotes: false,
     section: 'UX\n#### Improve user experience / usability.',
     semver: 'patch',
     type: 'ux',
@@ -532,6 +598,7 @@ const typeSpecs = [
   {
     code: ':construction:',
     emoji: '🚧',
+    releaseNotes: false,
     section: 'Wip\n#### Work in progress.',
     semver: null,
     type: 'wip',

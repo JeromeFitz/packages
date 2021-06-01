@@ -15,6 +15,7 @@ Object.keys(types).map((type, _index) => {
   typeSpecs.push({
     code: types[type].code,
     emoji: types[type].emoji,
+    releaseNotes: types[type].releaseNotes || false,
     section: title(types[type].commit) + '\n#### ' + types[type].section,
     semver: types[type].semver,
     type: types[type].commit,

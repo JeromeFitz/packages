@@ -39,7 +39,10 @@
   },
   "main": "release.config.js",
   "files": [
+    "src/branches.js",
     "src/changelog.config.js",
+    "src/releaseRules.js",
+    "src/typeSpecs.js",
     "package.json",
     "release.config.js",
     "yarn.lock"

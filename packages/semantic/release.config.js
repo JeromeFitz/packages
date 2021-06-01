@@ -37,7 +37,7 @@ const writerOpts = {
       }
     )
 
-    if (typeSpecIndex === -1) return
+    if (typeSpecIndex === -1 || !typeSpec.releaseNotes) return
     const typeSpec = typeSpecs[typeSpecIndex]
 
     commit.type = `${typeSpec.emoji}  ${typeSpec.section}`
