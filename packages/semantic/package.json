@@ -22,7 +22,7 @@
     "semantic-release": "echo semantic-release"
   },
   "dependencies": {
-    "@jeromefitz/git-cz": "8.2.2",
+    "@jeromefitz/git-cz": "8.2.3",
     "@jeromefitz/semantic-release-git": "10.0.0-develop.2",
     "@octokit/core": "3.4.0",
     "@semantic-release/commit-analyzer": "8.0.1",
