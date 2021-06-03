@@ -20,3 +20,4 @@ updates:
         versions:
           - '>=13'
       - dependency-name: 'typescript'
+      - dependency-name: '@jeromefitz/git-cz'
