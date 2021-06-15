@@ -24,7 +24,7 @@
   "dependencies": {
     "@jeromefitz/git-cz": "8.2.3",
     "@jeromefitz/semantic-release-git": "10.0.0-develop.2",
-    "@octokit/core": "3.4.0",
+    "@octokit/core": "3.5.1",
     "@semantic-release/commit-analyzer": "8.0.1",
     "@semantic-release/exec": "5.0.0",
     "@semantic-release/github": "7.2.3",
