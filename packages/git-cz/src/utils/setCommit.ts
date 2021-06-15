@@ -2,7 +2,6 @@
 import fs from 'fs'
 import { join } from 'path'
 
-// import shellescape from 'any-shell-escape'
 import chalkPipe from 'chalk-pipe'
 import shellsync from 'shellsync'
 
@@ -78,16 +77,8 @@ const setCommit = ({
   const message =
     cliOptions.mode === TYPE_COMMIT ? getCommitMessage(state) : TYPE_BRANCH
 
-  // const command = shellescape([
-  //   'git',
-  //   'commit',
-  //   '--file',
-  //   commitMsgFile,
-  //   ...appendedArgs,
-  // ])
   const commandArray = ['git', 'commit', '--file', commitMsgFile, ...appendedArgs]
   const command = commandArray.join(' ')
-  // const command = shellsync`${commandArray.join(' ')}`
 
   /* eslint-disable no-console */
   if (cliOptions.dryRun) {

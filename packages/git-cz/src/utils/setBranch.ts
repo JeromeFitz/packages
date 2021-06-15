@@ -1,4 +1,3 @@
-// import shellescape from 'any-shell-escape'
 import chalkPipe from 'chalk-pipe'
 import shellsync from 'shellsync'
 
@@ -27,8 +26,6 @@ const setBranch = ({
   }
 
   const commandArray = ['git', 'checkout', '-b', branchName]
-  // const command = shellescape(commandArray)
-  // const command = shellsync`${commandArray.join(' ')}`
   const command = commandArray.join(' ')
 
   /* eslint-disable no-console */

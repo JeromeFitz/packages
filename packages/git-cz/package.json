@@ -61,7 +61,6 @@
   },
   "dependencies": {
     "@types/chalk-pipe": "2.0.0",
-    "any-shell-escape": "0.1.1",
     "chalk": "4.1.1",
     "chalk-pipe": "4.0.0",
     "fuzzy": "0.1.3",
