@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "commonjs",
+    "noImplicitAny": false,
+    "noEmit": false,
+    "outDir": "./dist",
+    "paths": {},
+    "noUnusedParameters": false, // @todo(lint)
+    "rootDir": "./src",
+    "strict": false,
+    "target": "ES6"
+  },
+  "extends": "../codestyle/tsconfig.react.json",
+  "include": ["src/**/*.js", "src/**/*.ts"],
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,12 @@
+# !bin/
+# !binaries/
+data/
+# !dist/
+node_modules/
+scripts/
+src/
+test/
+.env
+jsconfig.json
+release.config.js
+tsconfig.json

@@ -11,6 +11,8 @@ bundles
 node_modules
 # Folders -------------------
 .idea
+binaries/
+coverage/
 # Files ---------------------
 # Logs ----------------------
 *.log

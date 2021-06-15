@@ -1,0 +1,80 @@
+{
+  "name": "@jeromefitz/git-cz",
+  "version": "0.0.0",
+  "description": "git(moji)-cz => conventional commits, gitflow branching",
+  "author": {
+    "name": "Vadim Dalecky",
+    "url": "http://onp4.com/@vadim/~js"
+  },
+  "contributors": [
+    {
+      "name": "Jerome Fitzgerald",
+      "email": "j@jeromefitzgerald.com",
+      "url": "https://jeromefitzgerald.com"
+    }
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/jeromefitz/packages.git",
+    "directory": "packages/git-cz"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "keywords": [
+    "commit",
+    "commitizen",
+    "conventional changelog",
+    "format",
+    "gitflow",
+    "gitmoji",
+    "pretty"
+  ],
+  "main": "dist/cz.js",
+  "bin": {
+    "git-cz": "./bin/git-cz.js",
+    "gitcz": "./bin/git-cz.js"
+  },
+  "private": false,
+  "scripts": {
+    "build:binaries": "mkdirp binaries && pkg ./dist/cli.js --out-path binaries --targets node12-linux-x64,node12-macos-x64,node12-win-x64",
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "dry:run": "yarn clean && tsc && node ./dist/cli",
+    "gitmoji": "./scripts/gitmoji/gitmojiInit.sh && yarn lint-eslint --fix && yarn prettier-fix && yarn typescript",
+    "semantic-release": "semantic-release",
+    "test:coverage": "echo 🚧️ TODO jest --coverage",
+    "test:dev": "echo 🚧️ TODO jest --watch",
+    "test": "echo 🚧️ TODO jest --maxWorkers 2",
+    "typescript": "tsc --noEmit --declaration -p tsconfig.json"
+  },
+  "devDependencies": {
+    "chai": "4.3.4",
+    "commitizen": "4.2.4",
+    "isomorphic-unfetch": "3.1.0",
+    "jest": "27.0.4",
+    "mocha": "8.4.0",
+    "pkg": "5.2.1",
+    "rimraf": "3.0.2",
+    "spawncommand": "2.2.0"
+  },
+  "dependencies": {
+    "@types/chalk-pipe": "2.0.0",
+    "any-shell-escape": "0.1.1",
+    "chalk": "4.1.1",
+    "chalk-pipe": "4.0.0",
+    "fuzzy": "0.1.3",
+    "inquirer": "8.1.0",
+    "inquirer-list-search-prompt": "1.0.2",
+    "lodash": "4.17.21",
+    "minimist": "1.2.5",
+    "shellsync": "0.2.2",
+    "word-wrap": "1.2.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./dist/cz.js"
+    }
+  }
+}
