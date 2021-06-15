@@ -16,7 +16,15 @@ jobs:
   release:
     name: '🚀️ Semantic Release'
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ['12']
     steps:
+      - name: '🔧️ Setup Node: ${{ matrix.node }}'
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+          architecture: 'x64'
       - name: '🐙️  Git Checkout'
         uses: actions/checkout@v2
         with:
@@ -26,7 +34,16 @@ jobs:
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-      - name: '📦️  Dependecies 🏷️  Semantic Release'
+      - name: '📦️ Install Dependecies'
+        run: |
+          yarn install --frozen-lockfile --ignore-engines --network-concurrency 1
+      - name: '🏗️ Build Step'
+        run: |
+          yarn lint
+          yarn test
+          yarn build
+          yarn build:binaries
+      - name: '🏷️ Semantic Version: Release'
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -35,6 +52,4 @@ jobs:
           echo "registry=http://registry.npmjs.org/" >> .npmrc
           echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
           echo "@jeromefitz:registry=https://registry.npmjs.org/" >> .npmrc
-          yarn install --frozen-lockfile --ignore-engines --network-concurrency 1
-          yarn run build
-          yarn run semantic-release
+          yarn semantic-release

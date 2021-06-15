@@ -19,10 +19,11 @@
   "private": false,
   "scripts": {
     "build": "echo @jeromefitz/semantic",
-    "semantic-release": "echo semantic-release"
+    "build:binaries": "echo skip @jeromefitz/semantic build:binaries",
+    "semantic-release": "echo semantic-release",
+    "test": "echo skip @jeromefitz/semantic test"
   },
   "dependencies": {
-    "@jeromefitz/git-cz": "8.2.3",
     "@jeromefitz/semantic-release-git": "10.0.0-develop.2",
     "@octokit/core": "3.5.1",
     "@semantic-release/commit-analyzer": "8.0.1",

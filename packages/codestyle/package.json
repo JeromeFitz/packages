@@ -19,6 +19,7 @@
   "private": false,
   "scripts": {
     "build": "tsc",
+    "build:binaries": "echo skip @jeromefitz/codestyle build:binaries",
     "lint-eslint": "eslint . --ext js,jsx,ts,tsx --max-warnings=0",
     "lint-fix": "yarn prettier-fix && eslint . --ext js,jsx,ts,tsx --fix --max-warnings=0",
     "lint-typescript": "yarn typescript",
@@ -28,6 +29,7 @@
     "prettier-fix": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\"",
     "pretty-quick": "pretty-quick",
     "semantic-release": "echo semantic-release",
+    "test": "echo skip @jeromefitz/codestyle test",
     "typescript": "tsc --noEmit --declaration"
   },
   "dependencies": {

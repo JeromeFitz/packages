@@ -1,8 +1,9 @@
 const fs = require('fs')
 const path = require('path')
 
-const { types } = require('@jeromefitz/git-cz/dist/themes/gitmoji').default
 const title = require('title')
+
+const { types } = require('../../git-cz/dist/themes/gitmoji').default
 
 const dataDirectory = path.join(__dirname, '..', 'src')
 const fileReleaseRules = path.resolve(dataDirectory, 'releaseRules.js')

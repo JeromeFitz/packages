@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "noImplicitAny": false,
     "outDir": "dist"
   },
   "extends": "@jeromefitz/codestyle/tsconfig.node.json"

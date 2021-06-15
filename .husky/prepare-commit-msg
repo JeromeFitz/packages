@@ -10,5 +10,6 @@ else
 :
     yarn pretty-quick --staged
     exec < /dev/tty
-    yarn git-cz --hook || true
+    # yarn git-cz --hook || true
+    node ./packages/git-cz/dist/cli.js --hook || true
 fi

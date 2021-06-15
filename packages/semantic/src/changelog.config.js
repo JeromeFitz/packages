@@ -1,4 +1,4 @@
-const config = require('@jeromefitz/git-cz/dist/themes/gitmoji').default
+const config = require('../../git-cz/dist/themes/gitmoji').default
 
 const commit = {
   ...config.commit,
