@@ -19,4 +19,7 @@ updates:
       - dependency-name: '@types/node'
         versions:
           - '>=13'
+      - dependency-name: 'chalk-pipe'
+        versions:
+          - '>=5'
       - dependency-name: 'typescript'
