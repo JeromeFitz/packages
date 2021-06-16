@@ -2594,13 +2594,12 @@ chai@4.3.4:
     pathval "^1.1.1"
     type-detect "^4.0.5"
 
-chalk-pipe@4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/chalk-pipe/-/chalk-pipe-4.0.0.tgz#084c122c0f42db656036d331bfba70396cbe1962"
-  integrity sha512-RbCYs/FDouEBoDSBLcHzUv44lpIR2UgeXGMrr8sSKjhJ2jJZ+gBJ89ZKo3XHqMXHFQRdU7oDcw+Lbg8rDA/hqw==
+chalk-pipe@5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/chalk-pipe/-/chalk-pipe-5.1.1.tgz#6305747ace9ff37c318dcf8c0cf419475449ee06"
+  integrity sha512-rtJvGrqUKNDyJ/8AfqVo1WGRX2yT9/f5lCyh6aZzrltz7j9QrbJN6xwds7PRFRqanpKmDKjkwKQtCflrUgf4RA==
   dependencies:
-    chalk "^4.0.0"
-    css-color-names "^1.0.0"
+    chalk "^4.1.0"
 
 chalk@2.3.0:
   version "2.3.0"
@@ -3078,11 +3077,6 @@ crypto-random-string@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/crypto-random-string/-/crypto-random-string-2.0.0.tgz#ef2a7a966ec11083388369baa02ebead229b30d5"
   integrity sha512-v1plID3y9r/lPhviJ1wrXpLeyUIGAZ2SHNYTEapm7/8A9nLPoyvVp3RK/EPFqn5kEznyWgYZNsRtYYIWbuG8KA==
-
-css-color-names@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/css-color-names/-/css-color-names-1.0.1.tgz#6ff7ee81a823ad46e020fa2fd6ab40a887e2ba67"
-  integrity sha512-/loXYOch1qU1biStIFsHH8SxTmOseh1IJqFvy8IujXOm1h+QjUdDhkzOrR5HG8K8mlxREj0yfi8ewCHx0eMxzA==
 
 cssom@^0.4.4:
   version "0.4.4"
