@@ -4,9 +4,6 @@ on:
     # * is a special character in YAML so you have to quote this string
     # ref: https://docs.github.com/en/actions/reference/events-that-trigger-workflows#schedule
     - cron: '0 0 * * *'
-  push:
-    branches:
-      - ci/cron-staged
 jobs:
   release:
     name: '🌃️ Nightly Build(s)'
