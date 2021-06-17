@@ -7,7 +7,7 @@ version = 1
 automerge_label = [" 🥳️ LGTM", "🥳️ LGTM","🥳️  LGTM","LGTM"]
 require_automerge_label = true
 blocking_labels = ["🚧️ WIP"]
-method = "rebase"
+method = "squash"
 optimistic_updates = true
 
 [merge.automerge_dependencies]
