@@ -43,12 +43,12 @@ jobs:
       - name: '⚗️  Test'
         run: |
           yarn test
-      - name: '🏗️  Build via [build]'
+      - name: '🏗️  Build'
         if: !endsWith(github.event.head_commit.message , '[build]')
         run: |
           yarn build
           yarn build:binaries
-      - name: '🏷️  Semantic Release via [build]'
+      - name: '🏷️  Semantic Release'
         if: !endsWith(github.event.head_commit.message , '[build]')
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
