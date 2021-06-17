@@ -1,12 +1,12 @@
-name: '🌃️  Nightly'
+name: '⚗️ Pull Request'
 on:
-  schedule:
-    # * is a special character in YAML so you have to quote this string
-    # ref: https://docs.github.com/en/actions/reference/events-that-trigger-workflows#schedule
-    - cron: '0 0 * * *'
+  pull_request:
+    branches:
+      - main
+      - canary
 jobs:
   release:
-    name: '🌃️  Nightly'
+    name: '⚗️ Pull Request'
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -35,17 +35,3 @@ jobs:
       - name: '⚗️  Test'
         run: |
           yarn test
-      - name: '🏗️  Build'
-        run: |
-          yarn build
-          yarn build:binaries
-      - name: '🏷️  Semantic Release'
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          echo "registry=http://registry.npmjs.org/" >> .npmrc
-          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
-          echo "@jeromefitz:registry=https://registry.npmjs.org/" >> .npmrc
-          yarn semantic-release

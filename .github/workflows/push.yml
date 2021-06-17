@@ -1,9 +1,5 @@
-name: '🚀️ Semantic Release'
+name: '🔀️ Push'
 on:
-  pull_request:
-    branches:
-      - main
-      - canary
   push:
     branches:
       - main
@@ -14,7 +10,7 @@ on:
       - release/**
 jobs:
   release:
-    name: '🚀️ Semantic Release'
+    name: '🔀️ Push'
     runs-on: ubuntu-latest
     strategy:
       matrix:
