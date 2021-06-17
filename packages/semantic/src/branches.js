@@ -1,7 +1,7 @@
 const _map = require('lodash/map')
 
 const releaseBranchTypes = {
-  ci: ['cron-staged'],
+  ci: [],
   feature: [],
   fix: [],
   // @note this is "sprint"
