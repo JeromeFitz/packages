@@ -1,5 +1,5 @@
 import chalkPipe from 'chalk-pipe'
-import shellsync from 'shellsync'
+// import shellsync from 'shellsync'
 
 import executeCommand from './executeCommand'
 
@@ -35,7 +35,7 @@ const setBranch = ({
     console.log(chalkPipe('white.italic')(command))
     console.log()
   } else {
-    executeCommand(shellsync`${command}`)
+    executeCommand(command)
   }
 }
 
