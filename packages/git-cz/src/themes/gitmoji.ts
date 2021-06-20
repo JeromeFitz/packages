@@ -679,7 +679,7 @@ const gitmoji = {
       name: 'run-build',
       releaseNotes: false,
       section: 'Custom type for CI/CD to hook into run build override.',
-      semver: null,
+      semver: 'patch',
     },
     security: {
       branch: false,
