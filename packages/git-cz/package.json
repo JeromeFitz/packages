@@ -42,7 +42,7 @@
     "build": "tsc",
     "clean": "rimraf dist",
     "dry:run": "yarn clean && tsc && node ./dist/cli",
-    "gitmoji": "./scripts/gitmoji/gitmojiInit.sh && yarn lint-eslint --fix && yarn prettier-fix && yarn typescript",
+    "gitmoji": "./scripts/gitmoji/gitmojiInit.sh",
     "semantic-release": "semantic-release",
     "test:coverage": "echo 🚧️ TODO jest --coverage",
     "test:dev": "echo 🚧️ TODO jest --watch",

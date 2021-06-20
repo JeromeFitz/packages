@@ -116,6 +116,7 @@
       "emoji": "💽️",
       "entity": "&#x1f4bd;",
       "name": "computer-disk",
+      "releaseNotes": false,
       "section": "Changes that don’t modify src or test files",
       "semver": null
     },
@@ -451,7 +452,7 @@
       "emoji": "🔊",
       "entity": "&#128266;",
       "name": "loud-sound",
-      "releaseNotes": true,
+      "releaseNotes": false,
       "section": "Add or update logs.",
       "semver": null
     },
@@ -463,7 +464,7 @@
       "emoji": "🔇",
       "entity": "&#128263;",
       "name": "mute",
-      "releaseNotes": true,
+      "releaseNotes": false,
       "section": "Remove logs.",
       "semver": null
     },
@@ -583,7 +584,7 @@
       "emoji": "🔖",
       "entity": "&#x1f516;",
       "name": "bookmark",
-      "releaseNotes": true,
+      "releaseNotes": false,
       "section": "Release / Version tags.",
       "semver": null
     },
@@ -711,12 +712,24 @@
       "branch": "test",
       "code": ":white_check_mark:",
       "commit": "test",
-      "description": "Add or update tests.",
+      "description": "Add, update, or pass tests.",
       "emoji": "✅",
       "entity": "&#x2705;",
       "name": "white-check-mark",
       "releaseNotes": true,
-      "section": "Add or update tests.",
+      "section": "Add, update, or pass tests.",
+      "semver": null
+    },
+    "test-fail": {
+      "branch": false,
+      "code": ":test_tube:",
+      "commit": "test-fail",
+      "description": "Add a failing test.",
+      "emoji": "🧪",
+      "entity": "&#x1F9EA;",
+      "name": "test-tube",
+      "releaseNotes": true,
+      "section": "Add a failing test.",
       "semver": null
     },
     "texts": {

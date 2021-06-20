@@ -47,7 +47,7 @@ const dataDirectory = path.join(__dirname, '..', '..', 'src', 'themes')
 const dataFilename = path.resolve(dataDirectory, 'gitmoji.ts')
 
 const gitmojiTheme = () => {
-  const data = `const gitmoji = ${JSON.stringify(theme, null, 4)}
+  const data = `const gitmoji = ${JSON.stringify(theme, null, 2)}
 
   export default gitmoji
   `

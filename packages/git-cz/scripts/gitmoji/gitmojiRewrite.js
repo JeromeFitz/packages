@@ -18,7 +18,7 @@ const rewrites = [
   { from: 'tada', to: 'init' },
   { from: 'white-check-mark', to: 'test', branch: 'test' },
   { from: 'lock', to: 'security' },
-  { from: 'bookmark', to: 'release', branch: 'release' },
+  { from: 'bookmark', to: 'release', branch: 'release', releaseNotes: false },
   { from: 'rotating-light', to: 'lint' },
   { from: 'construction', to: 'wip', releaseNotes: false },
   { from: 'green-heart', to: 'fix-ci' },
@@ -48,8 +48,8 @@ const rewrites = [
   { from: 'beers', to: 'beer', releaseNotes: false },
   { from: 'speech-balloon', to: 'texts' },
   { from: 'card-file-box', to: 'db' },
-  { from: 'loud-sound', to: 'log-add' },
-  { from: 'mute', to: 'log-rm' },
+  { from: 'loud-sound', to: 'log-add', releaseNotes: false },
+  { from: 'mute', to: 'log-rm', releaseNotes: false },
   { from: 'busts-in-silhouette', to: 'contrib-add' },
   { from: 'children-crossing', to: 'ux' },
   { from: 'building-construction', to: 'arch' },
@@ -70,6 +70,7 @@ const rewrites = [
   { from: 'adhesive-bandage', to: 'patch' },
   { from: 'monocle-face', to: 'data' },
   { from: 'coffin', to: 'rip', releaseNotes: false },
+  { from: 'test-tube', to: 'test-fail' },
 ]
 
 // @note default from git-cz
@@ -82,6 +83,7 @@ const types = {
     emoji: '💽️',
     entity: '&#x1f4bd;',
     name: 'computer-disk',
+    releaseNotes: false,
     section: 'Changes that don’t modify src or test files',
     semver: null,
   },
