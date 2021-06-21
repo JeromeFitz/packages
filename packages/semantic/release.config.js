@@ -27,6 +27,7 @@ const writerOpts = {
     // Rewrite types
     const typeSpecIndex = typeSpecs.findIndex(
       ({ code: c, emoji: e, type: t, value: v }) => {
+        if (type === null) return
         return (
           // @hack(semantic-release) strip colon from :type: for stricter comparison
           type.replace(/\:/g, '') === c.replace(/\:/g, '') ||

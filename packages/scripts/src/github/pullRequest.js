@@ -83,20 +83,20 @@ async function setPullRequest({
       if (dryRun) {
         console.log(chalkPipe('orange.bold')(`🏃️  dryRun`))
       } else {
-        // const pull = await octokit.rest.pulls.create({
-        //   owner,
-        //   repo,
-        //   head,
-        //   base,
-        //   title,
-        //   body,
-        // })
-        // octokit.rest.issues.addLabels({
-        //   owner,
-        //   repo,
-        //   issue_number: pull.data.number,
-        //   labels,
-        // })
+        const pull = await octokit.rest.pulls.create({
+          owner,
+          repo,
+          head,
+          base,
+          title,
+          body,
+        })
+        octokit.rest.issues.addLabels({
+          owner,
+          repo,
+          issue_number: pull.data.number,
+          labels,
+        })
       }
     }
   } catch (error) {
