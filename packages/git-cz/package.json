@@ -55,7 +55,7 @@
     "isomorphic-unfetch": "3.1.0",
     "jest": "27.0.5",
     "mocha": "8.4.0",
-    "pkg": "5.2.1",
+    "pkg": "5.3.0",
     "rimraf": "3.0.2",
     "spawncommand": "2.2.0"
   },
