@@ -16,9 +16,6 @@ updates:
       prefix-development: '⬆️ (deps-dev) '
     target-branch: 'main'
     ignore:
-      - dependency-name: '@types/node'
-        versions:
-          - '>=13'
       - dependency-name: 'chalk-pipe'
         versions:
           - '>=5'
