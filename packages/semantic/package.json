@@ -33,7 +33,7 @@
     "@semantic-release/release-notes-generator": "9.0.3",
     "grapheme-splitter": "1.0.4",
     "lodash": "4.17.21",
-    "multi-semantic-release": "2.8.1",
+    "multi-semantic-release": "2.8.2",
     "semantic-release": "17.4.4",
     "semantic-release-commit-filter": "1.0.2",
     "title": "3.4.3"
