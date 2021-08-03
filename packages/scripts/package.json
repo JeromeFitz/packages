@@ -35,7 +35,7 @@
     "typescript": "tsc --noEmit --declaration"
   },
   "dependencies": {
-    "@octokit/rest": "18.7.2"
+    "@octokit/rest": "18.8.0"
   },
   "files": [
     "dist/data/labels.js",
