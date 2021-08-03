@@ -40,7 +40,7 @@
     "typescript": "tsc --noEmit --declaration"
   },
   "devDependencies": {
-    "@types/lodash": "4.14.171",
+    "@types/lodash": "4.14.172",
     "dotenv": "10.0.0",
     "husky": "7.0.1",
     "is-ci": "3.0.0",
