@@ -11,7 +11,7 @@ module.exports = {
     {
       files: ['**/*.ts?(x)'],
       parser: '@typescript-eslint/parser',
-      plugins: ['@typescript-eslint', 'import'],
+      plugins: ['@typescript-eslint', 'import', 'jest'],
       parserOptions: {
         ecmaFeatures: {
           jsx: true,
@@ -52,7 +52,7 @@ module.exports = {
     },
     requireConfigFile: false,
   },
-  plugins: ['import', 'jsx-a11y', 'react-hooks'],
+  plugins: ['import', 'jsx-a11y', 'react-hooks', 'jest'],
   settings: {
     react: {
       version: 'detect',
