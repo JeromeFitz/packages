@@ -64,6 +64,7 @@
     "dist/index.js",
     "index.js",
     "lint-staged.config.js",
+    "tsconfig.jest.json",
     "tsconfig.node.json",
     "tsconfig.react-native.json",
     "tsconfig.react.json"

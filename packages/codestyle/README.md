@@ -69,6 +69,7 @@ module.exports = {
 
 Currently there are the following to extend:
 
+- `tsconfig.jest.json`
 - `tsconfig.node.json`
 - `tsconfig.react-native.json`
 - `tsconfig.react.json`

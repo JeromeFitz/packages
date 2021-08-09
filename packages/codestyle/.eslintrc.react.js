@@ -18,7 +18,7 @@ module.exports = {
         },
         ecmaVersion: 2018,
         sourceType: 'module',
-        project: './tsconfig.json',
+        project: ['./tsconfig.json', './tsconfig.jest.json'],
         // typescript-eslint specific options
         warnOnUnsupportedTypeScriptVersion: true,
       },
