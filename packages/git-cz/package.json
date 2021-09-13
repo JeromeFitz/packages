@@ -53,7 +53,7 @@
     "chai": "4.3.4",
     "commitizen": "4.2.4",
     "isomorphic-unfetch": "3.1.0",
-    "jest": "27.1.1",
+    "jest": "27.2.0",
     "mocha": "8.4.0",
     "pkg": "5.3.1",
     "rimraf": "3.0.2",
