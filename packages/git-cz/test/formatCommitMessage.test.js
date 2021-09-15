@@ -175,13 +175,13 @@ describe('formatCommitMessage()', () => {
       },
       config: {
         ...originalConfig,
-        format: `{subject} :{scope}{type}${isDynamic && ' [skip ci]'}`,
+        format: `{subject} :{scope}{type}${isDynamic && ' '}`,
         disableEmoji: true,
         theme,
       },
     })
 
-    expect(message).equal('First commit :(init)feat [skip ci]')
+    expect(message).equal('First commit :(init)feat ')
   })
 
   it('theme => default (no difference with feat)', () => {

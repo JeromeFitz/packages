@@ -28,7 +28,7 @@ async function setPullRequest({
     const repo_id = `${owner}/${repo}`
     const { gitflow } = PULL_REQUEST
     const bodyTemplate = gitflow
-    const titleTemplate = `merge: 🔀️ v{version} => {base} [gitflow] [skip ci]`
+    const titleTemplate = `merge: 🔀️ v{version} => {base} [gitflow]`
 
     const body = bodyTemplate
       .replace(/\{base\}/g, base)
