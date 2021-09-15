@@ -3,6 +3,8 @@ const config = require('./packages/semantic/src/changelog.config.js')
 const commit = {
   ...config.commit,
   questions: [
+    'commitBreakingFlag',
+    'commitBreaking',
     'commitScopes',
     'commitTypes',
     'commitSubject',
