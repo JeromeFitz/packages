@@ -71,6 +71,7 @@ const rewrites = [
   { from: 'monocle-face', to: 'data' },
   { from: 'coffin', to: 'rip', releaseNotes: false },
   { from: 'test-tube', to: 'test-fail' },
+  { from: 'necktie', to: 'logic' },
 ]
 
 // @note default from git-cz

@@ -501,6 +501,18 @@ const gitmoji = {
       section: 'Remove logs.',
       semver: null,
     },
+    logic: {
+      branch: false,
+      code: ':necktie:',
+      commit: 'logic',
+      description: 'Add or update business logic',
+      emoji: '👔',
+      entity: '&#128084;',
+      name: 'necktie',
+      releaseNotes: true,
+      section: 'Add or update business logic',
+      semver: 'patch',
+    },
     merge: {
       branch: false,
       code: ':twisted_rightwards_arrows:',
