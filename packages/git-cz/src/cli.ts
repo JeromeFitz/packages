@@ -70,7 +70,7 @@ const cli = async () => {
     // eslint-disable-next-line no-console
     console.log(chalkPipe('red.bold')('⚠️ error:'))
     // eslint-disable-next-line no-console
-    console.log(chalkPipe('white.italic')(error))
+    console.log(chalkPipe('white.italic')(`${error}`))
   }
 }
 
