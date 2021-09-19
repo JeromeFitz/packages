@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 
+const stringify = require('fast-json-stable-stringify')
 const title = require('title')
 
 const { types } = require('../../git-cz/dist/themes/gitmoji').default
@@ -46,7 +47,7 @@ Object.keys(types).map((type, _index) => {
 })
 
 const generateReleaseRules = () => {
-  const data = `const releaseRules = ${JSON.stringify(releaseRules, null, 4)}
+  const data = `const releaseRules = ${stringify(releaseRules)}
 
   // export default releaseRules
   module.exports = releaseRules
@@ -62,7 +63,7 @@ const generateReleaseRules = () => {
 }
 
 const generateTypeSpecs = () => {
-  const data = `const typeSpecs = ${JSON.stringify(typeSpecs, null, 4)}
+  const data = `const typeSpecs = ${stringify(typeSpecs)}
 
   // export default typeSpecs
   module.exports = typeSpecs

@@ -6,16 +6,8 @@ const gitmoji = {
     url: '',
   },
   commit: {
-    after: {
-      emoji: '  ',
-      branchName: ' ',
-      scope: ') ',
-    },
-    before: {
-      emoji: '',
-      branchName: '',
-      scope: '(',
-    },
+    after: { branchName: ' ', emoji: '  ', scope: ') ' },
+    before: { branchName: '', emoji: '', scope: '(' },
     format: '{emoji}{scope}{branchName}{subject}',
     maxMessageLength: 64,
     minMessageLength: 3,
