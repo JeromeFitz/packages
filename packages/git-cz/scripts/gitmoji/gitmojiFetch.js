@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 
+const stringify = require('fast-json-stable-stringify')
 const fetch = require('isomorphic-unfetch')
 
 const gitmojiUrl =
@@ -12,7 +13,7 @@ const dataFilename = path.resolve(dataDirectory, 'init.json')
 const gitmojiFetch = async () => {
   const response = await fetch(gitmojiUrl)
   const json = await response.json()
-  const data = await JSON.stringify(json, null, 2)
+  const data = await stringify(json)
 
   fs.writeFile(dataFilename, data, (err) => {
     if (err) {

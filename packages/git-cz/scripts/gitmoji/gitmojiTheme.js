@@ -1,6 +1,8 @@
 const fs = require('fs')
 const path = require('path')
 
+const stringify = require('fast-json-stable-stringify')
+
 const { types } = require('../../data/gitmoji/index.json')
 
 const branch = {
@@ -47,7 +49,7 @@ const dataDirectory = path.join(__dirname, '..', '..', 'src', 'themes')
 const dataFilename = path.resolve(dataDirectory, 'gitmoji.ts')
 
 const gitmojiTheme = () => {
-  const data = `const gitmoji = ${JSON.stringify(theme, null, 2)}
+  const data = `const gitmoji = ${stringify(theme)}
 
   export default gitmoji
   `
