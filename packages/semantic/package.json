@@ -28,7 +28,7 @@
     "@octokit/core": "3.5.1",
     "@semantic-release/commit-analyzer": "9.0.1",
     "@semantic-release/exec": "5.0.0",
-    "@semantic-release/github": "7.2.3",
+    "@semantic-release/github": "8.0.0",
     "@semantic-release/npm": "7.1.3",
     "@semantic-release/release-notes-generator": "9.0.3",
     "grapheme-splitter": "1.0.4",
