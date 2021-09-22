@@ -13,6 +13,9 @@
     "url": "ssh://git@github.com/jeromefitz/packages.git",
     "directory": "packages/semantic"
   },
+  "engines": {
+    "node": ">=14"
+  },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },

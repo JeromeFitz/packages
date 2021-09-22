@@ -20,7 +20,7 @@
     "directory": "packages/git-cz"
   },
   "engines": {
-    "node": ">=12"
+    "node": ">=14"
   },
   "keywords": [
     "commit",
