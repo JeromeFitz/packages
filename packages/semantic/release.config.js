@@ -15,7 +15,8 @@ const parserOpts = {
   headerPattern: /^(.*?)(?:\((.*)\))?:?\s(.*)$/,
   headerCorrespondence: ['type', 'scope', 'subject'],
   noteKeywords: ['💥️  BREAKING CHANGE', 'BREAKING CHANGE'],
-  referenceActions: typeSpecs.map(({ type }) => type),
+  // referenceActions: typeSpecs.map(({ type }) => type),
+  referenceActions: null,
   revertPattern: /^Revert\s"([\s\S]*)"\s*This reverts commit (\w*)\./,
 }
 
@@ -83,6 +84,11 @@ const writerOpts = {
   commitGroupsSort: ['order'],
   commitsSort: ['order'],
 }
+
+console.dir(`parserOpts`)
+console.dir(parserOpts)
+console.dir(`writerOpts`)
+console.dir(writerOpts)
 
 module.exports = {
   branches,
