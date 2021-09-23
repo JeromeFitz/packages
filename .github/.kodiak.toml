@@ -5,6 +5,8 @@ version = 1
 
 [merge]
 automerge_label = [" 🥳️ LGTM", "🥳️ LGTM","🥳️  LGTM","LGTM"]
+blocking_labels = [" 🚧️ WIP", "🚧️ WIP","🚧️  WIP","WIP"]
+delete_branch_on_merge = true
 require_automerge_label = true
 blocking_labels = ["🚧️ WIP"]
 method = "squash"
