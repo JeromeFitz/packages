@@ -85,10 +85,10 @@ const writerOpts = {
   commitsSort: ['order'],
 }
 
-console.dir(`parserOpts`)
-console.dir(parserOpts)
-console.dir(`writerOpts`)
-console.dir(writerOpts)
+// console.dir(`parserOpts`)
+// console.dir(parserOpts)
+// console.dir(`writerOpts`)
+// console.dir(writerOpts)
 
 module.exports = {
   branches,
