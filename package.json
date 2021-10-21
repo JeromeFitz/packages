@@ -44,7 +44,7 @@
     "semantic-release:old": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo --tag-format='${LERNA_PACKAGE_NAME}@\\${version}'"
   },
   "devDependencies": {
-    "@types/lodash": "4.14.175",
+    "@types/lodash": "4.14.176",
     "dotenv": "10.0.0",
     "husky": "7.0.2",
     "is-ci": "3.0.0",
