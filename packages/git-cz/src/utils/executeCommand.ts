@@ -1,6 +1,7 @@
 import { spawn } from 'child_process'
 
 const executeCommand = (command, env = process.env) => {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   const proc = spawn(command, [], {
     env,
     shell: true,

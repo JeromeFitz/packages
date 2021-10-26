@@ -15,6 +15,7 @@ const runInteractiveQuestions = async (state, cliAnswers, cliOptions) => {
     throw new Error('No `cliAnswers` passed to runInteractiveQuestions')
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   Object.keys(cliAnswers).forEach((key) => {
     state.answers[key] = cliAnswers[key]
   })
@@ -49,6 +50,7 @@ const runInteractiveQuestions = async (state, cliAnswers, cliOptions) => {
   )
   const answers = await inquirer.prompt(_map(questions, (question) => question))
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   Object.keys(state.answers).forEach((key) => {
     if (answers[key]) {
       state.answers[key] = answers[key]

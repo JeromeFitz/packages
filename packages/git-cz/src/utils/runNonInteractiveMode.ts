@@ -18,6 +18,7 @@ const runNonInteractiveMode = (
     ...restAnswers,
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   Object.keys(state.answers).forEach((key) => {
     if (answers[key]) {
       state.answers[key] = answers[key]

@@ -90,9 +90,11 @@ const setCommit = ({
     console.log(chalkPipe('white.italic')(commandReplace))
 
     console.log(chalkPipe('orange')('> message:'))
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     console.log(chalkPipe('white.italic')(message))
     console.log()
   } else {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     fs.writeFileSync(commitMsgFile, message)
 
     if (cliOptions.hook) {
