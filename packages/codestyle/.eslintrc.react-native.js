@@ -26,6 +26,7 @@ module.exports = {
         '@typescript-eslint/no-inferrable-types': 2,
         '@typescript-eslint/no-misused-promises': 2,
         '@typescript-eslint/no-non-null-assertion': 2,
+        '@typescript-eslint/no-unsafe-argument': 0, // @todo(lint) move to error
         '@typescript-eslint/no-unsafe-assignment': 0,
         '@typescript-eslint/no-unsafe-call': 0,
         '@typescript-eslint/no-unsafe-member-access': 0,
