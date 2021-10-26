@@ -57,6 +57,7 @@
   },
   "files": [
     ".eslintrc.js",
+    ".eslintrc.next.js",
     ".eslintrc.react.js",
     ".eslintrc.react-native.js",
     ".prettierrc.js",
