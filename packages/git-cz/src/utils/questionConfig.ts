@@ -16,7 +16,8 @@ const answerBranchName = (state, input, answers, isFilter = true) => {
 
   const branchTypePrefixTemp = isFilter
     ? branchTypePrefix
-    : chalkPipe('blue.bold')(branchTypePrefix)
+    : // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+      chalkPipe('blue.bold')(branchTypePrefix)
 
   const branchName = input
     .replace(/ {2}/g, '--')
@@ -29,7 +30,9 @@ const answerBranchName = (state, input, answers, isFilter = true) => {
     : `${state.config.branch.prefix}${branchName}`
 
   const branchNameTransformer = state.config.branch.format
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     .replace(/\{branchType\}/g, branchTypePrefixTemp)
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     .replace(/\{branchName\}/g, chalkPipe('bold')(branchName))
 
   return isFilter ? branchNameFilter : branchNameTransformer
@@ -100,10 +103,12 @@ const questionConfig = (state, branchFlag, commitBodyFlag) => ({
     type: 'confirm',
   },
   commitBreaking: {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     filter: (input, answers) => answerBreaking(input, answers),
     message: '> commitBreaking:',
     name: 'commitBreaking',
     transformer(input, answers) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       return answerBreaking(input, answers, false)
     },
     type: 'input',

@@ -1,5 +1,6 @@
 // @todo(any)
 const sortObject = (obj: any) =>
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   Object.keys(obj)
     .sort()
     // @todo(any)

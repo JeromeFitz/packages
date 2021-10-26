@@ -13,6 +13,7 @@ const findOverrides = (root, files) => {
   const dir = root || process.cwd()
 
   for (const file of files) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     const filename = path.resolve(dir, file)
 
     if (fs.existsSync(filename) && fs.statSync(filename).isFile()) {
@@ -21,12 +22,14 @@ const findOverrides = (root, files) => {
     }
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   const parent = path.resolve(dir, '..')
 
   if (parent !== dir) {
     return findOverrides(parent, files)
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   const pkgFilename = path.join(dir, 'package.json')
 
   if (fs.existsSync(pkgFilename)) {

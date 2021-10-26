@@ -21,6 +21,8 @@ const parserOpts = {
 }
 
 const writerOpts = {
+  // @todo(complexity) 12
+  // eslint-disable-next-line complexity
   transform: (commit, _context) => {
     // let discard = true
     const { type } = commit
