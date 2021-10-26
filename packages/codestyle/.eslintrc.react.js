@@ -61,6 +61,7 @@ module.exports = {
   root: true,
   // http://eslint.org/docs/rules/
   rules: {
+    complexity: [2, 10],
     'import/default': 0, // @todo
     'import/named': 0, // @todo
     'import/namespace': 0, // @todo
