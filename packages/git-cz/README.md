@@ -16,7 +16,7 @@ Installs in 0.6s vs 31.1s.
 I needed to customize some things, and seemed like the intent was breaking away from [`streamich/git-cz`](https://github.com/streamich/git-cz).
 
 - [x] Package Upgrades
-- [x] Node12 Support
+- [x] Node14 Support
 - [x] Subject Customization
 - [x] Theming: Gitmoji ✨️ (new default)
   - Semantic Versioning Requirements for CI/CD

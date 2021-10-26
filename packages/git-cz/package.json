@@ -38,7 +38,7 @@
   },
   "private": false,
   "scripts": {
-    "build:binaries": "mkdirp binaries && pkg ./dist/cli.js --out-path binaries --targets node12-linux-x64,node12-macos-x64,node12-win-x64",
+    "build:binaries": "mkdirp binaries && pkg ./dist/cli.js --out-path binaries --targets node14-linux-x64,node14-macos-x64,node14-win-x64",
     "build": "tsc",
     "clean": "rimraf dist",
     "dry:run": "yarn clean && tsc && node ./dist/cli",
