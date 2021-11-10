@@ -44,7 +44,7 @@
     "eslint-plugin-jest": "25.2.4",
     "eslint-plugin-jsx-a11y": "6.4.1",
     "eslint-plugin-react": "7.26.1",
-    "eslint-plugin-react-hooks": "4.2.0",
+    "eslint-plugin-react-hooks": "4.3.0",
     "lint-staged": "11.2.6",
     "prettier": "2.4.1",
     "pretty-quick": "3.1.1",
