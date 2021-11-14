@@ -72,6 +72,7 @@ const rewrites = [
   { from: 'coffin', to: 'rip', releaseNotes: false },
   { from: 'test-tube', to: 'test-fail' },
   { from: 'necktie', to: 'logic' },
+  { from: 'stethoscope', to: 'healthcheck' },
 ]
 
 // @note default from git-cz

@@ -360,6 +360,18 @@
       "section": "Add, update, or remove feature flags.",
       "semver": "patch"
     },
+    "healthcheck": {
+      "branch": false,
+      "code": ":stethoscope:",
+      "commit": "healthcheck",
+      "description": "Add or update healthcheck.",
+      "emoji": "🩺",
+      "entity": "&#x1FA7A;",
+      "name": "stethoscope",
+      "releaseNotes": true,
+      "section": "Add or update healthcheck.",
+      "semver": null
+    },
     "hotfix": {
       "branch": "hotfix",
       "code": ":ambulance:",

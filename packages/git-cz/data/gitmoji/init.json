@@ -527,6 +527,14 @@
       "entity": "&#128084;",
       "name": "necktie",
       "semver": "patch"
+    },
+    {
+      "code": ":stethoscope:",
+      "description": "Add or update healthcheck.",
+      "emoji": "🩺",
+      "entity": "&#x1FA7A;",
+      "name": "stethoscope",
+      "semver": null
     }
   ]
 }
