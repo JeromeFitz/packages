@@ -4,6 +4,9 @@ const path = require('path')
 const stringify = require('fast-json-stable-stringify')
 const fetch = require('isomorphic-unfetch')
 
+/**
+ * @todo(api) https://gitmoji.dev/api/gitmojis
+ */
 const gitmojiUrl =
   'https://raw.githubusercontent.com/carloscuesta/gitmoji/master/src/data/gitmojis.json'
 

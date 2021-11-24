@@ -3,6 +3,9 @@ const _find = require('lodash/find')
 
 const items = require('../../data/gitmoji/init.json').gitmojis
 
+/**
+ * @todo(package) turn this into standalone: gitmoji-to-conventional
+ */
 // @note pseudo-map to conventional-commits
 /* eslint-disable sort-keys */
 const rewrites = [
