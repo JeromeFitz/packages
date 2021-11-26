@@ -2,15 +2,7 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "@jeromefitz/codestyle/react",
   "compilerOptions": {
-    "lib": [
-      "ES2020",
-      "es2020.promise",
-      "es2020.bigint",
-      "es2020.string",
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["ES2020", "dom", "dom.iterable", "esnext"],
     "module": "ES2020",
     "target": "ES2020",
 

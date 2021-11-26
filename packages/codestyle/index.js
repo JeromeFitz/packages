@@ -1,2 +1,2 @@
 #!/usr/bin/env node
-import './dist/index'
+import './dist/index.js'

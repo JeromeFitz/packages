@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "@jeromefitz/codestyle",
   "compilerOptions": {
-    "lib": ["ES2020", "es2020.promise", "es2020.bigint", "es2020.string"],
+    "lib": ["ES2020"],
     "module": "ES2020",
     "target": "ES2020",
     "allowJs": true,
