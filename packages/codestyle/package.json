@@ -53,7 +53,6 @@
     "typescript": "4.5.2"
   },
   "type": "module",
-  "exports": "./dist/index.js",
   "bin": {
     "jeromefitz-codestyle": "dist/index.js",
     "jeromefitz-pretty-quick": "./node_modules/pretty-quick/bin/pretty-quick.js"
@@ -73,5 +72,20 @@
     "tsconfig.node.json",
     "tsconfig.react-native.json",
     "tsconfig.react.json"
-  ]
+  ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./.eslintrc.cjs": "./.eslintrc.cjs",
+    "./.eslintrc.next.cjs": "./.eslintrc.next.cjs",
+    "./.eslintrc.react-native.cjs": "./.eslintrc.react-native.cjs",
+    "./.eslintrc.react.cjs": "./.eslintrc.react.cjs",
+    "./.prettierrc.cjs": "./.prettierrc.cjs",
+    "./.prettierrc.react-native.cjs": "./.prettierrc.react-native.cjs",
+    "./.prettierrc.react.cjs": "./.prettierrc.react.cjs",
+    "./lint-staged.config.js": "./lint-staged.config.js",
+    "./tsconfig.jest.json": "./tsconfig.jest.json",
+    "./tsconfig.node.json": "./tsconfig.node.json",
+    "./tsconfig.react-native.json": "./tsconfig.react-native.json",
+    "./tsconfig.react.json": "./tsconfig.react.json"
+  }
 }
