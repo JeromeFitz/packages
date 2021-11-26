@@ -44,23 +44,29 @@
   },
   "type": "module",
   "files": [
-    "src/branches.js",
-    "src/changelog.config.js",
-    "src/releaseRules.js",
-    "src/typeSpecs.js",
     "package.json",
     "release.config.cjs",
+    "src/branches.cjs",
+    "src/changelog.config.js",
+    "src/config/release-branch-types/ci.cjs",
+    "src/config/release-branch-types/feature.cjs",
+    "src/config/release-branch-types/index.cjs",
+    "src/config/release-branch-types/refactor.cjs",
+    "src/config/release-branch-types/release.cjs",
+    "src/releaseRules.cjs",
+    "src/typeSpecs.cjs",
     "yarn.lock"
   ],
   "exports": {
     ".": "./release.config.cjs",
-    "./release.config.cjs": "./release.config.cjs",
-    "./src/branches.cjs": "./src/branches.cjs",
-    "./src/releaseRules.cjs": "./src/releaseRules.cjs",
-    "./src/typeSpecs.cjs": "./src/typeSpecs.cjs",
     "./config/release-branch-types/ci.cjs": "./config/release-branch-types/ci.cjs",
     "./config/release-branch-types/feature.cjs": "./config/release-branch-types/feature.cjs",
     "./config/release-branch-types/index.cjs": "./config/release-branch-types/index.cjs",
-    "./config/release-branch-types/release.cjs": "./config/release-branch-types/release.cjs"
+    "./config/release-branch-types/refactor.cjs": "./config/refactor-branch-types/release.cjs",
+    "./config/release-branch-types/release.cjs": "./config/release-branch-types/release.cjs",
+    "./release.config.cjs": "./release.config.cjs",
+    "./src/branches.cjs": "./src/branches.cjs",
+    "./src/releaseRules.cjs": "./src/releaseRules.cjs",
+    "./src/typeSpecs.cjs": "./src/typeSpecs.cjs"
   }
 }

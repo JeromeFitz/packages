@@ -1,5 +1,6 @@
 const ci = require('./ci.cjs')
 const feature = require('./feature.cjs')
+const refactor = require('./refactor.cjs')
 const release = require('./release.cjs')
 
 /**
@@ -14,6 +15,7 @@ const release = require('./release.cjs')
 const releaseBranchTypes = {
   ci,
   feature,
+  refactor,
   release,
 }
 
