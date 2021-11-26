@@ -1,3 +1,4 @@
+/* eslint-disable import/order */
 import { writeFile } from 'fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, join, resolve } from 'path'
@@ -5,7 +6,7 @@ import { dirname, join, resolve } from 'path'
 import stringify from 'fast-json-stable-stringify'
 import title from 'title'
 
-import config from '../../git-cz/dist/themes/gitmoji'
+import config from '../../git-cz/dist/themes/gitmoji.js'
 
 const { types } = config
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -79,7 +80,12 @@ const generateTypeSpecs = () => {
   })
 }
 
-generateReleaseRules()
-generateTypeSpecs()
+// void generateReleaseRules()
+// void generateTypeSpecs()
 
-export default generateReleaseRules
+const init = () => {
+  generateReleaseRules()
+  generateTypeSpecs()
+}
+
+void init()
