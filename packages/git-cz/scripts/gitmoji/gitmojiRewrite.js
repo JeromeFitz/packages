@@ -1,7 +1,20 @@
-/* eslint-disable object-property-newline */
-const _find = require('lodash/find')
+/* eslint-disable import/order */
+import fs from 'node:fs/promises'
+import { fileURLToPath } from 'node:url'
+import { dirname, join, resolve } from 'path'
 
-const items = require('../../data/gitmoji/init.json').gitmojis
+import _find from 'lodash-es/find.js'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+const dataDirectory = join(__dirname, '..', '..', 'data', 'gitmoji')
+const dataFilename = resolve(dataDirectory, 'init.json')
+
+const items = JSON.parse(await fs.readFile(dataFilename))
+// const items = gitmojis
+
+// const _data = JSON.parse(await fs.readFile(dataFilename));
+// console.dir(`____data`)
+// console.dir(_data)
 
 /**
  * @todo(package) turn this into standalone: gitmoji-to-conventional
@@ -76,10 +89,11 @@ const rewrites = [
   { from: 'test-tube', to: 'test-fail' },
   { from: 'necktie', to: 'logic' },
   { from: 'stethoscope', to: 'healthcheck' },
+  { from: 'brick', to: 'inf' },
 ]
 
 // @note default from git-cz
-const types = {
+const _types = {
   chore: {
     branch: 'chore',
     code: ':computer_disk:',
@@ -118,36 +132,54 @@ const types = {
   },
 }
 
-const gitmoji = async () => {
+const gitmoji = async (items) => {
   await items.map((item) => {
     const rewrite = _find(rewrites, { from: item.name })
-    const releaseNotes =
-      rewrite.releaseNotes === undefined
-        ? true
-        : rewrite.releaseNotes || item.releaseNotes || false
-    types[rewrite.to] = {
-      branch: Boolean(rewrite.branch) ? rewrite.branch : false,
-      code: item.code,
-      commit: rewrite.to,
-      description: item.description,
-      emoji: item.emoji,
-      entity: item.entity,
-      name: item.name,
-      releaseNotes,
-      section: item.description,
-      semver: item.semver || null,
+
+    if (!!rewrite) {
+      // console.dir(`rewrite: ${rewrite}`)
+      const releaseNotes =
+        rewrite.releaseNotes === undefined
+          ? true
+          : rewrite.releaseNotes || item.releaseNotes || false
+
+      _types[rewrite.to] = {
+        branch: Boolean(rewrite?.branch) ? rewrite.branch : false,
+        code: item.code,
+        commit: rewrite.to,
+        description: item.description,
+        emoji: item.emoji,
+        entity: item.entity,
+        name: item.name,
+        releaseNotes,
+        section: item.description,
+        semver: item.semver || null,
+      }
     }
   })
-}
 
-gitmoji()
-
-module.exports = {
-  types: Object.keys(types)
+  const _data = Object.keys(_types)
     .sort()
     .reduce((type, key) => {
-      type[key] = types[key]
+      type[key] = _types[key]
 
       return type
-    }, {}),
+    }, {})
+
+  return _data
 }
+
+// void gitmoji()
+
+const types = Object.keys(_types)
+  .sort()
+  .reduce((type, key) => {
+    type[key] = _types[key]
+
+    return type
+  }, {})
+
+// export default types
+
+export { types }
+export default gitmoji

@@ -1,11 +1,13 @@
-const path = require('path')
+import { join } from 'path'
 
-const multirelease = require('multi-semantic-release')
+import multirelease from 'multi-semantic-release'
 
-const packageDir = path.join(process.cwd(), 'packages')
+const packageDir = join(process.cwd(), 'packages')
 
 const notes = multirelease([
   `${packageDir}/codestyle/package.json`,
   `${packageDir}/scripts/package.json`,
   `${packageDir}/semantic/package.json`,
 ])
+
+export default notes

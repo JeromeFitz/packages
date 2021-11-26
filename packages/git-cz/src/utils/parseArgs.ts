@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 import minimist from 'minimist'
 
-import { getPackage } from './getFile'
-import getGitRootDir from './getGitRootDir'
+import { getPackage } from './getFile.js'
+import getGitRootDir from './getGitRootDir.js'
 
 let root
 try {

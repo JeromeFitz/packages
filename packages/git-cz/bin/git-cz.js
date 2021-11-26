@@ -2,4 +2,4 @@
 
 /* eslint-disable import/no-unassigned-import */
 
-require('../dist/cli')
+import '../dist/cli.js'

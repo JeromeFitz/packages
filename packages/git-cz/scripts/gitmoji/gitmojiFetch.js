@@ -1,32 +1,37 @@
-const fs = require('fs')
-const path = require('path')
+/* eslint-disable import/order */
+import { writeFile } from 'fs'
+import { fileURLToPath } from 'node:url'
+import { dirname, join, resolve } from 'path'
 
-const stringify = require('fast-json-stable-stringify')
-const fetch = require('isomorphic-unfetch')
+import stringify from 'fast-json-stable-stringify'
+import fetch from 'isomorphic-unfetch'
 
+const __dirname = dirname(fileURLToPath(import.meta.url))
 /**
  * @todo(api) https://gitmoji.dev/api/gitmojis
  */
 const gitmojiUrl =
   'https://raw.githubusercontent.com/carloscuesta/gitmoji/master/src/data/gitmojis.json'
 
-const dataDirectory = path.join(__dirname, '..', '..', 'data', 'gitmoji')
-const dataFilename = path.resolve(dataDirectory, 'init.json')
+const dataDirectory = join(__dirname, '..', '..', 'data', 'gitmoji')
+const dataFilename = resolve(dataDirectory, 'init.json')
 
 const gitmojiFetch = async () => {
   const response = await fetch(gitmojiUrl)
   const json = await response.json()
-  const data = await stringify(json)
+  const data = stringify(json)
 
-  fs.writeFile(dataFilename, data, (err) => {
+  writeFile(dataFilename, data, (err) => {
     if (err) {
       throw err
     }
     // eslint-disable-next-line no-console
     console.log('💚️  1. gitmojiFetch > ./data/gitmoji/init.json')
   })
+
+  return json
 }
 
-gitmojiFetch()
+// void gitmojiFetch()
 
-module.exports = gitmojiFetch
+export default gitmojiFetch

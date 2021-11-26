@@ -1,25 +1,32 @@
-const fs = require('fs')
-const path = require('path')
+/* eslint-disable import/order */
+import { writeFile } from 'fs'
+import { fileURLToPath } from 'node:url'
+import { dirname, join, resolve } from 'path'
 
-const stringify = require('fast-json-stable-stringify')
+import stringify from 'fast-json-stable-stringify'
 
-const gitmojiRewrite = require('./gitmojiRewrite')
+import gitmojiRewrite from './gitmojiRewrite.js'
 
-const dataDirectory = path.join(__dirname, '..', '..', 'data', 'gitmoji')
-const dataFilename = path.resolve(dataDirectory, 'index.json')
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
-const gitmojiBuild = async () => {
-  const data = await stringify(gitmojiRewrite)
+const dataDirectory = join(__dirname, '..', '..', 'data', 'gitmoji')
+const dataFilename = resolve(dataDirectory, 'index.json')
 
-  fs.writeFile(dataFilename, data, (err) => {
+const gitmojiBuild = async (items) => {
+  const _data = await gitmojiRewrite(items)
+  const data = stringify(_data)
+
+  writeFile(dataFilename, data, (err) => {
     if (err) {
       throw err
     }
     // eslint-disable-next-line no-console
     console.log('💛️  2. gitmojiBuild > ./data/gitmoji/index.json')
   })
+
+  return _data
 }
 
-gitmojiBuild()
+// void gitmojiBuild()
 
-module.exports = gitmojiBuild
+export default gitmojiBuild

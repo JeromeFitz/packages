@@ -1,11 +1,11 @@
-const GraphemeSplitter = require('grapheme-splitter')
-const isCI = require('is-ci')
-const _pullAt = require('lodash/pullAt')
+import GraphemeSplitter from 'grapheme-splitter'
+import isCI from 'is-ci'
+import _pullAt from 'lodash-es/pullAt.js'
 
-const { name } = require('./package.json')
-const branches = require('./src/branches')
-const releaseRules = require('./src/releaseRules')
-const typeSpecs = require('./src/typeSpecs')
+import { name } from './package.json'
+import branches from './src/branches'
+import releaseRules from './src/releaseRules'
+import typeSpecs, { findIndex } from './src/typeSpecs'
 
 !isCI && require('dotenv').config({ path: '../../.env' })
 
@@ -28,18 +28,16 @@ const writerOpts = {
     const { type } = commit
 
     // Rewrite types
-    const typeSpecIndex = typeSpecs.findIndex(
-      ({ code: c, emoji: e, type: t, value: v }) => {
-        if (type === null) return
-        return (
-          // @hack(semantic-release) strip colon from :type: for stricter comparison
-          type.replace(/\:/g, '') === c.replace(/\:/g, '') ||
-          type === e ||
-          type === t ||
-          type === v
-        )
-      }
-    )
+    const typeSpecIndex = findIndex(({ code: c, emoji: e, type: t, value: v }) => {
+      if (type === null) return
+      return (
+        // @hack(semantic-release) strip colon from :type: for stricter comparison
+        type.replace(/\:/g, '') === c.replace(/\:/g, '') ||
+        type === e ||
+        type === t ||
+        type === v
+      )
+    })
 
     if (typeSpecIndex === -1) return
 
@@ -92,7 +90,7 @@ const writerOpts = {
 // console.dir(`writerOpts`)
 // console.dir(writerOpts)
 
-module.exports = {
+export default {
   branches,
   // ci: false,
   // debug: true,
@@ -133,13 +131,6 @@ module.exports = {
           'echo sh ./scripts/postSemanticRelease.sh ${nextRelease.version} ${nextRelease.channel} ${nextRelease.gitHead} ${nextRelease.gitTag}',
       },
     ],
-    // [
-    //   '@jeromefitz/semantic-release-git',
-    //   {
-    //     assets: ['package.json'],
-    //     message: `🔖️ {RELEASE_TAG} [skip ci]\n\n{RELEASE_URL}/releases/tag/{RELEASE_TAG}\n\n{RELEASE_NOTES}`,
-    //   },
-    // ],
   ],
   //
   tagFormat: `${name}@\${version}`,

@@ -1,4 +1,4 @@
-const config = require('./packages/semantic/src/changelog.config.js')
+const config = require('./packages/semantic/src/changelog.config.cjs')
 
 const commit = {
   ...config.commit,

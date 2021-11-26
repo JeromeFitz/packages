@@ -1,11 +1,17 @@
 import fs from 'fs'
+import { createRequire } from 'module'
 import path from 'path'
 
 import chalkPipe from 'chalk-pipe'
 
-import configDefault from '../themes/gitmoji'
+import configDefault from '../themes/gitmoji.js'
 
-const configFiles = ['.git-cz.json', 'changelog.config.js', 'changelog.config.json']
+const configFiles = [
+  '.git-cz.json',
+  'changelog.config.cjs',
+  'changelog.config.js',
+  'changelog.config.json',
+]
 
 const packageFile = ['package.json']
 
@@ -18,7 +24,7 @@ const findOverrides = (root, files) => {
 
     if (fs.existsSync(filename) && fs.statSync(filename).isFile()) {
       // eslint-disable-next-line import/no-dynamic-require
-      return require(filename)
+      return createRequire(filename)
     }
   }
 
@@ -36,6 +42,7 @@ const findOverrides = (root, files) => {
     try {
       // eslint-disable-next-line @typescript-eslint/no-var-requires, import/no-dynamic-require
       const changelog = require(pkgFilename).config.commitizen.changelog
+      // const changelog = createRequire(pkgFilename)
 
       if (changelog) {
         return changelog
@@ -49,10 +56,9 @@ const findOverrides = (root, files) => {
 const getConfig = (root) => {
   const overrides = findOverrides(root, configFiles)
 
-  if (typeof overrides !== 'object') {
+  if (typeof overrides !== 'function') {
     // eslint-disable-next-line no-console
-    console.log(chalkPipe('red.bold')('Expected changelog config to be an object.'))
-
+    console.log(chalkPipe('red.bold')('Expected changelog config to be a function.'))
     process.exit(1)
   }
 

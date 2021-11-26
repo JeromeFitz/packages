@@ -16,6 +16,10 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
+  "engines": {
+    "node": ">=16"
+  },
+  "type": "module",
   "private": true,
   "scripts": {
     "branch": "git-cz -m branch --allow-empty",
@@ -44,12 +48,12 @@
     "semantic-release:old": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo --tag-format='${LERNA_PACKAGE_NAME}@\\${version}'"
   },
   "devDependencies": {
-    "@types/lodash": "4.14.177",
+    "@types/lodash-es": "4.17.5",
     "dotenv": "10.0.0",
     "husky": "7.0.4",
     "is-ci": "3.0.1",
     "lerna": "4.0.0",
-    "lodash": "4.17.21",
+    "lodash-es": "4.17.21",
     "pinst": "2.1.6"
   },
   "config": {

@@ -1,2 +1,5 @@
-const release = require('../semantic/release.config.js')
-module.exports = { ...release }
+import _release from '../semantic/release.config.js'
+
+const release = { ..._release }
+
+export default release

@@ -1,4 +1,4 @@
-const _map = require('lodash/map')
+import _map from 'lodash-es/map.js'
 
 const releaseBranchTypes = {
   ci: [],
@@ -28,4 +28,4 @@ const branches = [
   ...branchTypes,
 ]
 
-module.exports = branches
+export default branches

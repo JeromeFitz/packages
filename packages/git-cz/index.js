@@ -1,1 +1,3 @@
-module.exports = require('./dist/cz')
+import cz from './dist/cz'
+
+export default cz

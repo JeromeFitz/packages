@@ -1,5 +1,8 @@
-const isCI = require('is-ci')
+import isCI from 'is-ci'
 !isCI && require('dotenv').config({ path: './.env' })
 
-const release = require('../semantic/release.config.js')
-module.exports = { ...release }
+import _release from '../semantic/release.config.js'
+
+const release = { ..._release }
+
+export default release

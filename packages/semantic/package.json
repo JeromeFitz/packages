@@ -14,7 +14,7 @@
     "directory": "packages/semantic"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=16"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
@@ -35,16 +35,17 @@
     "@semantic-release/npm": "8.0.3",
     "@semantic-release/release-notes-generator": "10.0.3",
     "grapheme-splitter": "1.0.4",
-    "lodash": "4.17.21",
+    "lodash-es": "4.17.21",
     "multi-semantic-release": "2.11.0",
     "semantic-release": "18.0.1",
     "semantic-release-commit-filter": "1.0.2",
     "title": "3.4.3"
   },
-  "main": "release.config.js",
+  "type": "module",
+  "exports": "./release.config.js",
   "files": [
     "src/branches.js",
-    "src/changelog.config.js",
+    "src/changelog.config.cjs",
     "src/releaseRules.js",
     "src/typeSpecs.js",
     "package.json",
