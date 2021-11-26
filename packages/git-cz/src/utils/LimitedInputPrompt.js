@@ -2,7 +2,6 @@ import chalk from 'chalk'
 import InputPrompt from 'inquirer/lib/prompts/input.js'
 
 const { green, yellow, red } = chalk
-
 class LimitedInputPrompt extends InputPrompt {
   constructor(...args) {
     super(...args)
