@@ -1,12 +1,6 @@
 import _map from 'lodash-es/map.js'
 
-const releaseBranchTypes = {
-  ci: [],
-  feature: [],
-  fix: [],
-  // @note this is "sprint"
-  release: [],
-}
+import releaseBranchTypes from './config/release-branch-types/index.js'
 
 const branchTypes = _map(
   releaseBranchTypes,

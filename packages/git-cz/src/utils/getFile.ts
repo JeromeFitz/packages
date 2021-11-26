@@ -60,6 +60,7 @@ const getConfig = (root) => {
   if (typeof overrides !== 'function') {
     // eslint-disable-next-line no-console
     console.log(chalkPipe('red.bold')('Expected changelog config to be a function.'))
+    console.dir(typeof overrides)
     process.exit(1)
   }
 
