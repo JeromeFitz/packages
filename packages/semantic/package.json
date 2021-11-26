@@ -22,7 +22,6 @@
   "private": false,
   "scripts": {
     "build": "echo @jeromefitz/semantic",
-    "build:binaries": "echo skip @jeromefitz/semantic build:binaries",
     "semantic-release": "echo semantic-release",
     "test": "echo skip @jeromefitz/semantic test"
   },

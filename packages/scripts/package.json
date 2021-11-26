@@ -24,7 +24,6 @@
   "exports": "./dist/index.js",
   "scripts": {
     "build": "tsc --build src",
-    "build:binaries": "echo skip @jeromefitz/scripts build:binaries",
     "lint-eslint": "eslint . --ext js,jsx,ts,tsx --max-warnings=0",
     "lint-fix": "yarn prettier-fix && eslint . --ext js,jsx,ts,tsx --fix --max-warnings=0",
     "lint-typescript": "yarn typescript",

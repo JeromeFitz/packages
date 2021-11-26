@@ -28,7 +28,6 @@
     "----": "",
     "boostrap": "lerna bootstrap",
     "build": "yarn workspaces run build",
-    "build:binaries": "yarn workspaces run build:binaries",
     "test": "yarn workspaces run test",
     "---- ": "",
     "lint:eslint": "eslint . --ext js,jsx,ts,tsx --max-warnings=0",
