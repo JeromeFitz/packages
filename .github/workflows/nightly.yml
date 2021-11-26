@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: ['14']
+        node: ['16']
     steps:
       - name: '🔧️ Setup Node: ${{ matrix.node }}'
         uses: actions/setup-node@v2
@@ -47,7 +47,6 @@ jobs:
       - name: '🏗️  Build'
         run: |
           yarn build
-          yarn build:binaries
       - name: '🏷️  Semantic Release'
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}

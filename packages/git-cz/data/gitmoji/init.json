@@ -535,6 +535,14 @@
       "entity": "&#x1FA7A;",
       "name": "stethoscope",
       "semver": null
+    },
+    {
+      "code": ":brick:",
+      "description": "Infrastructure related changes.",
+      "emoji": "🧱",
+      "entity": "&#x1f9f1;",
+      "name": "brick",
+      "semver": null
     }
   ]
 }

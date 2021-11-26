@@ -433,6 +433,18 @@ const gitmoji = {
       section: 'Add or update a .gitignore file.',
       semver: null,
     },
+    inf: {
+      branch: false,
+      code: ':brick:',
+      commit: 'inf',
+      description: 'Infrastructure related changes.',
+      emoji: '🧱',
+      entity: '&#x1f9f1;',
+      name: 'brick',
+      releaseNotes: true,
+      section: 'Infrastructure related changes.',
+      semver: null,
+    },
     init: {
       branch: false,
       code: ':tada:',

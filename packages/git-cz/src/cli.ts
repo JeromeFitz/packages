@@ -1,12 +1,12 @@
 import chalkPipe from 'chalk-pipe'
 
-import isEnabled from './utils/isEnabled'
-import parseArgs from './utils/parseArgs'
-import runInteractiveQuestions from './utils/runInteractiveQuestions'
-import runNonInteractiveMode from './utils/runNonInteractiveMode'
-import setBranch from './utils/setBranch'
-import setCommit from './utils/setCommit'
-import setState from './utils/setState'
+import isEnabled from './utils/isEnabled.js'
+import parseArgs from './utils/parseArgs.js'
+import runInteractiveQuestions from './utils/runInteractiveQuestions.js'
+import runNonInteractiveMode from './utils/runNonInteractiveMode.js'
+import setBranch from './utils/setBranch.js'
+import setCommit from './utils/setCommit.js'
+import setState from './utils/setState.js'
 
 const cli = async () => {
   try {

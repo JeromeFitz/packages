@@ -1,14 +1,18 @@
-const fs = require('fs')
-const path = require('path')
+/* eslint-disable import/order */
+import { writeFile } from 'fs'
+import { fileURLToPath } from 'node:url'
+import { dirname, join, resolve } from 'path'
 
-const stringify = require('fast-json-stable-stringify')
-const title = require('title')
+import stringify from 'fast-json-stable-stringify'
+import title from 'title'
 
-const { types } = require('../../git-cz/dist/themes/gitmoji').default
+import config from '../../git-cz/dist/themes/gitmoji.js'
 
-const dataDirectory = path.join(__dirname, '..', 'src')
-const fileReleaseRules = path.resolve(dataDirectory, 'releaseRules.js')
-const fileTypeSpecs = path.resolve(dataDirectory, 'typeSpecs.js')
+const { types } = config
+const __dirname = dirname(fileURLToPath(import.meta.url))
+const dataDirectory = join(__dirname, '..', 'src')
+const fileReleaseRules = resolve(dataDirectory, 'releaseRules.js')
+const fileTypeSpecs = resolve(dataDirectory, 'typeSpecs.js')
 
 const releaseRules = []
 const typeSpecs = []
@@ -49,11 +53,11 @@ Object.keys(types).map((type, _index) => {
 const generateReleaseRules = () => {
   const data = `const releaseRules = ${stringify(releaseRules)}
 
-  // export default releaseRules
-  module.exports = releaseRules
+// export default releaseRules
+module.exports = releaseRules
   `
 
-  fs.writeFile(fileReleaseRules, data, (err) => {
+  writeFile(fileReleaseRules, data, (err) => {
     if (err) {
       throw err
     }
@@ -65,11 +69,11 @@ const generateReleaseRules = () => {
 const generateTypeSpecs = () => {
   const data = `const typeSpecs = ${stringify(typeSpecs)}
 
-  // export default typeSpecs
-  module.exports = typeSpecs
+// export default typeSpecs
+module.exports = typeSpecs
   `
 
-  fs.writeFile(fileTypeSpecs, data, (err) => {
+  writeFile(fileTypeSpecs, data, (err) => {
     if (err) {
       throw err
     }
@@ -78,7 +82,12 @@ const generateTypeSpecs = () => {
   })
 }
 
-generateReleaseRules()
-generateTypeSpecs()
+// void generateReleaseRules()
+// void generateTypeSpecs()
 
-module.exports = generateReleaseRules
+const init = () => {
+  generateReleaseRules()
+  generateTypeSpecs()
+}
+
+void init()

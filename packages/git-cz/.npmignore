@@ -9,5 +9,5 @@ test/
 .env
 .gitkeep
 jsconfig.json
-release.config.js
+release.config.cjs
 tsconfig.json

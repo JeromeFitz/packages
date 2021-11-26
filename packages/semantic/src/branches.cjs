@@ -1,12 +1,6 @@
-const _map = require('lodash/map')
+const _map = require('lodash.map/index.js')
 
-const releaseBranchTypes = {
-  ci: [],
-  feature: [],
-  fix: [],
-  // @note this is "sprint"
-  release: [],
-}
+const releaseBranchTypes = require('./config/release-branch-types/index.cjs')
 
 const branchTypes = _map(
   releaseBranchTypes,

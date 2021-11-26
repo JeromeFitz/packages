@@ -2,9 +2,9 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "@jeromefitz/codestyle/react-native",
   "compilerOptions": {
-    "lib": ["es6", "es2016.array.include", "es2017.object"],
-    "module": "commonjs",
-    "target": "esnext",
+    "lib": ["ES2020"],
+    "module": "ES2020",
+    "target": "ES2020",
 
     "allowJs": true,
     "allowSyntheticDefaultImports": true,

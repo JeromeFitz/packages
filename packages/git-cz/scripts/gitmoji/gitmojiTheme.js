@@ -1,9 +1,18 @@
-const fs = require('fs')
-const path = require('path')
+/* eslint-disable import/order */
+import { writeFile } from 'fs'
+// import fs from 'node:fs/promises';
+import { fileURLToPath } from 'node:url'
+import { dirname, join, resolve } from 'path'
 
-const stringify = require('fast-json-stable-stringify')
+import stringify from 'fast-json-stable-stringify'
 
-const { types } = require('../../data/gitmoji/index.json')
+// const { types } = JSON.parse(await fs.readFile('../../data/gitmoji/index.json'));
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+
+// const dataDirectory2 = join(__dirname,  '..', '..', 'data', 'gitmoji')
+// const dataFilename2 = resolve(dataDirectory2, 'index.json')
+// const types = JSON.parse(await fs.readFile(dataFilename2));
 
 const branch = {
   format: '{branchType}{branchName}',
@@ -38,31 +47,31 @@ const commit = {
   scopes: [],
 }
 
-const theme = {
-  branch,
-  commit,
-  enabled: true,
-  types,
-}
+const dataDirectory = join(__dirname, '..', '..', 'src', 'themes')
+const dataFilename = resolve(dataDirectory, 'gitmoji.ts')
 
-const dataDirectory = path.join(__dirname, '..', '..', 'src', 'themes')
-const dataFilename = path.resolve(dataDirectory, 'gitmoji.ts')
+const gitmojiTheme = (types) => {
+  const theme = {
+    branch,
+    commit,
+    enabled: true,
+    types,
+  }
 
-const gitmojiTheme = () => {
   const data = `const gitmoji = ${stringify(theme)}
 
-  export default gitmoji
+export default gitmoji
   `
 
-  fs.writeFile(dataFilename, data, (err) => {
+  writeFile(dataFilename, data, (err) => {
     if (err) {
       throw err
     }
     // eslint-disable-next-line no-console
-    console.log('❤️  3. gitmojiTheme > ./src/themes/gitmoji.ts')
+    console.log('💙️  3. gitmojiTheme > ./src/themes/gitmoji.ts')
   })
 }
 
-gitmojiTheme()
+// void gitmojiTheme()
 
-module.exports = gitmojiTheme
+export default gitmojiTheme
