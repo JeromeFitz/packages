@@ -1,6 +1,6 @@
-import ci from './ci.js'
-import feature from './feature.js'
-import release from './release.js'
+const ci = require('./ci.cjs')
+const feature = require('./feature.cjs')
+const release = require('./release.cjs')
 
 /**
  * @todo To get a `prerelease` name these cannot be passed as RegEx.
@@ -17,4 +17,4 @@ const releaseBranchTypes = {
   release,
 }
 
-export default releaseBranchTypes
+module.exports = releaseBranchTypes

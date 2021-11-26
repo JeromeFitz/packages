@@ -35,20 +35,22 @@
     "@semantic-release/release-notes-generator": "10.0.3",
     "grapheme-splitter": "1.0.4",
     "lodash-es": "4.17.21",
+    "lodash.map": "4.6.0",
+    "lodash.pullat": "4.6.0",
     "multi-semantic-release": "2.11.0",
     "semantic-release": "18.0.1",
     "semantic-release-commit-filter": "1.0.2",
     "title": "3.4.3"
   },
   "type": "module",
-  "exports": "./release.config.js",
+  "exports": "./release.config.cjs",
   "files": [
     "src/branches.js",
     "src/changelog.config.js",
     "src/releaseRules.js",
     "src/typeSpecs.js",
     "package.json",
-    "release.config.js",
+    "release.config.cjs",
     "yarn.lock"
   ]
 }

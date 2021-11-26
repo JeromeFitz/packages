@@ -1,11 +1,11 @@
-import GraphemeSplitter from 'grapheme-splitter'
-import isCI from 'is-ci'
-import _pullAt from 'lodash-es/pullAt.js'
+const GraphemeSplitter = require('grapheme-splitter')
+const isCI = require('is-ci')
+const _pullAt = require('lodash.pullat/index.js')
 
-import { name } from './package.json'
-import branches from './src/branches'
-import releaseRules from './src/releaseRules'
-import typeSpecs, { findIndex } from './src/typeSpecs'
+const { name } = require('./package.json')
+const branches = require('./src/branches.cjs')
+const releaseRules = require('./src/releaseRules.cjs')
+const typeSpecs = require('./src/typeSpecs.cjs')
 
 !isCI && require('dotenv').config({ path: '../../.env' })
 
@@ -28,16 +28,18 @@ const writerOpts = {
     const { type } = commit
 
     // Rewrite types
-    const typeSpecIndex = findIndex(({ code: c, emoji: e, type: t, value: v }) => {
-      if (type === null) return
-      return (
-        // @hack(semantic-release) strip colon from :type: for stricter comparison
-        type.replace(/\:/g, '') === c.replace(/\:/g, '') ||
-        type === e ||
-        type === t ||
-        type === v
-      )
-    })
+    const typeSpecIndex = typeSpecs.findIndex(
+      ({ code: c, emoji: e, type: t, value: v }) => {
+        if (type === null) return
+        return (
+          // @hack(semantic-release) strip colon from :type: for stricter comparison
+          type.replace(/\:/g, '') === c.replace(/\:/g, '') ||
+          type === e ||
+          type === t ||
+          type === v
+        )
+      }
+    )
 
     if (typeSpecIndex === -1) return
 
@@ -90,7 +92,7 @@ const writerOpts = {
 // console.dir(`writerOpts`)
 // console.dir(writerOpts)
 
-export default {
+const config = {
   branches,
   // ci: false,
   // debug: true,
@@ -135,3 +137,5 @@ export default {
   //
   tagFormat: `${name}@\${version}`,
 }
+
+module.exports = config

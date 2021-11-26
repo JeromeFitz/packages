@@ -642,4 +642,5 @@ const typeSpecs = [
   },
 ]
 
-export default typeSpecs
+// export default typeSpecs
+module.exports = typeSpecs

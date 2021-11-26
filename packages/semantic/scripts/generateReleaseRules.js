@@ -53,7 +53,8 @@ Object.keys(types).map((type, _index) => {
 const generateReleaseRules = () => {
   const data = `const releaseRules = ${stringify(releaseRules)}
 
-export default releaseRules
+// export default releaseRules
+module.exports = releaseRules
   `
 
   writeFile(fileReleaseRules, data, (err) => {
@@ -68,7 +69,8 @@ export default releaseRules
 const generateTypeSpecs = () => {
   const data = `const typeSpecs = ${stringify(typeSpecs)}
 
-  export default typeSpecs
+// export default typeSpecs
+module.exports = typeSpecs
   `
 
   writeFile(fileTypeSpecs, data, (err) => {
