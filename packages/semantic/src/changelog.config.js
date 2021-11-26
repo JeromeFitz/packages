@@ -1,4 +1,4 @@
-const config = require('../../git-cz/dist/themes/gitmoji').default
+import config from '../../git-cz/dist/themes/gitmoji'
 
 const commit = {
   ...config.commit,
@@ -19,4 +19,4 @@ const branch = {
 
 const changelog = { ...config, branch, commit }
 
-module.exports = changelog
+export default changelog

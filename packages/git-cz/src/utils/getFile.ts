@@ -10,6 +10,7 @@ const configFiles = [
   '.git-cz.json',
   'changelog.config.cjs',
   'changelog.config.js',
+  'changelog.config.mjs',
   'changelog.config.json',
 ]
 

@@ -44,7 +44,7 @@
   "exports": "./release.config.js",
   "files": [
     "src/branches.js",
-    "src/changelog.config.cjs",
+    "src/changelog.config.js",
     "src/releaseRules.js",
     "src/typeSpecs.js",
     "package.json",
