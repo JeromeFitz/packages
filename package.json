@@ -17,7 +17,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=14"
   },
   "type": "module",
   "private": true,

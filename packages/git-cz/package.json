@@ -29,7 +29,7 @@
     "pretty"
   ],
   "engines": {
-    "node": ">=16"
+    "node": ">=14"
   },
   "type": "module",
   "exports": "./dist/cz.js",
