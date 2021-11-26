@@ -43,7 +43,6 @@
     "title": "3.4.3"
   },
   "type": "module",
-  "exports": "./release.config.cjs",
   "files": [
     "src/branches.js",
     "src/changelog.config.js",
@@ -52,5 +51,16 @@
     "package.json",
     "release.config.cjs",
     "yarn.lock"
-  ]
+  ],
+  "exports": {
+    ".": "./release.config.cjs",
+    "./release.config.cjs": "./release.config.cjs",
+    "./src/branches.cjs": "./src/branches.cjs",
+    "./src/releaseRules.cjs": "./src/releaseRules.cjs",
+    "./src/typeSpecs.cjs": "./src/typeSpecs.cjs",
+    "./config/release-branch-types/ci.cjs": "./config/release-branch-types/ci.cjs",
+    "./config/release-branch-types/feature.cjs": "./config/release-branch-types/feature.cjs",
+    "./config/release-branch-types/index.cjs": "./config/release-branch-types/index.cjs",
+    "./config/release-branch-types/release.cjs": "./config/release-branch-types/release.cjs"
+  }
 }
