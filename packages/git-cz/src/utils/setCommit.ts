@@ -5,10 +5,10 @@ import { join } from 'path'
 import chalkPipe from 'chalk-pipe'
 import shellsync from 'shellsync'
 
-import executeCommand from './executeCommand'
-import getBranchName from './getBranchName'
-import getGitRootDir from './getGitRootDir'
-import { TYPE_BRANCH, TYPE_COMMIT } from './questionConfig'
+import executeCommand from './executeCommand.js'
+import getBranchName from './getBranchName.js'
+import getGitRootDir from './getGitRootDir.js'
+import { TYPE_BRANCH, TYPE_COMMIT } from './questionConfig.js'
 
 const commitMsgFile = join(getGitRootDir(), '.git', 'COMMIT_EDITMSG')
 

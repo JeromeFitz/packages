@@ -5,7 +5,7 @@
 const escapedFileNames = (filenames) =>
   filenames.map((filename) => `"${filename}"`).join(' ')
 
-module.exports = {
+const config = {
   '**/*.{js,jsx,ts,tsx}': (files) => {
     const filenames = escapedFileNames(files)
     return [
@@ -22,3 +22,5 @@ module.exports = {
     ]
   },
 }
+
+export default config

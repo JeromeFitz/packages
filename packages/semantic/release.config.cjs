@@ -1,11 +1,11 @@
 const GraphemeSplitter = require('grapheme-splitter')
 const isCI = require('is-ci')
-const _pullAt = require('lodash/pullAt')
+const _pullAt = require('lodash.pullat/index.js')
 
 const { name } = require('./package.json')
-const branches = require('./src/branches')
-const releaseRules = require('./src/releaseRules')
-const typeSpecs = require('./src/typeSpecs')
+const branches = require('./src/branches.cjs')
+const releaseRules = require('./src/releaseRules.cjs')
+const typeSpecs = require('./src/typeSpecs.cjs')
 
 !isCI && require('dotenv').config({ path: '../../.env' })
 
@@ -92,7 +92,7 @@ const writerOpts = {
 // console.dir(`writerOpts`)
 // console.dir(writerOpts)
 
-module.exports = {
+const config = {
   branches,
   // ci: false,
   // debug: true,
@@ -133,14 +133,9 @@ module.exports = {
           'echo sh ./scripts/postSemanticRelease.sh ${nextRelease.version} ${nextRelease.channel} ${nextRelease.gitHead} ${nextRelease.gitTag}',
       },
     ],
-    // [
-    //   '@jeromefitz/semantic-release-git',
-    //   {
-    //     assets: ['package.json'],
-    //     message: `🔖️ {RELEASE_TAG} [skip ci]\n\n{RELEASE_URL}/releases/tag/{RELEASE_TAG}\n\n{RELEASE_NOTES}`,
-    //   },
-    // ],
   ],
   //
   tagFormat: `${name}@\${version}`,
 }
+
+module.exports = config

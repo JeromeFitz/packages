@@ -1,12 +1,12 @@
 #!/usr/bin/env
-const { execSync } = require('child_process')
+import { execSync } from 'child_process'
 
-const { Octokit } = require('@octokit/rest')
-const chalkPipe = require('chalk-pipe')
-const isCI = require('is-ci')
+import { Octokit } from '@octokit/rest'
+import chalkPipe from 'chalk-pipe'
+import isCI from 'is-ci'
 
 !isCI && require('dotenv').config({ path: './.env' })
-const PULL_REQUEST = require('../templates/PULL_REQUEST').default
+import PULL_REQUEST from '../templates/PULL_REQUEST'
 
 const octokit = new Octokit({ auth: process.env.GH_TOKEN })
 const getVersion = (version) => {
@@ -105,4 +105,4 @@ async function setPullRequest({
   }
 }
 
-module.exports = setPullRequest
+export default setPullRequest

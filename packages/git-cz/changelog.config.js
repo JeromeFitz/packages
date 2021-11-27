@@ -1,8 +1,8 @@
 // @note(typescript) need to grab the built version for testing
-const isCI = require('is-ci')
+import isCI from 'is-ci'
 
 !isCI && require('dotenv').config({ path: './.env' })
-const config = require('./dist/themes/gitmoji').default
+import config from './dist/themes/gitmoji'
 
 const OVERRIDE_TEST = false
 
@@ -47,4 +47,4 @@ const types = OVERRIDE_TEST ? { ...config.types, ...typesCustom } : config.types
 
 const changelog = { ...config, branch, commit, enabled, types }
 
-module.exports = changelog
+export default changelog

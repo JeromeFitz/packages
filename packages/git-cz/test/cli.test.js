@@ -1,6 +1,6 @@
-const pkg = require('../package.json')
+import { version } from '../package.json'
 
-const { runCLI } = require('./testUtils')
+import { runCLI } from './testUtils'
 
 test('git-cz --help', async () => {
   const { getResult } = runCLI(['--help'])
@@ -15,7 +15,7 @@ test('git-cz --version', async () => {
 
   const result = await getResult()
 
-  expect(result.trim()).toBe(pkg.version)
+  expect(result.trim()).toBe(version)
 })
 
 test('git-cz --non-interactive', async () => {

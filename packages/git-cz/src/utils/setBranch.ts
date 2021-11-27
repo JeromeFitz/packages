@@ -1,7 +1,7 @@
 import chalkPipe from 'chalk-pipe'
 // import shellsync from 'shellsync'
 
-import executeCommand from './executeCommand'
+import executeCommand from './executeCommand.js'
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
 const setBranch = ({

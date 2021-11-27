@@ -1,15 +1,18 @@
-const path = require('path')
+import { fileURLToPath } from 'node:url'
+import { dirname, join } from 'path'
 
-const spawn = require('spawncommand')
+import spawn from 'spawncommand'
 
-exports.keys = {
+export const keys = {
   down: '\u001B\u005B\u0042',
   enter: '\r',
   up: '\u001B\u005B\u0041',
 }
 
-exports.runCLI = (args = []) => {
-  const CLI_PATH = path.join(__dirname, '/../lib/cli')
+const __dirname = dirname(fileURLToPath(import.meta.url))
+
+export function runCLI(args = []) {
+  const CLI_PATH = join(__dirname, '/../lib/cli')
 
   const { promise, stdin } = spawn('node', [CLI_PATH, ...args])
 

@@ -1,6 +1,7 @@
-const chalk = require('chalk')
-const InputPrompt = require('inquirer/lib/prompts/input')
+import chalk from 'chalk'
+import InputPrompt from 'inquirer/lib/prompts/input.js'
 
+const { green, yellow, red } = chalk
 class LimitedInputPrompt extends InputPrompt {
   constructor(...args) {
     super(...args)
@@ -42,11 +43,11 @@ class LimitedInputPrompt extends InputPrompt {
     const chars = this.remainingChar()
 
     if (chars > 15) {
-      return chalk.green(`${chars} chars left`)
+      return green(`${chars} chars left`)
     } else if (chars > 5) {
-      return chalk.yellow(`${chars} chars left`)
+      return yellow(`${chars} chars left`)
     } else {
-      return chalk.red(`${chars} chars left`)
+      return red(`${chars} chars left`)
     }
   }
 
@@ -67,11 +68,11 @@ class LimitedInputPrompt extends InputPrompt {
     } ${appendContent}`
 
     if (error) {
-      bottomContent = chalk.red('>> ') + error
+      bottomContent = red('>> ') + error
     }
 
     this.screen.render(message, bottomContent)
   }
 }
 
-module.exports = LimitedInputPrompt
+export default LimitedInputPrompt
