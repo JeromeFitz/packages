@@ -32,10 +32,10 @@ Quickly though you can look at `./changelog.config.js` in this repo to see how t
 
 ### Semantic Release
 
-`./release.config.js`
+`./release.config.cjs`
 
 ```js
-const release = require('@jeromefitz/semantic/release.config.js')
+const release = require('@jeromefitz/semantic/release.config.cjs')
 module.exports = {
   ...release,
 }
@@ -44,7 +44,7 @@ module.exports = {
 #### Example
 
 ```js
-const release = require('@jeromefitz/semantic/release.config.js')
+const release = require('@jeromefitz/semantic/release.config.cjs')
 
 const _extends = ['semantic-release-commit-filter']
 const plugins = release.plugins

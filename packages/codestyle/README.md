@@ -25,12 +25,13 @@ I tend to use this with [`husky`](https://github.com/typicode/husky) (w/ [`is-ci
 
 ### ESLint + TypeScript
 
-`./.eslintrc.js`
+`./.eslintrc.cjs`
 
 ```js
+const config = require('@jeromefitz/codestyle/.eslintrc.next.cjs')
+
 module.exports = {
-  ...require('@jeromefitz/codestyle/.eslintrc.js'),
-  // parser: '@jeromefitz/codestyle/node_modules/@babel/eslint-parser',
+  ...config,
   parser: '@babel/eslint-parser',
 }
 ```
@@ -39,21 +40,23 @@ module.exports = {
 
 ### lint-staged
 
-`./lint-staged.config.js`
+`./lint-staged.config.mjs`
 
 ```js
-module.exports = {
-  ...require('@jeromefitz/codestyle/lint-staged.config.js'),
-}
+import config from '@jeromefitz/codestyle/lint-staged.config.js'
+
+export default config
 ```
 
 ### Prettier
 
-`./.prettierrc.js`
+`./.prettierrc.cjs`
 
 ```js
+const config = require('@jeromefitz/codestyle/.prettierrc.cjs')
+
 module.exports = {
-  ...require('@jeromefitz/codestyle/.prettierrc.js'),
+  ...config,
 }
 ```
 
