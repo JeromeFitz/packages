@@ -6,7 +6,7 @@ const escapedFileNames = (filenames) =>
   filenames.map((filename) => `"${filename}"`).join(' ')
 
 const config = {
-  '**/*.{js,jsx,ts,tsx}': (files) => {
+  '**/*.{cjs,js,jsx,mjs,ts,tsx}': (files) => {
     const filenames = escapedFileNames(files)
     return [
       `prettier --with-node-modules --ignore-path='./.prettierignore_staged' --write ${filenames}`,
