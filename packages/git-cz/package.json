@@ -57,7 +57,7 @@
     "spawncommand": "2.2.0"
   },
   "dependencies": {
-    "@jeromefitz/conventional-gitmoji": "*",
+    "@jeromefitz/conventional-gitmoji": "./packages/conventional-gitmoji",
     "@types/chalk-pipe": "2.0.0",
     "chalk": "5.0.0",
     "chalk-pipe": "5.1.1",

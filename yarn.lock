@@ -1047,6 +1047,13 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.3.tgz#e45e384e4b8ec16bce2fd903af78450f6bf7ec98"
   integrity sha512-ZXRY4jNvVgSVQ8DL3LTcakaAtXwTVUxE81hslsyD2AtoXW/wVob10HkOJ1X/pAlcI7D+2YoZKg5do8G/w6RYgA==
 
+"@jeromefitz/conventional-gitmoji@./packages/conventional-gitmoji":
+  version "0.0.0"
+  dependencies:
+    fast-json-stable-stringify "2.1.0"
+    gitmojis "3.8.0"
+    lodash-es "4.17.21"
+
 "@jeromefitz/semantic-release-git@10.0.0-develop.2":
   version "10.0.0-develop.2"
   resolved "https://registry.yarnpkg.com/@jeromefitz/semantic-release-git/-/semantic-release-git-10.0.0-develop.2.tgz#b1874acc0c02b615621c6cc2dba14ea2ddf7951f"
