@@ -26,7 +26,6 @@
     "commit": "ALLOW_EMPTY=--allow-empty git commit --allow-empty",
     "generate:releaseRules": "node ./packages/semantic/scripts/generateReleaseRules.js && yarn lint:fix",
     "----": "",
-    "boostrap": "lerna bootstrap",
     "build": "yarn workspaces run build",
     "test": "yarn workspaces run test",
     "---- ": "",
@@ -42,16 +41,13 @@
     "postpublish": "pinst --enable",
     "prepublishOnly": "pinst --disable",
     "----   ": "",
-    "semantic-release": "multi-semantic-release",
-    "semantic-release:lerna": "lerna run semantic-release",
-    "semantic-release:old": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo --tag-format='${LERNA_PACKAGE_NAME}@\\${version}'"
+    "semantic-release": "multi-semantic-release"
   },
   "devDependencies": {
     "@types/lodash-es": "4.17.5",
     "dotenv": "10.0.0",
     "husky": "7.0.4",
     "is-ci": "3.0.1",
-    "lerna": "4.0.0",
     "lodash-es": "4.17.21",
     "pinst": "2.1.6"
   },

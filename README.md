@@ -7,7 +7,6 @@ I would say use at your own risk, and if we ever need to promote one of these ou
 ## Overview
 
 - 😺️ `yarn workspaces` (v1)
-- 🐉️ `lerna` (though not used currently)
 - :octocat: `actions` for release management through npm
 - 🤖️ Depandabot for Patch + Minor Package Management
 - 🤖️ Kodiak for Automerge of PRs via Labels and Rebasing
