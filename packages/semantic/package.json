@@ -26,7 +26,6 @@
     "test": "echo skip @jeromefitz/semantic test"
   },
   "dependencies": {
-    "@jeromefitz/conventional-gitmoji": "./packages/conventional-gitmoji",
     "@jeromefitz/semantic-release-git": "10.0.0-develop.2",
     "@octokit/core": "3.5.1",
     "@semantic-release/commit-analyzer": "9.0.2",
