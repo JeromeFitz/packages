@@ -1,0 +1,52 @@
+{
+  "name": "@jeromefitz/conventional-gitmoji",
+  "version": "0.0.0",
+  "description": "conventional + gitmoji",
+  "author": {
+    "name": "Jerome Fitzgerald",
+    "email": "j@jeromefitzgerald.com",
+    "url": "https://jeromefitzgerald.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/jeromefitz/packages.git",
+    "directory": "packages/conventional-gitmoji"
+  },
+  "keywords": [
+    "conventional changelog",
+    "format",
+    "gitflow",
+    "gitmoji"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "type": "module",
+  "private": false,
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "semantic-release": "semantic-release",
+    "test:coverage": "echo 🚧️ TODO jest --coverage",
+    "test:dev": "echo 🚧️ TODO jest --watch",
+    "test": "echo 🚧️ TODO jest --maxWorkers 2",
+    "typescript": "tsc --noEmit --declaration -p tsconfig.json"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "fast-json-stable-stringify": "2.1.0",
+    "gitmojis": "3.8.0",
+    "lodash-es": "4.17.21"
+  },
+  "exports": {
+    ".": "./dist/index.cjs",
+    "./dist/index.cjs": "./dist/index.cjs",
+    "./releaseRules.cjs": "./dist/releaseRules.cjs",
+    "./dist/releaseRules.cjs": "./dist/releaseRules.cjs",
+    "./types.cjs": "./dist/types.cjs",
+    "./dist/types.cjs": "./dist/types.cjs",
+    "./typeSpecs.cjs": "./dist/typeSpecs.cjs",
+    "./dist/typeSpecs.cjs": "./dist/typeSpecs.cjs"
+  }
+}

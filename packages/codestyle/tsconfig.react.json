@@ -2,9 +2,9 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "@jeromefitz/codestyle/react",
   "compilerOptions": {
-    "lib": ["ES2020", "dom", "dom.iterable", "esnext"],
-    "module": "ES2020",
-    "target": "ES2020",
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "module": "esnext",
+    "target": "esnext",
 
     "allowJs": true,
     "allowSyntheticDefaultImports": true,

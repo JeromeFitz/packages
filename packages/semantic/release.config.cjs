@@ -1,11 +1,13 @@
+const {
+  releaseRules,
+  typeSpecs,
+} = require('@jeromefitz/conventional-gitmoji/dist/index.cjs')
 const GraphemeSplitter = require('grapheme-splitter')
 const isCI = require('is-ci')
 const _pullAt = require('lodash.pullat/index.js')
 
 const { name } = require('./package.json')
 const branches = require('./src/branches.cjs')
-const releaseRules = require('./src/releaseRules.cjs')
-const typeSpecs = require('./src/typeSpecs.cjs')
 
 !isCI && require('dotenv').config({ path: '../../.env' })
 

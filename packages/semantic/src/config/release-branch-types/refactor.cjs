@@ -1,3 +1,3 @@
-const refactor = []
+const refactor = ['gitmojis']
 
 module.exports = refactor

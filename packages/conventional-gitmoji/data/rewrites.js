@@ -1,26 +1,3 @@
-/* eslint-disable import/order */
-import fs from 'node:fs/promises'
-import { fileURLToPath } from 'node:url'
-import { dirname, join, resolve } from 'path'
-
-import _find from 'lodash-es/find.js'
-
-const __dirname = dirname(fileURLToPath(import.meta.url))
-const dataDirectory = join(__dirname, '..', '..', 'data', 'gitmoji')
-const dataFilename = resolve(dataDirectory, 'init.json')
-
-const items = JSON.parse(await fs.readFile(dataFilename))
-// const items = gitmojis
-
-// const _data = JSON.parse(await fs.readFile(dataFilename));
-// console.dir(`____data`)
-// console.dir(_data)
-
-/**
- * @todo(package) turn this into standalone: gitmoji-to-conventional
- */
-// @note pseudo-map to conventional-commits
-/* eslint-disable sort-keys */
 const rewrites = [
   { from: 'art', to: 'style' },
   { from: 'zap', to: 'perf' },
@@ -89,97 +66,8 @@ const rewrites = [
   { from: 'test-tube', to: 'test-fail' },
   { from: 'necktie', to: 'logic' },
   { from: 'stethoscope', to: 'healthcheck' },
-  { from: 'brick', to: 'inf' },
+  { from: 'bricks', to: 'inf' },
+  { from: 'technologist', to: 'dx' },
 ]
 
-// @note default from git-cz
-const _types = {
-  chore: {
-    branch: 'chore',
-    code: ':computer_disk:',
-    commit: 'chore',
-    description: 'Changes that don’t modify src or test files',
-    emoji: '💽️',
-    entity: '&#x1f4bd;',
-    name: 'computer-disk',
-    releaseNotes: false,
-    section: 'Changes that don’t modify src or test files',
-    semver: null,
-  },
-  rollforward: {
-    branch: false,
-    code: ':fast_forward:',
-    commit: 'rollforward',
-    description: 'Create rollforward version.',
-    emoji: '⏩️',
-    entity: '&#23E9;',
-    name: 'rollforward',
-    releaseNotes: false,
-    section: 'Create rollforward version.',
-    semver: null,
-  },
-  'run-build': {
-    branch: false,
-    code: ':rocket:',
-    commit: 'run-build',
-    description: 'Custom type for CI/CD to hook into run build override.',
-    emoji: '🚀️',
-    entity: '&#1F680;',
-    name: 'run-build',
-    releaseNotes: false,
-    section: 'Custom type for CI/CD to hook into run build override.',
-    semver: 'patch',
-  },
-}
-
-const gitmoji = async (items) => {
-  await items.map((item) => {
-    const rewrite = _find(rewrites, { from: item.name })
-
-    if (!!rewrite) {
-      // console.dir(`rewrite: ${rewrite}`)
-      const releaseNotes =
-        rewrite.releaseNotes === undefined
-          ? true
-          : rewrite.releaseNotes || item.releaseNotes || false
-
-      _types[rewrite.to] = {
-        branch: Boolean(rewrite?.branch) ? rewrite.branch : false,
-        code: item.code,
-        commit: rewrite.to,
-        description: item.description,
-        emoji: item.emoji,
-        entity: item.entity,
-        name: item.name,
-        releaseNotes,
-        section: item.description,
-        semver: item.semver || null,
-      }
-    }
-  })
-
-  const _data = Object.keys(_types)
-    .sort()
-    .reduce((type, key) => {
-      type[key] = _types[key]
-
-      return type
-    }, {})
-
-  return _data
-}
-
-// void gitmoji()
-
-const types = Object.keys(_types)
-  .sort()
-  .reduce((type, key) => {
-    type[key] = _types[key]
-
-    return type
-  }, {})
-
-// export default types
-
-export { types }
-export default gitmoji
+export default rewrites

@@ -13,6 +13,6 @@
     "target": "esnext"
   },
   "extends": "../codestyle/tsconfig.react.json",
-  "include": ["src/**/*.js", "src/**/*.ts"],
+  "include": ["src/**/*.cjs", "src/**/*.js", "src/**/*.mjs", "src/**/*.ts"],
   "exclude": ["node_modules"]
 }

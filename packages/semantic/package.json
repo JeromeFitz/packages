@@ -26,6 +26,7 @@
     "test": "echo skip @jeromefitz/semantic test"
   },
   "dependencies": {
+    "@jeromefitz/conventional-gitmoji": "*",
     "@jeromefitz/semantic-release-git": "10.0.0-develop.2",
     "@octokit/core": "3.5.1",
     "@semantic-release/commit-analyzer": "9.0.2",
@@ -53,8 +54,6 @@
     "src/config/release-branch-types/index.cjs",
     "src/config/release-branch-types/refactor.cjs",
     "src/config/release-branch-types/release.cjs",
-    "src/releaseRules.cjs",
-    "src/typeSpecs.cjs",
     "yarn.lock"
   ],
   "exports": {
@@ -65,8 +64,6 @@
     "./config/release-branch-types/refactor.cjs": "./config/refactor-branch-types/release.cjs",
     "./config/release-branch-types/release.cjs": "./config/release-branch-types/release.cjs",
     "./release.config.cjs": "./release.config.cjs",
-    "./src/branches.cjs": "./src/branches.cjs",
-    "./src/releaseRules.cjs": "./src/releaseRules.cjs",
-    "./src/typeSpecs.cjs": "./src/typeSpecs.cjs"
+    "./src/branches.cjs": "./src/branches.cjs"
   }
 }

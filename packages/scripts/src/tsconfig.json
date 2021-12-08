@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "module": "ES2020",
+    "module": "esnext",
     "noEmit": false,
     "outDir": "../dist",
     "paths": {},
@@ -9,7 +9,7 @@
     "resolveJsonModule": true,
     "rootDir": ".",
     "strict": false,
-    "target": "ES6"
+    "target": "esnext"
   },
   "exclude": ["node_modules"],
   "extends": "../../codestyle/tsconfig.react.json",

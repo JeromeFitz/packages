@@ -1,8 +1,13 @@
 {
   "name": "@jeromefitz/packages",
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/gitmojis"
+    ]
+  },
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
@@ -24,7 +29,7 @@
   "scripts": {
     "branch": "git-cz -m branch --allow-empty",
     "commit": "ALLOW_EMPTY=--allow-empty git commit --allow-empty",
-    "generate:releaseRules": "node ./packages/semantic/scripts/generateReleaseRules.js && yarn lint:fix",
+    "generate:gitmoji": "node ./packages/conventional-gitmoji/scripts/generateGitmojiToConventional.js && yarn lint:fix",
     "----": "",
     "build": "yarn workspaces run build",
     "test": "yarn workspaces run test",
