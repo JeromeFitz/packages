@@ -1,10 +1,10 @@
-import isEnabled from './utils/isEnabled.js'
-import parseArgs from './utils/parseArgs.js'
-import { TYPE_BRANCH, TYPE_COMMIT } from './utils/questionConfig.js'
-import runInteractiveQuestions from './utils/runInteractiveQuestions.js'
-import setBranch from './utils/setBranch.js'
-import { getCommitMessage } from './utils/setCommit.js'
-import setState from './utils/setState.js'
+import isEnabled from './utils/isEnabled'
+import parseArgs from './utils/parseArgs'
+import { TYPE_BRANCH, TYPE_COMMIT } from './utils/questionConfig'
+import runInteractiveQuestions from './utils/runInteractiveQuestions'
+import setBranch from './utils/setBranch'
+import { getCommitMessage } from './utils/setCommit'
+import setState from './utils/setState'
 
 const prompter = (cz, commit) => {
   const run = async () => {

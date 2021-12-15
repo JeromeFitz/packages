@@ -1,1 +1,7 @@
-{}
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "rootDir": "./"
+  },
+  "include": ["**/*.test.*", "__tests__/*"]
+}

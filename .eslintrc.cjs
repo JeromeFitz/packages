@@ -1,3 +1,1 @@
-module.exports = {
-  ...require('./packages/codestyle/.eslintrc.cjs'),
-}
+module.exports = require('@jeromefitz/codestyle/.eslintrc.cjs')

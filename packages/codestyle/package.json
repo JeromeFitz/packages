@@ -20,25 +20,51 @@
     "registry": "https://registry.npmjs.org/"
   },
   "private": false,
+  "type": "module",
+  "bin": {
+    "jeromefitz-pretty-quick": "./node_modules/pretty-quick/bin/pretty-quick.js"
+  },
+  "main": "index.js",
+  "files": [
+    ".eslintrc.cjs",
+    ".eslintrc.next.cjs",
+    ".prettierrc.cjs",
+    "tsconfig.base.json",
+    "tsconfig.jest.json",
+    "tsconfig.next.json",
+    "tsconfig.node-14.json",
+    "tsconfig.node-16.json",
+    "tsconfig.react-native.json",
+    "tsconfig.react.json",
+    "dist/**",
+    "package.json",
+    "README.md"
+  ],
+  "exports": {
+    "./.eslintrc.cjs": "./.eslintrc.cjs",
+    "./.eslintrc.next.cjs": "./.eslintrc.next.cjs",
+    "./.prettierrc.cjs": "./.prettierrc.cjs",
+    "./lint-staged": "./dist/lint-staged.config.js",
+    "./lint-staged.config.js": "./lint-staged.config.js",
+    "./tsconfig.base.json": "./tsconfig.base.json",
+    "./tsconfig.jest.json": "./tsconfig.jest.json",
+    "./tsconfig.next.json": "./tsconfig.next.json",
+    "./tsconfig.node-14.json": "./tsconfig.node-14.json",
+    "./tsconfig.node-16.json": "./tsconfig.node-16.json",
+    "./tsconfig.react-native.json": "./tsconfig.react-native.json",
+    "./tsconfig.react.json": "./tsconfig.react.json"
+  },
   "scripts": {
-    "build": "tsc",
-    "lint-eslint": "eslint . --ext cjs,js,jsx,mjs,ts,tsx --max-warnings=0",
-    "lint-fix": "yarn prettier-fix && eslint . --ext cjs,js,jsx,mjs,ts,tsx --fix --max-warnings=0",
-    "lint-typescript": "yarn typescript",
-    "lint": "yarn lint-typescript && yarn prettier-check && yarn lint-eslint",
-    "tsc:watch": "tsc -w --preserveWatchOutput",
-    "prettier-check": "prettier --check \"**/*.{cjs,js,jsx,mjs,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\"",
-    "prettier-fix": "prettier --write \"**/*.{cjs,js,jsx,mjs,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\"",
-    "pretty-quick": "pretty-quick",
-    "semantic-release": "echo semantic-release",
-    "test": "echo skip @jeromefitz/codestyle test",
-    "typescript": "tsc --noEmit --declaration"
+    "build": "yarn clean && tsup lint-staged.config.js --format esm,cjs --dts --external react --minify --no-splitting --target node16",
+    "dev": "tsup lint-staged.config.js --format esm,cjs --watch --dts --external react --minify --no-splitting --target node16",
+    "clean": "rm -rf .turbo && rm -rf dist",
+    "clean:install": "yarn clean && rm -rf node_modules"
   },
   "dependencies": {
-    "@babel/core": "7.16.0",
-    "@babel/eslint-parser": "7.16.3",
-    "@typescript-eslint/eslint-plugin": "5.6.0",
-    "@typescript-eslint/parser": "5.6.0",
+    "@babel/core": "7.16.5",
+    "@babel/eslint-parser": "7.16.5",
+    "@typescript-eslint/eslint-plugin": "5.7.0",
+    "@typescript-eslint/parser": "5.7.0",
     "eslint": "8.4.1",
     "eslint-config-next": "12.0.7",
     "eslint-config-prettier": "8.3.0",
@@ -50,42 +76,6 @@
     "lint-staged": "12.1.2",
     "prettier": "2.5.1",
     "pretty-quick": "3.1.2",
-    "typescript": "4.5.2"
-  },
-  "type": "module",
-  "bin": {
-    "jeromefitz-codestyle": "dist/index.js",
-    "jeromefitz-pretty-quick": "./node_modules/pretty-quick/bin/pretty-quick.js"
-  },
-  "files": [
-    ".eslintrc.cjs",
-    ".eslintrc.next.cjs",
-    ".eslintrc.react.cjs",
-    ".eslintrc.react-native.cjs",
-    ".prettierrc.cjs",
-    ".prettierrc.react.cjs",
-    ".prettierrc.react-native.cjs",
-    "dist/index.js",
-    "index.js",
-    "lint-staged.config.js",
-    "tsconfig.jest.json",
-    "tsconfig.node.json",
-    "tsconfig.react-native.json",
-    "tsconfig.react.json"
-  ],
-  "exports": {
-    ".": "./dist/index.js",
-    "./.eslintrc.cjs": "./.eslintrc.cjs",
-    "./.eslintrc.next.cjs": "./.eslintrc.next.cjs",
-    "./.eslintrc.react-native.cjs": "./.eslintrc.react-native.cjs",
-    "./.eslintrc.react.cjs": "./.eslintrc.react.cjs",
-    "./.prettierrc.cjs": "./.prettierrc.cjs",
-    "./.prettierrc.react-native.cjs": "./.prettierrc.react-native.cjs",
-    "./.prettierrc.react.cjs": "./.prettierrc.react.cjs",
-    "./lint-staged.config.js": "./lint-staged.config.js",
-    "./tsconfig.jest.json": "./tsconfig.jest.json",
-    "./tsconfig.node.json": "./tsconfig.node.json",
-    "./tsconfig.react-native.json": "./tsconfig.react-native.json",
-    "./tsconfig.react.json": "./tsconfig.react.json"
+    "typescript": "4.5.4"
   }
 }

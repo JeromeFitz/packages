@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/restrict-plus-operands */
 /* eslint-disable id-match */
 import chalkPipe from 'chalk-pipe'
-import _map from 'lodash-es/map.js'
+import _map from 'lodash/map.js'
 
-import { findChoice, findScope } from './findSource.js'
-import getBranchName from './getBranchName.js'
+import { findChoice, findScope } from './findSource'
+import getBranchName from './getBranchName'
 
 const TYPE_BRANCH = 'branch'
 const TYPE_COMMIT = 'commit'

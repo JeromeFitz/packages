@@ -1,8 +1,11 @@
 {
   "name": "@jeromefitz/packages",
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": []
+  },
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
@@ -26,8 +29,11 @@
     "commit": "ALLOW_EMPTY=--allow-empty git commit --allow-empty",
     "generate:releaseRules": "node ./packages/semantic/scripts/generateReleaseRules.js && yarn lint:fix",
     "----": "",
-    "build": "yarn workspaces run build",
-    "test": "yarn workspaces run test",
+    "build": "turbo run build",
+    "dev": "turbo run dev --no-cache --parallel --continue",
+    "test": "turbo run test",
+    "clean": "turbo run clean",
+    "clean:install": "yarn clean && rm -rf node_modules",
     "---- ": "",
     "lint:eslint": "eslint . --ext cjs,js,jsx,mjs,ts,tsx --max-warnings=0",
     "lint:fix": "yarn lint:eslint --fix && yarn lint:prettier --write && yarn typescript",
@@ -44,16 +50,45 @@
     "semantic-release": "multi-semantic-release"
   },
   "devDependencies": {
-    "@types/lodash-es": "4.17.5",
+    "@babel/eslint-parser": "7.16.5",
     "dotenv": "10.0.0",
     "husky": "7.0.4",
     "is-ci": "3.0.1",
-    "lodash-es": "4.17.21",
-    "pinst": "2.1.6"
+    "pinst": "2.1.6",
+    "tsup": "5.11.4",
+    "turbo": "1.0.11"
   },
-  "config": {
-    "commitizen": {
-      "path": "git-cz"
+  "turbo": {
+    "pipeline": {
+      "build": {
+        "outputs": [
+          "dist/**",
+          ".next/**"
+        ],
+        "dependsOn": [
+          "^build"
+        ]
+      },
+      "zzz@jeromefitz/semantic#build": {
+        "dependsOn": [
+          "@jeromefitz/git-cz#build"
+        ]
+      },
+      "clean": {
+        "outputs": []
+      },
+      "dev": {
+        "cache": false
+      },
+      "lint": {
+        "outputs": []
+      },
+      "test": {
+        "outputs": [
+          "coverage/**"
+        ],
+        "dependsOn": []
+      }
     }
   }
 }

@@ -3,7 +3,7 @@ import fs from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import { dirname, join, resolve } from 'path'
 
-import _find from 'lodash-es/find.js'
+import _find from 'lodash/find.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const dataDirectory = join(__dirname, '..', '..', 'data', 'gitmoji')

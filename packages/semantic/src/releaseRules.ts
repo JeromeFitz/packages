@@ -214,5 +214,5 @@ const releaseRules = [
   { release: null, type: '🚧' },
 ]
 
-// export default releaseRules
-module.exports = releaseRules
+export default releaseRules
+// module.exports = releaseRules
