@@ -537,11 +537,19 @@
       "semver": null
     },
     {
-      "code": ":brick:",
+      "code": ":bricks:",
       "description": "Infrastructure related changes.",
       "emoji": "🧱",
       "entity": "&#x1f9f1;",
-      "name": "brick",
+      "name": "bricks",
+      "semver": null
+    },
+    {
+      "code": ":technologist:",
+      "description": "Improve developer experience",
+      "emoji": "🧑‍💻",
+      "entity": "&#129489;&#8205;&#128187;",
+      "name": "technologist",
       "semver": null
     }
   ]

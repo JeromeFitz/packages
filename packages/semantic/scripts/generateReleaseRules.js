@@ -11,8 +11,8 @@ import config from '../../git-cz/dist/themes/gitmoji.js'
 const { types } = config
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const dataDirectory = join(__dirname, '..', 'src')
-const fileReleaseRules = resolve(dataDirectory, 'releaseRules.js')
-const fileTypeSpecs = resolve(dataDirectory, 'typeSpecs.js')
+const fileReleaseRules = resolve(dataDirectory, 'releaseRules.ts')
+const fileTypeSpecs = resolve(dataDirectory, 'typeSpecs.ts')
 
 const releaseRules = []
 const typeSpecs = []
@@ -61,7 +61,7 @@ export default releaseRules
       throw err
     }
     // eslint-disable-next-line no-console
-    console.log('❤️  1. generateReleaseRules > ./src/releaseRules.js')
+    console.log('❤️  1. generateReleaseRules > ./src/releaseRules.ts')
   })
 }
 
@@ -76,7 +76,7 @@ export default typeSpecs
       throw err
     }
     // eslint-disable-next-line no-console
-    console.log('❤️  2. generateTypeSpecs > ./src/typeSpecs.js')
+    console.log('❤️  2. generateTypeSpecs > ./src/typeSpecs.ts')
   })
 }
 

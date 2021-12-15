@@ -643,4 +643,3 @@ const typeSpecs = [
 ]
 
 export default typeSpecs
-// module.exports = typeSpecs

@@ -215,4 +215,3 @@ const releaseRules = [
 ]
 
 export default releaseRules
-// module.exports = releaseRules
