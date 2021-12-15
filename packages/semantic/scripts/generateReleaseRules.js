@@ -11,8 +11,8 @@ import config from '../../git-cz/dist/themes/gitmoji.js'
 const { types } = config
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const dataDirectory = join(__dirname, '..', 'src')
-const fileReleaseRules = resolve(dataDirectory, 'releaseRules.js')
-const fileTypeSpecs = resolve(dataDirectory, 'typeSpecs.js')
+const fileReleaseRules = resolve(dataDirectory, 'releaseRules.ts')
+const fileTypeSpecs = resolve(dataDirectory, 'typeSpecs.ts')
 
 const releaseRules = []
 const typeSpecs = []
@@ -53,8 +53,7 @@ Object.keys(types).map((type, _index) => {
 const generateReleaseRules = () => {
   const data = `const releaseRules = ${stringify(releaseRules)}
 
-// export default releaseRules
-module.exports = releaseRules
+export default releaseRules
   `
 
   writeFile(fileReleaseRules, data, (err) => {
@@ -62,15 +61,14 @@ module.exports = releaseRules
       throw err
     }
     // eslint-disable-next-line no-console
-    console.log('❤️  1. generateReleaseRules > ./src/releaseRules.js')
+    console.log('❤️  1. generateReleaseRules > ./src/releaseRules.ts')
   })
 }
 
 const generateTypeSpecs = () => {
   const data = `const typeSpecs = ${stringify(typeSpecs)}
 
-// export default typeSpecs
-module.exports = typeSpecs
+export default typeSpecs
   `
 
   writeFile(fileTypeSpecs, data, (err) => {
@@ -78,7 +76,7 @@ module.exports = typeSpecs
       throw err
     }
     // eslint-disable-next-line no-console
-    console.log('❤️  2. generateTypeSpecs > ./src/typeSpecs.js')
+    console.log('❤️  2. generateTypeSpecs > ./src/typeSpecs.ts')
   })
 }
 

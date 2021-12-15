@@ -23,43 +23,17 @@
   "type": "module",
   "exports": "./dist/index.js",
   "scripts": {
-    "build": "tsc --build src",
-    "lint-eslint": "eslint . --ext cjs,js,jsx,mjs,ts,tsx --max-warnings=0",
-    "lint-fix": "yarn prettier-fix && eslint . --ext cjs,js,jsx,mjs,ts,tsx --fix --max-warnings=0",
-    "lint-typescript": "yarn typescript",
-    "lint": "yarn lint-typescript && yarn prettier-check && yarn lint-eslint",
-    "tsc:watch": "tsc -w --preserveWatchOutput",
-    "prepublish": "yarn build",
-    "prettier-check": "prettier --check \"**/*.{cjs,js,jsx,mjs,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\"",
-    "prettier-fix": "prettier --write \"**/*.{cjs,js,jsx,mjs,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\"",
-    "pretty-quick": "pretty-quick",
-    "semantic-release": "echo semantic-release",
-    "test": "echo skip @jeromefitz/scripts test",
-    "typescript": "tsc --noEmit --declaration"
+    "build": "yarn clean && tsup src/* --format esm,cjs --minify --no-splitting --target node16",
+    "dev": "tsup src/* --format esm,cjs --watch --minify --no-splitting --target node16",
+    "clean": "rm -rf .turbo && rm -rf dist",
+    "clean:install": "yarn clean && rm -rf node_modules"
   },
   "dependencies": {
     "@octokit/rest": "18.12.0"
   },
   "files": [
-    "dist/data/labels.js",
-    "dist/data/labels.js.map",
-    "dist/data/milestones.js",
-    "dist/data/milestones.js.map",
-    "dist/github/label.js",
-    "dist/github/label.js.map",
-    "dist/github/milestone.js",
-    "dist/github/milestone.js.map",
-    "dist/github/pullRequest.js",
-    "dist/github/pullRequest.js.map",
-    "dist/templates/PULL_REQUEST.js",
-    "dist/templates/PULL_REQUEST.js.map",
-    "dist/utils/getChars.js",
-    "dist/utils/getChars.js.map",
-    "dist/utils/getPackageJson.js",
-    "dist/utils/getPackageJson.js.map",
-    "dist/index.js",
-    "dist/index.js.map",
+    "dist/**",
     "package.json",
-    "yarn.lock"
+    "README.md"
   ]
 }

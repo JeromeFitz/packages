@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "composite": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["es2020"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "paths": {},
+    "resolveJsonModule": true,
+    "rootDir": "./src",
+    "strict": false,
+    "target": "esnext"
+  },
+  "include": ["**/*.cjs", "**/*.js", "**/*.mjs", "**/*.ts"],
+  "exclude": ["node_modules"]
+}

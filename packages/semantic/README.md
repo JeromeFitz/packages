@@ -12,23 +12,7 @@
 yarn add @jeromefitz/semantic --dev
 ```
 
-This extends [`@jeromefitz/git-cz`](https://github.com/JeromeFitz/git-cz) please be sure to add to your `package.json`:
-
-```json
-  "config": {
-    "commitizen": {
-      "path": "git-cz"
-    }
-  }
-```
-
-## Overrides
-
-### Conventional Commit
-
-This extends [`@jeromefitz/git-cz`](https://github.com/JeromeFitz/git-cz) so you can follow through the `README` there.
-
-Quickly though you can look at `./changelog.config.js` in this repo to see how to override.
+This extends [`@jeromefitz/git-cz`](../git-cz).
 
 ### Semantic Release
 

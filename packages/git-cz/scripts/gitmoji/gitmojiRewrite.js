@@ -3,7 +3,7 @@ import fs from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import { dirname, join, resolve } from 'path'
 
-import _find from 'lodash-es/find.js'
+import _find from 'lodash/find.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const dataDirectory = join(__dirname, '..', '..', 'data', 'gitmoji')
@@ -89,7 +89,8 @@ const rewrites = [
   { from: 'test-tube', to: 'test-fail' },
   { from: 'necktie', to: 'logic' },
   { from: 'stethoscope', to: 'healthcheck' },
-  { from: 'brick', to: 'inf' },
+  { from: 'bricks', to: 'inf' },
+  { from: 'technologist', to: 'dx' },
 ]
 
 // @note default from git-cz
@@ -178,8 +179,6 @@ const types = Object.keys(_types)
 
     return type
   }, {})
-
-// export default types
 
 export { types }
 export default gitmoji

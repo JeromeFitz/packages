@@ -1,4 +1,4 @@
-const config = require('./.eslintrc.react.cjs')
+const config = require('./.eslintrc.cjs')
 
 module.exports = {
   ...config,

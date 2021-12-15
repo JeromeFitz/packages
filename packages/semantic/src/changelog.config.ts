@@ -1,4 +1,4 @@
-import config from '../../git-cz/dist/themes/gitmoji'
+import config from '@jeromefitz/git-cz/src/themes/gitmoji'
 
 const commit = {
   ...config.commit,

@@ -1,31 +1,14 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "@jeromefitz/codestyle/react",
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "lib": ["ES2020", "dom", "dom.iterable", "esnext"],
-    "module": "ES2020",
-    "target": "ES2020",
-
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "downlevelIteration": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
-    "jsx": "preserve", // "react-jsx"
-    "moduleResolution": "node",
-    "noEmit": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitAny": false,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "removeComments": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "sourceMap": true,
-    "strict": true,
-    "suppressImplicitAnyIndexErrors": true
-  }
+    "lib": ["ES2015"],
+    "module": "ESNext",
+    "rootDir": "src",
+    "outDir": "dist",
+    "jsx": "react"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }

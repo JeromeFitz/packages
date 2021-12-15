@@ -287,6 +287,18 @@
     "section": "Downgrade dependencies.",
     "semver": "patch"
   },
+  "dx": {
+    "branch": false,
+    "code": ":technologist:",
+    "commit": "dx",
+    "description": "Improve developer experience",
+    "emoji": "🧑‍💻",
+    "entity": "&#129489;&#8205;&#128187;",
+    "name": "technologist",
+    "releaseNotes": true,
+    "section": "Improve developer experience",
+    "semver": null
+  },
   "egg": {
     "branch": false,
     "code": ":egg:",
@@ -409,12 +421,12 @@
   },
   "inf": {
     "branch": false,
-    "code": ":brick:",
+    "code": ":bricks:",
     "commit": "inf",
     "description": "Infrastructure related changes.",
     "emoji": "🧱",
     "entity": "&#x1f9f1;",
-    "name": "brick",
+    "name": "bricks",
     "releaseNotes": true,
     "section": "Infrastructure related changes.",
     "semver": null

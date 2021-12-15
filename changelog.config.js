@@ -1,4 +1,5 @@
-import config from './packages/semantic/src/changelog.config.js'
+import gitmoji from '@jeromefitz/git-cz/gitmoji'
+import config from '@jeromefitz/semantic/changelog'
 
 const commit = {
   ...config.commit,

@@ -1,9 +1,16 @@
 {
   "compilerOptions": {
-    "rootDir": ".",
-    "outDir": ".",
-    "resolveJsonModule": true,
-    "composite": true
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["es2020"],
+    "module": "commonjs",
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "es2020",
+    "outDir": "./dist",
+    "rootDir": "./src"
   },
-  "files": ["package.json"]
+  "extends": "@jeromefitz/codestyle/tsconfig.node-14.json",
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }

@@ -21,9 +21,13 @@
   },
   "private": false,
   "scripts": {
-    "build": "echo @jeromefitz/semantic",
-    "semantic-release": "echo semantic-release",
-    "test": "echo skip @jeromefitz/semantic test"
+    "build": "yarn clean && tsup src/* --format esm,cjs --dts --minify --no-splitting --target node16",
+    "dev": "tsup src/* --format esm,cjs --dts --watch --minify --no-splitting --target node16",
+    "clean": "rm -rf .turbo && rm -rf dist",
+    "clean:install": "yarn clean && rm -rf node_modules"
+  },
+  "devDependencies": {
+    "@types/lodash": "4.14.178"
   },
   "dependencies": {
     "@jeromefitz/semantic-release-git": "10.0.0-develop.2",
@@ -34,9 +38,7 @@
     "@semantic-release/npm": "8.0.3",
     "@semantic-release/release-notes-generator": "10.0.3",
     "grapheme-splitter": "1.0.4",
-    "lodash-es": "4.17.21",
-    "lodash.map": "4.6.0",
-    "lodash.pullat": "4.6.0",
+    "lodash": "4.17.21",
     "multi-semantic-release": "2.11.0",
     "semantic-release": "18.0.1",
     "semantic-release-commit-filter": "1.0.2",
@@ -44,29 +46,12 @@
   },
   "type": "module",
   "files": [
+    "dist/**",
     "package.json",
-    "release.config.cjs",
-    "src/branches.cjs",
-    "src/changelog.config.js",
-    "src/config/release-branch-types/ci.cjs",
-    "src/config/release-branch-types/feature.cjs",
-    "src/config/release-branch-types/index.cjs",
-    "src/config/release-branch-types/refactor.cjs",
-    "src/config/release-branch-types/release.cjs",
-    "src/releaseRules.cjs",
-    "src/typeSpecs.cjs",
-    "yarn.lock"
+    "README.md"
   ],
   "exports": {
-    ".": "./release.config.cjs",
-    "./config/release-branch-types/ci.cjs": "./config/release-branch-types/ci.cjs",
-    "./config/release-branch-types/feature.cjs": "./config/release-branch-types/feature.cjs",
-    "./config/release-branch-types/index.cjs": "./config/release-branch-types/index.cjs",
-    "./config/release-branch-types/refactor.cjs": "./config/refactor-branch-types/release.cjs",
-    "./config/release-branch-types/release.cjs": "./config/release-branch-types/release.cjs",
-    "./release.config.cjs": "./release.config.cjs",
-    "./src/branches.cjs": "./src/branches.cjs",
-    "./src/releaseRules.cjs": "./src/releaseRules.cjs",
-    "./src/typeSpecs.cjs": "./src/typeSpecs.cjs"
+    "./changelog": "./dist/changelog.config.js",
+    "./release.config.cjs": "./dist/release.config.cjs"
   }
 }

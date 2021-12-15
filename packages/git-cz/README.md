@@ -1,7 +1,5 @@
 # 🥳️ git(moji)-cz => @jeromefitz/git-cz
 
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-
 ## 🍴️ Why this Fork
 
 ```bash
@@ -28,63 +26,6 @@ I needed to customize some things, and seemed like the intent was breaking away 
   - Eventually getting there
 
 📝️ Note: `@jeromefitz/git-cz-v7.0.0` is the main breaking off point
-
-## 💽️ Install
-
-### Without installation
-
-```shell
-yarn git-cz
-# or
-yarn git-cz -e
-```
-
-### Install globally standalone
-
-```shell
-yarn global install @jeromefitz/git-cz
-git-cz
-# or
-git-cz -e
-```
-
-### Install locally with Commitizen
-
-```shell
-yarn global install commitizen
-yarn install --save-dev @jeromefitz/git-cz
-```
-
-`package.json`:
-
-```json
-{
-  "config": {
-    "commitizen": {
-      "path": "git-cz"
-    }
-  }
-}
-```
-
-run:
-
-```shell
-git cz
-```
-
-### Install globally with Commitizen
-
-```shell
-yarn global install commitizen @jeromefitz/git-cz
-commitizen init git-cz --save-dev --save-exact
-```
-
-run:
-
-```shell
-git cz
-```
 
 ## 🔧️ Custom config
 
