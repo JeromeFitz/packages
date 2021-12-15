@@ -1,11 +1,11 @@
 /* eslint-disable id-match */
 import inquirer from 'inquirer'
 import AutocompletePrompt from 'inquirer-list-search-prompt'
-import _filter from 'lodash-es/filter.js'
-import _map from 'lodash-es/map.js'
+import _filter from 'lodash/filter.js'
+import _map from 'lodash/map.js'
 
-import LimitedInputPrompt from './LimitedInputPrompt.js'
-import questionConfig, { TYPE_BRANCH, TYPE_COMMIT } from './questionConfig.js'
+import LimitedInputPrompt from './LimitedInputPrompt'
+import questionConfig, { TYPE_BRANCH, TYPE_COMMIT } from './questionConfig'
 
 inquirer.registerPrompt('autocomplete', AutocompletePrompt)
 inquirer.registerPrompt('limitedInput', LimitedInputPrompt)

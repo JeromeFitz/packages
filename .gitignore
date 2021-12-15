@@ -33,3 +33,4 @@ vercel-secrets.json
 size-snapshot.json
 release
 tsconfig.tsbuildinfo
+.turbo

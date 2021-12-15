@@ -4,7 +4,7 @@ import path from 'path'
 
 import chalkPipe from 'chalk-pipe'
 
-import configDefault from '../themes/gitmoji.js'
+import configDefault from '../themes/gitmoji'
 
 const configFiles = [
   '.git-cz.json',

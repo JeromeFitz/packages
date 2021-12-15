@@ -2,7 +2,7 @@
 import isCI from 'is-ci'
 
 !isCI && require('dotenv').config({ path: './.env' })
-import config from './dist/themes/gitmoji'
+import config from './src/themes/gitmoji'
 
 const OVERRIDE_TEST = false
 

@@ -1,12 +1,12 @@
 /* eslint-disable id-match */
-import _map from 'lodash-es/map.js'
+import _map from 'lodash/map.js'
 
-import config from '../themes/gitmoji.js'
+import config from '../themes/gitmoji'
 
-import { getConfig } from './getFile.js'
-import getGitRootDir from './getGitRootDir.js'
-import { TYPE_BRANCH, TYPE_COMMIT } from './questionConfig.js'
-import sortObject from './sortObject.js'
+import { getConfig } from './getFile'
+import getGitRootDir from './getGitRootDir'
+import { TYPE_BRANCH, TYPE_COMMIT } from './questionConfig'
+import sortObject from './sortObject'
 
 // @todo(any)
 const setState = (cliOptions: any) => {

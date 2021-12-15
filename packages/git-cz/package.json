@@ -21,7 +21,6 @@
   },
   "keywords": [
     "commit",
-    "commitizen",
     "conventional changelog",
     "format",
     "gitflow",
@@ -32,26 +31,33 @@
     "node": ">=14"
   },
   "type": "module",
-  "exports": "./dist/cz.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    "./dist/cz.js": "./dist/cz.js",
+    "./gitmoji": "./dist/themes/gitmoji.cjs",
+    "./src/themes/gitmoji": "./src/themes/gitmoji.ts"
+  },
   "bin": {
-    "git-cz": "./bin/git-cz.js",
-    "gitcz": "./bin/git-cz.js"
+    "git-cz": "./dist/cli.js",
+    "gitcz": "./dist/cli.js"
   },
   "private": false,
   "scripts": {
-    "build": "tsc",
-    "clean": "rimraf dist",
-    "dry:run": "yarn clean && tsc && node ./dist/cli",
+    "dry:run": "yarn build && node ./dist/cli",
     "gitmoji": "node ./scripts/gitmoji/index.js",
-    "semantic-release": "semantic-release",
-    "test:coverage": "echo 🚧️ TODO jest --coverage",
-    "test:dev": "echo 🚧️ TODO jest --watch",
-    "test": "echo 🚧️ TODO jest --maxWorkers 2",
-    "typescript": "tsc --noEmit --declaration -p tsconfig.json"
+    "----": "",
+    "build": "yarn clean && tsup src/* --format esm,cjs --dts --minify --no-splitting --target node16",
+    "dev": "tsup src/* --format esm,cjs --watch --dts --minify --no-splitting --target node16",
+    "clean": "rm -rf .turbo && rm -rf dist",
+    "clean:install": "yarn clean && rm -rf node_modules"
   },
   "devDependencies": {
+    "@types/chalk-pipe": "2.0.0",
+    "@types/lodash": "4.14.178",
     "chai": "4.3.4",
-    "commitizen": "4.2.4",
     "isomorphic-unfetch": "3.1.0",
     "jest": "27.4.5",
     "mocha": "9.1.3",
@@ -59,21 +65,20 @@
     "spawncommand": "2.2.0"
   },
   "dependencies": {
-    "@types/chalk-pipe": "2.0.0",
     "chalk": "5.0.0",
     "chalk-pipe": "5.1.1",
     "fast-json-stable-stringify": "2.1.0",
     "fuzzy": "0.1.3",
     "inquirer": "8.2.0",
     "inquirer-list-search-prompt": "1.0.2",
-    "lodash-es": "4.17.21",
+    "lodash": "4.17.21",
     "minimist": "1.2.5",
     "shellsync": "0.2.2",
     "word-wrap": "1.2.3"
   },
-  "config": {
-    "commitizen": {
-      "path": "./dist/cz.js"
-    }
-  }
+  "files": [
+    "dist/**",
+    "package.json",
+    "README.md"
+  ]
 }

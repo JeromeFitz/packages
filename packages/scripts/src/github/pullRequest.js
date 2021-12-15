@@ -6,7 +6,7 @@ import chalkPipe from 'chalk-pipe'
 import isCI from 'is-ci'
 
 !isCI && require('dotenv').config({ path: './.env' })
-import PULL_REQUEST from '../templates/PULL_REQUEST'
+import PULL_REQUEST from '../templates/PULL_REQUEST__RELEASE'
 
 const octokit = new Octokit({ auth: process.env.GH_TOKEN })
 const getVersion = (version) => {
