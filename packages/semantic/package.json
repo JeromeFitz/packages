@@ -20,13 +20,6 @@
     "registry": "https://registry.npmjs.org/"
   },
   "private": false,
-  "zzz:scripts": {
-    "build": "echo @jeromefitz/semantic",
-    "semantic-release": "echo semantic-release",
-    "test": "echo skip @jeromefitz/semantic test",
-    "lint": "TIMING=1 eslint src --fix",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
-  },
   "scripts": {
     "build": "yarn clean && tsup src/* --format esm,cjs --dts --minify --no-splitting --target node16",
     "dev": "tsup src/* --format esm,cjs --dts --watch --minify --no-splitting --target node16",

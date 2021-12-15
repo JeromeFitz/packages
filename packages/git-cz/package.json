@@ -45,18 +45,10 @@
     "gitcz": "./dist/cli.js"
   },
   "private": false,
-  "zzz:scripts": {
-    "build": "tsc",
-    "clean": "rimraf dist",
-    "dry:run": "yarn clean && tsc && node ./dist/cli",
-    "gitmoji": "node ./scripts/gitmoji/index.js",
-    "semantic-release": "semantic-release",
-    "test:coverage": "echo 🚧️ TODO jest --coverage",
-    "test:dev": "echo 🚧️ TODO jest --watch",
-    "test": "echo 🚧️ TODO jest --maxWorkers 2",
-    "typescript": "tsc --noEmit --declaration -p tsconfig.json"
-  },
   "scripts": {
+    "dry:run": "yarn build && node ./dist/cli",
+    "gitmoji": "node ./scripts/gitmoji/index.js",
+    "----": "",
     "build": "yarn clean && tsup src/* --format esm,cjs --dts --minify --no-splitting --target node16",
     "dev": "tsup src/* --format esm,cjs --watch --dts --minify --no-splitting --target node16",
     "clean": "rm -rf .turbo && rm -rf dist",

@@ -69,11 +69,6 @@
           "^build"
         ]
       },
-      "zzz@jeromefitz/semantic#build": {
-        "dependsOn": [
-          "@jeromefitz/git-cz#build"
-        ]
-      },
       "clean": {
         "outputs": []
       },

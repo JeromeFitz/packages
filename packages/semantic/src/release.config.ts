@@ -1,5 +1,3 @@
-// import fs from 'fs'
-
 import GraphemeSplitter from 'grapheme-splitter'
 import isCI from 'is-ci'
 import _pullAt from 'lodash/pullAt.js'
@@ -8,11 +6,8 @@ import branches from './branches'
 import releaseRules from './releaseRules'
 import typeSpecs from './typeSpecs'
 
-// const pkg = JSON.parse(fs.readFileSync('../package.json', 'utf8'))
-// const { name } = pkg
-
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-!isCI && require('dotenv').config({ path: '../../../.env' })
+!isCI && require('dotenv').config({ path: './.env' })
 
 const splitter = new GraphemeSplitter()
 
@@ -140,8 +135,6 @@ const config = {
       },
     ],
   ],
-  //
-  // tagFormat: `${name}@\${version}`,
   tagFormat: `v\${version}`,
 }
 
