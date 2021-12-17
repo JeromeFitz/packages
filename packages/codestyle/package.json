@@ -58,7 +58,8 @@
     "build": "yarn clean && tsup lint-staged.config.js --format esm,cjs --dts --external react --minify --no-splitting --target node16",
     "dev": "tsup lint-staged.config.js --format esm,cjs --watch --dts --external react --minify --no-splitting --target node16",
     "clean": "rm -rf .turbo && rm -rf dist",
-    "clean:install": "yarn clean && rm -rf node_modules"
+    "clean:install": "yarn clean && rm -rf node_modules",
+    "semantic-release": "semantic-release -e semantic-release-monorepo"
   },
   "dependencies": {
     "@babel/core": "7.16.5",
