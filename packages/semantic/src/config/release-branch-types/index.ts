@@ -1,5 +1,6 @@
 import ci from './ci'
 import feature from './feature'
+import fix from './fix'
 import refactor from './refactor'
 import release from './release'
 
@@ -15,6 +16,7 @@ import release from './release'
 const releaseBranchTypes = {
   ci,
   feature,
+  fix,
   refactor,
   release,
 }
