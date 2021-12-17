@@ -216,6 +216,15 @@ const typeSpecs = [
     value: 'downgrade',
   },
   {
+    code: ':technologist:',
+    emoji: '🧑‍💻',
+    releaseNotes: true,
+    section: 'Dx\n#### Improve developer experience',
+    semver: null,
+    type: 'dx',
+    value: 'dx',
+  },
+  {
     code: ':egg:',
     emoji: '🥚',
     releaseNotes: false,
@@ -306,7 +315,7 @@ const typeSpecs = [
     value: 'ignore',
   },
   {
-    code: ':brick:',
+    code: ':bricks:',
     emoji: '🧱',
     releaseNotes: true,
     section: 'Inf\n#### Infrastructure related changes.',

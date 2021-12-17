@@ -39,7 +39,7 @@ const answerBranchName = (state, input, answers, isFilter = true) => {
 }
 
 const answerBreaking = (input = '', answers, isFilter = true) => {
-  const breakingLabel = '💥️  BREAKING CHANGE: '
+  const breakingLabel = 'BREAKING CHANGE: 💥️ '
   const breakingPrefix = answers.commitBreakingFlag ? breakingLabel : ''
 
   const breakingPrefixTemp = isFilter

@@ -14,7 +14,7 @@ const splitter = new GraphemeSplitter()
 const parserOpts = {
   headerPattern: /^(.*?)(?:\((.*)\))?:?\s(.*)$/,
   headerCorrespondence: ['type', 'scope', 'subject'],
-  noteKeywords: ['💥️  BREAKING CHANGE', 'BREAKING CHANGE'],
+  noteKeywords: ['BREAKING CHANGE'],
   // referenceActions: typeSpecs.map(({ type }) => type),
   referenceActions: null,
   revertPattern: /^Revert\s"([\s\S]*)"\s*This reverts commit (\w*)\./,

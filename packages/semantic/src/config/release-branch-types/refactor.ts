@@ -1,3 +1,3 @@
-const refactor = ['proper-export']
+const refactor = []
 
 export default refactor

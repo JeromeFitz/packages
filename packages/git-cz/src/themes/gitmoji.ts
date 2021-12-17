@@ -467,7 +467,7 @@ const gitmoji = {
       name: 'tada',
       releaseNotes: true,
       section: 'Begin a project.',
-      semver: null,
+      semver: 'major',
     },
     iphone: {
       branch: false,

@@ -31,7 +31,7 @@ const rewrites = [
   { from: 'memo', to: 'docs' },
   { from: 'rocket', to: 'deploy' },
   { from: 'lipstick', to: 'ui' },
-  { from: 'tada', to: 'init' },
+  { from: 'tada', to: 'init', semver: 'major' },
   { from: 'white-check-mark', to: 'test', branch: 'test' },
   { from: 'lock', to: 'security' },
   { from: 'bookmark', to: 'release', branch: 'release', releaseNotes: false },
@@ -57,7 +57,7 @@ const rewrites = [
   { from: 'alien', to: 'compat' },
   { from: 'truck', to: 'mv', releaseNotes: false },
   { from: 'page-facing-up', to: 'license' },
-  { from: 'boom', to: 'breaking' },
+  { from: 'boom', to: 'breaking', semver: 'major' },
   { from: 'bento', to: 'assets' },
   { from: 'wheelchair', to: 'access' },
   { from: 'bulb', to: 'docs-code' },
@@ -144,6 +144,11 @@ const gitmoji = async (items) => {
           ? true
           : rewrite.releaseNotes || item.releaseNotes || false
 
+      const semver =
+        rewrite.semver === undefined
+          ? item.semver || null
+          : rewrite.semver || item.semver || null
+
       _types[rewrite.to] = {
         branch: Boolean(rewrite?.branch) ? rewrite.branch : false,
         code: item.code,
@@ -154,7 +159,7 @@ const gitmoji = async (items) => {
         name: item.name,
         releaseNotes,
         section: item.description,
-        semver: item.semver || null,
+        semver,
       }
     }
   })
