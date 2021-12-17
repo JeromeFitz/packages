@@ -52,7 +52,8 @@
     "build": "yarn clean && tsup src/* --format esm,cjs --dts --minify --no-splitting --target node16",
     "dev": "tsup src/* --format esm,cjs --watch --dts --minify --no-splitting --target node16",
     "clean": "rm -rf .turbo && rm -rf dist",
-    "clean:install": "yarn clean && rm -rf node_modules"
+    "clean:install": "yarn clean && rm -rf node_modules",
+    "semantic-release": "semantic-release -e semantic-release-monorepo"
   },
   "devDependencies": {
     "@types/chalk-pipe": "2.0.0",
