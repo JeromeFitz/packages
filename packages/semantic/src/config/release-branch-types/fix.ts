@@ -1,3 +1,3 @@
-const fix = ['semver-init-breaking']
+const fix = []
 
 export default fix
