@@ -1,0 +1,53 @@
+{
+  "name": "@jeromefitz/spotify",
+  "version": "0.0.0",
+  "description": "spotify stuff",
+  "author": {
+    "name": "Jerome Fitzgerald",
+    "email": "j@jeromefitzgerald.com",
+    "url": "https://jeromefitzgerald.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/jeromefitz/packages.git",
+    "directory": "packages/spotify"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "private": false,
+  "scripts": {
+    "build": "yarn clean && tsup src/* --format esm,cjs --dts --minify --target node16",
+    "dev": "tsup src/* --format esm,cjs --watch --dts --minify --target node16",
+    "clean": "rm -rf .turbo && rm -rf dist",
+    "clean:install": "yarn clean && rm -rf node_modules",
+    "semantic-release": "semantic-release -e semantic-release-monorepo"
+  },
+  "devDependencies": {
+    "@types/lodash": "4.14.178"
+  },
+  "dependencies": {
+    "isomorphic-unfetch": "3.1.0",
+    "github-slugger": "1.4.0",
+    "lodash": "4.17.21",
+    "plaiceholder": "2.2.0"
+  },
+  "type": "module",
+  "files": [
+    "dist/**",
+    "package.json",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts"
+}
