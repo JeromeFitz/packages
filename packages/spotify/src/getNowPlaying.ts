@@ -1,6 +1,5 @@
-import _omit from 'lodash/omit'
-
 import { OMIT_FIELDS } from './constants'
+import _omit from './utils/omit'
 
 // @todo(types)
 const getNowPlaying = async (self: any, data: any, withImages = false) => {

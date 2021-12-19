@@ -30,13 +30,9 @@
     "clean:install": "yarn clean && rm -rf node_modules",
     "semantic-release": "semantic-release -e semantic-release-monorepo"
   },
-  "devDependencies": {
-    "@types/lodash": "4.14.178"
-  },
   "dependencies": {
     "isomorphic-unfetch": "3.1.0",
     "github-slugger": "1.4.0",
-    "lodash": "4.17.21",
     "plaiceholder": "2.2.0"
   },
   "type": "module",

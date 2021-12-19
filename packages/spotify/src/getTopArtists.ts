@@ -1,4 +1,4 @@
-import _noop from 'lodash/noop'
+import _noop from './utils/noop'
 
 // @todo(types)
 const getTopArtists = async (_self: any, data: any, withImages = false) => {

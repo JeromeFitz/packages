@@ -1,8 +1,7 @@
-import _noop from 'lodash/noop'
-import _omit from 'lodash/omit'
-
 import { asyncForEach } from './asyncForEach'
 import { OMIT_FIELDS } from './constants'
+import _noop from './utils/noop'
+import _omit from './utils/omit'
 
 // @todo(types)
 const getTopTracks = async (self: any, data: any, withImages) => {
