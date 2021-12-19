@@ -1,6 +1,6 @@
 # `@jeromefitz/spotify`
 
-Wrapper stuff for `jeromefitzgerald.com`.
+Wrapper stuff for [`jeromefitzgerald.com`](https://jeromefitzgerald.com).
 
 ## 🛠️ Usage
 

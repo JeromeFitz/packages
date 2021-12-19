@@ -1,12 +1,15 @@
 {
   "name": "@jeromefitz/spotify",
   "version": "0.0.0",
-  "description": "spotify stuff",
+  "description": "Spotify Wrapper for: Now Playing, Top Artists, & Top Tracks",
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
     "url": "https://jeromefitzgerald.com"
   },
+  "keywords": [
+    "spotify"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
