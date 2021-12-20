@@ -134,6 +134,7 @@ const _types = {
 }
 
 const gitmoji = async (items) => {
+  // eslint-disable-next-line complexity
   await items.map((item) => {
     const rewrite = _find(rewrites, { from: item.name })
 
@@ -159,7 +160,15 @@ const gitmoji = async (items) => {
         name: item.name,
         releaseNotes,
         section: item.description,
-        semver,
+        // @note(semantic) big lol, README does not meet requirements:
+        // ref: https://github.com/semantic-release/semantic-release#commit-message-format
+        // ["major","premajor","minor","preminor","patch","prepatch","prerelease"]
+        semver: !!semver
+          ? semver
+              .replace('fix', 'patch')
+              .replace('feature', 'minor')
+              .replace('breaking', 'major')
+          : null,
       }
     }
   })

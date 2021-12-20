@@ -328,7 +328,7 @@ const typeSpecs = [
     emoji: '🎉',
     releaseNotes: true,
     section: 'Init\n#### Begin a project.',
-    semver: null,
+    semver: 'major',
     type: 'init',
     value: 'init',
   },
