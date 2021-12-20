@@ -54,14 +54,15 @@ const writerOpts = {
 
     commit.type = `${typeSpec.emoji}  ${typeSpec.section}`
     commit.typeSpecIndex = typeSpecIndex
-    // @semver
-    if (typeSpec.semver === 'major' || typeSpec.semver === 'breaking') {
+    // @note(semver) future-proof
+    //               will eventually move to breaking | feature | fix
+    if (typeSpec.semver === 'breaking' || typeSpec.semver === 'major') {
       commit.order = 1
     }
-    if (typeSpec.semver === 'minor' || typeSpec.semver === 'feature') {
+    if (typeSpec.semver === 'feature' || typeSpec.semver === 'minor') {
       commit.order = 3
     }
-    if (typeSpec.semver === 'patch') {
+    if (typeSpec.semver === 'fix' || typeSpec.semver === 'patch') {
       commit.order = 5
     }
     if (typeSpec.semver === null) {
