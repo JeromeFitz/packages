@@ -1,0 +1,48 @@
+{
+  "name": "@jeromefitz/conventional-gitmoji",
+  "version": "0.0.0",
+  "description": "Helper package for dual gitmoji / conventional commits",
+  "author": {
+    "name": "Jerome Fitzgerald",
+    "email": "j@jeromefitzgerald.com",
+    "url": "https://jeromefitzgerald.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/jeromefitz/packages.git",
+    "directory": "packages/conventional-gitmoji"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "private": false,
+  "scripts": {
+    "build": "yarn clean && tsup src/* --format esm,cjs --dts --minify --no-splitting --target node14",
+    "dev": "tsup src/* --format esm,cjs --dts --watch --minify --no-splitting --target node14",
+    "clean": "rm -rf .turbo && rm -rf dist",
+    "clean:install": "yarn clean && rm -rf node_modules",
+    "semantic-release": "semantic-release -e semantic-release-monorepo"
+  },
+  "devDependencies": {
+    "gitmojis": "3.8.0",
+    "title": "3.4.3"
+  },
+  "type": "module",
+  "files": [
+    "dist/**",
+    "package.json",
+    "README.md"
+  ],
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    }
+  }
+}
