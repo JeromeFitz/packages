@@ -49,8 +49,8 @@
     "dry:run": "yarn build && node ./dist/cli",
     "gitmoji": "node ./scripts/gitmoji/index.js",
     "----": "",
-    "build": "yarn clean && tsup src/* --format esm,cjs --dts --minify --no-splitting --target node16",
-    "dev": "tsup src/* --format esm,cjs --watch --dts --minify --no-splitting --target node16",
+    "build": "yarn clean && tsup src/* --format esm,cjs --dts --minify --no-splitting --target node14",
+    "dev": "tsup src/* --format esm,cjs --watch --dts --minify --no-splitting --target node14",
     "clean": "rm -rf .turbo && rm -rf dist",
     "clean:install": "yarn clean && rm -rf node_modules",
     "semantic-release": "semantic-release -e semantic-release-monorepo"
