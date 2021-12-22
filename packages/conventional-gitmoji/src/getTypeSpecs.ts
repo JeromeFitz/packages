@@ -1,18 +1,20 @@
 import title from 'title'
 
+import type { TypesProps } from './index'
+
 type TypeSpecsProps = {
   code: string
   emoji: string
   releaseNotes: boolean
   section: string
-  semver: 'breaking' | 'feature' | 'fix' | 'major' | 'minor' | 'patch'
+  semver: 'breaking' | 'feature' | 'fix' | 'major' | 'minor' | 'patch' | null
   type: string
   value: string
 }
 
 const typeSpecs: TypeSpecsProps[] = []
 
-const getTypeSpecs = (types) => {
+const getTypeSpecs = (types: TypesProps) => {
   Object.keys(types).map((type) => {
     typeSpecs.push({
       code: types[type].code,

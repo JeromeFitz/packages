@@ -1,4 +1,3 @@
-import gitmoji from '@jeromefitz/git-cz/gitmoji'
 import config from '@jeromefitz/semantic/changelog'
 
 const commit = {
