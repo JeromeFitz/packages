@@ -25,14 +25,8 @@
     "---": "",
     "semantic-release": "semantic-release -e semantic-release-monorepo"
   },
-  "devDependencies": {
-    "@jeromefitz/semantic": "*",
-    "@types/lodash": "4.14.178"
-  },
-  "dependencies": {
-    "lodash": "4.17.21",
-    "semantic-release-monorepo": "7.0.5"
-  },
+  "devDependencies": {},
+  "dependencies": {},
   "type": "module",
   "files": [
     "dist/**",

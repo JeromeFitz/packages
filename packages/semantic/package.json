@@ -31,10 +31,10 @@
     "@types/lodash": "4.14.178"
   },
   "dependencies": {
-    "@jeromefitz/semantic-release-git": "10.0.0-develop.2",
     "@octokit/core": "3.5.1",
     "@semantic-release/commit-analyzer": "9.0.2",
     "@semantic-release/exec": "6.0.3",
+    "@semantic-release/git": "10.0.1",
     "@semantic-release/github": "8.0.2",
     "@semantic-release/npm": "8.0.3",
     "@semantic-release/release-notes-generator": "10.0.3",

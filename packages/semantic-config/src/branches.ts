@@ -1,20 +1,17 @@
-import _map from 'lodash/map.js'
-
 import releaseBranchTypes from './branch-types'
 
-const branchTypes = _map(
-  releaseBranchTypes,
-  (releaseBranchType, releaseBranchTypeIndex) => {
-    return _map(releaseBranchType, (branchType) => {
-      return (
-        !!branchType && {
-          name: `${releaseBranchTypeIndex}/${branchType}`,
-          prerelease: branchType,
+const branchTypes = Object.keys(releaseBranchTypes)
+  .map((branchType) =>
+    releaseBranchTypes[branchType].map(
+      (releaseBranchType: string) =>
+        !!releaseBranchType && {
+          name: `${branchType}/${releaseBranchType}`,
+          prerelease: releaseBranchType,
         }
-      )
-    })[0]
-  }
-).filter((branchType) => !!branchType)
+    )
+  )
+  .filter((b) => b.length)
+  .flat()
 
 const branches = [
   { name: 'main' },

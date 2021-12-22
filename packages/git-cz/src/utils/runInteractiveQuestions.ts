@@ -1,6 +1,6 @@
 /* eslint-disable id-match */
 import inquirer from 'inquirer'
-import AutocompletePrompt from 'inquirer-list-search-prompt'
+import AutocompletePrompt from 'inquirer-autocomplete-prompt'
 import _filter from 'lodash/filter.js'
 import _map from 'lodash/map.js'
 
