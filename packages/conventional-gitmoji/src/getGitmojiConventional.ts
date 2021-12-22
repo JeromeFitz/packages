@@ -10,7 +10,7 @@ const getGitmoji = () => {
     const rewrite = _rewrites.find((r) => r?.from === gitmoji.name)
     if (!!rewrite) {
       const releaseNotes =
-        rewrite.releaseNotes === undefined ? true : rewrite.releaseNotes || false
+        rewrite.releaseNotes === undefined ? true : rewrite.releaseNotes || null
 
       const semver =
         rewrite.semver === undefined
