@@ -71,6 +71,16 @@
           "^build"
         ]
       },
+      "@jeromefitz/git-cz#build": {
+        "dependsOn": [
+          "@jeromefitz/conventional-gitmoji#build"
+        ]
+      },
+      "@jeromefitz/semantic#build": {
+        "dependsOn": [
+          "@jeromefitz/conventional-gitmoji#build"
+        ]
+      },
       "clean": {
         "outputs": []
       },

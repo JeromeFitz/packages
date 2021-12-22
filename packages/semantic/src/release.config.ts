@@ -1,10 +1,9 @@
+import { releaseRules, typeSpecs } from '@jeromefitz/conventional-gitmoji'
 import GraphemeSplitter from 'grapheme-splitter'
 import isCI from 'is-ci'
 import _pullAt from 'lodash/pullAt.js'
 
 import branches from './branches'
-import releaseRules from './releaseRules'
-import typeSpecs from './typeSpecs'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 !isCI && require('dotenv').config({ path: './.env' })
