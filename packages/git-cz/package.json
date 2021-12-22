@@ -31,15 +31,7 @@
     "node": ">=14"
   },
   "type": "module",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
   "sideEffects": false,
-  "exports": {
-    "./dist/cz.js": "./dist/cz.js",
-    "./gitmoji": "./dist/themes/gitmoji.cjs",
-    "./src/themes/gitmoji": "./src/themes/gitmoji.ts"
-  },
   "bin": {
     "git-cz": "./dist/cli.js",
     "gitcz": "./dist/cli.js"
@@ -47,7 +39,6 @@
   "private": false,
   "scripts": {
     "dry:run": "yarn build && node ./dist/cli",
-    "gitmoji": "node ./scripts/gitmoji/index.js",
     "----": "",
     "build": "yarn clean && tsup src/* --format esm,cjs --dts --minify --no-splitting --target node14",
     "dev": "tsup src/* --format esm,cjs --watch --dts --minify --no-splitting --target node14",
@@ -66,6 +57,7 @@
     "spawncommand": "2.2.0"
   },
   "dependencies": {
+    "@jeromefitz/conventional-gitmoji": "*",
     "chalk": "5.0.0",
     "chalk-pipe": "5.1.1",
     "fast-json-stable-stringify": "2.1.0",
@@ -81,5 +73,20 @@
     "dist/**",
     "package.json",
     "README.md"
-  ]
+  ],
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    },
+    "./dist/cz.js": "./dist/cz.js",
+    "./gitmoji": {
+      "import": "./dist/themes/gitmoji.js",
+      "require": "./dist/themes/gitmoji.cjs",
+      "default": "./dist/themes/gitmoji.js"
+    },
+    "./src/themes/gitmoji": "./src/themes/gitmoji.ts"
+  }
 }
