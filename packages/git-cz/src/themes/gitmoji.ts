@@ -1,6 +1,37 @@
 import { types } from '@jeromefitz/conventional-gitmoji'
+import type { TypesProps } from '@jeromefitz/conventional-gitmoji'
 
-const gitmoji = {
+type BranchProps = {
+  format: string
+  prefix: string
+  questions: string[]
+  url: string
+}
+
+type CommitABProps = {
+  branchName: string
+  emoji: string
+  scope: string
+}
+
+type CommitProps = {
+  after: CommitABProps
+  before: CommitABProps
+  format: string
+  maxMessageLength: number
+  minMessageLength: number
+  questions: string[]
+  scopes: string[]
+}
+
+type GitmojiProps = {
+  branch: BranchProps
+  commit: CommitProps
+  enabled: boolean
+  types: TypesProps
+}
+
+const gitmoji: GitmojiProps = {
   branch: {
     format: '{branchType}{branchName}',
     prefix: '',

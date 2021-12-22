@@ -1,18 +1,12 @@
+import type { TypesProps } from './index'
+
 type ReleaseRulesProps = {
   release: string | null
   type: string | null
 }
 
 const releaseRules: ReleaseRulesProps[] = []
-
-const getReleaseRules = (types: {
-  [x: string]: {
-    code: string
-    emoji: string | null
-    semver: string | null
-    commit: string | null
-  }
-}) => {
+const getReleaseRules = (types: TypesProps) => {
   Object.keys(types).map((type) => {
     /**
      * @note Need to cover (code|commit|emoji) for semver based on repo choice

@@ -39,7 +39,8 @@
     "lint:fix": "yarn lint:eslint --fix && yarn lint:prettier --write && yarn typescript",
     "lint:prettier": "prettier \"**/*.{cjs,js,jsx,mjs,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\"",
     "lint:typescript": "yarn typescript",
-    "lint": "yarn typescript && yarn lint:prettier --check && yarn lint:eslint",
+    "lint:hack": "// run empty turbo before monorepo lint",
+    "lint": "turbo run lint && yarn typescript && yarn lint:prettier --check && yarn lint:eslint",
     "pretty-quick": "pretty-quick",
     "typescript": "tsc --noEmit --declaration",
     "----  ": "",
@@ -81,6 +82,11 @@
           "@jeromefitz/conventional-gitmoji#build"
         ]
       },
+      "@jeromefitz/semantic-config#build": {
+        "dependsOn": [
+          "@jeromefitz/semantic#build"
+        ]
+      },
       "clean": {
         "outputs": []
       },
@@ -88,6 +94,9 @@
         "cache": false
       },
       "lint": {
+        "dependsOn": [
+          "@jeromefitz/conventional-gitmoji#build"
+        ],
         "outputs": []
       },
       "test": {
