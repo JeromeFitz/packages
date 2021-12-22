@@ -28,7 +28,8 @@
     "semantic-release": "semantic-release -e semantic-release-monorepo"
   },
   "devDependencies": {
-    "@types/lodash": "4.14.178"
+    "@types/lodash": "4.14.178",
+    "@types/title": "3.4.1"
   },
   "dependencies": {
     "@jeromefitz/conventional-gitmoji": "*",
