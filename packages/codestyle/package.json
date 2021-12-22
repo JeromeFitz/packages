@@ -55,8 +55,8 @@
     "./tsconfig.react.json": "./tsconfig.react.json"
   },
   "scripts": {
-    "build": "yarn clean && tsup lint-staged.config.js --format esm,cjs --dts --external react --minify --no-splitting --target node16",
-    "dev": "tsup lint-staged.config.js --format esm,cjs --watch --dts --external react --minify --no-splitting --target node16",
+    "build": "yarn clean && tsup lint-staged.config.js --format esm,cjs --dts --external react --minify --no-splitting --target node14",
+    "dev": "tsup lint-staged.config.js --format esm,cjs --watch --dts --external react --minify --no-splitting --target node14",
     "clean": "rm -rf .turbo && rm -rf dist",
     "clean:install": "yarn clean && rm -rf node_modules",
     "semantic-release": "semantic-release -e semantic-release-monorepo"

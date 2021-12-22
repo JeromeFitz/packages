@@ -23,8 +23,8 @@
   "type": "module",
   "exports": "./dist/index.js",
   "scripts": {
-    "build": "yarn clean && tsup src/* --format esm,cjs --minify --no-splitting --target node16",
-    "dev": "tsup src/* --format esm,cjs --watch --minify --no-splitting --target node16",
+    "build": "yarn clean && tsup src/* --format esm,cjs --minify --no-splitting --target node14",
+    "dev": "tsup src/* --format esm,cjs --watch --minify --no-splitting --target node14",
     "clean": "rm -rf .turbo && rm -rf dist",
     "clean:install": "yarn clean && rm -rf node_modules",
     "semantic-release": "semantic-release -e semantic-release-monorepo"
