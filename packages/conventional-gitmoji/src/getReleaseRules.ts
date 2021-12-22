@@ -1,13 +1,13 @@
 type ReleaseRulesProps = {
-  release: string
-  type: string
+  release: string | null
+  type: string | null
 }
 
 const releaseRules: ReleaseRulesProps[] = []
 
 const getReleaseRules = (types: {
   [x: string]: {
-    code: string | null
+    code: string
     emoji: string | null
     semver: string | null
     commit: string | null
@@ -23,7 +23,7 @@ const getReleaseRules = (types: {
       // @hack(semantic-release) is turning in commit.type
       //       :arrow_up: => :arrow_up
       //       accounting for that here "fixes"
-      type: types[type].code.replace(/(:[^:]*):/g, '$1'),
+      type: !!types[type] && types[type]?.code.replace(/(:[^:]*):/g, '$1'),
     })
     releaseRules.push({
       release: types[type].semver,

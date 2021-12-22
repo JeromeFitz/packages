@@ -3,9 +3,9 @@
  */
 
 type RewritesProps = {
-  branch?: string
+  branch?: string | null
   from: string
-  releaseNotes?: boolean
+  releaseNotes?: boolean | null
   semver?: 'breaking' | 'feature' | 'fix' | 'major' | 'minor' | 'patch' | null
   to: string
 }

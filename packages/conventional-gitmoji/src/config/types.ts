@@ -4,13 +4,13 @@
 
 type TypesProps = {
   [x: string]: {
-    branch: string | boolean
-    code: any
+    branch: string | boolean | null | undefined
+    code: any | null
     description: any
     emoji: any
     entity: string
     name: string
-    releaseNotes: boolean
+    releaseNotes: boolean | null
     section: string
     semver: 'breaking' | 'feature' | 'fix' | 'major' | 'minor' | 'patch' | null
     commit: any
