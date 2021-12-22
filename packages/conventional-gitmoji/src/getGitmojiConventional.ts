@@ -1,13 +1,13 @@
 /* eslint-disable import/order */
-import _find from 'lodash/find.js'
-import { gitmojis } from 'gitmojis'
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const gitmojis = require('gitmojis').gitmojis
 
 import _rewrites from './config/rewrites'
 import _types from './config/types'
 
 const getGitmoji = () => {
   gitmojis.map((gitmoji) => {
-    const rewrite = _find(_rewrites, { from: gitmoji.name })
+    const rewrite = _rewrites.find((r) => r?.from === gitmoji.name)
     if (!!rewrite) {
       const releaseNotes =
         rewrite.releaseNotes === undefined ? true : rewrite.releaseNotes || false

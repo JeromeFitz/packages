@@ -1,5 +1,22 @@
-// @note default from git-cz
-const types = {
+/**
+ * @note default from git-cz
+ */
+
+type TypesProps = {
+  [x: string]: {
+    branch: string | boolean
+    code: any
+    description: any
+    emoji: any
+    entity: string
+    name: string
+    releaseNotes: boolean
+    section: string
+    semver: 'breaking' | 'feature' | 'fix' | 'major' | 'minor' | 'patch' | null
+    commit: any
+  }
+}
+const types: TypesProps = {
   chore: {
     branch: 'chore',
     code: ':computer_disk:',

@@ -1,5 +1,18 @@
-const getReleaseRules = (types) => {
-  const releaseRules = []
+type ReleaseRulesProps = {
+  release: string
+  type: string
+}
+
+const releaseRules: ReleaseRulesProps[] = []
+
+const getReleaseRules = (types: {
+  [x: string]: {
+    code: string | null
+    emoji: string | null
+    semver: string | null
+    commit: string | null
+  }
+}) => {
   Object.keys(types).map((type) => {
     /**
      * @note Need to cover (code|commit|emoji) for semver based on repo choice
@@ -20,8 +33,6 @@ const getReleaseRules = (types) => {
       release: types[type].semver,
       type: types[type].emoji,
     })
-
-    return true
   })
 
   return releaseRules
