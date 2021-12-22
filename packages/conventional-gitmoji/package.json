@@ -28,6 +28,7 @@
     "semantic-release": "semantic-release -e semantic-release-monorepo"
   },
   "devDependencies": {
+    "@types/title": "3.4.1",
     "gitmojis": "3.8.0",
     "title": "3.4.3"
   },

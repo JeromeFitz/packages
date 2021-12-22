@@ -1,6 +1,17 @@
-// @note pseudo-map to conventional-commits
+/**
+ * @note pseudo-map to conventional-commits
+ */
+
+type RewritesProps = {
+  branch?: string
+  from: string
+  releaseNotes?: boolean
+  semver?: 'breaking' | 'feature' | 'fix' | 'major' | 'minor' | 'patch' | null
+  to: string
+}
+
 /* eslint-disable sort-keys */
-const rewrites = [
+const rewrites: RewritesProps[] = [
   { from: 'art', to: 'style' },
   { from: 'zap', to: 'perf' },
   { from: 'fire', to: 'prune' },

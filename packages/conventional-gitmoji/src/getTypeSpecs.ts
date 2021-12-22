@@ -1,8 +1,18 @@
 import title from 'title'
 
-const getTypeSpecs = (types) => {
-  const typeSpecs = []
+type TypeSpecsProps = {
+  code: string
+  emoji: string
+  releaseNotes: boolean
+  section: string
+  semver: 'breaking' | 'feature' | 'fix' | 'major' | 'minor' | 'patch'
+  type: string
+  value: string
+}
 
+const typeSpecs: TypeSpecsProps[] = []
+
+const getTypeSpecs = (types) => {
   Object.keys(types).map((type) => {
     typeSpecs.push({
       code: types[type].code,
