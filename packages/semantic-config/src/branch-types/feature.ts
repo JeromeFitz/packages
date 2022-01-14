@@ -1,3 +1,3 @@
-const feature = []
+const feature = ['notion']
 
 export default feature
