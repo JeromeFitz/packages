@@ -1,5 +1,5 @@
-import _map from 'lodash/map'
-import _sortBy from 'lodash/sortBy'
+import _map from 'lodash/map.js'
+import _sortBy from 'lodash/sortBy.js'
 
 import getTypes from '../../utils/getTypes'
 

@@ -1,5 +1,5 @@
 import Slugger from 'github-slugger'
-import _size from 'lodash/size'
+import _size from 'lodash/size.js'
 // import { getPlaiceholder } from 'plaiceholder'
 
 import stringToUUID from '../../utils/stringToUUID'

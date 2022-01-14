@@ -1,6 +1,6 @@
 /* eslint-disable prefer-const */
-import _omit from 'lodash/omit'
-import _size from 'lodash/size'
+import _omit from 'lodash/omit.js'
+import _size from 'lodash/size.js'
 
 import { QUERIES } from '../helper'
 import { PROPERTIES } from '../schema'

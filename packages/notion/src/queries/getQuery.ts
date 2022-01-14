@@ -1,6 +1,6 @@
-import _map from 'lodash/map'
-import _omit from 'lodash/omit'
-import _size from 'lodash/size'
+import _map from 'lodash/map.js'
+import _omit from 'lodash/omit.js'
+import _size from 'lodash/size.js'
 
 import { PROPERTIES } from '../schema'
 import { avoidRateLimit, isObjectEmpty } from '../utils'

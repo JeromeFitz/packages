@@ -1,4 +1,4 @@
-import _map from 'lodash/map'
+import _map from 'lodash/map.js'
 
 import { LOOKUP, PROPERTIES_LOOKUP } from '../schema'
 import { getTypes } from '../utils'

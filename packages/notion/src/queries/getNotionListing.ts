@@ -1,6 +1,6 @@
 /* eslint-disable prefer-const */
-import _map from 'lodash/map'
-import _omit from 'lodash/omit'
+import _map from 'lodash/map.js'
+import _omit from 'lodash/omit.js'
 
 import { PROPERTIES } from '../schema'
 import { dataNormalized, dataSorted, getImages } from '../utils'

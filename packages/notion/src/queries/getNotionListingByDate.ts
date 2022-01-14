@@ -1,7 +1,7 @@
 /* eslint-disable prefer-const */
-import _map from 'lodash/map'
-import _omit from 'lodash/omit'
-import _size from 'lodash/size'
+import _map from 'lodash/map.js'
+import _omit from 'lodash/omit.js'
+import _size from 'lodash/size.js'
 
 import { QUERIES } from '../helper'
 import { PROPERTIES } from '../schema'

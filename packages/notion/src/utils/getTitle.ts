@@ -1,4 +1,4 @@
-import _last from 'lodash/last'
+import _last from 'lodash/last.js'
 
 const getTitle = (title: string) => {
   const _title: string = _last(title.split('_')) ?? ''

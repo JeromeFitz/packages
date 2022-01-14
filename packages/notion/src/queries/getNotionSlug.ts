@@ -1,6 +1,6 @@
 /* eslint-disable prefer-const */
-import _filter from 'lodash/filter'
-import _omit from 'lodash/omit'
+import _filter from 'lodash/filter.js'
+import _omit from 'lodash/omit.js'
 
 import { QUERIES } from '../helper'
 import { dataNormalized, dataSorted, getImages } from '../utils'

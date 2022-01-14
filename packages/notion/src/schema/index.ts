@@ -1,5 +1,5 @@
-import _filter from 'lodash/filter'
-import _map from 'lodash/map'
+import _filter from 'lodash/filter.js'
+import _map from 'lodash/map.js'
 
 import type { Property } from './types'
 
