@@ -29,7 +29,7 @@
     "clean": "rm -rf .turbo && rm -rf dist",
     "clean:install": "yarn clean && rm -rf node_modules",
     "copy": "./scripts/copy.sh",
-    "semantic-release": "yarn copy && cd ./dist && semantic-release -e semantic-release-monorepo"
+    "semantic-release": "yarn copy && semantic-release -e semantic-release-monorepo"
   },
   "dependencies": {
     "@notionhq/client": "0.4.12",
