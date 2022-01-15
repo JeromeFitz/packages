@@ -2,7 +2,7 @@
 import _omit from 'lodash/omit.js'
 import _size from 'lodash/size.js'
 
-import { PROPERTIES , QUERIES } from '../../constants'
+import { PROPERTIES, QUERIES } from '../../constants'
 import { addTime, dataNormalized, dataSorted } from '../../utils'
 
 // @todo(complexity) 16
