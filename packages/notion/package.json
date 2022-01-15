@@ -50,6 +50,7 @@
   "main": "./index.cjs",
   "module": "./index.js",
   "files": [
+    "*",
     "!release.config.cjs"
   ]
 }
