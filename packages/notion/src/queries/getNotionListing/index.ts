@@ -2,8 +2,8 @@
 import _map from 'lodash/map.js'
 import _omit from 'lodash/omit.js'
 
-import { PROPERTIES } from '../schema'
-import { dataNormalized, dataSorted, getImages } from '../utils'
+import { PROPERTIES } from '../../constants'
+import { dataNormalized, dataSorted, getImages } from '../../utils'
 
 const getNotionListing = async ({
   config,

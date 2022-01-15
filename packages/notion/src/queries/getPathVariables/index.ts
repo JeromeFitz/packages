@@ -7,7 +7,7 @@ import _join from 'lodash/join.js'
 import _last from 'lodash/last.js'
 import _size from 'lodash/size.js'
 
-import { DATA_TYPES } from '../helper'
+import { DATA_TYPES } from '../../constants'
 
 // @todo(complexity) 16
 // eslint-disable-next-line complexity

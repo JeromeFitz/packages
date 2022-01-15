@@ -2,9 +2,8 @@
 import _omit from 'lodash/omit.js'
 import _size from 'lodash/size.js'
 
-import { QUERIES } from '../helper'
-import { PROPERTIES } from '../schema'
-import { addTime, dataNormalized, dataSorted } from '../utils'
+import { PROPERTIES , QUERIES } from '../../constants'
+import { addTime, dataNormalized, dataSorted } from '../../utils'
 
 // @todo(complexity) 16
 // eslint-disable-next-line complexity

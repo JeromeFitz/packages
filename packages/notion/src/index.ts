@@ -1,15 +1,17 @@
 import { Client as _Client } from '@notionhq/client'
 // import type { ClientOptions as _ClientOptions } from '@notionhq/client/build/src/client'
 
-import { DATA_TYPES } from './helper'
+import * as constants from './constants'
 import * as queries from './queries'
-import { INIT, LOOKUP, PROPERTIES, PROPERTIES_LOOKUP } from './schema'
-import * as TYPES from './schema/types'
-import * as utils from './utils'
+// import { INIT, LOOKUP, PROPERTIES, PROPERTIES_LOOKUP } from './schema'
+import * as TYPES from './schema'
+// import * as utils from './utils'
 
 // interface ClientOptions extends _ClientOptions {
 //   config: any
 // }
+
+const { DATA_TYPES } = constants
 
 class Client extends _Client {
   #config?: any
@@ -127,13 +129,14 @@ class Client extends _Client {
 }
 
 export {
+  constants,
   Client,
-  DATA_TYPES,
-  INIT,
-  LOOKUP,
-  PROPERTIES_LOOKUP,
-  PROPERTIES,
-  queries,
-  utils,
+  // DATA_TYPES,
+  // INIT,
+  // LOOKUP,
+  // PROPERTIES_LOOKUP,
+  // PROPERTIES,
+  // queries,
+  // utils,
 }
 export type { TYPES }

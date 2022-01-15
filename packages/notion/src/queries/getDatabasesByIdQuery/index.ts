@@ -1,4 +1,4 @@
-import { PROPERTIES } from '../schema'
+import { PROPERTIES } from '../../constants'
 
 const mock: any = {
   sorts: [

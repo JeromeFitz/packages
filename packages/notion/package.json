@@ -24,11 +24,12 @@
   },
   "private": false,
   "scripts": {
-    "build": "yarn clean && tsup src/* --format esm,cjs --dts --minify --no-splitting --target node14",
-    "dev": "tsup src/* --format esm,cjs --watch --dts --minify --no-splitting --target node14",
+    "build": "yarn clean && mkdir -p ./dist && yarn copy && tsup-node src/*",
+    "dev": "yarn clean && mkdir -p ./dist && yarn copy && tsup-node src/* --watch",
     "clean": "rm -rf .turbo && rm -rf dist",
     "clean:install": "yarn clean && rm -rf node_modules",
-    "semantic-release": "semantic-release -e semantic-release-monorepo"
+    "copy": "./scripts/copy.sh",
+    "semantic-release": "yarn copy && semantic-release -e semantic-release-monorepo"
   },
   "dependencies": {
     "@notionhq/client": "0.4.12",
@@ -44,62 +45,11 @@
     "@types/lodash": "4.14.178"
   },
   "type": "module",
+  "sideEffects": false,
+  "typings": "./index.d.ts",
+  "main": "./index.cjs",
+  "module": "./index.js",
   "files": [
-    "dist/**",
-    "package.json",
-    "README.md"
-  ],
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs",
-      "default": "./dist/index.js"
-    },
-    "./queries/getInfoType": {
-      "import": "./dist/queries/getInfoType.js",
-      "require": "./dist/queries/getInfoType.cjs",
-      "default": "./dist/queries/getInfoType.js"
-    },
-    "./queries/getPathVariables": {
-      "import": "./dist/queries/getPathVariables.js",
-      "require": "./dist/queries/getPathVariables.cjs",
-      "default": "./dist/queries/getPathVariables.js"
-    },
-    "./schema": {
-      "import": "./dist/schema/index.js",
-      "require": "./dist/schema/index.cjs",
-      "default": "./dist/schema/index.js"
-    },
-    "./utils/avoidRateLimit": {
-      "import": "./dist/utils/avoidRateLimit.js",
-      "require": "./dist/utils/avoidRateLimit.cjs",
-      "default": "./dist/utils/avoidRateLimit.js"
-    },
-    "./utils/dataSorted": {
-      "import": "./dist/utils/dataSorted.js",
-      "require": "./dist/utils/dataSorted.cjs",
-      "default": "./dist/utils/dataSorted.js"
-    },
-    "./utils/dataNormalized": {
-      "import": "./dist/utils/dataNormalized.js",
-      "require": "./dist/utils/dataNormalized.cjs",
-      "default": "./dist/utils/dataNormalized.js"
-    },
-    "./utils/dataNormalizedResults": {
-      "import": "./dist/utils/dataNormalizedResults.js",
-      "require": "./dist/utils/dataNormalizedResults.cjs",
-      "default": "./dist/utils/dataNormalizedResults.js"
-    },
-    "./utils/getImages": {
-      "import": "./dist/utils/getImages.js",
-      "require": "./dist/utils/getImages.cjs",
-      "default": "./dist/utils/getImages.js"
-    },
-    "./utils/getTitle": {
-      "import": "./dist/utils/getTitle.js",
-      "require": "./dist/utils/getTitle.cjs",
-      "default": "./dist/utils/getTitle.js"
-    }
-  },
-  "types": "./dist/index.d.ts"
+    "!release.config.cjs"
+  ]
 }

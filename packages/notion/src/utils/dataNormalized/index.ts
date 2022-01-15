@@ -1,7 +1,7 @@
 import _map from 'lodash/map.js'
 
-import { LOOKUP, PROPERTIES_LOOKUP } from '../schema'
-import { getTypes } from '../utils'
+import { LOOKUP, PROPERTIES_LOOKUP } from '../../constants'
+import { getTypes } from '../../utils'
 
 const dataNormalized = ({ config, data, pathVariables, pageId }) => {
   const { NOTION } = config

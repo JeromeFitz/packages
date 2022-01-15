@@ -1,7 +1,7 @@
 import _map from 'lodash/map.js'
 import _omit from 'lodash/omit.js'
 
-import { dataNormalized, dataSorted } from '../utils'
+import { dataNormalized, dataSorted } from '../../utils'
 
 const dataNormalizedResults = ({ config, results, routeType }) => {
   const normalizedResults: any[] = []

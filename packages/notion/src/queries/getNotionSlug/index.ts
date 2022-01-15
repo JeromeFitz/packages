@@ -2,8 +2,8 @@
 import _filter from 'lodash/filter.js'
 import _omit from 'lodash/omit.js'
 
-import { QUERIES } from '../helper'
-import { dataNormalized, dataSorted, getImages } from '../utils'
+import { QUERIES } from '../../constants'
+import { dataNormalized, dataSorted, getImages } from '../../utils'
 
 const getNotionSlug = async ({
   config,

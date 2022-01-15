@@ -1,4 +1,4 @@
-import { avoidRateLimit, isUndefined } from '../utils'
+import { avoidRateLimit, isUndefined } from '../../utils'
 
 // @todo(types)
 const getPagesById = async (callbackFunction: any, { page_id }) => {

@@ -2,7 +2,7 @@ import Slugger from 'github-slugger'
 import _map from 'lodash/map.js'
 import { getPlaiceholder } from 'plaiceholder'
 
-import filterImages from '../utils/filterImages'
+import filterImages from '../../utils/filterImages'
 /**
  * @plaiceholder/next
  */
