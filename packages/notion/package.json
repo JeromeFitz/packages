@@ -26,12 +26,15 @@
   },
   "private": false,
   "scripts": {
-    "build": "yarn clean && yarn copy && tsup-node src/*",
-    "dev": "yarn clean && yarn copy && tsup-node src/* --watch",
+    "build": "tsup-node src/*",
+    "dev": "tsup-node src/* --watch",
+    "---": "",
     "clean": "rm -rf .turbo && rm -rf dist",
     "clean:install": "yarn clean && rm -rf node_modules",
     "copy": "mkdir -p ./dist && ./scripts/copy.sh",
-    "semantic-release": "yarn copy && semantic-release -e semantic-release-monorepo"
+    "----": "",
+    "semantic-release": "yarn copy && semantic-release",
+    "semantic-release:mono": "yarn copy && semantic-release -e semantic-release-monorepo"
   },
   "dependencies": {
     "@notionhq/client": "0.4.12",
@@ -47,11 +50,7 @@
   },
   "type": "module",
   "sideEffects": false,
-  "typings": "./index.d.ts",
-  "main": "./index.cjs",
-  "module": "./index.js",
-  "files": [
-    "*",
-    "!release.config.cjs"
-  ]
+  "typings": "./dist/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js"
 }

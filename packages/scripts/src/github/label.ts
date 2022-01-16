@@ -1,5 +1,5 @@
-#!/usr/bin/env node
-
+/* eslint-disable @typescript-eslint/no-var-requires */
+// @todo(types)
 import { Octokit } from '@octokit/rest'
 import chalkPipe from 'chalk-pipe'
 import isCI from 'is-ci'
@@ -21,6 +21,7 @@ const labels = getLabels.map((label) => ({
 // @note
 // - Potentialy may be to do a`listLabelsForRepo` then `deleteLabel` and just`createLabel` fresh
 // - Or `listLabelsForRepo` then create a migration script instead.
+// eslint-disable-next-line @typescript-eslint/require-await
 async function createLabels({ owner, repo }) {
   try {
     labels.map(async (label) => {

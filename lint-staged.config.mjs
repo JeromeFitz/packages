@@ -1,3 +1,3 @@
-import config from '@jeromefitz/codestyle/lint-staged'
+import config from '@jeromefitz/codestyle/dist/lint-staged.config.js'
 
 export default config

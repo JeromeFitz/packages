@@ -1,11 +1,5 @@
 import branches from './branches'
-import getPluginsNonPublished from './getPluginsNonPublished'
-import getPluginsNpmPublishFromDist from './getPluginsNpmPublishFromDist'
+import pluginOptions from './pluginOptions'
 import releaseConfig from './release.config'
 
-export {
-  branches,
-  getPluginsNonPublished,
-  getPluginsNpmPublishFromDist,
-  releaseConfig,
-}
+export { branches, pluginOptions, releaseConfig }

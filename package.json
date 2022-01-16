@@ -33,7 +33,7 @@
     "dev": "turbo run dev --no-cache --parallel --continue",
     "test": "turbo run test",
     "clean": "turbo run clean",
-    "clean:install": "yarn clean && rm -rf node_modules",
+    "clean:install": "turbo run clean && ./scripts/clean.sh",
     "---- ": "",
     "lint:eslint": "eslint . --ext cjs,js,jsx,mjs,ts,tsx --max-warnings=0",
     "lint:fix": "yarn lint:eslint --fix && yarn lint:prettier --write && yarn typescript",
@@ -53,6 +53,7 @@
   "devDependencies": {
     "@jeromefitz/semantic": "*",
     "@jeromefitz/semantic-config": "*",
+    "@types/is-ci": "3.0.0",
     "dotenv": "11.0.0",
     "husky": "7.0.4",
     "is-ci": "3.0.1",
@@ -69,7 +70,8 @@
           ".next/**"
         ],
         "dependsOn": [
-          "^build"
+          "^build",
+          "@jeromefitz/semantic-config#build"
         ]
       },
       "@jeromefitz/git-cz#build": {

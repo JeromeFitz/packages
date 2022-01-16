@@ -20,46 +20,19 @@
     "registry": "https://registry.npmjs.org/"
   },
   "private": false,
-  "type": "module",
   "bin": {
     "jeromefitz-pretty-quick": "./node_modules/pretty-quick/bin/pretty-quick.js"
   },
-  "main": "index.js",
-  "files": [
-    ".eslintrc.cjs",
-    ".eslintrc.next.cjs",
-    ".prettierrc.cjs",
-    "tsconfig.base.json",
-    "tsconfig.jest.json",
-    "tsconfig.next.json",
-    "tsconfig.node-14.json",
-    "tsconfig.node-16.json",
-    "tsconfig.react-native.json",
-    "tsconfig.react.json",
-    "dist/**",
-    "package.json",
-    "README.md"
-  ],
-  "exports": {
-    "./.eslintrc.cjs": "./.eslintrc.cjs",
-    "./.eslintrc.next.cjs": "./.eslintrc.next.cjs",
-    "./.prettierrc.cjs": "./.prettierrc.cjs",
-    "./lint-staged": "./dist/lint-staged.config.js",
-    "./lint-staged.config.js": "./lint-staged.config.js",
-    "./tsconfig.base.json": "./tsconfig.base.json",
-    "./tsconfig.jest.json": "./tsconfig.jest.json",
-    "./tsconfig.next.json": "./tsconfig.next.json",
-    "./tsconfig.node-14.json": "./tsconfig.node-14.json",
-    "./tsconfig.node-16.json": "./tsconfig.node-16.json",
-    "./tsconfig.react-native.json": "./tsconfig.react-native.json",
-    "./tsconfig.react.json": "./tsconfig.react.json"
-  },
   "scripts": {
-    "build": "yarn clean && tsup lint-staged.config.js --format esm,cjs --dts --external react --minify --no-splitting --target node14",
-    "dev": "tsup lint-staged.config.js --format esm,cjs --watch --dts --external react --minify --no-splitting --target node14",
+    "build": "tsup-node src/*",
+    "dev": "tsup-node src/*  --watch",
+    "---": "",
     "clean": "rm -rf .turbo && rm -rf dist",
     "clean:install": "yarn clean && rm -rf node_modules",
-    "semantic-release": "semantic-release -e semantic-release-monorepo"
+    "copy": "mkdir -p ./dist && ./scripts/copy.sh",
+    "----": "",
+    "semantic-release": "yarn copy && semantic-release",
+    "semantic-release:mono": "yarn copy && semantic-release -e semantic-release-monorepo"
   },
   "dependencies": {
     "@babel/core": "7.16.7",
@@ -78,5 +51,10 @@
     "prettier": "2.5.1",
     "pretty-quick": "3.1.3",
     "typescript": "4.5.4"
-  }
+  },
+  "type": "module",
+  "sideEffects": false,
+  "typings": "./dist/lint-staged.config.d.ts",
+  "main": "./dist/lint-staged.config.cjs",
+  "module": "./dist/lint-staged.config.js"
 }

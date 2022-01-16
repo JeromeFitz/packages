@@ -20,21 +20,23 @@
     "registry": "https://registry.npmjs.org/"
   },
   "private": false,
-  "type": "module",
-  "exports": "./dist/index.js",
   "scripts": {
-    "build": "yarn clean && tsup src/* --format esm,cjs --minify --no-splitting --target node14",
-    "dev": "tsup src/* --format esm,cjs --watch --minify --no-splitting --target node14",
+    "build": "tsup-node src/*",
+    "dev": "tsup-node src/* --watch",
+    "---": "",
     "clean": "rm -rf .turbo && rm -rf dist",
     "clean:install": "yarn clean && rm -rf node_modules",
-    "semantic-release": "semantic-release -e semantic-release-monorepo"
+    "copy": "mkdir -p ./dist && ./scripts/copy.sh",
+    "----": "",
+    "semantic-release": "yarn copy && semantic-release",
+    "semantic-release:mono": "yarn copy && semantic-release -e semantic-release-monorepo"
   },
   "dependencies": {
     "@octokit/rest": "18.12.0"
   },
-  "files": [
-    "dist/**",
-    "package.json",
-    "README.md"
-  ]
+  "type": "module",
+  "sideEffects": false,
+  "typings": "./dist/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js"
 }
