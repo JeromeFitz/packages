@@ -3,5 +3,6 @@
     "baseUrl": ".",
     "noImplicitAny": false
   },
-  "extends": "@jeromefitz/codestyle/tsconfig.node-14.json"
+  "extends": "@jeromefitz/codestyle/tsconfig.node-14.json",
+  "exclude": ["./@work-in-progress/**"]
 }

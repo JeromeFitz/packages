@@ -1,4 +1,4 @@
-import querystring from 'querystring'
+import { URLSearchParams } from 'url'
 
 import fetch from 'isomorphic-unfetch'
 
@@ -91,7 +91,7 @@ SpotifyApi.prototype = {
         Authorization: `Basic ${basic}`,
         'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: querystring.stringify({
+      body: new URLSearchParams({
         grant_type: 'refresh_token',
         refresh_token: this.getRefreshToken(),
       }),
