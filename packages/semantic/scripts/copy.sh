@@ -5,7 +5,6 @@
 ###
 
 cp package.json ./dist/
-# cp release.config.cjs ./dist/
 cp README.md ./dist/
 cp ../../LICENSE ./dist/
 
@@ -13,7 +12,7 @@ cp ../../LICENSE ./dist/
 # @note(build): Replace `dist/index` w/ `index`
 ###
 
-cd ./dist && sed -i '' 's,dist/index,index,g' package.json && cd ..
+sed -i "" "s|dist/index|index|g" dist/package.json
 
 ###
 # @custom(build)
