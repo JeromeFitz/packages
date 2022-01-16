@@ -1,16 +1,14 @@
+type Options = {
+  npmPublish: boolean
+  pkgRoot: '.' | './dist'
+}
+
 const pluginOptions = (
   // @todo(types)
   plugins: any,
-  options: {
-    npmPublish: boolean
-    pkgRoot: '.' | './dist'
-  } = {
-    npmPublish: true,
-    pkgRoot: '.',
-  }
+  { npmPublish = true, pkgRoot = './dist' }: Options
 ) => {
   const _plugins = plugins
-  const { npmPublish, pkgRoot } = options
 
   // @refactor(dynamic) eh, make this a bit more dynamic heh
   const pluginsOverride = [

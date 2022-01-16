@@ -1,5 +1,4 @@
-// @ci(notion) This file is run from `./dist` in build process
-const { pluginOptions, releaseConfig } = require('../../../release.config.cjs')
+const { pluginOptions, releaseConfig } = require('../../release.config.cjs')
 
 const { name } = require('./package.json')
 

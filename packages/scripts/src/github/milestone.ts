@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 /* eslint-disable @typescript-eslint/no-var-requires */
 // @todo(types)
 import { Octokit } from '@octokit/rest'

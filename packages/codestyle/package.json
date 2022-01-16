@@ -56,9 +56,5 @@
   "sideEffects": false,
   "typings": "./dist/lint-staged.config.d.ts",
   "main": "./dist/lint-staged.config.cjs",
-  "module": "./dist/lint-staged.config.js",
-  "files": [
-    "*",
-    "!release.config.cjs"
-  ]
+  "module": "./dist/lint-staged.config.js"
 }

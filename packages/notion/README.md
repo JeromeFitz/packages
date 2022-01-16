@@ -10,7 +10,7 @@ Wrapper stuff for [`jeromefitzgerald.com`](https://jeromefitzgerald.com).
 
 This is really a custom thing, so not sure how useful this would be for anyone else.
 
-This will not be ready for production/OSS use until `2.0.0` at the earliest. I would imagine all attempts at documentation will wildy fluctuate.
+This will not be ready for production/OSS use until `3.0.0` at the earliest. I would imagine all attempts at documentation will wildy fluctuate.
 
 ## Overview
 

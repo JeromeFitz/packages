@@ -70,7 +70,8 @@
           ".next/**"
         ],
         "dependsOn": [
-          "^build"
+          "^build",
+          "@jeromefitz/semantic-config#build"
         ]
       },
       "@jeromefitz/git-cz#build": {

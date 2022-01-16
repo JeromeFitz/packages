@@ -2,7 +2,7 @@
 import isCI from 'is-ci'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const release = require('@jeromefitz/semantic/release.config.cjs').default
+const releaseConfig = require('@jeromefitz/semantic/dist/release.config.cjs').default
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 !isCI && require('dotenv').config({ path: '../../.env' })
@@ -12,10 +12,10 @@ import branches from './branches'
 // const ci = true
 // const dryRun = false
 const _extends = ['semantic-release-commit-filter', 'semantic-release-monorepo']
-const plugins = release.plugins
+const plugins = releaseConfig.plugins
 
 const config = {
-  ...release,
+  ...releaseConfig,
   branches,
   // ci,
   // dryRun,

@@ -1,4 +1,3 @@
-#!/usr/bin/env
 /* eslint-disable @typescript-eslint/no-var-requires */
 // @todo(types)
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
