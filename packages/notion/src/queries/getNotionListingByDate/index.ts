@@ -1,10 +1,11 @@
 /* eslint-disable prefer-const */
+import { sortObject } from '@jeromefitz/utils'
 import _map from 'lodash/map.js'
 import _omit from 'lodash/omit.js'
 import _size from 'lodash/size.js'
 
 import { PROPERTIES, QUERIES } from '../../constants'
-import { addTime, dataNormalized, dataSorted } from '../../utils'
+import { addTime, dataNormalized } from '../../utils'
 
 // @todo(complexity) 16
 // eslint-disable-next-line complexity
@@ -31,7 +32,7 @@ const getNotionListingByDate = async ({
   // const info3a = info3.object === 'page' && normalizerContent(info3)
   if (info3.object === 'page') {
     info = _omit(info3, 'properties')
-    info['properties'] = dataSorted(
+    info['properties'] = sortObject(
       dataNormalized({ config, data: info3, pathVariables, pageId: info.id })
     )
   }
@@ -171,7 +172,7 @@ const getNotionListingByDate = async ({
   _map(items3.results, (item) => {
     let item2 = item
     item2 = _omit(item2, 'properties')
-    item2['properties'] = dataSorted(
+    item2['properties'] = sortObject(
       dataNormalized({ config, data: item, pathVariables, pageId: item.id })
     )
     // items3Data[item.id] = item2

@@ -1,3 +1,6 @@
+/**
+ * @refactor(lodash)
+ */
 import _drop from 'lodash/drop.js'
 import _dropRight from 'lodash/dropRight.js'
 import _first from 'lodash/first.js'

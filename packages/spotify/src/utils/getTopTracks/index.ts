@@ -1,7 +1,6 @@
-import { asyncForEach } from './asyncForEach'
-import { OMIT_FIELDS } from './constants'
-import _noop from './utils/noop'
-import _omit from './utils/omit'
+import { asyncForEach, noop as _noop, omit as _omit } from '@jeromefitz/utils'
+
+import { OMIT_FIELDS } from '../../constants'
 
 // @todo(types)
 const getTopTracks = async (self: any, data: any, withImages) => {
@@ -37,7 +36,7 @@ const getTopTracks = async (self: any, data: any, withImages) => {
     _items = []
     await asyncForEach(_data.items, async (item: any) => {
       const url = item?.album?.images[0].url
-      const { getImage } = await import('./getImage')
+      const { getImage } = await import('../../utils')
       const image = await getImage(url)
       _items.push({
         ...item,

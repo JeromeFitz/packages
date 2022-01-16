@@ -1,6 +1,5 @@
-import { LIMIT, OFFSET } from './constants'
-
-import type { QueryProps } from './index'
+import { LIMIT, OFFSET } from '../../constants'
+import type { QueryProps } from '../../index'
 
 interface UrlProps extends QueryProps {
   url: string

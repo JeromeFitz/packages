@@ -14,4 +14,4 @@ const getImage = async (url: string) => {
   }
 }
 
-export { getImage }
+export default getImage

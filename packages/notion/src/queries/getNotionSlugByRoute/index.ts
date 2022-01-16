@@ -1,9 +1,10 @@
 /* eslint-disable prefer-const */
+import { sortObject } from '@jeromefitz/utils'
 import _omit from 'lodash/omit.js'
 import _size from 'lodash/size.js'
 
 import { PROPERTIES, QUERIES } from '../../constants'
-import { addTime, dataNormalized, dataSorted } from '../../utils'
+import { addTime, dataNormalized } from '../../utils'
 
 // @todo(complexity) 16
 // eslint-disable-next-line complexity
@@ -49,7 +50,7 @@ const getNotionSlugByRoute = async ({
       return {}
     }
     info = _omit(_info, 'properties')
-    info['properties'] = dataSorted(
+    info['properties'] = sortObject(
       dataNormalized({ config, data: _info, pathVariables, pageId: info.id })
     )
     content = await getBlocksByIdChildren({ block_id: info.id })
@@ -108,7 +109,7 @@ const getNotionSlugByRoute = async ({
     const info4__bea = info4__be?.object === 'list' && info4__be.results[0]
     if (!!info4__bea) {
       info = _omit(info4__bea, 'properties')
-      info['properties'] = dataSorted(
+      info['properties'] = sortObject(
         dataNormalized({ config, data: info4__bea, pathVariables, pageId: info.id })
       )
       content = await getBlocksByIdChildren({ block_id: info.id })

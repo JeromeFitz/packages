@@ -1,7 +1,7 @@
-import config from '@jeromefitz/git-cz/src/themes/gitmoji'
+import { config as releaseConfig } from '@jeromefitz/git-cz'
 
 const commit = {
-  ...config.commit,
+  ...releaseConfig.commit,
   maxMessageLength: 75,
   questions: [
     'commitScopes',
@@ -14,9 +14,9 @@ const commit = {
 }
 
 const branch = {
-  ...config.branch,
+  ...releaseConfig.branch,
 }
 
-const changelog = { ...config, branch, commit }
+const changelog = { ...releaseConfig, branch, commit }
 
 export default changelog

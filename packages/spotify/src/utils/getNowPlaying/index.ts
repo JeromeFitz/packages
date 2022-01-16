@@ -1,5 +1,6 @@
-import { OMIT_FIELDS } from './constants'
-import _omit from './utils/omit'
+import { omit as _omit } from '@jeromefitz/utils'
+
+import { OMIT_FIELDS } from '../../constants'
 
 // @todo(types)
 const getNowPlaying = async (self: any, data: any, withImages = false) => {
@@ -24,7 +25,7 @@ const getNowPlaying = async (self: any, data: any, withImages = false) => {
 
   if (withImages) {
     const url = item?.album?.images[0].url
-    const { getImage } = await import('./getImage')
+    const { getImage } = await import('../../utils')
     const image = await getImage(url)
 
     _data = {
