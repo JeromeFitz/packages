@@ -1,5 +1,5 @@
-const isObject = (obj: any) => {
-  return Object.prototype.toString.call(obj) === '[object Object]'
+function isObject(o: unknown): o is Record<PropertyKey, unknown> {
+  return typeof o === 'object' && o !== null
 }
 
 export default isObject
