@@ -1,17 +1,19 @@
 import { Client as _Client } from '@notionhq/client'
-// import type { ClientOptions as _ClientOptions } from '@notionhq/client/build/src/client'
 
-import * as constants from './constants'
-import * as queries from './queries'
-// import { INIT, LOOKUP, PROPERTIES, PROPERTIES_LOOKUP } from './schema'
-import * as TYPES from './schema'
-// import * as utils from './utils'
-
-// interface ClientOptions extends _ClientOptions {
-//   config: any
-// }
-
-const { DATA_TYPES } = constants
+import { DATA_TYPES } from './constants'
+import {
+  getBlocksByIdChildren,
+  getDatabasesByIdQuery,
+  getDeepFetchAllChildren,
+  getInfoType,
+  getNotionListing,
+  getNotionListingByDate,
+  getNotionSlug,
+  getNotionSlugByRoute,
+  getPagesById,
+  getPathVariables,
+  getQuery,
+} from './queries'
 
 class Client extends _Client {
   #config?: any
@@ -25,28 +27,28 @@ class Client extends _Client {
 
   public readonly custom = {
     getBlocksByIdChildren: async (props: { block_id: any }) =>
-      await queries.getBlocksByIdChildren(this.blocks.children.list, { ...props }),
+      await getBlocksByIdChildren(this.blocks.children.list, { ...props }),
 
     getDatabasesByIdQuery: async (props: {
       database_id: any
       sorts?: any
       filter?: any
-    }) => await queries.getDatabasesByIdQuery(this.databases.query, props),
+    }) => await getDatabasesByIdQuery(this.databases.query, props),
 
     getDeepFetchAllChildren: async (props: { blocks: any }) =>
-      await queries.getDeepFetchAllChildren(this.blocks.children.list, { ...props }),
+      await getDeepFetchAllChildren(this.blocks.children.list, { ...props }),
 
     getInfoType: (props: { config: any; item: any; routeType: any; meta: any }) =>
-      queries.getInfoType({ ...props, config: this.#config }),
+      getInfoType({ ...props, config: this.#config }),
 
     getPagesById: async (props) =>
-      await queries.getPagesById(this.pages.retrieve, { ...props }),
+      await getPagesById(this.pages.retrieve, { ...props }),
 
     getPathVariables: (props: { config: any; catchAll: any }) =>
-      queries.getPathVariables({ ...props, config: this.#config }),
+      getPathVariables({ ...props, config: this.#config }),
 
     getQuery: async (props) =>
-      await queries.getQuery({
+      await getQuery({
         ...props,
         config: this.#config,
         notionDatabasesQuery: this.databases.query,
@@ -72,7 +74,7 @@ class Client extends _Client {
       slug?: any
     }) => {
       // console.dir(`📦️ [@jeromefitz/notion] => ${DATA_TYPES.LISTING}`)
-      return await queries.getNotionListing({
+      return await getNotionListing({
         ...props,
         config: this.#config,
         getBlocksByIdChildren: this.custom.getBlocksByIdChildren,
@@ -87,7 +89,7 @@ class Client extends _Client {
       slug: any
     }) => {
       // console.dir(`📦️ [@jeromefitz/notion] => ${DATA_TYPES.LISTING_BY_DATE}`)
-      return await queries.getNotionListingByDate({
+      return await getNotionListingByDate({
         ...props,
         config: this.#config,
         getBlocksByIdChildren: this.custom.getBlocksByIdChildren,
@@ -102,7 +104,7 @@ class Client extends _Client {
       slug: any
     }) => {
       // console.dir(`📦️ [@jeromefitz/notion] => ${DATA_TYPES.SLUG}`)
-      return await queries.getNotionSlug({
+      return await getNotionSlug({
         ...props,
         config: this.#config,
         getBlocksByIdChildren: this.custom.getBlocksByIdChildren,
@@ -117,7 +119,7 @@ class Client extends _Client {
       slug: any
     }) => {
       // console.dir(`📦️ [@jeromefitz/notion] => ${DATA_TYPES.SLUG_BY_ROUTE}`)
-      return await queries.getNotionSlugByRoute({
+      return await getNotionSlugByRoute({
         ...props,
         config: this.#config,
         getBlocksByIdChildren: this.custom.getBlocksByIdChildren,
@@ -128,15 +130,4 @@ class Client extends _Client {
   }
 }
 
-export {
-  constants,
-  Client,
-  // DATA_TYPES,
-  // INIT,
-  // LOOKUP,
-  // PROPERTIES_LOOKUP,
-  // PROPERTIES,
-  // queries,
-  // utils,
-}
-export type { TYPES }
+export { Client }

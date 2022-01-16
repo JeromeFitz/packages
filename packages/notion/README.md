@@ -1,4 +1,4 @@
-# `@jeromefitz/notion`
+# 🚧️ 🚧️ 🚧️ `@jeromefitz/notion` 🚧️ 🚧️ 🚧️
 
 Wrapper stuff for [`jeromefitzgerald.com`](https://jeromefitzgerald.com).
 
@@ -43,6 +43,67 @@ You need to pass `config` which informs the package of all the wonderful Notion 
     ROUTE_TYPES: any[];
 }
 ```
+
+### Next
+
+Will add an `./examples/next/...` to show this with a public facing Notion at some point.
+
+Custom setup to get `pathVariables` from `next`:
+
+**`[...catchAll]`**:
+
+```tsx
+export const getStaticProps = async ({ preview = false, ...props }) => {
+  const { catchAll } = props.params
+  //   @todo(next) should come from `process.env...`
+  //               `./pages/api/...` cache = false
+  const cache = true
+  // @todo(next) should come from `catchAll`
+  const clear = false
+  const pathVariables = getPathVariables({ config: notionConfig, catchAll })
+
+  const data = await getCatchAll({ cache, catchAll, clear, pathVariables, preview })
+
+  return {
+    props: { preview, ...data, ...pathVariables, ...props },
+    revalidate,
+  }
+}
+
+export const getStaticPaths = () => {
+  return getStaticPathsCatchAll()
+}
+```
+
+**`getCatchAll.ts`**:
+
+- Checks against `cache`
+- Based on the `dataType` from `getPathVariables` calls `notion.dataTypes`
+- Sets `data`
+- Checks if should use `plaiceholder` to generate images
+- Creates `cache` if it should
+- Send back
+
+**`getStaticPathsCatchAll.ts`**:
+
+- Create paths via hard-coded values from configuration for:
+  - `PAGES__HOMEPAGE` => `index.ts`
+  - `PAGES` => Until we can get a proper query to dynamically generate
+- Create paths to generate via `next` based off of `NOTION[#__database__#].databaseTypes`:
+  - `LISTING`
+  - `LISTING_BY_DATE`
+  - `SLUG`
+  - `SLUG_BY_ROUTE`
+- Customizations for date based routing for:
+  - `blog` => `./blog/yyyy/mm/dd/blog-title`
+  - `events` => `./events/yyyy/mm/dd/events-title`
+  - `episodes` => `./podcasts/#__podcast-title__#/#__episode-title#`
+
+### Cache
+
+Currently set to `json` files within `next` build. This (currently) causes it to be generated every build.
+
+For larger datasets this should move to a Key/Value Store that takes into account `lastEdited` from Notion for anything since the last build. (Or someting like that.)
 
 ### Why
 
