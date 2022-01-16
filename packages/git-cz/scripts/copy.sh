@@ -12,10 +12,18 @@ cp ../../LICENSE ./dist/
 # @note(build): Replace `dist/index` w/ `index`
 ###
 
-sed -i "" "s|dist/index|index|g" dist/package.json
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  sed -i "" "s|dist/index|index|g" dist/package.json
+else
+  sed -i -e "s|dist/index|index|g" dist/package.json
+fi
 
 ###
 # @custom(build)
 ###
 
-sed -i "" "s|dist/cli|cli|g" dist/package.json
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  sed -i "" "s|dist/cli|cli|g" dist/package.json
+else
+  sed -i -e "s|dist/cli|cli|g" dist/package.json
+fi
