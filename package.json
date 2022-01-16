@@ -81,12 +81,18 @@
       },
       "@jeromefitz/semantic#build": {
         "dependsOn": [
-          "@jeromefitz/conventional-gitmoji#build"
+          "@jeromefitz/conventional-gitmoji#build",
+          "@jeromefitz/git-cz#build"
         ]
       },
       "@jeromefitz/semantic-config#build": {
         "dependsOn": [
           "@jeromefitz/semantic#build"
+        ]
+      },
+      "@jeromefitz/spotify#build": {
+        "dependsOn": [
+          "@jeromefitz/utils#build"
         ]
       },
       "clean": {
