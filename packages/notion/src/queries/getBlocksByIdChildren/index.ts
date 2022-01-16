@@ -1,4 +1,4 @@
-import { avoidRateLimit, isUndefined } from '../../utils'
+import { avoidRateLimit, isUndefined } from '@jeromefitz/utils'
 
 // @todo(types)
 const getBlocksByIdChildren = async (callbackFunction: any, { block_id }) => {

@@ -1,9 +1,10 @@
 /* eslint-disable prefer-const */
+import { sortObject } from '@jeromefitz/utils'
 import _filter from 'lodash/filter.js'
 import _omit from 'lodash/omit.js'
 
 import { QUERIES } from '../../constants'
-import { dataNormalized, dataSorted, getImages } from '../../utils'
+import { dataNormalized, getImages } from '../../utils'
 
 const getNotionSlug = async ({
   config,
@@ -44,7 +45,7 @@ const getNotionSlug = async ({
 
   info = _omit(_info, 'properties')
 
-  info['properties'] = dataSorted(
+  info['properties'] = sortObject(
     dataNormalized({ config, data: _info, pathVariables, pageId: info.id })
   )
 

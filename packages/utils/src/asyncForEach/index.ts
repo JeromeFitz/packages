@@ -7,4 +7,4 @@ async function asyncForEach<T>(
   }
 }
 
-export { asyncForEach }
+export default asyncForEach

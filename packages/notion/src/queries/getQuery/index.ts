@@ -1,9 +1,9 @@
+import { avoidRateLimit, isObjectEmpty } from '@jeromefitz/utils'
 import _map from 'lodash/map.js'
 import _omit from 'lodash/omit.js'
 import _size from 'lodash/size.js'
 
 import { PROPERTIES } from '../../constants'
-import { avoidRateLimit, isObjectEmpty } from '../../utils'
 import dataNormalizedResults from '../../utils/dataNormalizedResults'
 
 // const useCache = process.env.NEXT_PUBLIC__NOTION_USE_CACHE

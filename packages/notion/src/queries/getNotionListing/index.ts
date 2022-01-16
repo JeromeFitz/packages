@@ -1,9 +1,10 @@
 /* eslint-disable prefer-const */
+import { sortObject } from '@jeromefitz/utils'
 import _map from 'lodash/map.js'
 import _omit from 'lodash/omit.js'
 
 import { PROPERTIES } from '../../constants'
-import { dataNormalized, dataSorted, getImages } from '../../utils'
+import { dataNormalized, getImages } from '../../utils'
 
 const getNotionListing = async ({
   config,
@@ -32,7 +33,7 @@ const getNotionListing = async ({
   }
   if (infoInit?.object === 'page') {
     info = _omit(infoInit, 'properties')
-    info['properties'] = dataSorted(
+    info['properties'] = sortObject(
       dataNormalized({ config, data: infoInit, pathVariables, pageId: info.id })
     )
   }
@@ -61,7 +62,7 @@ const getNotionListing = async ({
   _map(itemsInit.results, (item) => {
     let itemInit = item
     itemInit = _omit(itemInit, 'properties')
-    itemInit['properties'] = dataSorted(
+    itemInit['properties'] = sortObject(
       dataNormalized({ config, data: item, pathVariables, pageId: item.id })
     )
     _itemData.push(itemInit)
