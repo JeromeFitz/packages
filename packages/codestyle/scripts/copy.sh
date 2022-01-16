@@ -19,6 +19,7 @@ cd ./dist && sed -i '' 's,dist/index,index,g' package.json
 # @custom(build)
 ###
 
+cd ..
 cp ./.eslintrc.cjs ./dist
 cp ./.eslintrc.next.cjs ./dist
 cp ./.prettierrc.cjs ./dist
