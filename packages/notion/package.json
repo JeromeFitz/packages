@@ -1,14 +1,16 @@
 {
   "name": "@jeromefitz/notion",
   "version": "0.0.0",
-  "description": "Notion: Custom Wrapper",
+  "description": "Notion: Custom Client for jeromefitzgerald.com",
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
     "url": "https://jeromefitzgerald.com"
   },
   "keywords": [
-    "notion"
+    "notion",
+    "next",
+    "next.js"
   ],
   "license": "MIT",
   "repository": {
@@ -24,18 +26,17 @@
   },
   "private": false,
   "scripts": {
-    "build": "yarn clean && mkdir -p ./dist && yarn copy && tsup-node src/*",
-    "dev": "yarn clean && mkdir -p ./dist && yarn copy && tsup-node src/* --watch",
+    "build": "yarn clean && yarn copy && tsup-node src/*",
+    "dev": "yarn clean && yarn copy && tsup-node src/* --watch",
     "clean": "rm -rf .turbo && rm -rf dist",
     "clean:install": "yarn clean && rm -rf node_modules",
-    "copy": "./scripts/copy.sh",
+    "copy": "mkdir -p ./dist && ./scripts/copy.sh",
     "semantic-release": "yarn copy && semantic-release -e semantic-release-monorepo"
   },
   "dependencies": {
     "@notionhq/client": "0.4.12",
     "date-fns": "2.28.0",
     "date-fns-tz": "1.2.2",
-    "isomorphic-unfetch": "3.1.0",
     "github-slugger": "1.4.0",
     "lodash": "4.17.21",
     "plaiceholder": "2.2.0"
