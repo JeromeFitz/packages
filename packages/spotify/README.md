@@ -1,6 +1,10 @@
 # `@jeromefitz/spotify`
 
-Wrapper stuff for [`jeromefitzgerald.com`](https://jeromefitzgerald.com).
+Custom API for [`jeromefitzgerald.com/music`](https://jeromefitzgerald.com/music).
+
+- `nowPlaying`: Current Track
+- `topArtists`: Top Artists
+- `topTracks`: Top Tracks
 
 ## 🛠️ Usage
 
@@ -19,28 +23,40 @@ const credentials = {
   refreshToken,
 }
 
-const SPOTIFY: SpotifyApiProps = new SpotifyApi()
-SPOTIFY.setCredentials(credentials)
+const spotify: ClientProps = new Client({ ...credentials })
 ```
 
-Before making any `SPOTIFY.*` calls.
+This will get the Authorization Token for the Bearer and consistently apply for API calls on your behalf.
 
-Of which there are:
+📝️ **Note:** Need to verify w. `2.0.1` release what happens if the token expires 😅️ (before we were getting the token on every request)
 
-- `getNowPlaying`: Current Track
-- `getTopArtists`: Top Artists
-- `getTopTracks`: Top Tracks
+Following functions are exposed via `spotify.get.*`:
+
+- `nowPlaying`: Current Track
+- `topArtists`: Top Artists
+- `topTracks`: Top Tracks
+
+**Example:**
+
+```tsx
+spotify.get.topArtists({
+  limit,
+  offset,
+  time_range,
+  withImages: true,
+})
+```
 
 ## ✨️ Customizations
 
-### 🧑‍🎨️ `artist`
+### 🧑‍🎤️ `artist`
 
-For a `track` we create an `artist` key that maps across all available `artists[artist.name]`
+For a `track` we create an `artist` key that maps across all available `artists[artist.name]`.
 
 ### 🖼️ `withImages`
 
 If this is passed we dynamically use `plaiceholder` to add an `image` key to:
 
-- `getNowPlaying`: `album`
-- `getTopArtists`: `artist`
-- `getTopTracks`: `album`
+- `nowPlaying`: `album`
+- `topArtists`: `artist`
+- `topTracks`: `album`
