@@ -1,19 +1,16 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "composite": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "lib": ["es2020"],
-    "module": "esnext",
-    "moduleResolution": "node",
+    "module": "commonjs",
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "es2020",
     "outDir": "./dist",
-    "paths": {},
-    "resolveJsonModule": true,
-    "rootDir": "./src",
-    "strict": false,
-    "target": "esnext"
+    "rootDir": "./src"
   },
-  "include": ["**/*.cjs", "**/*.js", "**/*.mjs", "**/*.ts"],
+  "extends": "@jeromefitz/codestyle/tsconfig.node-14.json",
+  "include": ["src"],
   "exclude": ["node_modules"]
 }

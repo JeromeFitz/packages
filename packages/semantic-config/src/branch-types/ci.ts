@@ -1,3 +1,3 @@
-const ci = []
+const ci = ['npm-dist']
 
 export default ci

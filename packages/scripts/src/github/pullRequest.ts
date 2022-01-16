@@ -1,4 +1,9 @@
 #!/usr/bin/env
+/* eslint-disable @typescript-eslint/no-var-requires */
+// @todo(types)
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { execSync } from 'child_process'
 
 import { Octokit } from '@octokit/rest'
@@ -9,6 +14,9 @@ import isCI from 'is-ci'
 import PULL_REQUEST from '../templates/PULL_REQUEST__RELEASE'
 
 const octokit = new Octokit({ auth: process.env.GH_TOKEN })
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const getVersion = (version) => {
   const [major, minor, patch] = version.split('-')[0].split('.')
   return [parseInt(major), parseInt(minor), parseInt(patch)].join('.')
@@ -47,6 +55,7 @@ async function setPullRequest({
     if (doesGitflowPrExists) {
       const pr = response.data.items[0]
       const pull_number = pr.number
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const issue_number = pull_number
       console.log(
         chalkPipe('orange.bold')(
@@ -91,7 +100,7 @@ async function setPullRequest({
           title,
           body,
         })
-        octokit.rest.issues.addLabels({
+        void octokit.rest.issues.addLabels({
           owner,
           repo,
           issue_number: pull.data.number,

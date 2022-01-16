@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-
+/* eslint-disable @typescript-eslint/no-var-requires */
+// @todo(types)
 import { Octokit } from '@octokit/rest'
 import chalkPipe from 'chalk-pipe'
 import isCI from 'is-ci'
@@ -18,9 +19,12 @@ const milestones = getMilestones.map((milestone) => ({
   state: milestone.state,
 }))
 
+// eslint-disable-next-line @typescript-eslint/require-await
 async function createMilestones({ owner, repo }) {
   try {
     milestones.map(async (milestone) => {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-expect-error
       await octokit.rest.issues.createMilestone({
         owner,
         repo,
@@ -28,6 +32,8 @@ async function createMilestones({ owner, repo }) {
       })
       console.log(
         chalkPipe('green.bold')(
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-expect-error
           `✅️  success: ${owner}/${repo} => createMilestone: ${milestone.name}`
         )
       )

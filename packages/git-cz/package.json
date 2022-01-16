@@ -30,21 +30,19 @@
   "engines": {
     "node": ">=14"
   },
-  "type": "module",
-  "sideEffects": false,
-  "bin": {
-    "git-cz": "./dist/cli.js",
-    "gitcz": "./dist/cli.js"
-  },
   "private": false,
   "scripts": {
-    "dry:run": "yarn build && node ./dist/cli",
-    "----": "",
-    "build": "yarn clean && tsup src/* --format esm,cjs --dts --minify --no-splitting --target node14",
-    "dev": "tsup src/* --format esm,cjs --watch --dts --minify --no-splitting --target node14",
+    "build": "tsup-node src/*",
+    "dev": "tsup-node src/* --watch",
+    "---": "",
     "clean": "rm -rf .turbo && rm -rf dist",
     "clean:install": "yarn clean && rm -rf node_modules",
-    "semantic-release": "semantic-release -e semantic-release-monorepo"
+    "copy": "mkdir -p ./dist && ./scripts/copy.sh",
+    "----": "",
+    "semantic-release": "yarn copy && semantic-release",
+    "semantic-release:mono": "yarn copy && semantic-release -e semantic-release-monorepo",
+    "-----": "",
+    "dry:run": "yarn build && node ./dist/cli"
   },
   "devDependencies": {
     "@types/chalk-pipe": "2.0.0",
@@ -69,24 +67,17 @@
     "shellsync": "0.2.2",
     "word-wrap": "1.2.3"
   },
+  "bin": {
+    "git-cz": "./dist/cli.js",
+    "gitcz": "./dist/cli.js"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "typings": "./dist/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "files": [
-    "dist/**",
-    "package.json",
-    "README.md"
-  ],
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs",
-      "default": "./dist/index.js"
-    },
-    "./dist/cz.js": "./dist/cz.js",
-    "./gitmoji": {
-      "import": "./dist/themes/gitmoji.js",
-      "require": "./dist/themes/gitmoji.cjs",
-      "default": "./dist/themes/gitmoji.js"
-    },
-    "./src/themes/gitmoji": "./src/themes/gitmoji.ts"
-  }
+    "*",
+    "!release.config.cjs"
+  ]
 }

@@ -18,3 +18,4 @@ cd ./dist && sed -i '' 's,dist/index,index,g' package.json
 ###
 # @custom(build)
 ###
+cd .. && cd ./dist && sed -i '' 's,dist/cli,cli,g' package.json

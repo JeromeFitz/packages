@@ -1,10 +1,9 @@
-/* eslint-disable import/order */
-const isCI = require('is-ci')
-!isCI && require('dotenv').config({ path: '../../.env' })
+// @ci(notion) This file is run from `./dist` in build process
+const { pluginOptions, releaseConfig } = require('../../../release.config.cjs')
 
-const { releaseConfig } = require('@jeromefitz/semantic-config')
 const { name } = require('./package.json')
 
-const config = { ...releaseConfig, tagFormat: `${name}@\${version}` }
+const plugins = pluginOptions(releaseConfig.plugins, { pkgRoot: './dist' })
+const config = { ...releaseConfig, plugins, tagFormat: `${name}@\${version}` }
 
 module.exports = config

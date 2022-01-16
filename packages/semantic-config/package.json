@@ -18,27 +18,25 @@
   },
   "private": true,
   "scripts": {
-    "build": "yarn clean && tsup src/* --format esm,cjs --dts --minify --no-splitting --target node14",
-    "dev": "tsup src/* --format esm,cjs --dts --watch --minify --no-splitting --target node14",
+    "build": "tsup-node src/*",
+    "dev": "tsup-node src/* --watch",
+    "---": "",
     "clean": "rm -rf .turbo && rm -rf dist",
     "clean:install": "yarn clean && rm -rf node_modules",
-    "---": "",
-    "semantic-release": "semantic-release -e semantic-release-monorepo"
+    "copy": "mkdir -p ./dist && ./scripts/copy.sh",
+    "----": "",
+    "semantic-release": "yarn copy && semantic-release",
+    "semantic-release:mono": "yarn copy && semantic-release -e semantic-release-monorepo"
   },
   "devDependencies": {},
   "dependencies": {},
   "type": "module",
+  "sideEffects": false,
+  "typings": "./dist/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "files": [
-    "dist/**",
-    "package.json",
-    "README.md"
-  ],
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs",
-      "default": "./dist/index.js"
-    }
-  },
-  "types": "./dist/index.d.ts"
+    "*",
+    "!release.config.cjs"
+  ]
 }
