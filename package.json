@@ -103,7 +103,9 @@
       },
       "lint": {
         "dependsOn": [
-          "@jeromefitz/conventional-gitmoji#build"
+          "@jeromefitz/conventional-gitmoji#build",
+          "@jeromefitz/utils#build",
+          "@jeromefitz/git-cz#build"
         ],
         "outputs": []
       },
