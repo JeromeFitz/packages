@@ -27,22 +27,32 @@ class Client extends _Client {
 
   public readonly custom = {
     getBlocksByIdChildren: async (props: { block_id: any }) =>
-      await getBlocksByIdChildren(this.blocks.children.list, { ...props }),
+      await getBlocksByIdChildren({
+        ...props,
+        getBlocksChildrenList: this.blocks.children.list,
+      }),
 
     getDatabasesByIdQuery: async (props: {
       database_id: any
       sorts?: any
       filter?: any
-    }) => await getDatabasesByIdQuery(this.databases.query, props),
+    }) =>
+      await getDatabasesByIdQuery({
+        ...props,
+        getDatabasesQuery: this.databases.query,
+      }),
 
     getDeepFetchAllChildren: async (props: { blocks: any }) =>
-      await getDeepFetchAllChildren(this.blocks.children.list, { ...props }),
+      await getDeepFetchAllChildren({
+        ...props,
+        getBlocksChildrenList: this.blocks.children.list,
+      }),
 
     getInfoType: (props: { config: any; item: any; routeType: any; meta: any }) =>
       getInfoType({ ...props, config: this.#config }),
 
-    getPagesById: async (props) =>
-      await getPagesById(this.pages.retrieve, { ...props }),
+    getPagesById: async (props: { getPagesRetrieve: any; page_id: any }) =>
+      await getPagesById({ ...props, getPagesRetrieve: this.pages.retrieve }),
 
     getPathVariables: (props: { config: any; catchAll: any }) =>
       getPathVariables({ ...props, config: this.#config }),
@@ -56,16 +66,8 @@ class Client extends _Client {
   }
 
   /**
-   * @info
+   * @info details at: ../../utils/getDataType
    *
-   * 1 = /about, /colophon, /contact
-   * 2 = /blog, /events, /podcasts
-   * 3 = /blog/2020, /blog/2020/05, /blog/2020/05/09
-   *     /events/2020, /events/2020/05, /events/2020/05/09,
-   * 4 = /blog/2020/05/09/title, /events/2020/05/09/title,
-   *     /podcasts/knockoffs/i-know-what-you-did-last-summer
-   * 5 = /shows/alex-o-jerome, /events/2020/05/09/jerome-and,
-   *     /podcasts/knockoffs
    */
   public readonly dataTypes = {
     [DATA_TYPES.LISTING]: async (props: {

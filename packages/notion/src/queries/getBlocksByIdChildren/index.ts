@@ -1,10 +1,10 @@
 import { avoidRateLimit, isUndefined } from '@jeromefitz/utils'
 
 // @todo(types)
-const getBlocksByIdChildren = async (callbackFunction: any, { block_id }) => {
+const getBlocksByIdChildren = async ({ getBlocksChildrenList, block_id }) => {
   if (isUndefined(block_id)) return []
   await avoidRateLimit()
-  return await callbackFunction({
+  return await getBlocksChildrenList({
     block_id,
   })
 }

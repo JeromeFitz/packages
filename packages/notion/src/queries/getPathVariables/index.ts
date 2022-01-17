@@ -10,10 +10,8 @@ import _join from 'lodash/join.js'
 import _last from 'lodash/last.js'
 import _size from 'lodash/size.js'
 
-import { DATA_TYPES } from '../../constants'
+import { getDataType } from '../../utils'
 
-// @todo(complexity) 16
-// eslint-disable-next-line complexity
 const getPathVariables = ({ config, catchAll }) => {
   const { NOTION, PAGES__HOMEPAGE, ROUTE_TYPES } = config
   const size: number = _size(catchAll)
@@ -23,6 +21,7 @@ const getPathVariables = ({ config, catchAll }) => {
   const meta =
     size > 1 &&
     _includes(
+      // @question(notion) what do these have in common?
       [NOTION.BLOG.routeType, NOTION.EVENTS.routeType, NOTION.PODCASTS.routeType],
       first
     )
@@ -38,46 +37,7 @@ const getPathVariables = ({ config, catchAll }) => {
 
   const url = isPage && first === PAGES__HOMEPAGE ? '' : _join(catchAll, '/')
 
-  /**
-   * @info
-   *
-   * 1 = /about, /colophon, /contact
-   * 2 = /blog, /events, /podcasts
-   * 3 = /blog/2020, /blog/2020/05, /blog/2020/05/09
-   *     /events/2020, /events/2020/05, /events/2020/05/09,
-   * 4 = /blog/2020/05/09/title, /events/2020/05/09/title,
-   *     /podcasts/knockoffs/i-know-what-you-did-last-summer
-   * 5 = /shows/alex-o-jerome, /events/2020/05/09/jerome-and,
-   *     /podcasts/knockoffs
-   */
-  let dataType = DATA_TYPES.SLUG
-  if (isPage) {
-    dataType = DATA_TYPES.SLUG
-  } else if (isIndex && !hasMeta) {
-    dataType = DATA_TYPES.LISTING
-  } else if (isIndex && hasMeta) {
-    dataType = DATA_TYPES.LISTING_BY_DATE
-  } else if (hasMeta) {
-    dataType = DATA_TYPES.SLUG_BY_ROUTE
-  } else {
-    dataType = DATA_TYPES.SLUG
-  }
-
-  /**
-   * @debug
-   */
-  // console.dir(`------`)
-  // console.dir(`routeType: ${routeType}`)
-  // console.dir(`slug: ${slug}`)
-  // console.dir(`isPage:  ${isPage}`)
-  // console.dir(`isIndex:  ${isIndex}`)
-  // console.dir(`hasMeta: ${hasMeta}`)
-  // console.dir(`dataType: ${dataType}`)
-  // console.dir(`meta:`)
-  // console.dir(meta)
-
   const pathVariables = {
-    dataType,
     hasMeta,
     isPage,
     isIndex,
@@ -87,7 +47,12 @@ const getPathVariables = ({ config, catchAll }) => {
     url,
   }
 
-  return pathVariables
+  const dataType = getDataType(pathVariables)
+
+  return {
+    ...pathVariables,
+    dataType,
+  }
 }
 
 export default getPathVariables

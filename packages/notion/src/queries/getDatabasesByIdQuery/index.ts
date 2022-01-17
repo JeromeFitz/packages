@@ -1,6 +1,7 @@
 import { PROPERTIES } from '../../constants'
+import type { SortMock } from '../../schema'
 
-const mock: any = {
+const sortDefault: SortMock = {
   sorts: [
     {
       property: PROPERTIES.slug.notion,
@@ -10,12 +11,14 @@ const mock: any = {
 }
 
 // @todo(types)
-const getDatabasesByIdQuery = async (
-  callbackFunction: any,
-  { database_id, sorts = mock.sorts, filter = mock.filter }
-) => {
+const getDatabasesByIdQuery = async ({
+  database_id,
+  filter = sortDefault?.filter,
+  getDatabasesQuery,
+  sorts = sortDefault?.sorts,
+}) => {
   if (!database_id) return []
-  return await callbackFunction({
+  return await getDatabasesQuery({
     database_id,
     sorts,
     filter,
