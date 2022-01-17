@@ -1,7 +1,6 @@
 import { stringToUUID } from '@jeromefitz/utils'
 import Slugger from 'github-slugger'
 import _size from 'lodash/size.js'
-// import { getPlaiceholder } from 'plaiceholder'
 
 const notionImageHosted = `https://www.notion.so/image/{{FILENAME}}?table=block&id={{PAGE_ID}}&cache=v2&w1dth=600`
 
@@ -20,6 +19,11 @@ const files = (data: any, pageId: string) => {
       if (file?.type === 'file') {
         const internalUrl = file?.file?.url.split('?')[0]
         const internalSlug = slugger.slug(internalUrl)
+        /**
+         * @note(plaiceholder)
+         *
+         * Do not handle here.
+         */
         // const { base64: internalBase64, img: internalImg } = await getPlaiceholder(
         //   internalUrl
         // )
@@ -33,6 +37,11 @@ const files = (data: any, pageId: string) => {
       if (file?.type === 'external') {
         const externalUrl = file?.external?.url.split('?')[0]
         const externalSlug = slugger.slug(externalUrl)
+        /**
+         * @note(plaiceholder)
+         *
+         * Do not handle here.
+         */
         // const { base64: externalBase64, img: externalImg } = await getPlaiceholder(
         //   externalUrl
         // )

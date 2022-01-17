@@ -4,7 +4,7 @@ import _filter from 'lodash/filter.js'
 import _omit from 'lodash/omit.js'
 
 import { QUERIES } from '../../constants'
-import { dataNormalized, getImages } from '../../utils'
+import { dataNormalized } from '../../utils'
 
 const getNotionSlug = async ({
   config,
@@ -57,13 +57,12 @@ const getNotionSlug = async ({
     items.results = _filter(items.results, { properties: { isPublished: true } })
   }
 
-  let data = { info, content, items, images: {} }
-
-  const images = !!data ? await getImages({ data, pathVariables }) : {}
-
-  data = { ...data, images }
-
-  return data
+  /**
+   * @note(plaiceholder)
+   *
+   * Pass empty `images` object for SSR/API takeover
+   */
+  return { info, content, items, images: {} }
 }
 
 export default getNotionSlug

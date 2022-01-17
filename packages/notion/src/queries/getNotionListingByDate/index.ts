@@ -185,12 +185,12 @@ const getNotionListingByDate = async ({
   // eslint-disable-next-line prefer-const
   items = _omit(items3Omit, 'data')
 
-  let data = { info, content, items, images: {} }
-  // @todo(images)
-  let images = {}
-  data = { ...data, images }
-
-  return data
+  /**
+   * @note(plaiceholder)
+   *
+   * Pass empty `images` object for SSR/API takeover
+   */
+  return { info, content, items, images: {} }
 }
 
 export default getNotionListingByDate

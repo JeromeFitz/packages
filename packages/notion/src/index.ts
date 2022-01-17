@@ -15,6 +15,33 @@ import {
   getQuery,
 } from './queries'
 
+type CredentialProps = {
+  auth: string
+  config: any
+}
+
+type CustomProps = {
+  getBlocksByIdChildren: any
+  getDatabasesByIdQuery: any
+  getDeepFetchAllChildren: any
+  getInfoType: any
+  getPagesById: any
+  getPathVariables: any
+  getQuery: any
+}
+
+type DataTypesProps = {
+  LISTING: any
+  LISTING_BY_DATE: any
+  SLUG: any
+  SLUG_BY_ROUTE: any
+}
+
+type ClientProps = {
+  custom: CustomProps
+  dataTypes: DataTypesProps
+}
+
 class Client extends _Client {
   #config?: any
 
@@ -26,35 +53,32 @@ class Client extends _Client {
   }
 
   public readonly custom = {
-    getBlocksByIdChildren: async (props: { block_id: any }) =>
+    getBlocksByIdChildren: async (props) =>
       await getBlocksByIdChildren({
         ...props,
         getBlocksChildrenList: this.blocks.children.list,
       }),
 
-    getDatabasesByIdQuery: async (props: {
-      database_id: any
-      sorts?: any
-      filter?: any
-    }) =>
+    getDatabasesByIdQuery: async (props) =>
       await getDatabasesByIdQuery({
         ...props,
         getDatabasesQuery: this.databases.query,
       }),
 
-    getDeepFetchAllChildren: async (props: { blocks: any }) =>
+    getDeepFetchAllChildren: async (props) =>
       await getDeepFetchAllChildren({
         ...props,
         getBlocksChildrenList: this.blocks.children.list,
       }),
 
-    getInfoType: (props: { config: any; item: any; routeType: any; meta: any }) =>
-      getInfoType({ ...props, config: this.#config }),
+    getInfoType: (props) => {
+      return getInfoType({ ...props, config: this.#config })
+    },
 
-    getPagesById: async (props: { getPagesRetrieve: any; page_id: any }) =>
+    getPagesById: async (props) =>
       await getPagesById({ ...props, getPagesRetrieve: this.pages.retrieve }),
 
-    getPathVariables: (props: { config: any; catchAll: any }) =>
+    getPathVariables: (props) =>
       getPathVariables({ ...props, config: this.#config }),
 
     getQuery: async (props) =>
@@ -133,3 +157,4 @@ class Client extends _Client {
 }
 
 export { Client }
+export type { ClientProps, CredentialProps }

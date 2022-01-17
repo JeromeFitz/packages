@@ -4,7 +4,7 @@ import _map from 'lodash/map.js'
 import _omit from 'lodash/omit.js'
 
 import { PROPERTIES } from '../../constants'
-import { dataNormalized, getImages } from '../../utils'
+import { dataNormalized } from '../../utils'
 
 const getNotionListing = async ({
   config,
@@ -71,11 +71,12 @@ const getNotionListing = async ({
   _items.results = _itemData
   items = _items
 
-  let data = { info, content, items, images: {} }
-  const images = !!data ? await getImages({ data, pathVariables }) : {}
-  data = { ...data, images }
-
-  return data
+  /**
+   * @note(plaiceholder)
+   *
+   * Pass empty `images` object for SSR/API takeover
+   */
+  return { info, content, items, images: {} }
 }
 
 export default getNotionListing
