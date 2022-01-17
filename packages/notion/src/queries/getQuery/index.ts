@@ -4,20 +4,16 @@ import _omit from 'lodash/omit.js'
 import _size from 'lodash/size.js'
 
 import { PROPERTIES } from '../../constants'
+import type { SortItem } from '../../schema'
 import dataNormalizedResults from '../../utils/dataNormalizedResults'
 
 // const useCache = process.env.NEXT_PUBLIC__NOTION_USE_CACHE
 // const useCache = false
 
-const SORT = {
-  ASCENDING: 'ascending',
-  DESCENDING: 'descending',
-}
-
-const SORTS: any[] = [
+const SORTS: SortItem[] = [
   {
     property: PROPERTIES.slug.notion,
-    direction: SORT.ASCENDING,
+    direction: 'ascending',
   },
 ]
 

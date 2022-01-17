@@ -22,11 +22,9 @@ const getInfoType = ({ config, item, routeType, meta }) => {
     case NOTION.EPISODES.routeType:
       as = `/${meta?.join('/')}/${slug}`
       break
-    case NOTION.PEOPLE.routeType:
-
-    case NOTION.SHOWS.routeType:
-    // case NOTION.USERS.routeType:
-    case NOTION.VENUES.routeType:
+    // case NOTION.PEOPLE.routeType:
+    // case NOTION.SHOWS.routeType:
+    // case NOTION.VENUES.routeType:
     default:
       as = `/${routeType}/${slug}`
       break
