@@ -1,21 +1,30 @@
 /* eslint-disable complexity */
 import type { Agent } from 'http'
-import { URL, URLSearchParams } from 'url'
+import { URL as _URL, URLSearchParams } from 'url'
 
 import { asyncForEach, noop as _noop } from '@jeromefitz/utils'
 import fetch from 'isomorphic-unfetch'
 import _omit from 'lodash/omit'
 
 import {
+  API_VERSION,
   ENDPOINTS,
   // LIMIT,
   // OFFSET,
   OMIT_FIELDS,
   PACKAGE_NAME,
   PACKAGE_VERSION,
+  URL,
 } from './constants'
 
 type TimeRangeProps = 'long_term' | 'medium_term' | 'short_term'
+
+// type PlaiceholderImage = {
+//   base64: string
+//   img: { src: string; height: number; width: number; type?: string | undefined }
+//   slug: string
+//   url: string
+// }
 
 interface QueryProps {
   limit?: number
@@ -54,11 +63,12 @@ export interface RequestParameters {
   accessToken?: string
 }
 
+// @todo(types)
 export interface ClientOptions {
   timeoutMs?: number
   baseUrl?: string
   spotifyVersion?: string
-  fetch?: any // @todo(types)
+  fetch?: any
   /** Silently ignored in the browser */
   agent?: Agent
   clientId: string
@@ -66,11 +76,11 @@ export interface ClientOptions {
   refreshToken: string
   accessToken: string
 }
-
+// @todo(types)
 class Client {
   #prefixUrl: string
   #spotifyVersion: string
-  #fetch: any // @todo(types)
+  #fetch: any
   #agent: Agent | undefined
   #userAgent: string
   //
@@ -79,12 +89,11 @@ class Client {
   #refreshToken: string
   #accessToken: string
 
-  static readonly defaultSpotifyVersion = 'v1'
+  static readonly defaultSpotifyVersion = API_VERSION
 
   public constructor(options: ClientOptions) {
     this.#prefixUrl =
-      (options?.baseUrl ?? 'https://api.spotify.com') +
-      `/${Client.defaultSpotifyVersion}/`
+      (options?.baseUrl ?? URL.BASE) + `/${Client.defaultSpotifyVersion}/`
     this.#spotifyVersion = options?.spotifyVersion ?? Client.defaultSpotifyVersion
     this.#fetch = options?.fetch ?? fetch
     this.#agent = options?.agent
@@ -96,28 +105,19 @@ class Client {
     this.#accessToken = options?.accessToken ?? ''
   }
 
-  /**
-   * Sends a request.
-   *
-   * @param path
-   * @param method
-   * @param query
-   * @param body
-   * @returns
-   */
+  // @todo(types)
   public async request({
     path,
     method,
     query,
     body,
     accessToken,
-  }: // @todo(types)
-  any): Promise<any> {
+  }: any): Promise<any> {
     // @todo(logging) INFO => request start
     const bodyAsJsonString =
       !body || Object.entries(body).length === 0 ? undefined : JSON.stringify(body)
 
-    const url = new URL(`${this.#prefixUrl}${path}`)
+    const url = new _URL(`${this.#prefixUrl}${path}`)
     if (query) {
       for (const [key, value] of Object.entries(query)) {
         if (value !== undefined) {
@@ -126,7 +126,6 @@ class Client {
       }
     }
 
-    // @todo(types)
     const accessTokenHeader = await this.accessTokenAsHeaders(accessToken)
     const headers: any = {
       ...accessTokenHeader,
@@ -157,7 +156,6 @@ class Client {
         return { status: response?.status }
       }
 
-      // @todo(types)
       // @todo(logging) INFO => request success
       return await response.json()
     } catch (error: unknown) {
@@ -174,9 +172,10 @@ class Client {
     }
   }
 
+  // @todo(types)
   public readonly get: GetProps = {
+    // @todo(types)
     nowPlaying: async (args: WithAccessToken<QueryProps>): Promise<any> => {
-      // @todo(types)
       const res: any = await this.request({
         path: ENDPOINTS.NOW_PLAYING,
         method: 'GET',
@@ -194,8 +193,8 @@ class Client {
         withImages: args?.withImages ?? true,
       })
     },
+    // @todo(types)
     topArtists: async (args: WithAccessToken<QueryProps>): Promise<any> => {
-      // @todo(types)
       const res: any = await this.request({
         path: ENDPOINTS.TOP_ARTISTS,
         method: 'GET',
@@ -213,8 +212,8 @@ class Client {
         withImages: args?.withImages ?? true,
       })
     },
+    // @todo(types)
     topTracks: async (args: WithAccessToken<QueryProps>): Promise<any> => {
-      // @todo(types)
       const res: any = await this.request({
         path: ENDPOINTS.TOP_TRACKS,
         method: 'GET',
@@ -234,18 +233,24 @@ class Client {
     },
   }
 
+  // @todo(types)
   private async getArtistsGenres(args: WithAccessToken<QueryProps>) {
-    const _genres: any = await this.request({
+    const res: any = await this.request({
       path: ENDPOINTS.ARTISTS,
       method: 'GET',
       query: _omit(args, ['accessToken', 'withImages']),
       body: '',
       accessToken: args?.accessToken,
     })
+    // @hack(spotify) lol, error handling, wut
+    if (res?.status === 204 || res?.status > 400) {
+      return { status: res?.status }
+    }
 
-    return _genres.artists.map(({ genres }) => genres).flat()
+    return [...new Set(res?.artists.map(({ genres }) => genres).flat())]
   }
 
+  // @todo(types)
   private async getNowPlaying({ data, withImages }) {
     if (!data) return { status: 404 }
     const { item } = data
@@ -254,58 +259,43 @@ class Client {
     const album = _omit(_album, OMIT_FIELDS)
     const artist = artists.map(({ name }) => name).join(', ')
     const genres = await this.getArtistsGenres({
-      ids: data?.item?.artists
-        .map(({ id }) => id)
-        .join('%2C')
-        .replace(',', '%2C'),
+      ids: artists.map(({ id }) => id).join(','),
     })
 
-    let _data = {
+    let image = {}
+    if (withImages) {
+      const url = item?.album?.images[0].url
+      const { getImage } = await import('./utils')
+      image = await getImage(url)
+    }
+
+    return {
       ...data,
       item: {
         ...track,
-        album,
+        album: {
+          ...album,
+          image,
+        },
         artist,
         genres,
       },
     }
-
-    if (withImages) {
-      const url = item?.album?.images[0].url
-      const { getImage } = await import('./utils')
-      const image = await getImage(url)
-
-      _data = {
-        ..._data,
-        item: {
-          ...track,
-          album: {
-            ...album,
-            image,
-          },
-          artist,
-          genres,
-        },
-      }
-    }
-
-    return _data
   }
 
+  // @todo(types)
   private async getTopArtists({ data, withImages }) {
-    let _data = data
+    let _data: any = data
 
     if (withImages) {
       // @refactor(spotify) if this moves out of `index.ts`
       // const { asyncForEach } = await import('@jeromefitz/utils')
-      const _artists: string[] = []
-      // @todo(types)
+      const items: any[] = []
       await asyncForEach(data.items, async (artist: any) => {
         const url = artist?.images[0].url
         const { getImage } = await import('./utils')
         const image = await getImage(url)
-
-        _artists.push({
+        items.push({
           ...artist,
           image,
         })
@@ -313,31 +303,26 @@ class Client {
 
       _data = {
         ...data,
-        items: _artists,
+        items,
       }
     }
 
     return _data
   }
 
+  // @todo(types)
   private async getTopTracks({ data, withImages }) {
-    /**
-     * @custom
-     */
-    const { items } = data
-    let _items: any[] = []
-    await asyncForEach(items, async (item: any) => {
+    const items: any[] = []
+    await asyncForEach(data.items, async (item: any) => {
       const { album: _album, artists } = item
-      const track = _omit(item, OMIT_FIELDS)
-      const album = _omit(_album, OMIT_FIELDS)
-      const artist = artists.map(({ name }) => name).join(', ')
-      const genres = await this.getArtistsGenres({
-        ids: artists
-          .map(({ id }) => id)
-          .join('%2C')
-          .replace(',', '%2C'),
+      const track: any = _omit(item, OMIT_FIELDS)
+      const album: any = _omit(_album, OMIT_FIELDS)
+      const artist: any = artists.map(({ name }) => name).join(', ')
+      const genres: any = await this.getArtistsGenres({
+        ids: artists.map(({ id }) => id).join(','),
       })
-      _items.push({
+      items.push({
+        ...item,
         album,
         artist,
         artists,
@@ -346,40 +331,34 @@ class Client {
       })
     }).catch(_noop)
 
-    let _data = {
-      ...data,
-      items: _items,
-    }
-
     if (withImages) {
-      // @note(reset)
-      _items = []
-      await asyncForEach(_data.items, async (item: any) => {
-        const url = item?.album?.images[0].url
+      await asyncForEach(items, async (item: any, itemIndex: number) => {
+        const album: any = item?.album
+        const url = album?.images[0].url
         const { getImage } = await import('./utils')
         const image = await getImage(url)
-        _items.push({
+        items[itemIndex] = {
           ...item,
           album: {
-            ...item.album,
+            ...album,
             image,
           },
-        })
+        }
       }).catch(_noop)
-      _data = {
-        ..._data,
-        items: _items,
-      }
     }
 
-    return _data
+    return {
+      ...data,
+      items,
+    }
   }
 
+  // @todo(types)
   private async getAccessToken() {
     const basic = Buffer.from(`${this.#clientId}:${this.#clientSecret}`).toString(
       'base64'
     )
-    const res = await this.#fetch(ENDPOINTS.TOKEN, {
+    const res = await this.#fetch(URL.TOKEN, {
       method: 'POST',
       headers: {
         Authorization: `Basic ${basic}`,
@@ -400,6 +379,7 @@ class Client {
     return access_token
   }
 
+  // @todo(types)
   private async accessTokenAsHeaders(accessToken?: string) {
     const headers: Record<string, string> = {}
     const accessTokenValue =
