@@ -176,7 +176,7 @@ const getNotionListingByDate = async ({
   const ___items: any = await getDatabasesByIdQuery({
     database_id,
     filter,
-    sorts: sorts,
+    sorts,
   })
   const __items: any[] = []
   _map(___items.results, (i) => {
