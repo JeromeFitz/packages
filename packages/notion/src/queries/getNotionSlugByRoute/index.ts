@@ -1,13 +1,162 @@
-/* eslint-disable prefer-const */
 import { sortObject } from '@jeromefitz/utils'
 import _omit from 'lodash/omit.js'
 import _size from 'lodash/size.js'
 
-import { PROPERTIES, QUERIES } from '../../constants'
+import { DATA_TYPES, PROPERTIES, QUERIES } from '../../constants'
 import { addTime, dataNormalized } from '../../utils'
 
-// @todo(complexity) 16
-// eslint-disable-next-line complexity
+/**
+ * @note Determine if PARENT|CHILD should be returned:
+ *
+ * PARENT
+ * - /[parent-routeType]/[slug]
+ * - /podcasts/jer-and-ky-and-guest
+ *
+ * CHILD
+ * - /[parent-routeType]/[child-routeType]/[slug]
+ * - /podcasts/jer-and-ky-and-guest/am-i-dracula-greg-gillotti
+
+ *
+ */
+const getNotionSlugByRoute__getDataByParentRouteType = async ({
+  config,
+  getBlocksByIdChildren,
+  getDatabasesByIdQuery,
+  getQuery,
+  pathVariables,
+  routeType,
+  // slug,
+}) => {
+  const { NOTION } = config
+  const { meta } = pathVariables
+
+  const ROUTE_TYPE = routeType.toUpperCase()
+
+  const [parentSlug, slug] = meta
+  const isChild = _size(meta) === 2
+
+  const CHILD = NOTION[ROUTE_TYPE]?.hasChild.toUpperCase()
+
+  const __info: any = await getDatabasesByIdQuery({
+    database_id:
+      NOTION[isChild ? NOTION[CHILD].routeType.toUpperCase() : ROUTE_TYPE]
+        .database_id,
+    filter: {
+      and: [
+        {
+          ...QUERIES.slug,
+          text: { equals: isChild ? slug : parentSlug },
+        },
+      ],
+    },
+  })
+
+  const _info = __info?.object === 'list' && __info.results[0]
+  // @refactor(404)
+  if (!_info) {
+    return { info: {}, content: {}, items: {}, images: {} }
+  }
+  const info = _omit(_info, 'properties')
+  info['properties'] = sortObject(
+    dataNormalized({ config, data: _info, pathVariables, pageId: info.id })
+  )
+  const content = await getBlocksByIdChildren({ block_id: info.id })
+  let items = {}
+
+  /**
+   * @note if PARENT then get CHILDREN via `items`
+   */
+  if (!isChild) {
+    items = await getQuery({
+      config,
+      reqQuery: {
+        podcasts: info.id,
+        databaseType: NOTION[CHILD].routeType.toUpperCase(),
+      },
+    })
+  }
+
+  return { info, content, items, images: {} }
+}
+
+/**
+ * @note This is unique because the following are different:
+ *
+ * - /events/2020/05/01/jerome-and
+ * - /events/2020/05/08/jerome-and
+ * - /[routeType]/[yyyy/mm/dd]/[slug]
+ *
+ * We actually _do_ use the date for this.
+ *
+ */
+const getNotionSlugByRoute__getDataByListingDate = async ({
+  config,
+  getBlocksByIdChildren,
+  getDatabasesByIdQuery,
+  // getQuery,
+  pathVariables,
+  routeType,
+  slug,
+}) => {
+  const dateTimestamp = new Date().toISOString()
+
+  const { NOTION } = config
+  const { meta } = pathVariables
+
+  const [year, month, day] = meta
+  /**
+   * @hack uh... nothing to see here, haha
+   */
+  const timestampQuery = new Date(
+    `${!!year ? year : dateTimestamp.slice(0, 4)}-${!!month ? month : '01'}-${
+      !!day ? day : '01'
+    }`
+  )
+  const __info: any = await getDatabasesByIdQuery({
+    database_id: NOTION[routeType.toUpperCase()].database_id,
+    filter: {
+      and: [
+        {
+          property:
+            routeType === NOTION.EVENTS.routeType
+              ? PROPERTIES.dateEvent.notion
+              : PROPERTIES.datePublished.notion,
+          date: {
+            on_or_after: addTime(timestampQuery, ''),
+          },
+        },
+        {
+          property:
+            routeType === NOTION.EVENTS.routeType
+              ? PROPERTIES.dateEvent.notion
+              : PROPERTIES.datePublished.notion,
+          date: {
+            before: addTime(timestampQuery, 'day'),
+          },
+        },
+        {
+          ...QUERIES.slug,
+          text: { equals: slug },
+        },
+      ],
+    },
+  })
+
+  const _info = __info?.object === 'list' && __info.results[0]
+  // @refactor(404)
+  if (!_info) {
+    return { info: {}, content: {}, items: {}, images: {} }
+  }
+
+  const info = _omit(_info, 'properties')
+  info['properties'] = sortObject(
+    dataNormalized({ config, data: _info, pathVariables, pageId: info.id })
+  )
+  const content = await getBlocksByIdChildren({ block_id: info.id })
+
+  return { info, content, items: {}, images: {} }
+}
+
 const getNotionSlugByRoute = async ({
   config,
   getBlocksByIdChildren,
@@ -17,111 +166,46 @@ const getNotionSlugByRoute = async ({
   routeType,
   slug,
 }) => {
-  const { NOTION } = config
-  const { meta } = pathVariables
-  let content: any = {},
-    info: any = {},
-    items: any = {}
-  const dateTimestamp = new Date().toISOString()
+  const { NOTION, ROUTE_TYPES_BY_DATA_TYPES } = config
 
-  if (routeType === NOTION.PODCASTS.routeType) {
-    const [podcastSlug, episodeSlug] = meta
-    const hasEpisode = _size(meta) === 2
-    const infoInit: any = await getDatabasesByIdQuery({
-      database_id:
-        NOTION[
-          hasEpisode
-            ? NOTION.EPISODES.routeType.toUpperCase()
-            : routeType.toUpperCase()
-        ].database_id,
-      filter: {
-        and: [
-          {
-            ...QUERIES.slug,
-            text: { equals: hasEpisode ? episodeSlug : podcastSlug },
-          },
-        ],
-      },
+  /**
+   * @custom (notion) DATA_TYPES.SLUG_BY_ROUTE -- but customized:
+   * Determine if `routeType` is a parent|child
+   *
+   */
+  if (!!NOTION[routeType.toUpperCase()].hasChild) {
+    return await getNotionSlugByRoute__getDataByParentRouteType({
+      config,
+      getBlocksByIdChildren,
+      getDatabasesByIdQuery,
+      getQuery,
+      pathVariables,
+      routeType,
+      // slug,
     })
-
-    const _info = infoInit?.object === 'list' && infoInit.results[0]
-    // @refactor(404)
-    if (!_info) {
-      return {}
-    }
-    info = _omit(_info, 'properties')
-    info['properties'] = sortObject(
-      dataNormalized({ config, data: _info, pathVariables, pageId: info.id })
-    )
-    content = await getBlocksByIdChildren({ block_id: info.id })
-
-    // @hack(podcasts)
-    if (!hasEpisode) {
-      if (routeType === NOTION.PODCASTS.routeType) {
-        items = await getQuery({
-          config,
-          reqQuery: {
-            podcasts: info.id,
-            databaseType: NOTION.EPISODES.routeType.toUpperCase(),
-          },
-        })
-      }
-    }
   }
 
-  if ([NOTION.BLOG.routeType, NOTION.EVENTS.routeType].includes(routeType)) {
-    const [year, month, day] = meta
-    const timestampQuery = new Date(
-      `${!!year ? year : dateTimestamp.slice(0, 4)}-${!!month ? month : '01'}-${
-        !!day ? day : '01'
-      }`
+  /**
+   * @custom (notion) DATA_TYPES.LISTING_BY_DATE
+   *
+   */
+  if (
+    ROUTE_TYPES_BY_DATA_TYPES[DATA_TYPES.LISTING_BY_DATE].includes(
+      routeType.toUpperCase()
     )
-    const info4__be: any = await getDatabasesByIdQuery({
-      database_id: NOTION[routeType.toUpperCase()].database_id,
-      filter: {
-        and: [
-          {
-            property:
-              routeType === NOTION.EVENTS.routeType
-                ? PROPERTIES.dateEvent.notion
-                : PROPERTIES.datePublished.notion,
-            date: {
-              on_or_after: addTime(timestampQuery, ''),
-            },
-          },
-          {
-            property:
-              routeType === NOTION.EVENTS.routeType
-                ? PROPERTIES.dateEvent.notion
-                : PROPERTIES.datePublished.notion,
-            date: {
-              before: addTime(timestampQuery, 'day'),
-            },
-          },
-          {
-            ...QUERIES.slug,
-            text: { equals: slug },
-          },
-        ],
-      },
+  ) {
+    return await getNotionSlugByRoute__getDataByListingDate({
+      config,
+      getBlocksByIdChildren,
+      getDatabasesByIdQuery,
+      // getQuery,
+      pathVariables,
+      routeType,
+      slug,
     })
-
-    const info4__bea = info4__be?.object === 'list' && info4__be.results[0]
-    if (!!info4__bea) {
-      info = _omit(info4__bea, 'properties')
-      info['properties'] = sortObject(
-        dataNormalized({ config, data: info4__bea, pathVariables, pageId: info.id })
-      )
-      content = await getBlocksByIdChildren({ block_id: info.id })
-    }
   }
 
-  let data = { info, content, items, images: {} }
-  // @todo(images)
-  let images = {}
-  data = { ...data, images }
-
-  return data
+  return { info: {}, content: {}, items: {}, images: {} }
 }
 
 export default getNotionSlugByRoute

@@ -36,6 +36,16 @@ interface Relation {
   synced_property_id?: string
 }
 
+type Direction = 'ascending' | 'descending'
+interface SortItem {
+  property: string
+  direction: Direction
+}
+interface SortMock {
+  filter?: any[]
+  sorts: SortItem[]
+}
+
 interface Rollup {
   relation_property_id?: string
   relation_property_name?: string
@@ -325,10 +335,12 @@ export type {
   DatabaseType,
   DataTypes,
   DataTypesObject,
+  Direction,
   Episode,
   Episodes,
   Event,
   Events,
+  SortMock,
   NotionBlock,
   NotionText,
   Page,
@@ -342,6 +354,7 @@ export type {
   SeoPost,
   Show,
   Shows,
+  SortItem,
   Venue,
   Venues,
 }

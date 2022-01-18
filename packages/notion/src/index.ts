@@ -15,6 +15,33 @@ import {
   getQuery,
 } from './queries'
 
+type CredentialProps = {
+  auth: string
+  config: any
+}
+
+type CustomProps = {
+  getBlocksByIdChildren: any
+  getDatabasesByIdQuery: any
+  getDeepFetchAllChildren: any
+  getInfoType: any
+  getPagesById: any
+  getPathVariables: any
+  getQuery: any
+}
+
+type DataTypesProps = {
+  LISTING: any
+  LISTING_BY_DATE: any
+  SLUG: any
+  SLUG_BY_ROUTE: any
+}
+
+type ClientProps = {
+  custom: CustomProps
+  dataTypes: DataTypesProps
+}
+
 class Client extends _Client {
   #config?: any
 
@@ -26,25 +53,32 @@ class Client extends _Client {
   }
 
   public readonly custom = {
-    getBlocksByIdChildren: async (props: { block_id: any }) =>
-      await getBlocksByIdChildren(this.blocks.children.list, { ...props }),
+    getBlocksByIdChildren: async (props) =>
+      await getBlocksByIdChildren({
+        ...props,
+        getBlocksChildrenList: this.blocks.children.list,
+      }),
 
-    getDatabasesByIdQuery: async (props: {
-      database_id: any
-      sorts?: any
-      filter?: any
-    }) => await getDatabasesByIdQuery(this.databases.query, props),
+    getDatabasesByIdQuery: async (props) =>
+      await getDatabasesByIdQuery({
+        ...props,
+        getDatabasesQuery: this.databases.query,
+      }),
 
-    getDeepFetchAllChildren: async (props: { blocks: any }) =>
-      await getDeepFetchAllChildren(this.blocks.children.list, { ...props }),
+    getDeepFetchAllChildren: async (props) =>
+      await getDeepFetchAllChildren({
+        ...props,
+        getBlocksChildrenList: this.blocks.children.list,
+      }),
 
-    getInfoType: (props: { config: any; item: any; routeType: any; meta: any }) =>
-      getInfoType({ ...props, config: this.#config }),
+    getInfoType: (props) => {
+      return getInfoType({ ...props, config: this.#config })
+    },
 
     getPagesById: async (props) =>
-      await getPagesById(this.pages.retrieve, { ...props }),
+      await getPagesById({ ...props, getPagesRetrieve: this.pages.retrieve }),
 
-    getPathVariables: (props: { config: any; catchAll: any }) =>
+    getPathVariables: (props) =>
       getPathVariables({ ...props, config: this.#config }),
 
     getQuery: async (props) =>
@@ -56,16 +90,8 @@ class Client extends _Client {
   }
 
   /**
-   * @info
+   * @info details at: ../../utils/getDataType
    *
-   * 1 = /about, /colophon, /contact
-   * 2 = /blog, /events, /podcasts
-   * 3 = /blog/2020, /blog/2020/05, /blog/2020/05/09
-   *     /events/2020, /events/2020/05, /events/2020/05/09,
-   * 4 = /blog/2020/05/09/title, /events/2020/05/09/title,
-   *     /podcasts/knockoffs/i-know-what-you-did-last-summer
-   * 5 = /shows/alex-o-jerome, /events/2020/05/09/jerome-and,
-   *     /podcasts/knockoffs
    */
   public readonly dataTypes = {
     [DATA_TYPES.LISTING]: async (props: {
@@ -131,3 +157,4 @@ class Client extends _Client {
 }
 
 export { Client }
+export type { ClientProps, CredentialProps }

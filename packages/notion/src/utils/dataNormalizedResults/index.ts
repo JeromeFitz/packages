@@ -4,6 +4,12 @@ import _omit from 'lodash/omit.js'
 
 import { dataNormalized } from '../../utils'
 
+/**
+ * @todo(notion)
+ *
+ * Refactor after `dataNormalized` to remove `config` as a parameter,
+ *  or move this to `queries`
+ */
 const dataNormalizedResults = ({ config, results, routeType }) => {
   const normalizedResults: any[] = []
   _map(results, (result) => {

@@ -1,8 +1,7 @@
 import addTime from './addTime'
 import dataNormalized from './dataNormalized'
 import dataNormalizedResults from './dataNormalizedResults'
-import filterImages from './filterImages'
-import getImages from './getImages'
+import getDataType from './getDataType'
 import getTitle from './getTitle'
 import getTypes from './getTypes'
 
@@ -12,7 +11,6 @@ export {
   addTime,
   dataNormalized,
   dataNormalizedResults,
-  filterImages,
-  getImages,
+  getDataType,
   getTitle,
 }

@@ -3,6 +3,11 @@ import _map from 'lodash/map.js'
 import { LOOKUP, PROPERTIES_LOOKUP } from '../../constants'
 import { getTypes } from '../../utils'
 
+/**
+ * @todo(notion)
+ *
+ * Refactor to remove `config` as a parameter, or move this to `queries`
+ */
 const dataNormalized = ({ config, data, pathVariables, pageId }) => {
   const { NOTION } = config
   const DATA_NORMALIZED = {}

@@ -285,29 +285,22 @@ class Client {
 
   // @todo(types)
   private async getTopArtists({ data, withImages }) {
-    let _data: any = data
+    if (!withImages) return data
+    const items: any[] = []
+    await asyncForEach(data.items, async (artist: any) => {
+      const url = artist?.images[0].url
+      const { getImage } = await import('./utils')
+      const image = await getImage(url)
+      items.push({
+        ...artist,
+        image,
+      })
+    }).catch(_noop)
 
-    if (withImages) {
-      // @refactor(spotify) if this moves out of `index.ts`
-      // const { asyncForEach } = await import('@jeromefitz/utils')
-      const items: any[] = []
-      await asyncForEach(data.items, async (artist: any) => {
-        const url = artist?.images[0].url
-        const { getImage } = await import('./utils')
-        const image = await getImage(url)
-        items.push({
-          ...artist,
-          image,
-        })
-      }).catch(_noop)
-
-      _data = {
-        ...data,
-        items,
-      }
+    return {
+      ...data,
+      items,
     }
-
-    return _data
   }
 
   // @todo(types)
