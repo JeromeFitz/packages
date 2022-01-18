@@ -34,3 +34,4 @@ size-snapshot.json
 release
 tsconfig.tsbuildinfo
 .turbo
+.tsbuildinfo

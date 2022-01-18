@@ -7,18 +7,19 @@ module.exports = {
     node: true,
   },
   extends: ['prettier', 'plugin:import/errors', 'plugin:import/warnings'],
+  ignorePatterns: ['**/dist/*'],
   overrides: [
     {
       files: ['**/*.ts?(x)'],
       parser: '@typescript-eslint/parser',
-      plugins: ['@typescript-eslint', 'import', 'jest'],
+      plugins: ['@typescript-eslint', 'import'],
       parserOptions: {
         ecmaFeatures: {
           jsx: true,
         },
         ecmaVersion: 2018,
         sourceType: 'module',
-        project: ['./tsconfig.json', './tsconfig.jest.json'],
+        project: ['./tsconfig.json'],
         // typescript-eslint specific options
         warnOnUnsupportedTypeScriptVersion: true,
       },
@@ -53,7 +54,7 @@ module.exports = {
     },
     requireConfigFile: false,
   },
-  plugins: ['import', 'jsx-a11y', 'react-hooks', 'jest'],
+  plugins: ['import', 'jsx-a11y', 'react-hooks'],
   settings: {
     react: {
       version: 'detect',

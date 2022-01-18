@@ -30,7 +30,12 @@
     "clean": "rm -rf .turbo && rm -rf dist",
     "clean:install": "yarn clean && rm -rf node_modules",
     "copy": "mkdir -p ./dist && ./scripts/copy.sh",
-    "----": "",
+    "--- ": "",
+    "lint:eslint": "eslint ./src --ext cjs,js,jsx,mjs,ts,tsx --max-warnings=0",
+    "lint:prettier": "prettier \"./src/**/*.{cjs,js,jsx,mjs,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\" --ignore-unknown --loglevel warn",
+    "lint": "yarn lint:prettier --check && yarn lint:eslint",
+    "lint:fix": "yarn lint:eslint --fix && yarn lint:prettier --write",
+    "---  ": "",
     "semantic-release": "yarn copy && semantic-release",
     "semantic-release:mono": "yarn copy && semantic-release -e semantic-release-monorepo"
   },
