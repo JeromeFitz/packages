@@ -35,14 +35,33 @@ const notion = new Client({ auth: process.env.NOTION_API_KEY, config })
 You need to pass `config` which informs the package of all the wonderful Notion stuff you have. Will fill this out as I go (I hope haha).
 
 ```tsx
-(alias) const config: {
+(alias) const notionConfig: {
     DATABASES: Databases;
     NOTION: DatabaseInfo;
     PAGES__HOMEPAGE: string;
     PAGES: string[];
+    ROUTE_META: any[];
+    ROUTE_TYPES_BY_DATA_TYPES: Object;
     ROUTE_TYPES: any[];
 }
 ```
+
+- `DATABASES`: 🔑️ is uppercase (usually gripped by `routeType`)
+- `NOTION`: 🔑️ is uppercase; 🛠️ configuration for DB
+  - `active: boolean`
+  - `database_id: string`
+  - `dataTypes: DataTypes[]`
+  - `hasChild: string | null`
+  - `name: string`
+  - `page_id__seo: string`
+  - `routeMeta: boolean`
+  - `routeType: string`
+  - `slug: string`
+- `PAGES__HOMEPAGE`: 🤕️ what `Pages => slug` is the homepage?
+- `PAGES`: 🤕️ Only active `routeTypes` brought back
+- `ROUTE_META`: 🤕️ up front share if we expect the route to have a meta (`BLOG|EVENTS|PODCASTS`)
+- `ROUTE_TYPES_BY_DATA_TYPES`: For each `DATA_TYPE` determine which `routeType` are associated
+- `ROUTE_TYPES`: 🤕️ Only active `routeTypes` brought back
 
 ### Next
 
@@ -55,15 +74,25 @@ Custom setup to get `pathVariables` from `next`:
 ```tsx
 export const getStaticProps = async ({ preview = false, ...props }) => {
   const { catchAll } = props.params
-  //   @todo(next) should come from `process.env...`
-  //               `./pages/api/...` cache = false
-  const cache = true
-  // @todo(next) should come from `catchAll`
+  // @todo(next)
   const clear = false
-  const pathVariables = getPathVariables({ config: notionConfig, catchAll })
-
-  const data = await getCatchAll({ cache, catchAll, clear, pathVariables, preview })
-
+  const pathVariables = notion.custom.getPathVariables({ catchAll })
+  /**
+   * @cache
+   * - pages = TRUE
+   * - pages/api = FALSE
+   */
+  const cache = true
+  const data = await getDataReturn({
+    data: await getCatchAll({
+      cache,
+      catchAll,
+      clear,
+      pathVariables,
+      preview,
+    }),
+    pathVariables,
+  })
   return {
     props: { preview, ...data, ...pathVariables, ...props },
     revalidate,

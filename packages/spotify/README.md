@@ -60,3 +60,5 @@ If this is passed we dynamically use `plaiceholder` to add an `image` key to:
 - `nowPlaying`: `album`
 - `topArtists`: `artist`
 - `topTracks`: `album`
+
+Only call this via an `API` call.

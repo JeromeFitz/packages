@@ -19,8 +19,10 @@ type DatabaseInfo = {
     active: boolean
     database_id: string
     dataTypes: DataTypes[]
+    hasChild: string | null
     name: string
     page_id__seo: string
+    routeMeta: boolean
     routeType: string
     slug: string
   }
