@@ -12,7 +12,9 @@ import { TYPE_BRANCH, TYPE_COMMIT } from './questionConfig'
 
 const commitMsgFile = join(getGitRootDir(), '.git', 'COMMIT_EDITMSG')
 
-// @todo(any)
+/**
+ * @todo(types)
+ */
 const getCommitMessage = (state: any) => {
   const { answers, config } = state
 

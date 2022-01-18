@@ -4,16 +4,17 @@ import minimist from 'minimist'
 import { getPackage } from './getFile'
 import getGitRootDir from './getGitRootDir'
 
-let root
+let root: string
 try {
   root = getGitRootDir()
 } catch (error) {
   throw new Error('Could not find Git root folder')
 }
 
-const pkg = getPackage(root)
+const parseArgs = async () => {
+  const pkg = await getPackage(root)
 
-const helpScreen = `
+  const helpScreen = `
     > ${pkg.name}
     > ${pkg.version}
     > ${pkg.description}
@@ -36,8 +37,6 @@ const helpScreen = `
         --commitTypes       type of the commit (default: chore)
 `
 
-// eslint-disable-next-line complexity
-const parseArgs = () => {
   const {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     _: inputs,

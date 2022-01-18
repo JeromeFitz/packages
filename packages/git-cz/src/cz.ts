@@ -6,12 +6,15 @@ import setBranch from './utils/setBranch'
 import { getCommitMessage } from './utils/setCommit'
 import setState from './utils/setState'
 
-const prompter = (cz, commit) => {
+/**
+ * @todo(types)
+ */
+const prompter = (cz: any, commit: any) => {
   const run = async () => {
-    const { cliAnswers, cliOptions, passThroughParams } = parseArgs()
-    const state = setState(cliOptions)
+    const { cliAnswers, cliOptions, passThroughParams } = await parseArgs()
+    const state = await setState(cliOptions)
 
-    await isEnabled(state)
+    isEnabled(state)
 
     const options = {
       cliAnswers,

@@ -4,7 +4,15 @@ import path from 'path'
 
 import chalkPipe from 'chalk-pipe'
 
-import configDefault from '../themes/gitmoji'
+/**
+ * @note(git-cz)
+ * The 'import.meta' meta-property is only allowed when
+ *  the '--module' option is 'es2020', 'es2022', 'esnext',
+ *  'system', 'node12', or 'nodenext'.ts(1343)
+ */
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+const _require = createRequire(import.meta.url)
 
 const configFiles = [
   '.git-cz.json',
@@ -16,37 +24,39 @@ const configFiles = [
 
 const packageFile = ['package.json']
 
-const findOverrides = (root, files) => {
+const loadModule = async (module: string) => {
+  if (module.includes('.json')) {
+    return _require(module)
+  } else {
+    const { default: config } = await import(module)
+    return config
+  }
+}
+
+const findOverrides = async (root: string, files: string[]) => {
   const dir = root || process.cwd()
 
   for (const file of files) {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     const filename = path.resolve(dir, file)
 
     if (fs.existsSync(filename) && fs.statSync(filename).isFile()) {
-      // eslint-disable-next-line import/no-dynamic-require
-      return createRequire(filename)
+      return await loadModule(filename)
     }
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   const parent = path.resolve(dir, '..')
 
   if (parent !== dir) {
     return findOverrides(parent, files)
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   const pkgFilename = path.join(dir, 'package.json')
 
   if (fs.existsSync(pkgFilename)) {
     try {
-      // eslint-disable-next-line @typescript-eslint/no-var-requires, import/no-dynamic-require
-      const changelog = require(pkgFilename).config.commitizen.changelog
-      // const changelog = createRequire(pkgFilename)
-
+      const changelog = await loadModule(pkgFilename)
       if (changelog) {
-        return changelog
+        return changelog?.config?.commitizen?.changelog
       }
     } catch (error) {}
   }
@@ -54,26 +64,22 @@ const findOverrides = (root, files) => {
   return {}
 }
 
-const getConfig = (root) => {
-  const overrides = findOverrides(root, configFiles)
+const getConfig = async (root: any) => {
+  const overrides = await findOverrides(root, configFiles)
 
-  if (typeof overrides !== 'function') {
+  if (typeof overrides !== 'object') {
     // eslint-disable-next-line no-console
-    console.log(chalkPipe('red.bold')('Expected changelog config to be a function.'))
+    console.log(chalkPipe('red.bold')('Expected changelog config to be a object.'))
     console.dir(typeof overrides)
+    console.dir(overrides)
     process.exit(1)
   }
 
-  const config = {
-    ...configDefault,
-    ...overrides,
-  }
-
-  return config
+  return { ...overrides }
 }
 
-const getPackage = (root) => {
-  const overrides = findOverrides(root, packageFile)
+const getPackage = async (root: string) => {
+  const overrides = await findOverrides(root, packageFile)
 
   return { ...overrides }
 }

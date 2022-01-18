@@ -10,38 +10,33 @@ import setBranch from './utils/setBranch'
 import setCommit from './utils/setCommit'
 import setState from './utils/setState'
 
+/**
+ * @todo(types)
+ */
 const cli = async () => {
   try {
-    const { cliAnswers, cliOptions, passThroughParams } = parseArgs()
+    const { cliAnswers, cliOptions, passThroughParams } = await parseArgs()
 
-    const state = setState(cliOptions)
+    const state = await setState(cliOptions)
 
-    await isEnabled(state)
+    isEnabled(state)
 
     Object.keys(cliAnswers).forEach((key) => {
       state.answers[key] = cliAnswers[key]
     })
 
-    const appendedArgs = []
+    const appendedArgs: string[] = []
 
     for (const key in passThroughParams) {
       const value = passThroughParams[key]
 
       if (key.length === 1) {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
         appendedArgs.push('-' + key)
       } else {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
         appendedArgs.push('--' + key)
       }
 
       if (value !== true) {
-        // Argument of type 'any' is not assignable to parameter of type 'never'.
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         appendedArgs.push(value)
       }
     }
@@ -52,7 +47,7 @@ const cli = async () => {
       await runInteractiveQuestions(state, cliAnswers, cliOptions)
     }
 
-    const options = {
+    const options: any = {
       appendedArgs,
       cliAnswers,
       cliOptions,

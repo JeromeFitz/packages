@@ -1,5 +1,7 @@
-const optionsSet = (cliOptions) => {
-  // @todo(types)
+/**
+ * @todo(types)
+ */
+const optionsSet = (cliOptions: { mode: string }) => {
   const options: any = {}
 
   if (cliOptions.mode === 'branch') {

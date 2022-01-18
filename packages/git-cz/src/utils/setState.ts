@@ -8,9 +8,11 @@ import getGitRootDir from './getGitRootDir'
 import { TYPE_BRANCH, TYPE_COMMIT } from './questionConfig'
 import sortObject from './sortObject'
 
-// @todo(any)
-const setState = (cliOptions: any) => {
-  let root
+/**
+ * @todo(types)
+ */
+const setState = async (cliOptions: any) => {
+  let root: string
   try {
     root = getGitRootDir()
   } catch (error) {
@@ -18,13 +20,12 @@ const setState = (cliOptions: any) => {
   }
 
   // const configDefault = optionsSet(cliOptions)
-  const configDefault = config
-  const configOverride = getConfig(root)
+  const configDefault: any = config
+  const configOverride: any = await getConfig(root)
 
-  const state = {
+  const state: any = {
     answers: {},
     config: {
-      // @todo(uhh) this cannot be right, haha
       branch: { ...configDefault.branch, ...configOverride.branch },
       commit: { ...configDefault.commit, ...configOverride.commit },
       enabled: configOverride.enabled || configDefault.enabled,
@@ -32,29 +33,24 @@ const setState = (cliOptions: any) => {
     },
     types: { branch: {}, commit: {} },
   }
-
   const { types } = state.config
 
-  // @todo(any)
   const typesBranch: any = {}
-  // @todo(any)
   _map(types, (type: any) => {
     if (Boolean(type.branch)) {
       typesBranch[type.branch] = type
     }
   })
 
-  // @todo(any)
   const typesCommit: any = {}
-  // @todo(any)
   _map(types, (type: any) => {
     if (Boolean(type.commit)) {
       typesCommit[type.commit] = type
     }
   })
 
-  state.types.branch = sortObject(typesBranch)
-  state.types.commit = sortObject(typesCommit)
+  state.types.branch = await sortObject(typesBranch)
+  state.types.commit = await sortObject(typesCommit)
 
   switch (cliOptions.mode) {
     case TYPE_BRANCH:

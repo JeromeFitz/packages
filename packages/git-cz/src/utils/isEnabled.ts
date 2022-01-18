@@ -1,7 +1,7 @@
 /**
  * @note Bounce if config overrides, double-check false string (process.env)
  */
-const isEnabled = (state) => {
+const isEnabled = (state: { config: { enabled: string } }) => {
   const _isEnabled =
     state?.config?.enabled === 'false' ? false : state?.config?.enabled
   if (!_isEnabled) {
