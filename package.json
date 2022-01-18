@@ -48,7 +48,9 @@
     "postpublish": "pinst --enable",
     "prepublishOnly": "pinst --disable",
     "----   ": "",
-    "semantic-release": "yarn workspaces run semantic-release -e semantic-release-monorepo"
+    "semantic-release": "yarn workspaces run semantic-release -e semantic-release-monorepo",
+    "----    ": "",
+    "dry:run": "turbo run clean --scope=*git-cz* && turbo run build --scope=*git-cz* && node ./packages/git-cz/dist/cli"
   },
   "devDependencies": {
     "@jeromefitz/semantic": "*",

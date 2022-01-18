@@ -3,12 +3,13 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "lib": ["es2020"],
-    "module": "commonjs",
+    "module": "es2020",
+    "outDir": "./dist",
+    "resolveJsonModule": true,
+    "rootDir": "./src",
     "skipLibCheck": true,
     "strict": true,
-    "target": "es2020",
-    "outDir": "./dist",
-    "rootDir": "./src"
+    "target": "es2020"
   },
   "extends": "@jeromefitz/codestyle/tsconfig.node-14.json",
   "include": ["src"],
