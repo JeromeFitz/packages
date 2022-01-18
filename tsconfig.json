@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "noImplicitAny": false,
-    "resolveJsonModule": true
+    "noImplicitAny": false
   },
   "extends": "@jeromefitz/codestyle/tsconfig.node-14.json",
   "exclude": ["./@work-in-progress/**"]
