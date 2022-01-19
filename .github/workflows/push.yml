@@ -23,14 +23,14 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
           architecture: 'x64'
+          # cache: 'yarn'
+          # cache-dependency-path: yarn.lock
       - name: '🐙️  Git Checkout'
         uses: actions/checkout@v2
         with:
           # Number of commits to fetch.
           # 0 indicates all history for all branches and tags.
           fetch-depth: 100
-          cache: 'yarn'
-          cache-dependency-path: yarn.lock
       - name: '🌵️  Cache-tus'
         uses: actions/cache@v2
         with:
