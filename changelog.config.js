@@ -9,6 +9,10 @@ const isOverride = process.env.GIT_CZ__OVERRIDE_TEST
 
 const enabled = isOverride
 
+/**
+ * @note lol, this will not get picked up in release releaseNotes
+ *       unless we _also_ pass this configuration to it 🥴️
+ */
 const _types = {
   override: {
     branch: false,
@@ -44,15 +48,16 @@ const commit = isOverride
       // @question dynamic?
       scopes: [
         '',
-        'codestyle',
-        'conventional-gitmoji',
-        'git-cz',
-        'notion',
-        'scripts',
-        'semantic',
-        'semantic-config',
-        'spotify',
-        'utils',
+        'cs', // codestyle
+        'cz', // git-cz
+        'ds', // design-system
+        'gitmoji', // conventional-gitmoji
+        'notion', // notion
+        's-config', // semantic-config
+        'scripts', // scripts
+        'semantic', // semantic
+        'spotify', // spotify
+        'utils', // u
       ],
     }
   : {}
@@ -60,9 +65,9 @@ const commit = isOverride
 const branch = isOverride
   ? {
       format: '{branchType}{branchName}',
-      prefix: 'ABC-',
+      prefix: '',
       questions: ['branchFlag', 'branchTypes', 'branchName'],
-      url: 'https://abc.atlassian.net/browse/',
+      url: 'https://github.com/JeromeFitz/packages/issues/',
     }
   : {}
 

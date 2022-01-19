@@ -21,7 +21,7 @@ const rewrites: RewritesProps[] = [
   { from: 'memo', to: 'docs' },
   { from: 'rocket', to: 'deploy' },
   { from: 'lipstick', to: 'ui' },
-  { from: 'tada', to: 'init', semver: 'major' },
+  { from: 'tada', to: 'init', semver: 'patch' },
   { from: 'white-check-mark', to: 'test', branch: 'test' },
   { from: 'lock', to: 'security' },
   { from: 'bookmark', to: 'release', branch: 'release', releaseNotes: false },
