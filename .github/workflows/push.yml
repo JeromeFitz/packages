@@ -45,7 +45,7 @@ jobs:
       #   id: turbo-cache-push
       #   uses: actions/cache@v2
       #   with:
-      #     path: .turbo
+      #     path: node_modules/.cache/turbo
       #     key: turbo-${{ github.job }}-${{ github.ref_name }}-${{ github.sha }}
       #     restore-keys: |
       #       turbo-${{ github.job }}-${{ github.ref_name }}-
@@ -56,18 +56,18 @@ jobs:
 
       - name: '🚨️  Lint'
         run: |
-          # yarn lint --cache-dir=".turbo"
-          yarn lint
+          echo # yarn lint --cache-dir=".turbo"
+          echo # yarn lint
 
       # todo(ci) turn off for now please
       # - name: '⚗️  Test'
       #   run: |
-      #     yarn test
+      #     echo # yarn test --cache-dir=".turbo"
 
       - name: '🏗️  Build'
         if: contains(github.event.head_commit.message , '[build]') || contains(github.event.head_commit.message , '[b]')
         run: |
-          # yarn build --cache-dir=".turbo"
+          echo # yarn build --cache-dir=".turbo"
           yarn build
 
       - name: '🏷️  Semantic Release'
