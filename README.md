@@ -48,9 +48,8 @@ There is also:
 
 ## 💚️ CI
 
-- 🌃️ **Nightly**: Run `semantic-release` on `main` for any merges that took place
-  - Moved to weekly, should be renamed
-  - Does not need `[build]` flag
+- 🌃️ **Weekly**: Run `semantic-release` on `main` for any merges that took place
+  - Does not need `[build]|[b]` flag
 - ⚗️ **Pull Request**: Run `lint` on any PR
 - 🔀️ **Push**: Extra check if commit has `[build]` within its message to trigger `semantic-release` manually (still must meet requirements to create a build and have `semver` conventional commits)
   - [ ] `[b]` as alternative

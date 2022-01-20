@@ -15,9 +15,19 @@ jobs:
     name: '🔀️ Push'
     timeout-minutes: 10
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      # TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+      TURBO_CACHE: '.turbo'
+
     strategy:
       matrix:
-        node: ['14']
+        go: ['1.17.6']
+        node: ['16']
+
     steps:
       - name: '🐙️  Git Checkout'
         uses: actions/checkout@v2
@@ -26,29 +36,28 @@ jobs:
           # 0 indicates all history for all branches and tags.
           fetch-depth: 10
 
-      - name: '🔧️ Setup Node: ${{ matrix.node }}'
+      - name: '🛠️ Set up Go: ${{ matrix.go }}'
+        uses: actions/setup-go@v2
+        with:
+          go-version: ${{ matrix.go }}
+        id: go
+
+      - name: '🛠️ Setup Node: ${{ matrix.node }}'
         uses: actions/setup-node@v2
         with:
+          # architecture: 'x64'
+          cache-dependency-path: yarn.lock
+          cache: 'yarn'
           node-version: ${{ matrix.node }}
-          # # architecture: 'x64'
-          # cache: 'yarn'
-          # cache-dependency-path: yarn.lock
 
-      # - name: '🌵️  Cache-tus'
-      #   uses: actions/cache@v2
-      #   with:
-      #     path: '**/node_modules'
-      #     key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-
-      # # @todo(turbo) vercel environment variables
-      # - name: '🔺️  Cache-turbo'
-      #   id: turbo-cache-push
-      #   uses: actions/cache@v2
-      #   with:
-      #     path: node_modules/.cache/turbo
-      #     key: turbo-${{ github.job }}-${{ github.ref_name }}-${{ github.sha }}
-      #     restore-keys: |
-      #       turbo-${{ github.job }}-${{ github.ref_name }}-
+      - name: '🌵️  Cache'
+        id: turbo-cache
+        uses: actions/cache@v2
+        with:
+          path: ${TURBO_CACHE}
+          key: turbo-${{ github.job }}-${{ github.ref_name }}-${{ github.sha }}
+          restore-keys: |
+            turbo-${{ github.job }}-${{ github.ref_name }}-
 
       - name: '📦️ Install Dependecies'
         run: |
@@ -56,28 +65,21 @@ jobs:
 
       - name: '🚨️  Lint'
         run: |
-          echo # yarn lint --cache-dir=".turbo"
-          echo # yarn lint
+          yarn lint --cache-dir=${TURBO_CACHE} --concurrency=10 -v
 
-      # todo(ci) turn off for now please
-      # - name: '⚗️  Test'
-      #   run: |
-      #     echo # yarn test --cache-dir=".turbo"
+      - name: '⚗️  Test'
+        run: |
+          echo # yarn test --concurrency=10 -v
 
       - name: '🏗️  Build'
         if: contains(github.event.head_commit.message , '[build]') || contains(github.event.head_commit.message , '[b]')
         run: |
-          echo # yarn build --cache-dir=".turbo"
-          yarn build
+          yarn build --cache-dir=${TURBO_CACHE} --concurrency=10 -v
 
       - name: '🏷️  Semantic Release'
         if: contains(github.event.head_commit.message , '[build]') || contains(github.event.head_commit.message , '[b]')
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           echo "registry=http://registry.npmjs.org/" >> .npmrc
           echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
           echo "@jeromefitz:registry=https://registry.npmjs.org/" >> .npmrc
-          yarn semantic-release
+          yarn semantic-release --concurrency=10 -v
