@@ -24,15 +24,15 @@ jobs:
         with:
           # Number of commits to fetch.
           # 0 indicates all history for all branches and tags.
-          fetch-depth: 5
+          fetch-depth: 10
 
       - name: '🔧️ Setup Node: ${{ matrix.node }}'
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node }}
-          # architecture: 'x64'
-          cache: 'yarn'
-          cache-dependency-path: yarn.lock
+          # # architecture: 'x64'
+          # cache: 'yarn'
+          # cache-dependency-path: yarn.lock
 
       # - name: '🌵️  Cache-tus'
       #   uses: actions/cache@v2
@@ -40,15 +40,15 @@ jobs:
       #     path: '**/node_modules'
       #     key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
-      # @todo(turbo) vercel environment variables
-      - name: '🔺️  Cache-turbo'
-        id: turbo-cache
-        uses: actions/cache@v2
-        with:
-          path: .turbo
-          key: turbo-${{ github.job }}-${{ github.ref_name }}-${{ github.sha }}
-          restore-keys: |
-            turbo-${{ github.job }}-${{ github.ref_name }}-
+      # # @todo(turbo) vercel environment variables
+      # - name: '🔺️  Cache-turbo'
+      #   id: turbo-cache-push
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: .turbo
+      #     key: turbo-${{ github.job }}-${{ github.ref_name }}-${{ github.sha }}
+      #     restore-keys: |
+      #       turbo-${{ github.job }}-${{ github.ref_name }}-
 
       - name: '📦️ Install Dependecies'
         run: |
@@ -56,7 +56,8 @@ jobs:
 
       - name: '🚨️  Lint'
         run: |
-          yarn lint --cache-dir=".turbo"
+          # yarn lint --cache-dir=".turbo"
+          yarn lint
 
       # todo(ci) turn off for now please
       # - name: '⚗️  Test'
@@ -66,7 +67,8 @@ jobs:
       - name: '🏗️  Build'
         if: contains(github.event.head_commit.message , '[build]') || contains(github.event.head_commit.message , '[b]')
         run: |
-          yarn build --cache-dir=".turbo"
+          # yarn build --cache-dir=".turbo"
+          yarn build
 
       - name: '🏷️  Semantic Release'
         if: contains(github.event.head_commit.message , '[build]') || contains(github.event.head_commit.message , '[b]')

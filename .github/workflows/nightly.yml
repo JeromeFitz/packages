@@ -43,7 +43,7 @@ jobs:
       #     key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
       - name: '🔺️  Cache-turbo'
-        id: turbo-cache
+        id: turbo-cache-nightly
         uses: actions/cache@v2
         with:
           path: .turbo
