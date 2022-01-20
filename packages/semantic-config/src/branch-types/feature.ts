@@ -1,3 +1,3 @@
-const feature = ['design-system']
+const feature = []
 
 export default feature
