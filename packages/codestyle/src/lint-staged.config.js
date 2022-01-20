@@ -9,7 +9,7 @@ const config = {
   '**/*.{cjs,js,jsx,mjs,ts,tsx}': (files) => {
     const filenames = escapedFileNames(files)
     return [
-      `prettier --with-node-modules --ignore-path='./.prettierignore_staged' --write ${filenames}`,
+      `prettier --with-node-modules --ignore-path='./.prettierignore_staged' --write ${filenames} --ignore-unknown --loglevel warn`,
       `eslint --no-ignore --max-warnings=0 --fix ${filenames}`,
       `git add ${filenames}`,
     ]
@@ -17,7 +17,7 @@ const config = {
   '**/*.{json,md,mdx,css,html,yml,yaml,scss}': (files) => {
     const filenames = escapedFileNames(files)
     return [
-      `prettier --with-node-modules --ignore-path='./.prettierignore_staged' --write ${filenames}`,
+      `prettier --with-node-modules --ignore-path='./.prettierignore_staged' --write ${filenames} --ignore-unknown --loglevel warn`,
       `git add ${filenames}`,
     ]
   },

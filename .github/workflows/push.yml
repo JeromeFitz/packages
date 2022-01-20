@@ -4,9 +4,11 @@ on:
     branches:
       - main
       - canary
+      - develop
       - ci/**
       - feature/**
       - fix/**
+      - refactor/**
       - release/**
 jobs:
   release:
@@ -21,28 +23,40 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
           architecture: 'x64'
+          # cache: 'yarn'
+          # cache-dependency-path: yarn.lock
       - name: '🐙️  Git Checkout'
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0
+          # Number of commits to fetch.
+          # 0 indicates all history for all branches and tags.
+          fetch-depth: 100
       - name: '🌵️  Cache-tus'
         uses: actions/cache@v2
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+      - name: '🔺️  Cache-turbo'
+        id: turbo-cache
+        uses: actions/cache@v2
+        with:
+          path: .turbo
+          key: turbo-${{ github.job }}-${{ github.ref_name }}-${{ github.sha }}
+          restore-keys: |
+            turbo-${{ github.job }}-${{ github.ref_name }}-
       - name: '📦️ Install Dependecies'
         run: |
           yarn install --frozen-lockfile --ignore-engines --network-concurrency 1
       - name: '🚨️  Lint'
         run: |
-          yarn lint
+          yarn lint --cache-dir=".turbo"
       - name: '⚗️  Test'
         run: |
           yarn test
       - name: '🏗️  Build'
         if: contains(github.event.head_commit.message , '[build]')
         run: |
-          yarn build
+          yarn build --cache-dir=".turbo"
       - name: '🏷️  Semantic Release'
         if: contains(github.event.head_commit.message , '[build]')
         env:

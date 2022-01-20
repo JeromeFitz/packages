@@ -25,36 +25,34 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "branch": "git-cz -m branch --allow-empty",
-    "commit": "ALLOW_EMPTY=--allow-empty git commit --allow-empty",
-    "generate:releaseRules": "node ./packages/semantic/scripts/generateReleaseRules.js && yarn lint:fix",
-    "----": "",
+    "----": "# @turbo scripts",
     "build": "turbo run build",
     "dev": "turbo run dev --no-cache --parallel --continue",
     "test": "turbo run test",
     "clean": "turbo run clean",
     "clean:install": "turbo run clean && ./scripts/clean.sh",
-    "---- ": "",
-    "lint:eslint": "eslint . --ext cjs,js,jsx,mjs,ts,tsx --max-warnings=0",
-    "lint:fix": "yarn lint:eslint --fix && yarn lint:prettier --write && yarn typescript",
-    "lint:prettier": "prettier \"**/*.{cjs,js,jsx,mjs,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\"",
-    "lint:typescript": "yarn typescript",
-    "lint:hack": "// run empty turbo before monorepo lint",
-    "lint": "turbo run lint && yarn typescript && yarn lint:prettier --check && yarn lint:eslint",
+    "---- ": "# @lint",
     "pretty-quick": "pretty-quick",
-    "typescript": "tsc --noEmit --declaration",
-    "----  ": "",
+    "lint:fix": "turbo run lint:fx ",
+    "lint": "turbo run lint",
+    "----  ": "# @ci",
     "postinstall": "is-ci || husky install",
     "postpublish": "pinst --enable",
     "prepublishOnly": "pinst --disable",
-    "----   ": "",
-    "semantic-release": "yarn workspaces run semantic-release -e semantic-release-monorepo",
-    "----    ": "",
-    "dry:run": "turbo run clean --scope=*git-cz* && turbo run build --scope=*git-cz* && node ./packages/git-cz/dist/cli"
+    "----   ": "# @semantic-release",
+    "semantic-release:old": "yarn workspaces run semantic-release -e semantic-release-monorepo",
+    "semantic-release:dry": "yarn workspaces run semantic-release -e semantic-release-monorepo",
+    "semantic-release": "turbo run semantic-release:mono --no-cache --parallel --continue",
+    "----    ": "# @development",
+    "branch": "git-cz -m branch --allow-empty",
+    "commit": "ALLOW_EMPTY=--allow-empty git commit --allow-empty",
+    "generate:releaseRules": "node ./packages/semantic/scripts/generateReleaseRules.js && yarn lint:fix",
+    "dry:run": "turbo run clean --scope=*git-cz* && turbo run build --scope=*git-cz* && node ./packages/git-cz/dist/cli",
+    "ds:build": "turbo run build --scope=*design-system*",
+    "ds:clean": "turbo run clean --scope=*design-system*",
+    "ds:dev": "turbo run dev --scope=*design-system*"
   },
   "devDependencies": {
-    "@jeromefitz/semantic": "*",
-    "@jeromefitz/semantic-config": "*",
     "@types/is-ci": "3.0.0",
     "dotenv": "14.2.0",
     "husky": "7.0.4",
@@ -65,6 +63,7 @@
     "turbo": "1.0.28"
   },
   "turbo": {
+    "baseBranch": "origin/main",
     "pipeline": {
       "build": {
         "outputs": [
@@ -75,6 +74,40 @@
           "^build",
           "@jeromefitz/semantic-config#build"
         ]
+      },
+      "clean": {
+        "outputs": []
+      },
+      "dev": {
+        "cache": false
+      },
+      "lint": {
+        "dependsOn": [
+          "@jeromefitz/conventional-gitmoji#build",
+          "@jeromefitz/utils#build",
+          "@jeromefitz/git-cz#build"
+        ],
+        "outputs": []
+      },
+      "lint:fix": {
+        "cache": false,
+        "dependsOn": [
+          "@jeromefitz/conventional-gitmoji#build",
+          "@jeromefitz/utils#build",
+          "@jeromefitz/git-cz#build"
+        ],
+        "outputs": []
+      },
+      "semantic-release:mono": {
+        "cache": false,
+        "dependsOn": [],
+        "outputs": []
+      },
+      "test": {
+        "outputs": [
+          "coverage/**"
+        ],
+        "dependsOn": []
       },
       "@jeromefitz/git-cz#build": {
         "dependsOn": [
@@ -96,26 +129,6 @@
         "dependsOn": [
           "@jeromefitz/utils#build"
         ]
-      },
-      "clean": {
-        "outputs": []
-      },
-      "dev": {
-        "cache": false
-      },
-      "lint": {
-        "dependsOn": [
-          "@jeromefitz/conventional-gitmoji#build",
-          "@jeromefitz/utils#build",
-          "@jeromefitz/git-cz#build"
-        ],
-        "outputs": []
-      },
-      "test": {
-        "outputs": [
-          "coverage/**"
-        ],
-        "dependsOn": []
       }
     }
   }
