@@ -22,5 +22,4 @@ const RadioCard = React.forwardRef<
 
 RadioCard.displayName = 'RadioCard'
 
-export { RadioCardGroup }
-export default RadioCard
+export { RadioCard, RadioCardGroup }

@@ -30,7 +30,7 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
     boxSizing: 'border-box',
   },
 
-  // Reset
+  // @reset
   alignItems: 'center',
   display: 'inline-flex',
   justifyContent: 'center',

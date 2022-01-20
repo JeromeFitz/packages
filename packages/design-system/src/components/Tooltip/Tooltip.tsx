@@ -1,5 +1,4 @@
 import * as TooltipPrimitive from '@radix-ui/react-tooltip'
-import * as React from 'react'
 
 import { Box, Text } from '../../components'
 
@@ -54,4 +53,4 @@ function Tooltip({
   )
 }
 
-export default Tooltip
+export { Tooltip }

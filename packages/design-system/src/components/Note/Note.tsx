@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 import { Box, Emoji } from '../../components'
 
 const Note = ({ children, label = 'Note:' }) => {
@@ -62,4 +60,4 @@ const Note = ({ children, label = 'Note:' }) => {
   )
 }
 
-export default Note
+export { Note }

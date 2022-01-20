@@ -13,5 +13,4 @@ const Radio = React.forwardRef<React.ElementRef<typeof StyledRadio>, RadioProps>
 
 Radio.displayName = 'Radio'
 
-export { RadioGroup }
-export default Radio
+export { Radio, RadioGroup }

@@ -42,4 +42,4 @@ const TabLink = styled('a', {
   },
 })
 
-export default TabLink
+export { TabLink }

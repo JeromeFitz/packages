@@ -1,7 +1,7 @@
 import { styled } from '../../stitches.config'
 
 const Section = styled('section', {
-  // Reset
+  // @reset
   boxSizing: 'border-box',
   flexShrink: 0,
   '&::before': {
@@ -31,4 +31,4 @@ const Section = styled('section', {
   },
 })
 
-export default Section
+export { Section }

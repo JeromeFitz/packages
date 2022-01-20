@@ -40,4 +40,4 @@ const Separator = styled(SeparatorPrimitive.Root, {
   },
 })
 
-export default Separator
+export { Separator }

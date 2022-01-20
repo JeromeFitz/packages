@@ -10,8 +10,8 @@ import {
 import * as React from 'react'
 
 import { Box } from '../../components'
-import ButtonDemo from '../../components/Button/DemoButton'
 import { styled } from '../../stitches.config'
+import { ButtonDemo } from '../Button/ButtonDemo'
 
 const DropdownMenuArrow = styled(DropdownMenuPrimitive.Arrow, {
   fill: '$loContrast',

@@ -79,4 +79,4 @@ const Skeleton = styled('div', {
   },
 })
 
-export default Skeleton
+export { Skeleton }

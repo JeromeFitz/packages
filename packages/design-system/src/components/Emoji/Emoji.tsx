@@ -1,5 +1,4 @@
 import nodeEmoji from 'node-emoji'
-import * as React from 'react'
 
 import { Box } from '../../components'
 
@@ -43,4 +42,4 @@ const Emoji = ({ character, margin = false }) => {
   return <EmojiHtml emoji={emoji} label={label} margin={margin} />
 }
 
-export default Emoji
+export { Emoji }

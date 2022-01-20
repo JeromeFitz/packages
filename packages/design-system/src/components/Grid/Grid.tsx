@@ -163,4 +163,4 @@ const Grid = styled('div', {
   },
 })
 
-export default Grid
+export { Grid }

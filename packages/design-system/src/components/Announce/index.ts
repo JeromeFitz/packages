@@ -1,3 +1,1 @@
-import Announce from './Announce'
-
-export default Announce
+export { Announce } from './Announce'

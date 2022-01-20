@@ -1,7 +1,7 @@
 import { styled } from '../../stitches.config'
 
 const ButtonIcon = styled('button', {
-  // Reset
+  // @reset
   alignItems: 'center',
   appearance: 'none',
   borderWidth: '0',
@@ -146,4 +146,4 @@ const ButtonIcon = styled('button', {
   },
 })
 
-export default ButtonIcon
+export { ButtonIcon }

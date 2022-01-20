@@ -12,7 +12,7 @@ import _filter from 'lodash/filter'
 import * as React from 'react'
 import { Toaster as HotToaster } from 'react-hot-toast'
 
-import ToastContainer from './ToastContainer'
+import { ToastContainer } from './ToastContainer'
 
 const ACTIVE_TOAST_LIMIT = 10
 

@@ -9,5 +9,4 @@ const panelStyles = css({
 
 const Panel = styled('div', panelStyles)
 
-export { panelStyles }
-export default Panel
+export { Panel, panelStyles }

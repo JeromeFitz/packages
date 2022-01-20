@@ -5,12 +5,26 @@ import { config as _config } from '../../tsup.config'
 
 import pkg from './package.json'
 
+/**
+ * @note
+ * Might be ideal to create each Component as an entry Point
+ * Would add script to make each one its own package
+ * (Not to NPM, just within itself via `node_modules`)
+ *
+ * Pretty sure tree-shaking is fine in Next though.
+ *
+ * POC:
+ * - Loop through each folder in: `./components`
+ * - Create `package.json` based off of naming convention
+ * - Add as tsup entry point => index.ts
+ *
+ */
 const entry = [
-  'src/components/index.ts',
-  'src/components/Hero/HeroImage.tsx',
   'src/components/Card/Show.tsx',
+  'src/components/Hero/HeroImage.tsx',
+  'src/components/index.ts',
+  'src/custom/Tooltip/index.ts',
   'src/stitches.config.ts',
-  // 'src/custom/Toast/index.ts',
 ]
 
 const external = [
@@ -20,12 +34,15 @@ const external = [
   ...Object.keys(pkg.peerDependencies || {}),
 ]
 
+const inject = ['./react-shim.js']
+
 const config = {
   ..._config,
   entry,
   external,
-  minify: false,
-  splitting: false,
+  inject,
+  minify: true,
+  splitting: true,
   tsconfig: 'tsconfig.json',
 }
 

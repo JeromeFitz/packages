@@ -1,3 +1,1 @@
-import TabLink from './TabLink'
-
-export default TabLink
+export { TabLink } from './TabLink'

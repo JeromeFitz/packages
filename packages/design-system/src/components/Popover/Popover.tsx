@@ -53,5 +53,4 @@ PopoverContent.displayName = 'PopoverContent'
 const PopoverTrigger = PopoverPrimitive.Trigger
 const PopoverClose = PopoverPrimitive.Close
 
-export { PopoverContent, PopoverTrigger, PopoverClose }
-export default Popover
+export { Popover, PopoverContent, PopoverTrigger, PopoverClose }

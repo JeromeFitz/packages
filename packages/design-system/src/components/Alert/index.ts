@@ -1,3 +1,1 @@
-import AlertDialog from './Dialog'
-
-export { AlertDialog }
+export { Alert } from './Alert'

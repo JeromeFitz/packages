@@ -25,4 +25,4 @@ const ButtonMarketing = React.forwardRef<HTMLButtonElement, ButtonMarketingProps
 
 ButtonMarketing.displayName = 'ButtonMarketing'
 
-export default ButtonMarketing
+export { ButtonMarketing }

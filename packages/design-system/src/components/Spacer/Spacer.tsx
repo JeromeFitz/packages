@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 // @todo(system)
 import { Box } from '../../components'
 
@@ -21,4 +19,4 @@ const Spacer = () => {
   )
 }
 
-export default Spacer
+export { Spacer }

@@ -1,4 +1,1 @@
-import Panel, { panelStyles } from './Panel'
-
-export { panelStyles }
-export default Panel
+export { Panel, panelStyles } from './Panel'

@@ -16,4 +16,4 @@ const TabsList = React.forwardRef<
 ))
 TabsList.displayName = 'TabsList'
 
-export default TabsList
+export { TabsList }

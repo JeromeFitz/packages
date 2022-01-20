@@ -4,8 +4,8 @@ import * as React from 'react'
 
 import { Flex, Text } from '../../components'
 import { styled } from '../../stitches.config'
-import ButtonDemo from '../Button/DemoButton'
-import IconButtonDemo from '../Button/DemoIconButton'
+import { ButtonDemo } from '../Button/ButtonDemo'
+import { ButtonDemoIcon } from '../Button/ButtonDemoIcon'
 
 const DialogContent = styled(DialogPrimitive.Content, {
   position: 'absolute',
@@ -72,9 +72,9 @@ export function MainHeroDialog() {
           </DialogPrimitive.Close>
 
           <DialogPrimitive.Close asChild>
-            <IconButtonDemo>
+            <ButtonDemoIcon>
               <Cross2Icon />
-            </IconButtonDemo>
+            </ButtonDemoIcon>
           </DialogPrimitive.Close>
         </Flex>
       </DialogContent>

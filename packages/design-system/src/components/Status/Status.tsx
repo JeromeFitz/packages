@@ -39,4 +39,4 @@ const Status = styled('div', {
   },
 })
 
-export default Status
+export { Status }

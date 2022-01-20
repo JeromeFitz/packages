@@ -1,6 +1,6 @@
 import { styled } from '../../stitches.config'
 
-const DemoIconButton = styled('button', {
+const ButtonDemoIcon = styled('button', {
   boxSizing: 'border-box',
   position: 'absolute',
   display: 'inline-flex',
@@ -38,4 +38,4 @@ const DemoIconButton = styled('button', {
   },
 })
 
-export default DemoIconButton
+export { ButtonDemoIcon }

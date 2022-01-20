@@ -1,5 +1,2 @@
-import Emoji from './Emoji'
-import EmojiParser from './EmojiParser'
-
-export { EmojiParser }
-export default Emoji
+export { Emoji } from './Emoji'
+export { EmojiParser } from './EmojiParser'

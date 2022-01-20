@@ -220,4 +220,4 @@ const ScrollArea = (props: ScrollAreaProps) => {
   )
 }
 
-export default ScrollArea
+export { ScrollArea }

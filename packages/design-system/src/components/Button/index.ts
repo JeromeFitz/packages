@@ -1,7 +1,4 @@
-import Button from './Button'
-import ButtonIcon from './ButtonIcon'
-import ButtonMarketing from './ButtonMarketing'
-import ButtonDemo from './DemoButton'
-
-export { ButtonDemo, ButtonIcon, ButtonMarketing }
-export default Button
+export { Button } from './Button'
+export { ButtonIcon } from './ButtonIcon'
+export { ButtonMarketing } from './ButtonMarketing'
+export { ButtonDemo } from './ButtonDemo'

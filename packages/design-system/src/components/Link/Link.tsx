@@ -96,4 +96,4 @@ const Link = styled('a', {
   },
 })
 
-export default Link
+export { Link }

@@ -1,7 +1,6 @@
 import { violet, blackA, red, mauve } from '@radix-ui/colors'
 import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog'
 import { styled, keyframes } from '@stitches/react'
-import * as React from 'react'
 
 const overlayShow = keyframes({
   '0%': { opacity: 0 },
@@ -141,4 +140,14 @@ const AlertDialogTitle = StyledTitle
 const AlertDialogDescription = StyledDescription
 const AlertDialogAction = AlertDialogPrimitive.Action
 const AlertDialogCancel = AlertDialogPrimitive.Cancel
-export default AlertDialogDemo
+
+export {
+  AlertDialog,
+  AlertDialogTrigger,
+  AlertDialogContent,
+  AlertDialogTitle,
+  AlertDialogDescription,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogDemo,
+}

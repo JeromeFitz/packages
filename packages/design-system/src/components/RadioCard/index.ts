@@ -1,4 +1,1 @@
-import RadioCard, { RadioCardGroup } from './RadioCard'
-
-export { RadioCardGroup }
-export default RadioCard
+export { RadioCard, RadioCardGroup } from './RadioCard'

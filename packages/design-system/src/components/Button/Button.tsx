@@ -1,7 +1,7 @@
 import { styled } from '../../stitches.config'
 
 const Button = styled('button', {
-  // Reset
+  // @reset
   all: 'unset',
   alignItems: 'center',
   boxSizing: 'border-box',
@@ -330,4 +330,4 @@ const Button = styled('button', {
   },
 })
 
-export default Button
+export { Button }

@@ -4,7 +4,6 @@ import _map from 'lodash/map'
 import _orderBy from 'lodash/orderBy'
 import _size from 'lodash/size'
 // import dynamic from 'next/dynamic'
-import * as React from 'react'
 
 import { Emoji } from '../../components'
 // const Emoji = dynamic(() => import('./Emoji'), {
@@ -96,4 +95,4 @@ const EmojiParser = ({ id, text }) => {
   )
 }
 
-export default EmojiParser
+export { EmojiParser }

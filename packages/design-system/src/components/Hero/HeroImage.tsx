@@ -1,9 +1,15 @@
+/**
+ * @todo This should _not_ be here, this would be an implementation _of_
+ *       not an implementation _from_.
+ */
 import NextImage from 'next/image'
-import * as React from 'react'
 
 import { Box } from '../../components'
 import { styled } from '../../stitches.config'
 
+/**
+ * @niceRec
+ */
 const IMAGE__PLACEHOLDER = {
   meta: {
     base64:

@@ -13,4 +13,4 @@ const Switch = React.forwardRef<React.ElementRef<typeof StyledSwitch>, SwitchPro
 
 Switch.displayName = 'Switch'
 
-export default Switch
+export { Switch }

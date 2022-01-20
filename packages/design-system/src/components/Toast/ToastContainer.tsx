@@ -262,4 +262,4 @@ const ToastContainer = ({ toasts }) => {
   )
 }
 
-export default ToastContainer
+export { ToastContainer }

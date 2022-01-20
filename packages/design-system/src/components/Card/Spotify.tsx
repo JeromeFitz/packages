@@ -1,5 +1,20 @@
+/**
+ * @note
+ *
+ * This is ... very custom and should not be here, haha.
+ *
+ * This is an implemention of components (and `next/image` lol)
+ *
+ * I would consider this a Component a Project would create within its repo.
+ *
+ * Not here, but hey.
+ *
+ * What is this entire repo @jeromefitz/packages if not just
+ *  throwing a bunch of stuff to the wall and seeing what
+ *  breaks through it like the Kool-Aid Man.
+ */
+
 import NextImage from 'next/image'
-import * as React from 'react'
 
 import { Box, Flex } from '../../components'
 import { styled } from '../../stitches.config'
@@ -125,4 +140,3 @@ const CardOuter = ({ children }) => {
 }
 
 export { CardSpotify, CardOuter, ImageBlur }
-export default CardSpotify

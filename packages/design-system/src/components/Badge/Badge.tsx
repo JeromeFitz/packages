@@ -1,7 +1,7 @@
 import { styled } from '../../stitches.config'
 
 const Badge = styled('span', {
-  // Reset
+  // @reset
   alignItems: 'center',
   appearance: 'none',
   borderWidth: '0',
@@ -448,4 +448,4 @@ const Badge = styled('span', {
   },
 })
 
-export default Badge
+export { Badge }

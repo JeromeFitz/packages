@@ -18,4 +18,4 @@ const BoxLink = styled('a', {
   },
 })
 
-export default BoxLink
+export { BoxLink }

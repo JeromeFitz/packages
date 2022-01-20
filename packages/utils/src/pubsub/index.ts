@@ -1,5 +1,6 @@
 // swr-esque
 import _isArray from 'lodash/isArray'
+// import * as React from 'react'
 
 interface Unsubscribe {
   unsubscribe(): void
@@ -54,7 +55,7 @@ import { pubsub } from '@jeromefitz/utils'
 import type { Unsubscribe } from '@jeromefitz/utils'
 
 
-  useEffect(() => {
+  React.useEffect(() => {
     const unsubscribe: Unsubscribe = pubsub.subscribe('fetchXyz', () => props.fetchXyz());
 
     return () => {

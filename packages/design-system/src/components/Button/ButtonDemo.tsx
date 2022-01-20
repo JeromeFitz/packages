@@ -1,7 +1,7 @@
 import { darkTheme, styled } from '../../stitches.config'
 
-const DemoButton = styled('button', {
-  // Reset
+const ButtonDemo = styled('button', {
+  // @reset
   all: 'unset',
   alignItems: 'center',
   boxSizing: 'border-box',
@@ -60,4 +60,4 @@ const DemoButton = styled('button', {
   },
 })
 
-export default DemoButton
+export { ButtonDemo }

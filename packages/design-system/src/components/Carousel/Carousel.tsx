@@ -1,12 +1,18 @@
+/**
+ * @hack more blatant fork'ing from `radix-ui` this time from:
+ * @ref  https://github.com/radix-ui/website
+ *
+ */
 import { composeEventHandlers } from '@radix-ui/primitive'
 import { useComposedRefs } from '@radix-ui/react-compose-refs'
 import { createContext } from '@radix-ui/react-context'
 import { useCallbackRef } from '@radix-ui/react-use-callback-ref'
 import debounce from 'lodash/debounce'
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import * as React from 'react'
 import smoothscroll from 'smoothscroll-polyfill'
 
 import { Box } from '../../components'
+import { styled } from '../../stitches.config'
 
 const [CarouselProvider, useCarouselContext] = createContext<{
   _: any
@@ -18,15 +24,15 @@ const [CarouselProvider, useCarouselContext] = createContext<{
 }>('Carousel')
 
 const Carousel = (props) => {
-  const ref = useRef<React.ElementRef<typeof Box>>(null)
+  const ref = React.useRef<React.ElementRef<typeof Box>>(null)
   const { children, ...carouselProps } = props
-  const slideListRef = useRef<HTMLElement>(null)
-  const [_, force] = useState({})
-  const [nextDisabled, setNextDisabled] = useState(false)
-  const [prevDisabled, setPrevDisabled] = useState(true)
-  const timeoutRef = useRef<ReturnType<typeof setTimeout>>()
-  const navigationUpdateDelay = useRef(100)
-  useEffect(() => smoothscroll.polyfill(), [])
+  const slideListRef = React.useRef<HTMLElement>(null)
+  const [_, force] = React.useState({})
+  const [nextDisabled, setNextDisabled] = React.useState(false)
+  const [prevDisabled, setPrevDisabled] = React.useState(true)
+  const timeoutRef = React.useRef<ReturnType<typeof setTimeout>>()
+  const navigationUpdateDelay = React.useRef(100)
+  React.useEffect(() => smoothscroll.polyfill(), [])
 
   const getSlideInDirection = useCallbackRef((direction: 1 | -1) => {
     // @todo(any)
@@ -47,7 +53,7 @@ const Carousel = (props) => {
     }
   })
 
-  const handleNextClick = useCallback(() => {
+  const handleNextClick = React.useCallback(() => {
     // @todo(any)
     const nextSlide: any = getSlideInDirection(1)
     if (nextSlide) {
@@ -67,7 +73,7 @@ const Carousel = (props) => {
     }
   }, [getSlideInDirection, setPrevDisabled])
 
-  const handlePrevClick = useCallback(() => {
+  const handlePrevClick = React.useCallback(() => {
     // @todo(any)
     const prevSlide: any = getSlideInDirection(-1)
     if (prevSlide) {
@@ -87,7 +93,7 @@ const Carousel = (props) => {
     }
   }, [getSlideInDirection, setPrevDisabled])
 
-  useEffect(() => {
+  React.useEffect(() => {
     // Keep checking for whether we need to disable the navigation buttons, debounced
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current)
@@ -104,9 +110,7 @@ const Carousel = (props) => {
     }, navigationUpdateDelay.current)
   })
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  useEffect(() => {
+  React.useEffect(() => {
     const slidesList = slideListRef.current
     if (slidesList) {
       const handleScrollStartAndEnd = debounce(() => force({}), 100, {
@@ -121,6 +125,7 @@ const Carousel = (props) => {
         window.removeEventListener('resize', handleScrollStartAndEnd)
       }
     }
+    return () => {}
   }, [slideListRef])
 
   return (
@@ -197,11 +202,11 @@ const CarouselSlideList = (props) => {
 const CarouselSlide = (props) => {
   const { as: Comp = Box, ...slideProps } = props
   const context = useCarouselContext('CarouselSlide')
-  const ref = useRef<React.ElementRef<typeof Box>>(null)
-  const [intersectionRatio, setIntersectionRatio] = useState(0)
-  const isDraggingRef = useRef(false)
+  const ref = React.useRef<React.ElementRef<typeof Box>>(null)
+  const [intersectionRatio, setIntersectionRatio] = React.useState(0)
+  const isDraggingRef = React.useRef(false)
 
-  useEffect(() => {
+  React.useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => setIntersectionRatio(entry.intersectionRatio),
       { root: context.slideListRef.current, threshold: [0, 0.5, 1] }
@@ -252,11 +257,73 @@ const CarouselPrevious = (props) => {
   )
 }
 
+const CarouselArrowButton = styled('button', {
+  unset: 'all',
+  outline: 0,
+  margin: 0,
+  border: 0,
+  padding: 0,
+
+  display: 'flex',
+  position: 'relative',
+  zIndex: 1,
+  ai: 'center',
+  jc: 'center',
+  bc: '$panel',
+  br: '$round',
+  width: '$7',
+  height: '$7',
+  color: '$hiContrast',
+
+  boxShadow: '$colors$blackA11 0px 2px 12px -5px, $colors$blackA5 0px 1px 3px',
+  willChange: 'transform, box-shadow, opacity',
+  transition: 'all 100ms',
+
+  '@hover': {
+    '&:hover': {
+      boxShadow: '$colors$blackA10 0px 3px 16px -5px, $colors$blackA5 0px 1px 3px',
+      transform: 'translateY(-1px)',
+
+      // Fix a bug when hovering at button edges would cause the button to jitter because of transform
+      '&::before': {
+        content: '',
+        inset: -2,
+        br: '$round',
+        position: 'absolute',
+      },
+    },
+  },
+  '&:focus': {
+    boxShadow: `
+      $colors$blackA10 0px 3px 16px -5px,
+      $colors$blackA5 0px 1px 3px,
+      $colors$blue8 0 0 0 2px
+    `,
+    transform: 'translateY(-1px)',
+  },
+  '&:focus:not(:focus-visible)': {
+    boxShadow: '$colors$blackA11 0px 2px 12px -5px, $colors$blackA5 0px 1px 3px',
+  },
+  '&:active:not(:focus)': {
+    boxShadow: '$colors$blackA11 0px 2px 12px -5px, $colors$blackA5 0px 1px 3px',
+  },
+  '&:active': {
+    transform: 'none',
+    transition: 'opacity 100ms',
+  },
+  '&:disabled': {
+    opacity: 0,
+  },
+  '@media (hover: none) and (pointer: coarse)': {
+    display: 'none',
+  },
+})
+
 export {
-  // CarouselArrowButton,
+  Carousel,
+  CarouselArrowButton,
   CarouselSlideList,
   CarouselSlide,
   CarouselNext,
   CarouselPrevious,
 }
-export default Carousel

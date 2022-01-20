@@ -99,4 +99,4 @@ const Flex = styled('div', {
   },
 })
 
-export default Flex
+export { Flex }

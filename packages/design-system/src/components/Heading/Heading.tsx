@@ -68,4 +68,4 @@ const Heading = React.forwardRef<React.ElementRef<typeof DEFAULT_TAG>, HeadingPr
 
 Heading.displayName = 'Heading'
 
-export default Heading
+export { Heading }
