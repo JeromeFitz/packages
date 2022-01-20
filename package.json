@@ -98,6 +98,11 @@
         ],
         "outputs": []
       },
+      "semantic-release:mono": {
+        "cache": false,
+        "dependsOn": [],
+        "outputs": []
+      },
       "test": {
         "outputs": [
           "coverage/**"
