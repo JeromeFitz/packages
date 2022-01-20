@@ -10,7 +10,7 @@ const config: Options = {
   outDir: 'dist',
   sourcemap: false,
   splitting: false,
-  target: ['node14'],
+  target: ['node16'],
 }
 
 export { config }
