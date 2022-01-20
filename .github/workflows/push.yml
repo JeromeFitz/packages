@@ -13,29 +13,34 @@ on:
 jobs:
   release:
     name: '🔀️ Push'
+    timeout-minutes: 10
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node: ['14']
     steps:
-      - name: '🔧️ Setup Node: ${{ matrix.node }}'
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node }}
-          architecture: 'x64'
-          # cache: 'yarn'
-          # cache-dependency-path: yarn.lock
       - name: '🐙️  Git Checkout'
         uses: actions/checkout@v2
         with:
           # Number of commits to fetch.
           # 0 indicates all history for all branches and tags.
-          fetch-depth: 100
-      - name: '🌵️  Cache-tus'
-        uses: actions/cache@v2
+          fetch-depth: 5
+
+      - name: '🔧️ Setup Node: ${{ matrix.node }}'
+        uses: actions/setup-node@v2
         with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          node-version: ${{ matrix.node }}
+          # architecture: 'x64'
+          cache: 'yarn'
+          cache-dependency-path: yarn.lock
+
+      # - name: '🌵️  Cache-tus'
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: '**/node_modules'
+      #     key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+      # @todo(turbo) vercel environment variables
       - name: '🔺️  Cache-turbo'
         id: turbo-cache
         uses: actions/cache@v2
@@ -44,21 +49,27 @@ jobs:
           key: turbo-${{ github.job }}-${{ github.ref_name }}-${{ github.sha }}
           restore-keys: |
             turbo-${{ github.job }}-${{ github.ref_name }}-
+
       - name: '📦️ Install Dependecies'
         run: |
           yarn install --frozen-lockfile --ignore-engines --network-concurrency 1
+
       - name: '🚨️  Lint'
         run: |
           yarn lint --cache-dir=".turbo"
-      - name: '⚗️  Test'
-        run: |
-          yarn test
+
+      # todo(ci) turn off for now please
+      # - name: '⚗️  Test'
+      #   run: |
+      #     yarn test
+
       - name: '🏗️  Build'
-        if: contains(github.event.head_commit.message , '[build]')
+        if: contains(github.event.head_commit.message , '[build]') || contains(github.event.head_commit.message , '[b]')
         run: |
           yarn build --cache-dir=".turbo"
+
       - name: '🏷️  Semantic Release'
-        if: contains(github.event.head_commit.message , '[build]')
+        if: contains(github.event.head_commit.message , '[build]') || contains(github.event.head_commit.message , '[b]')
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
