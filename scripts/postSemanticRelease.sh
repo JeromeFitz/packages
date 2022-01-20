@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# @question() this is not called? can we delete
+# or rather this is called but not executred can/should we fix/
+
 VERSION=$1
 CHANNEL=$2
 GIT_HEAD=$3
