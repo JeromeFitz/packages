@@ -1,18 +1,10 @@
 # `@jeromefitz/packages`
 
-## 🛠️ Overview
+Monorepo for tools I use frequently in various projects and companies I work with.
 
-- 😺️ [`yarn workspaces`](https://classic.yarnpkg.com/en/docs/cli/workspaces) (v1)
-- :octocat: [`GitHub Actions`](https://github.com/features/actions) for CI/CD
-  - Plus release management through npm
-- 🔺️ [`turbo`](https://github.com/vercel/turborepo) for monorepo management
-  - [x] cache: local / remote & team development
-  - [x] cache: github actions
-- 👷️ [`tsup`](https://github.com/egoist/tsup) for typescript builds (w/ _some_ config)
-- 🤖️ [`Dependabot`](https://github.com/dependabot) for Patch + Minor Package Management
-- 🤖️ [`Kodiak`](https://kodiakhq.com) to “Automate (our) GitHub Pull Requests’
-- 🤖️ Automatic [`Semantic Versioning`](https://semver.org) w/ [`Conventional Commits`](https://www.conventionalcommits.org)
-  - 😜️ Commits & Versioning (Release Notes) made more fun by a few of the packages in this repo
+- [📦️ Packages](#%EF%B8%8F-packages)
+- [👷️ CI/CD Overview](#%EF%B8%8F-packages)
+- [:octocat: CI/CD Workflows](#%EF%B8%8F-ci)
 
 ## 📦️ Packages
 
@@ -20,7 +12,7 @@
   - `eslint|prettier|tsconfig` + `lint-staged`
   - 📝️ Should be reworked a bit to be more extending than importing
 - 😜️ [`@jeromefitz/conventional-gitmoji`](https://github.com/JeromeFitz/packages/tree/main/packages/conventional-gitmoji): Map `gitmoji` to `conventional-commits`
-  - `feat => ✨️`, `fix => 🐛️`, `etc.`
+  - `feat => ✨️`, `fix => 🐛️`, `ci => 👷️`, `fix-ci => 💚️`, `...`
   - Keeps `semver` consistent by expanding both
 - 🖼️ [`@jeromefitz/design-system`](https://github.com/JeromeFitz/packages/tree/main/packages/design-system): Design System built off/ from [`radix-ui`](https://www.radix-ui.com)
   - Major props to the [`@radix-ui`](https://github.com/radix-ui) team as this is 🍽️ of sorts
@@ -46,11 +38,42 @@ There is also:
 - 💽️ [`@jeromefitz/dotfiles`](https://github.com/JeromeFitz/dotfiles): Which is outside of this repo
   - zsh + homebrew computer setup
 
-## 💚️ CI
+## 👷️ CI/CD Overview
 
-- 🌃️ **Weekly**: Run `semantic-release` on `main` for any merges that took place
-  - Does not need `[build]|[b]` flag
-- ⚗️ **Pull Request**: Run `lint` on any PR
-- 🔀️ **Push**: Extra check if commit has `[build]` within its message to trigger `semantic-release` manually (still must meet requirements to create a build and have `semver` conventional commits)
-  - [ ] `[b]` as alternative
-  - [x] pre-release management handled by `@jeromefitz/semantic-config`
+- 😺️ [`yarn workspaces`](https://classic.yarnpkg.com/en/docs/cli/workspaces) (v1)
+- :octocat: [`GitHub Actions`](https://github.com/features/actions) for CI/CD
+  - Plus release management through npm
+- 🔺️ [`turbo`](https://github.com/vercel/turborepo) for monorepo management
+  - [x] cache: local / remote & team development
+  - [x] cache: github actions
+- 👷️ [`tsup`](https://github.com/egoist/tsup) for typescript builds (w/ _some_ config)
+- 🤖️ [`Dependabot`](https://github.com/dependabot) for Patch + Minor Package Management
+- 🤖️ [`Kodiak`](https://kodiakhq.com) to “Automate (our) GitHub Pull Requests’
+- 🤖️ Automatic [`Semantic Versioning`](https://semver.org) w/ [`Conventional Commits`](https://www.conventionalcommits.org)
+  - 😜️ Commits & Versioning (Release Notes) made more fun by a few of the packages in this repo
+
+## :octocat: CI/CD Workflows
+
+- ⚗️ **pull**:
+  - Branch(es):
+    - `main|canary|develop`
+  - Script(s):
+    - `lint|test`
+- 🔀️ **push**:
+  - Branch(es):
+    - `main|canary|develop`
+    - `(ci|feature|fix|refactor|release)/**`
+  - Script(s):
+    - `lint|test|build|semantic-release`
+  - Note(s):
+    - `[b|build]` in commit to trigger:
+      - `build` => only runs if `[b|build]` present
+      - `semantic-release` => pre-release branch management:
+        - `@jeromefitz/semantic-config`
+- 🌃️ **weekly**:
+  - Branch(es):
+    - `main`
+  - Script(s):
+    - `lint|test|build|semantic-release`
+  - Note(s):
+    - `[b|build]` not necessary
