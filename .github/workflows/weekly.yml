@@ -22,13 +22,11 @@ jobs:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
       GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      # TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-      # TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-      TURBO_CACHE: '.turbo'
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 
     strategy:
       matrix:
-        go: ['1.17.6']
         node: ['16']
 
     steps:
@@ -39,12 +37,6 @@ jobs:
           # 0 indicates all history for all branches and tags.
           fetch-depth: 10
 
-      - name: '🛠️ Set up Go: ${{ matrix.go }}'
-        uses: actions/setup-go@v2
-        with:
-          go-version: ${{ matrix.go }}
-        id: go
-
       - name: '🛠️ Setup Node: ${{ matrix.node }}'
         uses: actions/setup-node@v2
         with:
@@ -53,34 +45,47 @@ jobs:
           cache: 'yarn'
           node-version: ${{ matrix.node }}
 
-      - name: '🌵️  Cache'
-        id: turbo-cache
+      - name: '🌵️  Cache (yarn)'
+        id: cache-yarn
         uses: actions/cache@v2
         with:
-          path: ${TURBO_CACHE}
-          key: turbo-${{ github.job }}-${{ github.ref_name }}-${{ github.sha }}
-          restore-keys: |
-            turbo-${{ github.job }}-${{ github.ref_name }}-
+          path: |
+            ${{ steps.yarn-cache-dir-path.outputs.dir }}
+            **/node_modules
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
       - name: '📦️ Install Dependecies'
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: |
           yarn install --frozen-lockfile --ignore-engines --network-concurrency 1
 
+      - name: '🌵️  Cache (turbo)'
+        id: cache-turbo
+        uses: actions/cache@v2
+        with:
+          path: .cache-turbo
+          key: turbo-1-${{ github.job }}-${{ github.ref_name }}-${{ github.sha }}
+          restore-keys: |
+            turbo-1-${{ github.job }}-${{ github.ref_name }}-
+            turbo-1-${{ github.job }}-
+
       - name: '🚨️  Lint'
         run: |
-          yarn lint --cache-dir=${TURBO_CACHE} --concurrency=10 -v
+          yarn lint --cache-dir=".cache-turbo"
 
       - name: '⚗️  Test'
         run: |
-          echo # yarn test --concurrency=10 -v
+          echo # yarn test --cache-dir=".cache-turbo"
 
       - name: '🏗️  Build'
+        # if: contains(github.event.head_commit.message , '[build]') || contains(github.event.head_commit.message , '[b]')
         run: |
-          yarn build --cache-dir=${TURBO_CACHE} --concurrency=10 -v
+          yarn build --cache-dir=".cache-turbo"
 
       - name: '🏷️  Semantic Release'
+        # if: contains(github.event.head_commit.message , '[build]') || contains(github.event.head_commit.message , '[b]')
         run: |
           echo "registry=http://registry.npmjs.org/" >> .npmrc
           echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
           echo "@jeromefitz:registry=https://registry.npmjs.org/" >> .npmrc
-          yarn semantic-release --concurrency=10 -v
+          yarn semantic-release --cache-dir=".cache-turbo"

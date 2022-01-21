@@ -50,7 +50,8 @@
     "dry:run": "turbo run clean --scope=*git-cz* && turbo run build --scope=*git-cz* && node ./packages/git-cz/dist/cli",
     "ds:build": "turbo run build --scope=*design-system*",
     "ds:clean": "turbo run clean --scope=*design-system*",
-    "ds:dev": "turbo run dev --scope=*design-system*"
+    "ds:dev": "turbo run dev --scope=*design-system*",
+    "t:test": "turbo run lint --scope=@jeromefitz/semantic-config -vvv"
   },
   "devDependencies": {
     "@types/is-ci": "3.0.0",
@@ -71,43 +72,33 @@
           ".next/**"
         ],
         "dependsOn": [
-          "^build",
-          "@jeromefitz/semantic-config#build"
+          "^build"
         ]
       },
       "clean": {
-        "outputs": []
+        "cache": false
       },
       "dev": {
         "cache": false
       },
-      "lint": {
-        "dependsOn": [
-          "@jeromefitz/conventional-gitmoji#build",
-          "@jeromefitz/utils#build",
-          "@jeromefitz/git-cz#build"
-        ],
-        "outputs": []
-      },
+      "lint": {},
       "lint:fix": {
-        "cache": false,
-        "dependsOn": [
-          "@jeromefitz/conventional-gitmoji#build",
-          "@jeromefitz/utils#build",
-          "@jeromefitz/git-cz#build"
-        ],
-        "outputs": []
+        "cache": false
       },
       "semantic-release:mono": {
         "cache": false,
-        "dependsOn": [],
-        "outputs": []
+        "dependsOn": [
+          "build"
+        ]
       },
       "test": {
         "outputs": [
           "coverage/**"
         ],
-        "dependsOn": []
+        "dependsOn": [
+          "lint",
+          "build"
+        ]
       },
       "@jeromefitz/git-cz#build": {
         "dependsOn": [
@@ -121,6 +112,11 @@
         ]
       },
       "@jeromefitz/semantic-config#build": {
+        "dependsOn": [
+          "@jeromefitz/semantic#build"
+        ]
+      },
+      "@jeromefitz/semantic-config#lint": {
         "dependsOn": [
           "@jeromefitz/semantic#build"
         ]
