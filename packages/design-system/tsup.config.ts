@@ -25,6 +25,7 @@ const entry = [
   'src/components/index.ts',
   'src/custom/Tooltip/index.ts',
   'src/stitches.config.ts',
+  'src/hooks/*',
 ]
 
 const external = [
