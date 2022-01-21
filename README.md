@@ -3,8 +3,8 @@
 Monorepo for tools I use frequently in various projects and companies I work with.
 
 - [📦️ Packages](#%EF%B8%8F-packages)
-- [👷️ CI/CD Overview](#%EF%B8%8F-packages)
-- [:octocat: CI/CD Workflows](#%EF%B8%8F-ci)
+- [👷️ CI/CD Overview](#%EF%B8%8F-cicd-overview)
+- [:octocat: CI/CD Workflows](#octocat-cicd-workflows)
 
 ## 📦️ Packages
 
