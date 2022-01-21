@@ -1,4 +1,4 @@
-name: '🌃️  Weekly'
+name: '🌃️ Weekly'
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
@@ -15,8 +15,8 @@ on:
     - cron: '0 0 * * 1'
 jobs:
   release:
-    name: '🌃️  Weekly'
-    timeout-minutes: 10
+    name: '👷️ Weekly'
+    timeout-minutes: 5
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -30,14 +30,15 @@ jobs:
         node: ['16']
 
     steps:
-      - name: '🐙️  Git Checkout'
+      - name: '🐙️  Checkout'
         uses: actions/checkout@v2
         with:
-          # Number of commits to fetch.
-          # 0 indicates all history for all branches and tags.
-          fetch-depth: 10
+          # Number of commits to fetch. 0 indicates all history for all branches and tags.
+          # Default: 1
+          fetch-depth: 1
 
-      - name: '🛠️ Setup Node: ${{ matrix.node }}'
+      - name: '💽️  Node (${{ matrix.node }})'
+        id: node-setup
         uses: actions/setup-node@v2
         with:
           # architecture: 'x64'
@@ -45,44 +46,52 @@ jobs:
           cache: 'yarn'
           node-version: ${{ matrix.node }}
 
-      - name: '🌵️  Cache (yarn)'
-        id: cache-yarn
-        uses: actions/cache@v2
-        with:
-          path: |
-            ${{ steps.yarn-cache-dir-path.outputs.dir }}
-            **/node_modules
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+      # - name: '🧶️  Cache (yarn)'
+      #   id: cache-yarn
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: |
+      #       **/node_modules
+      #     key: modules-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+      #     restore-keys: |
+      #       modules-${{ runner.os }}-
 
-      - name: '📦️ Install Dependecies'
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
+      - name: '📦️  Dependecies'
+        id: dependecies
         run: |
           yarn install --frozen-lockfile --ignore-engines --network-concurrency 1
 
-      - name: '🌵️  Cache (turbo)'
+      - name: '🔺️  Cache (turbo)'
         id: cache-turbo
         uses: actions/cache@v2
         with:
           path: .cache-turbo
-          key: turbo-1-${{ github.job }}-${{ github.ref_name }}-${{ github.sha }}
+          key: turbo-${{ github.job }}-${{ github.ref_name }}-${{ github.sha }}
+          # order of preference => turbo will re-check
           restore-keys: |
-            turbo-1-${{ github.job }}-${{ github.ref_name }}-
-            turbo-1-${{ github.job }}-
+            turbo-${{ github.job }}-${{ github.ref_name }}-
+            turbo-${{ github.job }}-
+            turbo-
 
       - name: '🚨️  Lint'
+        id: lint
         run: |
           yarn lint --cache-dir=".cache-turbo"
 
-      - name: '⚗️  Test'
+      - name: '🧪️  Test'
+        id: test
+        # @note(ci) comment out right now as this requires `build`
         run: |
           echo # yarn test --cache-dir=".cache-turbo"
 
       - name: '🏗️  Build'
+        id: build
         # if: contains(github.event.head_commit.message , '[build]') || contains(github.event.head_commit.message , '[b]')
         run: |
           yarn build --cache-dir=".cache-turbo"
 
-      - name: '🏷️  Semantic Release'
+      - name: '🚀️  Release'
+        id: release
         # if: contains(github.event.head_commit.message , '[build]') || contains(github.event.head_commit.message , '[b]')
         run: |
           echo "registry=http://registry.npmjs.org/" >> .npmrc

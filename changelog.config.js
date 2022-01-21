@@ -39,7 +39,7 @@ const commit = isOverride
         'branchFlag',
         'commitBreakingFlag',
         'commitBreaking',
-        'commitScopes',
+        // 'commitScopes',
         'commitTypes',
         'commitSubject',
         'commitBodyFlag',
