@@ -14,7 +14,6 @@ const getNotionListing = async ({
   routeType,
 }) => {
   const { NOTION } = config
-  const isListingByEvent = NOTION.EVENTS.routeType === routeType
 
   let info: any = {}
 
@@ -37,15 +36,19 @@ const getNotionListing = async ({
     )
   }
 
+  // @todo(notion) make this dynamic
+  const isListingByEvent = NOTION.EVENTS.routeType === routeType
+  const property =
+    NOTION[routeType.toUpperCase()].infoType.notion ??
+    PROPERTIES.datePublished.notion
+
   const content = await getBlocksByIdChildren({ block_id: info.id })
   const _items: any = await getDatabasesByIdQuery({
     database_id: NOTION[routeType.toUpperCase()].database_id,
     filter: {
       and: [
         {
-          property: isListingByEvent
-            ? PROPERTIES.dateEvent.notion
-            : PROPERTIES.datePublished.notion,
+          property,
           date: {
             on_or_after: isListingByEvent ? dateTimestamp : dateTimeStampPublished,
           },
@@ -61,6 +64,10 @@ const getNotionListing = async ({
       dataNormalized({ config, data: item, pathVariables, pageId: item.id })
     )
     results.push(itemInit)
+    console.dir(`> last_edited_time`)
+    console.dir(item.id)
+    console.dir(item.last_edited_time)
+    console.dir(`---`)
   })
   const items = _omit(_items, 'results')
   items.results = results

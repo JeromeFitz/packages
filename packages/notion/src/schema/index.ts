@@ -25,6 +25,9 @@ type DatabaseInfo = {
     routeMeta: boolean
     routeType: string
     slug: string
+    //
+    infoType: any
+    ttl: number
   }
 }
 
@@ -138,6 +141,7 @@ interface Property {
 interface Default {
   // authors: any
   dateCreated?: any
+  dateEdited?: any
   datePublished: any
   isIndexed: any
   isPublished: any

@@ -112,24 +112,22 @@ const getNotionSlugByRoute__getDataByListingDate = async ({
       !!day ? day : '01'
     }`
   )
+  const property =
+    NOTION[routeType.toUpperCase()]?.infoType?.notion ??
+    PROPERTIES.datePublished.notion
+
   const __info: any = await getDatabasesByIdQuery({
     database_id: NOTION[routeType.toUpperCase()].database_id,
     filter: {
       and: [
         {
-          property:
-            routeType === NOTION.EVENTS.routeType
-              ? PROPERTIES.dateEvent.notion
-              : PROPERTIES.datePublished.notion,
+          property,
           date: {
             on_or_after: addTime(timestampQuery, ''),
           },
         },
         {
-          property:
-            routeType === NOTION.EVENTS.routeType
-              ? PROPERTIES.dateEvent.notion
-              : PROPERTIES.datePublished.notion,
+          property,
           date: {
             before: addTime(timestampQuery, 'day'),
           },
