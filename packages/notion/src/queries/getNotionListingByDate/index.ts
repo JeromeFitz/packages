@@ -34,9 +34,8 @@ const getNotionListingByDate__getFilter = ({
    * ? = yyyy/mm/dd/slug (SLUG_BY_ROUTE takes this over)
    */
   const property =
-    routeType === NOTION.EVENTS.routeType
-      ? PROPERTIES.dateEvent.notion
-      : PROPERTIES.datePublished.notion
+    NOTION[routeType.toUpperCase()]?.infoType?.notion ??
+    PROPERTIES.datePublished.notion
 
   switch (metaCount) {
     /**

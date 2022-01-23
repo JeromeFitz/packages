@@ -15,7 +15,7 @@ const dataNormalized = ({ config, data, pathVariables, pageId }) => {
   const { properties } = data
 
   // @hack(notion) not great
-  let routeType
+  let routeType = ''
   if (!!pathVariables) {
     const { meta, routeType: _routeType } = pathVariables
     routeType =
@@ -27,7 +27,7 @@ const dataNormalized = ({ config, data, pathVariables, pageId }) => {
   const items = !!routeType ? LOOKUP[routeType.toUpperCase()] : PROPERTIES_LOOKUP
 
   _map(items, (item) => {
-    let dataToNormalize
+    let dataToNormalize: any
 
     const dataFromNotion = properties[item.notion]
     /**
