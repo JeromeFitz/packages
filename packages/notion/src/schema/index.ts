@@ -1,5 +1,6 @@
 type DatabaseType =
   | 'BLOG'
+  | 'BOOKS'
   | 'EPISODES'
   | 'EVENTS'
   | 'PAGES'
@@ -15,7 +16,7 @@ type DataTypesObject = {
 }
 
 type DatabaseInfo = {
-  [key in DatabaseType]: {
+  [key in DatabaseType]?: {
     active: boolean
     database_id: string
     dataTypes: DataTypes[]
