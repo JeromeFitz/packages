@@ -60,7 +60,6 @@
     "spawncommand": "2.2.0"
   },
   "dependencies": {
-    "@jeromefitz/conventional-gitmoji": "*",
     "chalk": "5.0.0",
     "chalk-pipe": "5.1.1",
     "fast-json-stable-stringify": "2.1.0",

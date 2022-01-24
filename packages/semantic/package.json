@@ -41,7 +41,6 @@
     "@types/title": "3.4.1"
   },
   "dependencies": {
-    "@jeromefitz/conventional-gitmoji": "*",
     "@octokit/core": "3.5.1",
     "@semantic-release/commit-analyzer": "9.0.2",
     "@semantic-release/exec": "6.0.3",

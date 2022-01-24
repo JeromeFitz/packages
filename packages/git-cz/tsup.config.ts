@@ -7,6 +7,8 @@ const entry = ['src/**']
 const config = {
   ..._config,
   entry,
+  external: [],
+  noExternal: [],
 }
 
 export default defineConfig({
