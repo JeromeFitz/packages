@@ -59,6 +59,12 @@ const PROPERTIES: Record<string, Property> = {
     type: 'number',
     format: 'number',
   },
+  author: {
+    init: true,
+    key: 'author',
+    notion: 'Author',
+    type: 'rich_text',
+  },
   authors: {
     init: true,
     key: 'authors',
@@ -941,10 +947,16 @@ const PROPERTIES: Record<string, Property> = {
     notion: 'Social.Apple',
     type: 'url',
   },
+  status: {
+    init: true,
+    key: 'status',
+    notion: 'Status',
+    type: 'select',
+  },
   subtitle: {
     init: true,
     key: 'subtitle',
-    notion: 'Subitle',
+    notion: 'Subtitle',
     type: 'rich_text',
   },
   ticketUrl: {
@@ -987,6 +999,13 @@ const PROPERTIES_DEFAULT = [
 ]
 
 const BLOG = [...PROPERTIES_DEFAULT]
+
+const BOOKS = [
+  ...PROPERTIES_DEFAULT,
+  PROPERTIES.author,
+  PROPERTIES.status,
+  PROPERTIES.subtitle,
+]
 
 const EPISODES = [
   ...PROPERTIES_DEFAULT,
@@ -1163,6 +1182,7 @@ const VENUES = [
  */
 const INIT = {
   BLOG: _filter(BLOG, { init: true }),
+  BOOKS: _filter(BOOKS, { init: true }),
   EPISODES: _filter(EPISODES, { init: true }),
   EVENTS: _filter(EVENTS, { init: true }),
   PAGES: _filter(PAGES, { init: true }),
@@ -1175,6 +1195,7 @@ const INIT = {
 
 const LOOKUP = {
   BLOG: BLOG.map((item) => getLookup(item)),
+  BOOKS: BOOKS.map((item) => getLookup(item)),
   EPISODES: EPISODES.map((item) => getLookup(item)),
   EVENTS: EVENTS.map((item) => getLookup(item)),
   PAGES: PAGES.map((item) => getLookup(item)),
