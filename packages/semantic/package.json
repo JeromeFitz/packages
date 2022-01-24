@@ -54,6 +54,9 @@
     "semantic-release-commit-filter": "1.0.2",
     "title": "3.4.3"
   },
+  "peerDependencies": {
+    "@jeromefitz/conventional-gitmoji": "^2.0.3"
+  },
   "type": "module",
   "sideEffects": false,
   "typings": "./dist/index.d.ts",

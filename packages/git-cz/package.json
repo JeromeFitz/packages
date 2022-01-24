@@ -71,6 +71,9 @@
     "shellsync": "0.2.2",
     "word-wrap": "1.2.3"
   },
+  "peerDependencies": {
+    "@jeromefitz/conventional-gitmoji": "^2.0.3"
+  },
   "bin": {
     "git-cz": "./dist/cli.js",
     "gitcz": "./dist/cli.js"
