@@ -30,8 +30,7 @@ const entry = [
 
 const external = [
   ...Object.keys(pkg.dependencies || {}),
-  // @note(tsup) These should not be imported in the first place
-  // ...Object.keys(pkg.devDependencies || {}),
+  ...Object.keys(pkg.devDependencies || {}),
   ...Object.keys(pkg.peerDependencies || {}),
 ]
 
