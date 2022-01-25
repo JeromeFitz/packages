@@ -1,40 +1,13 @@
-// import { Text } from '../../components'
 import { styled } from '../../stitches.config'
 
 const Link = styled('a', {
   alignItems: 'center',
-  gap: '$1',
-  flexShrink: 0,
-  border: 'none',
-  outline: 'none',
+  textDecorationColor: '$slate4',
   textDecorationLine: 'none',
   textUnderlineOffset: '3px',
-  textDecorationColor: '$slate4',
   transition: 'color 0.25s, text-decoration-color 0.25s ease-in-out',
   '@media (prefers-reduced-motion)': {
     transition: 'none',
-  },
-  '& > strong': {
-    transition: 'all 0.25s ease-in-out',
-    '@media (prefers-reduced-motion)': {
-      transition: 'none',
-    },
-  },
-  WebkitTapHighlightColor: 'rgba(0,0,0,0)',
-  lineHeight: 'inherit',
-  '@hover': {
-    '&:hover': {
-      textDecorationLine: 'underline',
-    },
-  },
-  '&:focus': {
-    textDecorationLine: 'none',
-    borderRadius: '$1',
-    boxShadow: '0 0 0 2px $colors$gray1, 0 0 0 3px $colors$hiContrast',
-  },
-  '&:focus:not(:focus-visible)': {
-    boxShadow: 'none',
-    textDecorationLine: 'underline',
   },
   // [`& ${Text}`]: {
   //   color: 'inherit',
@@ -47,13 +20,6 @@ const Link = styled('a', {
         '&:focus': {
           outlineColor: '$blue8',
           boxShadow: '0 0 0 2px $colors$gray1, 0 0 0 3px $colors$blue4',
-        },
-      },
-      subtle: {
-        color: '$slate11',
-        textDecorationColor: '$slate4',
-        '&:focus': {
-          outlineColor: '$slate8',
         },
       },
       contrast: {
@@ -89,10 +55,72 @@ const Link = styled('a', {
           boxShadow: '0 0 0 2px $colors$gray1, 0 0 0 3px $colors$spotify-green',
         },
       },
+      subtle: {
+        color: '$slate11',
+        textDecorationColor: '$slate4',
+        '&:focus': {
+          outlineColor: '$slate8',
+        },
+      },
+    },
+    type: {
+      text: {
+        border: 'none',
+        flexShrink: 0,
+        gap: '$1',
+        lineHeight: 'inherit',
+        '@hover': {
+          '&:hover': {
+            textDecorationLine: 'underline',
+          },
+        },
+        outline: 'none',
+        WebkitTapHighlightColor: 'rgba(0,0,0,0)',
+        '& > strong': {
+          transition: 'all 0.25s ease-in-out',
+          '@media (prefers-reduced-motion)': {
+            transition: 'none',
+          },
+        },
+        '&:focus': {
+          textDecorationLine: 'none',
+          borderRadius: '$1',
+          boxShadow: '0 0 0 2px $colors$gray1, 0 0 0 3px $colors$hiContrast',
+        },
+        '&:focus:not(:focus-visible)': {
+          boxShadow: 'none',
+          textDecorationLine: 'underline',
+        },
+      },
+      icon: {
+        borderRadius: '$1',
+        color: 'inherit',
+        display: 'flex',
+        outline: 0,
+        margin: '0 -$1',
+        '& + &': {
+          marginTop: '$2',
+        },
+        padding: '0 $1',
+        '@hover': {
+          '&:hover': {
+            textDecorationLine: 'underline',
+          },
+        },
+        '&:focus': {
+          boxShadow: '0 0 0 1px',
+          textDecoration: 'none',
+        },
+        '&:focus:not(:focus-visible)': {
+          boxShadow: 'none',
+          textDecorationLine: 'underline',
+        },
+      },
     },
   },
   defaultVariants: {
     variant: 'contrast',
+    type: 'text',
   },
 })
 
