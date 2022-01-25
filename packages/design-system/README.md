@@ -23,6 +23,7 @@ Would be nice to _show_ all of this. And the ability to pass configuration so we
 - [x] Box
 - [x] BoxGrab \***\*\*\*\***
 - [x] BoxLink \***\*\*\*\***
+- [x] Breakout \***\*\*\*\***
 - [x] Button
 - [x] Card
 - [x] Checkbox
@@ -39,6 +40,7 @@ Would be nice to _show_ all of this. And the ability to pass configuration so we
 - [x] Heading
 - [x] Hero \***\*\*\*\***
 - [x] IconButton
+- [x] IconLink \***\*\*\*\***
 - [ ] Image
 - [ ] Kbd (Keyboard Button)
 - [x] Label

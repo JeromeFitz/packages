@@ -35,7 +35,7 @@ export {
 } from './Carousel'
 export { Checkbox } from './Checkbox'
 export { Code } from './Code'
-export { Container } from './Container'
+export { Breakout, Container } from './Container'
 export {
   Dialog,
   DialogTrigger,
@@ -49,6 +49,7 @@ export { FocusArea } from './FocusArea'
 export { Grid } from './Grid'
 export { Heading } from './Heading'
 export { IconButton } from './IconButton'
+export { IconLink } from './IconLink'
 export { Label } from './Label'
 export { Link } from './Link'
 export { Note } from './Note'
