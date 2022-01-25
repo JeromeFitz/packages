@@ -1,9 +1,8 @@
 import isCI from 'is-ci'
 
 if (!isCI) {
-  // @hack(dotenv) 14.3.0 breaking change
   const dotenv = await import('dotenv')
-  dotenv.default.config({ path: './.env' })
+  dotenv.config({ path: './.env' })
 }
 
 const isOverride = process.env.GIT_CZ__OVERRIDE_TEST
