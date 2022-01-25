@@ -21,8 +21,8 @@
   },
   "private": false,
   "scripts": {
-    "build": "tsup-node",
-    "dev": "tsup-node --watch",
+    "build": "tsup",
+    "dev": "tsup --watch",
     "---": "",
     "clean": "rm -rf .turbo && rm -rf dist",
     "clean:install": "yarn clean && rm -rf node_modules",
