@@ -42,7 +42,7 @@
     "semantic-release:mono": "semantic-release -e semantic-release-monorepo"
   },
   "dependencies": {
-    "@notionhq/client": "0.4.12",
+    "@notionhq/client": "0.4.13",
     "date-fns": "2.28.0",
     "date-fns-tz": "1.2.2",
     "github-slugger": "1.4.0",
