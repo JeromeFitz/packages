@@ -150,6 +150,7 @@ interface Default {
   seoDescription: any
   seoImage: any
   seoImageDescription: any
+  title: any
 }
 
 type BlogPost = Default
@@ -186,6 +187,9 @@ interface Event extends Default {
   rollupEvents__Shows_Lineup: any
   rollupEvents__Shows: any
   rollupEvents__Venues: any
+  rollupLineup: any
+  rollupTags: any
+  rollupTagsSecondary: any
   socialFacebook: any
   socialWebsite: any
   ticketUrl: any
