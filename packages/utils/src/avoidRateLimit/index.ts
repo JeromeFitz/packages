@@ -1,8 +1,8 @@
 const MS_DELAY = 250
 
-async function avoidRateLimit() {
+async function avoidRateLimit(ms = MS_DELAY) {
   // if (process.env.NODE_ENV === 'production') {
-  await sleep()
+  await sleep(ms)
   // }
 }
 

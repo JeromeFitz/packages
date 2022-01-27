@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 import { Box, Text } from '../../components'
 import { styled } from '../../stitches.config'
 
