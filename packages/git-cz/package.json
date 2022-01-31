@@ -52,7 +52,7 @@
   "devDependencies": {
     "@types/chalk-pipe": "2.0.0",
     "@types/lodash": "4.14.178",
-    "chai": "4.3.5",
+    "chai": "4.3.6",
     "isomorphic-unfetch": "3.1.0",
     "jest": "27.4.7",
     "mocha": "9.2.0",
