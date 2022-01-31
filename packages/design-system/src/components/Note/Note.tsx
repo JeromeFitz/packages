@@ -1,4 +1,5 @@
-import { Box, Emoji } from '../../components'
+// import { Box, Emoji } from '../../components'
+import { Box } from '../../components'
 
 const Note = ({ children, label = 'Note:' }) => {
   return (
@@ -37,7 +38,27 @@ const Note = ({ children, label = 'Note:' }) => {
           {/* Label */}
           <span>
             <b>
-              <Emoji character={`📝️`} margin={true} />
+              {/* <Emoji character={`📝️`} margin={true} /> */}
+              <Box
+                as="span"
+                aria-label={`emoji memo`}
+                // @hack(emoji) this breaks the underline on links
+                css={{
+                  fontStyle: 'normal',
+                  mr: '$1',
+                }}
+                role="img"
+                style={{
+                  WebkitBackgroundClip: 'text',
+                  // @note(WebkitTextFillColor) any color will break out of transparency
+                  WebkitTextFillColor: 'inherit',
+                }}
+              >
+                {`📝️`}
+                {/* @hack(emoji) force two spaces */}
+                {` `}
+                {` `}
+              </Box>
               {label}
               {` `}
             </b>

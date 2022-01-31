@@ -10,7 +10,7 @@ import * as Portal from '@radix-ui/react-portal'
 import { composeEventHandlers } from '@radix-ui/react-utils'
 import _filter from 'lodash/filter'
 import * as React from 'react'
-import { Toaster as HotToaster } from 'react-hot-toast'
+// import { Toaster as HotToaster } from 'react-hot-toast'
 
 import { ToastContainer } from './ToastContainer'
 
@@ -121,7 +121,7 @@ const ToastProvider: React.FC = function ToastProvider({ children }) {
       <ToastContext.Provider value={{ state, context }}>
         {children}
         <Toaster toasts={context?.toasts} />
-        <HotToaster />
+        {/* <HotToaster /> */}
       </ToastContext.Provider>
     </ToastDispatchContext.Provider>
   )
