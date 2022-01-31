@@ -12,6 +12,10 @@ const Code = styled('code', {
         backgroundColor: '$slate3',
         color: '$slate11',
       },
+      green: {
+        backgroundColor: '$green3',
+        color: '$green11',
+      },
       violet: {
         backgroundColor: '$violet3',
         color: '$violet11',
