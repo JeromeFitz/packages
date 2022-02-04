@@ -35,3 +35,4 @@ release
 tsconfig.tsbuildinfo
 .turbo
 .tsbuildinfo
+!.github/actions/release

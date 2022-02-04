@@ -1,4 +1,5 @@
-name: '▶️ Pull'
+name: '  ▶️  Pull'
+
 on:
   pull_request:
     branches:
@@ -12,77 +13,45 @@ on:
       - reopened
       - ready_for_review
       - converted_to_draft
+
 concurrency:
   group: pull-${{ github.ref }}-1
   cancel-in-progress: true
+
+env:
+  GH_BOT_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
+  GH_DEPLOY_TOKEN: ${{ secrets.GH_DEPLOY_TOKEN }}
+  GH_TOKEN: ${{ secrets.GH_DEPLOY_TOKEN }}
+  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
 jobs:
-  release:
-    name: '👷️  Pull'
-    if: github.event.pull_request.draft == false
-    timeout-minutes: 5
+  pull:
+    name: '👷️  CI'
+    if: github.event.pull_request.draft == false && !contains(github.event.head_commit.message, '[skip ci]')
+    timeout-minutes: 10
     runs-on: ubuntu-latest
     env:
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      GH_TOKEN: ${{ secrets.GH_DEPLOY_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GH_DEPLOY_TOKEN }}
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-
-    strategy:
-      matrix:
-        node: ['16']
-
     steps:
       - name: '🐙️  Checkout'
+        id: pull-checkout
         uses: actions/checkout@v2
         with:
-          # Number of commits to fetch. 0 indicates all history for all branches and tags.
-          # Default: 1
           fetch-depth: 1
-
-      - name: '💽️  Node (${{ matrix.node }})'
-        id: node-setup
-        uses: actions/setup-node@v2
-        with:
-          # architecture: 'x64'
-          cache-dependency-path: yarn.lock
-          cache: 'yarn'
-          node-version: ${{ matrix.node }}
-
-      # - name: '🧶️  Cache (yarn)'
-      #   id: cache-yarn
-      #   uses: actions/cache@v2
-      #   with:
-      #     path: |
-      #       **/node_modules
-      #     key: modules-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
-      #     restore-keys: |
-      #       modules-${{ runner.os }}-
-
-      - name: '📦️  Dependecies'
-        id: dependecies
-        run: |
-          yarn install --frozen-lockfile --ignore-engines --network-concurrency 1
-
-      - name: '🔺️  Cache (turbo)'
-        id: cache-turbo
-        uses: actions/cache@v2
-        with:
-          path: .cache-turbo
-          key: turbo-${{ github.job }}-${{ github.ref_name }}-${{ github.sha }}
-          # order of preference => turbo will re-check
-          restore-keys: |
-            turbo-${{ github.job }}-${{ github.ref_name }}-
-            turbo-${{ github.job }}-
-            turbo-
-
+      - name: '💽️  Init'
+        id: pull-init
+        uses: JeromeFitz/packages/.github/actions/init@ci/github-actions-refactor
       - name: '🚨️  Lint'
-        id: lint
-        run: |
-          yarn lint --cache-dir=".cache-turbo"
-
-      - name: '🧪️  Test'
-        id: test
-        # @note(ci) comment out right now as this requires `build`
-        run: |
-          echo # yarn test --cache-dir=".cache-turbo"
+        id: pull-lint
+        uses: JeromeFitz/packages/.github/actions/lint@ci/github-actions-refactor
+        with:
+          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
