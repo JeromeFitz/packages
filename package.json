@@ -22,6 +22,7 @@
   "engines": {
     "node": ">=14"
   },
+  "packageManager": "yarn@1.22.17",
   "type": "module",
   "private": true,
   "scripts": {
@@ -62,70 +63,5 @@
     "semantic-release-monorepo": "7.0.5",
     "tsup": "5.11.13",
     "turbo": "1.1.2"
-  },
-  "turbo": {
-    "baseBranch": "origin/main",
-    "pipeline": {
-      "build": {
-        "outputs": [
-          "dist/**",
-          ".next/**"
-        ],
-        "dependsOn": [
-          "^build"
-        ]
-      },
-      "clean": {
-        "cache": false
-      },
-      "dev": {
-        "cache": false
-      },
-      "lint": {},
-      "lint:fix": {
-        "cache": false
-      },
-      "semantic-release:mono": {
-        "cache": false,
-        "dependsOn": [
-          "build"
-        ]
-      },
-      "test": {
-        "outputs": [
-          "coverage/**"
-        ],
-        "dependsOn": [
-          "lint",
-          "build"
-        ]
-      },
-      "@jeromefitz/git-cz#build": {
-        "dependsOn": [
-          "@jeromefitz/conventional-gitmoji#build"
-        ]
-      },
-      "@jeromefitz/semantic#build": {
-        "dependsOn": [
-          "@jeromefitz/conventional-gitmoji#build",
-          "@jeromefitz/git-cz#build"
-        ]
-      },
-      "@jeromefitz/semantic-config#build": {
-        "dependsOn": [
-          "@jeromefitz/semantic#build"
-        ]
-      },
-      "@jeromefitz/semantic-config#lint": {
-        "dependsOn": [
-          "@jeromefitz/semantic#build"
-        ]
-      },
-      "@jeromefitz/spotify#build": {
-        "dependsOn": [
-          "@jeromefitz/utils#build"
-        ]
-      }
-    }
   }
 }
