@@ -1,0 +1,24 @@
+# name: 'Release'
+name: '🏷️  '
+description: 'Localized Release'
+author: 'JeromeFitz'
+
+inputs:
+  GH_TOKEN:
+    descirption: 'Github Token'
+    required: true
+  NPM_TOKEN:
+    descirption: 'NPM Token'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: '🏷️  Release'
+      id: release
+      shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.GH_TOKEN }}
+        NPM_TOKEN: ${{ inputs.NPM_TOKEN }}
+      run: |
+        yarn semantic-release

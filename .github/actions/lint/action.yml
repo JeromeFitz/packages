@@ -1,0 +1,46 @@
+# name: 'Lint'
+name: '🚨️  '
+description: 'Localized Lint'
+author: 'JeromeFitz'
+
+inputs:
+  TURBO_TEAM:
+    description: 'ID for Turbo'
+    required: true
+  TURBO_TOKEN:
+    description: 'ID for Turbo'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: '🔺️  Cache (turbo)'
+      id: cache-turbo
+      uses: actions/cache@v2
+      env:
+        TURBO_TEAM: ${{ inputs.TURBO_TEAM }}
+        TURBO_TOKEN: ${{ inputs.TURBO_TOKEN }}
+      with:
+        path: .cache-turbo
+        key: turbo-${{ github.job }}-${{ github.ref_name }}-${{ github.sha }}
+        # order of preference => turbo will re-check
+        restore-keys: |
+          turbo-${{ github.job }}-${{ github.ref_name }}-
+          turbo-${{ github.job }}-
+          turbo-
+
+    - name: '🚨️  Lint'
+      id: lint
+      shell: bash
+      env:
+        TURBO_TEAM: ${{ inputs.TURBO_TEAM }}
+        TURBO_TOKEN: ${{ inputs.TURBO_TOKEN }}
+      run: |
+        yarn lint --cache-dir=".cache-turbo"
+
+    - name: '🧪️  Test'
+      id: test
+      shell: bash
+      # @note(ci) comment out right now as this requires `build`
+      run: |
+        echo # yarn test --cache-dir=".cache-turbo"

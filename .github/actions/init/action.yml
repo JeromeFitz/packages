@@ -1,0 +1,22 @@
+# name: 'Init And Lint'
+name: '💽️  '
+description: 'Localized Init'
+author: 'JeromeFitz'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: '💽️  Node (16)'
+      id: node-setup
+      uses: actions/setup-node@v2
+      with:
+        # architecture: 'x64'
+        cache-dependency-path: yarn.lock
+        cache: 'yarn'
+        node-version: '16'
+
+    - name: '📦️  Dependencies'
+      id: dependencies
+      shell: bash
+      run: |
+        yarn install --frozen-lockfile --ignore-engines --network-concurrency 1

@@ -1,4 +1,4 @@
-name: '🌃️ Weekly'
+name: '  🌃️  Weekly'
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
@@ -13,88 +13,56 @@ on:
     #        │ │ │ │ │
     #        * * * * *
     - cron: '0 0 * * 1'
+
+env:
+  GH_BOT_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
+  GH_DEPLOY_TOKEN: ${{ secrets.GH_DEPLOY_TOKEN }}
+  GH_TOKEN: ${{ secrets.GH_TOKEN }}
+  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+
 jobs:
-  release:
-    name: '👷️ Weekly'
-    timeout-minutes: 5
+  pull:
+    name: '👷️  CI'
+    if: github.ref == 'refs/heads/main'
+    timeout-minutes: 10
     runs-on: ubuntu-latest
     env:
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      GH_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-
-    strategy:
-      matrix:
-        node: ['16']
-
     steps:
       - name: '🐙️  Checkout'
+        id: weekly-checkout
         uses: actions/checkout@v2
         with:
-          # Number of commits to fetch. 0 indicates all history for all branches and tags.
-          # Default: 1
-          fetch-depth: 1
-
-      - name: '💽️  Node (${{ matrix.node }})'
-        id: node-setup
-        uses: actions/setup-node@v2
-        with:
-          # architecture: 'x64'
-          cache-dependency-path: yarn.lock
-          cache: 'yarn'
-          node-version: ${{ matrix.node }}
-
-      # - name: '🧶️  Cache (yarn)'
-      #   id: cache-yarn
-      #   uses: actions/cache@v2
-      #   with:
-      #     path: |
-      #       **/node_modules
-      #     key: modules-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
-      #     restore-keys: |
-      #       modules-${{ runner.os }}-
-
-      - name: '📦️  Dependecies'
-        id: dependecies
-        run: |
-          yarn install --frozen-lockfile --ignore-engines --network-concurrency 1
-
+          fetch-depth: 10
+      - name: '💽️  Init'
+        id: weekly-init
+        uses: JeromeFitz/packages/.github/actions/init@main
       - name: '🔺️  Cache (turbo)'
-        id: cache-turbo
-        uses: actions/cache@v2
+        id: pull-cache-turbo
+        uses: JeromeFitz/packages/.github/actions/cache-turbo@main
         with:
-          path: .cache-turbo
-          key: turbo-${{ github.job }}-${{ github.ref_name }}-${{ github.sha }}
-          # order of preference => turbo will re-check
-          restore-keys: |
-            turbo-${{ github.job }}-${{ github.ref_name }}-
-            turbo-${{ github.job }}-
-            turbo-
-
+          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       - name: '🚨️  Lint'
-        id: lint
-        run: |
-          yarn lint --cache-dir=".cache-turbo"
-
-      - name: '🧪️  Test'
-        id: test
-        # @note(ci) comment out right now as this requires `build`
-        run: |
-          echo # yarn test --cache-dir=".cache-turbo"
-
+        id: weekly-lint
+        uses: JeromeFitz/packages/.github/actions/lint@main
+        with:
+          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       - name: '🏗️  Build'
-        id: build
-        # if: contains(github.event.head_commit.message , '[build]') || contains(github.event.head_commit.message , '[b]')
-        run: |
-          yarn build --cache-dir=".cache-turbo"
-
-      - name: '🚀️  Release'
-        id: release
-        # if: contains(github.event.head_commit.message , '[build]') || contains(github.event.head_commit.message , '[b]')
-        run: |
-          echo "registry=http://registry.npmjs.org/" >> .npmrc
-          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
-          echo "@jeromefitz:registry=https://registry.npmjs.org/" >> .npmrc
-          yarn semantic-release --cache-dir=".cache-turbo"
+        id: weekly-build
+        uses: JeromeFitz/packages/.github/actions/build@main
+        with:
+          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      - name: '🏷️  Release'
+        id: weekly-release
+        uses: JeromeFitz/packages/.github/actions/release@main
+        with:
+          GH_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -1,0 +1,24 @@
+# name: 'Build'
+name: '🏗️  '
+description: 'Localized Build'
+author: 'JeromeFitz'
+
+inputs:
+  TURBO_TOKEN:
+    descirption: 'Turbo Token'
+    required: true
+  TURBO_TEAM:
+    descirption: 'Turbo Team'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: '🏗️  Build'
+      id: build
+      shell: bash
+      env:
+        TURBO_TOKEN: ${{ inputs.TURBO_TOKEN }}
+        TURBO_TEAM: ${{ inputs.TURBO_TEAM }}
+      run: |
+        yarn build --cache-dir=".cache-turbo"
