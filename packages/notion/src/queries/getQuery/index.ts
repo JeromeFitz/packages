@@ -81,7 +81,7 @@ const getQuery = async ({ config, reqQuery, notionDatabasesQuery }) => {
   // }
 
   if (!hasError && (!data || isObjectEmpty(data))) {
-    await avoidRateLimit()
+    await avoidRateLimit(0)
     // @todo(types) any
     let contentData: Pick<any, string | number | symbol>
     if (!!filter) {

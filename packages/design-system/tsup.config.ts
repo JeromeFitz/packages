@@ -22,10 +22,13 @@ import pkg from './package.json'
 const entry = [
   'src/components/Card/Show.tsx',
   'src/components/Hero/HeroImage.tsx',
-  'src/components/index.ts',
+  'src/custom/Emoji/index.ts',
+  'src/custom/Toast/index.ts',
   'src/custom/Tooltip/index.ts',
   'src/stitches.config.ts',
   'src/hooks/*',
+  //
+  'src/components/**',
 ]
 
 const external = [

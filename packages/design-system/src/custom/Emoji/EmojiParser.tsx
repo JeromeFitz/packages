@@ -5,7 +5,7 @@ import _orderBy from 'lodash/orderBy'
 import _size from 'lodash/size'
 // import dynamic from 'next/dynamic'
 
-import { Emoji } from '../../components'
+import { Emoji } from './Emoji'
 // const Emoji = dynamic(() => import('./Emoji'), {
 //   ssr: false,
 // })
