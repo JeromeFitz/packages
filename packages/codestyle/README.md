@@ -1,4 +1,4 @@
-# @jeromefitz/codestyle
+# `@jeromefitz/codestyle`
 
 ## Overview
 
