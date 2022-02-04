@@ -1,0 +1,45 @@
+{
+  "baseBranch": "origin/main",
+  "pipeline": {
+    "build": {
+      "outputs": ["dist/**", ".next/**"],
+      "dependsOn": ["^build"]
+    },
+    "clean": {
+      "cache": false
+    },
+    "dev": {
+      "cache": false
+    },
+    "lint": {},
+    "lint:fix": {
+      "cache": false
+    },
+    "semantic-release:mono": {
+      "cache": false,
+      "dependsOn": ["build"]
+    },
+    "test": {
+      "outputs": ["coverage/**"],
+      "dependsOn": ["lint", "build"]
+    },
+    "@jeromefitz/git-cz#build": {
+      "dependsOn": ["@jeromefitz/conventional-gitmoji#build"]
+    },
+    "@jeromefitz/semantic#build": {
+      "dependsOn": [
+        "@jeromefitz/conventional-gitmoji#build",
+        "@jeromefitz/git-cz#build"
+      ]
+    },
+    "@jeromefitz/semantic-config#build": {
+      "dependsOn": ["@jeromefitz/semantic#build"]
+    },
+    "@jeromefitz/semantic-config#lint": {
+      "dependsOn": ["@jeromefitz/semantic#build"]
+    },
+    "@jeromefitz/spotify#build": {
+      "dependsOn": ["@jeromefitz/utils#build"]
+    }
+  }
+}
