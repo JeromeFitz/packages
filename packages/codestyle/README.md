@@ -13,8 +13,6 @@
 yarn add @jeromefitz/codestyle --dev
 ```
 
-📝️ **Note:** You may want to keep your `typescript@4.1.5`
-
 ### Husky
 
 I tend to use this with [`husky`](https://github.com/typicode/husky) (w/ [`is-ci`](https://github.com/watson/is-ci) [`pinst`](https://github.com/typicode/pinst)), feel free to look at how this monorepo has it set up to follow / alter how you would like to implement.
@@ -84,16 +82,15 @@ Some packages have you call directly like `yarn codestyle` to run everything, ho
 If you want to add the following to your `package.json` scripts, these are the current recommendations:
 
 ```json
-  {
-    "scripts": {
-      "lint:eslint": "eslint . --ext js,jsx,ts,tsx --max-warnings=0",
-      "lint:fix": "yarn lint:prettier --write && yarn lint:eslint --fix",
-      "lint:prettier": "prettier \"./*.{js,jsx,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\"",
-      "lint:typescript": "yarn typescript",
-      "lint": "yarn lint:typescript && yarn lint:prettier --check && yarn lint:eslint",
-      "pretty-quick": "pretty-quick",
-      "typescript": "tsc --noEmit --declaration"
+{
+  "scripts": {
+    "lint:eslint": "eslint ./src --ext cjs,js,jsx,mjs,ts,tsx --max-warnings=0",
+    "lint:prettier": "prettier \"./src/**/*.{cjs,js,jsx,mjs,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\" --ignore-unknown --loglevel warn",
+    "lint:typescript": "tsc --noEmit --declaration",
+    "lint": "yarn lint:prettier --check && yarn lint:eslint && yarn lint:typescript",
+    "lint:fix": "yarn lint:eslint --fix && yarn lint:prettier --write"
   }
+}
 ```
 
-Then with `lint-staged` you can just run `yarn lint` or pass `yarn lint --fix` (I believe `yarn lint:fix` is overkill).
+Then with `lint-staged` you can just run `yarn lint` or pass `yarn lint --fix` (I believe `yarn lint:fix` may be not needed).
