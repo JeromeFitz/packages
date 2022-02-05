@@ -9,14 +9,16 @@ const releaseRules: ReleaseRulesProps[] = []
 const getReleaseRules = (types: TypesProps) => {
   Object.keys(types).map((type) => {
     /**
-     * @note Need to cover (code|commit|emoji) for semver based on repo choice
+     * @note Need to cover (code|commit|emoji) for
+     *  semver based on repo choice
+     *
+     * @hack
+     * (semantic-release) commit.type:
+     *  :arrow_up: => :arrow_up
+     *  accounting for that here "fixes"
      */
-
     releaseRules.push({
       release: types[type].semver,
-      // @hack(semantic-release) is turning in commit.type
-      //       :arrow_up: => :arrow_up
-      //       accounting for that here "fixes"
       type: !!types[type] && types[type]?.code.replace(/(:[^:]*):/g, '$1'),
     })
     releaseRules.push({

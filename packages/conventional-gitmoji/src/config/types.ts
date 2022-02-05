@@ -6,6 +6,7 @@ type TypesProps = {
   [x: string]: {
     branch: string | boolean | null | undefined
     code: any | null
+    commit: any
     description: any
     emoji: any
     entity: string
@@ -13,7 +14,7 @@ type TypesProps = {
     releaseNotes: boolean | null
     section: string
     semver: 'breaking' | 'feature' | 'fix' | 'major' | 'minor' | 'patch' | null
-    commit: any
+    title: string
   }
 }
 const types: TypesProps = {
@@ -28,6 +29,7 @@ const types: TypesProps = {
     releaseNotes: false,
     section: 'Changes that don’t modify src or test files',
     semver: null,
+    title: 'Chore',
   },
   rollforward: {
     branch: false,
@@ -40,6 +42,7 @@ const types: TypesProps = {
     releaseNotes: false,
     section: 'Create rollforward version.',
     semver: null,
+    title: 'Rollforward',
   },
   'run-build': {
     branch: false,
@@ -52,6 +55,7 @@ const types: TypesProps = {
     releaseNotes: false,
     section: 'Custom type for CI/CD to hook into run build override.',
     semver: 'patch',
+    title: 'Custom: Run Build',
   },
 }
 

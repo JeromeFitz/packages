@@ -6,6 +6,8 @@ import _rewrites from './config/rewrites'
 import _types from './config/types'
 
 const getGitmoji = () => {
+  // @todo(complexity) 15
+  // eslint-disable-next-line complexity
   gitmojis.map((gitmoji) => {
     const rewrite = _rewrites.find((r) => r?.from === gitmoji.name)
     if (!!rewrite) {
@@ -16,6 +18,11 @@ const getGitmoji = () => {
         rewrite.semver === undefined
           ? gitmoji?.semver || null
           : rewrite.semver || gitmoji?.semver || null
+
+      const title =
+        rewrite.title === undefined
+          ? gitmoji?.commit || null
+          : rewrite.title || gitmoji?.commit || null
 
       _types[rewrite.to] = {
         branch: Boolean(rewrite?.branch) ? rewrite.branch : false,
@@ -36,6 +43,7 @@ const getGitmoji = () => {
               .replace('feature', 'minor')
               .replace('breaking', 'major')
           : null,
+        title,
       }
     } else {
       console.dir(`@todo(conventional-gitmoji) create rewrite for: ${gitmoji.name}`)
