@@ -6,14 +6,12 @@ type TypesProps = {
   [x: string]: {
     branch: string | boolean | null | undefined
     code: any | null
+    commit: any
     description: any
     emoji: any
     entity: string
     name: string
-    releaseNotes: boolean | null
-    section: string
     semver: 'breaking' | 'feature' | 'fix' | 'major' | 'minor' | 'patch' | null
-    commit: any
   }
 }
 const types: TypesProps = {
@@ -25,8 +23,6 @@ const types: TypesProps = {
     emoji: '💽️',
     entity: '&#x1f4bd;',
     name: 'computer-disk',
-    releaseNotes: false,
-    section: 'Changes that don’t modify src or test files',
     semver: null,
   },
   rollforward: {
@@ -37,8 +33,6 @@ const types: TypesProps = {
     emoji: '⏩️',
     entity: '&#23E9;',
     name: 'rollforward',
-    releaseNotes: false,
-    section: 'Create rollforward version.',
     semver: null,
   },
   'run-build': {
@@ -49,8 +43,6 @@ const types: TypesProps = {
     emoji: '🚀️',
     entity: '&#1F680;',
     name: 'run-build',
-    releaseNotes: false,
-    section: 'Custom type for CI/CD to hook into run build override.',
     semver: 'patch',
   },
 }

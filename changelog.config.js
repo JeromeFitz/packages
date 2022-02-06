@@ -22,8 +22,6 @@ const _types = {
     emoji: '🌄️',
     entity: '&#1F304;',
     name: 'override',
-    releaseNotes: true,
-    section: 'Custom type => override.',
     semver: null,
   },
 }

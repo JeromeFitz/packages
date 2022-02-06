@@ -6,14 +6,12 @@ interface TypesProps {
   [x: string]: {
     branch: string | boolean | null | undefined
     code: any | null
-    description: any
-    emoji: any
+    commit: any
+    description: string
+    emoji: string
     entity: string
     name: string
-    releaseNotes: boolean | null
-    section: string
     semver: 'breaking' | 'feature' | 'fix' | 'major' | 'minor' | 'patch' | null
-    commit: any
   }
 }
 

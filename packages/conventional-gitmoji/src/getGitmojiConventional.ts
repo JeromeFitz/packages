@@ -6,12 +6,11 @@ import _rewrites from './config/rewrites'
 import _types from './config/types'
 
 const getGitmoji = () => {
+  // @todo(complexity) 15
+  // eslint-disable-next-line complexity
   gitmojis.map((gitmoji) => {
     const rewrite = _rewrites.find((r) => r?.from === gitmoji.name)
     if (!!rewrite) {
-      const releaseNotes =
-        rewrite.releaseNotes === undefined ? true : rewrite.releaseNotes || null
-
       const semver =
         rewrite.semver === undefined
           ? gitmoji?.semver || null
@@ -25,11 +24,14 @@ const getGitmoji = () => {
         emoji: gitmoji?.emoji,
         entity: gitmoji?.entity,
         name: gitmoji?.name,
-        releaseNotes,
-        section: gitmoji?.description,
-        // @note(semantic) big lol, README does not meet requirements:
-        // ref: https://github.com/semantic-release/semantic-release#commit-message-format
-        // ["major","premajor","minor","preminor","patch","prepatch","prerelease"]
+        /**
+         * @note
+         * (semantic)
+         * big lol, README does not meet requirements:
+         * ref: https://github.com/semantic-release/semantic-release#commit-message-format
+         *
+         * ["major","premajor","minor","preminor","patch","prepatch","prerelease"]
+         **/
         semver: !!semver
           ? semver
               .replace('fix', 'patch')

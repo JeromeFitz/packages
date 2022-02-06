@@ -47,7 +47,7 @@ This expands on the original `conventional-commits` nomenclature to account for 
 
 ### 🚀️ semantic-release
 
-Also adds `semver` and `releaseNotes` keys to each type to inform `@jeromefitz/semantic` how to handle each commit type (and if it is a convential branch type).
+Adds `semver` to each type to inform `@jeromefitz/semantic` how to handle each commit type (and if it is a convential branch type).
 
 **⚗️ Example(s):**
 
@@ -61,8 +61,6 @@ Also adds `semver` and `releaseNotes` keys to each type to inform `@jeromefitz/s
     "emoji": "⚗️",
     "entity": "&#128248;",
     "name": "alembic",
-    "releaseNotes": false,
-    "section": "Perform experiments.",
     "semver": "patch"
   },
   "feat": {
@@ -73,8 +71,6 @@ Also adds `semver` and `releaseNotes` keys to each type to inform `@jeromefitz/s
     "emoji": "✨",
     "entity": "&#x2728;",
     "name": "sparkles",
-    "releaseNotes": true,
-    "section": "Introduce new features.",
     "semver": "minor"
   },
   "log-add": {
@@ -85,9 +81,9 @@ Also adds `semver` and `releaseNotes` keys to each type to inform `@jeromefitz/s
     "emoji": "🔊",
     "entity": "&#128266;",
     "name": "loud-sound",
-    "releaseNotes": false,
-    "section": "Add or update logs.",
     "semver": null
   }
 }
 ```
+
+**📝️ Please Note:** The values `major|minor|patch` are moving to `breaking|feature|fix`
