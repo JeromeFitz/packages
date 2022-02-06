@@ -18,10 +18,6 @@ const splitter = new GraphemeSplitter()
 // @ts-ignore
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const transformer = (commit: any, context: any) => {
-  console.dir(`> transformer commit`)
-  console.dir(context)
-  console.dir(commit)
-  console.dir(`--- --- ---`)
   const { type } = commit
 
   /**
@@ -114,10 +110,6 @@ const transformer = (commit: any, context: any) => {
   /**
    * @note return the new mutated `commit`
    */
-  // console.dir(`> debug commit`)
-  // console.dir(context)
-  // console.dir(commit)
-  // console.dir(`--- --- ---`)
   return commit
 }
 
