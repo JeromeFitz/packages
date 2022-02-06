@@ -11,18 +11,10 @@ const getGitmoji = () => {
   gitmojis.map((gitmoji) => {
     const rewrite = _rewrites.find((r) => r?.from === gitmoji.name)
     if (!!rewrite) {
-      const releaseNotes =
-        rewrite.releaseNotes === undefined ? true : rewrite.releaseNotes || null
-
       const semver =
         rewrite.semver === undefined
           ? gitmoji?.semver || null
           : rewrite.semver || gitmoji?.semver || null
-
-      const title =
-        rewrite.title === undefined
-          ? gitmoji?.commit || null
-          : rewrite.title || gitmoji?.commit || null
 
       _types[rewrite.to] = {
         branch: Boolean(rewrite?.branch) ? rewrite.branch : false,
@@ -32,18 +24,20 @@ const getGitmoji = () => {
         emoji: gitmoji?.emoji,
         entity: gitmoji?.entity,
         name: gitmoji?.name,
-        releaseNotes,
-        section: gitmoji?.description,
-        // @note(semantic) big lol, README does not meet requirements:
-        // ref: https://github.com/semantic-release/semantic-release#commit-message-format
-        // ["major","premajor","minor","preminor","patch","prepatch","prerelease"]
+        /**
+         * @note
+         * (semantic)
+         * big lol, README does not meet requirements:
+         * ref: https://github.com/semantic-release/semantic-release#commit-message-format
+         *
+         * ["major","premajor","minor","preminor","patch","prepatch","prerelease"]
+         **/
         semver: !!semver
           ? semver
               .replace('fix', 'patch')
               .replace('feature', 'minor')
               .replace('breaking', 'major')
           : null,
-        title,
       }
     } else {
       console.dir(`@todo(conventional-gitmoji) create rewrite for: ${gitmoji.name}`)

@@ -40,19 +40,23 @@ const transformer = (commit: any, context: any) => {
    * @note if type is not present in typeSpecIndex => exit
    */
   if (typeSpecIndex === -1) return
+  const typeSpec = typeSpecs[typeSpecIndex]
 
   /**
+   * @todo put this into configuration
+   * - array of types to check against
+   * - check against title? [skip notes]
+   *
    * @note if typeSpec does not have releaseNotes => exit
    *       this could mean they are not for public consumption
    */
-  const typeSpec = typeSpecs[typeSpecIndex]
-  if (!typeSpec.releaseNotes) return
+  // if (!typeSpec.releaseNotes) return
 
   /**
    * @note type
    * @todo turn on/off emoji, "section" descriptive enough?
    */
-  commit.type = `${typeSpec.emoji}  ${typeSpec.section}`
+  commit.type = `${typeSpec.emoji}  ${typeSpec.description}`
   commit.typeSpecIndex = typeSpecIndex
 
   /**

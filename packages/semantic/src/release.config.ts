@@ -26,6 +26,8 @@ const config = {
       '@semantic-release/commit-analyzer',
       {
         parserOpts: {
+          headerPattern: parserOpts.headerPattern,
+          headerCorrespondence: parserOpts.headerCorrespondence,
           noteKeywords: parserOpts.noteKeywords,
         },
         releaseRules,
