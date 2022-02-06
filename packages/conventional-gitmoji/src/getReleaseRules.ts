@@ -1,8 +1,10 @@
 import type { TypesProps } from './index'
 
 type ReleaseRulesProps = {
-  release: string | null
-  type: string | null
+  message?: string | null
+  release?: string | null
+  tag?: string | null
+  type?: string | null
 }
 
 const releaseRules: ReleaseRulesProps[] = []
@@ -29,6 +31,34 @@ const getReleaseRules = (types: TypesProps) => {
       release: types[type].semver,
       type: types[type].emoji,
     })
+  })
+
+  /**
+   * @custom
+   */
+  releaseRules.push({
+    message: '*[major]*',
+    release: 'major', // breaking
+  })
+  releaseRules.push({
+    message: '*[minor]*',
+    release: 'minor', // feature
+  })
+  releaseRules.push({
+    message: '*[patch]*',
+    release: 'patch', // fix
+  })
+  releaseRules.push({
+    message: '*[breaking]*',
+    release: 'major', // breaking
+  })
+  releaseRules.push({
+    message: '*[feature]*',
+    release: 'minor', // feature
+  })
+  releaseRules.push({
+    message: '*[fix]*',
+    release: 'patch', // fix
   })
 
   return releaseRules
