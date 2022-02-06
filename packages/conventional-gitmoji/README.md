@@ -85,3 +85,5 @@ Adds `semver` to each type to inform `@jeromefitz/semantic` how to handle each c
   }
 }
 ```
+
+**📝️ Please Note:** The values `major|minor|patch` are moving to `breaking|feature|fix`
