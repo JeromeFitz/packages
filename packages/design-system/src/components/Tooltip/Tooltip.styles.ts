@@ -1,6 +1,5 @@
+import { styled } from '@ds/stitches.config'
 import * as TooltipPrimitive from '@radix-ui/react-tooltip'
-
-import { styled } from '../../stitches.config'
 
 const TooltipContent = styled(TooltipPrimitive.Content, {
   backgroundColor: '$transparentPanel',

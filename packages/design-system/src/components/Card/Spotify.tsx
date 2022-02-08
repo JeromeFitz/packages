@@ -14,10 +14,9 @@
  *  breaks through it like the Kool-Aid Man.
  */
 
+import { Box, Flex } from '@ds/components'
+import { styled } from '@ds/stitches.config'
 import NextImage from 'next/image'
-
-import { Box, Flex } from '../../components'
-import { styled } from '../../stitches.config'
 
 const CardContainer = styled('div', {
   display: 'flex',

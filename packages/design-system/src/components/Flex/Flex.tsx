@@ -1,4 +1,4 @@
-import { styled } from '../../stitches.config'
+import { styled } from '@ds/stitches.config'
 
 const Flex = styled('div', {
   boxSizing: 'border-box',

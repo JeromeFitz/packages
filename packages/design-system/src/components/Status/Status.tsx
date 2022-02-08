@@ -1,4 +1,4 @@
-import { styled } from '../../stitches.config'
+import { styled } from '@ds/stitches.config'
 
 const Status = styled('div', {
   borderRadius: '50%',

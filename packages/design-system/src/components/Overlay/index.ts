@@ -1,1 +1,2 @@
-export { Overlay, overlayStyles } from './Overlay'
+export { Overlay } from './Overlay'
+export { overlayStyles } from './Overlay.styles'

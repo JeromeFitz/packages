@@ -1,7 +1,6 @@
+import { CSS } from '@ds/stitches.config'
 import * as TabsPrimitive from '@radix-ui/react-tabs'
 import * as React from 'react'
-
-import { CSS } from '../../stitches.config'
 
 type TabsListPrimitiveProps = React.ComponentProps<typeof TabsPrimitive.List>
 type TabsListProps = TabsListPrimitiveProps & { css?: CSS }

@@ -1,0 +1,59 @@
+{
+  "extends": "@jeromefitz/codestyle/tsconfig.next.json",
+  "compilerOptions": {
+    // // w/ extends
+    // "baseUrl": ".",
+    "incremental": true,
+    // "noUnusedParameters": false, // @todo(lint)
+    "rootDir": "src",
+    "outDir": "dist",
+    // "strict": false,
+    // //
+    // // w/ next-unused
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "alwaysStrict": true,
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "lib": ["dom", "ES2020"],
+    "module": "ES2020",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false, // @todo(lint)
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false, // @todo(lint)
+    "preserveSymlinks": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": false, // @todo(lint)
+    "strictNullChecks": false, // @todo(lint)
+    "strictPropertyInitialization": false, // @todo(lint)
+    "target": "esnext",
+    "paths": {
+      "@jeromefitz/design-system/*": ["../../packages/design-system/dist/*"],
+      "~components/*": ["src/components/*"],
+      "~config/*": ["src/config/*"],
+      "~containers/*": ["src/containers/*"],
+      "~context/*": ["src/context/*"],
+      "~custom/*": ["src/custom/*"],
+      "~data/*": ["src/data/*"],
+      "~hooks/*": ["src/hooks/*"],
+      "~lib/*": ["src/lib/*"],
+      "~pages/*": ["src/pages/*"],
+      "~scripts/*": ["src/scripts/*"],
+      "~styles/*": ["src/styles/*"],
+      "~svg/*": ["src/svg/*"],
+      "~theme/*": ["src/theme/*"],
+      "~utils/*": ["src/utils/*"]
+    }
+  },
+  "include": ["src", "index.d.ts", "next-env.d.ts"],
+  "exclude": ["node_modules", "tests/*.test.ts"]
+}

@@ -1,4 +1,4 @@
-import { styled } from '../../stitches.config'
+import { styled } from '@ds/stitches.config'
 
 const Text = styled('span', {
   // @reset
@@ -232,5 +232,7 @@ const Text = styled('span', {
     variant: 'contrast',
   },
 })
+
+Text.toString = () => `.${Text.className}`
 
 export { Text }

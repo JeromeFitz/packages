@@ -1,6 +1,5 @@
+import { styled } from '@ds/stitches.config'
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox'
-
-import { styled } from '../../stitches.config'
 
 const StyledCheckbox = styled(CheckboxPrimitive.Root, {
   all: 'unset',

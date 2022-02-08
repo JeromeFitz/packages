@@ -1,4 +1,4 @@
-import { styled } from '../../stitches.config'
+import { styled } from '@ds/stitches.config'
 
 const Badge = styled('span', {
   // @reset
@@ -31,7 +31,7 @@ const Badge = styled('span', {
     content: '""',
   },
 
-  // Custom
+  // @custom
   backgroundColor: '$slate3',
   borderRadius: '$pill',
   color: '$slate11',

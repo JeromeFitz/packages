@@ -1,16 +1,24 @@
-import { styled } from '../../stitches.config'
+import { styled } from '@ds/stitches.config'
 
 const Container = styled('div', {
   // @reset
   boxSizing: 'border-box',
   flexShrink: 0,
 
-  // Custom
+  // @custom
   ml: 'auto',
   mr: 'auto',
   px: '$5',
 
   variants: {
+    breakout: {
+      true: {
+        left: 'calc(-50vw + 50%)',
+        position: 'relative',
+        px: '0',
+        width: '100vw',
+      },
+    },
     size: {
       '1': {
         maxWidth: '430px',

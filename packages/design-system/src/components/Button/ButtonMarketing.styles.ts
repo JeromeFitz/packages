@@ -1,4 +1,4 @@
-import { darkTheme, styled } from '../../stitches.config'
+import { darkTheme, styled } from '@ds/stitches.config'
 
 const StyledButton = styled('button', {
   all: 'unset',
@@ -8,7 +8,7 @@ const StyledButton = styled('button', {
   display: 'inline-flex',
   WebkitTapHighlightColor: 'rgba(0,0,0,0)',
 
-  // Custom
+  // @custom
   height: '$7',
   px: '$4',
   fontFamily: '$untitled',

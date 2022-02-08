@@ -2,6 +2,7 @@
   "name": "@jeromefitz/packages",
   "workspaces": {
     "packages": [
+      "examples/*",
       "packages/*"
     ],
     "nohoist": []

@@ -1,4 +1,4 @@
-import { styled } from '../../stitches.config'
+import { styled } from '@ds/stitches.config'
 
 const Banner = styled('div', {
   // @reset
@@ -10,10 +10,10 @@ const Banner = styled('div', {
     boxSizing: 'border-box',
   },
 
-  display: 'flex',
-  justifyContent: 'center',
   alignItems: 'center',
+  display: 'flex',
   gap: '$3',
+  justifyContent: 'center',
 
   variants: {
     size: {

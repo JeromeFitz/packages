@@ -51,7 +51,9 @@ const StyledArrow = styled(TooltipPrimitive.Arrow, {
 /**
  * @exports
  */
-export const Tooltip = TooltipPrimitive.Root
-export const TooltipTrigger = TooltipPrimitive.Trigger
-export const TooltipContent = StyledContent
-export const TooltipArrow = StyledArrow
+const Tooltip = TooltipPrimitive.Root
+const TooltipTrigger = TooltipPrimitive.Trigger
+const TooltipContent = StyledContent
+const TooltipArrow = StyledArrow
+
+export { Tooltip, TooltipTrigger, TooltipContent, TooltipArrow }

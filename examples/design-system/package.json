@@ -1,0 +1,40 @@
+{
+  "name": "@examples/design-system",
+  "version": "0.0.0",
+  "description": "Example: Design System Playground to test Components",
+  "author": {
+    "name": "Jerome Fitzgerald",
+    "email": "j@jeromefitzgerald.com",
+    "url": "https://jeromefitzgerald.com"
+  },
+  "keywords": [
+    "design system",
+    "radix-ui"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/jeromefitz/packages.git",
+    "directory": "examples/design-system"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "private": false,
+  "scripts": {
+    "web:dev": "next dev"
+  },
+  "dependencies": {
+    "next-themes": "0.0.15",
+    "next": "12.0.10",
+    "react-dom": "17.0.2",
+    "react": "17.0.2"
+  },
+  "devDependencies": {
+    "next-compose-plugins": "2.2.1",
+    "next-transpile-modules": "9.0.0"
+  }
+}

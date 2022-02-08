@@ -1,4 +1,4 @@
-import { styled } from '../../stitches.config'
+import { styled } from '@ds/stitches.config'
 
 const TableCaption = styled('caption', {
   textAlign: 'start',
