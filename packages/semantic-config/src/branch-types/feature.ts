@@ -1,3 +1,3 @@
-const feature = ['changelog']
+const feature = []
 
 export default feature

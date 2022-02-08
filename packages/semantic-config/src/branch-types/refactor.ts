@@ -1,3 +1,3 @@
-const refactor = ['notion--website-oss']
+const refactor = []
 
 export default refactor

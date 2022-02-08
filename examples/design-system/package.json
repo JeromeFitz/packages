@@ -25,6 +25,7 @@
   },
   "private": false,
   "scripts": {
+    "semantic-release": "echo 🚧️ hack skip => semantic-release",
     "web:dev": "next dev"
   },
   "dependencies": {
