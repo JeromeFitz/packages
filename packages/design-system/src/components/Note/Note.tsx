@@ -1,5 +1,5 @@
-// import { Box, Emoji } from '../../components'
-import { Box } from '../../components'
+// import { Box, Emoji } from '@ds/components'
+import { Box } from '@ds/components'
 
 const Note = ({ children, label = 'Note:' }) => {
   return (
@@ -7,18 +7,6 @@ const Note = ({ children, label = 'Note:' }) => {
       <Box
         as="div"
         css={{
-          // padding: 7px var(--geist-gap-half);
-          // display: flex;
-          // align-items: center;
-          // min-height: var(--geist-form-height);
-          // border-radius: var(--geist-radius);
-          // color: var(--themed-fg);
-          // background: var(--themed-bg);
-          // border: 1px solid var(--themed-border,var(--accents-2));
-          // font-size: 14px;
-          // line-height: 24px;
-          // word-break: break-word;
-          // box-sizing: border-box;
           p: '1rem',
           display: 'flex',
           alignItems: 'center',
@@ -70,8 +58,6 @@ const Note = ({ children, label = 'Note:' }) => {
         <Box
           as="div"
           css={{
-            // margin-left: auto;
-            // padding-left: var(--geist-gap-half);
             ml: 'auto',
             pl: '0.5rem',
           }}

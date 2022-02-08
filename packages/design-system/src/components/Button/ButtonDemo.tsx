@@ -1,4 +1,4 @@
-import { darkTheme, styled } from '../../stitches.config'
+import { darkTheme, styled } from '@ds/stitches.config'
 
 const ButtonDemo = styled('button', {
   // @reset

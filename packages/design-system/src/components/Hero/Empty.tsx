@@ -1,5 +1,5 @@
-import { Box, Text } from '../../components'
-import { styled } from '../../stitches.config'
+import { Box, Text } from '@ds/components'
+import { styled } from '@ds/stitches.config'
 
 const EmptyContent = styled('div', {
   position: 'absolute',

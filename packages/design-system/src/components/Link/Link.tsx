@@ -1,4 +1,5 @@
-import { styled } from '../../stitches.config'
+import { Text } from '@ds/components'
+import { styled } from '@ds/stitches.config'
 
 const Link = styled('a', {
   alignItems: 'center',
@@ -9,9 +10,9 @@ const Link = styled('a', {
   '@media (prefers-reduced-motion)': {
     transition: 'none',
   },
-  // [`& ${Text}`]: {
-  //   color: 'inherit',
-  // },
+  [`& ${Text}`]: {
+    color: 'inherit',
+  },
   variants: {
     variant: {
       blue: {

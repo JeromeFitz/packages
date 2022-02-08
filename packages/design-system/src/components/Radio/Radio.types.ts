@@ -1,7 +1,6 @@
+import { CSS, VariantProps } from '@ds/stitches.config'
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group'
 import * as React from 'react'
-
-import { CSS, VariantProps } from '../../stitches.config'
 
 import { StyledRadio } from './Radio.styles'
 

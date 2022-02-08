@@ -1,4 +1,4 @@
-import { styled } from '../../stitches.config'
+import { styled } from '@ds/stitches.config'
 
 const Button = styled('button', {
   // @reset
@@ -13,14 +13,14 @@ const Button = styled('button', {
     boxSizing: 'border-box',
   },
 
-  // Custom reset?
+  // @custom reset?
   display: 'inline-flex',
   flexShrink: 0,
   justifyContent: 'center',
   lineHeight: '1',
   WebkitTapHighlightColor: 'rgba(0,0,0,0)',
 
-  // Custom
+  // @custom
   height: '$5',
   px: '$2',
   fontFamily: '$untitled',

@@ -2,10 +2,10 @@
  * @todo This should _not_ be here, this would be an implementation _of_
  *       not an implementation _from_.
  */
-import NextImage from 'next/image'
 
-import { Box } from '../../components'
-import { styled } from '../../stitches.config'
+import { Box } from '@ds/components'
+import { styled } from '@ds/stitches.config'
+import NextImage from 'next/image'
 
 /**
  * @niceRec

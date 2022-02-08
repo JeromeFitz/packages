@@ -1,9 +1,8 @@
+import { IconButton, overlayStyles, panelStyles } from '@ds/components'
+import { styled, CSS } from '@ds/stitches.config'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { Cross1Icon } from '@radix-ui/react-icons'
 import * as React from 'react'
-
-import { IconButton, overlayStyles, panelStyles } from '../../components'
-import { styled, CSS } from '../../stitches.config'
 
 type DialogProps = React.ComponentProps<typeof DialogPrimitive.Root> & {
   children: React.ReactNode

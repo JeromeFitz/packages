@@ -1,7 +1,6 @@
+import { VariantProps, CSS } from '@ds/stitches.config'
 import * as SwitchPrimitive from '@radix-ui/react-switch'
 import * as React from 'react'
-
-import { VariantProps, CSS } from '../../stitches.config'
 
 import { StyledSwitch } from './Switch.styles'
 

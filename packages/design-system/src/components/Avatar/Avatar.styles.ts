@@ -1,6 +1,5 @@
+import { styled } from '@ds/stitches.config'
 import * as AvatarPrimitive from '@radix-ui/react-avatar'
-
-import { styled } from '../../stitches.config'
 
 const StyledAvatar = styled(AvatarPrimitive.Root, {
   alignItems: 'center',

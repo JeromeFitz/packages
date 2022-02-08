@@ -1,6 +1,5 @@
+import { styled } from '@ds/stitches.config'
 import * as SwitchPrimitive from '@radix-ui/react-switch'
-
-import { styled } from '../../stitches.config'
 
 const StyledThumb = styled(SwitchPrimitive.Thumb, {
   position: 'absolute',

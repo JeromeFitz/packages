@@ -1,6 +1,5 @@
+import { Separator } from '@ds/components'
 import * as React from 'react'
-
-import { Separator } from '../../components'
 
 import { StyledTabsList } from './Tabs.styles'
 import type { TabsListProps } from './Tabs.types'

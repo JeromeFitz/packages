@@ -36,7 +36,14 @@
     "strictNullChecks": false, // @todo(lint)
     "strictPropertyInitialization": false, // @todo(lint)
     "target": "esnext",
-    "tsBuildInfoFile": ".tsbuildinfo"
+    "tsBuildInfoFile": ".tsbuildinfo",
+    "paths": {
+      "@ds/stitches.config": ["src/stitches.config"],
+      "@ds/components": ["src/components/index"],
+      "@ds/components/*": ["src/components/*"],
+      "@ds/custom/*": ["src/custom/*"],
+      "@ds/hooks/*": ["src/hooks/*"]
+    }
   },
   "include": ["src", "index.d.ts", "next-env.d.ts"],
   "exclude": ["node_modules", "**/*.test.ts"]
