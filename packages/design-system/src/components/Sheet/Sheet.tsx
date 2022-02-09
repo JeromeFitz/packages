@@ -22,11 +22,11 @@ const StyledOverlay = styled(DialogPrimitive.Overlay, overlayStyles, {
   left: 0,
 
   '&[data-state="open"]': {
-    animation: `${fadeIn} 150ms cubic-bezier(0.22, 1, 0.36, 1)`,
+    animation: `${fadeIn} 250ms cubic-bezier(0.22, 1, 0.36, 1)`,
   },
 
   '&[data-state="closed"]': {
-    animation: `${fadeOut} 150ms cubic-bezier(0.22, 1, 0.36, 1)`,
+    animation: `${fadeOut} 250ms cubic-bezier(0.22, 1, 0.36, 1)`,
   },
 })
 
@@ -68,11 +68,11 @@ const StyledContent = styled(DialogPrimitive.Content, {
   // },
 
   '&[data-state="open"]': {
-    animation: `${slideIn} 150ms cubic-bezier(0.22, 1, 0.36, 1)`,
+    animation: `${slideIn} 250ms cubic-bezier(0.22, 1, 0.36, 1)`,
   },
 
   '&[data-state="closed"]': {
-    animation: `${slideOut} 150ms cubic-bezier(0.22, 1, 0.36, 1)`,
+    animation: `${slideOut} 250ms cubic-bezier(0.22, 1, 0.36, 1)`,
   },
 
   variants: {

@@ -37,7 +37,8 @@
     "strictPropertyInitialization": false, // @todo(lint)
     "target": "esnext",
     "paths": {
-      "@jeromefitz/design-system/*": ["../../packages/design-system/dist/*"],
+      // "@jeromefitz/design-system/*": ["../../packages/design-system/dist/*"],
+      // "@jeromefitz/design-system/*": ["../../packages/design-system/src/*"],
       "~components/*": ["src/components/*"],
       "~config/*": ["src/config/*"],
       "~containers/*": ["src/containers/*"],

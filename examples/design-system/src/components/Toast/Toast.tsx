@@ -45,7 +45,7 @@ const items: IItems[] = [
   { title: 'Warning', toast: { text, type: 'warning' } },
 ]
 
-const Toast = () => {
+const _Toast = () => {
   const toasts = useToast()
   const [message, messageSet] = React.useState(text)
   const [preserve, preserveSet] = React.useState(false)
@@ -169,4 +169,4 @@ const Toast = () => {
   )
 }
 
-export { Toast }
+export { _Toast as Toast }

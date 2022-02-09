@@ -2,6 +2,7 @@ import { styled } from '@ds/stitches.config'
 import * as SeparatorPrimitive from '@radix-ui/react-separator'
 
 const Separator = styled(SeparatorPrimitive.Root, {
+  'aria-hidden': true,
   border: 'none',
   margin: 0,
   flexShrink: 0,

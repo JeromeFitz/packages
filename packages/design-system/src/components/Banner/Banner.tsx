@@ -15,6 +15,11 @@ const Banner = styled('div', {
   gap: '$3',
   justifyContent: 'center',
 
+  transition: 'background-color 0.25s ease-in-out',
+  '@media (prefers-reduced-motion)': {
+    transition: 'none',
+  },
+
   variants: {
     size: {
       '1': {
@@ -25,18 +30,24 @@ const Banner = styled('div', {
     variant: {
       loContrast: {
         backgroundColor: '$loContrast',
+        // @todo(design) make a choice here
+        // '&:hover': { backgroundColor: '$loContrast' },
       },
       gray: {
         backgroundColor: '$slate3',
+        '&:hover': { backgroundColor: '$slate4' },
       },
       blue: {
         backgroundColor: '$blue3',
+        '&:hover': { backgroundColor: '$blue4' },
       },
       green: {
         backgroundColor: '$green3',
+        '&:hover': { backgroundColor: '$green4' },
       },
       red: {
         backgroundColor: '$red3',
+        '&:hover': { backgroundColor: '$red4' },
       },
     },
     rounded: {
