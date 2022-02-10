@@ -1,4 +1,4 @@
-import { Link, PageHeading } from '@jeromefitz/design-system/components'
+import { Link, PageHeading } from '@jeromefitz/design-system/src/components'
 import NextLink from 'next/link'
 
 function Home({}) {

@@ -6,7 +6,7 @@ import {
   Link,
   Separator,
   Text,
-} from '@jeromefitz/design-system/components'
+} from '@jeromefitz/design-system/src/components'
 import { ArrowTopRightIcon, CalendarIcon, Cross1Icon } from '@radix-ui/react-icons'
 import NextLink from 'next/link'
 

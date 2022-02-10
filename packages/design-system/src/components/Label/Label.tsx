@@ -1,6 +1,7 @@
-import { Text } from '@ds/components'
-import { styled } from '@ds/stitches.config'
 import * as LabelPrimitive from '@radix-ui/react-label'
+
+import { styled } from '../../stitches.config'
+import { Text } from '../Text/Text'
 
 const Label = styled(LabelPrimitive.Root, Text, {
   display: 'inline-block',

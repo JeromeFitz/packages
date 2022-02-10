@@ -31,7 +31,6 @@
   "dependencies": {
     "@artsy/fresnel": "3.2.2",
     "@heroicons/react": "1.0.5",
-    "@jeromefitz/design-system": "file:../../packages/design-system/dist",
     "@mantine/hooks": "3.6.7",
     "date-fns": "2.28.0",
     "date-fns-tz": "1.2.2",

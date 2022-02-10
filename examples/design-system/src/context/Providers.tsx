@@ -1,5 +1,5 @@
-import { ToastProvider, Toaster } from '@jeromefitz/design-system/components'
-import { darkTheme } from '@jeromefitz/design-system/stitches.config'
+import { ToastProvider, Toaster } from '@jeromefitz/design-system/src/components'
+import { darkTheme } from '@jeromefitz/design-system/src/stitches.config'
 import { ThemeProvider } from 'next-themes'
 
 import { KBarProviderApp } from '../components/KBar'

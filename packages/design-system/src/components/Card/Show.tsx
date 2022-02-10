@@ -1,5 +1,5 @@
-import { Box, Flex } from '@ds/components'
-import { styled } from '@ds/stitches.config'
+import { styled } from '../../stitches.config'
+import { Box, Flex } from '../index'
 const css_card = {
   backgroundColor: '$colors$gray4',
   border: '1px solid $colors$violet7',

@@ -1,4 +1,4 @@
-import { Heading, Paragraph, Skeleton } from '@ds/components'
+import { Heading, Paragraph, Skeleton } from '../index'
 
 const SkeletonTitle = () => (
   <Skeleton

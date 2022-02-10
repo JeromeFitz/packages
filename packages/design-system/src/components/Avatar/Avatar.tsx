@@ -1,5 +1,6 @@
-import { Box, Status } from '@ds/components'
 import * as React from 'react'
+
+import { Box, Status } from '../index'
 
 import {
   StyledAvatar,

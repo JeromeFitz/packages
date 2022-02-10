@@ -1,4 +1,4 @@
-import { darkTheme, styled } from '@ds/stitches.config'
+import { darkTheme, styled } from '../../stitches.config'
 
 const Toast = styled('div', {
   alignItems: 'center',

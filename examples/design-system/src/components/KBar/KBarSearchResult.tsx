@@ -1,4 +1,10 @@
-import { Box, Flex, Heading, Kbd, Text } from '@jeromefitz/design-system/components'
+import {
+  Box,
+  Flex,
+  Heading,
+  Kbd,
+  Text,
+} from '@jeromefitz/design-system/src/components'
 import { ActionImpl } from 'kbar/lib/action'
 import * as React from 'react'
 

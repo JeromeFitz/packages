@@ -1,5 +1,5 @@
-import { Box, Container } from '@jeromefitz/design-system/components'
-import { globalCss } from '@jeromefitz/design-system/stitches.config'
+import { Box, Container } from '@jeromefitz/design-system/src/components'
+import { globalCss } from '@jeromefitz/design-system/src/stitches.config'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import * as React from 'react'

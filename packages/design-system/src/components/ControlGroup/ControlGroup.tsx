@@ -1,5 +1,8 @@
-import { Button, Select, TextField } from '@ds/components'
-import { styled } from '@ds/stitches.config'
+import { styled } from '../../stitches.config'
+// import { Button, Select, TextField } from '../index'
+import { Button } from '../Button/Button'
+import { Select } from '../Select/Select'
+import { TextField } from '../TextField/TextField'
 
 const ControlGroup = styled('div', {
   display: 'flex',

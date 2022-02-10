@@ -1,8 +1,9 @@
-import { IconButton, overlayStyles } from '@ds/components'
-import { styled, keyframes, VariantProps, CSS } from '@ds/stitches.config'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { Cross1Icon } from '@radix-ui/react-icons'
 import * as React from 'react'
+
+import { styled, keyframes, VariantProps, CSS } from '../../stitches.config'
+import { IconButton, overlayStyles } from '../index'
 
 const fadeIn = keyframes({
   from: { opacity: '0' },

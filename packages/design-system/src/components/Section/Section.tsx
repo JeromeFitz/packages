@@ -1,4 +1,4 @@
-import { styled } from '@ds/stitches.config'
+import { styled } from '../../stitches.config'
 
 const Section = styled('section', {
   // @reset

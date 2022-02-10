@@ -1,4 +1,4 @@
-import { getCssText, reset } from '@jeromefitz/design-system/stitches.config'
+import { getCssText, reset } from '@jeromefitz/design-system/src/stitches.config'
 import Document, {
   DocumentContext,
   Html,

@@ -1,4 +1,4 @@
-import { Box, LoadingDots } from '@jeromefitz/design-system/components'
+import { Box, LoadingDots } from '@jeromefitz/design-system/src/components'
 import { useFocusTrap } from '@mantine/hooks'
 import { KBarPortal, KBarPositioner, KBarAnimator, KBarSearch } from 'kbar'
 import dynamic from 'next/dynamic'

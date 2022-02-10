@@ -1,4 +1,4 @@
-import { styled } from '@ds/stitches.config'
+import { styled } from '../../stitches.config'
 
 const TextField = styled('input', {
   // @reset
@@ -136,5 +136,7 @@ const TextField = styled('input', {
     size: '1',
   },
 })
+
+TextField.toString = () => `.${TextField.className}`
 
 export { TextField }

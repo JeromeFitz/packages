@@ -1,5 +1,6 @@
-import { Box, Text } from '@ds/components'
 import * as TooltipPrimitive from '@radix-ui/react-tooltip'
+
+import { Box, Text } from '../index'
 
 import { TooltipContent } from './Tooltip.styles'
 import type { TooltipProps } from './Tooltip.types'

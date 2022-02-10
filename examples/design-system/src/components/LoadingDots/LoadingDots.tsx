@@ -1,4 +1,4 @@
-import { Flex, Heading, LoadingDots } from '@jeromefitz/design-system/components'
+import { Flex, Heading, LoadingDots } from '@jeromefitz/design-system/src/components'
 
 import { Separator } from '../Separator'
 /**

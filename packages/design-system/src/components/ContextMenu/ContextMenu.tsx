@@ -1,10 +1,11 @@
-import { Box, Flex, panelStyles } from '@ds/components'
-import { styled, CSS } from '@ds/stitches.config'
 import * as ContextMenuPrimitive from '@radix-ui/react-context-menu'
 import { CheckIcon } from '@radix-ui/react-icons'
 import * as React from 'react'
 
+import { styled, CSS } from '../../stitches.config'
+import { Box, Flex } from '../index'
 import { menuCss, separatorCss, itemCss, labelCss } from '../Menu/Menu.styles'
+import { panelStyles } from '../Panel/Panel.styles'
 
 const ContextMenu = ContextMenuPrimitive.Root
 const ContextMenuTrigger = ContextMenuPrimitive.Trigger

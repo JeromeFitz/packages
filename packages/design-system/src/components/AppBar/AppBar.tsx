@@ -1,4 +1,4 @@
-import { styled } from '@ds/stitches.config'
+import { styled } from '../../stitches.config'
 
 const AppBar = styled('div', {
   boxSizing: 'border-box',

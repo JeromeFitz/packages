@@ -1,6 +1,7 @@
-import { Text } from '@ds/components'
-import { CSS, VariantProps } from '@ds/stitches.config'
 import * as React from 'react'
+
+import { CSS, VariantProps } from '../../stitches.config'
+import { Text } from '../index'
 
 const DEFAULT_TAG = 'h1'
 

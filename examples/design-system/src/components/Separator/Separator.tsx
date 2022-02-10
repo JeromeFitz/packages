@@ -1,4 +1,4 @@
-import { Separator } from '@jeromefitz/design-system/components'
+import { Separator } from '@jeromefitz/design-system/src/components'
 
 const _Separator = () => {
   return (

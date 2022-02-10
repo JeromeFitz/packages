@@ -3,8 +3,6 @@
  * @ref  https://github.com/radix-ui/website
  *
  */
-import { Box } from '@ds/components'
-import { styled } from '@ds/stitches.config'
 import { composeEventHandlers } from '@radix-ui/primitive'
 import { useComposedRefs } from '@radix-ui/react-compose-refs'
 import { createContext } from '@radix-ui/react-context'
@@ -12,6 +10,9 @@ import { useCallbackRef } from '@radix-ui/react-use-callback-ref'
 import debounce from 'lodash/debounce'
 import * as React from 'react'
 import smoothscroll from 'smoothscroll-polyfill'
+
+import { styled } from '../../stitches.config'
+import { Box } from '../index'
 
 const [CarouselProvider, useCarouselContext] = createContext<{
   _: any

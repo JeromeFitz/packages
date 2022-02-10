@@ -10,8 +10,8 @@ import {
   // SheetDescription,
   Heading,
   Text,
-} from '@jeromefitz/design-system/components'
-import { darkTheme } from '@jeromefitz/design-system/stitches.config'
+} from '@jeromefitz/design-system/src/components'
+import { darkTheme } from '@jeromefitz/design-system/src/stitches.config'
 import * as Portal from '@radix-ui/react-portal'
 import { useKBar } from 'kbar'
 import { useTheme } from 'next-themes'

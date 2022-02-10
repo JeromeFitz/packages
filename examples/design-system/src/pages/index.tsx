@@ -1,4 +1,4 @@
-import { PageHeading, Text } from '@jeromefitz/design-system/components'
+import { PageHeading, Text } from '@jeromefitz/design-system/src/components'
 
 // import { LoadingDots } from '../components/LoadingDots'
 // import { Toast } from '../components/Toast'

@@ -1,5 +1,3 @@
-import { Box } from '@ds/components'
-import { styled } from '@ds/stitches.config'
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
 import {
   CaretDownIcon,
@@ -11,7 +9,9 @@ import {
 } from '@radix-ui/react-icons'
 import * as React from 'react'
 
+import { styled } from '../../stitches.config'
 import { ButtonDemo } from '../Button/ButtonDemo'
+import { Box } from '../index'
 
 const DropdownMenuArrow = styled(DropdownMenuPrimitive.Arrow, {
   fill: '$loContrast',

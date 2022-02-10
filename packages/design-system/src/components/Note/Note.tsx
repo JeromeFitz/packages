@@ -1,5 +1,5 @@
-// import { Box, Emoji } from '@ds/components'
-import { Box } from '@ds/components'
+// import { Box, Emoji } from '../index'
+import { Box } from '../index'
 
 const Note = ({ children, label = 'Note:' }) => {
   return (
