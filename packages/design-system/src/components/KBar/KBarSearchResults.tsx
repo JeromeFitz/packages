@@ -1,5 +1,4 @@
 import { KBarResults, useMatches } from 'kbar'
-import * as React from 'react'
 
 import { KBarSearchResult } from './index'
 

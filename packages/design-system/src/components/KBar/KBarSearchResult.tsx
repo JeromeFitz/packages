@@ -6,7 +6,6 @@ import {
   Text,
 } from '@jeromefitz/design-system/src/components'
 import { ActionImpl } from 'kbar/lib/action'
-import * as React from 'react'
 
 import { Separator } from '../Separator'
 

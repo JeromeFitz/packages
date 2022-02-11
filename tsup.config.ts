@@ -8,6 +8,7 @@ const config: Options = {
   minify: true,
   onSuccess: 'yarn copy',
   outDir: 'dist',
+  silent: false,
   sourcemap: false,
   splitting: false,
   target: ['node16'],

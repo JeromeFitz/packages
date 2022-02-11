@@ -28,6 +28,7 @@ const entry = [
   'src/hooks/*',
   //
   'src/components/**',
+  '!src/components/**/*.md',
 ]
 
 const external = [
