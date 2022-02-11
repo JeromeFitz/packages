@@ -2,6 +2,7 @@ import {
   AppBar,
   Button,
   Flex,
+  // Kbd,
   Sheet,
   SheetContent,
   SheetTrigger,
@@ -63,13 +64,25 @@ const _AppBar = ({}) => {
     >
       <Flex direction="row" justify="between">
         <Flex css={{ ml: '$3' }} justify="start">
-          <Button
-            css={{ mr: '$2', '&:hover': { cursor: 'pointer' } }}
-            size="1"
-            onClick={kbar.query.toggle}
-          >
-            Menu: KBar
-          </Button>
+          <Flex direction="column">
+            <Button
+              css={{
+                py: '$2',
+                mr: '$2',
+                '@hover': {
+                  '&:hover, &:hover + &': {
+                    cursor: 'pointer',
+                  },
+                },
+              }}
+              size="1"
+              onClick={kbar.query.toggle}
+              ghost
+            >
+              Menu: KBar
+              {/* <Kbd css={{}}>CMD + K</Kbd> */}
+            </Button>
+          </Flex>
           <Sheet>
             <SheetTrigger asChild>
               <Button css={{ '&:hover': { cursor: 'pointer' } }} size="1">

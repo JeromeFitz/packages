@@ -1,8 +1,9 @@
 import { ToastProvider, Toaster } from '@jeromefitz/design-system/src/components'
 import { darkTheme } from '@jeromefitz/design-system/src/stitches.config'
+import { KBarProvider } from 'kbar'
 import { ThemeProvider } from 'next-themes'
 
-import { KBarProviderApp } from '../components/KBar'
+import { KBar } from '../components/KBar'
 import { MediaContextProvider } from '../context/Media'
 
 const Providers = ({ children }) => {
@@ -15,10 +16,11 @@ const Providers = ({ children }) => {
         defaultTheme="system"
       >
         <ToastProvider>
-          <KBarProviderApp>
+          <KBarProvider>
             {children}
+            <KBar />
             <Toaster />
-          </KBarProviderApp>
+          </KBarProvider>
         </ToastProvider>
       </ThemeProvider>
     </MediaContextProvider>
