@@ -1,7 +1,8 @@
-import { Text } from '@ds/components'
-import { CSS } from '@ds/stitches.config'
 import merge from 'lodash/merge'
 import * as React from 'react'
+
+import { CSS } from '../../stitches.config'
+import { Text } from '../index'
 
 import type {
   HeadingProps,

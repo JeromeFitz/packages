@@ -40,8 +40,8 @@
     "semantic-release:mono": "semantic-release -e semantic-release-monorepo"
   },
   "dependencies": {
-    "isomorphic-unfetch": "3.1.0",
     "github-slugger": "1.4.0",
+    "isomorphic-unfetch": "3.1.0",
     "plaiceholder": "2.2.0"
   },
   "type": "module",

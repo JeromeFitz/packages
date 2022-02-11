@@ -55,9 +55,11 @@
     "ds:dev": "turbo run dev --scope=*design-system*",
     "t:test": "turbo run lint --scope=@jeromefitz/semantic-config -vvv"
   },
-  "devDependencies": {
+  "dependencies": {
     "@babel/eslint-parser": "7.17.0",
+    "@manypkg/cli": "0.19.1",
     "@types/is-ci": "3.0.0",
+    "@types/node": "16.11.7",
     "dotenv": "16.0.0",
     "husky": "7.0.4",
     "is-ci": "3.0.1",

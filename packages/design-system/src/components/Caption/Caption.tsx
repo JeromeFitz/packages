@@ -1,4 +1,4 @@
-import { Text } from '@ds/components'
+import { Text } from '../index'
 
 const Caption = ({ children }) => {
   return (

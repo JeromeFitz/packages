@@ -1,5 +1,5 @@
 // @todo(system)
-import { Box } from '@ds/components'
+import { Box } from '../index'
 
 const Spacer = () => {
   return (

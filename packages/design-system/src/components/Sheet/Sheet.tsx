@@ -1,8 +1,9 @@
-import { IconButton, overlayStyles } from '@ds/components'
-import { styled, keyframes, VariantProps, CSS } from '@ds/stitches.config'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { Cross1Icon } from '@radix-ui/react-icons'
 import * as React from 'react'
+
+import { styled, keyframes, VariantProps, CSS } from '../../stitches.config'
+import { IconButton, overlayStyles } from '../index'
 
 const fadeIn = keyframes({
   from: { opacity: '0' },
@@ -22,11 +23,11 @@ const StyledOverlay = styled(DialogPrimitive.Overlay, overlayStyles, {
   left: 0,
 
   '&[data-state="open"]': {
-    animation: `${fadeIn} 150ms cubic-bezier(0.22, 1, 0.36, 1)`,
+    animation: `${fadeIn} 250ms cubic-bezier(0.22, 1, 0.36, 1)`,
   },
 
   '&[data-state="closed"]': {
-    animation: `${fadeOut} 150ms cubic-bezier(0.22, 1, 0.36, 1)`,
+    animation: `${fadeOut} 250ms cubic-bezier(0.22, 1, 0.36, 1)`,
   },
 })
 
@@ -68,11 +69,11 @@ const StyledContent = styled(DialogPrimitive.Content, {
   // },
 
   '&[data-state="open"]': {
-    animation: `${slideIn} 150ms cubic-bezier(0.22, 1, 0.36, 1)`,
+    animation: `${slideIn} 250ms cubic-bezier(0.22, 1, 0.36, 1)`,
   },
 
   '&[data-state="closed"]': {
-    animation: `${slideOut} 150ms cubic-bezier(0.22, 1, 0.36, 1)`,
+    animation: `${slideOut} 250ms cubic-bezier(0.22, 1, 0.36, 1)`,
   },
 
   variants: {

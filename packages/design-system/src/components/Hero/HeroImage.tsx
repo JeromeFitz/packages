@@ -3,9 +3,10 @@
  *       not an implementation _from_.
  */
 
-import { Box } from '@ds/components'
-import { styled } from '@ds/stitches.config'
 import NextImage from 'next/image'
+
+import { styled } from '../../stitches.config'
+import { Box } from '../index'
 
 /**
  * @niceRec

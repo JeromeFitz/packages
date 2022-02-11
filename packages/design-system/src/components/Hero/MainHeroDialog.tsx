@@ -1,11 +1,11 @@
-import { Flex, Text } from '@ds/components'
-import { styled } from '@ds/stitches.config'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { Cross2Icon } from '@radix-ui/react-icons'
 import * as React from 'react'
 
+import { styled } from '../../stitches.config'
 import { ButtonDemo } from '../Button/ButtonDemo'
 import { ButtonDemoIcon } from '../Button/ButtonDemoIcon'
+import { Flex, Text } from '../index'
 
 const DialogContent = styled(DialogPrimitive.Content, {
   position: 'absolute',

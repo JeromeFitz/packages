@@ -1,7 +1,8 @@
-import { Flex } from '@ds/components'
-import { styled, CSS } from '@ds/stitches.config'
 import { CheckIcon } from '@radix-ui/react-icons'
 import * as React from 'react'
+
+import { styled, CSS } from '../../stitches.config'
+import { Flex } from '../index'
 
 const StyledVerifiedBadge = styled('div', Flex, {
   alignItems: 'center',

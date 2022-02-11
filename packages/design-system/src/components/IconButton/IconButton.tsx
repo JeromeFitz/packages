@@ -1,4 +1,4 @@
-import { styled } from '@ds/stitches.config'
+import { styled } from '../../stitches.config'
 
 const IconButton = styled('button', {
   // @reset

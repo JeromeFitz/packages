@@ -1,4 +1,4 @@
-import { css } from '@ds/stitches.config'
+import { css } from '../../stitches.config'
 
 const baseItemCss = css({
   display: 'flex',

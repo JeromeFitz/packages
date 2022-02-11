@@ -1,22 +1,22 @@
-import { Box, PageHeading } from '@jeromefitz/design-system/components'
+import { PageHeading, Text } from '@jeromefitz/design-system/src/components'
 
-import { AppBar } from '../components/AppBar'
-import { LoadingDots } from '../components/LoadingDots'
-import { Toast } from '../components/Toast'
+// import { LoadingDots } from '../components/LoadingDots'
+// import { Toast } from '../components/Toast'
+import { LOTS_O_TEXT } from '../lib/constants'
 
 function Home({}) {
   return (
-    <Box>
-      <AppBar />
-      <Box css={{ pt: '$4' }}>
-        <PageHeading
-          title="Design System"
-          description="An example of in-progress work."
-        />
-        <LoadingDots />
-        <Toast />
-      </Box>
-    </Box>
+    <>
+      <PageHeading
+        title="Design System"
+        description="An example of in-progress work."
+      />
+      {/* <LoadingDots /> */}
+      {/* <Toast /> */}
+      <Text css={{ lineHeight: '1.25' }} size="5">
+        {LOTS_O_TEXT}
+      </Text>
+    </>
   )
 }
 

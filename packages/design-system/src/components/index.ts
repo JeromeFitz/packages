@@ -75,6 +75,21 @@ export { Grid } from './Grid'
 export { Heading } from './Heading'
 export { IconButton } from './IconButton'
 export { Image } from './Image'
+export {
+  // Native
+  KBarProvider,
+  // Wrapper Components
+  KBarDefault,
+  KBarPortal,
+  KBarSearch,
+  KBarSearchResult,
+  KBarSearchResults,
+  KBarSubscriptions,
+  // Wrapper Components Styles
+  KBarPositionerStyle,
+  KBarAnimatorStyle,
+  KBarSearchStyle,
+} from './KBar'
 export { Kbd } from './Kbd'
 export { Label } from './Label'
 export { Link } from './Link'

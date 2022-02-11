@@ -1,5 +1,6 @@
-import { Flex, Box } from '@ds/components'
 import * as React from 'react'
+
+import { Flex, Box } from '../index'
 
 function canUseDOM() {
   return !!(

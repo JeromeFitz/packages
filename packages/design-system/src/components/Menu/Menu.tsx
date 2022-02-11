@@ -1,8 +1,10 @@
-import { Box, Flex, panelStyles } from '@ds/components'
-import { styled, CSS } from '@ds/stitches.config'
 import { CheckIcon } from '@radix-ui/react-icons'
 import * as MenuPrimitive from '@radix-ui/react-menu'
 import * as React from 'react'
+
+import { styled, CSS } from '../../stitches.config'
+import { Box, Flex } from '../index'
+import { panelStyles } from '../Panel/Panel.styles'
 
 import { itemCss, labelCss, menuCss, separatorCss } from './Menu.styles'
 

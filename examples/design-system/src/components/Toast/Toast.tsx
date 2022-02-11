@@ -9,11 +9,11 @@ import {
   Separator,
   Switch,
   TextField,
-} from '@jeromefitz/design-system/components'
+} from '@jeromefitz/design-system/src/components'
 import type {
   IToast,
   ToastType,
-} from '@jeromefitz/design-system/components/Toast/Toast.types'
+} from '@jeromefitz/design-system/src/components/Toast/Toast.types'
 import _debounce from 'lodash/debounce'
 import * as React from 'react'
 
@@ -45,7 +45,7 @@ const items: IItems[] = [
   { title: 'Warning', toast: { text, type: 'warning' } },
 ]
 
-const Toast = () => {
+const _Toast = () => {
   const toasts = useToast()
   const [message, messageSet] = React.useState(text)
   const [preserve, preserveSet] = React.useState(false)
@@ -69,7 +69,7 @@ const Toast = () => {
       <Heading css={{ mb: '$4' }} size="3">
         🍞️ Toast
       </Heading>
-      <Separator css={{ my: '1rem !important', width: '100% !important' }} />
+      <Separator decorative margin="my3" size="full" />
       <Heading css={{ mb: '$4' }} size="2">
         📦️ Default
       </Heading>
@@ -89,7 +89,7 @@ const Toast = () => {
           </React.Fragment>
         )
       })}
-      <Separator css={{ my: '1rem !important', width: '100% !important' }} />
+      <Separator decorative margin="my3" size="full" />
       <Heading css={{ mb: '$4' }} size="2">
         🎛️ Custom
       </Heading>
@@ -169,4 +169,4 @@ const Toast = () => {
   )
 }
 
-export { Toast }
+export { _Toast as Toast }

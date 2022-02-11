@@ -39,6 +39,12 @@ const global = {
   },
 
   'h1, h2, h3, h4, h5': { fontWeight: 700 },
+
+  '.hi2ri': {
+    '& > path': {
+      strokeWidth: '1.5 !important',
+    },
+  },
 }
 
 export default global

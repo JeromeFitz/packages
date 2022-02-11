@@ -1,6 +1,6 @@
 // import * as React from 'react'
 
-import { styled } from '@ds/stitches.config'
+import { styled } from '../../stitches.config'
 
 const BoxLink = styled('a', {
   display: 'block',

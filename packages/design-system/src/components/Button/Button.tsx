@@ -1,4 +1,4 @@
-import { styled } from '@ds/stitches.config'
+import { styled } from '../../stitches.config'
 
 const Button = styled('button', {
   // @reset
@@ -329,5 +329,7 @@ const Button = styled('button', {
     variant: 'gray',
   },
 })
+
+Button.toString = () => `.${Button.className}`
 
 export { Button }

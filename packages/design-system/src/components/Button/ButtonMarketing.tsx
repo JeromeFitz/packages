@@ -1,5 +1,6 @@
-import { Box } from '@ds/components'
 import * as React from 'react'
+
+import { Box } from '../index'
 
 import { StyledButton } from './ButtonMarketing.styles'
 import { ButtonMarketingProps } from './ButtonMarketing.types'
