@@ -42,7 +42,7 @@ jobs:
         id: push-checkout
         uses: actions/checkout@v2
         with:
-          fetch-depth: 10
+          fetch-depth: 100
       - name: '💽️  Init'
         id: push-init
         uses: JeromeFitz/packages/.github/actions/init@main
