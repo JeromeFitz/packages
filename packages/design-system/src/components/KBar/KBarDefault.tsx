@@ -1,7 +1,7 @@
 import { useFocusTrap } from '@mantine/hooks'
 import dynamic from 'next/dynamic'
 
-import { Box } from '../Box'
+import { Box } from '../index'
 
 import { KBarPortal } from './KBarPortal'
 import { KBarSubscriptions } from './KBarSubscriptions'

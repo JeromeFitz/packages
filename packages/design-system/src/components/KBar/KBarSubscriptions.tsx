@@ -1,5 +1,6 @@
-import { Badge, Box } from '@jeromefitz/design-system/src/components'
 import { useKBar } from 'kbar'
+
+import { Badge, Box } from '../index'
 
 const KBarSubscriptions = () => {
   const kbar = useKBar((state) => state)

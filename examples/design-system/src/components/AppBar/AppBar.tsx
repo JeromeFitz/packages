@@ -3,6 +3,7 @@ import {
   Button,
   Flex,
   // Kbd,
+  Separator,
   Sheet,
   SheetContent,
   SheetTrigger,
@@ -17,8 +18,6 @@ import * as Portal from '@radix-ui/react-portal'
 import { useKBar } from 'kbar'
 import { useTheme } from 'next-themes'
 import * as React from 'react'
-
-import { Separator } from '../Separator'
 
 const _AppBar = ({}) => {
   const kbar = useKBar()

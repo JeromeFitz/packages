@@ -69,7 +69,7 @@ const _Toast = () => {
       <Heading css={{ mb: '$4' }} size="3">
         🍞️ Toast
       </Heading>
-      <Separator css={{ my: '1rem !important', width: '100% !important' }} />
+      <Separator decorative margin="my3" size="full" />
       <Heading css={{ mb: '$4' }} size="2">
         📦️ Default
       </Heading>
@@ -89,7 +89,7 @@ const _Toast = () => {
           </React.Fragment>
         )
       })}
-      <Separator css={{ my: '1rem !important', width: '100% !important' }} />
+      <Separator decorative margin="my3" size="full" />
       <Heading css={{ mb: '$4' }} size="2">
         🎛️ Custom
       </Heading>

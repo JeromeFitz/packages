@@ -1,13 +1,6 @@
-import {
-  Box,
-  Flex,
-  Heading,
-  Kbd,
-  Text,
-} from '@jeromefitz/design-system/src/components'
 import { ActionImpl } from 'kbar/lib/action'
 
-import { Separator } from '../Separator'
+import { Box, Flex, Heading, Kbd, Separator, Text } from '../index'
 
 interface KBarSearchResultProps {
   active: boolean
@@ -18,7 +11,7 @@ const KBarSearchResult = ({ active, item }: KBarSearchResultProps) => {
   if (typeof item == 'string') {
     return (
       <Box css={{ py: '$1', px: '$4' }}>
-        <Separator />
+        <Separator decorative margin="my3" size="full" />
         <Heading size="1" css={{ color: '$hiContrast', textTransform: 'uppercase' }}>
           {item}
         </Heading>

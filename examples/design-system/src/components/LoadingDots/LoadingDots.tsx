@@ -1,6 +1,10 @@
-import { Flex, Heading, LoadingDots } from '@jeromefitz/design-system/src/components'
+import {
+  Flex,
+  Heading,
+  LoadingDots,
+  Separator,
+} from '@jeromefitz/design-system/src/components'
 
-import { Separator } from '../Separator'
 /**
  * @note uh, this seems odd to say the least
  */
@@ -24,7 +28,7 @@ const _LoadingDots = () => {
           )
         })}
       </Flex>
-      <Separator />
+      <Separator decorative margin="my3" size="full" />
       <LoadingDots
         css={{
           '$$loading-dots-size': '16px',
@@ -35,7 +39,7 @@ const _LoadingDots = () => {
         <span />
         <span />
       </LoadingDots>
-      <Separator />
+      <Separator decorative margin="my3" size="full" />
       <LoadingDots
         css={{
           '& span': { backgroundColor: '$colors$red11' },
@@ -46,7 +50,7 @@ const _LoadingDots = () => {
         <span />
         <span />
       </LoadingDots>
-      <Separator />
+      <Separator decorative margin="my3" size="full" />
     </>
   )
 }

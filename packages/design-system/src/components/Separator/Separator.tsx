@@ -3,7 +3,6 @@ import * as SeparatorPrimitive from '@radix-ui/react-separator'
 import { styled } from '../../stitches.config'
 
 const Separator = styled(SeparatorPrimitive.Root, {
-  'aria-hidden': true,
   border: 'none',
   margin: 0,
   flexShrink: 0,
@@ -33,6 +32,47 @@ const Separator = styled(SeparatorPrimitive.Root, {
           width: '1px',
           height: '$7',
         },
+      },
+      full: {
+        '&[data-orientation="horizontal"]': {
+          height: '1px',
+          width: '100%',
+        },
+
+        '&[data-orientation="vertical"]': {
+          width: '1px',
+          height: '100%',
+        },
+      },
+    },
+    margin: {
+      '0': {},
+      my1: {
+        my: '$1',
+      },
+      my2: {
+        my: '$2',
+      },
+      my3: {
+        my: '$3',
+      },
+      my4: {
+        my: '$4',
+      },
+      my5: {
+        my: '$5',
+      },
+      my6: {
+        my: '$6',
+      },
+      my7: {
+        my: '$7',
+      },
+      my8: {
+        my: '$8',
+      },
+      my9: {
+        my: '$9',
       },
     },
   },

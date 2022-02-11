@@ -1,6 +1,6 @@
 import { KBarResults, useMatches } from 'kbar'
 
-import { KBarSearchResult } from './index'
+import { KBarSearchResult } from './KBarSearchResult'
 
 const KBarSearchResults = () => {
   const { results } = useMatches()
