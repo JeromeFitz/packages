@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "@types/title": "3.4.1",
-    "gitmojis": "3.8.0",
+    "gitmojis": "3.9.0",
     "title": "3.4.3"
   },
   "type": "module",
