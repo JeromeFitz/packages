@@ -7952,12 +7952,7 @@ node-emoji@1.11.0, node-emoji@^1.11.0:
   dependencies:
     lodash "^4.17.21"
 
-node-fetch@2.6.2:
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.2.tgz#986996818b73785e47b1965cc34eb093a1d464d0"
-  integrity sha512-aLoxToI6RfZ+0NOjmWAgn9+LEd30YCkJKFSyWacNZdEKTit/ZMcKjGkTRo8uWEsnIb/hfKecNPEbln02PdWbcA==
-
-node-fetch@^2.6.1, node-fetch@^2.6.2, node-fetch@^2.6.7:
+node-fetch@2.6.7, node-fetch@^2.6.1, node-fetch@^2.6.2, node-fetch@^2.6.7:
   version "2.6.7"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.7.tgz#24de9fba827e3b4ae44dc8b20256a379160052ad"
   integrity sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==
@@ -8691,15 +8686,15 @@ pkg-up@^2.0.0:
   dependencies:
     find-up "^2.1.0"
 
-plaiceholder@2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/plaiceholder/-/plaiceholder-2.2.0.tgz#70e97b010fdeea0303095a2e190aa7e65b7d98f3"
-  integrity sha512-tsfQ/Uz/vkKQCF+FFFVeqhbvmna57fjv/JKc2Fzs1Tz1S2vF70R7/YQpCFdmsVpPkrU/sZtLnxNNvopzv03Yhw==
+plaiceholder@2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/plaiceholder/-/plaiceholder-2.3.0.tgz#741974b8a55d3816ac9ec49c20fc3503bb598396"
+  integrity sha512-wy9UzjfZiDjk+QU8S5S30+AKnL4+hNtqELtTk0JD+4kCwkq0M7Po0YG1CU4E83WykW7f/ssVmEJq3hb3ZNqkbA==
   dependencies:
     blurhash "1.1.4"
     image-size "1.0.0"
     node-cache "5.1.2"
-    node-fetch "2.6.2"
+    node-fetch "2.6.7"
 
 posix-character-classes@^0.1.0:
   version "0.1.1"

@@ -42,7 +42,7 @@
   "dependencies": {
     "github-slugger": "1.4.0",
     "isomorphic-unfetch": "3.1.0",
-    "plaiceholder": "2.2.0"
+    "plaiceholder": "2.3.0"
   },
   "type": "module",
   "sideEffects": false,
