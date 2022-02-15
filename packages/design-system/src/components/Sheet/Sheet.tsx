@@ -1,10 +1,11 @@
 import * as DialogPrimitive from '@radix-ui/react-dialog'
-import { Cross1Icon } from '@radix-ui/react-icons'
+// import { Cross1Icon } from '@radix-ui/react-icons'
 import * as React from 'react'
 
-import { IconButton } from '../IconButton'
+// import { IconButton } from '../IconButton'
 
-import { StyledOverlay, StyledContent, StyledCloseButton } from './Sheet.styles'
+// import { StyledOverlay, StyledContent, StyledCloseButton } from './Sheet.styles'
+import { StyledOverlay, StyledContent } from './Sheet.styles'
 import type { SheetProps, SheetContentProps } from './Sheet.types'
 
 function Sheet({ children, ...props }: SheetProps) {
@@ -25,11 +26,11 @@ const SheetContent = React.forwardRef<
   <DialogPrimitive.Portal>
     <StyledContent {...props} ref={forwardedRef}>
       {children}
-      <StyledCloseButton asChild>
+      {/* <StyledCloseButton asChild>
         <IconButton variant="ghost">
           <Cross1Icon />
         </IconButton>
-      </StyledCloseButton>
+      </StyledCloseButton> */}
     </StyledContent>
   </DialogPrimitive.Portal>
 ))

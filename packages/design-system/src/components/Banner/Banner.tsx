@@ -49,6 +49,10 @@ const Banner = styled('div', {
         backgroundColor: '$red3',
         '&:hover': { backgroundColor: '$red4' },
       },
+      violet: {
+        backgroundColor: '$violet3',
+        '&:hover': { backgroundColor: '$violet4' },
+      },
     },
     rounded: {
       true: {
