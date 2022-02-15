@@ -905,6 +905,12 @@ const PROPERTIES: Record<string, Property> = {
     notion: 'SEO.Image.Description',
     type: 'rich_text',
   },
+  seoKeywords: {
+    init: true,
+    key: 'seoKeywords',
+    notion: 'SEO.Keywords',
+    type: 'rich_text',
+  },
   slug: {
     init: true,
     key: 'slug',
@@ -995,6 +1001,7 @@ const PROPERTIES_DEFAULT = [
   PROPERTIES.seoDescription,
   PROPERTIES.seoImage,
   PROPERTIES.seoImageDescription,
+  PROPERTIES.seoKeywords,
   PROPERTIES.title,
 ]
 
