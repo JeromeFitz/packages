@@ -125,11 +125,15 @@ export { Select } from './Select'
 export { Separator } from './Separator'
 export {
   Sheet,
-  SheetContent,
-  SheetTrigger,
   SheetClose,
-  SheetTitle,
+  SheetContent,
   SheetDescription,
+  SheetPortal,
+  SheetTitle,
+  SheetTrigger,
+  StyledCloseButton,
+  StyledContent,
+  StyledOverlay,
 } from './Sheet'
 export { Skeleton } from './Skeleton'
 export { StyledSlider, Slider } from './Slider'

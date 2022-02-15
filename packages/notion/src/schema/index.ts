@@ -150,6 +150,7 @@ interface Default {
   seoDescription: any
   seoImage: any
   seoImageDescription: any
+  seoKeywords: any
   title: any
 }
 

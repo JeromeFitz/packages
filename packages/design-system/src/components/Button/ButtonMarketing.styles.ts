@@ -49,9 +49,9 @@ const StyledButton = styled('button', {
           boxShadow: 'none',
         },
         $$backlight: `
-            0 0 0 2px $colors$plumA3,
+            0 0 0 2px $colors$violetA8,
             -15px 0 30px -15px $colors$orangeA8,
-            0 0 30px -15px $colors$pinkA8,
+            0 0 30px -15px $colors$orangeA8,
             15px 0 30px -15px $colors$violetA8
           `,
         boxShadow: '$$backlight',
