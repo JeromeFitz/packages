@@ -12,8 +12,8 @@ function Sheet({ children, ...props }: SheetProps) {
     <DialogPrimitive.Root {...props}>
       <DialogPrimitive.Portal>
         <StyledOverlay />
-        {children}
       </DialogPrimitive.Portal>
+      {children}
     </DialogPrimitive.Root>
   )
 }
@@ -22,14 +22,16 @@ const SheetContent = React.forwardRef<
   React.ElementRef<typeof StyledContent>,
   SheetContentProps
 >(({ children, ...props }, forwardedRef) => (
-  <StyledContent {...props} ref={forwardedRef}>
-    {children}
-    <StyledCloseButton asChild>
-      <IconButton variant="ghost">
-        <Cross1Icon />
-      </IconButton>
-    </StyledCloseButton>
-  </StyledContent>
+  <DialogPrimitive.Portal>
+    <StyledContent {...props} ref={forwardedRef}>
+      {children}
+      <StyledCloseButton asChild>
+        <IconButton variant="ghost">
+          <Cross1Icon />
+        </IconButton>
+      </StyledCloseButton>
+    </StyledContent>
+  </DialogPrimitive.Portal>
 ))
 
 const SheetClose = DialogPrimitive.Close

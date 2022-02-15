@@ -1,4 +1,5 @@
 import * as DialogPrimitive from '@radix-ui/react-dialog'
+import * as React from 'react'
 
 import { VariantProps, CSS } from '../../stitches.config'
 
