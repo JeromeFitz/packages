@@ -50,7 +50,7 @@ const config = {
     [
       '@semantic-release/github',
       {
-        assets: 'release/*.tgz',
+        // assets: 'release/*.tgz',
       },
     ],
     [
