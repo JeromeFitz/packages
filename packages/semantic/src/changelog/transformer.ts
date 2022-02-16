@@ -114,6 +114,8 @@ const transformer = (commit: any, context: any) => {
   /**
    * @note return the new mutated `commit`
    */
+  console.dir(`commit...`)
+  console.dir(commit)
   return commit
 }
 
