@@ -1,3 +1,3 @@
-const feature = []
+const feature = ['contribs']
 
 export default feature
