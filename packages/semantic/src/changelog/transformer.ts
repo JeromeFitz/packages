@@ -100,7 +100,7 @@ const transformer = (commit: any, context: any) => {
         .replace(_pullAt(subjectTemp, [0]), '')
     : commit.subject
 
-  commit.subject = subject
+  commit.subject = subject.trim()
 
   /**
    * @todo get username (github|gitlab|etc.)
