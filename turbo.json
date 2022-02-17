@@ -29,7 +29,8 @@
     "@jeromefitz/semantic#build": {
       "dependsOn": [
         "@jeromefitz/conventional-gitmoji#build",
-        "@jeromefitz/git-cz#build"
+        "@jeromefitz/git-cz#build",
+        "@jeromefitz/release-notes#build"
       ]
     },
     "@jeromefitz/semantic-config#build": {

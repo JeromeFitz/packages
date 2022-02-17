@@ -1,0 +1,62 @@
+{
+  "name": "@jeromefitz/release-notes",
+  "version": "0.0.0",
+  "description": "Custom Release Notes for Semantic Release.",
+  "author": {
+    "name": "Jerome Fitzgerald",
+    "email": "j@jeromefitzgerald.com",
+    "url": "https://jeromefitzgerald.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/jeromefitz/packages.git",
+    "directory": "packages/release-notes"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "private": false,
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "---": "",
+    "clean": "rm -rf .turbo && rm -rf dist",
+    "clean:install": "yarn clean && rm -rf node_modules",
+    "copy": "mkdir -p ./dist && ./scripts/copy.sh",
+    "--- ": "",
+    "lint:eslint": "eslint ./src --ext cjs,js,jsx,mjs,ts,tsx --max-warnings=0",
+    "lint:prettier": "prettier \"./src/**/*.{cjs,js,jsx,mjs,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\" --ignore-unknown --loglevel warn",
+    "lint": "yarn lint:prettier --check && yarn lint:eslint",
+    "lint:fix": "yarn lint:eslint --fix && yarn lint:prettier --write",
+    "---  ": "",
+    "semantic-release": "semantic-release",
+    "semantic-release:mono": "semantic-release -e semantic-release-monorepo"
+  },
+  "devDependencies": {
+    "@types/lodash": "4.14.178",
+    "@types/title": "3.4.1"
+  },
+  "dependencies": {
+    "@octokit/core": "3.5.1",
+    "@semantic-release/commit-analyzer": "9.0.2",
+    "@semantic-release/exec": "6.0.3",
+    "@semantic-release/git": "10.0.1",
+    "@semantic-release/github": "8.0.2",
+    "@semantic-release/npm": "9.0.0",
+    "@semantic-release/release-notes-generator": "10.0.3",
+    "grapheme-splitter": "1.0.4",
+    "lodash": "4.17.21",
+    "semantic-release": "19.0.2",
+    "semantic-release-commit-filter": "1.0.2",
+    "title": "3.4.4"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "typings": "./dist/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js"
+}
