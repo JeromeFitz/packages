@@ -41,7 +41,7 @@ const config = {
     //   },
     // ],
     [
-      '@jeromefitz/semantic-contrib',
+      '@jeromefitz/release-notes',
       {
         parserOpts,
         writerOpts,

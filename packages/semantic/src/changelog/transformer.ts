@@ -58,6 +58,7 @@ const transformer = (commit: any, context: any) => {
    */
   commit.type = `${typeSpec.emoji}  ${typeSpec.description}`
   commit.typeSpecIndex = typeSpecIndex
+  commit.typeSpec = typeSpec
 
   /**
    * @todo can only `groupBy` one field (type) at the moment
@@ -114,8 +115,8 @@ const transformer = (commit: any, context: any) => {
   /**
    * @note return the new mutated `commit`
    */
-  console.dir(`commit...`)
-  console.dir(commit)
+  // console.dir(`> transformer: commit...`)
+  // console.dir(commit)
   return commit
 }
 
