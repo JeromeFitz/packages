@@ -33,13 +33,6 @@ const config = {
         releaseRules,
       },
     ],
-    // [
-    //   '@semantic-release/release-notes-generator',
-    //   {
-    //     parserOpts,
-    //     writerOpts,
-    //   },
-    // ],
     [
       '@jeromefitz/release-notes',
       {
