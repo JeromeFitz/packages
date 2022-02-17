@@ -33,8 +33,15 @@ const config = {
         releaseRules,
       },
     ],
+    // [
+    //   '@semantic-release/release-notes-generator',
+    //   {
+    //     parserOpts,
+    //     writerOpts,
+    //   },
+    // ],
     [
-      '@semantic-release/release-notes-generator',
+      '@jeromefitz/semantic-contrib',
       {
         parserOpts,
         writerOpts,
@@ -53,13 +60,15 @@ const config = {
         // assets: 'release/*.tgz',
       },
     ],
-    [
-      '@semantic-release/exec',
-      {
-        prepareCmd:
-          'echo sh ./scripts/postSemanticRelease.sh ${nextRelease.version} ${nextRelease.channel} ${nextRelease.gitHead} ${nextRelease.gitTag}',
-      },
-    ],
+    // [
+    //   '@semantic-release/exec',
+    //   {
+    //     generateNotesCmd:
+    //       // './scripts/postSemanticRelease.sh ${nextRelease.version} ${nextRelease.channel} ${nextRelease.gitHead} ${nextRelease.gitTag} ${commits}',
+    //       // './scripts/releaseNotes.cjs ${nextRelease.version} ${nextRelease.channel} ${nextRelease.gitHead} ${nextRelease.gitTag} ${commits}',
+    //       'echo 💩️  poop',
+    //   },
+    // ],
   ],
   tagFormat: `v\${version}`,
 }
