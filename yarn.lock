@@ -2669,6 +2669,13 @@
     "@types/scheduler" "*"
     csstype "^3.0.2"
 
+"@types/read-pkg-up@6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@types/read-pkg-up/-/read-pkg-up-6.0.0.tgz#7926c93cf14d906e9829a859e790323d0f338684"
+  integrity sha512-F9AikSDYJdlbKOX78vTHyKcMkuGRU661Dao0zkqD5j36dBRf1+FaOa+MRQvGFZOyMcoOBChf563wK0/LCeBH5g==
+  dependencies:
+    read-pkg-up "*"
+
 "@types/resolve@1.17.1":
   version "1.17.1"
   resolved "https://registry.yarnpkg.com/@types/resolve/-/resolve-1.17.1.tgz#3afd6ad8967c77e4376c598a82ddd58f46ec45d6"
@@ -9051,7 +9058,7 @@ read-package-json@^4.1.1:
     normalize-package-data "^3.0.0"
     npm-normalize-package-bin "^1.0.0"
 
-read-pkg-up@9.1.0:
+read-pkg-up@*:
   version "9.1.0"
   resolved "https://registry.yarnpkg.com/read-pkg-up/-/read-pkg-up-9.1.0.tgz#38ca48e0bc6c6b260464b14aad9bcd4e5b1fbdc3"
   integrity sha512-vaMRR1AC1nrd5CQM0PhlRsO5oc2AAigqr7cCrZ/MW/Rsaflz4RlgzkpL4qoU/z1F6wrbd85iFv1OQj/y5RdGvg==
@@ -9060,7 +9067,7 @@ read-pkg-up@9.1.0:
     read-pkg "^7.1.0"
     type-fest "^2.5.0"
 
-read-pkg-up@^7.0.0, read-pkg-up@^7.0.1:
+read-pkg-up@7.0.1, read-pkg-up@^7.0.0, read-pkg-up@^7.0.1:
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/read-pkg-up/-/read-pkg-up-7.0.1.tgz#f3a6135758459733ae2b95638056e1854e7ef507"
   integrity sha512-zK0TB7Xd6JpCLmlLmufqykGE+/TlOePD6qKClNW7hHDKFh/J7/7gCWGR7joEQEW1bKq3a3yUZSObOoWLFQ4ohg==

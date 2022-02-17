@@ -8,6 +8,7 @@ const config: Options = {
   ..._config,
   entry,
   external: ['@jeromefitz/git-cz'],
+  // format: ['esm'],
   noExternal: ['@jeromefitz/conventional-gitmoji', '@jeromefitz/release-notes'],
 }
 

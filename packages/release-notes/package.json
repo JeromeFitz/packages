@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "@types/lodash": "4.14.178",
-    "@types/title": "3.4.1"
+    "@types/read-pkg-up": "6.0.0"
   },
   "dependencies": {
     "@octokit/core": "3.5.1",
@@ -46,9 +46,8 @@
     "conventional-commits-parser": "3.2.4",
     "date-fns": "2.28.0",
     "lodash": "4.17.21",
-    "read-pkg-up": "9.1.0",
-    "semver": "7.3.5",
-    "title": "3.4.4"
+    "read-pkg-up": "7.0.1",
+    "semver": "7.3.5"
   },
   "type": "module",
   "sideEffects": false,

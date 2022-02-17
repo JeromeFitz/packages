@@ -7,8 +7,7 @@ const entry = ['src/*']
 const config: Options = {
   ..._config,
   entry,
-  external: ['@jeromefitz/git-cz'],
-  noExternal: ['@jeromefitz/conventional-gitmoji'],
+  // format: ['esm'],
 }
 
 export default defineConfig({
