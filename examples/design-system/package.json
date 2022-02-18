@@ -31,7 +31,7 @@
   "dependencies": {
     "@artsy/fresnel": "3.4.0",
     "@heroicons/react": "1.0.5",
-    "@mantine/hooks": "3.6.8",
+    "@mantine/hooks": "3.6.9",
     "date-fns": "2.28.0",
     "date-fns-tz": "1.2.2",
     "kbar": "0.1.0-beta.27",
