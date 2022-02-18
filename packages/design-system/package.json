@@ -86,7 +86,7 @@
     "@types/react": "17.0.39",
     "bezier-easing": "2.1.0",
     "chroma-js": "2.4.2",
-    "next": "12.0.10",
+    "next": "12.1.0",
     "react": "17.0.2",
     "react-bezier-curve-editor": "1.0.0",
     "react-dom": "17.0.2",
