@@ -7,8 +7,8 @@ import _merge from 'lodash/merge'
 import readPkgUp from 'read-pkg-up'
 
 import { HOSTS_CONFIG, loadChangelogConfig } from './config'
+import getMarkdown from './getMarkdown'
 import util from './lib/util'
-import { getMarkdown } from './templates'
 
 // eslint-disable-next-line @typescript-eslint/require-await
 // eslint-disable-next-line complexity

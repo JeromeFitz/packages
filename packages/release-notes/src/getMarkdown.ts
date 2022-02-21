@@ -1,4 +1,4 @@
-import { commit, contributor, footer, header } from './index'
+import { commit, contributor, footer, header } from './templates/index'
 
 const getMarkdown = async (context, commits) => {
   const {
@@ -75,4 +75,4 @@ const getMarkdown = async (context, commits) => {
   return markdown
 }
 
-export { getMarkdown }
+export default getMarkdown
