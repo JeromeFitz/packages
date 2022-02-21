@@ -63,7 +63,7 @@
     "dotenv": "16.0.0",
     "husky": "7.0.4",
     "is-ci": "3.0.1",
-    "pinst": "2.1.6",
+    "pinst": "3.0.0",
     "semantic-release-monorepo": "7.0.5",
     "tsup": "5.11.13",
     "turbo": "1.1.3"
