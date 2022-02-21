@@ -1,13 +1,11 @@
-/* eslint-disable import/order */
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const gitmojis = require('gitmojis').gitmojis
+import data from 'gitmojis'
 
-import _rewrites from './config/rewrites'
-import _types from './config/types'
+import _rewrites from '../config/rewrites'
+import _types from '../config/types'
+
+const { gitmojis } = data
 
 const getGitmoji = () => {
-  // @todo(complexity) 15
-  // eslint-disable-next-line complexity
   gitmojis.map((gitmoji) => {
     const rewrite = _rewrites.find((r) => r?.from === gitmoji.name)
     if (!!rewrite) {
@@ -17,7 +15,7 @@ const getGitmoji = () => {
           : rewrite.semver || gitmoji?.semver || null
 
       _types[rewrite.to] = {
-        branch: Boolean(rewrite?.branch) ? rewrite.branch : false,
+        branch: Boolean(rewrite?.branch) ? rewrite.branch : null,
         code: gitmoji?.code,
         commit: rewrite.to,
         description: gitmoji?.description,
@@ -44,13 +42,15 @@ const getGitmoji = () => {
     }
   })
 
-  return Object.keys(_types)
+  const items = Object.keys(_types)
     .sort()
     .reduce((type, key) => {
       type[key] = _types[key]
 
       return type
     }, {})
+
+  return items
 }
 
 export default getGitmoji

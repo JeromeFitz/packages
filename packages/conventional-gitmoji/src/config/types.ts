@@ -1,20 +1,18 @@
+import type { ReleaseRuleTypes } from '../types'
+
 /**
- * @note default from git-cz
+ * @note
+ * These are _additional_ types on top of base Gitmoji
+ *
+ * @todo
+ * - These should be accepted through a config for use by:
+ * - @jeromefitz/git-cz
+ * - @jeromefitz/semantic
+ * - @jeromefitz/release-notes
+ *
  */
 
-type TypesProps = {
-  [x: string]: {
-    branch: string | boolean | null | undefined
-    code: any | null
-    commit: any
-    description: any
-    emoji: any
-    entity: string
-    name: string
-    semver: 'breaking' | 'feature' | 'fix' | 'major' | 'minor' | 'patch' | null
-  }
-}
-const types: TypesProps = {
+const types: ReleaseRuleTypes = {
   chore: {
     branch: 'chore',
     code: ':computer_disk:',
@@ -26,7 +24,7 @@ const types: TypesProps = {
     semver: null,
   },
   rollforward: {
-    branch: false,
+    branch: null,
     code: ':fast_forward:',
     commit: 'rollforward',
     description: 'Create rollforward version.',
@@ -36,7 +34,7 @@ const types: TypesProps = {
     semver: null,
   },
   'run-build': {
-    branch: false,
+    branch: null,
     code: ':rocket:',
     commit: 'run-build',
     description: 'Custom type for CI/CD to hook into run build override.',
