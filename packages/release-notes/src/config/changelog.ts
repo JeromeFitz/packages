@@ -1,3 +1,6 @@
+/**
+ * @copyright https://github.com/semantic-release/release-notes-generator
+ */
 import { promisify } from 'util'
 
 // import conventionalChangelogAngular from 'conventional-changelog-angular'

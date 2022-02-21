@@ -169,6 +169,7 @@ function generate(options, commits, context, keyCommit) {
     context.isPatch = context.isPatch || semver.patch(context.version) !== 0
   }
 
+  // @note this is/was a pass-through function, okay with "skipping"
   // context = options.finalizeContext(
   //   context,
   //   options,
@@ -177,7 +178,7 @@ function generate(options, commits, context, keyCommit) {
   //   commits
   // )
 
-  // @question should this be merge?
+  // @question should this be merge/extend? i.e, `...context` specifically?
   context = {
     context,
     options,

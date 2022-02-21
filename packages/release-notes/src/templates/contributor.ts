@@ -30,6 +30,7 @@ const contributor = async (context, commits, meta) => {
     )
   )
 
+  // @todo(release-notes) if only author is JeromeFitz, skip 😇️
   // @todo(release-notes) pass as option
   let markdown = `#### 🥳️  Contributors\n`
   const authorsString = authors.map((author: any) => author.login).join(',')

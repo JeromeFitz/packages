@@ -1,3 +1,6 @@
+/**
+ * @copyright https://github.com/semantic-release/release-notes-generator
+ */
 const HOSTS_CONFIG = {
   github: {
     hostname: 'github.com',

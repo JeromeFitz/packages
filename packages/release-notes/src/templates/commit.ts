@@ -36,18 +36,13 @@ const commit = (context, commits, meta) => {
 
   commitGroups.map((commitGroup) => {
     const { commits } = commitGroup
-    // console.dir(`title: ${title}`)
     const type = commits[0].type
     markdown += `#### ${type}\n`
     commits.map((commit) => {
-      // console.dir(`>> commit`)
-      // console.dir(commit)
       const { scope, subject, header, hash, references } = commit
-      // markdown += `- ${subject}\n`
       const commitMarkdown = commitFormat
         .replace(/\{scope\}/g, scope ? `**${scope}**: ` : '')
         .replace(/\{subject\}/g, subject ? subject : header)
-        // .replace(/\{hash\}/g, ` \`${hash}\``)
         .replace(/\{hash\}/g, getHash(hash))
         .replace(/\{references\}/g, getReferences(references))
 

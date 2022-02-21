@@ -3,9 +3,6 @@ import _format from 'date-fns/format'
 
 const header = (context, commits, meta) => {
   // @todo(release-notes) pass as option
-  // console.dir(`> header`)
-  // console.dir(context)
-
   const { currentTag, date, linkCompare, previousTag, title } = context
   const { repositoryUrl } = meta
 

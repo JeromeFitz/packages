@@ -13,10 +13,7 @@ const footer = (context, commits, meta) => {
     const title = notes[0].title
     markdown += `#### ${title}\n`
     notes.map((note) => {
-      // console.dir(`>> note`)
-      // console.dir(note)
       const { scope, text } = note
-      // markdown += `- ${subject}\n`
       const noteMarkdown = noteFormat
         .replace(/\{scope\}/g, scope ? `**${scope}**: ` : '')
         .replace(/\{text\}/g, text ? text : '')
