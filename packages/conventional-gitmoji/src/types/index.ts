@@ -1,3 +1,6 @@
 // @lol at these filenames
-export type { CommitTypes, ReleaseRuleProps, ReleaseRuleTypes } from './types.types'
-export { commitTypes, releaseRuleTypes } from './types'
+export type { ICommit } from './commit.types'
+export { commit as commitTypes } from './commit'
+
+export type { IReleaseRuleProps, IReleaseRule } from './releaseRule.types'
+export { releaseRule as releaseRuleTypes } from './releaseRule'

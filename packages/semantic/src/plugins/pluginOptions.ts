@@ -1,4 +1,3 @@
-// import type { Options as SemanticReleaseOptions, PluginSpec } from 'semantic-release'
 import { parserOpts, writerOpts } from '@jeromefitz/conventional-gitmoji'
 import type { PluginSpec } from 'semantic-release'
 
@@ -9,7 +8,7 @@ import { commitAnalyzer, git, github, npm } from './index'
 // console.dir(`> writerOpts`)
 // console.dir(writerOpts)
 
-const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec => {
+const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec[] => {
   const optionsDefault = {
     /**
      * @note Will only load the plugin if set to true
@@ -30,9 +29,6 @@ const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec => {
     ...optionsDefault,
     ...optionsPassed,
   }
-
-  // console.dir(`> getPluginOptions`)
-  // console.dir(options)
 
   const releaseNotesConfig = [
     '@semantic-release/release-notes-generator',
@@ -94,9 +90,8 @@ const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec => {
     options.enableGit ? gitConfig : '',
   ]
 
-  const plugins: PluginSpec = _plugins.filter((plugin) => !!plugin)
-  // console.dir(`> plugins`)
-  // console.dir(plugins)
+  const plugins: PluginSpec[] = _plugins.filter((plugin) => !!plugin)
+
   return plugins
 }
 

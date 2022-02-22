@@ -8,7 +8,7 @@ const config: Options = {
   ..._config,
   entry,
   external: [],
-  noExternal: ['@jeromefitz/conventional-gitmoji', 'gitmojis'],
+  // noExternal: ['@jeromefitz/conventional-gitmoji', 'gitmojis'],
 }
 
 export default defineConfig({

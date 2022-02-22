@@ -1,5 +1,5 @@
 import { types } from '@jeromefitz/conventional-gitmoji'
-import type { ReleaseRuleTypes } from '@jeromefitz/conventional-gitmoji'
+import type { IReleaseRule } from '@jeromefitz/conventional-gitmoji'
 
 type BranchProps = {
   format: string
@@ -28,7 +28,7 @@ type GitmojiProps = {
   branch: BranchProps
   commit: CommitProps
   enabled: boolean
-  types: ReleaseRuleTypes
+  types: IReleaseRule
 }
 
 const gitmoji: GitmojiProps = {

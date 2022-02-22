@@ -12,7 +12,4 @@ const changelog = {
   gitRawCommitsOpts,
 }
 
-// console.dir(`>> changelog`)
-// console.dir(changelog)
-
 export default changelog

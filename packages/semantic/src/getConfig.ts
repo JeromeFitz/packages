@@ -3,20 +3,6 @@ import type { Options as SemanticReleaseOptions } from 'semantic-release'
 import { getPluginOptions } from './plugins'
 
 /**
- * Should receive:
- * - ci
- * - debug
- * - dryRun
- * - branches
- * - extends
- * - plugins
- * - tagFormat
- *
- * While defaulting to values we see below.
- *
- */
-
-/**
  * @todo
  * - config type
  * - - merge = with defaults

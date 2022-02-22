@@ -2,7 +2,7 @@ import {
   parserOpts,
   releaseRules as releaseRulesDefault,
 } from '@jeromefitz/conventional-gitmoji'
-import type { ReleaseRuleTypes } from '@jeromefitz/conventional-gitmoji'
+import type { IReleaseRule } from '@jeromefitz/conventional-gitmoji'
 // import type { PluginSpec } from 'semantic-release'
 
 // import type { ReleaseRule } from './commitAnalyzer.types'
@@ -11,7 +11,7 @@ import type { ReleaseRuleTypes } from '@jeromefitz/conventional-gitmoji'
 // console.dir(`> commitAnalyzer`)
 // console.dir(parserOpts)
 
-const commitAnalyzer = (releaseRulesPassed: ReleaseRuleTypes[] = []) => {
+const commitAnalyzer = (releaseRulesPassed: IReleaseRule[] = []) => {
   const releaseRules = [...releaseRulesDefault, ...releaseRulesPassed]
   // console.dir(`> releaseRules`)
   // console.dir(releaseRules)

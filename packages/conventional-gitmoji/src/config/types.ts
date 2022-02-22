@@ -1,4 +1,4 @@
-import type { ReleaseRuleTypes } from '../types'
+import type { IReleaseRule } from '../types'
 
 /**
  * @note
@@ -12,7 +12,7 @@ import type { ReleaseRuleTypes } from '../types'
  *
  */
 
-const types: ReleaseRuleTypes = {
+const types: IReleaseRule = {
   chore: {
     branch: 'chore',
     code: ':computer_disk:',

@@ -1,5 +1,4 @@
-// import type { Release } from 'semantic-release'
-import type { ReleaseRuleProps, ReleaseRuleTypes } from '../index'
+import type { IReleaseRuleProps, IReleaseRule } from '../index'
 
 // @note(semantic-release) can we re-use types here?
 type CustomReleaseRulesProps = {
@@ -10,9 +9,9 @@ type CustomReleaseRulesProps = {
 }
 
 const releaseRules: CustomReleaseRulesProps[] = []
-const getReleaseRules = (types: ReleaseRuleTypes) => {
+const getReleaseRules = (types: IReleaseRule) => {
   Object.keys(types).map((type) => {
-    const releaseRule: ReleaseRuleProps = types[type]
+    const releaseRule: IReleaseRuleProps = types[type]
     /**
      * @note
      * - Only run this if the releaseRule has a valid semver
@@ -33,6 +32,10 @@ const getReleaseRules = (types: ReleaseRuleTypes) => {
          * accounting for that here "fixes"
          */
         type: releaseRule?.code.replace(/(:[^:]*):/g, '$1'),
+      })
+      releaseRules.push({
+        release: releaseRule.semver,
+        type: releaseRule?.code,
       })
       releaseRules.push({
         release: releaseRule.semver,

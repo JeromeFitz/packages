@@ -1,11 +1,11 @@
 import title from 'title'
 
-import type { ReleaseRuleProps, ReleaseRuleTypes } from '../index'
+import type { IReleaseRuleProps, IReleaseRule } from '../index'
 
-const typeSpecs: Omit<ReleaseRuleProps, 'branch' | 'commit' | 'entity' | 'name'>[] =
+const typeSpecs: Omit<IReleaseRuleProps, 'branch' | 'commit' | 'entity' | 'name'>[] =
   []
 
-const getTypeSpecs = (types: ReleaseRuleTypes) => {
+const getTypeSpecs = (types: IReleaseRule) => {
   Object.keys(types).map((type) => {
     typeSpecs.push({
       code: types[type].code,

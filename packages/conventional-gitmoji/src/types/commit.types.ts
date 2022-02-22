@@ -1,6 +1,4 @@
-// @lol at this filename
-
-type CommitTypes =
+type ICommit =
   | 'access'
   | 'analytics'
   | 'animation'
@@ -10,6 +8,7 @@ type CommitTypes =
   | 'breaking'
   | 'build'
   | 'catch'
+  | 'chore'
   | 'ci'
   | 'clean'
   | 'compat'
@@ -56,6 +55,8 @@ type CommitTypes =
   | 'revert'
   | 'rip'
   | 'roles'
+  | 'rollforward'
+  | 'run-build'
   | 'secrets'
   | 'security'
   | 'seed'
@@ -71,27 +72,5 @@ type CommitTypes =
   | 'upgrade'
   | 'ux'
   | 'wip'
-  //
-  | 'chore'
-  | 'rollforward'
-  | 'run-build'
 
-type ReleaseRuleProps = {
-  // @jeromefitz/git-cz doubles up on this field for gitflow
-  branch: string | null
-  code: string
-  commit: CommitTypes
-  description: string
-  emoji: string
-  entity: string
-  name: string
-  semver: 'breaking' | 'feature' | 'fix' | 'major' | 'minor' | 'patch' | null
-  // @note(breaking) can we move away from this dupe key currently required in getTypeSpecs?
-  type?: CommitTypes
-  value?: CommitTypes
-}
-
-type ReleaseRuleTypes = {
-  [key in CommitTypes]?: ReleaseRuleProps
-}
-export type { CommitTypes, ReleaseRuleProps, ReleaseRuleTypes }
+export type { ICommit }

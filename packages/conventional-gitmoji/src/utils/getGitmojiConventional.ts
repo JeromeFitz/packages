@@ -2,10 +2,11 @@ import data from 'gitmojis'
 
 import _rewrites from '../config/rewrites'
 import _types from '../config/types'
+import type { IReleaseRule } from '../types'
 
 const { gitmojis } = data
 
-const getGitmoji = () => {
+const getGitmoji = (): IReleaseRule => {
   gitmojis.map((gitmoji) => {
     const rewrite = _rewrites.find((r) => r?.from === gitmoji.name)
     if (!!rewrite) {
