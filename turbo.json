@@ -30,7 +30,7 @@
       "dependsOn": [
         "@jeromefitz/conventional-gitmoji#build",
         "@jeromefitz/git-cz#build",
-        "@jeromefitz/release-notes#build"
+        "@jeromefitz/release-notes-generator#build"
       ]
     },
     "@jeromefitz/spotify#build": {
