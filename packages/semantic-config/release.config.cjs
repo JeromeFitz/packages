@@ -1,11 +1,22 @@
-const { pluginOptions, releaseConfig } = require('../../release.config.cjs')
+/* eslint-disable import/order */
+const isCI = require('is-ci')
+!isCI && require('dotenv').config({ path: '../../.env' })
+
+const { config: configDefault } = require('../../release.config.cjs')
+const { getConfig } = require('@jeromefitz/semantic')
 
 const { name } = require('./package.json')
 
-const plugins = pluginOptions(releaseConfig.plugins, {
-  npmPublish: false,
+const configPassed = {
+  ...configDefault,
+  enableGit: false,
+  enableGithub: true,
+  enableNpm: false,
+  enableReleaseNotes: true,
   pkgRoot: './dist',
-})
-const config = { ...releaseConfig, plugins, tagFormat: `${name}@\${version}` }
+  tagFormat: `${name}@\${version}`,
+}
+
+const config = getConfig(configPassed)
 
 module.exports = config
