@@ -11,8 +11,8 @@ const splitter = new GraphemeSplitter()
 const transformer = (commit: any, context: any) => {
   const { type } = commit
 
-  console.dir(`>> transformer: begin`)
-  console.dir(commit)
+  // console.dir(`>> transformer: begin`)
+  // console.dir(commit)
 
   /**
    * @note rewrite types
@@ -109,8 +109,8 @@ const transformer = (commit: any, context: any) => {
   /**
    * @note return the new mutated `commit`
    */
-  console.dir(`> transformer: end`)
-  console.dir(commit)
+  // console.dir(`> transformer: end`)
+  // console.dir(commit)
   return commit
 }
 

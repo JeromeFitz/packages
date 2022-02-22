@@ -1,10 +1,6 @@
-import isCI from 'is-ci'
 import type { Options as SemanticReleaseOptions } from 'semantic-release'
 
 import { getPluginOptions } from './plugins'
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-!isCI && require('dotenv').config({ path: './.env' })
 
 /**
  * @todo allow override so we can get away from:
@@ -44,9 +40,6 @@ const getConfig = (configPassed = {}): SemanticReleaseOptions => {
     ...configInit,
     ...configPassed,
   }
-
-  // console.dir(`> getConfig`)
-  // console.dir(config)
 
   return config
 }
