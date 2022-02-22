@@ -16,6 +16,7 @@ const gh = new Octokit({ auth: process.env.GH_TOKEN })
  */
 const ejectLogins = [
   'JeromeFitz',
+  'BotJerome',
   'dependabot[bot]',
   'kodiakhq[bot]',
   'dependabot',
@@ -41,7 +42,7 @@ const contributor = async (context, commits, meta) => {
         .then(({ data }) => {
           const login = data.items[0]?.login
           if (!!login && login !== 'JeromeFitz') {
-            authors[authorIdx]['login'] = `@` + login
+            authors[authorIdx]['login'] = login
             return login
           }
           return ''
@@ -56,7 +57,7 @@ const contributor = async (context, commits, meta) => {
   if (authors.length > 0) {
     // @todo(release-notes) pass title as configuration option
     markdown += `#### 🥳️  Contributors\n`
-    const authorsString = authors.map((author: any) => author.login).join(',')
+    const authorsString = authors.map((author: any) => `@${author.login}`).join(',')
     markdown += `- ${authorsString}`
   }
   return markdown
