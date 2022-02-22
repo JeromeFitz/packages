@@ -13,6 +13,7 @@ interface PluginOptions
   enableGithub?: boolean
   enableNpm?: boolean
   enableReleaseNotes?: boolean
+  enableReleaseNotesCustom?: boolean
   // releaseRules?: ReleaseRule[]
   releaseRules?: any
 }

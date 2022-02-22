@@ -1,9 +1,13 @@
 // import type { Options as SemanticReleaseOptions, PluginSpec } from 'semantic-release'
+import { parserOpts, writerOpts } from '@jeromefitz/conventional-gitmoji'
 import type { PluginSpec } from 'semantic-release'
 
 import type { PluginOptions } from './pluginOptions.types'
 
 import { commitAnalyzer, git, github, npm } from './index'
+
+// console.dir(`> writerOpts`)
+// console.dir(writerOpts)
 
 const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec => {
   const optionsDefault = {
@@ -14,6 +18,7 @@ const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec => {
     enableGithub: true,
     enableNpm: true,
     enableReleaseNotes: true,
+    enableReleaseNotesCustom: true,
     /**
      * @note Customized defaults
      */
@@ -30,24 +35,23 @@ const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec => {
   // console.dir(options)
 
   const releaseNotesConfig = [
-    // @todo(release-notes) determine what title for this
-    /**
-     * @note
-     *
-     * I think we are going back to:
-     * - @semantic-release/release-notes-generator
-     *
-     * With a follow-up of:
-     *
-     * - @jeromefitz/release-note
-     *
-     * Which will do the customizations for Contributors
-     */
-    // '@semantic-release/release-notes-generator',
-    '@jeromefitz/release-notes',
+    '@semantic-release/release-notes-generator',
     {
-      // config: '@jeromefitz/gitmoji',
       config: '@jeromefitz/conventional-gitmoji',
+      parserOpts,
+      writerOpts,
+    },
+  ]
+  const releaseNotesCustomConfig = [
+    // '@jeromefitz/release-notes',
+    // {
+    //   config: '@jeromefitz/conventional-gitmoji',
+    // },
+    '@jeromefitz/release-notes-generator',
+    {
+      config: '@jeromefitz/conventional-gitmoji',
+      parserOpts,
+      writerOpts,
     },
   ]
 
@@ -84,6 +88,7 @@ const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec => {
   const _plugins: any = [
     commitAnalyzer(options.releaseRules),
     options.enableReleaseNotes ? releaseNotesConfig : '',
+    options.enableReleaseNotesCustom ? releaseNotesCustomConfig : '',
     options.enableNpm ? npmConfig : '',
     options.enableGithub ? githubConfig : '',
     options.enableGit ? gitConfig : '',

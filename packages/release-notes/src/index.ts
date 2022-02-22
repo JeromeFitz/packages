@@ -7,8 +7,8 @@ import _merge from 'lodash/merge'
 import readPkgUp from 'read-pkg-up'
 
 import { HOSTS_CONFIG, loadChangelogConfig } from './config'
-import getMarkdown from './getMarkdown'
 import util from './lib/util'
+import getMarkdown from './utils/getMarkdown'
 
 // eslint-disable-next-line @typescript-eslint/require-await
 // eslint-disable-next-line complexity
@@ -27,6 +27,14 @@ async function generateNotes(pluginConfig, context) {
   // console.dir(nextRelease)
   // console.dir(`options:`)
   // console.dir(options)
+
+  /**
+   * @note
+   * If we get what is passed back from commit-analyzer we are golden
+   * If not, we need to pass these through `generate` I believe after all
+   *
+   * @update we _do not_ get them so yes ... all this is needed :woozy:
+   */
   // commits.map((commit) => {
   //   console.dir(`commit:`)
   //   console.dir(commit)
@@ -75,6 +83,11 @@ async function generateNotes(pluginConfig, context) {
         }),
       }))
   )
+  // parsedCommits.map((commit) => {
+  //   console.dir(`parsedCommit:`)
+  //   console.dir(commit)
+  // })
+
   const previousTag = lastRelease.gitTag || lastRelease.gitHead
   const currentTag = nextRelease.gitTag || nextRelease.gitHead
   const {
@@ -107,6 +120,12 @@ async function generateNotes(pluginConfig, context) {
     }
   )
 
+  /**
+   * @note this is where we get the commit data we need
+   * can we "simply" disregard everything else in this
+   * if we revert back to `release-notes-generator`
+   * and only use this as a Contributor add-on plugin?
+   */
   const _commits: any = []
   await parsedCommits.map(async (commit) => {
     const __commits: any = await util.processCommit(
@@ -116,6 +135,13 @@ async function generateNotes(pluginConfig, context) {
     )
     _commits.push(__commits)
   })
+  // _commits.map((commit) => {
+  //   console.dir(`_commits:`)
+  //   console.dir(commit)
+  // })
+  /**
+   * ---------------------------------------------------
+   */
 
   const _chunk = _commits[0]
   const keyCommit =

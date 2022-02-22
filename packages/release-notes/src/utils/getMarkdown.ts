@@ -1,4 +1,4 @@
-import { commit, contributor, footer, header } from './templates/index'
+import { commit, contributor, footer, header } from '../templates/index'
 
 const getMarkdown = async (context, commits) => {
   const {

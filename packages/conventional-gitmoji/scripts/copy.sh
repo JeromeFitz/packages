@@ -21,4 +21,5 @@ fi
 ###
 # @custom(build)
 ###
+cp -R src/changelog/templates/. ./dist/changelog/templates/
 cp -R src/changelog/templates/. ./dist/templates/

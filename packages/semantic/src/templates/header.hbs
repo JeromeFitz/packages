@@ -1,0 +1,27 @@
+| 🔖️ | Release Information      |
+| ----------- | --------------- |
+| Current     | **`{{~currentTag}}`** |
+{{#if @root.linkCompare~}}
+
+| Previous | **[`{{linkCompare}}`](
+  {{~#if @root.repository~}}
+    {{~#if @root.host}}
+      {{~@root.host}}/
+    {{~/if}}
+    {{~#if @root.owner}}
+      {{~@root.owner}}/
+    {{~/if}}
+    {{~@root.repository}}
+  {{~else}}
+    {{~@root.repoUrl}}
+  {{~/if~}}
+  /compare/{{previousTag}}...{{currentTag}})** |
+{{~/if}}
+{{~#if title}}
+
+| Title    | **{{title}}** |
+{{~/if}}
+{{~#if date}}
+
+| Date     | **{{date}}** |
+{{/if}}
