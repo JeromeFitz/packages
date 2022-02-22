@@ -36,10 +36,17 @@
     "semantic-release": "semantic-release",
     "semantic-release:mono": "semantic-release -e semantic-release-monorepo"
   },
-  "devDependencies": {
-    "@types/title": "3.4.1",
-    "gitmojis": "3.9.0",
+  "dependencies": {
+    "grapheme-splitter": "1.0.4",
+    "lodash": "4.17.21",
+    "semantic-release": "19.0.2",
     "title": "3.4.4"
+  },
+  "devDependencies": {
+    "@types/lodash": "4.14.178",
+    "@types/semantic-release": "17.2.3",
+    "@types/title": "3.4.1",
+    "gitmojis": "3.9.0"
   },
   "type": "module",
   "sideEffects": false,
