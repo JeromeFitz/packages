@@ -46,6 +46,7 @@ const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec => {
     // '@semantic-release/release-notes-generator',
     '@jeromefitz/release-notes',
     {
+      // config: '@jeromefitz/gitmoji',
       config: '@jeromefitz/conventional-gitmoji',
     },
   ]

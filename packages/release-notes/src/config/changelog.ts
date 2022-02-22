@@ -21,10 +21,13 @@ import _isPlainObject from 'lodash/isPlainObject'
  *
  * @return {Promise<Object>} a `Promise` that resolve to the `conventional-changelog-core` config.
  */
-const loadChangelogConfig = async (
-  { preset, config, parserOpts, writerOpts, presetConfig },
-  { cwd }
-) => {
+const loadChangelogConfig = async (pluginConfig, context) => {
+  const { preset, config, parserOpts, writerOpts, presetConfig } = pluginConfig
+  const { cwd } = context
+
+  // console.dir(context)
+  // console.dir(`cwd: ${cwd}`)
+
   let loadedConfig
 
   if (preset) {
@@ -32,7 +35,10 @@ const loadChangelogConfig = async (
     loadedConfig =
       importFrom.silent(__dirname, presetPackage) || importFrom(cwd, presetPackage)
   } else if (config) {
+    // console.dir(`load from config:`)
     loadedConfig = importFrom.silent(__dirname, config) || importFrom(cwd, config)
+    // console.dir(loadedConfig)
+    // console.dir(`---`)
   } else {
     // loadedConfig = conventionalChangelogAngular
     loadedConfig = {}
@@ -44,10 +50,14 @@ const loadChangelogConfig = async (
       : promisify(loadedConfig)()
     : loadedConfig)
 
-  return {
+  const changelogConfig = {
     parserOpts: { ...loadedConfig.parserOpts, ...parserOpts },
     writerOpts: { ...loadedConfig.writerOpts, ...writerOpts },
   }
+
+  // console.dir(`> release-notes > config > changelog`)
+  // console.dir(changelogConfig)
+  return changelogConfig
 }
 
 export { loadChangelogConfig }
