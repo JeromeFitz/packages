@@ -17,7 +17,7 @@ const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec[] => {
     enableGithub: true,
     enableNpm: true,
     enableReleaseNotes: true,
-    enableReleaseNotesCustom: true,
+    enableReleaseNotesCustom: false,
     /**
      * @note Customized defaults
      */
@@ -31,7 +31,8 @@ const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec[] => {
   }
 
   const releaseNotesConfig = [
-    '@semantic-release/release-notes-generator',
+    // '@semantic-release/release-notes-generator',
+    '@jeromefitz/release-notes',
     {
       config: '@jeromefitz/conventional-gitmoji',
       parserOpts,
