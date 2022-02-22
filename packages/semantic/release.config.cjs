@@ -1,8 +1,29 @@
-const { pluginOptions, releaseConfig } = require('../../release.config.cjs')
+const isCI = require('is-ci')
+!isCI && require('dotenv').config({ path: '../../.env' })
 
+const { getConfig } = require('./dist/index.cjs')
 const { name } = require('./package.json')
 
-const plugins = pluginOptions(releaseConfig.plugins, { pkgRoot: './dist' })
-const config = { ...releaseConfig, plugins, tagFormat: `${name}@\${version}` }
+const config = {
+  branches: [
+    { name: 'main' },
+    { name: 'canary', prerelease: 'canary' },
+    { name: 'feature/contribs', prerelease: 'contribs' },
+  ],
+  enableGit: false,
+  enableGithub: true,
+  enableNpm: true,
+  enableReleaseNotes: true,
+  pkgRoot: './dist',
+  tagFormat: `${name}@\${version}`,
+}
 
-module.exports = config
+// console.dir(`> config`)
+// console.dir(config)
+
+const _config = getConfig(config)
+
+// console.dir(`> _config`)
+// console.dir(_config)
+
+module.exports = _config

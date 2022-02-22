@@ -9,7 +9,8 @@ const config: Options = {
   entry,
   external: ['@jeromefitz/git-cz'],
   // format: ['esm'],
-  noExternal: ['@jeromefitz/conventional-gitmoji', '@jeromefitz/release-notes'],
+  // noExternal: ['@jeromefitz/conventional-gitmoji', '@jeromefitz/release-notes'],
+  noExternal: ['@jeromefitz/release-notes'],
 }
 
 export default defineConfig({
