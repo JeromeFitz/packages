@@ -11,7 +11,7 @@ interface PluginOptions
     NPMPluginOptions {
   enableGit?: boolean
   enableGithub?: boolean
-  enableNPM?: boolean
+  enableNpm?: boolean
   enableReleaseNotes?: boolean
   // releaseRules?: ReleaseRule[]
   releaseRules?: any

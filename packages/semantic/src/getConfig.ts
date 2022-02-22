@@ -3,9 +3,6 @@ import type { Options as SemanticReleaseOptions } from 'semantic-release'
 import { getPluginOptions } from './plugins'
 
 /**
- * @todo allow override so we can get away from:
- * - @jeromefitz/semantic-config
- *
  * Should receive:
  * - ci
  * - debug

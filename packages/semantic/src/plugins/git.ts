@@ -21,7 +21,7 @@ const git = (options: GitPluginOptions): PluginSpec => {
               .filter((a) => a),
       message: options.message
         ? options.message
-        : '🏷️ `${nextRelease.gitTag}` [skip ci] \n\n${nextRelease.notes}',
+        : '🔖️ `${nextRelease.gitTag}` [skip ci] \n\n${nextRelease.notes}',
     },
   ]
 }

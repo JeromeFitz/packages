@@ -11,9 +11,9 @@ const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec => {
      * @note Will only load the plugin if set to true
      */
     enableGit: false,
-    enableGithub: false,
-    enableNPM: false,
-    enableReleaseNotes: false,
+    enableGithub: true,
+    enableNpm: true,
+    enableReleaseNotes: true,
     /**
      * @note Customized defaults
      */
@@ -84,7 +84,7 @@ const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec => {
   const _plugins: any = [
     commitAnalyzer(options.releaseRules),
     options.enableReleaseNotes ? releaseNotesConfig : '',
-    options.enableNPM ? npmConfig : '',
+    options.enableNpm ? npmConfig : '',
     options.enableGithub ? githubConfig : '',
     options.enableGit ? gitConfig : '',
   ]
