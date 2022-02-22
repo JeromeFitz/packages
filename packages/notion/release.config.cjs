@@ -9,11 +9,6 @@ const { name } = require('./package.json')
 
 const configPassed = {
   ...configDefault,
-  enableGit: false,
-  enableGithub: true,
-  enableNpm: true,
-  enableReleaseNotes: true,
-  pkgRoot: './dist',
   tagFormat: `${name}@\${version}`,
 }
 

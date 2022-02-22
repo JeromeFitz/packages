@@ -29,10 +29,6 @@ const branches = [
 
 const config = {
   branches,
-  enableGit: false,
-  enableGithub: false,
-  enableNpm: false,
-  enableReleaseNotes: false,
 }
 
 // const _config = getConfig(config)

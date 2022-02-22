@@ -33,12 +33,6 @@
         "@jeromefitz/release-notes#build"
       ]
     },
-    "@jeromefitz/semantic-config#build": {
-      "dependsOn": ["@jeromefitz/semantic#build"]
-    },
-    "@jeromefitz/semantic-config#lint": {
-      "dependsOn": ["@jeromefitz/semantic#build"]
-    },
     "@jeromefitz/spotify#build": {
       "dependsOn": ["@jeromefitz/utils#build"]
     }
