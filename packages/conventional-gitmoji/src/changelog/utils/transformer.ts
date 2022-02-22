@@ -1,5 +1,5 @@
 import GraphemeSplitter from 'grapheme-splitter'
-import _pullAt from 'lodash/pullAt'
+import _pullAt from 'lodash/pullAt.js'
 
 import { typeSpecs } from '../../index'
 
