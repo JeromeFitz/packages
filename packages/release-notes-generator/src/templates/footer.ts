@@ -9,7 +9,6 @@ const footer = (context, commits, meta) => {
 
   noteGroups.map((noteGroup) => {
     const { notes } = noteGroup
-    // console.dir(`title: ${title}`)
     const title = notes[0].title
     markdown += `#### ${title}\n`
     notes.map((note) => {

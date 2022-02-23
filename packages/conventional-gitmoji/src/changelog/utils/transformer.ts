@@ -10,47 +10,39 @@ const splitter = new GraphemeSplitter()
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const transformer = (commit: any, context: any) => {
   // console.dir(`~~> transformer`)
-
   // console.dir(commit)
-  // console.dir(context)
   const { type: _type } = commit
-  // console.dir(splitter.splitGraphemes(_type))
-  // console.dir(splitter.iterateGraphemes(_type))
-  // console.dir(splitter.countGraphemes(_type))
-  // console.dir(`~~!>`)
-  const type = splitter.splitGraphemes(_type)[0]
-
-  // console.dir(`>> transformer: begin`)
-  // console.dir(commit)
-
+  let type = _type
   /**
    * @note rewrite types
    */
-  const typeSpecIndex = typeSpecs.findIndex(
+  let typeSpecIndex = typeSpecs.findIndex(
     ({ code: c, emoji: e, type: t, value: v }) => {
-      // console.dir(`type: ${type}`)
-      // console.dir(`c: ${c}`)
-      // console.dir(`e: ${e}`)
-      // console.dir(`t: ${t}`)
-      // console.dir(`v: ${v}`)
       if (type === null) return
       return (
         // @hack(semantic) strip colon from :type: for stricter comparison
         type.replace(/\:/g, '') === c.replace(/\:/g, '') ||
         type === t ||
         type === v ||
-        type === e ||
-        type[0] === e[0] ||
-        type[0] === splitter.splitGraphemes(e)[0]
+        type === e
       )
     }
   )
 
   /**
-   * @note if type is not present in typeSpecIndex => exit
+   * @hack
+   * - if type is not present, attempt fallback
+   * - if type is not present or fallback
+   *    => typeSpecIndex => exit
    */
-  // console.dir(`typeSpecIndex: `)
-  // console.dir(typeSpecIndex)
+  if (typeSpecIndex === -1) {
+    type = splitter.splitGraphemes(_type)[0]
+    typeSpecIndex = typeSpecs.findIndex(({ emoji: e }) => {
+      if (type === null) return
+      return type[0] === e[0] || type[0] === splitter.splitGraphemes(e)[0]
+    })
+  }
+
   if (typeSpecIndex === -1) return
   const typeSpec = typeSpecs[typeSpecIndex]
 
