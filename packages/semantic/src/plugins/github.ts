@@ -7,18 +7,28 @@ const github = (options: GithubPluginOptions = {}): PluginSpec => {
     options &&
     Object.values(options).filter((i) => typeof i !== 'undefined').length === 0
 
-  if (!options || optionsEmpty) return ['@semantic-release/github', {}]
+  if (!options || optionsEmpty)
+    return [
+      '@semantic-release/github',
+      {
+        // @note(github) ensure someone has to override to put these on, haha
+        addReleases: false,
+        labels: false,
+        releasedLabels: false,
+        successComment: false,
+      },
+    ]
 
   const { githubAssets, ...config } = options
   return [
     '@semantic-release/github',
     {
       assets: githubAssets,
-      // //
-      // addReleases: false,
-      // labels: false,
-      // releasedLabels: false,
-      // successComment: false,
+      // @note(github) ensure someone has to override to put these on, haha
+      addReleases: false,
+      labels: false,
+      releasedLabels: false,
+      successComment: false,
       ...config,
     },
   ]
