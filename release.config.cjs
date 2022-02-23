@@ -29,6 +29,10 @@ const branches = [
 
 const config = {
   branches,
+  contributorsProhibitList: {
+    email: [],
+    login: ['BotJerome', 'JeromeFitz'],
+  },
 }
 
 // const _config = getConfig(config)

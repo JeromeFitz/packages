@@ -14,6 +14,7 @@ const getMarkdown = async (context, commits) => {
     nextRelease,
     noteGroups,
     notes,
+    options,
     owner,
     previousTag,
     references,
@@ -36,6 +37,7 @@ const getMarkdown = async (context, commits) => {
     nextRelease, // type|channel|gitHead|version|gitTag|name|notes
     noteGroups, // []
     notes,
+    options, // from `release.config`
     owner,
     previousTag,
     references, // []
