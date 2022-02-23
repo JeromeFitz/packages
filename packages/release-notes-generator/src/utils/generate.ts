@@ -26,6 +26,8 @@ function generate(options, commits, context, keyCommit) {
 
     notes = notes.concat(commit.notes)
   })
+  // console.dir(`notes:`)
+  // console.dir(notes)
 
   context = _merge(
     {},

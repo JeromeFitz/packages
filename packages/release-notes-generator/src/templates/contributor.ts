@@ -35,8 +35,8 @@ const contribtuorsSubtitle = [
 const contributor = async (context, commits, meta) => {
   const authors = _uniqBy(
     commits.map((commit) => ({
-      email: commit.committer.email,
-      name: commit.committer.name,
+      email: commit.author.email,
+      name: commit.author.name,
     })),
     'name'
   )

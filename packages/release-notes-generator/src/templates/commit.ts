@@ -36,7 +36,7 @@ const commit = (context, commits, meta) => {
 
   commitGroups.map((commitGroup) => {
     const { commits } = commitGroup
-    const type = commits[0].type
+    const type = commits[0]?.type
     markdown += `#### ${type}\n`
     commits.map((commit) => {
       const { scope, subject, header, hash, references } = commit

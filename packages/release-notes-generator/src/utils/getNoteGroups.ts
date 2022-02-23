@@ -5,7 +5,11 @@ import _orderBy from 'lodash/orderBy'
 function getNoteGroups(notes, noteGroupsSort, notesSort) {
   const noteGroups: any = []
 
+  // console.dir(`> getNoteGroups`)
+  // console.dir(notes)
   _forEach(notes, function (note) {
+    // console.dir(`> _forEach`)
+    // console.dir(note)
     const title = note.title
     let titleExists = false
 
