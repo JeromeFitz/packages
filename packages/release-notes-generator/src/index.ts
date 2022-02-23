@@ -36,7 +36,7 @@ async function generateNotes(pluginConfig, context) {
 
   const { commit, issue, referenceActions, issuePrefixes } = configGithub
 
-  console.dir(`--- 0`)
+  // console.dir(`--- 0`)
 
   const previousTag = lastRelease.gitTag || lastRelease.gitHead
   const currentTag = nextRelease.gitTag || nextRelease.gitHead
@@ -62,7 +62,7 @@ async function generateNotes(pluginConfig, context) {
   const [, owner, repository] =
     /^\/(?<owner>[^/]+)?\/?(?<repository>.+)?$/.exec(pathname) ?? []
 
-  console.dir(`--- 1`)
+  // console.dir(`--- 1`)
 
   const changelogContext = _merge(
     {
@@ -86,21 +86,21 @@ async function generateNotes(pluginConfig, context) {
     }
   )
 
-  console.dir(`--- 2`)
+  // console.dir(`--- 2`)
 
   const commitsParsed = conventionalCommitsFilter(
     commitsPassed
       .filter(({ message }) => {
-        console.dir(`commitsPassed => filter`)
-        console.dir(message)
+        // console.dir(`commitsPassed => filter`)
+        // console.dir(message)
         if (!message.trim()) {
           return false
         }
         return true
       })
       .map((commitRaw) => {
-        console.dir(`> commitRaw`)
-        console.dir(commitRaw)
+        // console.dir(`> commitRaw`)
+        // console.dir(commitRaw)
         const commitPassed = {
           ...commitRaw,
           ...conventionalCommitsParser(commitRaw.message, {
@@ -115,13 +115,13 @@ async function generateNotes(pluginConfig, context) {
       })
   )
 
-  console.dir(`--- 3`)
-  console.dir(commitsParsed)
+  // console.dir(`--- 3`)
+  // console.dir(commitsParsed)
 
   let commits: any = []
   await commitsParsed.map(async (commitParsed) => {
-    console.dir(`> commitsParsed: commitParsed`)
-    console.dir(commitParsed)
+    // console.dir(`> commitsParsed: commitParsed`)
+    // console.dir(commitParsed)
     const commitProcessed: any = await processCommit(
       commitParsed,
       writerOpts.transform,
@@ -136,24 +136,24 @@ async function generateNotes(pluginConfig, context) {
 
   commits = await commits.filter((commit) => commit !== undefined)
 
-  console.dir(`--- 4`)
-  console.dir(commits)
+  // console.dir(`--- 4`)
+  // console.dir(commits)
 
   const _options = _merge({}, changelogContext, options, writerOpts)
 
-  console.dir(`--- 5`)
+  // console.dir(`--- 5`)
   /**
    * @note(release-notes-generator) oddly, `date` is pulled from here
    *  could we do this differently? what other fields
    *  are pulled for info purposes?
    */
   const _chunk = commits[0]
-  console.dir(`_chunk`)
-  console.dir(_chunk)
+  // console.dir(`_chunk`)
+  // console.dir(_chunk)
   const keyCommit = processCommit(_chunk, writerOpts.transform, context) || _chunk
   const { context: _context } = await generate(_options, commits, context, keyCommit)
 
-  console.dir(`--- 6`)
+  // console.dir(`--- 6`)
 
   const markdownContext = _merge({}, changelogContext, _context)
 

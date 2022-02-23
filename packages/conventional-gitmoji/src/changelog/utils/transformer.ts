@@ -9,7 +9,16 @@ const splitter = new GraphemeSplitter()
 // @ts-ignore
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const transformer = (commit: any, context: any) => {
-  const { type } = commit
+  // console.dir(`~~> transformer`)
+
+  // console.dir(commit)
+  // console.dir(context)
+  const { type: _type } = commit
+  // console.dir(splitter.splitGraphemes(_type))
+  // console.dir(splitter.iterateGraphemes(_type))
+  // console.dir(splitter.countGraphemes(_type))
+  // console.dir(`~~!>`)
+  const type = splitter.splitGraphemes(_type)[0]
 
   // console.dir(`>> transformer: begin`)
   // console.dir(commit)
@@ -19,13 +28,20 @@ const transformer = (commit: any, context: any) => {
    */
   const typeSpecIndex = typeSpecs.findIndex(
     ({ code: c, emoji: e, type: t, value: v }) => {
+      // console.dir(`type: ${type}`)
+      // console.dir(`c: ${c}`)
+      // console.dir(`e: ${e}`)
+      // console.dir(`t: ${t}`)
+      // console.dir(`v: ${v}`)
       if (type === null) return
       return (
         // @hack(semantic) strip colon from :type: for stricter comparison
         type.replace(/\:/g, '') === c.replace(/\:/g, '') ||
-        type === e ||
         type === t ||
-        type === v
+        type === v ||
+        type === e ||
+        type[0] === e[0] ||
+        type[0] === splitter.splitGraphemes(e)[0]
       )
     }
   )
@@ -33,6 +49,8 @@ const transformer = (commit: any, context: any) => {
   /**
    * @note if type is not present in typeSpecIndex => exit
    */
+  // console.dir(`typeSpecIndex: `)
+  // console.dir(typeSpecIndex)
   if (typeSpecIndex === -1) return
   const typeSpec = typeSpecs[typeSpecIndex]
 
@@ -96,15 +114,6 @@ const transformer = (commit: any, context: any) => {
     : commit.subject
 
   commit.subject = subject.trim()
-
-  /**
-   * @todo get username (github|gitlab|etc.)
-   * @todo this should be handled in separate custom footer
-   */
-  // const userData = await octokit.request('GET /search/users', {
-  //   q: commit.committer.email,
-  // })
-  // commit.login = !!userData ? userData?.data?.items[0].login : null
 
   /**
    * @note return the new mutated `commit`

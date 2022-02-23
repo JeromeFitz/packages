@@ -1,4 +1,8 @@
+// import GraphemeSplitter from 'grapheme-splitter'
+
 import type { IReleaseRuleProps, IReleaseRule } from '../index'
+
+// const splitter = new GraphemeSplitter()
 
 // @note(semantic-release) can we re-use types here?
 type CustomReleaseRulesProps = {
@@ -44,6 +48,7 @@ const getReleaseRules = (types: IReleaseRule) => {
       releaseRules.push({
         release: releaseRule.semver,
         type: releaseRule.emoji,
+        // type: splitter.splitGraphemes(releaseRule.emoji)[0],
       })
     }
   })

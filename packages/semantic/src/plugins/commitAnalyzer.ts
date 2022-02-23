@@ -1,5 +1,5 @@
 import {
-  parserOpts,
+  // parserOpts,
   releaseRules as releaseRulesDefault,
 } from '@jeromefitz/conventional-gitmoji'
 import type { IReleaseRule } from '@jeromefitz/conventional-gitmoji'
@@ -21,15 +21,15 @@ const commitAnalyzer = (releaseRulesPassed: IReleaseRule[] = []) => {
     {
       // // @todo(release-notes) what / where is this named?
       // // config: '@jeromefitz/gitmoji',
-      // config: '@jeromefitz/conventional-gitmoji',
+      config: '@jeromefitz/conventional-gitmoji',
       // config: '@jeromefitz/conventional-gitmoji',
       releaseRules,
-      //
-      parserOpts: {
-        headerPattern: parserOpts.headerPattern,
-        headerCorrespondence: parserOpts.headerCorrespondence,
-        noteKeywords: parserOpts.noteKeywords,
-      },
+      // //
+      // parserOpts: {
+      //   headerPattern: parserOpts.headerPattern,
+      //   headerCorrespondence: parserOpts.headerCorrespondence,
+      //   noteKeywords: parserOpts.noteKeywords,
+      // },
     },
   ]
 }
