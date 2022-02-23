@@ -52,8 +52,7 @@
     "dry:run": "turbo run clean --scope=*git-cz* && turbo run build --scope=*git-cz* && node ./packages/git-cz/dist/cli",
     "ds:build": "turbo run build --scope=*design-system*",
     "ds:clean": "turbo run clean --scope=*design-system*",
-    "ds:dev": "turbo run dev --scope=*design-system*",
-    "t:test": "turbo run lint --scope=@jeromefitz/semantic-config -vvv"
+    "ds:dev": "turbo run dev --scope=*design-system*"
   },
   "dependencies": {
     "@babel/eslint-parser": "7.17.0",
