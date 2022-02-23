@@ -5,9 +5,6 @@ import type { PluginOptions } from './pluginOptions.types'
 
 import { commitAnalyzer, git, github, npm } from './index'
 
-// console.dir(`> writerOpts`)
-// console.dir(writerOpts)
-
 const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec[] => {
   const optionsDefault = {
     /**
@@ -16,8 +13,8 @@ const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec[] => {
     enableGit: false,
     enableGithub: true,
     enableNpm: true,
-    enableReleaseNotes: true,
-    enableReleaseNotesCustom: false,
+    enableReleaseNotes: false,
+    enableReleaseNotesCustom: true,
     /**
      * @note Customized defaults
      */
@@ -31,8 +28,7 @@ const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec[] => {
   }
 
   const releaseNotesConfig = [
-    // '@semantic-release/release-notes-generator',
-    '@jeromefitz/release-notes',
+    '@semantic-release/release-notes-generator',
     {
       config: '@jeromefitz/conventional-gitmoji',
       parserOpts,
@@ -40,15 +36,9 @@ const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec[] => {
     },
   ]
   const releaseNotesCustomConfig = [
-    // '@jeromefitz/release-notes',
-    // {
-    //   config: '@jeromefitz/conventional-gitmoji',
-    // },
     '@jeromefitz/release-notes-generator',
     {
       config: '@jeromefitz/conventional-gitmoji',
-      parserOpts,
-      writerOpts,
     },
   ]
 

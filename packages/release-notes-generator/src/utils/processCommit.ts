@@ -8,7 +8,7 @@ import _set from 'lodash/set'
  * @ref lifted from release-notes-generator
  */
 function processCommit(chunk, transform, context) {
-  let commit
+  let commit: any
 
   try {
     chunk = JSON.parse(chunk)

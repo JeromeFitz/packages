@@ -37,6 +37,7 @@
     "semantic-release:mono": "semantic-release -e semantic-release-monorepo"
   },
   "devDependencies": {
+    "@types/conventional-commits-parser": "3.0.2",
     "@types/lodash": "4.14.178",
     "@types/read-pkg-up": "6.0.0"
   },

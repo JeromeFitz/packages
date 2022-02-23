@@ -1,5 +1,4 @@
-// import { commit, contributor, footer, header } from '../templates/index'
-import { contributor } from '../templates/index'
+import { commit, contributor, footer, header } from '../templates/index'
 
 const getMarkdown = async (context, commits) => {
   const {
@@ -51,28 +50,28 @@ const getMarkdown = async (context, commits) => {
   //   console.dir(markdownContext[key])
   // })
 
-  // // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
-  // const repositoryUrl = repository ? host + '/' + owner + '/' + repository : repoUrl
+  // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
+  const repositoryUrl = repository ? host + '/' + owner + '/' + repository : repoUrl
 
-  // const meta = {
-  //   repositoryUrl,
-  // }
-  const meta = {}
+  const meta = {
+    repositoryUrl,
+  }
+  // const meta = {}
 
   let markdown = ``
-  // // TEMPLATE
-  // // HEADER
-  // markdown += header(markdownContext, commits, meta)
-  // markdown += `\n`
-  // // COMMITS
-  // markdown += commit(markdownContext, commits, meta)
-  // markdown += `\n`
+  // TEMPLATE
+  // HEADER
+  markdown += header(markdownContext, commits, meta)
+  markdown += `\n`
+  // COMMITS
+  markdown += commit(markdownContext, commits, meta)
+  markdown += `\n`
   // CONTRIBUTORS
   markdown += await contributor(markdownContext, commits, meta)
   markdown += `\n`
-  // // FOOTER (NOTES)
-  // markdown += footer(markdownContext, commits, meta)
-  // markdown += `\n`
+  // FOOTER (NOTES)
+  markdown += footer(markdownContext, commits, meta)
+  markdown += `\n`
 
   return markdown
 }

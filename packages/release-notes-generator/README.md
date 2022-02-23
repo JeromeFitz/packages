@@ -1,24 +1,24 @@
 # @jeromefitz/release-notes-generator
 
-⏏️ Eject from `@jeromefitz/release-notes`
+Heavily customized fork (_cannot_ stress that enough) of [`conventional-changelog`](https://github.com/conventional-changelog/conventional-changelog) and [`release-notes-generator`](https://github.com/semantic-release/release-notes-generator).
 
-This **_only_** adds Contributors to the end of the Release Notes.
+This moves away from Handlebars into TypeScript and is currently hyper-specific to GitHub only. :octocat:
 
-There **_could_** be more here, but for now this is all it does.
-
-Add the following to `release.config` **_after_** `@semantic-release/release-notes-generator`:
+May move to `remark` once `semantic-release` is ESM.
 
 ```sh
 [
   '@jeromefitz/release-notes-generator',
   {
     config: '@jeromefitz/conventional-gitmoji',
-    parserOpts,
-    writerOpts,
   },
 ]
 ```
 
-For now, you must pass the `parserOpts|writerOpts` (from `@jeromefitz/conventional-gitmoji` 🥴️) to this plugin.
+## Installation
 
-The `release-notes` fork has all the additional logic to grab things, but it is way too much at the moment.
+Also add the `changelog-config` customization:
+
+```sh
+yarn add @jeromefitz/release-notes-generator @jeromefitz/conventional-gitmoji
+```

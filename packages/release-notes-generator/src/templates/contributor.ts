@@ -16,7 +16,7 @@ const gh = new Octokit({ auth: process.env.GH_TOKEN })
  *
  */
 const ejectLogins = [
-  'JeromeFitz',
+  // 'JeromeFitz',
   'BotJerome',
   'dependabot[bot]',
   'kodiakhq[bot]',
