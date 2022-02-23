@@ -112,11 +112,12 @@ async function generateNotes(pluginConfig, context) {
 
   const _options = _merge({}, changelogContext, options, writerOpts)
 
-  // @note(release-notes-generator) does not seem __needed__
-  // @note(lol) yes this was grabbing `date`. what weird way to do that.
+  /**
+   * @note(release-notes-generator) oddly, `date` is pulled from here
+   *  could we do this differently? what other fields
+   *  are pulled for info purposes?
+   */
   const keyCommit = commits[0]
-  console.dir(`keyCommit`)
-  console.dir(keyCommit)
   const { context: _context } = await generate(_options, commits, context, keyCommit)
 
   const markdownContext = _merge({}, changelogContext, _context)
