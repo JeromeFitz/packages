@@ -18,49 +18,32 @@ This extends [`@jeromefitz/git-cz`](../git-cz).
 
 `./release.config.cjs`
 
-```js
-const release = require('@jeromefitz/semantic/release.config.cjs')
-module.exports = {
-  ...release,
-}
-```
+Custom values:
+
+- `enableGit?: boolean`
+- `enableGithub?: boolean`
+- `enableNpm?: boolean`
+- `enableReleaseNotes?: boolean`
+- `enableReleaseNotesCustom?: boolean`
+
+And then the rest of the traditional configuration values for `semantic-release` and `conventional-changelog`.
 
 #### Example
 
+You can look at this monorepo as it re-uses a lot of code ethroughout via `release.config`
+
 ```js
-const release = require('@jeromefitz/semantic/release.config.cjs')
+const { getConfig } = require('@jeromefitz/semantic')
 
-const _extends = ['semantic-release-commit-filter']
-const plugins = release.plugins
+const { name } = require('./package.json')
 
-const pluginsOverride = [
-  [
-    '@semantic-release/npm',
-    {
-      npmPublish: false,
-    },
-  ],
-  [
-    '@semantic-release/github',
-    { labels: false, releasedLabels: false, successComment: false },
-  ],
-]
-
-/**
- * @refactor This mutates plugins which is not ideal
- */
-plugins.map((plugin, pluginIndex) => {
-  const pluginName = plugin[0]
-  pluginsOverride.map((pluginOverride) => {
-    pluginName === pluginOverride[0] ? (plugins[pluginIndex] = pluginOverride) : null
-  })
-})
-
-module.exports = {
-  ...release,
-  extends: _extends,
-  plugins,
+const configPassed = {
+  tagFormat: `${name}@\${version}`,
 }
+
+const config = getConfig(configPassed)
+
+module.exports = config
 ```
 
 ## Scripts
