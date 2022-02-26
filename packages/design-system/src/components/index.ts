@@ -104,6 +104,16 @@ export {
   MenuRadioItem,
   MenuSeparator,
 } from './Menu'
+export {
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuTrigger,
+  NavigationMenuLink,
+  NavigationMenuContent,
+  NavigationMenuViewport,
+  NavigationMenuIndicator,
+} from './NavigationMenu'
 export { Note } from './Note'
 export { Overlay, overlayStyles } from './Overlay'
 export {

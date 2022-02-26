@@ -514,8 +514,10 @@ const darkTheme = createTheme('dark-theme', {
     canvas: 'hsl(0 0% 15%)',
     panel: '$slate3',
     transparentPanel: 'hsl(0 100% 100% / 97%)',
-    shadowLight: 'hsl(206 22% 7% / 35%)',
-    shadowDark: 'hsl(206 22% 7% / 20%)',
+    // shadowLight: 'hsl(206 22% 7% / 35%)',
+    // shadowDark: 'hsl(206 22% 7% / 20%)',
+    shadowLight: 'hsl(0 0% 25%)',
+    shadowDark: 'hsl(0 0% 75%)',
   },
 })
 

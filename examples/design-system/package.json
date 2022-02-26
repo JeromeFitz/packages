@@ -42,6 +42,8 @@
     "swr": "1.2.2"
   },
   "devDependencies": {
+    "@types/react": "17.0.39",
+    "@types/react-dom": "17.0.11",
     "next-compose-plugins": "2.2.1",
     "next-transpile-modules": "9.0.0"
   }
