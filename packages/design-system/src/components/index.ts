@@ -105,6 +105,7 @@ export {
   MenuSeparator,
 } from './Menu'
 export {
+  // @core
   NavigationMenu,
   NavigationMenuList,
   NavigationMenuItem,
@@ -113,6 +114,12 @@ export {
   NavigationMenuContent,
   NavigationMenuViewport,
   NavigationMenuIndicator,
+  // @custom
+  NavigationMenuListContent,
+  NavigationMenuListItem,
+  NavigationMenuLinkTitle,
+  NavigationMenuLinkText,
+  NavigationMenuViewportPosition,
 } from './NavigationMenu'
 export { Note } from './Note'
 export { Overlay, overlayStyles } from './Overlay'

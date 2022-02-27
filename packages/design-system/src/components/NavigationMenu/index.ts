@@ -1,4 +1,5 @@
 export {
+  // @core
   NavigationMenu,
   NavigationMenuList,
   NavigationMenuItem,
@@ -7,4 +8,10 @@ export {
   NavigationMenuContent,
   NavigationMenuViewport,
   NavigationMenuIndicator,
+  // @custom
+  NavigationMenuListContent,
+  NavigationMenuListItem,
+  NavigationMenuLinkTitle,
+  NavigationMenuLinkText,
+  NavigationMenuViewportPosition,
 } from './NavigationMenu'

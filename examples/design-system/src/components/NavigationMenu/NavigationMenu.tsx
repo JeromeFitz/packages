@@ -1,6 +1,6 @@
 import { TicketIcon } from '@heroicons/react/outline'
 import {
-  // Box,
+  // @core
   NavigationMenu,
   NavigationMenuList,
   NavigationMenuItem,
@@ -9,20 +9,17 @@ import {
   NavigationMenuContent,
   NavigationMenuViewport,
   NavigationMenuIndicator,
-  // Text,
+  // @custom
+  NavigationMenuListContent,
+  NavigationMenuListItem,
+  NavigationMenuLinkTitle,
+  NavigationMenuLinkText,
+  NavigationMenuViewportPosition,
 } from '@jeromefitz/design-system/src/components'
 import NextLink from 'next/link'
 import * as React from 'react'
 
 import { cssIconHeroToRadix2 } from '../../lib/constants'
-
-import {
-  ListContent,
-  ListItem,
-  LinkTitle,
-  LinkText,
-  ViewportPosition,
-} from './NavigationMenu.styles'
 
 const menu = [
   {
@@ -116,29 +113,31 @@ const menu = [
   { id: 'direct-link', href: '/', layout: null, title: 'Direct Link' },
 ]
 
-const ListContentItem = React.forwardRef((props: any, forwardedRef) => (
-  <ListItem>
-    <NextLink passHref href={props?.href}>
-      <NavigationMenuLink
-        {...props}
-        ref={forwardedRef}
-        css={{
-          padding: 12,
-          borderRadius: 6,
-          '&:hover': { backgroundColor: '$colors$mauve8' },
-        }}
-      >
-        <LinkTitle>{props.title}</LinkTitle>
-        <LinkText>{props.children}</LinkText>
-      </NavigationMenuLink>
-    </NextLink>
-  </ListItem>
-))
+const NavigationMenuListContentItem = React.forwardRef(
+  (props: any, forwardedRef) => (
+    <NavigationMenuListItem>
+      <NextLink passHref href={props?.href}>
+        <NavigationMenuLink
+          {...props}
+          ref={forwardedRef}
+          css={{
+            padding: 12,
+            borderRadius: 6,
+            '&:hover': { backgroundColor: '$colors$mauve8' },
+          }}
+        >
+          <NavigationMenuLinkTitle>{props.title}</NavigationMenuLinkTitle>
+          <NavigationMenuLinkText>{props.children}</NavigationMenuLinkText>
+        </NavigationMenuLink>
+      </NextLink>
+    </NavigationMenuListItem>
+  )
+)
 
-const ListContentItemCallout = React.forwardRef(
+const NavigationMenuListContentItemCallout = React.forwardRef(
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ({ children, ...props }, forwardedRef) => (
-    <ListItem css={{ gridRow: 'span 3' }}>
+    <NavigationMenuListItem css={{ gridRow: 'span 3' }}>
       <NavigationMenuLink
         {...props}
         href="/"
@@ -156,7 +155,7 @@ const ListContentItemCallout = React.forwardRef(
           padding: 25,
         }}
       >
-        <LinkTitle
+        <NavigationMenuLinkTitle
           css={{
             fontSize: 18,
             color: 'white',
@@ -170,8 +169,8 @@ const ListContentItemCallout = React.forwardRef(
             />
             Upcoming Event Title
           </>
-        </LinkTitle>
-        <LinkText
+        </NavigationMenuLinkTitle>
+        <NavigationMenuLinkText
           css={{
             fontSize: 14,
             color: '$colors$violet4',
@@ -179,9 +178,9 @@ const ListContentItemCallout = React.forwardRef(
           }}
         >
           FRI 03/04 08:00PM
-        </LinkText>
+        </NavigationMenuLinkText>
       </NavigationMenuLink>
-    </ListItem>
+    </NavigationMenuListItem>
   )
 )
 
@@ -204,21 +203,21 @@ const _NavigationMenu = () => {
                 {title}
               </NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ListContent layout={layout}>
-                  {id === 'events' && <ListContentItemCallout />}
+                <NavigationMenuListContent layout={layout}>
+                  {id === 'events' && <NavigationMenuListContentItemCallout />}
 
                   {items.map((item) => {
                     return (
-                      <ListContentItem
+                      <NavigationMenuListContentItem
                         key={`cli-${item.id}`}
                         href={item.href}
                         title={item.title}
                       >
                         {item.description}
-                      </ListContentItem>
+                      </NavigationMenuListContentItem>
                     )
                   })}
-                </ListContent>
+                </NavigationMenuListContent>
               </NavigationMenuContent>
             </NavigationMenuItem>
           ) : (
@@ -231,9 +230,9 @@ const _NavigationMenu = () => {
         <NavigationMenuIndicator />
       </NavigationMenuList>
 
-      <ViewportPosition>
+      <NavigationMenuViewportPosition>
         <NavigationMenuViewport />
-      </ViewportPosition>
+      </NavigationMenuViewportPosition>
     </NavigationMenu>
   )
 }

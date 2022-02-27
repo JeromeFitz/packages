@@ -1,6 +1,6 @@
 import { darkTheme, styled } from '@jeromefitz/design-system/src/stitches.config'
 
-const ListContent = styled('ul', {
+const NavigationMenuListContent = styled('ul', {
   columnGap: 10,
   display: 'grid',
   listStyle: 'none',
@@ -39,7 +39,7 @@ const ListContent = styled('ul', {
   },
 })
 
-const ListItem = styled('li', {
+const NavigationMenuListItem = styled('li', {
   borderRadius: '$2',
   py: '$1',
   px: '0',
@@ -52,7 +52,7 @@ const ListItem = styled('li', {
   },
 })
 
-const LinkTitle = styled('div', {
+const NavigationMenuLinkTitle = styled('div', {
   color: '$colors$violet12',
   fontWeight: 500,
   lineHeight: 1.2,
@@ -62,14 +62,14 @@ const LinkTitle = styled('div', {
   },
 })
 
-const LinkText = styled('p', {
+const NavigationMenuLinkText = styled('p', {
   all: 'unset',
   color: '$colors$violet11',
   fontWeight: 'initial',
   lineHeight: 1.4,
 })
 
-const ViewportPosition = styled('div', {
+const NavigationMenuViewportPosition = styled('div', {
   display: 'flex',
   justifyContent: 'center',
   left: 0,
@@ -79,4 +79,10 @@ const ViewportPosition = styled('div', {
   width: '100%',
 })
 
-export { ListContent, ListItem, LinkTitle, LinkText, ViewportPosition }
+export {
+  NavigationMenuListContent,
+  NavigationMenuListItem,
+  NavigationMenuLinkTitle,
+  NavigationMenuLinkText,
+  NavigationMenuViewportPosition,
+}
