@@ -4,44 +4,44 @@ import { styled } from '../../stitches.config'
 
 const StyledTrigger = styled(SelectPrimitive.SelectTrigger, {
   all: 'unset',
-  display: 'inline-flex',
   alignItems: 'center',
-  justifyContent: 'center',
-  borderRadius: 4,
-  padding: '0 15px',
-  fontSize: 13,
-  lineHeight: 1,
-  height: 35,
-  gap: 5,
-  backgroundColor: 'white',
-  color: '$colors$violet11',
+  backgroundColor: '$colors$violet3',
+  borderRadius: '$1',
   boxShadow: `0 2px 10px $colors$blackA7`,
-  '&:hover': { backgroundColor: '$colors$violet3' },
-  '&:focus': { boxShadow: `0 0 0 2px black` },
+  color: '$colors$violet11',
+  display: 'inline-flex',
+  fontSize: '0.8125rem',
+  gap: '$2',
+  height: '2rem',
+  justifyContent: 'center',
+  lineHeight: 1,
+  padding: '0 1rem',
+  '&:hover': { backgroundColor: '$colors$violet4' },
+  '&:focus': { boxShadow: `0 0 0 2px $colors$violet11` },
 })
 
 const StyledContent = styled(SelectPrimitive.Content, {
-  overflow: 'hidden',
-  backgroundColor: 'white',
-  borderRadius: 6,
+  backgroundColor: '$colors$violet3',
+  borderRadius: '$4',
   boxShadow:
     '0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)',
+  overflow: 'hidden',
 })
 
 const StyledViewport = styled(SelectPrimitive.Viewport, {
-  padding: 5,
+  padding: '$1',
 })
 
 const StyledItem = styled(SelectPrimitive.Item, {
   all: 'unset',
-  fontSize: 13,
-  lineHeight: 1,
-  color: '$colors$violet11',
-  borderRadius: 3,
-  display: 'flex',
   alignItems: 'center',
-  height: 25,
-  padding: '0 35px 0 25px',
+  borderRadius: 3,
+  color: '$colors$violet11',
+  display: 'flex',
+  fontSize: '0.75rem',
+  height: '1.5rem',
+  lineHeight: 1,
+  padding: '0 2rem 0 1.5rem',
   position: 'relative',
   userSelect: 'none',
 
@@ -57,33 +57,36 @@ const StyledItem = styled(SelectPrimitive.Item, {
 })
 
 const StyledLabel = styled(SelectPrimitive.Label, {
-  padding: '0 25px',
-  fontSize: 12,
-  lineHeight: '25px',
-  color: '$colors$violet11',
+  color: '$colors$violet12',
+  // fontFamily: '$mono',
+  fontSize: '0.75rem',
+  fontWeight: 700,
+  lineHeight: 1.5,
+  padding: '0 2rem 0 1.5rem',
+  // textTransform: 'uppercase',
 })
 
 const StyledSeparator = styled(SelectPrimitive.Separator, {
-  height: 1,
   backgroundColor: '$colors$violet6',
+  height: 1,
   margin: 5,
 })
 
 const StyledItemIndicator = styled(SelectPrimitive.ItemIndicator, {
-  position: 'absolute',
-  left: 0,
-  width: 25,
-  display: 'inline-flex',
   alignItems: 'center',
+  display: 'inline-flex',
   justifyContent: 'center',
+  left: 0,
+  position: 'absolute',
+  width: '1.5625rem',
 })
 
 const scrollButtonStyles = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  height: 25,
-  backgroundColor: 'white',
+  height: '1.5625rem',
+  backgroundColor: '$colors$violet3',
   color: '$colors$violet11',
   cursor: 'default',
 }

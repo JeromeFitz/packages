@@ -1,11 +1,10 @@
-import { PageHeading } from '@jeromefitz/design-system/src/components'
+import { PageHeading, Text } from '@jeromefitz/design-system/src/components'
 
 // import { LoadingDots } from '../components/LoadingDots'
-// import { NavigationMenu } from '../components/NavigationMenu'
-// import { Toast } from '../components/Toast'
+import { NavigationMenu } from '../components/NavigationMenu'
 import { Select } from '../components/Select'
-
-// import { LOTS_O_TEXT } from '../lib/constants'
+import { Toast } from '../components/Toast'
+import { LOTS_O_TEXT } from '../lib/constants'
 
 function Home({}) {
   return (
@@ -15,12 +14,12 @@ function Home({}) {
         description="An example of in-progress work."
       />
       {/* <LoadingDots /> */}
+      <NavigationMenu />
       <Select />
-      {/* <Toast /> */}
-      {/* <Text css={{ lineHeight: '1.25' }} size="5">
+      <Toast />
+      <Text css={{ lineHeight: '1.25' }} size="5">
         {LOTS_O_TEXT}
-      </Text> */}
-      {/* <NavigationMenu /> */}
+      </Text>
     </>
   )
 }

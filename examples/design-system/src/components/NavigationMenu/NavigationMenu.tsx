@@ -138,48 +138,49 @@ const NavigationMenuListContentItemCallout = React.forwardRef(
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ({ children, ...props }, forwardedRef) => (
     <NavigationMenuListItem css={{ gridRow: 'span 3' }}>
-      <NavigationMenuLink
-        {...props}
-        href="/"
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        ref={forwardedRef}
-        css={{
-          display: 'flex',
-          justifyContent: 'flex-end',
-          flexDirection: 'column',
-          width: '100%',
-          height: '100%',
-          background: `linear-gradient(135deg, $colors$violet9 0%, $colors$blue9 100%);`,
-          borderRadius: 6,
-          padding: 25,
-        }}
-      >
-        <NavigationMenuLinkTitle
+      <NextLink href="/" passHref>
+        <NavigationMenuLink
+          {...props}
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
+          ref={forwardedRef}
           css={{
-            fontSize: 18,
-            color: 'white',
-            my: '$2',
+            display: 'flex',
+            justifyContent: 'flex-end',
+            flexDirection: 'column',
+            width: '100%',
+            height: '100%',
+            background: `linear-gradient(135deg, $colors$violet9 0%, $colors$blue9 100%);`,
+            borderRadius: 6,
+            padding: 25,
           }}
         >
-          <>
-            <TicketIcon
-              className="hi2ri"
-              style={{ ...cssIconHeroToRadix2, marginBottom: '1rem' }}
-            />
-            Upcoming Event Title
-          </>
-        </NavigationMenuLinkTitle>
-        <NavigationMenuLinkText
-          css={{
-            fontSize: 14,
-            color: '$colors$violet4',
-            lineHeight: 1.3,
-          }}
-        >
-          FRI 03/04 08:00PM
-        </NavigationMenuLinkText>
-      </NavigationMenuLink>
+          <NavigationMenuLinkTitle
+            css={{
+              fontSize: 18,
+              color: 'white',
+              my: '$2',
+            }}
+          >
+            <>
+              <TicketIcon
+                className="hi2ri"
+                style={{ ...cssIconHeroToRadix2, marginBottom: '1rem' }}
+              />
+              Upcoming Event Title
+            </>
+          </NavigationMenuLinkTitle>
+          <NavigationMenuLinkText
+            css={{
+              fontSize: 14,
+              color: '$colors$violet4',
+              lineHeight: 1.3,
+            }}
+          >
+            FRI 03/04 08:00PM
+          </NavigationMenuLinkText>
+        </NavigationMenuLink>
+      </NextLink>
     </NavigationMenuListItem>
   )
 )

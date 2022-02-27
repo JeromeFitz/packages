@@ -95,7 +95,7 @@ const SelectDemo = () => (
               </SelectItemIndicator>
             </SelectItem>
             <SelectItem value="leek">
-              <SelectItemText>leek</SelectItemText>
+              <SelectItemText>Leek</SelectItemText>
               <SelectItemIndicator>
                 <CheckIcon />
               </SelectItemIndicator>
