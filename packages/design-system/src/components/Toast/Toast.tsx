@@ -67,6 +67,56 @@ const StyledToast = styled(ToastPrimitive.Root, {
       animation: `${swipeOut} 100ms ease-out forwards`,
     },
   },
+
+  variants: {
+    type: {
+      default: {
+        border: '1px solid $colors$gray1',
+        // backgroundColor: '$gray3',
+        color: '$gray12',
+        '&:hover': {
+          // backgroundColor: '$gray4',
+          borderColor: '$gray2',
+        },
+      },
+      error: {
+        border: '1px solid $colors$red7',
+        // backgroundColor: '$red9',
+        color: '$red1',
+        '&:hover': {
+          // backgroundColor: '$red10',
+          borderColor: '$red8',
+        },
+      },
+      info: {
+        border: '1px solid $colors$blue7',
+        // backgroundColor: '$blue9',
+        color: '$blue1',
+        '&:hover': {
+          // backgroundColor: '$blue10',
+          borderColor: '$blue8',
+        },
+      },
+      success: {
+        border: '1px solid $colors$green7',
+        // backgroundColor: '$green9',
+        color: '$green1',
+        '&:hover': {
+          // backgroundColor: '$green10',
+          borderColor: '$green8',
+        },
+      },
+      warning: {
+        border: '1px solid $colors$orange7',
+        // backgroundColor: '$orange9',
+        color: '$orange1',
+        '&:hover': {
+          // backgroundColor: '$orange10',
+          borderColor: '$orange8',
+        },
+      },
+    },
+  },
 })
 
 const StyledTitle = styled(ToastPrimitive.Title, {

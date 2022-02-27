@@ -79,7 +79,7 @@ const ToastDemo = () => {
         Add to calendar
       </Button>
 
-      <Toast open={open} onOpenChange={setOpen}>
+      <Toast open={open} onOpenChange={setOpen} type="error">
         <ToastTitle>Scheduled: Catch up</ToastTitle>
         <ToastDescription asChild>
           <time dateTime={eventDateRef.current.toISOString()}>

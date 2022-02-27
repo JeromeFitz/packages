@@ -1,63 +1,132 @@
-import { CaretSortIcon } from '@radix-ui/react-icons'
-import * as React from 'react'
+import * as SelectPrimitive from '@radix-ui/react-select'
 
-import { styled, CSS } from '../../stitches.config'
+import { styled } from '../../stitches.config'
 
-const SelectWrapper = styled('div', {
-  backgroundColor: '$loContrast',
-  borderRadius: '$2',
-  boxShadow: 'inset 0 0 0 1px $colors$slate7',
-  color: '$hiContrast',
-  fontFamily: '$untitled',
-  fontSize: '$1',
-  fontVariantNumeric: 'tabular-nums',
-  fontWeight: 400,
-  height: '$5',
-  flexShrink: 0,
+const StyledTrigger = styled(SelectPrimitive.SelectTrigger, {
+  all: 'unset',
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  borderRadius: 4,
+  padding: '0 15px',
+  fontSize: 13,
+  lineHeight: 1,
+  height: 35,
+  gap: 5,
+  backgroundColor: 'white',
+  color: '$colors$violet11',
+  boxShadow: `0 2px 10px $colors$blackA7`,
+  '&:hover': { backgroundColor: '$colors$violet3' },
+  '&:focus': { boxShadow: `0 0 0 2px black` },
+})
 
-  '&:focus-within': {
-    zIndex: 1,
-    boxShadow: 'inset 0px 0px 0px 1px $colors$blue8, 0px 0px 0px 1px $colors$blue8',
+const StyledContent = styled(SelectPrimitive.Content, {
+  overflow: 'hidden',
+  backgroundColor: 'white',
+  borderRadius: 6,
+  boxShadow:
+    '0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)',
+})
+
+const StyledViewport = styled(SelectPrimitive.Viewport, {
+  padding: 5,
+})
+
+const StyledItem = styled(SelectPrimitive.Item, {
+  all: 'unset',
+  fontSize: 13,
+  lineHeight: 1,
+  color: '$colors$violet11',
+  borderRadius: 3,
+  display: 'flex',
+  alignItems: 'center',
+  height: 25,
+  padding: '0 35px 0 25px',
+  position: 'relative',
+  userSelect: 'none',
+
+  '&[data-disabled]': {
+    color: '$colors$violet8',
+    pointerEvents: 'none',
+  },
+
+  '&:focus': {
+    backgroundColor: '$colors$violet9',
+    color: '$colors$violet1',
   },
 })
 
-const StyledSelect = styled('select', {
-  appearance: 'none',
-  backgroundColor: 'transparent',
-  border: 'none',
-  borderRadius: 'inherit',
-  color: 'inherit',
-  font: 'inherit',
-  outline: 'none',
-  width: '100%',
-  height: '100%',
-  pl: '$1',
-  pr: '$3',
+const StyledLabel = styled(SelectPrimitive.Label, {
+  padding: '0 25px',
+  fontSize: 12,
   lineHeight: '25px',
+  color: '$colors$violet11',
 })
 
-const StyledCaretSortIcon = styled(CaretSortIcon, {
+const StyledSeparator = styled(SelectPrimitive.Separator, {
+  height: 1,
+  backgroundColor: '$colors$violet6',
+  margin: 5,
+})
+
+const StyledItemIndicator = styled(SelectPrimitive.ItemIndicator, {
   position: 'absolute',
-  pointerEvents: 'none',
-  display: 'inline',
-
-  // Use margins instead of top/left to avoid setting "position: relative" on parent,
-  // which would make stacking context tricky with Select used in a control group.
-  marginTop: 5,
-  marginLeft: -16,
+  left: 0,
+  width: 25,
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
 })
 
-type SelectProps = React.ComponentProps<typeof StyledSelect> & { css?: CSS }
+const scrollButtonStyles = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  height: 25,
+  backgroundColor: 'white',
+  color: '$colors$violet11',
+  cursor: 'default',
+}
 
-const Select = React.forwardRef<React.ElementRef<typeof StyledSelect>, SelectProps>(
-  ({ css, ...props }, forwardedRef) => (
-    <SelectWrapper css={css}>
-      <StyledSelect ref={forwardedRef} {...props} />
-      <StyledCaretSortIcon />
-    </SelectWrapper>
-  )
+const StyledScrollUpButton = styled(
+  SelectPrimitive.ScrollUpButton,
+  scrollButtonStyles
 )
 
-Select.toString = () => `.${SelectWrapper.className}`
+const StyledScrollDownButton = styled(
+  SelectPrimitive.ScrollDownButton,
+  scrollButtonStyles
+)
 
-export { Select }
+// Exports
+const Select = SelectPrimitive.Root
+const SelectTrigger = StyledTrigger
+const SelectValue = SelectPrimitive.Value
+const SelectIcon = SelectPrimitive.Icon
+const SelectContent = StyledContent
+const SelectViewport = StyledViewport
+const SelectGroup = SelectPrimitive.Group
+const SelectItem = StyledItem
+const SelectItemText = SelectPrimitive.ItemText
+const SelectItemIndicator = StyledItemIndicator
+const SelectLabel = StyledLabel
+const SelectSeparator = StyledSeparator
+const SelectScrollUpButton = StyledScrollUpButton
+const SelectScrollDownButton = StyledScrollDownButton
+
+export {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectIcon,
+  SelectContent,
+  SelectViewport,
+  SelectGroup,
+  SelectItem,
+  SelectItemText,
+  SelectItemIndicator,
+  SelectLabel,
+  SelectSeparator,
+  SelectScrollUpButton,
+  SelectScrollDownButton,
+}

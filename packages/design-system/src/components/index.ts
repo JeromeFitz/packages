@@ -138,7 +138,23 @@ export { RadioCard, RadioCardGroup } from './RadioCard'
 export { RadioGridGroup, RadioGrid } from './RadioGrid'
 export { ScrollArea } from './ScrollArea'
 export { Section } from './Section'
-export { Select } from './Select'
+export {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectIcon,
+  SelectContent,
+  SelectViewport,
+  SelectGroup,
+  SelectItem,
+  SelectItemText,
+  SelectItemIndicator,
+  SelectLabel,
+  SelectSeparator,
+  SelectScrollUpButton,
+  SelectScrollDownButton,
+} from './Select'
+
 export { Separator } from './Separator'
 export {
   Sheet,
