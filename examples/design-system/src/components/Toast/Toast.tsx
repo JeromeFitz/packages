@@ -13,7 +13,7 @@ import {
 import type {
   IToast,
   ToastType,
-} from '@jeromefitz/design-system/src/components/Toast/Toast.types'
+} from '@jeromefitz/design-system/src/custom/Toast/Toast.types'
 import _debounce from 'lodash/debounce'
 import * as React from 'react'
 
