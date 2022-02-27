@@ -165,7 +165,15 @@ export { TabsList, Tabs, TabsContent, TabsTrigger } from './Tabs'
 export { Text } from './Text'
 export { TextArea } from './TextArea'
 export { TextField } from './TextField'
-export { ToastContainer, Toaster, ToastProvider, useToast } from './Toast'
+export {
+  Toast,
+  ToastAction,
+  ToastClose,
+  ToastDescription,
+  ToastProvider,
+  ToastTitle,
+  ToastViewport,
+} from './Toast'
 export { Toggle } from './Toggle'
 export { Tooltip } from './Tooltip'
 export { TreeItem } from './TreeItem'
