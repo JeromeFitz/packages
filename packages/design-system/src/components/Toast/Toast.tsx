@@ -1,3 +1,6 @@
+/**
+ * https://www.radix-ui.com/docs/primitives/components/toast
+ */
 import * as ToastPrimitive from '@radix-ui/react-toast'
 import { styled, keyframes } from '@stitches/react'
 
@@ -137,6 +140,15 @@ const StyledDescription = styled(ToastPrimitive.Description, {
 
 const StyledAction = styled(ToastPrimitive.Action, {
   gridArea: 'action',
+  variants: {
+    type: {
+      default: {},
+      close: {
+        position: 'relative',
+        top: '-0.65rem',
+      },
+    },
+  },
 })
 
 const ToastProvider = ToastPrimitive.Provider

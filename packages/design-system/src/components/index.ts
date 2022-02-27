@@ -191,6 +191,15 @@ export {
   ToastViewport,
 } from './Toast'
 export { Toggle } from './Toggle'
+export { ToggleGroup, ToggleGroupItem } from './ToggleGroup'
+export {
+  Toolbar,
+  ToolbarButton,
+  ToolbarSeparator,
+  ToolbarLink,
+  ToolbarToggleGroup,
+  ToolbarToggleItem,
+} from './Toolbar'
 export { Tooltip } from './Tooltip'
 export { TreeItem } from './TreeItem'
 export { VerifiedBadge } from './VerifiedBadge'

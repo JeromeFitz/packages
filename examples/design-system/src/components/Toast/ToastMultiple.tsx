@@ -30,7 +30,7 @@ const ToastMultiple = React.forwardRef((props, forwardedRef) => {
           <ToastDescription>
             <time dateTime={new Date().toISOString()}>{prettyDate(new Date())}</time>
           </ToastDescription>
-          <ToastAction asChild altText="Goto schedule to undo">
+          <ToastAction asChild altText="Goto schedule to undo" type="close">
             <Button ghost size="1">
               <Cross2Icon />
             </Button>

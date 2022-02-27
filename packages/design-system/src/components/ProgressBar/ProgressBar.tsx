@@ -1,3 +1,6 @@
+/**
+ * https://www.radix-ui.com/docs/primitives/components/progress
+ */
 import * as ProgressPrimitive from '@radix-ui/react-progress'
 import * as React from 'react'
 

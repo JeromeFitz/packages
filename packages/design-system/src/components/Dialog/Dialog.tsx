@@ -1,3 +1,6 @@
+/**
+ * https://www.radix-ui.com/docs/primitives/components/dialog
+ */
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { Cross1Icon } from '@radix-ui/react-icons'
 import * as React from 'react'
@@ -73,9 +76,6 @@ export const DialogContent = React.forwardRef<
   </StyledContent>
 ))
 
-/**
- * @exports
- */
 const DialogTrigger = DialogPrimitive.Trigger
 const DialogClose = DialogPrimitive.Close
 const DialogTitle = DialogPrimitive.Title

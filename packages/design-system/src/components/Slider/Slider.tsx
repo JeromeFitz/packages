@@ -1,3 +1,6 @@
+/**
+ * https://www.radix-ui.com/docs/primitives/components/slider
+ */
 import * as SliderPrimitive from '@radix-ui/react-slider'
 import * as React from 'react'
 

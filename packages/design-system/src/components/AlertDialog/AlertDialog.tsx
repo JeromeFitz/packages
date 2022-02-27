@@ -1,3 +1,6 @@
+/**
+ * https://www.radix-ui.com/docs/primitives/components/alert-dialog
+ */
 import { violet, blackA, red, mauve } from '@radix-ui/colors'
 import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog'
 import { styled, keyframes } from '@stitches/react'
@@ -130,9 +133,6 @@ const AlertDialogDemo = ({ dialogText }) => (
   </AlertDialog>
 )
 
-/**
- * @exports
- */
 const AlertDialog = Root
 const AlertDialogTrigger = AlertDialogPrimitive.Trigger
 const AlertDialogContent = StyledContent

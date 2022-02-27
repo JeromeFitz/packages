@@ -48,9 +48,6 @@ const StyledArrow = styled(TooltipPrimitive.Arrow, {
   fill: '$hiContrast',
 })
 
-/**
- * @exports
- */
 const Tooltip = TooltipPrimitive.Root
 const TooltipTrigger = TooltipPrimitive.Trigger
 const TooltipContent = StyledContent

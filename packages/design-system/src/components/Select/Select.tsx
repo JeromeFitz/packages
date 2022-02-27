@@ -1,3 +1,6 @@
+/**
+ * https://www.radix-ui.com/docs/primitives/components/select
+ */
 import * as SelectPrimitive from '@radix-ui/react-select'
 
 import { styled } from '../../stitches.config'
@@ -41,7 +44,8 @@ const StyledItem = styled(SelectPrimitive.Item, {
   fontSize: '0.75rem',
   height: '1.5rem',
   lineHeight: 1,
-  padding: '0 2rem 0 1.5rem',
+  padding: '0 $5 0 $5',
+  my: '$1',
   position: 'relative',
   userSelect: 'none',
 
@@ -62,14 +66,15 @@ const StyledLabel = styled(SelectPrimitive.Label, {
   fontSize: '0.75rem',
   fontWeight: 700,
   lineHeight: 1.5,
-  padding: '0 2rem 0 1.5rem',
+  padding: '0 $5 0 $5',
+  my: '$1',
   // textTransform: 'uppercase',
 })
 
 const StyledSeparator = styled(SelectPrimitive.Separator, {
   backgroundColor: '$colors$violet6',
   height: 1,
-  margin: 5,
+  margin: '$2',
 })
 
 const StyledItemIndicator = styled(SelectPrimitive.ItemIndicator, {
@@ -101,7 +106,6 @@ const StyledScrollDownButton = styled(
   scrollButtonStyles
 )
 
-// Exports
 const Select = SelectPrimitive.Root
 const SelectTrigger = StyledTrigger
 const SelectValue = SelectPrimitive.Value

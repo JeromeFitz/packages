@@ -1,3 +1,6 @@
+/**
+ * https://www.radix-ui.com/docs/primitives/components/toggle
+ */
 import * as TogglePrimitive from '@radix-ui/react-toggle'
 
 import { styled } from '../../stitches.config'

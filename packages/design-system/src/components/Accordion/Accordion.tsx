@@ -1,3 +1,6 @@
+/**
+ * https://www.radix-ui.com/docs/primitives/components/accordion
+ */
 import * as AccordionPrimitive from '@radix-ui/react-accordion'
 import { ChevronDownIcon } from '@radix-ui/react-icons'
 import * as React from 'react'
@@ -117,9 +120,6 @@ const AccordionContent = React.forwardRef(({ children, ...props }, forwardedRef)
 ))
 AccordionContent.displayName = 'AccordionContent'
 
-/**
- * @exports
- */
 const Accordion = StyledAccordion
 const AccordionItem = StyledItem
 
