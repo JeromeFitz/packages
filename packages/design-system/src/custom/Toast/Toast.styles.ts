@@ -6,7 +6,9 @@ const Toast = styled('div', {
   fontSize: '0.875rem',
   justifyContent: 'space-between',
   maxWidth: '100%',
-  transition: 'all 0.4s ease',
+  '@media (prefers-reduced-motion: no-preference)': {
+    transition: 'all 0.4s ease',
+  },
   // width: '420px',
 })
 
@@ -14,7 +16,9 @@ const Message = styled('div', {
   height: '100%',
   marginTop: '-1px',
   opacity: '1',
-  transition: 'opacity 0.4s ease',
+  '@media (prefers-reduced-motion: no-preference)': {
+    transition: 'opacity 0.4s ease',
+  },
   width: '100%',
   wordBreak: 'break-word',
   variants: {
@@ -38,7 +42,9 @@ const ToastContainer = styled('div', {
   position: 'absolute',
   right: '0',
   transform: 'translate3d(0, 100%, 150px) scale(1)',
-  transition: 'all 0.4s ease',
+  '@media (prefers-reduced-motion: no-preference)': {
+    transition: 'all 0.4s ease',
+  },
   zIndex: '5000',
 
   width: '90vw',
@@ -135,7 +141,9 @@ const Toaster = styled('div', {
   bottom: 'calc($space$4 + $$offset-bottom)',
   position: 'fixed',
   right: '$space$4',
-  transition: 'transform 0.4s ease, bottom 0.4s ease',
+  '@media (prefers-reduced-motion: no-preference)': {
+    transition: 'transform 0.4s ease, bottom 0.4s ease',
+  },
   zIndex: '5000',
 
   width: '90vh',

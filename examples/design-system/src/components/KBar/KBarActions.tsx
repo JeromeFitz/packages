@@ -1,5 +1,5 @@
 import { TicketIcon } from '@heroicons/react/outline'
-import { useToast } from '@jeromefitz/design-system/src/components'
+import { useToast } from '@jeromefitz/design-system/src/custom/Toast'
 import {
   CalendarIcon,
   EnvelopeOpenIcon,

@@ -1,8 +1,9 @@
 import {
   KBarProvider,
   ToastProvider,
-  Toaster,
+  ToastViewport,
 } from '@jeromefitz/design-system/src/components'
+// import { ToastProvider, Toaster } from '@jeromefitz/design-system/src/custom/Toast'
 import { darkTheme } from '@jeromefitz/design-system/src/stitches.config'
 import { ThemeProvider } from 'next-themes'
 
@@ -18,11 +19,11 @@ const Providers = ({ children }) => {
         value={{ light: 'light-theme', dark: darkTheme.className }}
         defaultTheme="system"
       >
-        <ToastProvider>
+        <ToastProvider duration={5000} swipeDirection="right" swipeThreshold={50}>
           <KBarProvider>
             {children}
             <KBarPortal />
-            <Toaster />
+            <ToastViewport />
           </KBarProvider>
         </ToastProvider>
       </ThemeProvider>

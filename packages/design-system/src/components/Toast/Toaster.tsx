@@ -1,54 +1,142 @@
-/* eslint-disable @typescript-eslint/restrict-plus-operands */
-import * as Portal from '@radix-ui/react-portal'
-import { useHover } from '@react-aria/interactions'
+import { Cross2Icon } from '@radix-ui/react-icons'
 import * as React from 'react'
 
-import { Toaster as ToasterDiv } from './Toast.styles'
+import { Button } from '../index'
 
-import { useToast, ToastContainer } from './index'
+import {
+  Toast,
+  ToastAction,
+  ToastClose,
+  ToastDescription,
+  ToastTitle,
+} from './Toast'
+import type { IToast, IToastVariant } from './Toast.types'
 
-function useForceUpdate(): () => void {
-  return React.useReducer(() => ({}), {})[1]
-}
+const Toaster = React.forwardRef((props, forwardedRef) => {
+  const [toasts, toastsSet] = React.useState<IToast[]>([])
 
-const Toaster = () => {
-  const { hoverProps, isHovered } = useHover({})
-  const { current } = useToast()
+  const handleToast = (
+    toast: Partial<IToast> | string,
+    toastVariant: IToastVariant
+  ) => {
+    // @todo(types) + defaults
+    let action,
+      actionComponent,
+      actionText,
+      close,
+      closeComponent,
+      description,
+      title
 
-  const messages = current?.messages ?? []
+    let variant = toastVariant
 
-  const heights = React.useRef([])
+    if (typeof toast === 'string') {
+      description = toast
+    } else {
+      // eslint-disable-next-line @typescript-eslint/no-extra-semi
+      ;({
+        action,
+        actionComponent,
+        actionText,
+        close,
+        closeComponent,
+        description,
+        title,
+        variant,
+      } = toast)
+    }
 
-  const forceUpdate = useForceUpdate()
+    toastsSet((prev) => [
+      ...prev,
+      {
+        action,
+        actionComponent,
+        actionText,
+        close,
+        closeComponent,
+        description,
+        key: (+new Date()).toString(),
+        title,
+        variant,
+      },
+    ])
+  }
+
+  const removeToastByKey = (key: string) => {
+    toastsSet((prev) => prev.filter((p) => p.key !== key))
+  }
+
+  const createToast = (toast: Partial<IToast> | string) => {
+    handleToast(toast, 'default')
+  }
+
+  React.useImperativeHandle(forwardedRef, () => ({
+    createToast,
+    removeToastByKey,
+  }))
 
   return (
-    <Portal.Root>
-      <ToasterDiv multiple={messages.length > 1} {...hoverProps}>
-        {messages.map((e, i) => {
+    <>
+      {toasts.map(
+        ({
+          action,
+          actionAltText,
+          // @todo(toast) custom component
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          actionComponent,
+          actionText,
+          close,
+          // @todo(toast) custom component
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          closeComponent,
+          key,
+          description,
+          title,
+          variant,
+          ...toastProps
+        }) => {
+          const actionVisible = !!action && !!actionText
+          const closeVisible = !actionVisible && !!close
           return (
-            <ToastContainer
-              action={e.action}
-              cancelAction={e.cancelAction}
-              duration={e.duration}
-              height={e.height}
-              heights={heights.current}
-              hovering={isHovered}
-              id={e.key}
-              key={e.key}
-              onMount={forceUpdate}
-              position={messages.length - 1 - i}
-              preserve={e.preserve}
-              remove={() => {
-                current?.removeToastByKey(e.key)
+            <Toast
+              key={key}
+              onOpenChange={() => {
+                removeToastByKey(key)
               }}
-              text={e.text}
-              type={e.type}
-            />
-          )
-        })}
-      </ToasterDiv>
-    </Portal.Root>
-  )
-}
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-ignore
+              variant={variant}
+              {...toastProps}
+            >
+              {!!title && (
+                <ToastTitle>
+                  {title} ({key})
+                </ToastTitle>
+              )}
+              <ToastDescription>{description}</ToastDescription>
 
-export default Toaster
+              {actionVisible && (
+                <ToastAction asChild altText={actionAltText || actionText}>
+                  <Button ghost onClick={action} variant="violet" size="1">
+                    {actionText}
+                  </Button>
+                </ToastAction>
+              )}
+
+              {closeVisible && (
+                <ToastClose asChild aria-label="Close">
+                  <Button ghost size="1" onClick={!!close ? close : () => {}}>
+                    <Cross2Icon />
+                  </Button>
+                </ToastClose>
+              )}
+            </Toast>
+          )
+        }
+      )}
+    </>
+  )
+})
+Toaster.displayName = 'Toaster'
+
+export { Toaster }

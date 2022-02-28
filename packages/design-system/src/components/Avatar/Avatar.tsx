@@ -1,3 +1,6 @@
+/**
+ * https://www.radix-ui.com/docs/primitives/components/avatar
+ */
 import * as React from 'react'
 
 import { Box, Status } from '../index'

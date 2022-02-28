@@ -1,3 +1,6 @@
+/**
+ * https://www.radix-ui.com/docs/primitives/components/slider
+ */
 import * as SliderPrimitive from '@radix-ui/react-slider'
 import * as React from 'react'
 
@@ -51,7 +54,9 @@ const SliderThumb = styled(SliderPrimitive.Thumb, {
     backgroundColor: 'hsla(0,0%,0%,.035)',
     transform: 'scale(1)',
     borderRadius: '$round',
-    transition: 'transform 200ms cubic-bezier(0.22, 1, 0.36, 1)',
+    '@media (prefers-reduced-motion: no-preference)': {
+      transition: 'transform 200ms cubic-bezier(0.22, 1, 0.36, 1)',
+    },
   },
 
   '&:focus': {

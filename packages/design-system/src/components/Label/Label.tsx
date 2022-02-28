@@ -1,3 +1,6 @@
+/**
+ * https://www.radix-ui.com/docs/primitives/components/label
+ */
 import * as LabelPrimitive from '@radix-ui/react-label'
 
 import { styled } from '../../stitches.config'

@@ -1,3 +1,6 @@
+/**
+ * https://www.radix-ui.com/docs/primitives/components/separator
+ */
 import * as SeparatorPrimitive from '@radix-ui/react-separator'
 
 import { styled } from '../../stitches.config'

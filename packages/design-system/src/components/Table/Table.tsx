@@ -107,8 +107,4 @@ const Table = styled('table', {
   },
 })
 
-/**
- * @exports
- */
-
 export { TableCaption, Tbody, Tfoot, Tr, Th, Td, Thead, Table }

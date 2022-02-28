@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import * as React from 'react'
 
-import { Button } from '../index'
+import { Button } from '../../components/index'
 
 import { Message, ToastContainer as ToastContainerDiv, Toast } from './Toast.styles'
 import type { ToastContainerProps } from './Toast.types'

@@ -19,6 +19,9 @@ import { useKBar } from 'kbar'
 import { useTheme } from 'next-themes'
 import * as React from 'react'
 
+import { Media } from '../../context/Media'
+// import { NavigationMenu } from '../NavigationMenu'
+
 const _AppBar = ({}) => {
   const kbar = useKBar()
   const { theme, setTheme } = useTheme()
@@ -62,48 +65,52 @@ const _AppBar = ({}) => {
       glass
     >
       <Flex direction="row" justify="between">
-        <Flex css={{ ml: '$3' }} justify="start">
-          <Flex direction="column">
-            <Button
-              css={{
-                py: '$2',
-                mr: '$2',
-                '@hover': {
-                  '&:hover, &:hover + &': {
-                    cursor: 'pointer',
-                  },
-                },
-              }}
-              size="1"
-              onClick={kbar.query.toggle}
-              ghost
-            >
-              Menu: KBar
-              {/* <Kbd css={{}}>CMD + K</Kbd> */}
-            </Button>
-          </Flex>
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button css={{ '&:hover': { cursor: 'pointer' } }} size="1">
-                Menu: Sheet
-              </Button>
-            </SheetTrigger>
-            <Portal.Root>
-              <SheetContent
+        <Flex css={{ ml: '$3' }} direction="row" justify="start">
+          <Media greaterThan="xs">
+            <Flex>
+              <Button
                 css={{
-                  textAlign: 'center',
-                  borderTopLeftRadius: '$4',
-                  borderTopRightRadius: '$4',
-                  p: '$4',
+                  py: '$2',
+                  mr: '$2',
+                  '@hover': {
+                    '&:hover, &:hover + &': {
+                      cursor: 'pointer',
+                    },
+                  },
                 }}
-                side="bottom"
+                size="1"
+                onClick={kbar.query.toggle}
+                ghost
               >
-                <Heading size="3">Menu</Heading>
-                <Separator />
-                <Text>Hello.</Text>
-              </SheetContent>
-            </Portal.Root>
-          </Sheet>
+                Menu: KBar
+              </Button>
+            </Flex>
+            {/* <NavigationMenu /> */}
+          </Media>
+          <Media at="xs">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button css={{ '&:hover': { cursor: 'pointer' } }} size="1">
+                  Menu: Sheet
+                </Button>
+              </SheetTrigger>
+              <Portal.Root>
+                <SheetContent
+                  css={{
+                    textAlign: 'center',
+                    borderTopLeftRadius: '$4',
+                    borderTopRightRadius: '$4',
+                    p: '$4',
+                  }}
+                  side="bottom"
+                >
+                  <Heading size="3">Menu</Heading>
+                  <Separator />
+                  <Text>Hello.</Text>
+                </SheetContent>
+              </Portal.Root>
+            </Sheet>
+          </Media>
         </Flex>
         <Flex css={{ mr: '$3' }} justify="end">
           <Button
