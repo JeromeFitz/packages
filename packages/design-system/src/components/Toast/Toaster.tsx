@@ -1,7 +1,7 @@
 import { Cross2Icon } from '@radix-ui/react-icons'
 import * as React from 'react'
 
-import { Button } from '../Button'
+import { Button } from '../index'
 
 import {
   Toast,
@@ -81,8 +81,14 @@ const Toaster = React.forwardRef((props, forwardedRef) => {
         ({
           action,
           actionAltText,
+          // @todo(toast) custom component
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          actionComponent,
           actionText,
           close,
+          // @todo(toast) custom component
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          closeComponent,
           key,
           description,
           title,

@@ -4,11 +4,11 @@ import {
   Flex,
   Heading,
   Label,
-  Select,
   Separator,
   Switch,
   TextField,
 } from '@jeromefitz/design-system/src/components'
+import { Select } from '@jeromefitz/design-system/src/custom/Select'
 import { useToast } from '@jeromefitz/design-system/src/custom/Toast'
 import type {
   IToast,
@@ -45,7 +45,7 @@ const items: IItems[] = [
   { title: 'Warning', toast: { text, type: 'warning' } },
 ]
 
-const _Toast = () => {
+const ToastCustom = () => {
   const toasts = useToast()
   const [message, messageSet] = React.useState(text)
   const [preserve, preserveSet] = React.useState(false)
@@ -169,4 +169,4 @@ const _Toast = () => {
   )
 }
 
-export { _Toast as Toast }
+export { ToastCustom }

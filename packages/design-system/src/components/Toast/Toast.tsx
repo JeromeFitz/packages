@@ -21,21 +21,6 @@ const swipeOut = keyframes({
   to: { transform: `translateX(calc(100% + ${VIEWPORT_PADDING}px))` },
 })
 
-const StyledViewport = styled(ToastPrimitive.Viewport, {
-  bottom: 0,
-  display: 'flex',
-  flexDirection: 'column',
-  gap: 10,
-  listStyle: 'none',
-  margin: 0,
-  maxWidth: '100vw',
-  padding: VIEWPORT_PADDING,
-  position: 'fixed',
-  right: 0,
-  width: 390,
-  zIndex: '$toast',
-})
-
 const StyledToast = styled(ToastPrimitive.Root, {
   alignItems: 'center',
   backgroundColor: '$colors$violet3',
@@ -147,6 +132,25 @@ const StyledAction = styled(ToastPrimitive.Action, {
 
 const StyledClose = styled(ToastPrimitive.Close, {
   gridArea: 'action',
+})
+
+const StyledViewport = styled(ToastPrimitive.Viewport, {
+  bottom: 0,
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 10,
+  listStyle: 'none',
+  margin: 0,
+  maxWidth: '100vw',
+  padding: VIEWPORT_PADDING,
+  position: 'fixed',
+  right: 0,
+  width: 390,
+  zIndex: '$toast',
+  // [`${StyledToast}:nth-last-child(n + 4)`]: {
+  //   opacity: 0,
+  //   pointerEvents: 'none',
+  // },
 })
 
 const ToastProvider = ToastPrimitive.Provider

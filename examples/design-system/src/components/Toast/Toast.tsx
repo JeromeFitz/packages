@@ -270,7 +270,7 @@ const ToastDemo = () => {
                     title,
                     variant,
                     //
-                    duration: 1000,
+                    // duration: 1000,
                   })
                 }
               }}
