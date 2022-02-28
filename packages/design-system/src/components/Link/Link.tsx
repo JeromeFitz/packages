@@ -6,9 +6,8 @@ const Link = styled('a', {
   textDecorationColor: '$slate4',
   textDecorationLine: 'none',
   textUnderlineOffset: '3px',
-  transition: 'color 0.25s, text-decoration-color 0.25s ease-in-out',
-  '@media (prefers-reduced-motion)': {
-    transition: 'none',
+  '@media (prefers-reduced-motion: no-preference)': {
+    transition: 'color 0.25s, text-decoration-color 0.25s ease-in-out',
   },
   [`& ${Text}`]: {
     color: 'inherit',
@@ -78,9 +77,8 @@ const Link = styled('a', {
         outline: 'none',
         WebkitTapHighlightColor: 'rgba(0,0,0,0)',
         '& > strong': {
-          transition: 'all 0.25s ease-in-out',
-          '@media (prefers-reduced-motion)': {
-            transition: 'none',
+          '@media (prefers-reduced-motion: no-preference)': {
+            transition: 'all 0.25s ease-in-out',
           },
         },
         '&:focus': {

@@ -189,6 +189,7 @@ export {
   ToastProvider,
   ToastTitle,
   ToastViewport,
+  Toaster,
 } from './Toast'
 export { Toggle } from './Toggle'
 export { ToggleGroup, ToggleGroupItem } from './ToggleGroup'

@@ -277,7 +277,10 @@ const CarouselArrowButton = styled('button', {
 
   boxShadow: '$colors$blackA11 0px 2px 12px -5px, $colors$blackA5 0px 1px 3px',
   willChange: 'transform, box-shadow, opacity',
-  transition: 'all 100ms',
+
+  '@media (prefers-reduced-motion: no-preference)': {
+    transition: 'all 100ms',
+  },
 
   '@hover': {
     '&:hover': {
@@ -309,7 +312,9 @@ const CarouselArrowButton = styled('button', {
   },
   '&:active': {
     transform: 'none',
-    transition: 'opacity 100ms',
+    '@media (prefers-reduced-motion: no-preference)': {
+      transition: 'opacity 100ms',
+    },
   },
   '&:disabled': {
     opacity: 0,

@@ -39,20 +39,21 @@ const StyledViewport = styled(ToastPrimitive.Viewport, {
 const StyledToast = styled(ToastPrimitive.Root, {
   alignItems: 'center',
   backgroundColor: '$colors$violet3',
-  borderRadius: 6,
+  borderRadius: '$2',
   boxShadow:
     'hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px',
-  columnGap: 15,
+  columnGap: '$2',
   display: 'grid',
   gridTemplateAreas: '"title action" "description action"',
   gridTemplateColumns: 'auto max-content',
-  padding: 15,
+  padding: '$4',
 
-  // '&:hover': {
-  //   backgroundColor: '$colors$violet4',
-  // },
+  '&:hover': {
+    backgroundColor: '$colors$violet4',
+  },
 
   '@media (prefers-reduced-motion: no-preference)': {
+    transition: 'background-color 250ms ease',
     '&[data-state="open"]': {
       animation: `${slideIn} 150ms cubic-bezier(0.16, 1, 0.3, 1)`,
     },
@@ -64,7 +65,9 @@ const StyledToast = styled(ToastPrimitive.Root, {
     },
     '&[data-swipe="cancel"]': {
       transform: 'translateX(0)',
-      transition: 'transform 200ms ease-out',
+      '@media (prefers-reduced-motion: no-preference)': {
+        transition: 'transform 200ms ease-out',
+      },
     },
     '&[data-swipe="end"]': {
       animation: `${swipeOut} 100ms ease-out forwards`,
@@ -72,7 +75,7 @@ const StyledToast = styled(ToastPrimitive.Root, {
   },
 
   variants: {
-    type: {
+    variant: {
       default: {
         border: '1px solid $colors$gray1',
         // backgroundColor: '$gray3',
@@ -124,15 +127,15 @@ const StyledToast = styled(ToastPrimitive.Root, {
 
 const StyledTitle = styled(ToastPrimitive.Title, {
   color: '$colors$violet12',
-  fontSize: 15,
+  fontSize: '0.9375rem',
   fontWeight: 500,
   gridArea: 'title',
-  marginBottom: 5,
+  marginBottom: '$1',
 })
 
 const StyledDescription = styled(ToastPrimitive.Description, {
   color: '$colors$violet11',
-  fontSize: 13,
+  fontSize: '0.8125rem',
   gridArea: 'description',
   lineHeight: 1.3,
   margin: 0,
@@ -140,15 +143,10 @@ const StyledDescription = styled(ToastPrimitive.Description, {
 
 const StyledAction = styled(ToastPrimitive.Action, {
   gridArea: 'action',
-  variants: {
-    type: {
-      default: {},
-      close: {
-        position: 'relative',
-        top: '-0.65rem',
-      },
-    },
-  },
+})
+
+const StyledClose = styled(ToastPrimitive.Close, {
+  gridArea: 'action',
 })
 
 const ToastProvider = ToastPrimitive.Provider
@@ -157,7 +155,7 @@ const Toast = StyledToast
 const ToastTitle = StyledTitle
 const ToastDescription = StyledDescription
 const ToastAction = StyledAction
-const ToastClose = ToastPrimitive.Close
+const ToastClose = StyledClose
 
 export {
   Toast,

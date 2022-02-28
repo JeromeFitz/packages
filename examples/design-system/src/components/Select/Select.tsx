@@ -11,12 +11,11 @@ import {
   SelectItem,
   SelectItemText,
   SelectItemIndicator,
-  SelectLabel as _SelectLabel,
+  SelectLabel,
   SelectSeparator,
   SelectScrollUpButton,
   SelectScrollDownButton,
 } from '@jeromefitz/design-system/src/components'
-import { styled } from '@jeromefitz/design-system/src/stitches.config'
 import {
   CheckIcon,
   ChevronDownIcon,
@@ -28,10 +27,6 @@ import {
 import * as React from 'react'
 
 const defaultValue = 'blueberry'
-
-const SelectLabel = styled(_SelectLabel, {
-  fontFamily: '$mono',
-})
 
 const SelectDemo = () => {
   const [selectValue, selectValueSet] = React.useState(defaultValue)
