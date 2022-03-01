@@ -37,7 +37,9 @@
     "semantic-release:mono": "semantic-release -e semantic-release-monorepo"
   },
   "dependencies": {
-    "@octokit/rest": "18.12.0"
+    "@octokit/rest": "18.12.0",
+    "colorize-template": "1.0.0",
+    "picocolors": "1.0.0"
   },
   "type": "module",
   "sideEffects": false,
