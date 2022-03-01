@@ -1,24 +1,14 @@
-import getGitmojiConventional from './getGitmojiConventional'
-import getReleaseRules from './getReleaseRules'
-import getTypeSpecs from './getTypeSpecs'
+import conventionalChangelog from './changelog'
+import type { ICommit, IReleaseRuleProps, IReleaseRule } from './types'
+import getGitmojiConventional from './utils/getGitmojiConventional'
+import getReleaseRules from './utils/getReleaseRules'
+import getTypeSpecs from './utils/getTypeSpecs'
 
-interface TypesProps {
-  [x: string]: {
-    branch: string | boolean | null | undefined
-    code: any | null
-    commit: any
-    description: string
-    emoji: string
-    entity: string
-    name: string
-    semver: 'breaking' | 'feature' | 'fix' | 'major' | 'minor' | 'patch' | null
-  }
-}
-
-const types: TypesProps = getGitmojiConventional()
+const { parserOpts, writerOpts } = conventionalChangelog
+const types = getGitmojiConventional()
 const releaseRules = getReleaseRules(types)
 const typeSpecs = getTypeSpecs(types)
 
-export type { TypesProps }
-export { releaseRules, typeSpecs, types }
-export default getGitmojiConventional
+export type { ICommit, IReleaseRuleProps, IReleaseRule }
+export { releaseRules, typeSpecs, types, parserOpts, writerOpts }
+export default conventionalChangelog

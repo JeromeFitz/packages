@@ -1,3 +1,6 @@
+/**
+ * https://www.radix-ui.com/docs/primitives/components/tooltip
+ */
 import * as TooltipPrimitive from '@radix-ui/react-tooltip'
 
 import { Box, Text } from '../index'

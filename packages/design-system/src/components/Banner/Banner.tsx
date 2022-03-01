@@ -15,9 +15,8 @@ const Banner = styled('div', {
   gap: '$3',
   justifyContent: 'center',
 
-  transition: 'background-color 0.25s ease-in-out',
-  '@media (prefers-reduced-motion)': {
-    transition: 'none',
+  '@media (prefers-reduced-motion: no-preference)': {
+    transition: 'background-color 0.25s ease-in-out',
   },
 
   variants: {

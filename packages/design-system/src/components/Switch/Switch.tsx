@@ -1,3 +1,6 @@
+/**
+ * https://www.radix-ui.com/docs/primitives/components/switch
+ */
 import * as React from 'react'
 
 import { StyledThumb, StyledSwitch } from './Switch.styles'

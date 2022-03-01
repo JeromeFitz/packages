@@ -1,6 +1,7 @@
 # @jeromefitz/conventional-gitmoji
 
-🌉️ A bridge between `gitmoji` and `conventional-commits` configured for `semantic-release`.
+1. 🌉️ A bridge between `gitmoji` and `conventional-commits` configured for `semantic-release`.
+2. 🛠️ A `conventional-changelog` plugin for `semantic-release`.
 
 ## Usage
 
@@ -13,9 +14,32 @@ import { releaseRules, typeSpecs, types } from '@jeromefitz/conventional-gitmoji
 ```
 
 - `releaseRules`: informs `@semantic-release/commit-analyzer`
-- `typeSpecs`: informs `@semantic-release/release-notes-generator` (via `writerOpts`)
+- `typeSpecs`: informs `@jeromefitz/release-notes-generator` (via `writerOpts`)
   - `@hack`: This informs three different ways to ensure we catch the change from `gitmoji` to `conventional`
 - `types`: informs `@jeromefitz/git-cz` for the `gitmoji` theme.
+
+### Commit Analyzer
+
+```sh
+  [
+    '@semantic-release/commit-analyzer',
+    {
+      config: '@jeromefitz/conventional-gitmoji',
+      releaseRules,
+    },
+  ]
+```
+
+### Release Notes Generator
+
+```sh
+  [
+    '@jeromefitz/release-notes-generator',
+    {
+      config: '@jeromefitz/conventional-gitmoji',
+    },
+  ]
+```
 
 ## Overview
 

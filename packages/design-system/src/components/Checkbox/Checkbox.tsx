@@ -1,3 +1,6 @@
+/**
+ * https://www.radix-ui.com/docs/primitives/components/checkbox
+ */
 import { CheckIcon } from '@radix-ui/react-icons'
 import * as React from 'react'
 

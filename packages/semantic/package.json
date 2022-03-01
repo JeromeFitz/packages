@@ -14,7 +14,7 @@
     "directory": "packages/semantic"
   },
   "engines": {
-    "node": ">=14"
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
@@ -37,7 +37,8 @@
     "semantic-release:mono": "semantic-release -e semantic-release-monorepo"
   },
   "devDependencies": {
-    "@types/lodash": "4.14.178",
+    "@types/lodash": "4.14.179",
+    "@types/semantic-release": "17.2.3",
     "@types/title": "3.4.1"
   },
   "dependencies": {
@@ -46,7 +47,7 @@
     "@semantic-release/exec": "6.0.3",
     "@semantic-release/git": "10.0.1",
     "@semantic-release/github": "8.0.2",
-    "@semantic-release/npm": "9.0.0",
+    "@semantic-release/npm": "9.0.1",
     "@semantic-release/release-notes-generator": "10.0.3",
     "grapheme-splitter": "1.0.4",
     "lodash": "4.17.21",

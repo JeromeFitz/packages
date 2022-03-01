@@ -51,7 +51,6 @@ const commit = isOverride
         'ds', // design-system
         'gitmoji', // conventional-gitmoji
         'notion', // notion
-        's-config', // semantic-config
         'scripts', // scripts
         'semantic', // semantic
         'spotify', // spotify

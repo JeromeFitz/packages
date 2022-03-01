@@ -1,3 +1,6 @@
+/**
+ * https://www.radix-ui.com/docs/primitives/components/progress
+ */
 import * as ProgressPrimitive from '@radix-ui/react-progress'
 import * as React from 'react'
 
@@ -72,7 +75,9 @@ const ProgressBarIndicator = styled(ProgressPrimitive.Indicator, {
   left: 0,
   width: '100%',
   backgroundColor: '$slate4',
-  transition: 'transform 150ms cubic-bezier(0.65, 0, 0.35, 1)',
+  '@media (prefers-reduced-motion: no-preference)': {
+    transition: 'transform 150ms cubic-bezier(0.65, 0, 0.35, 1)',
+  },
 })
 
 type ProgressBarVariants = VariantProps<typeof StyledProgressBar>

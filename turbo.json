@@ -29,14 +29,9 @@
     "@jeromefitz/semantic#build": {
       "dependsOn": [
         "@jeromefitz/conventional-gitmoji#build",
-        "@jeromefitz/git-cz#build"
+        "@jeromefitz/git-cz#build",
+        "@jeromefitz/release-notes-generator#build"
       ]
-    },
-    "@jeromefitz/semantic-config#build": {
-      "dependsOn": ["@jeromefitz/semantic#build"]
-    },
-    "@jeromefitz/semantic-config#lint": {
-      "dependsOn": ["@jeromefitz/semantic#build"]
     },
     "@jeromefitz/spotify#build": {
       "dependsOn": ["@jeromefitz/utils#build"]

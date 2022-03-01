@@ -27,7 +27,6 @@ Monorepo for tools I use frequently in various projects and companies I work wit
 - :octocat: [`@jeromefitz/scripts`](https://github.com/JeromeFitz/packages/tree/main/packages/scripts): :octocat: scripts that are used to set up repos and for CI/CD
 - 👷️ [`@jeromefitz/semantic`](https://github.com/JeromeFitz/packages/tree/main/packages/semantic): Automatic Semantic Versioning through [`semantic-release`](https://github.com/semantic-release/semantic-release)
   - 📝️ Should be reworked a bit to be more extending than importing
-- 🔒️ [`@jeromefitz/semantic-config`](https://github.com/JeromeFitz/packages/tree/main/packages/semantic-config): Internal configuration for `turbo|tsup` for publishing to `npm` for all of thes packages
 - 🧑‍🎤️ [`@jeromefitz/spotify`](https://github.com/JeromeFitz/packages/tree/main/packages/spotify): API for access to `now-playing|top-artists|top-tracks`.
   - Handles those w/ some customizations for imagery and more.
   - 🚀️ Live: [`jeromefitzgerald.com/music`](https://jeromefitzgerald.com/music)
@@ -68,8 +67,7 @@ There is also:
   - Note(s):
     - `[b|build]` in commit to trigger:
       - `build` => only runs if `[b|build]` present
-      - `semantic-release` => pre-release branch management:
-        - `@jeromefitz/semantic-config`
+      - `semantic-release` => pre-release branch management in root `release.config` or can be overriden in any package
 - 🌃️ **weekly**:
   - Branch(es):
     - `main`

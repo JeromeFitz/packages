@@ -1,3 +1,6 @@
+/**
+ * https://www.radix-ui.com/docs/primitives/components/tabs
+ */
 import * as React from 'react'
 
 import { Separator } from '../index'

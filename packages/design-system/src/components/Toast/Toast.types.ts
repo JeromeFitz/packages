@@ -1,16 +1,7 @@
-interface ToastContainerProps extends IToast {
-  height: number
-  heights?: number[]
-  hovering: boolean
-  id: string
-  onMount?: () => void
-  position?: number
-  preserve?: boolean
-  remove?: () => void
-  text: string
-}
+// import type { ToastImplProps } from '@radix-ui/react-toast'
+import * as React from 'react'
 
-type ToastType =
+type IToastVariant =
   | 'default'
   | 'error'
   | 'generic'
@@ -19,16 +10,18 @@ type ToastType =
   | 'success'
   | 'warning'
 
+// interface IToast extends ToastImplProps {
 interface IToast {
-  action?: string
-  // actionComponent?: any
-  cancelAction?: string
-  duration?: number
-  height: number
+  action?: () => void
+  actionAltText?: string
+  actionText?: string
+  actionComponent?: React.ElementType
+  close?: () => void
+  closeComponent?: React.ElementType
+  description: string
   key: string
-  preserve?: boolean
-  text: string
-  type?: ToastType
+  title?: string
+  variant?: IToastVariant
 }
 
 interface IToastContext {
@@ -42,52 +35,4 @@ interface IToastContext {
   }
 }
 
-const ACTIVE_TOAST_LIMIT = 10
-
-// @todo(toast): determine types and timings
-const DEFAULT_TIMEOUTS: {
-  [key in ToastType]: number
-} = {
-  default: 10000,
-  error: 8000,
-  generic: 10000,
-  info: 5000,
-  loading: 50000,
-  success: 5000,
-  warning: 8000,
-}
-
-enum IToastState {
-  Idle = 'idle',
-  Timing = 'timing',
-  Interacting = 'interacting',
-}
-
-// @todo(toast): determine types and timings
-const ROLES_BY_TYPE: {
-  [key in ToastType]: 'status' | 'alert'
-} = {
-  default: 'status',
-  error: 'alert',
-  generic: 'status',
-  info: 'status',
-  loading: 'status',
-  success: 'alert',
-  warning: 'alert',
-}
-
-// @todo(toast): determine types and timings
-const ARIA_LIVE_BY_TYPE: {
-  [key in ToastType]: 'assertive' | 'polite'
-} = {
-  default: 'polite',
-  error: 'assertive',
-  generic: 'polite',
-  info: 'polite',
-  loading: 'polite',
-  success: 'assertive',
-  warning: 'assertive',
-}
-
-export type { IToastContext, IToast, ToastContainerProps, IToastState, ToastType }
-export { ACTIVE_TOAST_LIMIT, ARIA_LIVE_BY_TYPE, DEFAULT_TIMEOUTS, ROLES_BY_TYPE }
+export type { IToast, IToastVariant, IToastContext }
