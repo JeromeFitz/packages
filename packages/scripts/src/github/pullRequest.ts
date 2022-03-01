@@ -6,12 +6,14 @@
 import { execSync } from 'child_process'
 
 import { Octokit } from '@octokit/rest'
-import chalkPipe from 'chalk-pipe'
+import { createColorize } from 'colorize-template'
 import isCI from 'is-ci'
+import pico from 'picocolors'
 
 !isCI && require('dotenv').config({ path: './.env' })
 import PULL_REQUEST from '../templates/PULL_REQUEST__RELEASE'
 
+const colorize = createColorize(pico)
 const octokit = new Octokit({ auth: process.env.GH_TOKEN })
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
@@ -57,15 +59,11 @@ async function setPullRequest({
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const issue_number = pull_number
       console.log(
-        chalkPipe('orange.bold')(
-          `🤔️  ${pull_number} => Exists, should we update PR?`
-        )
+        colorize`{orange.bold 🤔️  ${pull_number} => Exists, should we update PR ?}`
       )
-      console.log(chalkPipe('orange.bold')(`🤪️  Right now we are not`))
+      console.log(colorize`{orange.bold 🤪️  Right now we are not}`)
       console.log(
-        chalkPipe('orange.bold')(
-          `😵️  https://github.com/${repo_id}/pull/${pull_number}`
-        )
+        colorize`{orange.bold 😵️  https://github.com/${repo_id}/pull/${pull_number}}`
       )
 
       // await octokit.rest.pulls.update({
@@ -85,11 +83,11 @@ async function setPullRequest({
       //   labels,
       // });
     } else {
-      console.log(chalkPipe('blue.bold')(`🤠️  Yee-haw, Create a Pee-Ahr`))
-      console.log(chalkPipe('blue.bold')(`🤓️  ${title}`))
+      console.log(colorize`{blue.bold 🤠️  Yee-haw, Create a Pee-Ahr}`)
+      console.log(colorize`{blue.bold 🤓️  ${title}}`)
 
       if (dryRun) {
-        console.log(chalkPipe('orange.bold')(`🏃️  dryRun`))
+        console.log(colorize`{orange.bold 🏃️  dryRun]`)
       } else {
         const pull = await octokit.rest.pulls.create({
           owner,
@@ -108,8 +106,8 @@ async function setPullRequest({
       }
     }
   } catch (error) {
-    console.log(chalkPipe('red.bold')(`❎️  error: ${owner}/${repo} => pulls.list`))
-    console.log(chalkPipe('white.italic')(error))
+    console.log(colorize`{red.bold ❎️  error: ${owner}/${repo} => pulls.list}`)
+    console.log(colorize`{white.italic ${error}}`)
   }
 }
 

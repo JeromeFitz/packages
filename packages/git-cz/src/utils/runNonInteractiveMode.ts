@@ -1,4 +1,7 @@
-import chalkPipe from 'chalk-pipe'
+import { createColorize } from 'colorize-template'
+import pico from 'picocolors'
+
+const colorize = createColorize(pico)
 
 /* eslint-disable no-console */
 const runNonInteractiveMode = (
@@ -7,9 +10,9 @@ const runNonInteractiveMode = (
   { type = 'chore', subject = 'automated commit', ...restAnswers }
 ) => {
   //
-  console.log(chalkPipe('yellow.bold')('🚧️  runNonInteractiveMode is not finished'))
+  console.log(colorize`{yellow.bold 🚧️  runNonInteractiveMode is not finished}`)
   console.log(
-    chalkPipe('yellow')('🤕️  Help at: https://github.com/JeromeFitz/git-cz')
+    colorize`{yellow 🤕️  Help at: https://github.com/JeromeFitz/packages}`
   )
 
   const answers = {

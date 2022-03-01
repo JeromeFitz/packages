@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-import chalkPipe from 'chalk-pipe'
+import { createColorize } from 'colorize-template'
+import pico from 'picocolors'
 
 import isEnabled from './utils/isEnabled'
 import parseArgs from './utils/parseArgs'
@@ -9,6 +10,8 @@ import runNonInteractiveMode from './utils/runNonInteractiveMode'
 import setBranch from './utils/setBranch'
 import setCommit from './utils/setCommit'
 import setState from './utils/setState'
+
+const colorize = createColorize(pico)
 
 /**
  * @todo(types)
@@ -66,9 +69,9 @@ const cli = async () => {
     }
   } catch (error) {
     // eslint-disable-next-line no-console
-    console.log(chalkPipe('red.bold')('⚠️ error:'))
+    console.log(colorize`{red.bold ⚠️ error: }`)
     // eslint-disable-next-line no-console
-    console.log(chalkPipe('white.italic')(`${error}`))
+    console.log(colorize`{white.italic ${error}: }`)
   }
 }
 

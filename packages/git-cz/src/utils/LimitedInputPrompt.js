@@ -1,7 +1,7 @@
-import chalk from 'chalk'
 import InputPrompt from 'inquirer/lib/prompts/input.js'
+import pico from 'picocolors'
 
-const { green, yellow, red } = chalk
+const { green, yellow, red } = pico
 class LimitedInputPrompt extends InputPrompt {
   constructor(...args) {
     super(...args)
