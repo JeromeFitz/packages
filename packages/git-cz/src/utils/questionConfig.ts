@@ -1,13 +1,16 @@
 /* eslint-disable @typescript-eslint/restrict-plus-operands */
 /* eslint-disable id-match */
-import chalkPipe from 'chalk-pipe'
+import { createColorize } from 'colorize-template'
 import _map from 'lodash/map.js'
+import pico from 'picocolors'
 
 import { findChoice, findScope } from './findSource'
 import getBranchName from './getBranchName'
 
 const TYPE_BRANCH = 'branch'
 const TYPE_COMMIT = 'commit'
+
+const colorize = createColorize(pico)
 
 const answerBranchName = (state, input, answers, isFilter = true) => {
   const branchTypePrefix = answers.branchFlag
@@ -16,8 +19,7 @@ const answerBranchName = (state, input, answers, isFilter = true) => {
 
   const branchTypePrefixTemp = isFilter
     ? branchTypePrefix
-    : // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-      chalkPipe('blue.bold')(branchTypePrefix)
+    : colorize`{blue.bold ${branchTypePrefix}}`
 
   const branchName = input
     .replace(/ {2}/g, '--')
@@ -30,10 +32,8 @@ const answerBranchName = (state, input, answers, isFilter = true) => {
     : `${state.config.branch.prefix}${branchName}`
 
   const branchNameTransformer = state.config.branch.format
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     .replace(/\{branchType\}/g, branchTypePrefixTemp)
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-    .replace(/\{branchName\}/g, chalkPipe('bold')(branchName))
+    .replace(/\{branchName\}/g, colorize`{bold ${branchName}}`)
 
   return isFilter ? branchNameFilter : branchNameTransformer
 }
@@ -44,7 +44,7 @@ const answerBreaking = (input = '', answers, isFilter = true) => {
 
   const breakingPrefixTemp = isFilter
     ? breakingPrefix
-    : chalkPipe('red.bold')(breakingPrefix)
+    : colorize`{red.bold ${breakingPrefix}}`
 
   const breaking = input.trim()
 
@@ -52,7 +52,7 @@ const answerBreaking = (input = '', answers, isFilter = true) => {
 
   const breakingTransformer = '{b1}{b2}'
     .replace(/\{b1\}/g, breakingPrefixTemp)
-    .replace(/\{b2\}/g, chalkPipe('bold')(breaking))
+    .replace(/\{b2\}/g, colorize`{bold ${breaking}}`)
 
   return isFilter ? breakingFilter : breakingTransformer
 }

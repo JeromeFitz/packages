@@ -2,7 +2,10 @@ import fs from 'fs'
 import { createRequire } from 'module'
 import path from 'path'
 
-import chalkPipe from 'chalk-pipe'
+import { createColorize } from 'colorize-template'
+import pico from 'picocolors'
+
+const colorize = createColorize(pico)
 
 /**
  * @note(git-cz)
@@ -69,7 +72,7 @@ const getConfig = async (root: any) => {
 
   if (typeof overrides !== 'object') {
     // eslint-disable-next-line no-console
-    console.log(chalkPipe('red.bold')('Expected changelog config to be a object.'))
+    console.log(colorize`{red.bold Expected changelog config to be a object.}`)
     console.dir(typeof overrides)
     console.dir(overrides)
     process.exit(1)

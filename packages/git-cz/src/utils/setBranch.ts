@@ -1,7 +1,10 @@
-import chalkPipe from 'chalk-pipe'
+import { createColorize } from 'colorize-template'
+import pico from 'picocolors'
 // import shellsync from 'shellsync'
 
 import executeCommand from './executeCommand'
+
+const colorize = createColorize(pico)
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
 const setBranch = ({
@@ -30,9 +33,9 @@ const setBranch = ({
 
   /* eslint-disable no-console */
   if (cliOptions.dryRun) {
-    console.log(chalkPipe('orange.bold')('⚗️  DRY RUN: TESTING'))
-    console.log(chalkPipe('orange')('> command:'))
-    console.log(chalkPipe('white.italic')(command))
+    console.log(colorize`{orange.bold ⚗️  DRY RUN: TESTING}`)
+    console.log(colorize`{orange > command:}`)
+    console.log(colorize`{white.italic ${command}}`)
     console.log()
   } else {
     executeCommand(command)

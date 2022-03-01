@@ -2,7 +2,8 @@
 import fs from 'fs'
 import { join } from 'path'
 
-import chalkPipe from 'chalk-pipe'
+import { createColorize } from 'colorize-template'
+import pico from 'picocolors'
 import shellsync from 'shellsync'
 
 import executeCommand from './executeCommand'
@@ -10,6 +11,7 @@ import getBranchName from './getBranchName'
 import getGitRootDir from './getGitRootDir'
 import { TYPE_BRANCH, TYPE_COMMIT } from './questionConfig'
 
+const colorize = createColorize(pico)
 const commitMsgFile = join(getGitRootDir(), '.git', 'COMMIT_EDITMSG')
 
 /**
@@ -84,16 +86,15 @@ const setCommit = ({
 
   /* eslint-disable no-console */
   if (cliOptions.dryRun) {
-    console.log(chalkPipe('orange.bold')('⚗️  DRY RUN: TESTING'))
+    console.log(colorize`{orange.bold ⚗️  DRY RUN: TESTING}`)
 
     // Full path is replaced w/ relative to make test pass
     const commandReplace = command.replace(commitMsgFile, '.git/COMMIT_EDITMSG')
-    console.log(chalkPipe('orange')('> commandReplace:'))
-    console.log(chalkPipe('white.italic')(commandReplace))
+    console.log(colorize`{orange > commandReplace:}`)
+    console.log(colorize`{white.italic ${commandReplace}}`)
 
-    console.log(chalkPipe('orange')('> message:'))
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-    console.log(chalkPipe('white.italic')(message))
+    console.log(colorize`{orange > message:}`)
+    console.log(colorize`{white.italic ${message}}`)
     console.log()
   } else {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
