@@ -123,7 +123,7 @@ const getNotionListingByDate__getFilter = ({
           },
           {
             ...QUERIES.slug,
-            text: { equals: slug },
+            rich_text: { equals: slug },
           },
         ],
       }

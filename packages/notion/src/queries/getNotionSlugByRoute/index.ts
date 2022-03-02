@@ -45,7 +45,7 @@ const getNotionSlugByRoute__getDataByParentRouteType = async ({
       and: [
         {
           ...QUERIES.slug,
-          text: { equals: isChild ? slug : parentSlug },
+          rich_text: { equals: isChild ? slug : parentSlug },
         },
       ],
     },
@@ -134,7 +134,7 @@ const getNotionSlugByRoute__getDataByListingDate = async ({
         },
         {
           ...QUERIES.slug,
-          text: { equals: slug },
+          rich_text: { equals: slug },
         },
       ],
     },

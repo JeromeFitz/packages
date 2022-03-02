@@ -1244,7 +1244,7 @@ const QUERIES = {
   },
   slug: {
     property: PROPERTIES.slug.notion,
-    text: {
+    rich_text: {
       equals: '',
     },
   },
