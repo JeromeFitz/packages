@@ -27,7 +27,7 @@ const getNotionSlug = async ({
       and: [
         {
           ...QUERIES.slug,
-          text: { equals: slug },
+          rich_text: { equals: slug },
         },
       ],
     },
