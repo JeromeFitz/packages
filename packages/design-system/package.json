@@ -96,7 +96,7 @@
     "react": "17.0.2",
     "react-bezier-curve-editor": "1.0.0",
     "react-dom": "17.0.2",
-    "typescript": "4.6.2"
+    "typescript": "4.5.5"
   },
   "peerDependencies": {
     "react": "17.0.2",
