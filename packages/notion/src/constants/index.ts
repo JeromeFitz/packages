@@ -12,6 +12,15 @@ const getLookup = ({ key, notion, type }) => ({
 /**
  * @note
  * Valid Notion Property Types mapped to Normalizer w/ init info
+ *
+ * *********************
+ * RELATIONS and ROLLUPS
+ * *********************
+ *
+ * For each RELATION or ROLLUP there can be only one init
+ * During the build process this happens in waves
+ *
+ *
  */
 const PROPERTIES: Record<string, Property> = {
   addressCity: {
@@ -207,9 +216,9 @@ const PROPERTIES: Record<string, Property> = {
   /**
    * @relation
    */
-  relationEpisodes__Podcast: {
+  relationEpisodes__Podcasts: {
     init: true,
-    key: 'relationEpisodes__Podcast',
+    key: 'relationEpisodes__Podcasts',
     notion: 'Podcasts',
     type: 'relation',
     relation: {
@@ -227,6 +236,51 @@ const PROPERTIES: Record<string, Property> = {
       synced_property_name: 'Podcasts',
     },
   },
+  rollupEpisodes__Podcasts: {
+    init: false,
+    key: 'rollupEpisodes__Podcasts',
+    notion: 'Podcasts.Rollup',
+    type: 'rollup',
+    rollup: {
+      relation_property_name: 'Podcasts',
+      rollup_property_id: 'Title',
+      function: 'show_original',
+    },
+  },
+  rollupEpisodes__PodcastsSlugs: {
+    init: false,
+    key: 'rollupEpisodes__PodcastsSlugs',
+    notion: 'Podcasts.Slug.Rollup',
+    type: 'rollup',
+    rollup: {
+      relation_property_name: 'Podcasts',
+      rollup_property_id: 'Slug',
+      function: 'show_original',
+    },
+  },
+  rollupPodcasts__Episodes: {
+    init: false,
+    key: 'rollupPodcasts__Episodes',
+    notion: 'Episodes.Rollup',
+    type: 'rollup',
+    rollup: {
+      relation_property_name: 'Episodes',
+      rollup_property_id: 'Title',
+      function: 'show_original',
+    },
+  },
+  rollupPodcasts__EpisodesSlugs: {
+    init: false,
+    key: 'rollupPodcasts__EpisodesSlugs',
+    notion: 'Episodes.Slug.Rollup',
+    type: 'rollup',
+    rollup: {
+      relation_property_name: 'Episodes',
+      rollup_property_id: 'Slug',
+      function: 'show_original',
+    },
+  },
+
   relationEpisodes__People_Guest: {
     init: true,
     key: 'relationEpisodes__People_Guest',
@@ -1024,11 +1078,21 @@ const EPISODES = [
   PROPERTIES.relationEpisodes__People_Guest,
   PROPERTIES.relationEpisodes__People_Sound_Engineer,
   PROPERTIES.relationEpisodes__People_Thanks,
-  PROPERTIES.relationEpisodes__Podcast,
+  PROPERTIES.relationEpisodes__Podcasts,
   PROPERTIES.relationEpisodes__Venues,
   PROPERTIES.socialApple,
   PROPERTIES.socialSpotify,
   PROPERTIES.type,
+  /**
+   * @note(notion)
+   * do not init/seed these values, they are updated _after_ init
+   */
+  // PROPERTIES.rollupEpisodes__People_Guest,
+  // PROPERTIES.rollupEpisodes__People_Sound_Engineer,
+  // PROPERTIES.rollupEpisodes__People_Thanks,
+  PROPERTIES.rollupEpisodes__Podcasts,
+  PROPERTIES.rollupEpisodes__PodcastsSlugs,
+  // PROPERTIES.rollupEpisodes__Venues,
 ]
 
 const EVENTS = [
@@ -1108,6 +1172,8 @@ const PODCASTS = [
    * do not init/seed these values, they are updated _after_ init
    */
   PROPERTIES.relationPodcasts__Episodes,
+  PROPERTIES.rollupPodcasts__Episodes,
+  PROPERTIES.rollupPodcasts__EpisodesSlugs,
   /**
    * -------------------------------------
    */
