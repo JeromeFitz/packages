@@ -20,15 +20,17 @@ type DatabaseInfo = {
     active: boolean
     database_id: string
     dataTypes: DataTypes[]
+    // @todo(next-notion) move to `isChild`
     hasChild: string | null
+    infoType: any
+    isChild: string | null
+    isChildInfoType: any | null
     name: string
     page_id__seo: string
     routeMeta: boolean
     routeType: string
-    slug: string
-    //
-    infoType: any
     skipStaticPaths: boolean
+    slug: string
     ttl: number
   }
 }

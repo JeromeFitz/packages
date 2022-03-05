@@ -170,6 +170,8 @@ const getNotionSlugByRoute = async ({
    * @custom (notion) DATA_TYPES.SLUG_BY_ROUTE -- but customized:
    * Determine if `routeType` is a parent|child
    *
+   * // @todo(next-notion) move to `isChild`
+   *
    */
   if (!!NOTION[routeType.toUpperCase()].hasChild) {
     return await getNotionSlugByRoute__getDataByParentRouteType({

@@ -52,11 +52,15 @@ You need to pass `config` which informs the package of all the wonderful Notion 
   - `database_id: string`
   - `dataTypes: DataTypes[]`
   - `hasChild: string | null`
+  - `infoType: any | null`
+  - `isChild: string | null`
+  - `isChildInfoType: any | null`
   - `name: string`
   - `page_id__seo: string`
   - `routeMeta: boolean`
   - `routeType: string`
   - `slug: string`
+  - `ttl: number`
 - `PAGES__HOMEPAGE`: 🤕️ what `Pages => slug` is the homepage?
 - `PAGES`: 🤕️ Only active `routeTypes` brought back
 - `ROUTE_META`: 🤕️ up front share if we expect the route to have a meta (`BLOG|EVENTS|PODCASTS`)

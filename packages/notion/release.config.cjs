@@ -7,8 +7,14 @@ const { getConfig } = require('@jeromefitz/semantic')
 
 const { name } = require('./package.json')
 
+const branches = [
+  ...configDefault.branches,
+  { name: 'feature/next-notion', prerelease: 'next-notion' },
+]
+
 const configPassed = {
   ...configDefault,
+  branches,
   tagFormat: `${name}@\${version}`,
 }
 
