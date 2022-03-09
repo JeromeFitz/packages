@@ -120,6 +120,8 @@ export {
   NavigationMenuLinkTitle,
   NavigationMenuLinkText,
   NavigationMenuViewportPosition,
+  NavigationMenuListItemFocus,
+  NavigationMenuListItemSelect,
 } from './NavigationMenu'
 export { Note } from './Note'
 export { Overlay, overlayStyles } from './Overlay'

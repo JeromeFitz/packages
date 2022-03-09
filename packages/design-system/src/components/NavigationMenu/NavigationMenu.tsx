@@ -1,5 +1,6 @@
 import { CaretDownIcon } from '@radix-ui/react-icons'
 import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu'
+import { motion } from 'framer-motion'
 import * as React from 'react'
 
 import { darkTheme, styled, keyframes, CSS } from '../../stitches.config'
@@ -62,7 +63,7 @@ const itemStyles = {
   outline: 'none',
   padding: '8px 12px',
   userSelect: 'none',
-  '&:focus': { boxShadow: `0 0 0 2px $colors$violet7` },
+  // '&:focus': { boxShadow: `0 0 0 2px $colors$violet7` },
 }
 
 const StyledTrigger = styled(NavigationMenuPrimitive.Trigger, {
@@ -107,14 +108,48 @@ const StyledLink = styled(NavigationMenuPrimitive.Link, {
   textDecoration: 'none',
   fontSize: 15,
   lineHeight: 1,
+  variants: {
+    focus: {
+      true: {
+        padding: '$2',
+        position: 'relative',
+        listStyle: 'none',
+        cursor: 'pointer',
+        width: '90%',
+        height: '90%',
+        margin: '$4',
+        outline: 'none',
+
+        span: {
+          position: 'absolute',
+          left: '4px',
+          right: 0,
+          top: '6px',
+          bottom: 0,
+          zIndex: 1,
+          userSelect: 'none',
+          fontSize: '1rem',
+          color: 'yellow',
+        },
+      },
+    },
+    type: {
+      callout: {
+        background: `linear-gradient(135deg, var(--colors-blue9) 0%, $colors$violet9 100%)`,
+        display: 'flex',
+        justifyContent: 'flex-end',
+        flexDirection: 'column',
+        width: '100%',
+        height: '100%',
+        p: 0,
+        m: 0,
+      },
+    },
+  },
 })
 
 const StyledContent = styled(NavigationMenuPrimitive.Content, {
   backgroundColor: '$colors$violet2',
-  // boxShadow: `0 2px 10px $colors$shadowLight`,
-  // [`.${darkTheme} &`]: {
-  //   boxShadow: `0 2px 10px $colors$shadowDark`,
-  // },
   position: 'absolute',
   top: 0,
   left: 0,
@@ -160,10 +195,6 @@ const StyledViewport = styled(NavigationMenuPrimitive.Viewport, {
   position: 'relative',
   transformOrigin: 'top center',
   width: '100%',
-
-  // [`.${darkTheme} &`]: {
-  //   boxShadow: `0 2px 10px $colors$shadowDark`,
-  // },
 
   '@media only screen and (min-width: 600px)': {
     width: 'var(--radix-navigation-menu-viewport-width)',
@@ -241,9 +272,9 @@ const NavigationMenuListItem = styled('li', {
   py: '$1',
   px: '0',
   m: '0',
-  '&:hover': {
-    backgroundColor: '$colors$violet3',
-  },
+  // '&:hover': {
+  //   backgroundColor: '$colors$violet3',
+  // },
   '@media (prefers-reduced-motion: no-preference)': {
     transition: 'all 250ms ease',
   },
@@ -276,10 +307,55 @@ const NavigationMenuViewportPosition = styled('div', {
   width: '100%',
 })
 
+const NavigationMenuListItemFocus = styled(motion.div, {
+  position: 'absolute',
+  bottom: '-2px',
+  left: '-10px',
+  right: 0,
+  width: '110%',
+  height: '110%',
+  background: '$blackA4',
+  [`.${darkTheme} &`]: {
+    background: `whiteA4`,
+  },
+  borderRadius: '$2',
+  zIndex: 0,
+  variants: {
+    type: {
+      callout: {
+        bottom: '-7px',
+      },
+    },
+    color: {
+      violet: {
+        background: '$violetA4',
+      },
+    },
+  },
+  defaultVariants: {
+    color: 'violet',
+  },
+})
+
+const NavigationMenuListItemSelect = styled(motion.div, {
+  position: 'absolute',
+  bottom: '-2px',
+  left: '-10px',
+  right: 0,
+  width: '110%',
+  height: '110%',
+  background: 'transparent',
+  border: '2px solid $colors$violet7',
+  borderRadius: '8px',
+  zIndex: 1,
+})
+
 export {
   NavigationMenuListContent,
   NavigationMenuListItem,
   NavigationMenuLinkTitle,
   NavigationMenuLinkText,
   NavigationMenuViewportPosition,
+  NavigationMenuListItemFocus,
+  NavigationMenuListItemSelect,
 }

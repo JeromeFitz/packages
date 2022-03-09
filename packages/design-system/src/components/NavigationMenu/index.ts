@@ -14,4 +14,6 @@ export {
   NavigationMenuLinkTitle,
   NavigationMenuLinkText,
   NavigationMenuViewportPosition,
+  NavigationMenuListItemFocus,
+  NavigationMenuListItemSelect,
 } from './NavigationMenu'

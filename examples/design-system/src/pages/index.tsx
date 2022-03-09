@@ -4,7 +4,7 @@
 import { PageHeading, Text } from '@jeromefitz/design-system/src/components'
 
 // import { LoadingDots } from '../components/LoadingDots'
-// import { NavigationMenu } from '../components/NavigationMenu'
+import { NavigationMenu } from '../components/NavigationMenu'
 // import { Select } from '../components/Select'
 import { Toast } from '../components/Toast'
 // import { ToggleGroup } from '../components/ToggleGroup'
@@ -19,7 +19,7 @@ function Home({}) {
         description="An example of in-progress work."
       />
       {/* <LoadingDots /> */}
-      {/* <NavigationMenu /> */}
+      <NavigationMenu />
       {/* <Select /> */}
       <Toast />
       {/* <ToggleGroup /> */}
