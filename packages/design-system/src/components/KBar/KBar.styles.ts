@@ -20,8 +20,12 @@ const KBarAnimatorStyle = css({
   height: '100%',
   width: '100%',
   '@bp1': {
-    height: 'auto',
-    width: '55%',
+    height: '100%',
+    maxHeight: '80vh',
+    maxWidth: '75vw',
+    minHeight: '80px',
+    minWidth: '180px',
+    // width: '55%',
   },
 })
 const KBarSearchStyle = css({

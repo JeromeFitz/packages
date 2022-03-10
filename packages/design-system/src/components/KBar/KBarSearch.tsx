@@ -5,7 +5,7 @@ import { Box, Flex, Heading } from '../index'
 
 import { KBarSearchStyle } from './KBar.styles'
 
-const KBarSearchImpl = () => {
+const KBarSearchImpl = ({ ...props }) => {
   return (
     <Box
       css={{
@@ -38,11 +38,7 @@ const KBarSearchImpl = () => {
           </Heading>
         </Flex>
 
-        <KBarSearch
-          className={KBarSearchStyle()}
-          defaultPlaceholder="Type to search menu"
-          type="text"
-        />
+        <KBarSearch className={KBarSearchStyle()} type="text" {...props} />
       </Flex>
     </Box>
   )

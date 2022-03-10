@@ -1,6 +1,15 @@
+import { ReplyIcon } from '@heroicons/react/outline'
 import { ActionImpl } from 'kbar/lib/action'
 
-import { Box, Flex, Text, Kbd, Focused, Separator } from '../index'
+import { Box, Flex, Text, Kbd, Focused } from '../index'
+
+const cssIconHeroToRadix = {
+  marginTop: '3px',
+  marginRight: '10px',
+  width: '1rem',
+  height: '1rem',
+  transform: 'rotate(180deg) scaleX(-1)',
+}
 
 interface KBarSearchResultProps {
   active: boolean
@@ -12,9 +21,12 @@ const KBarSearchResult = ({ active, item }: KBarSearchResultProps) => {
 
   if (typeof item == 'string') {
     return (
-      <Box css={{ py: '$1', px: '$2' }}>
-        <Separator decorative margin="my2" size="full" />
-        <Text size="1" css={{ color: '$hiContrast', textTransform: 'uppercase' }}>
+      <Box css={{ my: '$1', py: '$1', px: '$2' }}>
+        <Text
+          size="1"
+          css={{ color: '$hiContrast', textTransform: 'uppercase' }}
+          weight="semiBold"
+        >
           {item}
         </Text>
       </Box>
@@ -37,10 +49,13 @@ const KBarSearchResult = ({ active, item }: KBarSearchResultProps) => {
         {item.icon && (
           <Flex
             direction="column"
-            justify={!!item.subtitle ? 'start' : 'center'}
+            justify="center"
             align="center"
             css={{
-              mt: !!item.subtitle ? '3px' : 0,
+              mt: 0,
+              '@bp1': {
+                minWidth: '2rem',
+              },
               '& svg': {
                 height: '$3',
                 width: '$3',
@@ -59,15 +74,17 @@ const KBarSearchResult = ({ active, item }: KBarSearchResultProps) => {
           </Flex>
         )}
         <Flex
-          direction="column"
           css={{
+            alignItems: 'center',
             flexGrow: '1',
-            justifyContent: 'center',
+            justifyContent: 'start',
             // @todo(design-system) turn this into variant "truncate"
             overflow: 'hidden',
             textOverflow: 'ellipsis',
             whiteSpace: 'nowrap',
           }}
+          direction="row"
+          gap="3"
         >
           <Text
             css={{
@@ -87,30 +104,42 @@ const KBarSearchResult = ({ active, item }: KBarSearchResultProps) => {
           >
             {item.name}
           </Text>
-          {item.subtitle && (
-            <Text
-              size="1"
-              css={{
-                color: '$hiContrast',
-                fontFamily: '$mono',
-                my: '$1',
-                // @todo(design-system) turn this into variant "truncate"
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-                whiteSpace: 'nowrap',
-              }}
-            >
-              {item.subtitle ?? ''}
-            </Text>
+          {!!item.subtitle && (
+            <>
+              <Text
+                as="span"
+                css={{ display: 'none', '@bp1': { display: 'inline-flex' } }}
+                size="1"
+              >
+                —
+              </Text>
+              <Text
+                as="span"
+                css={{
+                  color: '$hiContrast',
+                  fontFamily: '$mono',
+                  my: '$1',
+                  display: 'none',
+                  '@bp1': { display: 'inline-flex' },
+                  // @todo(design-system) turn this into variant "truncate"
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  whiteSpace: 'nowrap',
+                }}
+                size="1"
+              >
+                {item.subtitle}
+              </Text>
+            </>
           )}
         </Flex>
         {item.shortcut && (
           <Flex
             css={{
               alignItems: 'right',
-              '$$tw-space-x-reverse': 0,
-              marginRight: 'calc(0.25rem * $$tw-space-x-reverse)',
-              marginLeft: 'calc(0.25rem * calc(1 - $$tw-space-x-reverse))',
+              marginRight: '1.75rem',
+              display: 'none',
+              '@bp1': { display: 'inline-flex' },
             }}
             gap="2"
           >
@@ -133,9 +162,23 @@ const KBarSearchResult = ({ active, item }: KBarSearchResultProps) => {
       </Flex>
       {active && (
         <Focused
-          css={{ borderRadius: '$3', height: '100%', left: '1px', width: '99%' }}
+          css={{
+            alignItems: 'center',
+            borderRadius: '$3',
+            display: 'flex',
+            height: '100%',
+            justifyContent: 'flex-end',
+            left: '1px',
+            width: '99%',
+            '& svg': {
+              display: 'none',
+              '@bp1': { display: 'inline-flex' },
+            },
+          }}
           layoutId="highlight"
-        />
+        >
+          <ReplyIcon className="hi2ri" style={cssIconHeroToRadix} />
+        </Focused>
       )}
     </Box>
   )
