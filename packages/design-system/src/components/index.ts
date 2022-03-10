@@ -84,6 +84,7 @@ export {
   KBarSearch,
   KBarSearchResult,
   KBarSearchResults,
+  KBarFooter,
   KBarSubscriptions,
   // Wrapper Components Styles
   KBarPositionerStyle,
@@ -122,6 +123,8 @@ export {
   NavigationMenuViewportPosition,
   NavigationMenuListItemFocus,
   NavigationMenuListItemSelect,
+  Focused,
+  Selected,
 } from './NavigationMenu'
 export { Note } from './Note'
 export { Overlay, overlayStyles } from './Overlay'

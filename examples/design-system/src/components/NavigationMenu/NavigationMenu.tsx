@@ -192,7 +192,7 @@ const NavigationMenuContentContainer = ({ id, items, layout }) => {
                   </NavigationMenuLinkText>
                 </Box>
                 {focused === calloutId ? (
-                  <Focused layoutId="highlight" type="callout" />
+                  <Focused color="violet" layoutId="highlight" type="callout" />
                 ) : null}
                 {selected === calloutId ? <Selected layoutId="underline" /> : null}
               </NavigationMenuLink>
@@ -215,7 +215,9 @@ const NavigationMenuContentContainer = ({ id, items, layout }) => {
                   <NavigationMenuLinkTitle>{item.id}</NavigationMenuLinkTitle>
                   <NavigationMenuLinkText>{item.description}</NavigationMenuLinkText>
                 </span>
-                {focused === item.id ? <Focused layoutId="highlight" /> : null}
+                {focused === item.id ? (
+                  <Focused color="violet" layoutId="highlight" />
+                ) : null}
                 {selected === item.id ? <Selected layoutId="underline" /> : null}
               </NavigationMenuLink>
             </NextLink>

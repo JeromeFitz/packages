@@ -16,4 +16,6 @@ export {
   NavigationMenuViewportPosition,
   NavigationMenuListItemFocus,
   NavigationMenuListItemSelect,
+  Focused,
+  Selected,
 } from './NavigationMenu'

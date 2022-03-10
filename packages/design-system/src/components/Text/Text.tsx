@@ -105,6 +105,16 @@ const Text = styled('span', {
         WebkitTextFillColor: 'transparent',
       },
     },
+    weight: {
+      thin: { fontWeight: 100 },
+      extraLight: { fontWeight: 200 },
+      light: { fontWeight: 300 },
+      normal: { fontWeight: 400 },
+      medium: { fontWeight: 500 },
+      semiBold: { fontWeight: 600 },
+      bold: { fontWeight: 700 },
+      extraBold: { fontWeight: 800 },
+    },
   },
   compoundVariants: [
     {

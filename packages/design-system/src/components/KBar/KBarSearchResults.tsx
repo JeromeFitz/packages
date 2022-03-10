@@ -1,3 +1,4 @@
+import { LayoutGroup } from 'framer-motion'
 import { KBarResults, useMatches } from 'kbar'
 
 import { KBarSearchResult } from './KBarSearchResult'
@@ -5,7 +6,11 @@ import { KBarSearchResult } from './KBarSearchResult'
 const KBarSearchResults = () => {
   const { results } = useMatches()
 
-  return <KBarResults items={results} onRender={KBarSearchResult} />
+  return (
+    <LayoutGroup id={`kbar-layout-group`}>
+      <KBarResults items={results} onRender={KBarSearchResult} />
+    </LayoutGroup>
+  )
 }
 
 export { KBarSearchResults }

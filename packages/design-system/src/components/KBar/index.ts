@@ -6,6 +6,7 @@ import {
   KBarSearchStyle,
 } from './KBar.styles'
 import { KBarDefault } from './KBarDefault'
+import { KBarFooter } from './KBarFooter'
 import { KBarPortal } from './KBarPortal'
 import { KBarSearch } from './KBarSearch'
 import { KBarSearchResult } from './KBarSearchResult'
@@ -21,6 +22,7 @@ export {
   KBarSearch,
   KBarSearchResult,
   KBarSearchResults,
+  KBarFooter,
   KBarSubscriptions,
   // Wrapper Components Styles
   KBarPositionerStyle,

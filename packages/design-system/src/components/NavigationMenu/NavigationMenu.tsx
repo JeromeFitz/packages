@@ -332,9 +332,6 @@ const NavigationMenuListItemFocus = styled(motion.div, {
       },
     },
   },
-  defaultVariants: {
-    color: 'violet',
-  },
 })
 
 const NavigationMenuListItemSelect = styled(motion.div, {
@@ -350,6 +347,22 @@ const NavigationMenuListItemSelect = styled(motion.div, {
   zIndex: 1,
 })
 
+const Focused = React.forwardRef((props: any, forwardedRef) => (
+  <NavigationMenuListItemFocus
+    ref={forwardedRef}
+    transition={{
+      layout: {
+        duration: 0.2,
+        ease: 'easeOut',
+      },
+    }}
+    {...props}
+  />
+))
+const Selected = React.forwardRef((props: any, forwardedRef) => (
+  <NavigationMenuListItemSelect ref={forwardedRef} {...props} />
+))
+
 export {
   NavigationMenuListContent,
   NavigationMenuListItem,
@@ -358,4 +371,6 @@ export {
   NavigationMenuViewportPosition,
   NavigationMenuListItemFocus,
   NavigationMenuListItemSelect,
+  Focused,
+  Selected,
 }

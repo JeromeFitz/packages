@@ -5,6 +5,7 @@ const TextArea = styled('textarea', {
   appearance: 'none',
   borderWidth: '0',
   fontFamily: 'inherit',
+  fontSize: '1rem',
   margin: '0',
   outline: 'none',
   padding: '$1',
@@ -46,21 +47,27 @@ const TextArea = styled('textarea', {
     size: {
       '1': {
         borderRadius: '$1',
-        fontSize: '$1',
         lineHeight: '16px',
         px: '$1',
+        '@bp1': {
+          fontSize: '$1',
+        },
       },
       '2': {
         borderRadius: '$1',
-        fontSize: '$2',
         lineHeight: '20px',
         px: '$1',
+        '@bp1': {
+          fontSize: '$2',
+        },
       },
       '3': {
         borderRadius: '$2',
-        fontSize: '$3',
         lineHeight: '23px',
         px: '$2',
+        '@bp1': {
+          fontSize: '$3',
+        },
       },
     },
     state: {
