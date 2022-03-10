@@ -32,12 +32,12 @@ const KBarSearchStyle = css({
   fontFamily: '$sans',
   fontWeight: 'bold',
   outline: 'none',
+  pt: '$1',
   width: '100%',
   // ref: https://twitter.com/joshwcomeau/status/1379782931116351490?s=12
   fontSize: '1rem',
   '@bp1': {
     fontSize: '$3',
-    pt: '$1',
   },
 })
 

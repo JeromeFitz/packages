@@ -314,9 +314,9 @@ const NavigationMenuListItemFocus = styled(motion.div, {
   right: 0,
   width: '110%',
   height: '110%',
-  background: '$blackA4',
+  background: '$blackA5',
   [`.${darkTheme} &`]: {
-    background: `whiteA4`,
+    background: '$whiteA5',
   },
   borderRadius: '$2',
   zIndex: 0,
