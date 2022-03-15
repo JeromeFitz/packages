@@ -1,21 +1,41 @@
-export {
-  // @core
+import { Focused, NavigationMenuTriggerWithCaret, Selected } from './NavigationMenu'
+import {
   NavigationMenu,
-  NavigationMenuList,
-  NavigationMenuItem,
-  NavigationMenuTrigger,
-  NavigationMenuLink,
+  NavigationMenuCaret,
   NavigationMenuContent,
-  NavigationMenuViewport,
   NavigationMenuIndicator,
-  // @custom
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuLinkText,
+  NavigationMenuLinkTitle,
+  NavigationMenuList,
   NavigationMenuListContent,
   NavigationMenuListItem,
-  NavigationMenuLinkTitle,
-  NavigationMenuLinkText,
-  NavigationMenuViewportPosition,
   NavigationMenuListItemFocus,
   NavigationMenuListItemSelect,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+  NavigationMenuViewportPosition,
+} from './NavigationMenu.styles'
+
+export {
   Focused,
+  NavigationMenu,
+  NavigationMenuCaret,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuLinkText,
+  NavigationMenuLinkTitle,
+  NavigationMenuList,
+  NavigationMenuListContent,
+  NavigationMenuListItem,
+  NavigationMenuListItemFocus,
+  NavigationMenuListItemSelect,
+  NavigationMenuTrigger,
+  NavigationMenuTriggerWithCaret,
+  NavigationMenuViewport,
+  NavigationMenuViewportPosition,
   Selected,
-} from './NavigationMenu'
+}

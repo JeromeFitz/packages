@@ -16,8 +16,8 @@ import {
   NavigationMenuLinkTitle,
   NavigationMenuLinkText,
   NavigationMenuViewportPosition,
-  NavigationMenuListItemFocus,
-  NavigationMenuListItemSelect,
+  Focused,
+  Selected,
 } from '@jeromefitz/design-system/src/components'
 import { LayoutGroup } from 'framer-motion'
 import NextLink from 'next/link'
@@ -116,22 +116,6 @@ const menu = [
   },
   { id: 'direct-link', href: '/', layout: null, title: 'Direct Link' },
 ]
-
-const Focused = React.forwardRef((props: any, forwardedRef) => (
-  <NavigationMenuListItemFocus
-    ref={forwardedRef}
-    transition={{
-      layout: {
-        duration: 0.2,
-        ease: 'easeOut',
-      },
-    }}
-    {...props}
-  />
-))
-const Selected = React.forwardRef((props: any, forwardedRef) => (
-  <NavigationMenuListItemSelect ref={forwardedRef} {...props} />
-))
 
 const NavigationMenuContentContainer = ({ id, items, layout }) => {
   const [focused, setFocused] = React.useState(null)

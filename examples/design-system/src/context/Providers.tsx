@@ -13,7 +13,6 @@ const Providers = ({ children }) => {
   return (
     <MediaContextProvider>
       <ThemeProvider
-        disableTransitionOnChange
         attribute="class"
         value={{ light: 'light-theme', dark: darkTheme.className }}
         defaultTheme="system"
