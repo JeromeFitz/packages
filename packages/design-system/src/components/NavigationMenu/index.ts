@@ -1,4 +1,9 @@
-import { Focused, NavigationMenuTriggerWithCaret, Selected } from './NavigationMenu'
+import {
+  Focused,
+  NavigationMenuIndicatorWithArrow,
+  NavigationMenuTriggerWithCaret,
+  Selected,
+} from './NavigationMenu'
 import {
   NavigationMenu,
   NavigationMenuCaret,
@@ -24,6 +29,7 @@ export {
   NavigationMenuCaret,
   NavigationMenuContent,
   NavigationMenuIndicator,
+  NavigationMenuIndicatorWithArrow,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuLinkText,

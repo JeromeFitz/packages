@@ -21,7 +21,7 @@ const KBarSearchResult = ({ active, item }: KBarSearchResultProps) => {
 
   if (typeof item == 'string') {
     return (
-      <Box css={{ my: '$1', py: '$1', px: '$2' }}>
+      <Box css={{ mt: '$1', pt: '$1', mb: '$3', pb: '$3', px: '$2' }}>
         <Text
           size="1"
           css={{ color: '$hiContrast', textTransform: 'uppercase' }}

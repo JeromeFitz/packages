@@ -7,6 +7,8 @@ import {
   NavigationMenuCaret,
   NavigationMenuListItemFocus,
   NavigationMenuListItemSelect,
+  NavigationMenuIndicator,
+  NavigationMenuArrow,
 } from './NavigationMenu.styles'
 
 /**
@@ -31,8 +33,17 @@ const StyledTriggerWithCaret = React.forwardRef<
   </NavigationMenuTrigger>
 ))
 
+const StyledIndicatorWithArrow = React.forwardRef((props, forwardedRef) => (
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  <NavigationMenuIndicator {...props} ref={forwardedRef}>
+    <NavigationMenuArrow />
+  </NavigationMenuIndicator>
+))
+
 // @core
 const NavigationMenuTriggerWithCaret = StyledTriggerWithCaret
+const NavigationMenuIndicatorWithArrow = StyledIndicatorWithArrow
 
 /**
  * @custom
@@ -53,4 +64,9 @@ const Selected = React.forwardRef((props: any, forwardedRef) => (
   <NavigationMenuListItemSelect ref={forwardedRef} {...props} />
 ))
 
-export { NavigationMenuTriggerWithCaret, Focused, Selected }
+export {
+  NavigationMenuTriggerWithCaret,
+  NavigationMenuIndicatorWithArrow,
+  Focused,
+  Selected,
+}

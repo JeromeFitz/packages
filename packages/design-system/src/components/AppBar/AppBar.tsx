@@ -3,6 +3,9 @@ import { styled } from '../../stitches.config'
 const AppBar = styled('div', {
   boxSizing: 'border-box',
   zIndex: '1',
+  '@media (prefers-reduced-motion: no-preference)': {
+    transition: 'opacity 150ms cubic-bezier(0.65, 0, 0.35, 1)',
+  },
 
   variants: {
     size: {
@@ -52,6 +55,9 @@ const AppBar = styled('div', {
       color: 'plain',
       css: {
         opacity: '.9',
+        '&:hover': {
+          opacity: '1',
+        },
       },
     },
     {
@@ -59,6 +65,9 @@ const AppBar = styled('div', {
       color: 'accent',
       css: {
         opacity: '.9',
+        '&:hover': {
+          opacity: '1',
+        },
       },
     },
     {
@@ -66,6 +75,9 @@ const AppBar = styled('div', {
       color: 'loContrast',
       css: {
         opacity: '.9',
+        '&:hover': {
+          opacity: '1',
+        },
       },
     },
     {

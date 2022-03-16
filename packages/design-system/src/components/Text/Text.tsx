@@ -2,7 +2,7 @@ import { styled } from '../../stitches.config'
 
 const Text = styled('span', {
   // @reset
-  lineHeight: '1',
+  lineHeight: '1.2',
   margin: '0',
   fontWeight: 400,
   fontVariantNumeric: 'tabular-nums',

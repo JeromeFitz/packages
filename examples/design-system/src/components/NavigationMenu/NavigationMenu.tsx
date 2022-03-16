@@ -5,11 +5,11 @@ import {
   NavigationMenu,
   NavigationMenuList,
   NavigationMenuItem,
-  NavigationMenuTrigger,
+  NavigationMenuTriggerWithCaret,
   NavigationMenuLink,
   NavigationMenuContent,
   NavigationMenuViewport,
-  NavigationMenuIndicator,
+  NavigationMenuIndicatorWithArrow,
   // @custom
   NavigationMenuListContent,
   NavigationMenuListItem,
@@ -28,43 +28,43 @@ import { cssIconHeroToRadix2 } from '../../lib/constants'
 const menu = [
   {
     id: 'events',
-    href: '/',
+    url: '/',
     layout: 'one',
     title: 'Upcoming Events',
     items: [
       // {
       //   id: 'title-1',
-      //   href: '/about',
+      //   url: '/about',
       //   title: 'Title 1',
       //   description: 'Description of Event Title 1.',
       // },
       {
         id: 'title-2',
-        href: '/about',
+        url: '/about',
         title: 'Title 2',
         description: 'Description of Event Title 2.',
       },
       {
         id: 'title-3',
-        href: '/about',
+        url: '/about',
         title: 'View All',
         description: 'Listing of all Upcoming Events',
       },
       // {
       //   id: 'title-1b',
-      //   href: '/about',
+      //   url: '/about',
       //   title: 'Title 1b',
       //   description: 'Description of Show Title 1b.',
       // },
       // {
       //   id: 'title-2b',
-      //   href: '/about',
+      //   url: '/about',
       //   title: 'Title 2b',
       //   description: 'Description of Show Title 2b.',
       // },
       // {
       //   id: 'title-3b',
-      //   href: '/about',
+      //   url: '/about',
       //   title: 'Title 3b',
       //   description: 'Description of Show Title 3b.',
       // },
@@ -72,49 +72,49 @@ const menu = [
   },
   {
     id: 'shows',
-    href: '/',
+    url: '/',
     layout: 'two',
     title: 'Shows',
     items: [
       {
         id: 'item-1',
-        href: '/',
+        url: '/',
         title: 'Item 1',
-        description: 'Description of Item 1.',
+        description: 'Description of Item 1. Description of Item 1.',
       },
       {
         id: 'item-2',
-        href: '/',
+        url: '/',
         title: 'Item 2',
         description: 'Description of Item 2.',
       },
       {
         id: 'item-3',
-        href: '/',
+        url: '/',
         title: 'Item 3',
         description: 'Description of Item 3.',
       },
       {
         id: 'item-1b',
-        href: '/',
+        url: '/',
         title: 'Item 1b',
         description: 'Description of Item 1b.',
       },
       {
         id: 'item-2b',
-        href: '/',
+        url: '/',
         title: 'Item 2b',
         description: 'Description of Item 2b.',
       },
       {
         id: 'item-3b',
-        href: '/',
+        url: '/',
         title: 'Item 3b',
-        description: 'Description of Item 3b.',
+        description: 'Description of Item 3b. Description of Item 3b.',
       },
     ],
   },
-  { id: 'direct-link', href: '/', layout: null, title: 'Direct Link' },
+  { id: 'direct-link', url: '/', layout: null, title: 'Direct Link' },
 ]
 
 const NavigationMenuContentContainer = ({ id, items, layout }) => {
@@ -149,7 +149,7 @@ const NavigationMenuContentContainer = ({ id, items, layout }) => {
                 focus
                 type="callout"
               >
-                <Box as="span" css={{ mx: '$1' }}>
+                <Box as="span" css={{ mx: '$2' }}>
                   <NavigationMenuLinkTitle
                     css={{
                       fontSize: '1.125rem',
@@ -167,6 +167,8 @@ const NavigationMenuContentContainer = ({ id, items, layout }) => {
                   </NavigationMenuLinkTitle>
                   <NavigationMenuLinkText
                     css={{
+                      m: 0,
+                      p: 0,
                       fontSize: '0.875rem',
                       color: '$hiContrast',
                       lineHeight: 1.3,
@@ -185,7 +187,7 @@ const NavigationMenuContentContainer = ({ id, items, layout }) => {
         )}
         {items.map((item) => (
           <NavigationMenuListItem css={{ mb: '$2' }} key={item.id}>
-            <NextLink passHref href={item.href}>
+            <NextLink passHref href={item.url}>
               <NavigationMenuLink
                 onClick={() => setSelected(item.id)}
                 onKeyDown={(event: { key: string }) =>
@@ -195,10 +197,12 @@ const NavigationMenuContentContainer = ({ id, items, layout }) => {
                 onMouseEnter={() => setFocused(item.id)}
                 focus
               >
-                <span>
+                <Box as="span">
                   <NavigationMenuLinkTitle>{item.id}</NavigationMenuLinkTitle>
-                  <NavigationMenuLinkText>{item.description}</NavigationMenuLinkText>
-                </span>
+                  <NavigationMenuLinkText>
+                    {item.subtitle ?? item.description}
+                  </NavigationMenuLinkText>
+                </Box>
                 {focused === item.id ? (
                   <Focused color="violet" layoutId="highlight" />
                 ) : null}
@@ -217,12 +221,14 @@ const NavigationMenuImpl = () => {
     <NavigationMenu>
       <NavigationMenuList>
         {menu.map((menuItem) => {
-          const { id, href, layout, title, items } = menuItem
+          const { id, layout, title, url, items } = menuItem
           const hasChildren = !!items
 
           return hasChildren ? (
             <NavigationMenuItem key={`kmi-${id}`}>
-              <NavigationMenuTrigger>{title}</NavigationMenuTrigger>
+              <NavigationMenuTriggerWithCaret>
+                {title}
+              </NavigationMenuTriggerWithCaret>
               <NavigationMenuContent>
                 <NavigationMenuContentContainer
                   id={id}
@@ -233,12 +239,12 @@ const NavigationMenuImpl = () => {
             </NavigationMenuItem>
           ) : (
             <NavigationMenuItem key={`kmi-${id}`}>
-              <NavigationMenuLink href={href}>{title}</NavigationMenuLink>
+              <NavigationMenuLink href={url}>{title}</NavigationMenuLink>
             </NavigationMenuItem>
           )
         })}
 
-        <NavigationMenuIndicator />
+        <NavigationMenuIndicatorWithArrow />
       </NavigationMenuList>
 
       <NavigationMenuViewportPosition>

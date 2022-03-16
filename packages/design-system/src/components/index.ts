@@ -114,6 +114,7 @@ export {
   NavigationMenuCaret,
   NavigationMenuContent,
   NavigationMenuIndicator,
+  NavigationMenuIndicatorWithArrow,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuLinkText,

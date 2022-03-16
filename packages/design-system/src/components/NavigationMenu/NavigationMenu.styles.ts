@@ -34,6 +34,16 @@ const scaleOut = keyframes({
   to: { transform: 'translateY(5px) rotateX(-10deg)', opacity: 0 },
 })
 
+const fadeIn = keyframes({
+  from: { opacity: 0 },
+  to: { opacity: 1 },
+})
+
+const fadeOut = keyframes({
+  from: { opacity: 1 },
+  to: { opacity: 0 },
+})
+
 /**
  * @core
  */
@@ -65,7 +75,8 @@ const itemStyles = {
   outline: 'none',
   padding: '8px 12px',
   userSelect: 'none',
-  // '&:focus': { boxShadow: `0 0 0 2px $colors$violet7` },
+  // '&:focus': { position: 'relative', boxShadow: `0 0 0 2px $colors$violet7` },
+  // '&:hover': { backgroundColor: '$2 },
 }
 
 const StyledTrigger = styled(NavigationMenuPrimitive.Trigger, {
@@ -96,17 +107,17 @@ const StyledLink = styled(NavigationMenuPrimitive.Link, {
   variants: {
     focus: {
       true: {
-        padding: '$2',
+        padding: '$1',
         position: 'relative',
         listStyle: 'none',
         cursor: 'pointer',
         width: '90%',
         height: '90%',
-        margin: '$4',
+        margin: '$1',
         outline: 'none',
 
         span: {
-          position: 'absolute',
+          position: 'relative',
           left: '4px',
           right: 0,
           top: '6px',
@@ -115,6 +126,11 @@ const StyledLink = styled(NavigationMenuPrimitive.Link, {
           userSelect: 'none',
           fontSize: '1rem',
           color: 'yellow',
+          // // @todo(design-system) turn this into variant "truncate"
+          // maxHeight: '26px',
+          // overflow: 'hidden',
+          // textOverflow: 'ellipsis',
+          // whiteSpace: 'break-spaces',
         },
       },
     },
@@ -128,6 +144,8 @@ const StyledLink = styled(NavigationMenuPrimitive.Link, {
         height: '100%',
         p: 0,
         m: 0,
+        mb: '$1',
+        pb: '$3',
       },
     },
   },
@@ -154,23 +172,50 @@ const StyledIndicator = styled(NavigationMenuPrimitive.Indicator, {
   display: 'flex',
   alignItems: 'flex-end',
   justifyContent: 'center',
-  height: 2,
-  bottom: 0,
-  borderTopLeftRadius: 10,
-  borderTopRightRadius: 10,
-  backgroundColor: '$colors$violet8',
+  height: 10,
+  top: '100%',
+  overflow: 'hidden',
+  zIndex: 1,
 
   '@media (prefers-reduced-motion: no-preference)': {
     transition: 'width, transform 250ms ease',
+    '&[data-state="visible"]': { animation: `${fadeIn} 200ms ease` },
+    '&[data-state="hidden"]': { animation: `${fadeOut} 200ms ease` },
   },
 })
 
+const StyledArrow = styled('div', {
+  position: 'relative',
+  top: '70%',
+  backgroundColor: '$colors$violet2',
+  boxShadow: `0 2px 10px $colors$shadowLight`,
+  width: 10,
+  height: 10,
+  transform: 'rotate(45deg)',
+  borderTopLeftRadius: 2,
+})
+
+// const StyledIndicator = styled(NavigationMenuPrimitive.Indicator, {
+//   display: 'flex',
+//   alignItems: 'flex-end',
+//   justifyContent: 'center',
+//   height: 2,
+//   bottom: 0,
+//   borderTopLeftRadius: 10,
+//   borderTopRightRadius: 10,
+//   backgroundColor: '$colors$violet8',
+
+//   '@media (prefers-reduced-motion: no-preference)': {
+//     transition: 'width, transform 250ms ease',
+//   },
+// })
+
 const StyledViewport = styled(NavigationMenuPrimitive.Viewport, {
-  backgroundColor: '$colors$3',
+  backgroundColor: 'inherit',
   borderRadius: 6,
   boxShadow: `0 2px 10px $colors$shadowLight`,
   height: 'var(--radix-navigation-menu-viewport-height)',
-  marginTop: 14,
+  marginTop: 10,
   /**
    * @note(radix-ui) driving force behind animation
    * of NavigationMenuPrimitive.Content
@@ -200,6 +245,7 @@ const NavigationMenuLink = StyledLink
 const NavigationMenuContent = StyledContent
 const NavigationMenuViewport = StyledViewport
 const NavigationMenuIndicator = StyledIndicator
+const NavigationMenuArrow = StyledArrow
 
 /**
  * @custom
@@ -249,7 +295,7 @@ const NavigationMenuListItem = styled('li', {
   px: '0',
   m: '0',
   // '&:hover': {
-  //   backgroundColor: '$colors$violet3',
+  //   backgroundColor: '$2,
   // },
   '@media (prefers-reduced-motion: no-preference)': {
     transition: 'all 250ms ease',
@@ -271,6 +317,11 @@ const NavigationMenuLinkText = styled('p', {
   color: '$colors$violet11',
   fontWeight: 'initial',
   lineHeight: 1.4,
+  //
+  // maxHeight: '1rem',
+  // overflow: 'hidden',
+  // textOverflow: 'ellipsis',
+  // whiteSpace: 'break-spaces',
 })
 
 const NavigationMenuViewportPosition = styled('div', {
@@ -285,9 +336,10 @@ const NavigationMenuViewportPosition = styled('div', {
 
 const NavigationMenuListItemFocus = styled(motion.div, {
   position: 'absolute',
-  bottom: '-2px',
-  left: '-10px',
-  right: 0,
+  top: '-3px',
+  left: '-3px',
+  // bottom: '-2px',
+  // right: 0,
   width: '110%',
   height: '110%',
   background: '$blackA5',
@@ -299,7 +351,9 @@ const NavigationMenuListItemFocus = styled(motion.div, {
   variants: {
     type: {
       callout: {
-        bottom: '-7px',
+        top: '-9px',
+        left: '-9px',
+        // bottom: '-7px',
       },
     },
     color: {
@@ -312,9 +366,11 @@ const NavigationMenuListItemFocus = styled(motion.div, {
 
 const NavigationMenuListItemSelect = styled(motion.div, {
   position: 'absolute',
-  bottom: '-2px',
-  left: '-10px',
-  right: 0,
+  top: '-3px',
+  left: '-3px',
+  // bottom: '-2px',
+  // left: '-10px',
+  // right: 0,
   width: '110%',
   height: '110%',
   background: 'transparent',
@@ -334,6 +390,7 @@ export {
   NavigationMenuContent,
   NavigationMenuViewport,
   NavigationMenuIndicator,
+  NavigationMenuArrow,
   // @custom
   NavigationMenuListContent,
   NavigationMenuListItem,

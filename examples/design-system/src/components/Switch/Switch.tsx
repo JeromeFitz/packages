@@ -37,7 +37,9 @@ const SwitchImpl = () => {
         onCheckedChange={() => handleThemeToggle()}
         iconOn={<SpeakerModerateIcon />}
         iconOff={<SpeakerOffIcon />}
-        size="oversized2"
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        size="4"
       />
       <Separator decorative margin="my3" size="full" />
       <Switch />
