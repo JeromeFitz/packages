@@ -103,7 +103,7 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
           },
         },
       },
-      oversized: {
+      '3': {
         height: 18,
         width: 30,
         transform: 'translateX(2px)',
@@ -116,7 +116,7 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
           },
         },
       },
-      oversized2: {
+      '4': {
         height: 24,
         width: 36,
         transform: 'translateX(2px)',
