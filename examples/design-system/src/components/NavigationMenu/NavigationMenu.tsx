@@ -1,21 +1,25 @@
 import { TicketIcon } from '@heroicons/react/outline'
 import {
+  Box,
   // @core
   NavigationMenu,
   NavigationMenuList,
   NavigationMenuItem,
-  NavigationMenuTrigger,
+  NavigationMenuTriggerWithCaret,
   NavigationMenuLink,
   NavigationMenuContent,
   NavigationMenuViewport,
-  NavigationMenuIndicator,
+  NavigationMenuIndicatorWithArrow,
   // @custom
   NavigationMenuListContent,
   NavigationMenuListItem,
   NavigationMenuLinkTitle,
   NavigationMenuLinkText,
   NavigationMenuViewportPosition,
+  Focused,
+  Selected,
 } from '@jeromefitz/design-system/src/components'
+import { LayoutGroup } from 'framer-motion'
 import NextLink from 'next/link'
 import * as React from 'react'
 
@@ -24,43 +28,43 @@ import { cssIconHeroToRadix2 } from '../../lib/constants'
 const menu = [
   {
     id: 'events',
-    href: '/',
+    url: '/',
     layout: 'one',
     title: 'Upcoming Events',
     items: [
       // {
       //   id: 'title-1',
-      //   href: '/about',
+      //   url: '/about',
       //   title: 'Title 1',
       //   description: 'Description of Event Title 1.',
       // },
-      // {
-      //   id: 'title-2',
-      //   href: '/about',
-      //   title: 'Title 2',
-      //   description: 'Description of Event Title 2.',
-      // },
+      {
+        id: 'title-2',
+        url: '/about',
+        title: 'Title 2',
+        description: 'Description of Event Title 2.',
+      },
       {
         id: 'title-3',
-        href: '/about',
+        url: '/about',
         title: 'View All',
         description: 'Listing of all Upcoming Events',
       },
       // {
       //   id: 'title-1b',
-      //   href: '/about',
+      //   url: '/about',
       //   title: 'Title 1b',
       //   description: 'Description of Show Title 1b.',
       // },
       // {
       //   id: 'title-2b',
-      //   href: '/about',
+      //   url: '/about',
       //   title: 'Title 2b',
       //   description: 'Description of Show Title 2b.',
       // },
       // {
       //   id: 'title-3b',
-      //   href: '/about',
+      //   url: '/about',
       //   title: 'Title 3b',
       //   description: 'Description of Show Title 3b.',
       // },
@@ -68,167 +72,179 @@ const menu = [
   },
   {
     id: 'shows',
-    href: '/',
+    url: '/',
     layout: 'two',
     title: 'Shows',
     items: [
       {
         id: 'item-1',
-        href: '/',
+        url: '/',
         title: 'Item 1',
-        description: 'Description of Item 1.',
+        description: 'Description of Item 1. Description of Item 1.',
       },
       {
         id: 'item-2',
-        href: '/',
+        url: '/',
         title: 'Item 2',
         description: 'Description of Item 2.',
       },
       {
         id: 'item-3',
-        href: '/',
+        url: '/',
         title: 'Item 3',
         description: 'Description of Item 3.',
       },
       {
         id: 'item-1b',
-        href: '/',
+        url: '/',
         title: 'Item 1b',
         description: 'Description of Item 1b.',
       },
       {
         id: 'item-2b',
-        href: '/',
+        url: '/',
         title: 'Item 2b',
         description: 'Description of Item 2b.',
       },
       {
         id: 'item-3b',
-        href: '/',
+        url: '/',
         title: 'Item 3b',
-        description: 'Description of Item 3b.',
+        description: 'Description of Item 3b. Description of Item 3b.',
       },
     ],
   },
-  { id: 'direct-link', href: '/', layout: null, title: 'Direct Link' },
+  { id: 'direct-link', url: '/', layout: null, title: 'Direct Link' },
 ]
 
-const NavigationMenuListContentItem = React.forwardRef(
-  (props: any, forwardedRef) => (
-    <NavigationMenuListItem>
-      <NextLink passHref href={props?.href}>
-        <NavigationMenuLink
-          {...props}
-          ref={forwardedRef}
-          css={{
-            padding: 12,
-            borderRadius: 6,
-            '&:hover': { backgroundColor: '$colors$mauve8' },
-          }}
-        >
-          <NavigationMenuLinkTitle>{props.title}</NavigationMenuLinkTitle>
-          <NavigationMenuLinkText>{props.children}</NavigationMenuLinkText>
-        </NavigationMenuLink>
-      </NextLink>
-    </NavigationMenuListItem>
-  )
-)
+const NavigationMenuContentContainer = ({ id, items, layout }) => {
+  const [focused, setFocused] = React.useState(null)
+  const [selected, setSelected] = React.useState(null)
 
-const NavigationMenuListContentItemCallout = React.forwardRef(
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  ({ children, ...props }, forwardedRef) => (
-    <NavigationMenuListItem css={{ gridRow: 'span 3' }}>
-      <NextLink href="/" passHref>
-        <NavigationMenuLink
-          {...props}
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
-          ref={forwardedRef}
-          css={{
-            display: 'flex',
-            justifyContent: 'flex-end',
-            flexDirection: 'column',
-            width: '100%',
-            height: '100%',
-            background: `linear-gradient(135deg, $colors$violet9 0%, $colors$blue9 100%);`,
-            borderRadius: 6,
-            padding: 25,
-          }}
-        >
-          <NavigationMenuLinkTitle
-            css={{
-              fontSize: 18,
-              color: 'white',
-              my: '$2',
-            }}
-          >
-            <>
-              <TicketIcon
-                className="hi2ri"
-                style={{ ...cssIconHeroToRadix2, marginBottom: '1rem' }}
-              />
-              Upcoming Event Title
-            </>
-          </NavigationMenuLinkTitle>
-          <NavigationMenuLinkText
-            css={{
-              fontSize: 14,
-              color: '$colors$violet4',
-              lineHeight: 1.3,
-            }}
-          >
-            FRI 03/04 08:00PM
-          </NavigationMenuLinkText>
-        </NavigationMenuLink>
-      </NextLink>
-    </NavigationMenuListItem>
-  )
-)
+  const isCallout = id === 'events'
+  const calloutId = 'callout-id'
 
-const _NavigationMenu = () => {
+  return (
+    <NavigationMenuListContent
+      layout={layout}
+      css={{ flexDirection: 'column' }}
+      onMouseLeave={() => setFocused(null)}
+    >
+      <LayoutGroup id={`nmlc-${id}`}>
+        {isCallout && (
+          <NavigationMenuListItem
+            css={{
+              gridRow: 'span 3',
+            }}
+            key={calloutId}
+          >
+            <NextLink href="/" passHref>
+              <NavigationMenuLink
+                onClick={() => setSelected(calloutId)}
+                onKeyDown={(event: { key: string }) =>
+                  event.key === 'Enter' ? setSelected(calloutId) : null
+                }
+                onFocus={() => setFocused(calloutId)}
+                onMouseEnter={() => setFocused(calloutId)}
+                focus
+                type="callout"
+              >
+                <Box as="span" css={{ mx: '$2' }}>
+                  <NavigationMenuLinkTitle
+                    css={{
+                      fontSize: '1.125rem',
+                      color: '$loContrast',
+                      my: '$2',
+                    }}
+                  >
+                    <>
+                      <TicketIcon
+                        className="hi2ri"
+                        style={{ ...cssIconHeroToRadix2, marginBottom: '1rem' }}
+                      />
+                      Upcoming Event Title
+                    </>
+                  </NavigationMenuLinkTitle>
+                  <NavigationMenuLinkText
+                    css={{
+                      m: 0,
+                      p: 0,
+                      fontSize: '0.875rem',
+                      color: '$hiContrast',
+                      lineHeight: 1.3,
+                    }}
+                  >
+                    FRI 03/04 08:00PM
+                  </NavigationMenuLinkText>
+                </Box>
+                {focused === calloutId ? (
+                  <Focused color="violet" layoutId="highlight" type="callout" />
+                ) : null}
+                {selected === calloutId ? <Selected layoutId="underline" /> : null}
+              </NavigationMenuLink>
+            </NextLink>
+          </NavigationMenuListItem>
+        )}
+        {items.map((item) => (
+          <NavigationMenuListItem css={{ mb: '$2' }} key={item.id}>
+            <NextLink passHref href={item.url}>
+              <NavigationMenuLink
+                onClick={() => setSelected(item.id)}
+                onKeyDown={(event: { key: string }) =>
+                  event.key === 'Enter' ? setSelected(item.id) : null
+                }
+                onFocus={() => setFocused(item.id)}
+                onMouseEnter={() => setFocused(item.id)}
+                focus
+              >
+                <Box as="span">
+                  <NavigationMenuLinkTitle>{item.id}</NavigationMenuLinkTitle>
+                  <NavigationMenuLinkText>
+                    {item.subtitle ?? item.description}
+                  </NavigationMenuLinkText>
+                </Box>
+                {focused === item.id ? (
+                  <Focused color="violet" layoutId="highlight" />
+                ) : null}
+                {selected === item.id ? <Selected layoutId="underline" /> : null}
+              </NavigationMenuLink>
+            </NextLink>
+          </NavigationMenuListItem>
+        ))}
+      </LayoutGroup>
+    </NavigationMenuListContent>
+  )
+}
+
+const NavigationMenuImpl = () => {
   return (
     <NavigationMenu>
       <NavigationMenuList>
         {menu.map((menuItem) => {
-          const { id, href, layout, title, items } = menuItem
+          const { id, layout, title, url, items } = menuItem
           const hasChildren = !!items
-          // console.dir(`title: ${title}`)
-          // console.dir(`hasChildren: ${hasChildren}`)
 
           return hasChildren ? (
             <NavigationMenuItem key={`kmi-${id}`}>
-              {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-              {/* @ts-ignore */}
-              <NavigationMenuTrigger>
-                {/* <Box as="span">{title}</Box> */}
+              <NavigationMenuTriggerWithCaret>
                 {title}
-              </NavigationMenuTrigger>
+              </NavigationMenuTriggerWithCaret>
               <NavigationMenuContent>
-                <NavigationMenuListContent layout={layout}>
-                  {id === 'events' && <NavigationMenuListContentItemCallout />}
-
-                  {items.map((item) => {
-                    return (
-                      <NavigationMenuListContentItem
-                        key={`cli-${item.id}`}
-                        href={item.href}
-                        title={item.title}
-                      >
-                        {item.description}
-                      </NavigationMenuListContentItem>
-                    )
-                  })}
-                </NavigationMenuListContent>
+                <NavigationMenuContentContainer
+                  id={id}
+                  items={items}
+                  layout={layout}
+                />
               </NavigationMenuContent>
             </NavigationMenuItem>
           ) : (
             <NavigationMenuItem key={`kmi-${id}`}>
-              <NavigationMenuLink href={href}>{title}</NavigationMenuLink>
+              <NavigationMenuLink href={url}>{title}</NavigationMenuLink>
             </NavigationMenuItem>
           )
         })}
 
-        <NavigationMenuIndicator />
+        <NavigationMenuIndicatorWithArrow />
       </NavigationMenuList>
 
       <NavigationMenuViewportPosition>
@@ -238,4 +254,4 @@ const _NavigationMenu = () => {
   )
 }
 
-export { _NavigationMenu as NavigationMenu }
+export { NavigationMenuImpl as NavigationMenu }

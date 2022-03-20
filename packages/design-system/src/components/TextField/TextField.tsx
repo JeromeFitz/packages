@@ -6,6 +6,7 @@ const TextField = styled('input', {
   borderWidth: '0',
   boxSizing: 'border-box',
   fontFamily: 'inherit',
+  fontSize: '1rem',
   margin: '0',
   outline: 'none',
   padding: '0',
@@ -30,6 +31,7 @@ const TextField = styled('input', {
 
   '&:-webkit-autofill::first-line': {
     fontFamily: '$untitled',
+    fontSize: '1rem',
     color: '$hiContrast',
   },
 
@@ -64,21 +66,25 @@ const TextField = styled('input', {
       '1': {
         borderRadius: '$1',
         height: '$5',
-        fontSize: '$1',
         px: '$1',
         lineHeight: '$sizes$5',
-        '&:-webkit-autofill::first-line': {
+        '@bp1': {
           fontSize: '$1',
+          '&:-webkit-autofill::first-line': {
+            fontSize: '$1',
+          },
         },
       },
       '2': {
         borderRadius: '$2',
         height: '$6',
-        fontSize: '$3',
         px: '$2',
         lineHeight: '$sizes$6',
-        '&:-webkit-autofill::first-line': {
+        '@bp1': {
           fontSize: '$3',
+          '&:-webkit-autofill::first-line': {
+            fontSize: '$3',
+          },
         },
       },
     },

@@ -83,19 +83,66 @@ const DropdownMenuCheckboxItem = React.forwardRef<
   </StyledDropdownMenuCheckboxItem>
 ))
 
+const DropdownMenuItemIndicator = styled(DropdownMenuPrimitive.ItemIndicator, {
+  position: 'absolute',
+  left: 0,
+  width: 25,
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+})
+
+const DropdownMenuTriggerItem = styled(DropdownMenuPrimitive.TriggerItem, {
+  all: 'unset',
+  fontSize: 13,
+  lineHeight: 1,
+  color: '$colors$violet11',
+  borderRadius: 3,
+  display: 'flex',
+  alignItems: 'center',
+  height: 25,
+  padding: '0 5px',
+  position: 'relative',
+  paddingLeft: 25,
+  userSelect: 'none',
+
+  '&[data-disabled]': {
+    color: '$colores$slate3',
+    pointerEvents: 'none',
+  },
+
+  '&:focus': {
+    backgroundColor: '$colors$violet9',
+    color: '$colors$violet1',
+  },
+
+  '&[data-state="open"]': {
+    backgroundColor: '$colors$violet4',
+    color: '$colors$violet11',
+  },
+})
+
+const DropdownMenuArrow = styled(DropdownMenuPrimitive.Arrow, {
+  mx: '$3',
+  fill: '$panel',
+})
+
 const DropdownMenuLabel = styled(DropdownMenuPrimitive.Label, labelCss)
 const DropdownMenuRadioGroup = styled(DropdownMenuPrimitive.RadioGroup, {})
 const DropdownMenuGroup = styled(DropdownMenuPrimitive.Group, {})
 
 export {
   DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuSeparator,
-  DropdownMenuItem,
-  DropdownMenuRadioItem,
+  DropdownMenuArrow,
   DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuItemIndicator,
   DropdownMenuLabel,
   DropdownMenuRadioGroup,
-  DropdownMenuGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+  DropdownMenuTriggerItem,
 }

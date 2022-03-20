@@ -20,14 +20,17 @@ type DatabaseInfo = {
     active: boolean
     database_id: string
     dataTypes: DataTypes[]
+    // @todo(next-notion) move to `isChild`
     hasChild: string | null
+    infoType: any
+    isChild: string | null
+    isChildInfoType: any | null
     name: string
     page_id__seo: string
     routeMeta: boolean
     routeType: string
+    skipStaticPaths: boolean
     slug: string
-    //
-    infoType: any
     ttl: number
   }
 }
@@ -166,8 +169,14 @@ interface Episode extends Default {
   relationEpisodes__People_Guest: any
   relationEpisodes__People_Sound_Engineer: any
   relationEpisodes__People_Thanks: any
-  relationEpisodes__Podcast: any
+  relationEpisodes__Podcasts: any
   relationEpisodes__Venues: any
+  // rollupEpisodes__People_Guest: any
+  // rollupEpisodes__People_Sound_Engineer: any
+  // rollupEpisodes__People_Thanks: any
+  rollupEpisodes__Podcasts: any
+  rollupEpisodes__PodcastsSlugs: any
+  // rollupEpisodes__Venues: any
   socialApple: any
   socialSpotify: any
   type: any
@@ -230,6 +239,8 @@ interface Podcast extends Default {
   relationPodcasts__Episodes: any
   relationPodcasts__People_Host: any
   relationPodcasts__People_Sound_Engineer: any
+  rollupPodcasts__Episodes: any
+  rollupPodcasts__EpisodesSlugs: any
   socialApple: any
   socialSpotify: any
   type: any

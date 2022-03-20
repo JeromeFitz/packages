@@ -1,9 +1,12 @@
-import { Box, KBarSubscriptions } from '@jeromefitz/design-system/src/components'
+import {
+  Box,
+  KBarFooter,
+  // KBarSubscriptions,
+  Separator,
+} from '@jeromefitz/design-system/src/components'
 import { useFocusTrap } from '@mantine/hooks'
 import dynamic from 'next/dynamic'
 import * as React from 'react'
-
-import { KBarWindowControls } from './KBarWindowControls'
 
 const KBarSearch = dynamic(() =>
   import('@jeromefitz/design-system/src/components').then(
@@ -23,13 +26,17 @@ const KBar = () => {
   const trap = useFocusTrap()
   return (
     <>
-      <KBarWindowControls />
-      <Box css={{ pb: '$2', pt: '$4', px: '$4' }} ref={trap}>
-        <KBarSubscriptions />
+      <Box css={{ py: '$1', px: '$2' }} ref={trap}>
+        {/* <KBarSubscriptions /> */}
         <KBarSearch />
       </Box>
+      <Separator decorative margin="my2" size="full" />
       <Box css={{ px: '$2' }}>
         <KBarSearchResults />
+      </Box>
+      <Box css={{ display: 'none', '@bp1': { display: 'block' } }}>
+        <Separator decorative margin="my2" size="full" />
+        <KBarFooter />
       </Box>
       <Box css={{ py: '$2' }} />
     </>

@@ -1,5 +1,5 @@
 import { TicketIcon } from '@heroicons/react/outline'
-import { useToast } from '@jeromefitz/design-system/src/custom/Toast'
+import { Toaster } from '@jeromefitz/design-system/src/components'
 import {
   CalendarIcon,
   EnvelopeOpenIcon,
@@ -85,13 +85,14 @@ const KBarActions = () => {
   const kbar = useKBar()
   const router = useRouter()
   const { setTheme } = useTheme()
-  const toasts = useToast()
+  const toaster = React.useRef<any>()
 
   const handleToastInfo = (path) => {
-    if (toasts && toasts.current) {
-      toasts.current.message({
+    if (toaster && toaster.current) {
+      toaster.current.createToast({
         duration: 2000,
-        text: `Route change: ${path}`,
+        description: `${path}`,
+        title: `Route Change:`,
         type: 'info',
       })
     }
@@ -412,7 +413,7 @@ const KBarActions = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  return null
+  return <Toaster ref={toaster} />
 }
 
 export { KBarActions }

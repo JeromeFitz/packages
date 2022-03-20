@@ -1,6 +1,15 @@
+import { ReplyIcon } from '@heroicons/react/outline'
 import { ActionImpl } from 'kbar/lib/action'
 
-import { Box, Flex, Heading, Kbd, Separator, Text } from '../index'
+import { Box, Flex, Text, Kbd, Focused } from '../index'
+
+const cssIconHeroToRadix = {
+  marginTop: '3px',
+  marginRight: '10px',
+  width: '1rem',
+  height: '1rem',
+  transform: 'rotate(180deg) scaleX(-1)',
+}
 
 interface KBarSearchResultProps {
   active: boolean
@@ -8,13 +17,18 @@ interface KBarSearchResultProps {
 }
 
 const KBarSearchResult = ({ active, item }: KBarSearchResultProps) => {
+  // const [focused, setFocused] = React.useState(null)
+
   if (typeof item == 'string') {
     return (
-      <Box css={{ py: '$1', px: '$4' }}>
-        <Separator decorative margin="my3" size="full" />
-        <Heading size="1" css={{ color: '$hiContrast', textTransform: 'uppercase' }}>
+      <Box css={{ mt: '$1', pt: '$1', mb: '$3', pb: '$3', px: '$2' }}>
+        <Text
+          size="1"
+          css={{ color: '$hiContrast', textTransform: 'uppercase' }}
+          weight="semiBold"
+        >
           {item}
-        </Heading>
+        </Text>
       </Box>
     )
   }
@@ -23,10 +37,10 @@ const KBarSearchResult = ({ active, item }: KBarSearchResultProps) => {
     <Box
       css={{
         py: '$2',
-        px: '$4',
+        px: '$2',
         borderLeftWidth: '$2',
         cursor: 'pointer',
-        background: active ? '$colors$gray8' : 'transparent',
+        // background: active ? '$colors$gray8' : 'transparent',
         borderRadius: '$2',
       }}
       role="button"
@@ -38,96 +52,96 @@ const KBarSearchResult = ({ active, item }: KBarSearchResultProps) => {
             justify="center"
             align="center"
             css={{
+              mt: 0,
+              '@bp1': {
+                minWidth: '2rem',
+              },
               '& svg': {
-                height: '$5',
-                width: '$5',
+                height: '$3',
+                width: '$3',
                 color: '$hiContrast',
               },
             }}
           >
-            <Heading
+            <Text
               css={{
                 color: '$hiContrast',
-                fontSize: '1.5rem',
-                // @hack(kbar)
-                mb: !!item.subtitle ? '0' : '0',
-                mt: !!item.subtitle ? '0' : '$1',
-                '@bp1': {
-                  fontSize: '1.75rem',
-                },
               }}
-              size="4"
+              size="1"
             >
               {item.icon}
-            </Heading>
-            {/* {item.subtitle && ( */}
-            <Text
-              size="1"
-              css={{
-                color: '$hiContrast',
-                fontFamily: '$mono',
-                my: '$1',
-                '&::after': {
-                  background: 'transparent',
-                  content: `"."`,
-                  color: 'transparent',
-                },
-              }}
-            />
-            {/* )} */}
+            </Text>
           </Flex>
         )}
         <Flex
-          direction="column"
           css={{
+            alignItems: 'center',
             flexGrow: '1',
+            justifyContent: 'start',
             // @todo(design-system) turn this into variant "truncate"
             overflow: 'hidden',
             textOverflow: 'ellipsis',
             whiteSpace: 'nowrap',
           }}
+          direction="row"
+          gap="3"
         >
-          <Heading
+          <Text
             css={{
               color: '$hiContrast',
-              fontSize: '1.5rem',
+              // fontSize: '1rem',
+              lineHeight: 1.2,
               // @todo(design-system) turn this into variant "truncate"
               overflow: 'hidden',
               textOverflow: 'ellipsis',
               whiteSpace: 'nowrap',
-              '@bp1': {
-                fontSize: '1.75rem',
-              },
+              // '@bp1': {
+              //   fontSize: '1.25rem',
+              // },
             }}
-            size="4"
+            size="3"
+            weight="bold"
           >
             {item.name}
-          </Heading>
-          {item.subtitle && (
-            <Text
-              size="1"
-              css={{
-                color: '$hiContrast',
-                fontFamily: '$mono',
-                my: '$1',
-                // @todo(design-system) turn this into variant "truncate"
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-                whiteSpace: 'nowrap',
-              }}
-            >
-              {item.subtitle}
-            </Text>
+          </Text>
+          {!!item.subtitle && (
+            <>
+              <Text
+                as="span"
+                css={{ display: 'none', '@bp1': { display: 'inline-flex' } }}
+                size="1"
+              >
+                —
+              </Text>
+              <Text
+                as="span"
+                css={{
+                  color: '$hiContrast',
+                  fontFamily: '$mono',
+                  my: '$1',
+                  display: 'none',
+                  '@bp1': { display: 'inline-flex' },
+                  // @todo(design-system) turn this into variant "truncate"
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  whiteSpace: 'nowrap',
+                }}
+                size="1"
+              >
+                {item.subtitle}
+              </Text>
+            </>
           )}
         </Flex>
         {item.shortcut && (
           <Flex
             css={{
-              alignItems: 'center',
-              '$$tw-space-x-reverse': 0,
-              marginRight: 'calc(0.25rem * $$tw-space-x-reverse)',
-              marginLeft: 'calc(0.25rem * calc(1 - $$tw-space-x-reverse))',
+              alignItems: 'right',
+              marginRight: '1.75rem',
+              display: 'none',
+              '@bp1': { display: 'inline-flex' },
             }}
+            gap="2"
           >
             {item.shortcut.map((key, i) => (
               <Kbd
@@ -136,6 +150,7 @@ const KBarSearchResult = ({ active, item }: KBarSearchResultProps) => {
                   cursor: 'inherit',
                   fontFamily: '$mono',
                   fontSize: '$1',
+                  // fontWeight: 700,
                   py: '$2',
                 }}
               >
@@ -145,6 +160,26 @@ const KBarSearchResult = ({ active, item }: KBarSearchResultProps) => {
           </Flex>
         )}
       </Flex>
+      {active && (
+        <Focused
+          css={{
+            alignItems: 'center',
+            borderRadius: '$3',
+            display: 'flex',
+            height: '100%',
+            justifyContent: 'flex-end',
+            left: '1px',
+            width: '99%',
+            '& svg': {
+              display: 'none',
+              '@bp1': { display: 'inline-flex' },
+            },
+          }}
+          layoutId="highlight"
+        >
+          <ReplyIcon className="hi2ri" style={cssIconHeroToRadix} />
+        </Focused>
+      )}
     </Box>
   )
 }

@@ -57,7 +57,7 @@ const getQuery = async ({ config, reqQuery, notionDatabasesQuery }) => {
     _size(podcastIds) > 0 &&
       _map(podcastIds, (id) =>
         filterTagEpisodesByPodcasts.push({
-          property: PROPERTIES.relationEpisodes__Podcast.notion,
+          property: PROPERTIES.relationEpisodes__Podcasts.notion,
           relation: {
             contains: id,
           },

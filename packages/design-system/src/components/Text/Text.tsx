@@ -2,7 +2,7 @@ import { styled } from '../../stitches.config'
 
 const Text = styled('span', {
   // @reset
-  lineHeight: '1',
+  lineHeight: '1.2',
   margin: '0',
   fontWeight: 400,
   fontVariantNumeric: 'tabular-nums',
@@ -104,6 +104,16 @@ const Text = styled('span', {
         WebkitBackgroundClip: 'text',
         WebkitTextFillColor: 'transparent',
       },
+    },
+    weight: {
+      thin: { fontWeight: 100 },
+      extraLight: { fontWeight: 200 },
+      light: { fontWeight: 300 },
+      normal: { fontWeight: 400 },
+      medium: { fontWeight: 500 },
+      semiBold: { fontWeight: 600 },
+      bold: { fontWeight: 700 },
+      extraBold: { fontWeight: 800 },
     },
   },
   compoundVariants: [

@@ -253,6 +253,8 @@ const {
       loContrast: '$slate1',
       // loContrast: 'white',
       canvas: 'hsl(0 0% 93%)',
+      gradient:
+        'linear-gradient(112deg, $blue500 -63.59%, $red500 -20.3%, $violet500 70.46%)',
       panel: 'white',
       transparentPanel: 'hsl(0 0% 0% / 97%)',
       shadowLight: 'hsl(206 22% 7% / 35%)',

@@ -3,7 +3,6 @@ import {
   ToastProvider,
   ToastViewport,
 } from '@jeromefitz/design-system/src/components'
-// import { ToastProvider, Toaster } from '@jeromefitz/design-system/src/custom/Toast'
 import { darkTheme } from '@jeromefitz/design-system/src/stitches.config'
 import { ThemeProvider } from 'next-themes'
 
@@ -14,7 +13,6 @@ const Providers = ({ children }) => {
   return (
     <MediaContextProvider>
       <ThemeProvider
-        disableTransitionOnChange
         attribute="class"
         value={{ light: 'light-theme', dark: darkTheme.className }}
         defaultTheme="system"

@@ -17,9 +17,15 @@ const KBarAnimatorStyle = css({
   minHeight: '$7',
   padding: '$1',
   // overflow: 'hidden',
-  width: '90%',
+  height: '100%',
+  width: '100%',
   '@bp1': {
-    width: '75%',
+    height: '100%',
+    maxHeight: '80vh',
+    maxWidth: '75vw',
+    minHeight: '80px',
+    minWidth: '180px',
+    // width: '55%',
   },
 })
 const KBarSearchStyle = css({
@@ -28,11 +34,15 @@ const KBarSearchStyle = css({
   borderRadius: '$2',
   color: '$hiContrast',
   fontFamily: '$sans',
-  fontSize: '1.25rem',
   fontWeight: 'bold',
-  pb: '$3',
   outline: 'none',
+  pt: '$1',
   width: '100%',
+  // ref: https://twitter.com/joshwcomeau/status/1379782931116351490?s=12
+  fontSize: '1rem',
+  '@bp1': {
+    fontSize: '$3',
+  },
 })
 
 export { KBarPositionerStyle, KBarAnimatorStyle, KBarSearchStyle }

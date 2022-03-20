@@ -59,15 +59,18 @@ export {
 } from './Dialog'
 export {
   DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuSeparator,
-  DropdownMenuItem,
-  DropdownMenuRadioItem,
+  DropdownMenuArrow,
   DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuItemIndicator,
   DropdownMenuLabel,
   DropdownMenuRadioGroup,
-  DropdownMenuGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+  DropdownMenuTriggerItem,
 } from './DropdownMenu'
 export { Flex } from './Flex'
 export { FocusArea } from './FocusArea'
@@ -84,6 +87,7 @@ export {
   KBarSearch,
   KBarSearchResult,
   KBarSearchResults,
+  KBarFooter,
   KBarSubscriptions,
   // Wrapper Components Styles
   KBarPositionerStyle,
@@ -105,21 +109,26 @@ export {
   MenuSeparator,
 } from './Menu'
 export {
-  // @core
+  Focused,
   NavigationMenu,
-  NavigationMenuList,
-  NavigationMenuItem,
-  NavigationMenuTrigger,
-  NavigationMenuLink,
+  NavigationMenuCaret,
   NavigationMenuContent,
-  NavigationMenuViewport,
   NavigationMenuIndicator,
-  // @custom
+  NavigationMenuIndicatorWithArrow,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuLinkText,
+  NavigationMenuLinkTitle,
+  NavigationMenuList,
   NavigationMenuListContent,
   NavigationMenuListItem,
-  NavigationMenuLinkTitle,
-  NavigationMenuLinkText,
+  NavigationMenuListItemFocus,
+  NavigationMenuListItemSelect,
+  NavigationMenuTrigger,
+  NavigationMenuTriggerWithCaret,
+  NavigationMenuViewport,
   NavigationMenuViewportPosition,
+  Selected,
 } from './NavigationMenu'
 export { Note } from './Note'
 export { Overlay, overlayStyles } from './Overlay'
@@ -174,7 +183,7 @@ export { Spacer } from './Spacer'
 export { Status } from './Status'
 export { Sub } from './Sub'
 export { Sup } from './Sup'
-export { Switch } from './Switch'
+export { Switch, SwitchIcon } from './Switch'
 export { TableCaption, Tbody, Tfoot, Tr, Th, Td, Thead, Table } from './Table'
 export { TabLink } from './TabLink'
 export { TabsList, Tabs, TabsContent, TabsTrigger } from './Tabs'

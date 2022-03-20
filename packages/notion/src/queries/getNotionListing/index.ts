@@ -17,10 +17,6 @@ const getNotionListing = async ({
 
   let info: any = {}
 
-  const dateTimestamp = new Date().toISOString()
-  // @todo(date-fns) make this the first date of the year dynamically
-  const dateTimeStampPublished = new Date('2020-01-01').toISOString()
-
   const page_id = NOTION[routeType.toUpperCase()].page_id__seo
   const _info = await getPagesById({
     page_id,
@@ -36,11 +32,25 @@ const getNotionListing = async ({
     )
   }
 
-  // @todo(notion) make this dynamic
-  const isListingByEvent = NOTION.EVENTS.routeType === routeType
   const property =
     NOTION[routeType.toUpperCase()].infoType.notion ??
     PROPERTIES.datePublished.notion
+
+  /**
+   * @todo Can we make the date dynamic?
+   * This can be considered the date you want to go back in time to on build.
+   * Can be construed as the website creation date, too I guess.
+   *
+   * For those routeTypes that do not go off of datePublished,
+   *  we want to get their listing by the current date.
+   *
+   * ex) /events => Only want events that are in the future.
+   *
+   */
+  const timestamp =
+    property === PROPERTIES.datePublished.notion
+      ? new Date('2020-01-01').toISOString()
+      : new Date().toISOString()
 
   const content = await getBlocksByIdChildren({ block_id: info.id })
   const _items: any = await getDatabasesByIdQuery({
@@ -50,7 +60,7 @@ const getNotionListing = async ({
         {
           property,
           date: {
-            on_or_after: isListingByEvent ? dateTimestamp : dateTimeStampPublished,
+            on_or_after: timestamp,
           },
         },
       ],
