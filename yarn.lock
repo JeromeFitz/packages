@@ -1238,10 +1238,10 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@mantine/hooks@4.0.8":
-  version "4.0.8"
-  resolved "https://registry.yarnpkg.com/@mantine/hooks/-/hooks-4.0.8.tgz#4b3c62e8a136de45fafbda8c3845dbdd63860d11"
-  integrity sha512-f9DNbLB0KjVdTGxVeas/+9fNSiniv//Pm3SAm7NtaeCNX1EU3WECnjph+bnQx0YVwINCRVlLbyWwpkI64m132w==
+"@mantine/hooks@4.0.9":
+  version "4.0.9"
+  resolved "https://registry.yarnpkg.com/@mantine/hooks/-/hooks-4.0.9.tgz#63af01e64955f8589f037fdab414f6c62223da98"
+  integrity sha512-b+IrevT05/nAM2H0iKWC9BP0gr/U8kF3U8Ge+EnvSFeSOWp/exm/Wy5toorQ83nQbmfCjkSAL5WDb6Jx0gI/Fg==
 
 "@manypkg/cli@0.19.1":
   version "0.19.1"
