@@ -23,10 +23,10 @@
   resolved "https://registry.yarnpkg.com/@artdeco/clean-stack/-/clean-stack-1.2.1.tgz#4a4fbd9d82a1f77651a189cf6eca3380c9eb35ad"
   integrity sha512-FLraW960uOlIpuevXGyfMpNkgDO0ioDmV/fblMsWHMnG4rceNGS8iSijyrqGRYiEqmIpks4dZpyXICs8EncUAQ==
 
-"@artsy/fresnel@3.4.0":
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/@artsy/fresnel/-/fresnel-3.4.0.tgz#513f139e1d2326fd8a07e32c6fc9c03167cce91f"
-  integrity sha512-wK1pmOEm38oHfwlcyO26n2vr2QTMnn9AawfrJsixT4K4IjyGlI+aa8vS6osUiw2fIdaNIvBqPmXlsCVN+5/kNw==
+"@artsy/fresnel@3.4.1":
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/@artsy/fresnel/-/fresnel-3.4.1.tgz#6418aa082c15b2d7395e82fb3b440b186ad72610"
+  integrity sha512-CB9K3x6aNpHoNcFSK4cg2Hk7V4biH8mnf+7d1KOmrfI/SOk0vJNVZbZPtE2E/plrrsGH0XlRsbiHX7dNehrjwA==
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.10.4", "@babel/code-frame@^7.12.13", "@babel/code-frame@^7.16.7":
   version "7.16.7"
