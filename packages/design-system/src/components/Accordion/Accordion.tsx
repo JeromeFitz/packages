@@ -7,6 +7,11 @@ import * as React from 'react'
 
 import { styled, keyframes } from '../../stitches.config'
 
+type ForwardedRefType = React.ForwardedRef<any>
+type PropsChildren = {
+  children?: React.ReactNode
+}
+
 const slideDown = keyframes({
   from: { height: 0 },
   to: { height: 'var(--radix-accordion-content-height)' },
@@ -96,27 +101,31 @@ const StyledChevron = styled(ChevronDownIcon, {
   },
 })
 
-const AccordionTrigger = React.forwardRef(({ children, ...props }, forwardedRef) => (
-  <StyledHeader>
-    {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-    {/* @ts-ignore */}
-    <StyledTrigger {...props} ref={forwardedRef}>
-      <div>{children}</div>
-      <StyledChevron aria-hidden />
-    </StyledTrigger>
-  </StyledHeader>
-))
+const AccordionTrigger = React.forwardRef<ForwardedRefType, PropsChildren>(
+  ({ children, ...props }, forwardedRef) => (
+    <StyledHeader>
+      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+      {/* @ts-ignore */}
+      <StyledTrigger {...props} ref={forwardedRef}>
+        <div>{children}</div>
+        <StyledChevron aria-hidden />
+      </StyledTrigger>
+    </StyledHeader>
+  )
+)
 AccordionTrigger.displayName = 'AccordionTrigger'
 
-const AccordionContent = React.forwardRef(({ children, ...props }, forwardedRef) => (
-  <>
-    {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-    {/* @ts-ignore */}
-    <StyledContent {...props} ref={forwardedRef}>
-      <StyledContentText>{children}</StyledContentText>
-    </StyledContent>
-  </>
-))
+const AccordionContent = React.forwardRef<ForwardedRefType, PropsChildren>(
+  ({ children, ...props }, forwardedRef) => (
+    <>
+      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+      {/* @ts-ignore */}
+      <StyledContent {...props} ref={forwardedRef}>
+        <StyledContentText>{children}</StyledContentText>
+      </StyledContent>
+    </>
+  )
+)
 AccordionContent.displayName = 'AccordionContent'
 
 const Accordion = StyledAccordion
