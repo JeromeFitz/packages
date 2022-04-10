@@ -1,31 +1,28 @@
 import {
   AppBar,
+  Box,
   Button,
   Flex,
-  // Kbd,
-  Separator,
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-  // SheetClose,
-  // SheetTitle,
-  // SheetDescription,
-  Heading,
-  Text,
+  // // Kbd,
+  // Separator,
+  // Sheet,
+  // SheetContent,
+  // SheetTrigger,
+  // // SheetClose,
+  // // SheetTitle,
+  // // SheetDescription,
+  // Heading,
+  // Text,
 } from '@jeromefitz/design-system/src/components'
 import { darkTheme } from '@jeromefitz/design-system/src/stitches.config'
-import * as Portal from '@radix-ui/react-portal'
+// import * as Portal from '@radix-ui/react-portal'
 import { useKBar } from 'kbar'
 import { useTheme } from 'next-themes'
 import * as React from 'react'
 
-import { Media } from '../../context/Media'
-// import { NavigationMenu } from '../NavigationMenu'
-
 const _AppBar = ({}) => {
   const kbar = useKBar()
   const { theme, setTheme } = useTheme()
-  const content = `Toggle Theme to: ${theme === 'light' ? 'Dark' : 'Light'}`
 
   const handleThemeToggle = React.useCallback(() => {
     const newTheme = theme === 'dark' ? 'light' : 'dark'
@@ -66,27 +63,26 @@ const _AppBar = ({}) => {
     >
       <Flex direction="row" justify="between">
         <Flex css={{ ml: '$3' }} direction="row" justify="start">
-          <Media greaterThan="xs">
-            <Flex>
-              <Button
-                css={{
-                  py: '$2',
-                  mr: '$2',
-                  '@hover': {
-                    '&:hover, &:hover + &': {
-                      cursor: 'pointer',
-                    },
+          {/* <Media greaterThan="xs"> */}
+          <Flex>
+            <Button
+              css={{
+                py: '$2',
+                mr: '$2',
+                '@hover': {
+                  '&:hover, &:hover + &': {
+                    cursor: 'pointer',
                   },
-                }}
-                size="1"
-                onClick={kbar.query.toggle}
-                ghost
-              >
-                Menu: KBar
-              </Button>
-            </Flex>
-            {/* <NavigationMenu /> */}
-          </Media>
+                },
+              }}
+              size="1"
+              onClick={kbar.query.toggle}
+              ghost
+            >
+              Menu: KBar
+            </Button>
+          </Flex>
+          {/* </Media>
           <Media at="xs">
             <Sheet>
               <SheetTrigger asChild>
@@ -94,7 +90,7 @@ const _AppBar = ({}) => {
                   Menu: Sheet
                 </Button>
               </SheetTrigger>
-              <Portal.Root>
+              // <Portal.Root>
                 <SheetContent
                   css={{
                     textAlign: 'center',
@@ -108,9 +104,9 @@ const _AppBar = ({}) => {
                   <Separator />
                   <Text>Hello.</Text>
                 </SheetContent>
-              </Portal.Root>
+              // </Portal.Root>
             </Sheet>
-          </Media>
+          </Media> */}
         </Flex>
         <Flex css={{ mr: '$3' }} justify="end">
           <Button
@@ -118,7 +114,11 @@ const _AppBar = ({}) => {
             onClick={() => handleThemeToggle()}
             size="1"
           >
-            {content}
+            <Box as="span" css={{ mr: '$1' }}>
+              Toggle Theme:
+            </Box>
+            <span data-hide="dark">Light</span>
+            <span data-hide="light">Dark</span>
           </Button>
         </Flex>
       </Flex>

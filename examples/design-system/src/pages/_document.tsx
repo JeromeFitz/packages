@@ -7,8 +7,6 @@ import Document, {
   NextScript,
 } from 'next/document'
 
-import { mediaStyles } from '~context/Media'
-
 /**
  * @note
  * Get the css and reset the internal css representation.
@@ -35,14 +33,6 @@ class MyDocument extends Document<DocumentContext> {
           <style
             id="stitches"
             dangerouslySetInnerHTML={{ __html: getCssAndReset() }}
-          />
-          <style
-            id="appmedia"
-            type="text/css"
-            dangerouslySetInnerHTML={{
-              __html: mediaStyles.replace(/[\r\n]+/g, ' '),
-              // .replace(/fresnel/g, 'f'),
-            }}
           />
         </Head>
         <body>

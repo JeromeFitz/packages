@@ -45,6 +45,10 @@ const global = {
       strokeWidth: '1.5 !important',
     },
   },
+
+  ".light-theme [data-hide='dark'], .dark-theme [data-hide='light']": {
+    display: 'none',
+  },
 }
 
 export default global
