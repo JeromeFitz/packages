@@ -42,7 +42,7 @@
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "swr": "1.2.2",
-    "zustand": "3.7.1"
+    "zustand": "3.7.2"
   },
   "devDependencies": {
     "@types/ramda": "0.28.7",
