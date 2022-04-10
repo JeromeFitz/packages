@@ -7,9 +7,14 @@ const KBarSearchResults = () => {
   const { results } = useMatches()
 
   return (
-    <LayoutGroup id={`kbar-layout-group`}>
-      <KBarResults items={results} onRender={KBarSearchResult} />
-    </LayoutGroup>
+    <>
+      {/* @todo(react-18) */}
+      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+      {/* @ts-ignore */}
+      <LayoutGroup id={`kbar-layout-group`}>
+        <KBarResults items={results} onRender={KBarSearchResult} />
+      </LayoutGroup>
+    </>
   )
 }
 
