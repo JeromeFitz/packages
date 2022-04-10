@@ -1,31 +1,24 @@
 import {
   AppBar,
+  Box,
   Button,
   Flex,
-  // Kbd,
+  Heading,
   Separator,
   Sheet,
   SheetContent,
   SheetTrigger,
-  // SheetClose,
-  // SheetTitle,
-  // SheetDescription,
-  Heading,
   Text,
 } from '@jeromefitz/design-system/src/components'
 import { darkTheme } from '@jeromefitz/design-system/src/stitches.config'
-import * as Portal from '@radix-ui/react-portal'
+// import * as Portal from '@radix-ui/react-portal'
 import { useKBar } from 'kbar'
 import { useTheme } from 'next-themes'
 import * as React from 'react'
 
-import { Media } from '../../context/Media'
-// import { NavigationMenu } from '../NavigationMenu'
-
 const _AppBar = ({}) => {
   const kbar = useKBar()
   const { theme, setTheme } = useTheme()
-  const content = `Toggle Theme to: ${theme === 'light' ? 'Dark' : 'Light'}`
 
   const handleThemeToggle = React.useCallback(() => {
     const newTheme = theme === 'dark' ? 'light' : 'dark'
@@ -66,51 +59,50 @@ const _AppBar = ({}) => {
     >
       <Flex direction="row" justify="between">
         <Flex css={{ ml: '$3' }} direction="row" justify="start">
-          <Media greaterThan="xs">
-            <Flex>
-              <Button
-                css={{
-                  py: '$2',
-                  mr: '$2',
-                  '@hover': {
-                    '&:hover, &:hover + &': {
-                      cursor: 'pointer',
-                    },
+          {/* <Box css={{ '@initial': { display: 'none' } }}> */}
+          <Flex>
+            <Button
+              css={{
+                py: '$2',
+                mr: '$2',
+                '@hover': {
+                  '&:hover, &:hover + &': {
+                    cursor: 'pointer',
                   },
-                }}
-                size="1"
-                onClick={kbar.query.toggle}
-                ghost
-              >
-                Menu: KBar
-              </Button>
-            </Flex>
-            {/* <NavigationMenu /> */}
-          </Media>
-          <Media at="xs">
+                },
+              }}
+              size="1"
+              onClick={kbar.query.toggle}
+              ghost
+            >
+              Menu: KBar
+            </Button>
+          </Flex>
+          {/* </Box> */}
+          <Box css={{ '@bp1': { display: 'none' } }}>
             <Sheet>
               <SheetTrigger asChild>
                 <Button css={{ '&:hover': { cursor: 'pointer' } }} size="1">
                   Menu: Sheet
                 </Button>
               </SheetTrigger>
-              <Portal.Root>
-                <SheetContent
-                  css={{
-                    textAlign: 'center',
-                    borderTopLeftRadius: '$4',
-                    borderTopRightRadius: '$4',
-                    p: '$4',
-                  }}
-                  side="bottom"
-                >
-                  <Heading size="3">Menu</Heading>
-                  <Separator />
-                  <Text>Hello.</Text>
-                </SheetContent>
-              </Portal.Root>
+              {/* <Portal.Root> */}
+              <SheetContent
+                css={{
+                  textAlign: 'center',
+                  borderTopLeftRadius: '$4',
+                  borderTopRightRadius: '$4',
+                  p: '$4',
+                }}
+                side="bottom"
+              >
+                <Heading size="3">Menu</Heading>
+                <Separator decorative margin="my3" size="full" />
+                <Text>Hello.</Text>
+              </SheetContent>
+              {/* </Portal.Root> */}
             </Sheet>
-          </Media>
+          </Box>
         </Flex>
         <Flex css={{ mr: '$3' }} justify="end">
           <Button
@@ -118,7 +110,11 @@ const _AppBar = ({}) => {
             onClick={() => handleThemeToggle()}
             size="1"
           >
-            {content}
+            <Box as="span" css={{ mr: '$1' }}>
+              Toggle Theme:
+            </Box>
+            <span data-hide="dark">Light</span>
+            <span data-hide="light">Dark</span>
           </Button>
         </Flex>
       </Flex>

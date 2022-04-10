@@ -10,15 +10,13 @@ import {
 import { ArrowTopRightIcon, CalendarIcon, Cross1Icon } from '@radix-ui/react-icons'
 import NextLink from 'next/link'
 
-import { Media } from '../../context/Media'
-
 // @todo(dynamic) notion api, upcoming event or evergreen info
 const meta = {
   left: 'FRI 02/25',
   leftExtended: 'FRI 02/25 09:30PM',
   leftIcon: <CalendarIcon />,
   right: 'The Playlist',
-  rightExtended: 'The Playlist: Kalyani Singh',
+  rightExtended: 'The Playlist: Band Name',
   rightIcon: <ArrowTopRightIcon />,
   url: '/about',
 }
@@ -30,28 +28,14 @@ const _Banner = () => {
         <Link>
           <Banner css={{ py: '$2', width: '100%' }} variant="blue">
             <CalendarIcon />
-            <Media at="xs">
-              <Text css={{ color: 'inherit', fontWeight: 500 }} size="2">
-                {meta.left}
-              </Text>
-            </Media>
-            <Media greaterThan="xs">
-              <Text css={{ color: 'inherit', fontWeight: 500 }} size="2">
-                {meta.leftExtended}
-              </Text>
-            </Media>
+            <Text css={{ color: 'inherit', fontWeight: 500 }} size="2">
+              {meta.leftExtended}
+            </Text>
             <Separator orientation="vertical" />
             <Flex direction="row" gap="1">
-              <Media at="xs">
-                <Text css={{ color: 'inherit', fontWeight: 500 }} size="2">
-                  {meta.right}
-                </Text>
-              </Media>
-              <Media greaterThan="xs">
-                <Text css={{ color: 'inherit', fontWeight: 500 }} size="2">
-                  {meta.rightExtended}
-                </Text>
-              </Media>
+              <Text css={{ color: 'inherit', fontWeight: 500 }} size="2">
+                {meta.rightExtended}
+              </Text>
               {meta.rightIcon}
             </Flex>
 

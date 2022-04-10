@@ -5,7 +5,17 @@ const withTM = require('next-transpile-modules')(['@jeromefitz/design-system'])
 /**
  * @type {import('next').NextConfig}
  **/
-const nextConfig = {}
+const nextConfig = {
+  compress: true,
+  eslint: {
+    build: false,
+  },
+  experimental: {
+    concurrentFeatures: false,
+    serverComponents: false,
+  },
+  swcMinify: true,
+}
 
 /**
  * @note
