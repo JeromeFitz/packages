@@ -16,7 +16,7 @@ const meta = {
   leftExtended: 'FRI 02/25 09:30PM',
   leftIcon: <CalendarIcon />,
   right: 'The Playlist',
-  rightExtended: 'The Playlist: Kalyani Singh',
+  rightExtended: 'The Playlist: Band Name',
   rightIcon: <ArrowTopRightIcon />,
   url: '/about',
 }

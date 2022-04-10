@@ -3,16 +3,12 @@ import {
   Box,
   Button,
   Flex,
-  // // Kbd,
-  // Separator,
-  // Sheet,
-  // SheetContent,
-  // SheetTrigger,
-  // // SheetClose,
-  // // SheetTitle,
-  // // SheetDescription,
-  // Heading,
-  // Text,
+  Heading,
+  Separator,
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  Text,
 } from '@jeromefitz/design-system/src/components'
 import { darkTheme } from '@jeromefitz/design-system/src/stitches.config'
 // import * as Portal from '@radix-ui/react-portal'
@@ -63,7 +59,7 @@ const _AppBar = ({}) => {
     >
       <Flex direction="row" justify="between">
         <Flex css={{ ml: '$3' }} direction="row" justify="start">
-          {/* <Media greaterThan="xs"> */}
+          {/* <Box css={{ '@initial': { display: 'none' } }}> */}
           <Flex>
             <Button
               css={{
@@ -82,31 +78,31 @@ const _AppBar = ({}) => {
               Menu: KBar
             </Button>
           </Flex>
-          {/* </Media>
-          <Media at="xs">
+          {/* </Box> */}
+          <Box css={{ '@bp1': { display: 'none' } }}>
             <Sheet>
               <SheetTrigger asChild>
                 <Button css={{ '&:hover': { cursor: 'pointer' } }} size="1">
                   Menu: Sheet
                 </Button>
               </SheetTrigger>
-              // <Portal.Root>
-                <SheetContent
-                  css={{
-                    textAlign: 'center',
-                    borderTopLeftRadius: '$4',
-                    borderTopRightRadius: '$4',
-                    p: '$4',
-                  }}
-                  side="bottom"
-                >
-                  <Heading size="3">Menu</Heading>
-                  <Separator />
-                  <Text>Hello.</Text>
-                </SheetContent>
-              // </Portal.Root>
+              {/* <Portal.Root> */}
+              <SheetContent
+                css={{
+                  textAlign: 'center',
+                  borderTopLeftRadius: '$4',
+                  borderTopRightRadius: '$4',
+                  p: '$4',
+                }}
+                side="bottom"
+              >
+                <Heading size="3">Menu</Heading>
+                <Separator decorative margin="my3" size="full" />
+                <Text>Hello.</Text>
+              </SheetContent>
+              {/* </Portal.Root> */}
             </Sheet>
-          </Media> */}
+          </Box>
         </Flex>
         <Flex css={{ mr: '$3' }} justify="end">
           <Button
