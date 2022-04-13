@@ -48,7 +48,7 @@
     "date-fns": "2.28.0",
     "lodash": "4.17.21",
     "read-pkg-up": "7.0.1",
-    "semver": "7.3.6"
+    "semver": "7.3.7"
   },
   "type": "module",
   "sideEffects": false,
