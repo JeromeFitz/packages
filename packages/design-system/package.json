@@ -86,7 +86,7 @@
   "devDependencies": {
     "@types/lodash": "4.14.181",
     "@types/react": "18.0.5",
-    "@types/react-dom": "18.0.0",
+    "@types/react-dom": "18.0.1",
     "next": "12.1.5-canary.4",
     "react": "18.0.0",
     "react-dom": "18.0.0",
