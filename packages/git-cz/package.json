@@ -50,7 +50,7 @@
     "dry:run": "yarn build && node ./dist/cli"
   },
   "devDependencies": {
-    "@types/lodash": "4.14.181",
+    "@types/lodash": "4.14.182",
     "chai": "4.3.6",
     "isomorphic-unfetch": "3.1.0",
     "jest": "27.5.1",
