@@ -73,7 +73,7 @@
     "@radix-ui/react-utils": "0.0.5",
     "@radix-ui/react-visually-hidden": "0.1.4",
     "@react-aria/interactions": "3.8.3",
-    "@stitches/react": "1.2.7",
+    "@stitches/react": "1.2.8",
     "emoji-regex": "10.1.0",
     "framer-motion": "6.3.1",
     "kbar": "0.1.0-beta.33",
