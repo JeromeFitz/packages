@@ -1302,10 +1302,10 @@
   resolved "https://registry.yarnpkg.com/@next/env/-/env-12.1.5-canary.4.tgz#9b5e5108e2124edcddd5a7f9ddda7d244bd96c68"
   integrity sha512-cXMjrodrFcQE38eELp6n2Q8zSnLiHVX88+CuW7QID2UDmillKNYW/OKYVjcB981wWz/OFM0UGIdf5KwA6IeDeA==
 
-"@next/eslint-plugin-next@12.1.5-canary.4":
-  version "12.1.5-canary.4"
-  resolved "https://registry.yarnpkg.com/@next/eslint-plugin-next/-/eslint-plugin-next-12.1.5-canary.4.tgz#180f14ec0a62da5842af0f4bf5bc2278e6a0c5db"
-  integrity sha512-Nq96LvUgHphZaZRxLyCaobhiTorZNG8zh0FrslikP2NMPgxT6MCSiucO4tER1zP0YghZzQYpLcjfIQbJ0crQNw==
+"@next/eslint-plugin-next@12.1.5":
+  version "12.1.5"
+  resolved "https://registry.yarnpkg.com/@next/eslint-plugin-next/-/eslint-plugin-next-12.1.5.tgz#273885b35e6bbcd40ff1436d2a8d0ec03fb6f6ef"
+  integrity sha512-Cnb8ERC5bNKBFrnMH6203sp/b0Y78QRx1XsFu+86oBtDBmQmOFoHu7teQjHm69ER73XKK3aGaeoLiXacHoUFsg==
   dependencies:
     glob "7.1.7"
 
@@ -4849,12 +4849,12 @@ escodegen@^2.0.0:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-config-next@12.1.5-canary.4:
-  version "12.1.5-canary.4"
-  resolved "https://registry.yarnpkg.com/eslint-config-next/-/eslint-config-next-12.1.5-canary.4.tgz#e0b7d237fd8025b2885a79c26314b7cf2c756603"
-  integrity sha512-VShmyM4rnCkFGTA9Eg+pqFLTbpWxAvayWShvmc+a+IXGQCWXPgiza8T4Pq+dgIXLdm2ytyZ5IZ+vZZv01Y+4bQ==
+eslint-config-next@12.1.5:
+  version "12.1.5"
+  resolved "https://registry.yarnpkg.com/eslint-config-next/-/eslint-config-next-12.1.5.tgz#658cc61194a32dfd917a3db199351396ea5db1d1"
+  integrity sha512-P+DCt5ti63KhC0qNLzrAmPcwRGq8pYqgcf/NNr1E+WjCrMkWdCAXkIANTquo+kcO1adR2k1lTo5GCrNUtKy4hQ==
   dependencies:
-    "@next/eslint-plugin-next" "12.1.5-canary.4"
+    "@next/eslint-plugin-next" "12.1.5"
     "@rushstack/eslint-patch" "1.0.8"
     "@typescript-eslint/parser" "5.10.1"
     eslint-import-resolver-node "0.3.4"
