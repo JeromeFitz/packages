@@ -47,7 +47,7 @@
   "devDependencies": {
     "@types/ramda": "0.28.11",
     "@types/react": "18.0.8",
-    "@types/react-dom": "18.0.2",
+    "@types/react-dom": "18.0.3",
     "next-compose-plugins": "2.2.1",
     "next-transpile-modules": "9.0.0"
   }
