@@ -2375,14 +2375,14 @@
     tiny-warning "^1.0.3"
     tslib "^2.3.0"
 
-"@react-aria/interactions@3.8.3":
-  version "3.8.3"
-  resolved "https://registry.yarnpkg.com/@react-aria/interactions/-/interactions-3.8.3.tgz#31a913acee8199a827fe351f7d867a10706477a1"
-  integrity sha512-zffWRqhEk4SQNbr5sv3BnMIsmQjtdhXvv3FLn9Ch0HxxGb8VStjrVPEv7r9OtVodab+ThcUehL4NJ8zU/U/4ew==
+"@react-aria/interactions@3.8.4":
+  version "3.8.4"
+  resolved "https://registry.yarnpkg.com/@react-aria/interactions/-/interactions-3.8.4.tgz#f3704470b70f150b753bba01a8714f97d6299906"
+  integrity sha512-6EHFKK8pmjSJSKcBbduijPETKqE669XZ1VaEY8ubr6VnlVhCszvKHoxpU384CkNiDNLJOVkK6HDzPXsn3lxhng==
   dependencies:
     "@babel/runtime" "^7.6.2"
-    "@react-aria/utils" "^3.11.3"
-    "@react-types/shared" "^3.11.2"
+    "@react-aria/utils" "^3.12.0"
+    "@react-types/shared" "^3.12.0"
 
 "@react-aria/ssr@^3.1.2":
   version "3.1.2"
@@ -2391,15 +2391,15 @@
   dependencies:
     "@babel/runtime" "^7.6.2"
 
-"@react-aria/utils@^3.11.3":
-  version "3.11.3"
-  resolved "https://registry.yarnpkg.com/@react-aria/utils/-/utils-3.11.3.tgz#fd870e1c4b994967883d5d5dae6b14b4e6da2d16"
-  integrity sha512-EH3SyA3FtbhuOj1cgGveiEYidKe3CgGYkP8D57O46rlTWcgTxhGHUEibGeJw3PFXxmbgm5RIOdBo29YwItvtcQ==
+"@react-aria/utils@^3.12.0":
+  version "3.12.0"
+  resolved "https://registry.yarnpkg.com/@react-aria/utils/-/utils-3.12.0.tgz#39d0f37525e050356c4de725c85d9b10e7a5c0d9"
+  integrity sha512-1TMrE7UpgTgQHgW3z0r6Zo4CTUDwNsZEwzg+mQVub8ZalonhuNs5OrulUn+lRIsGELNktGNkeh/29WsS1Od8eg==
   dependencies:
     "@babel/runtime" "^7.6.2"
     "@react-aria/ssr" "^3.1.2"
     "@react-stately/utils" "^3.4.1"
-    "@react-types/shared" "^3.11.2"
+    "@react-types/shared" "^3.12.0"
     clsx "^1.1.1"
 
 "@react-stately/utils@^3.4.1":
@@ -2409,10 +2409,10 @@
   dependencies:
     "@babel/runtime" "^7.6.2"
 
-"@react-types/shared@^3.11.2":
-  version "3.11.2"
-  resolved "https://registry.yarnpkg.com/@react-types/shared/-/shared-3.11.2.tgz#b269c0cf6223664ac42d980b7add1b67b51b87d4"
-  integrity sha512-MIjjjkFi/DTzMVmeFJJrpc51eS/PLNzLZEv6o/QJPhQ9uOMElYqA790qAcG75u3tR0XGU2Vv9RyeOC7+ppw8/Q==
+"@react-types/shared@^3.12.0":
+  version "3.12.0"
+  resolved "https://registry.yarnpkg.com/@react-types/shared/-/shared-3.12.0.tgz#31a53fcec5c3159fd0d5c67f7e3f3876c7d19908"
+  integrity sha512-faGr9xOjtMlkQPfA1i36iUmWS/hpPPtxIwdAtBi6p7rCejmShMLFZ2YN4DxzbJUCVubF2S1+rMMIKuXG17DkEw==
 
 "@rollup/plugin-babel@^5.2.0":
   version "5.3.0"
