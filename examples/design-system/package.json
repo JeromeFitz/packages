@@ -37,7 +37,7 @@
     "immer": "9.0.12",
     "kbar": "0.1.0-beta.33",
     "next": "12.1.5-canary.4",
-    "next-themes": "0.1.1",
+    "next-themes": "0.2.0",
     "ramda": "0.28.0",
     "react": "18.1.0",
     "react-dom": "18.1.0",
