@@ -40,5 +40,8 @@
     "lint-staged": "12.4.1"
   },
   "type": "module",
-  "sideEffects": false
+  "sideEffects": false,
+  "typings": "./dist/lint-staged.config.d.ts",
+  "main": "./dist/lint-staged.config.cjs",
+  "module": "./dist/lint-staged.config.js"
 }

@@ -1,53 +1,22 @@
-# @jeromefitz/eslint-config
+# @jeromefitz/lint-staged
 
-## Breakdown
+Custom `lint-staged` setup that can be extended and incorporates:
 
-- index (+ base)
-- jest (+ react)
-- next (+ react)
-- react (+ typescript)
-- typescript
+- `lint-staged`
+
+## lint-staged.config
 
 ```sh
-yarn add @jeromefitz/eslint-config --dev
+import config from '@jeromefitz/lint-staged'
+
+export default config
 ```
 
-### Base
+## What It Do
 
-```js
-{
-    "extends": "@jeromefitz/eslint-config"
-}
-```
+Pre-commit check against files for:
 
-### Jest
+- `eslint`
+- `prettier`
 
-```js
-{
-    "extends": "@jeromefitz/eslint-config/jest"
-}
-```
-
-### Next
-
-```js
-{
-    "extends": "@jeromefitz/eslint-config/next"
-}
-```
-
-### React
-
-```js
-{
-    "extends": "@jeromefitz/eslint-config/react"
-}
-```
-
-### TypeScript
-
-```js
-{
-    "extends": "@jeromefitz/eslint-config/typescript"
-}
-```
+And re-add if any updates were applied on auto-fix.
