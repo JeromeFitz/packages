@@ -41,7 +41,6 @@
   },
   "type": "module",
   "sideEffects": false,
-  "typings": "./dist/lint-staged.config.d.ts",
-  "main": "./dist/lint-staged.config.cjs",
+  "main": "./dist/lint-staged.config.js",
   "module": "./dist/lint-staged.config.js"
 }
