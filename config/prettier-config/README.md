@@ -2,11 +2,11 @@
 
 ## Breakdown
 
-- index (base)
+- index (+ base)
+- jest (+ react)
+- next (+ react)
+- react (+ typescript)
 - typescript
-  - react (+ typescript)
-    - jest (+ react)
-    - next (+ react)
 
 ```sh
 yarn add @jeromefitz/eslint-config --dev

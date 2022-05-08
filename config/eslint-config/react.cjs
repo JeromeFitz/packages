@@ -12,4 +12,9 @@ module.exports = {
   ...config,
   plugins,
   rules,
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
 }

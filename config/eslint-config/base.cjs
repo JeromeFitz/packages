@@ -7,7 +7,7 @@ module.exports = {
     node: true,
   },
   extends: ['prettier', 'plugin:import/errors', 'plugin:import/warnings'],
-  ignorePatterns: ['**/dist/*'],
+  ignorePatterns: ['**/dist/*', '**/.next/*'],
   parser: '@babel/eslint-parser',
   parserOptions: {
     ecmaVersion: 2018,
@@ -17,13 +17,7 @@ module.exports = {
     },
     requireConfigFile: false,
   },
-  // plugins: ['import', 'jsx-a11y', 'react-hooks'],
   plugins: ['import'],
-  // settings: {
-  //   react: {
-  //     version: 'detect',
-  //   },
-  // },
   root: true,
   // http://eslint.org/docs/rules/
   rules: {
@@ -47,7 +41,5 @@ module.exports = {
         ],
       },
     ],
-    // 'react-hooks/exhaustive-deps': 'warn',
-    // 'react-hooks/rules-of-hooks': 'error',
   },
 }

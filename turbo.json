@@ -12,10 +12,11 @@
       "cache": false
     },
     "lint": {
-      "dependsOn": ["@jeromefitz/eslint-config#build", "@jeromefitz/tsconfig#build"]
+      "dependsOn": []
     },
     "lint:fix": {
-      "cache": false
+      "cache": false,
+      "dependsOn": []
     },
     "semantic-release:mono": {
       "cache": false,
