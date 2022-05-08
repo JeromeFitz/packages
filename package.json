@@ -34,6 +34,8 @@
     "test": "turbo run test",
     "clean": "turbo run clean",
     "clean:install": "turbo run clean && ./scripts/clean.sh",
+    "deduplicate": "npx yarn-deduplicate -s fewer yarn.lock",
+    "deduplicate:check": "npx yarn-deduplicate -s fewer yarn.lock --list --fail",
     "---- ": "# @lint",
     "pretty-quick": "pretty-quick",
     "lint:fix": "turbo run lint:fx ",
