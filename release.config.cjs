@@ -4,8 +4,8 @@
 // const { getConfig } = require('@jeromefitz/semantic')
 const _map = require('lodash/map.js')
 
-const releaseBranchTypes = require('./config/release-branch-types/index.cjs')
 const { getConfig } = require('./packages/semantic/dist/index.cjs')
+const releaseBranchTypes = require('./scripts/release-branch-types/index.cjs')
 
 const branchTypes = _map(
   releaseBranchTypes,

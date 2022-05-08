@@ -10,7 +10,7 @@
     "outDir": "./dist",
     "rootDir": "./src"
   },
-  "extends": "@jeromefitz/tsconfig/node14.json",
+  "extends": "./node14.json",
   "include": ["src"],
   "exclude": ["node_modules"]
 }

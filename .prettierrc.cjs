@@ -1,1 +1,1 @@
-module.exports = require('@jeromefitz/codestyle/.prettierrc.cjs')
+module.exports = require('@jeromefitz/eslint-config/.prettierrc.cjs')

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "@jeromefitz/codestyle/react-native",
+  "display": "@jeromefitz/tsconfig-react-native",
   "compilerOptions": {
     "allowJs": true,
     "esModuleInterop": true,

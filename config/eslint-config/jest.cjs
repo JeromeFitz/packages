@@ -1,5 +1,6 @@
-const config = require('./.eslintrc.cjs')
+const config = require('./react.cjs')
 
+// @note(eslint) react contains typescript overrides
 const overrides = [
   {
     ...config.overrides[0],

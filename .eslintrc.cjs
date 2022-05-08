@@ -1,1 +1,4 @@
-module.exports = require('@jeromefitz/codestyle/.eslintrc.cjs')
+module.exports = {
+  extends: '@jeromefitz/eslint-config/react.cjs',
+  root: true,
+}

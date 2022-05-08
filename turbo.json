@@ -11,7 +11,9 @@
     "dev": {
       "cache": false
     },
-    "lint": {},
+    "lint": {
+      "dependsOn": ["@jeromefitz/eslint-config#build", "@jeromefitz/tsconfig#build"]
+    },
     "lint:fix": {
       "cache": false
     },

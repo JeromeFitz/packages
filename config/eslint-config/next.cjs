@@ -1,4 +1,4 @@
-const config = require('./.eslintrc.cjs')
+const config = require('./react.cjs')
 
 const _extends = [...config.extends, 'next/core-web-vitals', 'next']
 

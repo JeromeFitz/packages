@@ -1,13 +1,16 @@
-import data from 'gitmojis'
+// import data from 'gitmojis'
 
 import _rewrites from '../config/rewrites'
 import _types from '../config/types'
 import type { IReleaseRule } from '../types'
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const data = require('gitmojis')
+
 const { gitmojis } = data
 
 const getGitmoji = (): IReleaseRule => {
-  gitmojis.map((gitmoji) => {
+  gitmojis.map((gitmoji: any) => {
     const rewrite = _rewrites.find((r) => r?.from === gitmoji.name)
     if (!!rewrite) {
       const semver =

@@ -3,10 +3,11 @@ import { defineConfig } from 'tsup'
 
 import { config as _config } from '../../tsup.config'
 
-const entry = ['src/lint-staged.config.js']
+const entry = ['src/*.ts']
 
 const config = {
   ..._config,
+  // dts: false,
   entry,
 }
 
