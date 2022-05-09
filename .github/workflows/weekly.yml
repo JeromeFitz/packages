@@ -26,7 +26,7 @@ jobs:
   pull:
     name: '👷️  CI'
     if: github.ref == 'refs/heads/main'
-    timeout-minutes: 15
+    timeout-minutes: 16
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ secrets.GH_BOT_TOKEN }}

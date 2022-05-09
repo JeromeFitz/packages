@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      # prerelease branches
       - canary
       - develop
       - ci/**
@@ -29,7 +28,7 @@ jobs:
   pull:
     name: '👷️  CI'
     if: (contains(github.event.head_commit.message, '[build]') || contains(github.event.head_commit.message, '[b]') || github.ref == 'refs/heads/main') && !contains(github.event.head_commit.message, '[skip ci]')
-    timeout-minutes: 15
+    timeout-minutes: 16
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
