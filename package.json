@@ -60,7 +60,7 @@
     "@types/is-ci": "3.0.0",
     "@types/node": "16.11.7",
     "dotenv": "16.0.1",
-    "husky": "7.0.4",
+    "husky": "8.0.1",
     "is-ci": "3.0.1",
     "pinst": "3.0.0",
     "semantic-release-monorepo": "7.0.5",
