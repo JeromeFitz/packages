@@ -55,26 +55,28 @@ interface SortMock {
   sorts: SortItem[]
 }
 
+type RollupFunction =
+  | 'average'
+  | 'count_all'
+  | 'count_empty'
+  | 'count_not_empty'
+  | 'count_unique_values'
+  | 'count_values'
+  | 'max'
+  | 'median'
+  | 'min'
+  | 'percent_empty'
+  | 'percent_not_empty'
+  | 'range'
+  | 'show_original'
+  | 'sum'
+
 interface Rollup {
   relation_property_id?: string
   relation_property_name?: string
   rollup_property_id?: string
   rollup_property_name?: string
-  function:
-    | 'average'
-    | 'count_all'
-    | 'count_empty'
-    | 'count_not_empty'
-    | 'count_unique_values'
-    | 'count_values'
-    | 'max'
-    | 'median'
-    | 'min'
-    | 'percent_empty'
-    | 'percent_not_empty'
-    | 'range'
-    | 'show_original'
-    | 'sum'
+  function?: RollupFunction
 }
 
 interface Property {
@@ -373,6 +375,8 @@ export type {
   Podcast,
   Podcasts,
   Property,
+  Rollup,
+  RollupFunction,
   Seo,
   SeoPost,
   Show,

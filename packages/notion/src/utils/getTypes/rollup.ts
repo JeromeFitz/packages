@@ -1,10 +1,31 @@
 import _map from 'lodash/map.js'
 import _sortBy from 'lodash/sortBy.js'
 
+import type { RollupFunction } from '../../schema'
 import getTypes from '../../utils/getTypes'
 
+/**
+ * @note(notion) https://github.com/JeromeFitz/packages/issues/631
+ */
+type Rollup = {
+  type: 'array'
+  array: any
+  function: RollupFunction
+}
+
+// @todo(types)
 const rollup = (data: any) => {
-  return _sortBy(_map(data?.rollup?.array, (item) => getTypes[item.type](item)))
+  const rollup: Rollup = data?.rollup
+  return _sortBy(
+    _map(rollup?.array, (item) =>
+      _map(item[item?.type], (itemData) =>
+        getTypes[item?.type]({
+          type: item?.type,
+          [item?.type]: [itemData],
+        })
+      )
+    )
+  )[0]
 }
 
 export default rollup
