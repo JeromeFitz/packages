@@ -15,8 +15,10 @@ class LimitedInputPrompt extends InputPrompt {
 
     if (this.opt.leadingLabel) {
       if (typeof this.opt.leadingLabel === 'function') {
+        // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
         this.leadingLabel = ' ' + this.opt.leadingLabel(this.answers)
       } else {
+        // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
         this.leadingLabel = ' ' + this.opt.leadingLabel
       }
     } else {
@@ -68,6 +70,7 @@ class LimitedInputPrompt extends InputPrompt {
     } ${appendContent}`
 
     if (error) {
+      // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
       bottomContent = red('>> ') + error
     }
 

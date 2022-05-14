@@ -7,10 +7,10 @@ module.exports = {
     node: true,
   },
   extends: ['prettier', 'plugin:import/errors', 'plugin:import/warnings'],
-  ignorePatterns: ['**/dist/*', '**/.next/*'],
+  ignorePatterns: ['**/.next/*', '**/dist/*', '**/node_modules/*'],
   parser: '@babel/eslint-parser',
   parserOptions: {
-    ecmaVersion: 2018,
+    ecmaVersion: 2022,
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true,

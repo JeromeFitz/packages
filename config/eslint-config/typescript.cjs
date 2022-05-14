@@ -7,13 +7,13 @@ const eslintTypescript = {
       parser: '@typescript-eslint/parser',
       plugins: ['@typescript-eslint', 'import'],
       parserOptions: {
+        allowAutomaticSingleRunInference: true,
         ecmaFeatures: {
           jsx: true,
         },
-        ecmaVersion: 2018,
+        ecmaVersion: 2022,
         sourceType: 'module',
         project: ['./tsconfig.json'],
-        // typescript-eslint specific options
         warnOnUnsupportedTypeScriptVersion: true,
       },
       extends: [
