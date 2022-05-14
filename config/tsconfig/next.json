@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "@jeromefitz/codestyle/next",
-  "extends": "./tsconfig.base.json",
+  "display": "@jeromefitz/tsconfig-next",
+  "extends": "./base.json",
   "compilerOptions": {
     "allowJs": true,
     "esModuleInterop": true,

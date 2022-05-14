@@ -1,0 +1,3 @@
+const noIhateThisWhyyyyyyyy = () => {}
+
+export { noIhateThisWhyyyyyyyy }

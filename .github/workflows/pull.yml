@@ -4,7 +4,6 @@ on:
   pull_request:
     branches:
       - main
-      # prerelease
       - canary
       - develop
     types:
@@ -29,7 +28,7 @@ jobs:
   pull:
     name: '👷️  CI'
     if: github.event.pull_request.draft == false && !contains(github.event.head_commit.message, '[skip ci]')
-    timeout-minutes: 10
+    timeout-minutes: 20
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ secrets.GH_DEPLOY_TOKEN }}

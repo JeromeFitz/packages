@@ -2,6 +2,7 @@
   "name": "@jeromefitz/packages",
   "workspaces": {
     "packages": [
+      "config/*",
       "examples/*",
       "packages/*"
     ],
@@ -33,6 +34,8 @@
     "test": "turbo run test",
     "clean": "turbo run clean",
     "clean:install": "turbo run clean && ./scripts/clean.sh",
+    "deduplicate": "npx yarn-deduplicate -s fewer yarn.lock",
+    "deduplicate:check": "npx yarn-deduplicate -s fewer yarn.lock --list --fail",
     "---- ": "# @lint",
     "pretty-quick": "pretty-quick",
     "lint:fix": "turbo run lint:fx ",
@@ -56,11 +59,12 @@
   },
   "dependencies": {
     "@babel/eslint-parser": "7.17.0",
+    "@jeromefitz/eslint-config": "*",
     "@manypkg/cli": "0.19.1",
     "@types/is-ci": "3.0.0",
     "@types/node": "16.11.7",
     "dotenv": "16.0.1",
-    "husky": "7.0.4",
+    "husky": "8.0.1",
     "is-ci": "3.0.1",
     "pinst": "3.0.0",
     "semantic-release-monorepo": "7.0.5",

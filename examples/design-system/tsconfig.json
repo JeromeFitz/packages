@@ -1,5 +1,5 @@
 {
-  "extends": "@jeromefitz/codestyle/tsconfig.next.json",
+  "extends": "@jeromefitz/tsconfig/next.json",
   "compilerOptions": {
     // // w/ extends
     // "baseUrl": ".",
