@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "noEmit": true
   },
   "extends": "@jeromefitz/tsconfig/node14.json",
   "exclude": []
