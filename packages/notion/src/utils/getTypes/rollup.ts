@@ -15,9 +15,9 @@ type Rollup = {
 
 // @todo(types)
 const rollup = (data: any) => {
-  const rollup: Rollup = data?.rollup
+  const rollupData: Rollup = data?.rollup
   return _sortBy(
-    _map(rollup?.array, (item) =>
+    _map(rollupData?.array, (item) =>
       _map(item[item?.type], (itemData) =>
         getTypes[item?.type]({
           type: item?.type,
