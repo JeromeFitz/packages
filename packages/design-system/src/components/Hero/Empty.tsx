@@ -1,4 +1,4 @@
-import { styled } from '../../stitches.config'
+import { styled } from '../../lib/stitches.config'
 import { Box, Text } from '../index'
 
 const EmptyContent = styled('div', {

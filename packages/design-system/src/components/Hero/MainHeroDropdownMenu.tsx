@@ -9,7 +9,7 @@ import {
 } from '@radix-ui/react-icons'
 import * as React from 'react'
 
-import { styled } from '../../stitches.config'
+import { styled } from '../../lib/stitches.config'
 import { ButtonDemo } from '../Button/ButtonDemo'
 import { Box } from '../index'
 
@@ -63,7 +63,9 @@ const itemCss = {
 }
 
 const DropdownMenuItem = styled(DropdownMenuPrimitive.Item, itemCss)
-const DropdownMenuTriggerItem = styled(DropdownMenuPrimitive.TriggerItem, itemCss)
+const DropdownMenuSub = styled(DropdownMenuPrimitive.Sub, {})
+const DropdownMenuSubContent = styled(DropdownMenuPrimitive.SubContent, {})
+const DropdownMenuSubTrigger = styled(DropdownMenuPrimitive.SubTrigger, itemCss)
 const DropdownMenuCheckboxItem = styled(DropdownMenuPrimitive.CheckboxItem, itemCss)
 
 export function MainHeroDropdownMenu() {
@@ -128,24 +130,26 @@ export function MainHeroDropdownMenu() {
           <DropdownMenuSeparator />
 
           <DropdownMenuPrimitive.Root>
-            <DropdownMenuTriggerItem>
-              Favorites
-              <CaretRightIcon style={{ marginLeft: 'auto', marginRight: -5 }} />
-            </DropdownMenuTriggerItem>
-            <DropdownMenuContent>
-              <DropdownMenuItem>
-                <GitHubLogoIcon style={{ marginLeft: -15, marginRight: 10 }} />
-                GitHub
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <StitchesLogoIcon style={{ marginLeft: -15, marginRight: 10 }} />
-                Stitches
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <ModulzLogoIcon style={{ marginLeft: -15, marginRight: 10 }} />
-                Modulz
-              </DropdownMenuItem>
-            </DropdownMenuContent>
+            <DropdownMenuSub>
+              <DropdownMenuSubTrigger>
+                Favorites
+                <CaretRightIcon style={{ marginLeft: 'auto', marginRight: -5 }} />
+              </DropdownMenuSubTrigger>
+              <DropdownMenuSubContent>
+                <DropdownMenuItem>
+                  <GitHubLogoIcon style={{ marginLeft: -15, marginRight: 10 }} />
+                  GitHub
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <StitchesLogoIcon style={{ marginLeft: -15, marginRight: 10 }} />
+                  Stitches
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <ModulzLogoIcon style={{ marginLeft: -15, marginRight: 10 }} />
+                  Modulz
+                </DropdownMenuItem>
+              </DropdownMenuSubContent>
+            </DropdownMenuSub>
           </DropdownMenuPrimitive.Root>
 
           <DropdownMenuItem>Downloads</DropdownMenuItem>

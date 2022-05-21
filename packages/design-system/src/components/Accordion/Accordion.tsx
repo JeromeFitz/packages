@@ -5,7 +5,7 @@ import * as AccordionPrimitive from '@radix-ui/react-accordion'
 import { ChevronDownIcon } from '@radix-ui/react-icons'
 import * as React from 'react'
 
-import { styled, keyframes } from '../../stitches.config'
+import { styled, keyframes } from '../../lib/stitches.config'
 
 type ForwardedRefType = React.ForwardedRef<any>
 type PropsChildren = {

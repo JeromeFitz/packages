@@ -1,6 +1,12 @@
 import nodeEmoji from 'node-emoji'
 
-import { Box } from '../../components'
+import { styled } from '../../lib/stitches.config'
+// import { Box } from '../../components'
+
+const Box = styled('div', {
+  // @reset
+  boxSizing: 'border-box',
+})
 
 const EmojiHtml = ({ emoji, label, margin }) => {
   return (

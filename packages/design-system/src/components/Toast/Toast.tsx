@@ -2,7 +2,8 @@
  * https://www.radix-ui.com/docs/primitives/components/toast
  */
 import * as ToastPrimitive from '@radix-ui/react-toast'
-import { styled, keyframes } from '@stitches/react'
+
+import { styled, keyframes } from '../../lib/stitches.config'
 
 const VIEWPORT_PADDING = 25
 
@@ -23,19 +24,12 @@ const swipeOut = keyframes({
 
 const StyledToast = styled(ToastPrimitive.Root, {
   alignItems: 'center',
-  backgroundColor: '$colors$violet3',
   borderRadius: '$2',
-  boxShadow:
-    'hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px',
   columnGap: '$2',
   display: 'grid',
   gridTemplateAreas: '"title action" "description action"',
   gridTemplateColumns: 'auto max-content',
   padding: '$4',
-
-  '&:hover': {
-    backgroundColor: '$colors$violet4',
-  },
 
   '@media (prefers-reduced-motion: no-preference)': {
     transition: 'background-color 250ms ease',
@@ -59,51 +53,56 @@ const StyledToast = styled(ToastPrimitive.Root, {
     },
   },
 
+  boxShadow: '$shadows$toast',
+  backgroundColor: '$colors$body',
+  border: '1px solid $colors$gray11',
+  color: '$colors$hiContrast',
+  '&:hover': {
+    backgroundColor: '$colors$body',
+    borderColor: '$colors$gray12',
+    // color: '$colors$hiContrast',
+  },
+
   variants: {
     variant: {
-      default: {
-        border: '1px solid $colors$gray1',
-        // backgroundColor: '$gray3',
-        color: '$gray12',
-        '&:hover': {
-          // backgroundColor: '$gray4',
-          borderColor: '$gray2',
-        },
-      },
       error: {
-        border: '1px solid $colors$red7',
-        // backgroundColor: '$red9',
-        color: '$red1',
+        backgroundColor: '$colors$error',
+        borderColor: '$colors$errorEmphasis',
+        color: '$colors$errorText',
         '&:hover': {
-          // backgroundColor: '$red10',
-          borderColor: '$red8',
+          backgroundColor: '$colors$errorHover',
+          borderColor: '$colors$errorEmphasisHover',
+          color: '$colors$errorTextHover',
         },
       },
       info: {
-        border: '1px solid $colors$blue7',
-        // backgroundColor: '$blue9',
-        color: '$blue1',
+        backgroundColor: '$colors$info',
+        borderColor: '$colors$infoEmphasis',
+        color: '$colors$infoText',
         '&:hover': {
-          // backgroundColor: '$blue10',
-          borderColor: '$blue8',
+          backgroundColor: '$colors$infoHover',
+          borderColor: '$colors$infoEmphasisHover',
+          color: '$colors$infoTextHover',
         },
       },
       success: {
-        border: '1px solid $colors$green7',
-        // backgroundColor: '$green9',
-        color: '$green1',
+        backgroundColor: '$colors$success',
+        borderColor: '$colors$successEmphasis',
+        color: '$colors$successText',
         '&:hover': {
-          // backgroundColor: '$green10',
-          borderColor: '$green8',
+          backgroundColor: '$colors$successHover',
+          borderColor: '$colors$successEmphasisHover',
+          color: '$colors$successTextHover',
         },
       },
       warning: {
-        border: '1px solid $colors$orange7',
-        // backgroundColor: '$orange9',
-        color: '$orange1',
+        backgroundColor: '$colors$warning',
+        borderColor: '$colors$warningEmphasis',
+        color: '$colors$warningText',
         '&:hover': {
-          // backgroundColor: '$orange10',
-          borderColor: '$orange8',
+          backgroundColor: '$colors$warningHover',
+          borderColor: '$colors$warningEmphasisHover',
+          color: '$colors$warningTextHover',
         },
       },
     },
@@ -111,7 +110,7 @@ const StyledToast = styled(ToastPrimitive.Root, {
 })
 
 const StyledTitle = styled(ToastPrimitive.Title, {
-  color: '$colors$violet12',
+  color: '$colors$primary',
   fontSize: '0.9375rem',
   fontWeight: 500,
   gridArea: 'title',
@@ -119,7 +118,7 @@ const StyledTitle = styled(ToastPrimitive.Title, {
 })
 
 const StyledDescription = styled(ToastPrimitive.Description, {
-  color: '$colors$violet11',
+  color: '$colors$secondary',
   fontSize: '0.8125rem',
   gridArea: 'description',
   lineHeight: 1.3,

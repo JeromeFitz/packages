@@ -1,22 +1,21 @@
 /**
  * https://www.radix-ui.com/docs/primitives/components/toggle-group
  */
-import { violet, blackA, mauve } from '@radix-ui/colors'
 import * as ToggleGroupPrimitive from '@radix-ui/react-toggle-group'
 
-import { styled } from '../../stitches.config'
+import { styled } from '../../lib/stitches.config'
 
 const StyledToggleGroup = styled(ToggleGroupPrimitive.Root, {
   display: 'inline-flex',
-  backgroundColor: mauve.mauve6,
+  backgroundColor: '$colore$slate6',
   borderRadius: 4,
-  boxShadow: `0 2px 10px ${blackA.blackA7}`,
+  boxShadow: `0 2px 10px $colors$blackA7`,
 })
 
 const StyledItem = styled(ToggleGroupPrimitive.Item, {
   all: 'unset',
   backgroundColor: 'white',
-  color: mauve.mauve11,
+  color: '$colors$slate11',
   height: 35,
   width: 35,
   display: 'flex',
@@ -31,8 +30,11 @@ const StyledItem = styled(ToggleGroupPrimitive.Item, {
     borderBottomLeftRadius: 4,
   },
   '&:last-child': { borderTopRightRadius: 4, borderBottomRightRadius: 4 },
-  '&:hover': { backgroundColor: violet.violet3 },
-  '&[data-state=on]': { backgroundColor: violet.violet5, color: violet.violet11 },
+  '&:hover': { backgroundColor: '$colors$brand3' },
+  '&[data-state=on]': {
+    backgroundColor: '$colors$brand5',
+    color: '$colors$brand11',
+  },
   '&:focus': { position: 'relative', boxShadow: `0 0 0 2px black` },
 })
 
