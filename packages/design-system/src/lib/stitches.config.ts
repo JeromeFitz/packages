@@ -3,6 +3,7 @@ import type { CSS as StitchesCSS } from '@stitches/react'
 
 import themes from './themes'
 // import { grid } from './tokens/layout'
+// import { gradients } from './tokens/gradients'
 import { media } from './tokens/media'
 import { radii } from './tokens/radii'
 import { shadows } from './tokens/shadows'
@@ -54,7 +55,6 @@ const darkTheme = createTheme('dark-theme', themes.dark)
 export type CSS = StitchesCSS<typeof config>
 export type { VariantProps } from '@stitches/react'
 
-// export { Gradients } from './tokens/gradients'
 export {
   config,
   createTheme,
