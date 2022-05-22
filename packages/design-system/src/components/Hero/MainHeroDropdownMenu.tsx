@@ -68,7 +68,7 @@ const DropdownMenuSubContent = styled(DropdownMenuPrimitive.SubContent, {})
 const DropdownMenuSubTrigger = styled(DropdownMenuPrimitive.SubTrigger, itemCss)
 const DropdownMenuCheckboxItem = styled(DropdownMenuPrimitive.CheckboxItem, itemCss)
 
-export function MainHeroDropdownMenu() {
+function MainHeroDropdownMenu() {
   // We prevent the initial auto focus because it's a demo rather than a real UI,
   // so the parent page focus is not stolen.
   const initialAutoFocusPrevented = React.useRef(false)
@@ -174,3 +174,5 @@ export function MainHeroDropdownMenu() {
     </DropdownMenuPrimitive.Root>
   )
 }
+
+export { MainHeroDropdownMenu }
