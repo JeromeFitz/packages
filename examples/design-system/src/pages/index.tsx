@@ -5,7 +5,7 @@ import { PageHeading, Text } from '@jeromefitz/design-system/src/components'
 
 // import { LoadingDots } from '../components/LoadingDots'
 import { NavigationMenu } from '../components/NavigationMenu'
-// import { Select } from '../components/Select'
+import { Select } from '../components/Select'
 import { Switch } from '../components/Switch'
 // import { Toast } from '../components/Toast'
 // import { ToggleGroup } from '../components/ToggleGroup'
@@ -21,7 +21,7 @@ function Home({}) {
       />
       {/* <LoadingDots /> */}
       <NavigationMenu />
-      {/* <Select /> */}
+      <Select />
       {/* <Toast /> */}
       <Switch />
       {/* <ToggleGroup /> */}

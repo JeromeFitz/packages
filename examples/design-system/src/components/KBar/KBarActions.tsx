@@ -182,7 +182,6 @@ const KBarActions = () => {
         //           css={{ mr: '$1' }}
         //           key={`kbar-events-${id}-badge-${tag}`}
         //           size="2"
-        //           variant="violet"
         //         >
         //           {tag}
         //         </Badge>
@@ -252,7 +251,6 @@ const KBarActions = () => {
         //           css={{ mr: '$1' }}
         //           key={`kbar-shows-${id}-badge-${tag}`}
         //           size="2"
-        //           variant="violet"
         //         >
         //           {tag}
         //         </Badge>

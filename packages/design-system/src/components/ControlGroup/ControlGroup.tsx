@@ -1,4 +1,4 @@
-import { styled } from '../../stitches.config'
+import { styled } from '../../lib/stitches.config'
 // import { Button, Select, TextField } from '../index'
 import { Button } from '../Button/Button'
 import { Select } from '../Select/Select'

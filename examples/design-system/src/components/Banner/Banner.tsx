@@ -26,7 +26,7 @@ const _Banner = () => {
     <Container breakout>
       <NextLink href="/about" passHref>
         <Link>
-          <Banner css={{ py: '$2', width: '100%' }} variant="blue">
+          <Banner css={{ py: '$2', width: '100%' }}>
             <CalendarIcon />
             <Text css={{ color: 'inherit', fontWeight: 500 }} size="2">
               {meta.leftExtended}

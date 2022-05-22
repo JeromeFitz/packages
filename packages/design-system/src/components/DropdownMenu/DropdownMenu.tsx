@@ -5,7 +5,7 @@ import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
 import { CheckIcon } from '@radix-ui/react-icons'
 import * as React from 'react'
 
-import { styled, CSS } from '../../stitches.config'
+import { styled, CSS } from '../../lib/stitches.config'
 import { Box, Flex } from '../index'
 import { menuCss, separatorCss, itemCss, labelCss } from '../Menu/Menu.styles'
 import { panelStyles } from '../Panel/Panel.styles'
@@ -92,11 +92,13 @@ const DropdownMenuItemIndicator = styled(DropdownMenuPrimitive.ItemIndicator, {
   justifyContent: 'center',
 })
 
-const DropdownMenuTriggerItem = styled(DropdownMenuPrimitive.TriggerItem, {
+const DropdownMenuSub = styled(DropdownMenuPrimitive.Sub, {})
+const DropdownMenuSubContent = styled(DropdownMenuPrimitive.SubContent, {})
+const DropdownMenuSubTrigger = styled(DropdownMenuPrimitive.SubTrigger, {
   all: 'unset',
   fontSize: 13,
   lineHeight: 1,
-  color: '$colors$violet11',
+  color: '$colors$primary',
   borderRadius: 3,
   display: 'flex',
   alignItems: 'center',
@@ -107,18 +109,19 @@ const DropdownMenuTriggerItem = styled(DropdownMenuPrimitive.TriggerItem, {
   userSelect: 'none',
 
   '&[data-disabled]': {
-    color: '$colores$slate3',
+    backgroundColor: '$colors$disabledBackground',
+    color: '$colores$disabled',
     pointerEvents: 'none',
   },
 
   '&:focus': {
-    backgroundColor: '$colors$violet9',
-    color: '$colors$violet1',
+    backgroundColor: '$colors$focusBackground',
+    color: '$colors$focusColor',
   },
 
   '&[data-state="open"]': {
-    backgroundColor: '$colors$violet4',
-    color: '$colors$violet11',
+    backgroundColor: '$colors$openBackground',
+    color: '$colors$open',
   },
 })
 
@@ -144,5 +147,7 @@ export {
   DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-  DropdownMenuTriggerItem,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
 }

@@ -1,4 +1,4 @@
-import { css, darkTheme } from '../../stitches.config'
+import { css, darkTheme } from '../../lib/stitches.config'
 
 /**
  * @styles

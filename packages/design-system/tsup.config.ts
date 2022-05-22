@@ -20,17 +20,22 @@ import pkg from './package.json'
  *
  */
 const entry = [
-  'src/components/Card/Show.tsx',
-  'src/components/Hero/HeroImage.tsx',
-  'src/custom/Emoji/index.ts',
-  'src/custom/Select/index.ts',
-  'src/custom/Toast/index.ts',
-  'src/custom/Tooltip/index.ts',
-  'src/stitches.config.ts',
-  'src/hooks/*',
-  //
-  'src/components/**',
-  '!src/components/**/*.md',
+  'src/index.ts',
+  'src/components/**/index.ts',
+  'src/custom/**/index.ts',
+  'src/lib/stitches.config.ts',
+  'src/lib/globalStyles.ts',
+  // 'src/components/Card/Show.tsx',
+  // 'src/components/Hero/HeroImage.tsx',
+  // 'src/custom/Emoji/index.ts',
+  // 'src/custom/Select/index.ts',
+  // 'src/custom/Toast/index.ts',
+  // 'src/custom/Tooltip/index.ts',
+  // 'src/stitches.config.ts',
+  // 'src/hooks/*',
+  // //
+  // 'src/components/**',
+  // '!src/components/**/*.md',
 ]
 
 const external = [
@@ -46,8 +51,12 @@ const config = {
   entry,
   external,
   inject,
+  // jsxFactory: 'createElement',
+  // jsxFragment: 'Fragment',
   minify: true,
+  // silent: false,
   splitting: true,
+  target: ['esnext'],
   tsconfig: 'tsconfig.json',
 }
 

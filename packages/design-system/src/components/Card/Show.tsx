@@ -1,8 +1,8 @@
-import { styled } from '../../stitches.config'
+import { styled } from '../../lib/stitches.config'
 import { Box, Flex } from '../index'
 const css_card = {
   backgroundColor: '$colors$gray4',
-  border: '1px solid $colors$violet7',
+  border: '1px solid $colors$brand7',
   borderRadius: '12px',
   cursor: 'pointer',
   height: '100%',
@@ -54,7 +54,7 @@ const CardImage = styled(Box, {
   maxHeight: 'none ',
   height: '200px ',
   border: 'none',
-  // border: '1px solid $colors$violet10',
+  // border: '1px solid $colors$brand10',
   overflow: 'hidden',
   mb: '0.5rem',
 })

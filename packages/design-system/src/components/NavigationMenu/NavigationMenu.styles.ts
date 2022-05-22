@@ -2,7 +2,7 @@ import { CaretDownIcon } from '@radix-ui/react-icons'
 import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu'
 import { motion } from 'framer-motion'
 
-import { darkTheme, styled, keyframes } from '../../stitches.config'
+import { styled, keyframes } from '../../lib/stitches.config'
 
 const enterFromRight = keyframes({
   from: { transform: 'translateX(200px)', opacity: 0 },
@@ -59,7 +59,7 @@ const StyledList = styled(NavigationMenuPrimitive.List, {
   all: 'unset',
   backgroundColor: 'inherit',
   borderRadius: 6,
-  // boxShadow: `0 2px 10px $colors$shadowLight`,
+  // boxShadow: `0 2px 10px $colors$shadow`,
   display: 'flex',
   justifyContent: 'center',
   listStyle: 'none',
@@ -68,15 +68,26 @@ const StyledList = styled(NavigationMenuPrimitive.List, {
 
 const itemStyles = {
   borderRadius: 4,
-  color: '$colors$violet11',
+  color: '$colors$primary',
   fontSize: 15,
   fontWeight: 500,
   lineHeight: 1,
   outline: 'none',
   padding: '8px 12px',
   userSelect: 'none',
-  // '&:focus': { position: 'relative', boxShadow: `0 0 0 2px $colors$violet7` },
-  // '&:hover': { backgroundColor: '$2 },
+  /**
+   * @note(hoverState)
+   * itemStyles is inherited to NavigationMenuListItemFocus
+   * Set these manually on the elements themselves
+   *  to avoid redundant layering w/ transparency
+   */
+  // '&[data-state="closed"] &': {
+  //   '&:focus': {
+  //     position: 'relative',
+  //     boxShadow: `0 0 0 1px $colors$focus`,
+  //   },
+  //   '&:hover': { backgroundColor: '$colors$hoverBackground' },
+  // },
 }
 
 const StyledTrigger = styled(NavigationMenuPrimitive.Trigger, {
@@ -86,11 +97,21 @@ const StyledTrigger = styled(NavigationMenuPrimitive.Trigger, {
   alignItems: 'center',
   justifyContent: 'space-between',
   gap: 2,
+  '&:hover': { cursor: 'pointer' },
+  // @note(hoverState)
+  '&[data-state="open"]': { backgroundColor: '$colors$focusBackground' },
+  '&[data-state="closed"]': {
+    '&:focus': {
+      position: 'relative',
+      boxShadow: `0 0 0 1px $colors$focus`,
+    },
+    '&:hover': { backgroundColor: '$colors$focusBackground' },
+  },
 })
 
 const StyledCaret = styled(CaretDownIcon, {
   position: 'relative',
-  color: '$colors$violet10',
+  color: '$colors$primary',
   top: 1,
   '[data-state=open] &': { transform: 'rotate(-180deg)' },
   '@media (prefers-reduced-motion: no-preference)': {
@@ -104,6 +125,12 @@ const StyledLink = styled(NavigationMenuPrimitive.Link, {
   textDecoration: 'none',
   fontSize: 15,
   lineHeight: 1,
+  // @note(hoverState)
+  '&:focus': {
+    position: 'relative',
+    boxShadow: `0 0 0 1px $colors$focus`,
+  },
+  '&:hover': { backgroundColor: '$colors$hoverBackground', cursor: 'pointer' },
   variants: {
     focus: {
       true: {
@@ -125,7 +152,7 @@ const StyledLink = styled(NavigationMenuPrimitive.Link, {
           zIndex: 1,
           userSelect: 'none',
           fontSize: '1rem',
-          color: 'yellow',
+          // color: 'yellow',
           // // @todo(design-system) turn this into variant "truncate"
           // maxHeight: '26px',
           // overflow: 'hidden',
@@ -136,7 +163,7 @@ const StyledLink = styled(NavigationMenuPrimitive.Link, {
     },
     type: {
       callout: {
-        background: `linear-gradient(135deg, var(--colors-blue9) 0%, $colors$violet9 100%)`,
+        background: `linear-gradient(135deg, $colors$emphasis 0%, $colors$foreground 100%)`,
         display: 'flex',
         justifyContent: 'flex-end',
         flexDirection: 'column',
@@ -152,7 +179,7 @@ const StyledLink = styled(NavigationMenuPrimitive.Link, {
 })
 
 const StyledContent = styled(NavigationMenuPrimitive.Content, {
-  backgroundColor: '$colors$violet2',
+  backgroundColor: '$colors$panel',
   position: 'absolute',
   top: 0,
   left: 0,
@@ -187,8 +214,8 @@ const StyledIndicator = styled(NavigationMenuPrimitive.Indicator, {
 const StyledArrow = styled('div', {
   position: 'relative',
   top: '70%',
-  backgroundColor: '$colors$violet2',
-  boxShadow: `0 2px 10px $colors$shadowLight`,
+  backgroundColor: '$colors$panel',
+  boxShadow: `0 2px 10px $colors$shadow`,
   width: 10,
   height: 10,
   transform: 'rotate(45deg)',
@@ -203,7 +230,7 @@ const StyledArrow = styled('div', {
 //   bottom: 0,
 //   borderTopLeftRadius: 10,
 //   borderTopRightRadius: 10,
-//   backgroundColor: '$colors$violet8',
+//   backgroundColor: '$colors$brand11',
 
 //   '@media (prefers-reduced-motion: no-preference)': {
 //     transition: 'width, transform 250ms ease',
@@ -213,7 +240,7 @@ const StyledArrow = styled('div', {
 const StyledViewport = styled(NavigationMenuPrimitive.Viewport, {
   backgroundColor: 'inherit',
   borderRadius: 6,
-  boxShadow: `0 2px 10px $colors$shadowLight`,
+  boxShadow: `0 2px 10px $colors$shadow`,
   height: 'var(--radix-navigation-menu-viewport-height)',
   marginTop: 10,
   /**
@@ -294,27 +321,80 @@ const NavigationMenuListItem = styled('li', {
   py: '$1',
   px: '0',
   m: '0',
-  // '&:hover': {
-  //   backgroundColor: '$2,
-  // },
   '@media (prefers-reduced-motion: no-preference)': {
     transition: 'all 250ms ease',
   },
 })
 
+const NavigationMenuListItemLink = styled(NavigationMenuPrimitive.Link, {
+  ...itemStyles,
+  display: 'block',
+  textDecoration: 'none',
+  fontSize: 15,
+  lineHeight: 1,
+  // @note(hoverState)
+  '&:focus': {
+    position: 'relative',
+    boxShadow: `0 0 0 1px transparent`,
+  },
+  '&:hover': { backgroundColor: 'transparent' },
+  variants: {
+    focus: {
+      true: {
+        padding: '$1',
+        position: 'relative',
+        listStyle: 'none',
+        cursor: 'pointer',
+        width: '90%',
+        height: '90%',
+        margin: '$1',
+        outline: 'none',
+
+        span: {
+          position: 'relative',
+          left: '4px',
+          right: 0,
+          top: '6px',
+          bottom: 0,
+          zIndex: 1,
+          userSelect: 'none',
+          fontSize: '1rem',
+          // color: 'yellow',
+          // // @todo(design-system) turn this into variant "truncate"
+          // maxHeight: '26px',
+          // overflow: 'hidden',
+          // textOverflow: 'ellipsis',
+          // whiteSpace: 'break-spaces',
+        },
+      },
+    },
+    type: {
+      callout: {
+        background: `linear-gradient(135deg, $colors$emphasis 0%, $colors$foreground 100%)`,
+        display: 'flex',
+        justifyContent: 'flex-end',
+        flexDirection: 'column',
+        width: '100%',
+        height: '100%',
+        p: 0,
+        m: 0,
+        mb: '$1',
+        pb: '$3',
+      },
+    },
+  },
+})
+
 const NavigationMenuLinkTitle = styled('div', {
-  color: '$colors$violet12',
+  color: '$colors$primary',
   fontWeight: 500,
   lineHeight: 1.2,
   marginBottom: 5,
-  [`.${darkTheme} &`]: {
-    color: '$colors$violet12',
-  },
 })
 
 const NavigationMenuLinkText = styled('p', {
   all: 'unset',
-  color: '$colors$violet11',
+  color: '$colors$secondary',
   fontWeight: 'initial',
   lineHeight: 1.4,
   //
@@ -342,12 +422,11 @@ const NavigationMenuListItemFocus = styled(motion.div, {
   // right: 0,
   width: '110%',
   height: '110%',
-  background: '$blackA5',
-  [`.${darkTheme} &`]: {
-    background: '$whiteA5',
-  },
+
   borderRadius: '$2',
   zIndex: 0,
+  // @note(hoverState)
+  background: '$colors$hoverBackground',
   variants: {
     type: {
       callout: {
@@ -357,8 +436,8 @@ const NavigationMenuListItemFocus = styled(motion.div, {
       },
     },
     color: {
-      violet: {
-        background: '$violetA4',
+      primary: {
+        // background: '$colors$focusBackground',
       },
     },
   },
@@ -374,7 +453,7 @@ const NavigationMenuListItemSelect = styled(motion.div, {
   width: '110%',
   height: '110%',
   background: 'transparent',
-  border: '2px solid $colors$violet7',
+  border: '2px solid $colors$tertiary',
   borderRadius: '8px',
   zIndex: 1,
 })
@@ -394,6 +473,7 @@ export {
   // @custom
   NavigationMenuListContent,
   NavigationMenuListItem,
+  NavigationMenuListItemLink,
   NavigationMenuLinkTitle,
   NavigationMenuLinkText,
   NavigationMenuViewportPosition,

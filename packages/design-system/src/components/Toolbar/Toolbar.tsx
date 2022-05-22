@@ -1,7 +1,6 @@
-import { violet, blackA, mauve } from '@radix-ui/colors'
 import * as ToolbarPrimitive from '@radix-ui/react-toolbar'
 
-import { styled } from '../../stitches.config'
+import { styled } from '../../lib/stitches.config'
 
 const StyledToolbar = styled(ToolbarPrimitive.Root, {
   display: 'flex',
@@ -10,13 +9,13 @@ const StyledToolbar = styled(ToolbarPrimitive.Root, {
   minWidth: 'max-content',
   borderRadius: 6,
   backgroundColor: 'white',
-  boxShadow: `0 2px 10px ${blackA.blackA7}`,
+  boxShadow: `0 2px 10px $colors$blackA7`,
 })
 
 const itemStyles = {
   all: 'unset',
   flex: '0 0 auto',
-  color: mauve.mauve11,
+  color: '$colores$slate11',
   height: 25,
   padding: '0 5px',
   borderRadius: 4,
@@ -25,8 +24,8 @@ const itemStyles = {
   lineHeight: 1,
   alignItems: 'center',
   justifyContent: 'center',
-  '&:hover': { backgroundColor: violet.violet3, color: violet.violet11 },
-  '&:focus': { position: 'relative', boxShadow: `0 0 0 2px ${violet.violet7}` },
+  '&:hover': { backgroundColor: '$colors$brand3', color: '$colors$brand11' },
+  '&:focus': { position: 'relative', boxShadow: `0 0 0 2px $colors$brand7` },
 }
 
 const StyledButton = styled(
@@ -36,9 +35,9 @@ const StyledButton = styled(
     paddingLeft: 10,
     paddingRight: 10,
     color: 'white',
-    backgroundColor: violet.violet9,
+    backgroundColor: '$colors$brand9',
   },
-  { '&:hover': { color: 'white', backgroundColor: violet.violet10 } }
+  { '&:hover': { color: 'white', backgroundColor: '$colors$brand10' } }
 )
 
 const StyledLink = styled(
@@ -46,7 +45,7 @@ const StyledLink = styled(
   {
     ...itemStyles,
     backgroundColor: 'transparent',
-    color: mauve.mauve11,
+    color: '$colors$slate11',
     display: 'inline-flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -56,7 +55,7 @@ const StyledLink = styled(
 
 const StyledSeparator = styled(ToolbarPrimitive.Separator, {
   width: 1,
-  backgroundColor: mauve.mauve6,
+  backgroundColor: '$colors$slate6',
   margin: '0 10px',
 })
 
@@ -71,7 +70,10 @@ const StyledToggleItem = styled(ToolbarPrimitive.ToggleItem, {
   backgroundColor: 'white',
   marginLeft: 2,
   '&:first-child': { marginLeft: 0 },
-  '&[data-state=on]': { backgroundColor: violet.violet5, color: violet.violet11 },
+  '&[data-state=on]': {
+    backgroundColor: '$colors$brand5',
+    color: '$colors$brand11',
+  },
 })
 
 const Toolbar = StyledToolbar

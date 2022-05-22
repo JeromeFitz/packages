@@ -117,7 +117,7 @@ const Toaster = React.forwardRef((props, forwardedRef) => {
 
               {actionVisible && (
                 <ToastAction asChild altText={actionAltText || actionText}>
-                  <Button ghost onClick={action} variant="violet" size="1">
+                  <Button onClick={action} size="1">
                     {actionText}
                   </Button>
                 </ToastAction>

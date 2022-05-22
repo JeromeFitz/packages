@@ -256,7 +256,7 @@ const ToastDemo = () => {
                     action: () => console.dir(`> action`),
                     actionText: 'Action',
                     actionComponent: (
-                      <Button css={{ my: '$1' }} ghost variant="blue" size="1">
+                      <Button css={{ my: '$1' }} ghost size="1">
                         ActionComp
                       </Button>
                     ),
@@ -276,7 +276,7 @@ const ToastDemo = () => {
               }}
               size="3"
               type="button"
-              variant="green"
+              // variant="green"
             >
               Create Toast
             </Button>
