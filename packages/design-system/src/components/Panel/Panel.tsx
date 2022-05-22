@@ -1,4 +1,4 @@
-import { styled } from '../../stitches.config'
+import { styled } from '../../lib/stitches.config'
 
 import { panelStyles } from './Panel.styles'
 

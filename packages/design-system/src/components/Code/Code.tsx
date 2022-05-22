@@ -1,4 +1,4 @@
-import { styled } from '../../stitches.config'
+import { styled } from '../../lib/stitches.config'
 
 const Code = styled('code', {
   fontFamily: '$mono',
@@ -8,22 +8,14 @@ const Code = styled('code', {
 
   variants: {
     variant: {
-      gray: {
-        backgroundColor: '$slate3',
-        color: '$slate11',
-      },
-      green: {
-        backgroundColor: '$green3',
-        color: '$green11',
-      },
-      violet: {
-        backgroundColor: '$violet3',
-        color: '$violet11',
-      },
+      // gray: {
+      //   backgroundColor: '$slate3',
+      //   color: '$slate11',
+      // },
     },
   },
   defaultVariants: {
-    variant: 'violet',
+    // variant: 'gray',
   },
 })
 

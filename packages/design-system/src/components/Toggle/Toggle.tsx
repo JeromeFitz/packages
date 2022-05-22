@@ -3,7 +3,7 @@
  */
 import * as TogglePrimitive from '@radix-ui/react-toggle'
 
-import { styled } from '../../stitches.config'
+import { styled } from '../../lib/stitches.config'
 
 const Toggle = styled(TogglePrimitive.Root, {
   // @reset

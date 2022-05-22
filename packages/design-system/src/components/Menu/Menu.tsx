@@ -2,7 +2,7 @@ import { CheckIcon } from '@radix-ui/react-icons'
 import * as MenuPrimitive from '@radix-ui/react-menu'
 import * as React from 'react'
 
-import { styled, CSS } from '../../stitches.config'
+import { styled, CSS } from '../../lib/stitches.config'
 import { Box, Flex } from '../index'
 import { panelStyles } from '../Panel/Panel.styles'
 

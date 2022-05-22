@@ -1,4 +1,4 @@
-import { keyframes, styled } from '../../stitches.config'
+import { keyframes, styled } from '../../lib/stitches.config'
 
 const blink = keyframes({
   '0%': {

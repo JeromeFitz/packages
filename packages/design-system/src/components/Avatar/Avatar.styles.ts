@@ -1,6 +1,6 @@
 import * as AvatarPrimitive from '@radix-ui/react-avatar'
 
-import { styled } from '../../stitches.config'
+import { styled } from '../../lib/stitches.config'
 
 const StyledAvatar = styled(AvatarPrimitive.Root, {
   alignItems: 'center',
@@ -68,29 +68,7 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
         backgroundColor: '$hiContrast',
         color: '$loContrast',
       },
-      // amber: { backgroundColor: '$amber5' },
-      blue: { backgroundColor: '$blue5' },
-      // bronze: { backgroundColor: '$bronze5' },
-      // brown: { backgroundColor: '$brown5' },
-      // crimson: { backgroundColor: '$crimson5' },
-      // cyan: { backgroundColor: '$cyan5' },
-      // gold: { backgroundColor: '$gold5' },
-      // grass: { backgroundColor: '$grass5' },
-      gray: { backgroundColor: '$slate5' },
-      green: { backgroundColor: '$green5' },
-      // indigo: { backgroundColor: '$indigo5' },
-      // lime: { backgroundColor: '$lime5' },
-      // mint: { backgroundColor: '$mint5' },
-      orange: { backgroundColor: '$orange5' },
-      // pink: { backgroundColor: '$pink5' },
-      // plum: { backgroundColor: '$plum5' },
-      // purple: { backgroundColor: '$purple5' },
-      red: { backgroundColor: '$red5' },
-      // sky: { backgroundColor: '$sky5' },
-      // teal: { backgroundColor: '$teal5' },
-      // tomato: { backgroundColor: '$tomato5' },
-      violet: { backgroundColor: '$violet5' },
-      // yellow: { backgroundColor: '$yellow5' },
+      gray: { backgroundColor: '$gray5' },
     },
     shape: {
       square: {

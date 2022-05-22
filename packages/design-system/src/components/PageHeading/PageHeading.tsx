@@ -48,11 +48,7 @@ const PageHeading = ({ title, description }) => {
   return (
     <>
       <Heading size="4">{title}</Heading>
-      <Paragraph
-        size="2"
-        as="p"
-        css={{ color: '$colors$gray11', mt: '$2', mb: '$7' }}
-      >
+      <Paragraph size="2" as="p" css={{ mt: '$2', mb: '$7' }}>
         {description}
       </Paragraph>
     </>

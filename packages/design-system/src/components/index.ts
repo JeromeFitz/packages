@@ -70,7 +70,9 @@ export {
   DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-  DropdownMenuTriggerItem,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
 } from './DropdownMenu'
 export { Flex } from './Flex'
 export { FocusArea } from './FocusArea'
@@ -123,6 +125,7 @@ export {
   NavigationMenuListContent,
   NavigationMenuListItem,
   NavigationMenuListItemFocus,
+  NavigationMenuListItemLink,
   NavigationMenuListItemSelect,
   NavigationMenuTrigger,
   NavigationMenuTriggerWithCaret,

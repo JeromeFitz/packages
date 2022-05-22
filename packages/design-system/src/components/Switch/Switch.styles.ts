@@ -1,6 +1,6 @@
 import * as SwitchPrimitive from '@radix-ui/react-switch'
 
-import { styled } from '../../stitches.config'
+import { styled } from '../../lib/stitches.config'
 
 const StyledThumb = styled(SwitchPrimitive.Thumb, {
   position: 'absolute',
@@ -43,15 +43,16 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
 
   backgroundColor: '$slate5',
   borderRadius: '$pill',
+  cursor: 'pointer',
   position: 'relative',
   '&:focus': {
     boxShadow: '0 0 0 2px $colors$slate8',
   },
 
   '&[data-state="checked"]': {
-    backgroundColor: '$blue9',
+    backgroundColor: '$colors$brand11',
     '&:focus': {
-      boxShadow: '0 0 0 2px $colors$blue8',
+      boxShadow: '0 0 0 2px $colors$brand11',
     },
   },
 

@@ -1,7 +1,6 @@
 /**
  * https://www.radix-ui.com/docs/primitives/components/alert-dialog
  */
-import { violet, blackA, red, mauve } from '@radix-ui/colors'
 import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog'
 import { styled, keyframes } from '@stitches/react'
 
@@ -16,7 +15,7 @@ const contentShow = keyframes({
 })
 
 const StyledOverlay = styled(AlertDialogPrimitive.Overlay, {
-  backgroundColor: blackA.blackA9,
+  backgroundColor: '$colors$blackA9',
   position: 'fixed',
   inset: 0,
   '@media (prefers-reduced-motion: no-preference)': {
@@ -54,14 +53,14 @@ const StyledContent = styled(AlertDialogPrimitive.Content, {
 
 const StyledTitle = styled(AlertDialogPrimitive.Title, {
   margin: 0,
-  color: mauve.mauve12,
+  color: '$colores$slate12',
   fontSize: 17,
   fontWeight: 500,
 })
 
 const StyledDescription = styled(AlertDialogPrimitive.Description, {
   marginBottom: 20,
-  color: mauve.mauve11,
+  color: '$colores$slate11',
   fontSize: 15,
   lineHeight: 1.5,
 })
@@ -82,30 +81,18 @@ const Button = styled('button', {
 
   variants: {
     variant: {
-      violet: {
+      default: {
         backgroundColor: 'white',
-        color: violet.violet11,
-        boxShadow: `0 2px 10px ${blackA.blackA7}`,
-        '&:hover': { backgroundColor: mauve.mauve3 },
+        color: '$colors$brand11',
+        boxShadow: `0 2px 10px $colors$blackA7`,
+        '&:hover': { backgroundColor: '$colors$slate3' },
         '&:focus': { boxShadow: `0 0 0 2px black` },
-      },
-      red: {
-        backgroundColor: red.red4,
-        color: red.red11,
-        '&:hover': { backgroundColor: red.red5 },
-        '&:focus': { boxShadow: `0 0 0 2px ${red.red7}` },
-      },
-      mauve: {
-        backgroundColor: mauve.mauve4,
-        color: mauve.mauve11,
-        '&:hover': { backgroundColor: mauve.mauve5 },
-        '&:focus': { boxShadow: `0 0 0 2px ${mauve.mauve7}` },
       },
     },
   },
 
   defaultVariants: {
-    variant: 'violet',
+    variant: 'default',
   },
 })
 
@@ -121,12 +108,12 @@ const AlertDialogDemo = ({ dialogText }) => (
       </AlertDialogDescription>
       <Flex css={{ justifyContent: 'flex-end' }}>
         <AlertDialogCancel asChild>
-          <Button variant="mauve" css={{ marginRight: 25 }}>
+          <Button variant="default" css={{ marginRight: 25 }}>
             {dialogText?.dialogCancel}
           </Button>
         </AlertDialogCancel>
         <AlertDialogAction asChild>
-          <Button variant="red">{dialogText?.dialogAction}</Button>
+          <Button variant="default">{dialogText?.dialogAction}</Button>
         </AlertDialogAction>
       </Flex>
     </AlertDialogContent>
