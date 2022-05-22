@@ -22,7 +22,7 @@ const EmptyContent = styled('div', {
 
 const str = `Lorem ipsum dolor sit.`
 
-export function Empty() {
+function Empty() {
   return (
     <EmptyContent>
       <Box css={{ height: '100%', my: '0' }}>
@@ -33,3 +33,5 @@ export function Empty() {
     </EmptyContent>
   )
 }
+
+export { Empty }

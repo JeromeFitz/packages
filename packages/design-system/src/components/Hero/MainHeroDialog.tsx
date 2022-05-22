@@ -25,7 +25,7 @@ const DialogContent = styled(DialogPrimitive.Content, {
   },
 })
 
-export function MainHeroDialog() {
+function MainHeroDialog() {
   // We prevent the initial auto focus because it's a demo rather than a real UI,
   // so the parent page focus is not stolen.
   const initialAutoFocusPrevented = React.useRef(false)
@@ -81,3 +81,5 @@ export function MainHeroDialog() {
     </DialogPrimitive.Root>
   )
 }
+
+export { MainHeroDialog }

@@ -47,7 +47,7 @@ const EmptyContent = styled('div', {
   },
 })
 
-export function HeroImage({ alt = '', meta = IMAGE__PLACEHOLDER.meta }) {
+function HeroImage({ alt = '', meta = IMAGE__PLACEHOLDER.meta }) {
   const { base64, img } = meta
   return (
     <EmptyContent>
@@ -69,3 +69,5 @@ export function HeroImage({ alt = '', meta = IMAGE__PLACEHOLDER.meta }) {
     </EmptyContent>
   )
 }
+
+export { HeroImage }
