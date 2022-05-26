@@ -37,7 +37,7 @@
     "semantic-release:mono": "semantic-release -e semantic-release-monorepo"
   },
   "dependencies": {
-    "@babel/eslint-parser": "7.17.0",
+    "@babel/eslint-parser": "7.18.2",
     "@typescript-eslint/eslint-plugin": "5.26.0",
     "@typescript-eslint/parser": "5.26.0",
     "eslint": "8.16.0",

@@ -58,7 +58,7 @@
     "ds:dev": "turbo run dev --scope=*design-system*"
   },
   "dependencies": {
-    "@babel/eslint-parser": "7.17.0",
+    "@babel/eslint-parser": "7.18.2",
     "@jeromefitz/eslint-config": "*",
     "@manypkg/cli": "0.19.1",
     "@types/is-ci": "3.0.0",
