@@ -56,7 +56,7 @@ const config = {
   minify: true,
   // silent: false,
   splitting: true,
-  target: ['esnext'],
+  // target: ['esnext'],
   tsconfig: 'tsconfig.json',
 }
 
