@@ -1,4 +1,4 @@
-import { styled } from '../../stitches.config'
+import { styled } from '../../lib/stitches.config'
 
 const Grid = styled('div', {
   boxSizing: 'border-box',

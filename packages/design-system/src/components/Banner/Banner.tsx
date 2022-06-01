@@ -1,4 +1,4 @@
-import { styled } from '../../stitches.config'
+import { styled } from '../../lib/stitches.config'
 
 const Banner = styled('div', {
   // @reset
@@ -19,6 +19,9 @@ const Banner = styled('div', {
     transition: 'background-color 0.25s ease-in-out',
   },
 
+  backgroundColor: '$colors$brand3',
+  '&:hover': { backgroundColor: '$colors$brand4' },
+
   variants: {
     size: {
       '1': {
@@ -31,26 +34,6 @@ const Banner = styled('div', {
         backgroundColor: '$loContrast',
         // @todo(design) make a choice here
         // '&:hover': { backgroundColor: '$loContrast' },
-      },
-      gray: {
-        backgroundColor: '$slate3',
-        '&:hover': { backgroundColor: '$slate4' },
-      },
-      blue: {
-        backgroundColor: '$blue3',
-        '&:hover': { backgroundColor: '$blue4' },
-      },
-      green: {
-        backgroundColor: '$green3',
-        '&:hover': { backgroundColor: '$green4' },
-      },
-      red: {
-        backgroundColor: '$red3',
-        '&:hover': { backgroundColor: '$red4' },
-      },
-      violet: {
-        backgroundColor: '$violet3',
-        '&:hover': { backgroundColor: '$violet4' },
       },
     },
     rounded: {
@@ -67,16 +50,9 @@ const Banner = styled('div', {
   compoundVariants: [
     {
       border: 'true',
-      variant: 'gray',
+      variant: 'brand',
       css: {
-        borderColor: '$slate6',
-      },
-    },
-    {
-      border: 'true',
-      variant: 'blue',
-      css: {
-        borderColor: '$blue11',
+        borderColor: '$colors$brand11',
       },
     },
     {
@@ -89,7 +65,6 @@ const Banner = styled('div', {
   ],
   defaultVariants: {
     size: '1',
-    variant: 'gray',
   },
 })
 

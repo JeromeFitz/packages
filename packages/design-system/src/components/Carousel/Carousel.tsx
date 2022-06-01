@@ -11,7 +11,7 @@ import debounce from 'lodash/debounce'
 import * as React from 'react'
 import smoothscroll from 'smoothscroll-polyfill'
 
-import { styled } from '../../stitches.config'
+import { styled } from '../../lib/stitches.config'
 import { Box } from '../index'
 
 const [CarouselProvider, useCarouselContext] = createContext<{

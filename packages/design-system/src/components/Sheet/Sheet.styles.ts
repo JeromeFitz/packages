@@ -1,6 +1,6 @@
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 
-import { styled, keyframes } from '../../stitches.config'
+import { styled, keyframes } from '../../lib/stitches.config'
 // import { overlayStyles } from '../Overlay/Overlay.styles'
 
 // const fadeIn = keyframes({

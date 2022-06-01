@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@ds/stitches.config": ["./packages/design-system/src/stitches.config"],
+      "@ds/stitches.config": ["./packages/design-system/src/lib/stitches.config"],
       "@ds/components": ["./packages/design-system/src/components/index"],
       "@ds/components/*": ["./packages/design-system/src/components/*"],
       "@ds/custom/*": ["./packages/design-system/src/custom/*"],

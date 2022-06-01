@@ -1,4 +1,4 @@
-import { styled } from '../../stitches.config'
+import { styled } from '../../lib/stitches.config'
 import { Box, Text } from '../index'
 
 const EmptyContent = styled('div', {
@@ -22,7 +22,7 @@ const EmptyContent = styled('div', {
 
 const str = `Lorem ipsum dolor sit.`
 
-export function Empty() {
+function Empty() {
   return (
     <EmptyContent>
       <Box css={{ height: '100%', my: '0' }}>
@@ -33,3 +33,5 @@ export function Empty() {
     </EmptyContent>
   )
 }
+
+export { Empty }

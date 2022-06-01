@@ -1,7 +1,7 @@
 import { useComposedRefs } from '@radix-ui/react-compose-refs'
 import * as React from 'react'
 
-import { styled } from '../../stitches.config'
+import { styled } from '../../lib/stitches.config'
 
 const StyledFocusArea = styled('div', {
   outline: 0,

@@ -4,8 +4,8 @@
 import * as SwitchPrimitive from '@radix-ui/react-switch'
 import * as React from 'react'
 
-import { darkTheme, styled } from '../../stitches.config'
-// import { styled } from '../../stitches.config'
+import { darkTheme, styled } from '../../lib/stitches.config'
+// import { styled } from '../../lib/stitches.config'
 
 import type { SwitchProps } from './Switch.types'
 
@@ -78,11 +78,11 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
   backgroundColor: '$hiContrast',
   '&[data-state="checked"]': {
     '&:focus': {
-      boxShadow: '0 2px 10px $colors$violet8',
+      boxShadow: '0 2px 10px $colors$shadow',
     },
   },
   '&:focus': {
-    boxShadow: '0 2px 10px $colors$violet8',
+    boxShadow: '0 2px 10px $colors$shadow',
   },
 
   variants: {

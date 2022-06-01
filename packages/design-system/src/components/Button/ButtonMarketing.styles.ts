@@ -1,4 +1,4 @@
-import { darkTheme, styled } from '../../stitches.config'
+import { darkTheme, styled } from '../../lib/stitches.config'
 
 const StyledButton = styled('button', {
   all: 'unset',
@@ -49,10 +49,10 @@ const StyledButton = styled('button', {
           boxShadow: 'none',
         },
         $$backlight: `
-            0 0 0 2px $colors$violetA8,
+            0 0 0 2px $colors$brandA8,
             -15px 0 30px -15px $colors$orangeA8,
             0 0 30px -15px $colors$orangeA8,
-            15px 0 30px -15px $colors$violetA8
+            15px 0 30px -15px $colors$brandA8
           `,
         boxShadow: '$$backlight',
         [`.${darkTheme} &`]: {

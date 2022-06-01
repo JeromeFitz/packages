@@ -1,6 +1,9 @@
+/**
+ * https://www.radix-ui.com/docs/primitives/components/navigation-menu
+ */
 import * as React from 'react'
 
-import { CSS } from '../../stitches.config'
+import { CSS } from '../../lib/stitches.config'
 
 import {
   NavigationMenuTrigger,

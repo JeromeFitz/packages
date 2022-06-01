@@ -1,6 +1,6 @@
 // import * as React from 'react'
 
-import { styled } from '../../stitches.config'
+import { styled } from '../../lib/stitches.config'
 
 const BoxGrab = styled('div', {
   cursor: 'grab',

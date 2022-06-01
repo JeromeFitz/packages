@@ -1,4 +1,4 @@
-import { styled } from '../../stitches.config'
+import { styled } from '../../lib/stitches.config'
 
 const AppBar = styled('div', {
   boxSizing: 'border-box',
@@ -45,7 +45,7 @@ const AppBar = styled('div', {
         backgroundColor: '$gray2',
       },
       accent: {
-        backgroundColor: '$blue9',
+        backgroundColor: '$colors$brand9',
       },
     },
   },
@@ -91,7 +91,7 @@ const AppBar = styled('div', {
       border: 'true',
       color: 'accent',
       css: {
-        borderColor: '$blue11',
+        borderColor: '$colors$brand11',
       },
     },
     {

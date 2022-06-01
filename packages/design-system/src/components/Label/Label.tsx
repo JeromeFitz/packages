@@ -3,7 +3,7 @@
  */
 import * as LabelPrimitive from '@radix-ui/react-label'
 
-import { styled } from '../../stitches.config'
+import { styled } from '../../lib/stitches.config'
 import { Text } from '../Text'
 
 const Label = styled(LabelPrimitive.Root, Text, {
