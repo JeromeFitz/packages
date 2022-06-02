@@ -25,7 +25,7 @@ const rollup = (data: any) => {
         })
       )
     )
-  )[0]
+  ).flat()
 }
 
 export default rollup
