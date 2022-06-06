@@ -45,7 +45,7 @@
     "zustand": "4.0.0-rc.1"
   },
   "devDependencies": {
-    "@types/ramda": "0.28.13",
+    "@types/ramda": "0.28.14",
     "@types/react": "18.0.12",
     "@types/react-dom": "18.0.5",
     "next-compose-plugins": "2.2.1",
