@@ -31,10 +31,14 @@ import * as React from 'react'
  */
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import eventsData from '../../.cache/events.json'
+// import eventsData from '../../.cache/events.json'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import showsData from '../../.cache/shows.json'
+// import showsData from '../../.cache/shows.json'
+
+// @todo(cache) need better mock data
+const showsData: any = {}
+const eventsData: any = {}
 
 const showsItems = showsData?.items?.results
 const eventsItems = eventsData?.items?.results
@@ -163,7 +167,7 @@ const KBarActions = () => {
     /**
      * @events
      */
-    const events = eventsItems.map((item) => {
+    const events = eventsItems?.map((item) => {
       const { id, properties } = item
       const { dateEvent, slug, title } = properties
 
@@ -199,39 +203,41 @@ const KBarActions = () => {
       }
     })
     // @hack(kbar) remember to add the listing itself
-    events.push({
-      id: `kbar-events-view-all`,
-      name: 'View All Events',
-      subtitle: 'Go to listing page for Events',
-      keywords: 'view all events',
-      perform: () => {
-        console.dir(`> events: /events`)
-        void handleToastInfo(`> events: /events}`)
-      },
-      icon: <ListBulletIcon />,
-      parent: parents.events,
-    })
-    kbar.query.registerActions([
-      {
-        id: parents.events,
-        icon: <CalendarIcon />,
-        name: 'Events',
-        shortcut: ['j', 'e'],
-        keywords: 'Events',
-      },
-      /**
-       * @hack `subtitle` accepts string not JSX.element
-       *        so this is a no no :X
-       */
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      ...events,
-    ])
+    !!events &&
+      events.push({
+        id: `kbar-events-view-all`,
+        name: 'View All Events',
+        subtitle: 'Go to listing page for Events',
+        keywords: 'view all events',
+        perform: () => {
+          console.dir(`> events: /events`)
+          void handleToastInfo(`> events: /events}`)
+        },
+        icon: <ListBulletIcon />,
+        parent: parents.events,
+      })
+    !!events &&
+      kbar.query.registerActions([
+        {
+          id: parents.events,
+          icon: <CalendarIcon />,
+          name: 'Events',
+          shortcut: ['j', 'e'],
+          keywords: 'Events',
+        },
+        /**
+         * @hack `subtitle` accepts string not JSX.element
+         *        so this is a no no :X
+         */
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        ...events,
+      ])
 
     /**
      * @shows
      */
-    const shows = showsItems.map((item) => {
+    const shows = showsItems?.map((item) => {
       const {
         id,
         // icon: { emoji },
@@ -275,34 +281,36 @@ const KBarActions = () => {
       }
     })
     // @hack(kbar) remember to add the listing itself
-    shows.push({
-      id: `kbar-shows-view-all`,
-      name: 'View All Shows',
-      subtitle: 'Go to listing page for Shows',
-      keywords: 'view all shows',
-      perform: () => {
-        console.dir(`> shows: /shows`)
-        void handleToastInfo(`> shows: /shows}`)
-      },
-      icon: <ListBulletIcon />,
-      parent: parents.shows,
-    })
-    kbar.query.registerActions([
-      {
-        id: parents.shows,
-        icon: <TicketIcon className="hi2ri" style={cssIconHeroToRadix} />,
-        name: 'Shows',
-        shortcut: ['j', 's'],
-        keywords: 'Shows',
-      },
-      /**
-       * @hack `subtitle` accepts string not JSX.element
-       *        so this is a no no :X
-       */
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      ...shows,
-    ])
+    !!shows &&
+      shows.push({
+        id: `kbar-shows-view-all`,
+        name: 'View All Shows',
+        subtitle: 'Go to listing page for Shows',
+        keywords: 'view all shows',
+        perform: () => {
+          console.dir(`> shows: /shows`)
+          void handleToastInfo(`> shows: /shows}`)
+        },
+        icon: <ListBulletIcon />,
+        parent: parents.shows,
+      })
+    !!shows &&
+      kbar.query.registerActions([
+        {
+          id: parents.shows,
+          icon: <TicketIcon className="hi2ri" style={cssIconHeroToRadix} />,
+          name: 'Shows',
+          shortcut: ['j', 's'],
+          keywords: 'Shows',
+        },
+        /**
+         * @hack `subtitle` accepts string not JSX.element
+         *        so this is a no no :X
+         */
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        ...shows,
+      ])
 
     /**
      * @settings
