@@ -1,5 +1,7 @@
 import { styled } from '../../lib/stitches.config'
-import { Box, Flex } from '../index'
+import { Box } from '../Box'
+import { Flex } from '../Flex'
+
 const css_card = {
   backgroundColor: '$colors$gray4',
   border: '1px solid $colors$brand7',
