@@ -107,7 +107,7 @@
     "@types/lodash": "4.14.182",
     "@types/react": "18.0.12",
     "@types/react-dom": "18.0.5",
-    "framer-motion": "6.3.10",
+    "framer-motion": "6.3.11",
     "kbar": "0.1.0-beta.35",
     "lodash": "4.17.21",
     "next": "12.1.6",
