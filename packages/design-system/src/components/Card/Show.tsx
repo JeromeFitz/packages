@@ -24,7 +24,9 @@ const css_card = {
     transform: 'scale(0.99)',
   },
 }
+
 const Card = styled(Flex, css_card)
+
 const CardLink = styled('a', {
   bottom: '0',
   color: 'inherit',
@@ -41,6 +43,7 @@ const CardLink = styled('a', {
     },
   },
 })
+
 const CardImageContainer = styled(Box, {
   borderRadius: '12px ',
   position: 'relative ',
@@ -49,6 +52,7 @@ const CardImageContainer = styled(Box, {
   height: '200px ',
   border: 'none',
 })
+
 const CardImage = styled(Box, {
   borderRadius: '12px ',
   position: 'relative ',
@@ -60,8 +64,11 @@ const CardImage = styled(Box, {
   overflow: 'hidden',
   mb: '0.5rem',
 })
+
 const CardTitle = styled(Flex, {})
+
 const CardContent = styled(Box, { mb: '1.5rem', pb: '1rem' })
+
 const CardMeta = styled(Flex, {
   position: 'absolute',
   bottom: 0,

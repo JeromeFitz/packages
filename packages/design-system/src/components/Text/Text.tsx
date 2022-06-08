@@ -59,6 +59,18 @@ const Text = styled('span', {
       contrast: {
         color: '$hiContrast',
       },
+      error: {
+        color: '$errorText',
+      },
+      info: {
+        color: '$infoText',
+      },
+      success: {
+        color: '$successText',
+      },
+      warning: {
+        color: '$warningText',
+      },
     },
     gradient: {
       true: {
