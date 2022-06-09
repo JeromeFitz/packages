@@ -1,6 +1,6 @@
 import { SVGAttributes } from 'react'
 
-import { VariantProps } from '../../lib/stitches.config'
+import { CSS, VariantProps } from '../../lib/stitches.config'
 
 import { StyledSVG } from './Icon.styles'
 
@@ -12,6 +12,7 @@ type IconVariant = VariantProps<typeof StyledSVG>['variant']
  */
 interface IconProps extends SVGAttributes<SVGElement> {
   children?: never
+  css?: CSS
   color?: string
   label?: string
   size?: IconSize

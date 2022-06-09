@@ -108,4 +108,11 @@ const StyledSVG = styled('svg', {
   },
 })
 
-export { StyledSVG }
+const StyledHeroSVG = styled('div', {
+  marginTop: '3px',
+  '& > path': {
+    strokeWidth: '1.5 !important',
+  },
+})
+
+export { StyledHeroSVG, StyledSVG }

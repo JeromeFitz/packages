@@ -1,6 +1,6 @@
-import { TicketIcon } from '@heroicons/react/outline'
 import {
   Box,
+  Icon,
   // @core
   NavigationMenu,
   NavigationMenuList,
@@ -23,8 +23,6 @@ import {
 import { LayoutGroup } from 'framer-motion'
 import NextLink from 'next/link'
 import * as React from 'react'
-
-import { cssIconHeroToRadix2 } from '../../lib/constants'
 
 const menu = [
   {
@@ -159,10 +157,7 @@ const NavigationMenuContentContainer = ({ id, items, layout }) => {
                     }}
                   >
                     <>
-                      <TicketIcon
-                        className="hi2ri"
-                        style={{ ...cssIconHeroToRadix2, marginBottom: '1rem' }}
-                      />
+                      <Icon.Ticket css={{ marginBottom: '1rem' }} />
                       Upcoming Event Title
                     </>
                   </NavigationMenuLinkTitle>

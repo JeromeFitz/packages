@@ -1,17 +1,9 @@
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
-import {
-  CaretDownIcon,
-  CaretRightIcon,
-  CheckIcon,
-  GitHubLogoIcon,
-  ModulzLogoIcon,
-  StitchesLogoIcon,
-} from '@radix-ui/react-icons'
 import * as React from 'react'
 
 import { styled } from '../../lib/stitches.config'
 import { ButtonDemo } from '../Button/ButtonDemo'
-import { Box } from '../index'
+import { Box, Icon } from '../index'
 
 const DropdownMenuArrow = styled(DropdownMenuPrimitive.Arrow, {
   fill: '$loContrast',
@@ -82,7 +74,7 @@ function MainHeroDropdownMenu() {
     <DropdownMenuPrimitive.Root modal={false} open={open} onOpenChange={setOpen}>
       <DropdownMenuPrimitive.Trigger asChild>
         <ButtonDemo ref={triggerRef} css={{ marginBottom: 120, gap: 3 }}>
-          Options <CaretDownIcon style={{ marginRight: -5 }} />
+          Options <Icon.CaretDown style={{ marginRight: -5 }} />
         </ButtonDemo>
       </DropdownMenuPrimitive.Trigger>
 
@@ -133,20 +125,20 @@ function MainHeroDropdownMenu() {
             <DropdownMenuSub>
               <DropdownMenuSubTrigger>
                 Favorites
-                <CaretRightIcon style={{ marginLeft: 'auto', marginRight: -5 }} />
+                <Icon.CaretRight style={{ marginLeft: 'auto', marginRight: -5 }} />
               </DropdownMenuSubTrigger>
               <DropdownMenuSubContent>
                 <DropdownMenuItem>
-                  <GitHubLogoIcon style={{ marginLeft: -15, marginRight: 10 }} />
+                  <Icon.GitHubLogo style={{ marginLeft: -15, marginRight: 10 }} />
                   GitHub
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <StitchesLogoIcon style={{ marginLeft: -15, marginRight: 10 }} />
-                  Stitches
+                  <Icon.TwitterLogo style={{ marginLeft: -15, marginRight: 10 }} />
+                  Twitter
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <ModulzLogoIcon style={{ marginLeft: -15, marginRight: 10 }} />
-                  Modulz
+                  <Icon.InstagramLogo style={{ marginLeft: -15, marginRight: 10 }} />
+                  Instagram
                 </DropdownMenuItem>
               </DropdownMenuSubContent>
             </DropdownMenuSub>
@@ -159,13 +151,13 @@ function MainHeroDropdownMenu() {
             onCheckedChange={setShowToolbar}
           >
             <DropdownMenuPrimitive.ItemIndicator>
-              <CheckIcon style={{ marginLeft: -18, marginRight: 0 }} />
+              <Icon.Check style={{ marginLeft: -18, marginRight: 0 }} />
             </DropdownMenuPrimitive.ItemIndicator>
             Show Toolbar
           </DropdownMenuCheckboxItem>
           <DropdownMenuCheckboxItem checked={showUrls} onCheckedChange={setShowUrls}>
             <DropdownMenuPrimitive.ItemIndicator>
-              <CheckIcon style={{ marginLeft: -18, marginRight: 0 }} />
+              <Icon.Check style={{ marginLeft: -18, marginRight: 0 }} />
             </DropdownMenuPrimitive.ItemIndicator>
             Show Full URLs
           </DropdownMenuCheckboxItem>

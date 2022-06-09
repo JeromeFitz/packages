@@ -1,15 +1,10 @@
 import {
+  Icon,
   Switch,
   SwitchIcon,
   Separator,
 } from '@jeromefitz/design-system/src/components'
 import { darkTheme } from '@jeromefitz/design-system/src/lib/stitches.config'
-import {
-  MoonIcon,
-  SpeakerOffIcon,
-  SpeakerModerateIcon,
-  SunIcon,
-} from '@radix-ui/react-icons'
 import { useTheme } from 'next-themes'
 import * as React from 'react'
 
@@ -28,15 +23,15 @@ const SwitchImpl = () => {
       <SwitchIcon
         checked={theme === 'dark'}
         onCheckedChange={() => handleThemeToggle()}
-        iconOn={<MoonIcon />}
-        iconOff={<SunIcon />}
+        iconOn={<Icon.Moon />}
+        iconOff={<Icon.Sun />}
       />
       <Separator decorative margin="my3" size="full" />
       <SwitchIcon
         checked={theme === 'dark'}
         onCheckedChange={() => handleThemeToggle()}
-        iconOn={<SpeakerModerateIcon />}
-        iconOff={<SpeakerOffIcon />}
+        iconOn={<Icon.SpeakerModerate />}
+        iconOff={<Icon.SpeakerOff />}
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         size="4"

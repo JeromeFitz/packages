@@ -2,22 +2,22 @@ import {
   Banner,
   Container,
   Flex,
+  Icon,
   IconButton,
   Link,
   Separator,
   Text,
 } from '@jeromefitz/design-system/src/components'
-import { ArrowTopRightIcon, CalendarIcon, Cross1Icon } from '@radix-ui/react-icons'
 import NextLink from 'next/link'
 
 // @todo(dynamic) notion api, upcoming event or evergreen info
 const meta = {
   left: 'FRI 02/25',
   leftExtended: 'FRI 02/25 09:30PM',
-  leftIcon: <CalendarIcon />,
+  leftIcon: <Icon.Calendar />,
   right: 'The Playlist',
   rightExtended: 'The Playlist: Band Name',
-  rightIcon: <ArrowTopRightIcon />,
+  rightIcon: <Icon.ArrowTopRight />,
   url: '/about',
 }
 
@@ -27,7 +27,7 @@ const _Banner = () => {
       <NextLink href="/about" passHref>
         <Link>
           <Banner css={{ py: '$2', width: '100%' }}>
-            <CalendarIcon />
+            <Icon.Calendar />
             <Text css={{ color: 'inherit', fontWeight: 500 }} size="2">
               {meta.leftExtended}
             </Text>
@@ -43,7 +43,7 @@ const _Banner = () => {
               css={{ mr: '$4', position: 'absolute', right: 0 }}
               variant="ghost"
             >
-              <Cross1Icon />
+              <Icon.Cross />
             </IconButton>
           </Banner>
         </Link>

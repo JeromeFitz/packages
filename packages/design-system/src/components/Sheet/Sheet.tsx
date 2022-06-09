@@ -1,8 +1,7 @@
 import * as DialogPrimitive from '@radix-ui/react-dialog'
-// import { Cross1Icon } from '@radix-ui/react-icons'
 import * as React from 'react'
 
-// import { IconButton } from '../IconButton'
+// import { Icon, IconButton } from '../index'
 
 // import { StyledOverlay, StyledContent, StyledCloseButton } from './Sheet.styles'
 import { StyledOverlay, StyledContent } from './Sheet.styles'
@@ -28,7 +27,7 @@ const SheetContent = React.forwardRef<
       {children}
       {/* <StyledCloseButton asChild>
         <IconButton variant="ghost">
-          <Cross1Icon />
+          <Icon.Cross1 />
         </IconButton>
       </StyledCloseButton> */}
     </StyledContent>

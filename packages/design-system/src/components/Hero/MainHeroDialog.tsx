@@ -1,11 +1,10 @@
 import * as DialogPrimitive from '@radix-ui/react-dialog'
-import { Cross2Icon } from '@radix-ui/react-icons'
 import * as React from 'react'
 
 import { styled } from '../../lib/stitches.config'
 import { ButtonDemo } from '../Button/ButtonDemo'
 import { ButtonDemoIcon } from '../Button/ButtonDemoIcon'
-import { Flex, Text } from '../index'
+import { Flex, Icon, Text } from '../index'
 
 const DialogContent = styled(DialogPrimitive.Content, {
   position: 'absolute',
@@ -73,7 +72,7 @@ function MainHeroDialog() {
 
           <DialogPrimitive.Close asChild>
             <ButtonDemoIcon>
-              <Cross2Icon />
+              <Icon.Cross2 />
             </ButtonDemoIcon>
           </DialogPrimitive.Close>
         </Flex>
