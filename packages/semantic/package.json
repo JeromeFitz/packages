@@ -51,7 +51,7 @@
     "@semantic-release/release-notes-generator": "10.0.3",
     "grapheme-splitter": "1.0.4",
     "lodash": "4.17.21",
-    "semantic-release": "19.0.2",
+    "semantic-release": "19.0.3",
     "semantic-release-commit-filter": "1.0.2",
     "title": "3.4.4"
   },
