@@ -1,8 +1,8 @@
-import { CaretDownIcon } from '@radix-ui/react-icons'
 import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu'
 import { motion } from 'framer-motion'
 
 import { styled, keyframes } from '../../lib/stitches.config'
+import { Icon } from '../Icon'
 
 const enterFromRight = keyframes({
   from: { transform: 'translateX(200px)', opacity: 0 },
@@ -109,7 +109,7 @@ const StyledTrigger = styled(NavigationMenuPrimitive.Trigger, {
   },
 })
 
-const StyledCaret = styled(CaretDownIcon, {
+const StyledCaret = styled(Icon.CaretDown, {
   position: 'relative',
   color: '$colors$primary',
   top: 1,

@@ -1,7 +1,6 @@
-import { MagnifyingGlassIcon } from '@radix-ui/react-icons'
 import { KBarSearch } from 'kbar'
 
-import { Box, Flex, Heading } from '../index'
+import { Box, Flex, Heading, Icon } from '../index'
 
 import { KBarSearchStyle } from './KBar.styles'
 
@@ -34,7 +33,7 @@ const KBarSearchImpl = ({ ...props }) => {
             }}
             size="1"
           >
-            <MagnifyingGlassIcon />
+            <Icon.MagnifyingGlass css={{ marginLeft: '7px', marginTop: '3px' }} />
           </Heading>
         </Flex>
 

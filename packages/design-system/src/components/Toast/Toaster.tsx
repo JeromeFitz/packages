@@ -1,7 +1,6 @@
-import { Cross2Icon } from '@radix-ui/react-icons'
 import * as React from 'react'
 
-import { Button } from '../index'
+import { Button, Icon } from '../index'
 
 import {
   Toast,
@@ -126,7 +125,7 @@ const Toaster = React.forwardRef((props, forwardedRef) => {
               {closeVisible && (
                 <ToastClose asChild aria-label="Close">
                   <Button ghost size="1" onClick={!!close ? close : () => {}}>
-                    <Cross2Icon />
+                    <Icon.Cross2 />
                   </Button>
                 </ToastClose>
               )}

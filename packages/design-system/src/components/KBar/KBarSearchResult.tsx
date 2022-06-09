@@ -1,15 +1,6 @@
-import { ReplyIcon } from '@heroicons/react/outline'
 import { ActionImpl } from 'kbar/lib/action'
 
-import { Box, Flex, Text, Kbd, Focused } from '../index'
-
-const cssIconHeroToRadix = {
-  marginTop: '3px',
-  marginRight: '10px',
-  width: '1rem',
-  height: '1rem',
-  transform: 'rotate(180deg) scaleX(-1)',
-}
+import { Box, Flex, Focused, Icon, Kbd, Text } from '../index'
 
 interface KBarSearchResultProps {
   active: boolean
@@ -177,7 +168,14 @@ const KBarSearchResult = ({ active, item }: KBarSearchResultProps) => {
           }}
           layoutId="highlight"
         >
-          <ReplyIcon className="hi2ri" style={cssIconHeroToRadix} />
+          <Icon.Return
+            style={{
+              marginTop: '3px',
+              marginRight: '10px',
+              width: '0.75rem',
+              height: '0.75rem',
+            }}
+          />
         </Focused>
       )}
     </Box>

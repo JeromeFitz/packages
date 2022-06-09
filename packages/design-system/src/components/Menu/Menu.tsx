@@ -1,9 +1,8 @@
-import { CheckIcon } from '@radix-ui/react-icons'
 import * as MenuPrimitive from '@radix-ui/react-menu'
 import * as React from 'react'
 
 import { styled, CSS } from '../../lib/stitches.config'
-import { Box, Flex } from '../index'
+import { Box, Flex, Icon } from '../index'
 import { panelStyles } from '../Panel/Panel.styles'
 
 import { itemCss, labelCss, menuCss, separatorCss } from './Menu.styles'
@@ -66,7 +65,7 @@ const MenuCheckboxItem = React.forwardRef<
   <StyledMenuCheckboxItem {...props} ref={forwardedRef}>
     <Box as="span" css={{ position: 'absolute', left: '$1' }}>
       <MenuPrimitive.ItemIndicator>
-        <CheckIcon />
+        <Icon.Check />
       </MenuPrimitive.ItemIndicator>
     </Box>
     {children}

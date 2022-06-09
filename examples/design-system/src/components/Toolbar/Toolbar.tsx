@@ -1,5 +1,6 @@
 import {
   // Box,
+  Icon,
   Toolbar,
   ToolbarButton,
   ToolbarSeparator,
@@ -7,14 +8,6 @@ import {
   ToolbarToggleGroup,
   ToolbarToggleItem,
 } from '@jeromefitz/design-system/src/components'
-import {
-  StrikethroughIcon,
-  TextAlignLeftIcon,
-  TextAlignCenterIcon,
-  TextAlignRightIcon,
-  FontBoldIcon,
-  FontItalicIcon,
-} from '@radix-ui/react-icons'
 import * as React from 'react'
 
 // import { NavigationMenu } from '../NavigationMenu'
@@ -23,13 +16,13 @@ const ToolbarDemo = () => (
   <Toolbar aria-label="Formatting options">
     <ToolbarToggleGroup type="multiple" aria-label="Text formatting">
       <ToolbarToggleItem value="bold" aria-label="Bold">
-        <FontBoldIcon />
+        <Icon.FontBold />
       </ToolbarToggleItem>
       <ToolbarToggleItem value="italic" aria-label="Italic">
-        <FontItalicIcon />
+        <Icon.FontItalic />
       </ToolbarToggleItem>
       <ToolbarToggleItem value="strikethrough" aria-label="Strike through">
-        <StrikethroughIcon />
+        <Icon.Strikethrough />
       </ToolbarToggleItem>
     </ToolbarToggleGroup>
     <ToolbarSeparator />
@@ -39,13 +32,13 @@ const ToolbarDemo = () => (
       aria-label="Text alignment"
     >
       <ToolbarToggleItem value="left" aria-label="Left aligned">
-        <TextAlignLeftIcon />
+        <Icon.TextAlignLeft />
       </ToolbarToggleItem>
       <ToolbarToggleItem value="center" aria-label="Center aligned">
-        <TextAlignCenterIcon />
+        <Icon.TextAlignCenter />
       </ToolbarToggleItem>
       <ToolbarToggleItem value="right" aria-label="Right aligned">
-        <TextAlignRightIcon />
+        <Icon.TextAlignRight />
       </ToolbarToggleItem>
     </ToolbarToggleGroup>
     <ToolbarSeparator />

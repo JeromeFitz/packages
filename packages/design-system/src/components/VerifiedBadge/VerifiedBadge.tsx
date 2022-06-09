@@ -1,8 +1,7 @@
-import { CheckIcon } from '@radix-ui/react-icons'
 import * as React from 'react'
 
 import { styled, CSS } from '../../lib/stitches.config'
-import { Flex } from '../index'
+import { Icon, Flex } from '../index'
 
 const StyledVerifiedBadge = styled('div', Flex, {
   alignItems: 'center',
@@ -24,7 +23,7 @@ const VerifiedBadge = React.forwardRef<
   VerifiedBadgeProps
 >((props, forwardedRef) => (
   <StyledVerifiedBadge {...props} ref={forwardedRef}>
-    <CheckIcon />
+    <Icon.Check />
   </StyledVerifiedBadge>
 ))
 

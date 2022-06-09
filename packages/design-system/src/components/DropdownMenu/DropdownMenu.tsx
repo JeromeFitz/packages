@@ -2,11 +2,10 @@
  * https://www.radix-ui.com/docs/primitives/components/dropdown-menu
  */
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
-import { CheckIcon } from '@radix-ui/react-icons'
 import * as React from 'react'
 
 import { styled, CSS } from '../../lib/stitches.config'
-import { Box, Flex } from '../index'
+import { Box, Icon, Flex } from '../index'
 import { menuCss, separatorCss, itemCss, labelCss } from '../Menu/Menu.styles'
 import { panelStyles } from '../Panel/Panel.styles'
 
@@ -76,7 +75,7 @@ const DropdownMenuCheckboxItem = React.forwardRef<
   <StyledDropdownMenuCheckboxItem {...props} ref={forwardedRef}>
     <Box as="span" css={{ position: 'absolute', left: '$1' }}>
       <DropdownMenuPrimitive.ItemIndicator>
-        <CheckIcon />
+        <Icon.Check />
       </DropdownMenuPrimitive.ItemIndicator>
     </Box>
     {children}

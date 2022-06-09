@@ -2,11 +2,10 @@
  * https://www.radix-ui.com/docs/primitives/components/context-menu
  */
 import * as ContextMenuPrimitive from '@radix-ui/react-context-menu'
-import { CheckIcon } from '@radix-ui/react-icons'
 import * as React from 'react'
 
 import { styled, CSS } from '../../lib/stitches.config'
-import { Box, Flex } from '../index'
+import { Box, Flex, Icon } from '../index'
 import { menuCss, separatorCss, itemCss, labelCss } from '../Menu/Menu.styles'
 import { panelStyles } from '../Panel/Panel.styles'
 
@@ -75,7 +74,7 @@ const ContextMenuCheckboxItem = React.forwardRef<
   <StyledContextMenuCheckboxItem {...props} ref={forwardedRef}>
     <Box as="span" css={{ position: 'absolute', left: '$1' }}>
       <ContextMenuPrimitive.ItemIndicator>
-        <CheckIcon />
+        <Icon.Check />
       </ContextMenuPrimitive.ItemIndicator>
     </Box>
     {children}

@@ -2,6 +2,7 @@ import {
   Box,
   Button,
   Flex,
+  Icon,
   Heading,
   Label,
   Select,
@@ -21,15 +22,6 @@ import type {
   IToast,
   IToastVariant,
 } from '@jeromefitz/design-system/src/components/Toast/Toast.types'
-import {
-  BellIcon,
-  CheckCircledIcon,
-  CheckIcon,
-  ChevronDownIcon,
-  CrossCircledIcon,
-  ExclamationTriangleIcon,
-  InfoCircledIcon,
-} from '@radix-ui/react-icons'
 import _debounce from 'lodash/debounce'
 import * as React from 'react'
 
@@ -47,11 +39,11 @@ interface IVariant {
   icon: React.ReactElement
 }
 const variants: IVariant[] = [
-  { variant: 'default', icon: <BellIcon /> },
-  { variant: 'error', icon: <CrossCircledIcon /> },
-  { variant: 'info', icon: <InfoCircledIcon /> },
-  { variant: 'success', icon: <CheckCircledIcon /> },
-  { variant: 'warning', icon: <ExclamationTriangleIcon /> },
+  { variant: 'default', icon: <Icon.Bell /> },
+  { variant: 'error', icon: <Icon.CrossCircled /> },
+  { variant: 'info', icon: <Icon.InfoCircled /> },
+  { variant: 'success', icon: <Icon.CheckCircled /> },
+  { variant: 'warning', icon: <Icon.ExclamationTriangle /> },
 ]
 
 const items: IItems[] = [
@@ -220,7 +212,7 @@ const ToastDemo = () => {
                 <SelectTrigger aria-label="Toast Variant">
                   <SelectValue aria-label={variant} />
                   <SelectIcon>
-                    <ChevronDownIcon />
+                    <Icon.ChevronDown />
                   </SelectIcon>
                 </SelectTrigger>
                 <SelectContent>
@@ -236,7 +228,7 @@ const ToastDemo = () => {
                             </Flex>
                           </SelectItemText>
                           <SelectItemIndicator>
-                            <CheckIcon />
+                            <Icon.Check />
                           </SelectItemIndicator>
                         </SelectItem>
                       )

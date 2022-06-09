@@ -1,23 +1,4 @@
-import { TicketIcon } from '@heroicons/react/outline'
-import { Toaster } from '@jeromefitz/design-system/src/components'
-import {
-  CalendarIcon,
-  EnvelopeOpenIcon,
-  GearIcon,
-  GitHubLogoIcon,
-  HomeIcon,
-  IdCardIcon,
-  ImageIcon,
-  Link1Icon,
-  ListBulletIcon,
-  MoonIcon,
-  Pencil2Icon,
-  SpeakerModerateIcon,
-  SpeakerOffIcon,
-  StarIcon,
-  SunIcon,
-  TwitterLogoIcon,
-} from '@radix-ui/react-icons'
+import { Icon, Toaster } from '@jeromefitz/design-system/src/components'
 import { parseISO } from 'date-fns'
 import { format } from 'date-fns-tz'
 import { useKBar } from 'kbar'
@@ -53,10 +34,6 @@ interface IAction extends Action {
 const getAccountHandle = (str) => {
   // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
   return `@` + str.split('/')[str.split('/').length - 1]
-}
-
-const cssIconHeroToRadix = {
-  marginTop: '3px',
 }
 
 /**
@@ -122,7 +99,7 @@ const KBarActions = () => {
     const _actions: IAction[] = [
       {
         id: 'home',
-        icon: <HomeIcon />,
+        icon: <Icon.Home />,
         name: 'Home',
         shortcut: ['j', 'h'],
         keywords: 'Dip Set',
@@ -130,7 +107,7 @@ const KBarActions = () => {
       },
       {
         id: 'blog',
-        icon: <Pencil2Icon />,
+        icon: <Icon.PencilWithPaper />,
         name: 'Blog',
         shortcut: ['j', 'b'],
         keywords: 'Byrd Gang',
@@ -138,7 +115,7 @@ const KBarActions = () => {
       },
       {
         id: 'about',
-        icon: <IdCardIcon />,
+        icon: <Icon.IdCard />,
         name: 'About',
         shortcut: ['j', 'a'],
         keywords: 'Jerome',
@@ -198,7 +175,7 @@ const KBarActions = () => {
           console.dir(`> events: ${slug}`)
           void handleToastInfo(`> events: ${slug}`)
         },
-        icon: <CalendarIcon />,
+        icon: <Icon.Calendar />,
         parent: parents.events,
       }
     })
@@ -213,14 +190,14 @@ const KBarActions = () => {
           console.dir(`> events: /events`)
           void handleToastInfo(`> events: /events}`)
         },
-        icon: <ListBulletIcon />,
+        icon: <Icon.ListBullet />,
         parent: parents.events,
       })
     !!events &&
       kbar.query.registerActions([
         {
           id: parents.events,
-          icon: <CalendarIcon />,
+          icon: <Icon.Calendar />,
           name: 'Events',
           shortcut: ['j', 'e'],
           keywords: 'Events',
@@ -269,7 +246,7 @@ const KBarActions = () => {
           console.dir(`> shows: ${slug}`)
           void handleToastInfo(`> shows: ${slug}`)
         },
-        icon: <StarIcon />,
+        icon: <Icon.Star />,
         // icon: (
         //   <Text css={{ fontSize: '1.75rem' }}>
         //     {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
@@ -291,14 +268,14 @@ const KBarActions = () => {
           console.dir(`> shows: /shows`)
           void handleToastInfo(`> shows: /shows}`)
         },
-        icon: <ListBulletIcon />,
+        icon: <Icon.ListBullet />,
         parent: parents.shows,
       })
     !!shows &&
       kbar.query.registerActions([
         {
           id: parents.shows,
-          icon: <TicketIcon className="hi2ri" style={cssIconHeroToRadix} />,
+          icon: <Icon.Ticket style={{ marginTop: '3px' }} />,
           name: 'Shows',
           shortcut: ['j', 's'],
           keywords: 'Shows',
@@ -320,14 +297,14 @@ const KBarActions = () => {
         id: parents.settings,
         name: 'Settings',
         section: sections.other,
-        icon: <GearIcon />,
+        icon: <Icon.Gear />,
       },
       {
         id: 'settings-theme-light',
         name: 'Set Theme to Light',
         keywords: 'set change theme light',
         perform: () => handleThemeSet('light'),
-        icon: <SunIcon />,
+        icon: <Icon.Sun />,
         parent: parents.settings,
         shortcut: ['t', 'l'],
       },
@@ -336,7 +313,7 @@ const KBarActions = () => {
         name: 'Set Theme to Dark',
         keywords: 'set change theme dark',
         perform: () => handleThemeSet('dark'),
-        icon: <MoonIcon />,
+        icon: <Icon.Moon />,
         parent: parents.settings,
         shortcut: ['t', 'd'],
       },
@@ -345,7 +322,7 @@ const KBarActions = () => {
         name: 'Turn Sound On',
         keywords: 'turn change audio on',
         perform: () => handleAudioSet(true),
-        icon: <SpeakerModerateIcon />,
+        icon: <Icon.SpeakerModerate />,
         parent: parents.settings,
       },
       {
@@ -353,7 +330,7 @@ const KBarActions = () => {
         name: 'Turn Sound Off',
         keywords: 'turn change audio off',
         perform: () => handleAudioSet(false),
-        icon: <SpeakerOffIcon />,
+        icon: <Icon.SpeakerOff />,
         parent: parents.settings,
       },
     ])
@@ -366,7 +343,7 @@ const KBarActions = () => {
         id: parents.social,
         name: 'Social',
         section: sections.other,
-        icon: <CalendarIcon />,
+        icon: <Icon.Calendar />,
       },
       {
         id: 'social-email',
@@ -375,7 +352,7 @@ const KBarActions = () => {
         keywords: 'social email',
         parent: parents.social,
         perform: () => window.open(meta.links.email),
-        icon: <EnvelopeOpenIcon />,
+        icon: <Icon.EnvelopeOpen />,
       },
       {
         id: 'social-github',
@@ -384,7 +361,7 @@ const KBarActions = () => {
         keywords: 'social github',
         parent: parents.social,
         perform: () => window.open(meta.links.github, '_blank'),
-        icon: <GitHubLogoIcon />,
+        icon: <Icon.GitHubLogo />,
       },
       {
         id: 'social-instagram',
@@ -393,7 +370,7 @@ const KBarActions = () => {
         keywords: 'social instagram',
         parent: parents.social,
         perform: () => window.open(meta.links.instagram, '_blank'),
-        icon: <ImageIcon />,
+        icon: <Icon.Image />,
       },
       {
         id: 'social-linkedIn',
@@ -402,7 +379,7 @@ const KBarActions = () => {
         keywords: 'social linkedIn',
         parent: parents.social,
         perform: () => window.open(meta.links.linkedIn, '_blank'),
-        icon: <Link1Icon />,
+        icon: <Icon.Link />,
       },
       {
         id: 'social-twitter',
@@ -411,7 +388,7 @@ const KBarActions = () => {
         keywords: 'social twitter',
         parent: parents.social,
         perform: () => window.open(meta.links.twitter, '_blank'),
-        icon: <TwitterLogoIcon />,
+        icon: <Icon.TwitterLogo />,
       },
     ])
 

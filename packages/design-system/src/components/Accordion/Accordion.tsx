@@ -2,10 +2,10 @@
  * https://www.radix-ui.com/docs/primitives/components/accordion
  */
 import * as AccordionPrimitive from '@radix-ui/react-accordion'
-import { ChevronDownIcon } from '@radix-ui/react-icons'
 import * as React from 'react'
 
 import { styled, keyframes } from '../../lib/stitches.config'
+import { Icon } from '../Icon'
 
 type ForwardedRefType = React.ForwardedRef<any>
 type PropsChildren = {
@@ -93,7 +93,7 @@ const StyledContentText = styled('div', {
   padding: '$2 $4',
 })
 
-const StyledChevron = styled(ChevronDownIcon, {
+const StyledChevron = styled(Icon.ChevronDown, {
   color: '$colors$gray12',
   '[data-state=open] &': { transform: 'rotate(180deg)' },
   '@media (prefers-reduced-motion: no-preference)': {
