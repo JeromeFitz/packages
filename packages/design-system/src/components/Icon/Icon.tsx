@@ -50,6 +50,7 @@ import {
   Pencil2Icon,
   ReplyIcon,
   ReturnIcon,
+  Share1Icon,
   SpeakerModerateIcon,
   SpeakerOffIcon,
   StarIcon,
@@ -117,6 +118,7 @@ Icon.Pencil1 = Pencil1Icon
 Icon.Pencil2 = Pencil2Icon
 Icon.Reply = ReplyIcon
 Icon.Return = ReturnIcon
+Icon.Share1 = Share1Icon
 Icon.SpeakerModerate = SpeakerModerateIcon
 Icon.SpeakerOff = SpeakerOffIcon
 Icon.Star = StarIcon
@@ -143,6 +145,7 @@ Icon.Link = Link1Icon
 Icon.LinkedIn = LinkedInLogoIcon
 Icon.Pencil = Pencil1Icon
 Icon.PencilWithPaper = Pencil2Icon
+Icon.SocialShare = Share1Icon
 Icon.Success = CheckCircledIcon
 Icon.Twitter = TwitterLogoIcon
 Icon.Warning = ExclamationTriangleIcon

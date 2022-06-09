@@ -53,6 +53,7 @@ import {
   MoonIcon as MoonIconRadix,
   Pencil1Icon as Pencil1IconRadix,
   Pencil2Icon as Pencil2IconRadix,
+  Share1Icon as Share1IconRadix,
   SpeakerModerateIcon as SpeakerModerateIconRadix,
   SpeakerOffIcon as SpeakerOffIconRadix,
   StarIcon as StarIconRadix,
@@ -662,6 +663,17 @@ const ReturnIcon = ({ css, label, style, ...props }: IconProps) => (
   </AccessibleIcon>
 )
 
+const Share1Icon = ({ label, ...props }: IconProps) => (
+  <AccessibleIcon
+    label={
+      label ||
+      'An icon representing a social share. An outline of a circle with two beams attached to two other circles symbolizing a share across a network.'
+    }
+  >
+    <Box as={Share1IconRadix} {...props} />
+  </AccessibleIcon>
+)
+
 const SpeakerModerateIcon = ({ label, ...props }: IconProps) => (
   <AccessibleIcon
     label={
@@ -863,6 +875,7 @@ export {
   Pencil2Icon,
   ReplyIcon,
   ReturnIcon,
+  Share1Icon,
   SpeakerModerateIcon,
   SpeakerOffIcon,
   StarIcon,
