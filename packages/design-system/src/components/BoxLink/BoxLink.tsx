@@ -8,7 +8,7 @@ const BoxLink = styled('a', {
   textDecoration: 'none',
   outline: 0,
   p: '$1',
-  m: '-$1',
+  m: '-$2',
   br: '$1',
   '&:focus': {
     boxShadow: '0 0 0 2px $colors$gray12',

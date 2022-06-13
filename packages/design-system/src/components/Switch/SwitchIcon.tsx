@@ -13,7 +13,7 @@ const StyledThumb = styled(SwitchPrimitive.Thumb, {
   backgroundColor: '$loContrast',
   borderRadius: '$pill',
   display: 'block',
-  height: '$space$5',
+  height: '$6',
   transform: 'translateX(-2px) ',
   transition: 'transform 100ms',
   width: '$space$5',
@@ -88,11 +88,11 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
   variants: {
     size: {
       '1': {
-        width: '$5',
-        height: '$3',
+        width: '$6',
+        height: '$4',
       },
       '2': {
-        width: '$7',
+        width: '$8',
         height: '$5',
         [`& ${StyledThumb}`]: {
           width: 21,

@@ -4,8 +4,9 @@ const Text = styled('span', {
   // @reset
   lineHeight: '1.2',
   margin: '0',
-  fontWeight: 400,
-  fontVariantNumeric: 'tabular-nums',
+  fontVariationSettings: '"wght" $fontWeights$4',
+  fontWeight: '$4',
+  // fontVariantNumeric: 'tabular-nums',
   display: 'block',
 
   variants: {
@@ -33,17 +34,17 @@ const Text = styled('span', {
       '7': {
         fontSize: '$7',
         letterSpacing: '-.031em',
-        textIndent: '-.005em',
+        // textIndent: '-.005em',
       },
       '8': {
         fontSize: '$8',
         letterSpacing: '-.034em',
-        textIndent: '-.018em',
+        // textIndent: '-.018em',
       },
       '9': {
         fontSize: '$9',
         letterSpacing: '-.055em',
-        textIndent: '-.025em',
+        // textIndent: '-.025em',
       },
     },
     variant: {
@@ -79,14 +80,20 @@ const Text = styled('span', {
       },
     },
     weight: {
-      thin: { fontWeight: 100 },
-      extraLight: { fontWeight: 200 },
-      light: { fontWeight: 300 },
-      normal: { fontWeight: 400 },
-      medium: { fontWeight: 500 },
-      semiBold: { fontWeight: 600 },
-      bold: { fontWeight: 700 },
-      extraBold: { fontWeight: 800 },
+      '1': { fontVariationSettings: '"wght" $fontWeights$1', fontWeight: '$1' },
+      '2': {
+        fontVariationSettings: '"wght" $fontWeights$2',
+        fontWeight: '$2',
+      },
+      '3': { fontVariationSettings: '"wght" $fontWeights$3', fontWeight: '$3' },
+      '4': { fontVariationSettings: '"wght" $fontWeights$4', fontWeight: '$4' },
+      '5': { fontVariationSettings: '"wght" $fontWeights$5', fontWeight: '$5' },
+      '6': { fontVariationSettings: '"wght" $fontWeights$6', fontWeight: '$6' },
+      '7': { fontVariationSettings: '"wght" $fontWeights$7', fontWeight: '$7' },
+      '8': {
+        fontVariationSettings: '"wght" $fontWeights$8',
+        fontWeight: '$8',
+      },
     },
   },
   compoundVariants: [
@@ -124,6 +131,7 @@ const Text = styled('span', {
   defaultVariants: {
     size: '3',
     variant: 'primary',
+    weight: '4',
   },
 })
 

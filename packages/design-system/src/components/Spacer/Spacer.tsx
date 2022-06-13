@@ -12,8 +12,8 @@ const Spacer = () => {
         height: '1px',
         minWidth: '1px',
         minHeight: '1px',
-        ml: 'calc(24px - 1px)',
-        mt: 'calc(24px - 1px)',
+        ml: 'calc(16px - 1px)',
+        mt: 'calc(16px - 1px)',
       }}
     />
   )

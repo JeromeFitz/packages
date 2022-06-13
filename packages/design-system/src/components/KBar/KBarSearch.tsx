@@ -10,7 +10,7 @@ const KBarSearchImpl = ({ ...props }) => {
       css={{
         borderLeftWidth: '$2',
         borderRadius: '$2',
-        ml: '$2',
+        ml: '$3',
       }}
       role="button"
     >
@@ -21,8 +21,8 @@ const KBarSearchImpl = ({ ...props }) => {
           align="center"
           css={{
             '& svg': {
-              height: '$3',
-              width: '$3',
+              height: '$4',
+              width: '$4',
               color: '$hiContrast',
             },
           }}

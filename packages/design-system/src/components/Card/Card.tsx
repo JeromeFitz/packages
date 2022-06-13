@@ -5,7 +5,7 @@ const Card = styled('div', {
   border: 'none',
   boxSizing: 'border-box',
   font: 'inherit',
-  lineHeight: '1',
+  lineHeight: 'inherit',
   outline: 'none',
   padding: 0,
   textAlign: 'inherit',

@@ -88,14 +88,14 @@ const CardSpotify = ({
               bc: '$colors$gray3',
               display: 'flex',
               flexDirection: 'column',
-              px: '$2',
-              py: '$4',
+              px: '$3',
+              py: '$5',
               '@bp1': {
                 borderTopRightRadius: 0,
                 borderBottomRightRadius: 0,
                 width: '40%',
-                px: '$4',
-                py: '$7',
+                px: '$5',
+                py: '$8',
               },
             }}
           >

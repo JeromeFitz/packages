@@ -25,7 +25,8 @@ const Button = styled('button', {
   px: '$2',
   fontFamily: '$untitled',
   fontSize: '$2',
-  fontWeight: 500,
+  fontVariationSettings: '"wght" $fontWeights$5',
+  fontWeight: '$fontWeights$5',
   fontVariantNumeric: 'tabular-nums',
 
   '&:disabled': {

@@ -5,11 +5,11 @@ import { Flex } from '../Flex'
 const css_card = {
   backgroundColor: '$colors$gray4',
   border: '1px solid $colors$brand7',
-  borderRadius: '12px',
+  borderRadius: '$3',
   cursor: 'pointer',
   height: '100%',
   overflow: 'hidden',
-  padding: '$4',
+  padding: '$5',
   position: 'relative',
   width: '100%',
   '@hover': {
@@ -35,7 +35,7 @@ const CardLink = styled('a', {
   right: '0',
   textDecoration: 'none',
   top: '0',
-  zIndex: '10',
+  zIndex: '$1',
   '&:focus': {
     [`* ${Card}`]: {
       backgroundColor: '$colors$gray5',
@@ -45,7 +45,7 @@ const CardLink = styled('a', {
 })
 
 const CardImageContainer = styled(Box, {
-  borderRadius: '12px ',
+  borderRadius: '$3 ',
   position: 'relative ',
   minHeight: 'unset ',
   maxHeight: 'none ',
@@ -54,7 +54,7 @@ const CardImageContainer = styled(Box, {
 })
 
 const CardImage = styled(Box, {
-  borderRadius: '12px ',
+  borderRadius: '$3 ',
   position: 'relative ',
   minHeight: 'unset ',
   maxHeight: 'none ',

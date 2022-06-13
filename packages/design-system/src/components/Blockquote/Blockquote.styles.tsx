@@ -5,7 +5,7 @@ const BlockquoteContent = styled(Box, {
   color: '$colors$primary',
   margin: '0 auto',
   maxWidth: '1020px',
-  padding: '0 var(--space-2)',
+  padding: '0 $3',
   textAlign: 'center',
   width: '100%',
 
@@ -25,8 +25,8 @@ const BlockquoteWrapper = styled('blockquote', {
   right: '50%',
   width: '100vw',
 
-  paddingTop: '$space$7',
-  paddingBottom: '$space$7',
+  paddingTop: '$8',
+  paddingBottom: '$8',
 
   background: '$colors$emphasis',
   backdropFilter: 'blur(6px)',

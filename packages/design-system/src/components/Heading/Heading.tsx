@@ -26,28 +26,24 @@ const Heading = React.forwardRef<React.ElementRef<typeof DEFAULT_TAG>, HeadingPr
     // This is the mapping of Heading Variants to Text css
     const textCss: Record<HeadingSizeVariants, CSS> = {
       1: {
-        fontWeight: 700,
         letterSpacing: '-0.02em',
-        lineHeight: '20px',
-        '@bp2': { lineHeight: '23px' },
+        lineHeight: '1',
+        '@bp2': { lineHeight: '1.25' },
       },
       2: {
-        fontWeight: 700,
         letterSpacing: '-0.03em',
-        lineHeight: '25px',
-        '@bp2': { lineHeight: '30px' },
+        lineHeight: '1',
+        '@bp2': { lineHeight: '1.25' },
       },
       3: {
-        fontWeight: 700,
         letterSpacing: '-0.04em',
-        lineHeight: '33px',
-        '@bp2': { lineHeight: '41px' },
+        lineHeight: '1.125',
+        '@bp2': { lineHeight: '1.5' },
       },
       4: {
-        fontWeight: 700,
         letterSpacing: '-0.05em',
-        lineHeight: '35px',
-        '@bp2': { lineHeight: '55px' },
+        lineHeight: '1.125',
+        '@bp2': { lineHeight: '1.5' },
       },
     }
 
@@ -58,7 +54,9 @@ const Heading = React.forwardRef<React.ElementRef<typeof DEFAULT_TAG>, HeadingPr
         ref={forwardedRef}
         size={textSize[size]}
         css={{
-          fontVariantNumeric: 'proportional-nums',
+          // fontVariantNumeric: 'proportional-nums',
+          fontVariationSettings: '"wght" $fontWeights$7',
+          fontWeight: '$fontWeights$7',
           ...merge(textCss[size], props.css),
         }}
       />

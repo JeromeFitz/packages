@@ -64,6 +64,7 @@ const commit: ICommit[] = [
   'seed',
   'seo',
   'snapshot',
+  'sponsor',
   'style',
   'test',
   'test-fail',

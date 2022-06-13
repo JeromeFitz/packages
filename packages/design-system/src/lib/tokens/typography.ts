@@ -36,28 +36,12 @@ const fallbacks = {
   ].join(','),
 }
 
-// const mono = [...fallbacks.mono].join(',')
-// const sans = [...fallbacks.sans].join(',')
-// const serif = [...fallbacks.serif].join(',')
-
-/**
- * @fonts custom: unused
- */
-// const f37bella = ['"F37 Bella"', ...fontFamily.serif].join(',')
-// const f37bolton = ['"F37 Bolton"', ...fontFamily.sans].join(',')
-// const f37ginger = ['"F37 Ginger"', ...fontFamily.sans].join(',')
-// const f37gingerRound = ['"F37 Ginger Round"', ...fontFamily.sans].join(',')
-// const iiIncrementalSans = ['II Incremental Sans', ...fontFamily.sans].join(',')
-// const iiVorkurs = ['II Vorkurs', ...fontFamily.sans].join(',')
-// const inter = ['Inter', ...fontFamily.sans].join(',')
-// const name = ['"Name Sans"', ...fontFamily.sans].join(',')
-
 const fonts = {
   'fallback-mono': fallbacks.mono,
   'fallback-sans': fallbacks.sans,
   'fallback-serif': fallbacks.serif,
   mono: '$fallback-mono',
-  sans: 'Inter, $fallback-sans',
+  sans: '$fallback-sans',
   serif: '$fallback-serif',
 }
 

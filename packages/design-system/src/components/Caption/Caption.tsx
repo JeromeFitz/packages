@@ -5,10 +5,10 @@ const Caption = ({ children }) => {
     <Text
       as="p"
       css={{
-        fontSize: '$2',
-        lineHeight: '1.25',
-        ml: '$1',
-        py: '$3',
+        fontSize: '$1',
+        lineHeight: '1.125',
+        ml: '$2',
+        py: '$4',
       }}
     >
       {children}
