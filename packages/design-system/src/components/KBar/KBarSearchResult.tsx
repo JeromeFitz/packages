@@ -12,7 +12,7 @@ const KBarSearchResult = ({ active, item }: KBarSearchResultProps) => {
 
   if (typeof item == 'string') {
     return (
-      <Box css={{ mt: '$1', pt: '$1', mb: '$3', pb: '$3', px: '$2' }}>
+      <Box css={{ mt: '$2', pt: '$2', mb: '$4', pb: '$4', px: '$3' }}>
         <Text
           size="1"
           css={{ color: '$hiContrast', textTransform: 'uppercase' }}
@@ -27,8 +27,8 @@ const KBarSearchResult = ({ active, item }: KBarSearchResultProps) => {
   return (
     <Box
       css={{
-        py: '$2',
-        px: '$2',
+        py: '$3',
+        px: '$3',
         borderLeftWidth: '$2',
         cursor: 'pointer',
         // background: active ? '$colors$gray8' : 'transparent',
@@ -48,8 +48,8 @@ const KBarSearchResult = ({ active, item }: KBarSearchResultProps) => {
                 minWidth: '2rem',
               },
               '& svg': {
-                height: '$3',
-                width: '$3',
+                height: '$4',
+                width: '$4',
                 color: '$hiContrast',
               },
             }}
@@ -91,7 +91,7 @@ const KBarSearchResult = ({ active, item }: KBarSearchResultProps) => {
               // },
             }}
             size="3"
-            weight="bold"
+            weight="7"
           >
             {item.name}
           </Text>
@@ -109,7 +109,7 @@ const KBarSearchResult = ({ active, item }: KBarSearchResultProps) => {
                 css={{
                   color: '$hiContrast',
                   fontFamily: '$mono',
-                  my: '$1',
+                  my: '$3',
                   display: 'none',
                   '@bp1': { display: 'inline-flex' },
                   // @todo(design-system) turn this into variant "truncate"
@@ -141,8 +141,7 @@ const KBarSearchResult = ({ active, item }: KBarSearchResultProps) => {
                   cursor: 'inherit',
                   fontFamily: '$mono',
                   fontSize: '$1',
-                  // fontWeight: 700,
-                  py: '$2',
+                  py: '$3',
                 }}
               >
                 {key}
@@ -160,6 +159,7 @@ const KBarSearchResult = ({ active, item }: KBarSearchResultProps) => {
             height: '100%',
             justifyContent: 'flex-end',
             left: '1px',
+            top: '1px',
             width: '99%',
             '& svg': {
               display: 'none',

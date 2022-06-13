@@ -18,7 +18,8 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
   margin: '0',
   outline: 'none',
   padding: '0',
-  fontWeight: '700' as any,
+  fontVariationSettings: '"wght" $fontWeights$7',
+  fontWeight: '$fontWeights$7' as any,
   color: '$hiContrast',
 
   '&::before': {
@@ -138,8 +139,8 @@ const StyledAvatarFallback = styled(AvatarPrimitive.Fallback, {
   variants: {
     size: {
       '1': {
-        fontSize: '10px',
-        lineHeight: '15px',
+        fontSize: '$1',
+        lineHeight: '0.75rem',
       },
       '2': {
         fontSize: '$3',

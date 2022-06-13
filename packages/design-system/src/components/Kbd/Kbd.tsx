@@ -19,27 +19,28 @@ const Kbd = styled('kbd', {
     0 1px $colors$slate8`,
   textShadow: '0 0 1px rgba(255, 255, 255, 0.5)',
   fontFamily: 'inherit',
-  fontWeight: 400,
+  fontVariationSettings: '"wght" $fontWeights$4',
+  fontWeight: '$fontWeights$4',
   lineHeight: '1.5',
-  mx: '2px',
+  mx: '$1',
 
   variants: {
     size: {
       '1': {
         borderRadius: '$1',
-        px: '0.3em',
-        height: '$3',
+        px: '$2',
+        height: '$4',
         minWidth: '1.6em',
         fontSize: '$1',
-        lineHeight: '$spaces$3',
+        lineHeight: '$spaces$4',
       },
       '2': {
         borderRadius: '$2',
-        px: '0.5em',
-        height: '$5',
+        px: '$3',
+        height: '$6',
         minWidth: '2em',
         fontSize: '$2',
-        lineHeight: '$spaces$5',
+        lineHeight: '$spaces$6',
       },
     },
     width: {

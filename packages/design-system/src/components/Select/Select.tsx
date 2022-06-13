@@ -15,7 +15,7 @@ const StyledTrigger = styled(SelectPrimitive.SelectTrigger, {
   display: 'inline-flex',
   fontSize: '0.8125rem',
   gap: '$2',
-  height: '2rem',
+  height: '$7',
   justifyContent: 'center',
   lineHeight: 1,
   padding: '0 1rem',
@@ -32,20 +32,20 @@ const StyledContent = styled(SelectPrimitive.Content, {
 })
 
 const StyledViewport = styled(SelectPrimitive.Viewport, {
-  padding: '$1',
+  padding: '$2',
 })
 
 const StyledItem = styled(SelectPrimitive.Item, {
   all: 'unset',
   alignItems: 'center',
-  borderRadius: 3,
+  borderRadius: '$0',
   color: '$colors$brand11',
   display: 'flex',
-  fontSize: '0.75rem',
+  fontSize: '$2',
   height: '1.5rem',
   lineHeight: 1,
-  padding: '0 $5 0 $5',
-  my: '$1',
+  padding: '0 $6 0 $6',
+  my: '$2',
   position: 'relative',
   userSelect: 'none',
 
@@ -63,18 +63,19 @@ const StyledItem = styled(SelectPrimitive.Item, {
 const StyledLabel = styled(SelectPrimitive.Label, {
   color: '$colors$brand12',
   // fontFamily: '$mono',
-  fontSize: '0.75rem',
-  fontWeight: 700,
+  fontSize: '$2',
+  fontVariationSettings: '"wght" $fontWeights$7',
+  fontWeight: '$fontWeights$7',
   lineHeight: 1.5,
-  padding: '0 $5 0 $5',
-  my: '$1',
+  padding: '0 $6 0 $6',
+  my: '$2',
   // textTransform: 'uppercase',
 })
 
 const StyledSeparator = styled(SelectPrimitive.Separator, {
   backgroundColor: '$colors$brand6',
   height: 1,
-  margin: '$2',
+  margin: '$3',
 })
 
 const StyledItemIndicator = styled(SelectPrimitive.ItemIndicator, {

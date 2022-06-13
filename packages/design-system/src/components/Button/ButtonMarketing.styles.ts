@@ -9,13 +9,14 @@ const StyledButton = styled('button', {
   WebkitTapHighlightColor: 'rgba(0,0,0,0)',
 
   // @custom
-  height: '$7',
-  px: '$4',
-  fontFamily: '$untitled',
-  fontWeight: 500,
+  height: '$8',
+  px: '$5',
+  fontFamily: '$mono',
+  fontVariationSettings: '"wght" $fontWeights$5',
+  fontWeight: '$fontWeights$5',
   borderRadius: '$2',
   fontSize: '$3',
-  lineHeight: '$sizes$7',
+  lineHeight: '$sizes$8',
 
   '&:disabled': {
     bc: '$slate2',

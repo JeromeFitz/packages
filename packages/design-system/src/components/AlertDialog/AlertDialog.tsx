@@ -54,14 +54,15 @@ const StyledContent = styled(AlertDialogPrimitive.Content, {
 const StyledTitle = styled(AlertDialogPrimitive.Title, {
   margin: 0,
   color: '$colores$slate12',
-  fontSize: 17,
-  fontWeight: 500,
+  fontSize: '$3',
+  fontVariationSettings: '"wght" $fontWeights$5',
+  fontWeight: '$fontWeights$5',
 })
 
 const StyledDescription = styled(AlertDialogPrimitive.Description, {
   marginBottom: 20,
   color: '$colores$slate11',
-  fontSize: 15,
+  fontSize: '$3',
   lineHeight: 1.5,
 })
 
@@ -74,9 +75,10 @@ const Button = styled('button', {
   justifyContent: 'center',
   borderRadius: 4,
   padding: '0 15px',
-  fontSize: 15,
+  fontSize: '$3',
   lineHeight: 1,
-  fontWeight: 500,
+  fontVariationSettings: '"wght" $fontWeights$5',
+  fontWeight: '$fontWeights$5',
   height: 35,
 
   variants: {

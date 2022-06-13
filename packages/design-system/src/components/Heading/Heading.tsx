@@ -27,23 +27,23 @@ const Heading = React.forwardRef<React.ElementRef<typeof DEFAULT_TAG>, HeadingPr
     const textCss: Record<HeadingSizeVariants, CSS> = {
       1: {
         letterSpacing: '-0.02em',
-        lineHeight: '1.125',
+        lineHeight: '1',
         '@bp2': { lineHeight: '1.25' },
       },
       2: {
         letterSpacing: '-0.03em',
-        lineHeight: '1.5',
-        '@bp2': { lineHeight: '1.85' },
+        lineHeight: '1',
+        '@bp2': { lineHeight: '1.25' },
       },
       3: {
         letterSpacing: '-0.04em',
-        lineHeight: '1.75',
-        '@bp2': { lineHeight: '1.85' },
+        lineHeight: '1.125',
+        '@bp2': { lineHeight: '1.5' },
       },
       4: {
         letterSpacing: '-0.05em',
-        lineHeight: '1.75',
-        '@bp2': { lineHeight: '2' },
+        lineHeight: '1.125',
+        '@bp2': { lineHeight: '1.5' },
       },
     }
 
