@@ -16,7 +16,7 @@ const KBarSearchResult = ({ active, item }: KBarSearchResultProps) => {
         <Text
           size="1"
           css={{ color: '$hiContrast', textTransform: 'uppercase' }}
-          weight="semiBold"
+          weight="6"
         >
           {item}
         </Text>

@@ -19,19 +19,19 @@ const KBarDefault = () => {
   return (
     <>
       <KBarPortal>
-        <Box css={{ py: '$1', px: '$2' }} ref={trap}>
+        <Box css={{ py: '$2', px: '$3' }} ref={trap}>
           {/* <KBarSubscriptions /> */}
           <KBarSearch />
         </Box>
         <Separator decorative my="2" size="full" />
-        <Box css={{ px: '$2' }}>
+        <Box css={{ px: '$3' }}>
           <KBarSearchResults />
         </Box>
         <Box css={{ display: 'none', '@bp1': { display: 'block' } }}>
           <Separator decorative my="2" size="full" />
           <KBarFooter />
         </Box>
-        <Box css={{ py: '$2' }} />
+        <Box css={{ py: '$3' }} />
       </KBarPortal>
     </>
   )
