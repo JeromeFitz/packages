@@ -38,8 +38,8 @@ const itemCss = {
   height: '$5',
   color: '$hiContrast',
   minWidth: 90,
-  pl: '$4',
-  pr: '$3',
+  pl: '$5',
+  pr: '$4',
   br: '$1',
 
   '&[data-state="open"]': {

@@ -45,12 +45,12 @@ const Badge = styled('span', {
     size: {
       '1': {
         height: '$4',
-        px: '$1',
+        px: '$2',
         fontSize: '$1',
       },
       '2': {
         height: '$5',
-        px: '$2',
+        px: '$3',
         fontSize: '$2',
       },
     },

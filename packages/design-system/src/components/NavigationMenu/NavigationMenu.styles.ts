@@ -52,28 +52,29 @@ const StyledMenu = styled(NavigationMenuPrimitive.Root, {
   display: 'flex',
   justifyContent: 'center',
   width: '100%',
-  zIndex: 1,
+  zIndex: '$1',
 })
 
 const StyledList = styled(NavigationMenuPrimitive.List, {
   all: 'unset',
   backgroundColor: 'inherit',
-  borderRadius: 6,
+  borderRadius: '$1',
   // boxShadow: `0 2px 10px $colors$shadow`,
   display: 'flex',
   justifyContent: 'center',
   listStyle: 'none',
-  padding: 6,
+  padding: '$3',
 })
 
 const itemStyles = {
-  borderRadius: 4,
+  borderRadius: '$0',
   color: '$colors$primary',
-  fontSize: 15,
-  fontWeight: 500,
+  fontSize: '$2',
+  fontWeight: '$5',
+  fontVariationSettings: '"wght" $fontWeights$5',
   lineHeight: 1,
   outline: 'none',
-  padding: '8px 12px',
+  padding: '$4 $3',
   userSelect: 'none',
   /**
    * @note(hoverState)
@@ -96,7 +97,7 @@ const StyledTrigger = styled(NavigationMenuPrimitive.Trigger, {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  gap: 2,
+  gap: '$2',
   '&:hover': { cursor: 'pointer' },
   // @note(hoverState)
   '&[data-state="open"]': { backgroundColor: '$colors$focusBackground' },
@@ -123,7 +124,7 @@ const StyledLink = styled(NavigationMenuPrimitive.Link, {
   ...itemStyles,
   display: 'block',
   textDecoration: 'none',
-  fontSize: 15,
+  fontSize: '$2',
   lineHeight: 1,
   // @note(hoverState)
   '&:focus': {
@@ -145,13 +146,13 @@ const StyledLink = styled(NavigationMenuPrimitive.Link, {
 
         span: {
           position: 'relative',
-          left: '4px',
+          left: '$2',
           right: 0,
-          top: '6px',
+          top: '$3',
           bottom: 0,
-          zIndex: 1,
+          zIndex: '$1',
           userSelect: 'none',
-          fontSize: '1rem',
+          fontSize: '$3',
           // color: 'yellow',
           // // @todo(design-system) turn this into variant "truncate"
           // maxHeight: '26px',
@@ -199,10 +200,10 @@ const StyledIndicator = styled(NavigationMenuPrimitive.Indicator, {
   display: 'flex',
   alignItems: 'flex-end',
   justifyContent: 'center',
-  height: 10,
+  height: '$4',
   top: '100%',
   overflow: 'hidden',
-  zIndex: 1,
+  zIndex: '$1',
 
   '@media (prefers-reduced-motion: no-preference)': {
     transition: 'width, transform 250ms ease',
@@ -219,7 +220,7 @@ const StyledArrow = styled('div', {
   width: 10,
   height: 10,
   transform: 'rotate(45deg)',
-  borderTopLeftRadius: 2,
+  borderTopLeftRadius: '$0',
 })
 
 // const StyledIndicator = styled(NavigationMenuPrimitive.Indicator, {
@@ -239,10 +240,10 @@ const StyledArrow = styled('div', {
 
 const StyledViewport = styled(NavigationMenuPrimitive.Viewport, {
   backgroundColor: 'inherit',
-  borderRadius: 6,
+  borderRadius: '$1',
   boxShadow: `0 2px 10px $colors$shadow`,
   height: 'var(--radix-navigation-menu-viewport-height)',
-  marginTop: 10,
+  marginTop: '$4',
   /**
    * @note(radix-ui) driving force behind animation
    * of NavigationMenuPrimitive.Content
@@ -282,9 +283,9 @@ const NavigationMenuListContent = styled('ul', {
   display: 'grid',
   listStyle: 'none',
   margin: 0,
-  p: '$2',
+  p: '$3 $3 $4',
   '@bp1': {
-    p: '$3',
+    p: '$4 $4 $5',
   },
   '@media (prefers-reduced-motion: no-preference)': {
     transition: 'all 250ms ease',
@@ -318,8 +319,7 @@ const NavigationMenuListContent = styled('ul', {
 
 const NavigationMenuListItem = styled('li', {
   borderRadius: '$2',
-  py: '$1',
-  px: '0',
+  padding: '$2 0',
   m: '0',
   '@media (prefers-reduced-motion: no-preference)': {
     transition: 'all 250ms ease',
@@ -330,7 +330,7 @@ const NavigationMenuListItemLink = styled(NavigationMenuPrimitive.Link, {
   ...itemStyles,
   display: 'block',
   textDecoration: 'none',
-  fontSize: 15,
+  fontSize: '$2',
   lineHeight: 1,
   // @note(hoverState)
   '&:focus': {
@@ -352,11 +352,11 @@ const NavigationMenuListItemLink = styled(NavigationMenuPrimitive.Link, {
 
         span: {
           position: 'relative',
-          left: '4px',
+          left: '$2',
           right: 0,
-          top: '6px',
+          top: '$3',
           bottom: 0,
-          zIndex: 1,
+          zIndex: '$1',
           userSelect: 'none',
           fontSize: '1rem',
           // color: 'yellow',
@@ -385,18 +385,20 @@ const NavigationMenuListItemLink = styled(NavigationMenuPrimitive.Link, {
   },
 })
 
-const NavigationMenuLinkTitle = styled('div', {
+const NavigationMenuLinkTitle = styled('p', {
   color: '$colors$primary',
-  fontWeight: 500,
+  fontWeight: '$6',
+  fontVariationSettings: '"wght" $fontWeights$6',
   lineHeight: 1.2,
-  marginBottom: 5,
+  marginBottom: '$2',
 })
 
 const NavigationMenuLinkText = styled('p', {
   all: 'unset',
   color: '$colors$secondary',
-  fontWeight: 'initial',
-  lineHeight: 1.4,
+  fontWeight: '$4',
+  fontVariationSettings: '"wght" $fontWeights$4',
+  lineHeight: 1.25,
   //
   // maxHeight: '1rem',
   // overflow: 'hidden',
@@ -416,7 +418,7 @@ const NavigationMenuViewportPosition = styled('div', {
 
 const NavigationMenuListItemFocus = styled(motion.div, {
   position: 'absolute',
-  top: '-3px',
+  top: '12px',
   left: '-3px',
   // bottom: '-2px',
   // right: 0,
@@ -424,7 +426,7 @@ const NavigationMenuListItemFocus = styled(motion.div, {
   height: '110%',
 
   borderRadius: '$2',
-  zIndex: 0,
+  zIndex: '$0',
   // @note(hoverState)
   background: '$colors$hoverBackground',
   variants: {
@@ -445,7 +447,7 @@ const NavigationMenuListItemFocus = styled(motion.div, {
 
 const NavigationMenuListItemSelect = styled(motion.div, {
   position: 'absolute',
-  top: '-3px',
+  top: '12px',
   left: '-3px',
   // bottom: '-2px',
   // left: '-10px',
@@ -454,8 +456,8 @@ const NavigationMenuListItemSelect = styled(motion.div, {
   height: '110%',
   background: 'transparent',
   border: '2px solid $colors$tertiary',
-  borderRadius: '8px',
-  zIndex: 1,
+  borderRadius: '$2',
+  zIndex: '$1',
 })
 
 export {

@@ -67,7 +67,7 @@ const Link = styled('a', {
       text: {
         border: 'none',
         flexShrink: 0,
-        gap: '$1',
+        gap: '$2',
         lineHeight: 'inherit',
         '@hover': {
           '&:hover': {
@@ -96,11 +96,11 @@ const Link = styled('a', {
         color: 'inherit',
         display: 'flex',
         outline: 0,
-        margin: '0 -$1',
+        margin: '0 -$2',
         '& + &': {
-          marginTop: '$2',
+          marginTop: '$3',
         },
-        padding: '0 $1',
+        padding: '0 $2',
         '@hover': {
           '&:hover': {
             textDecorationLine: 'underline',
