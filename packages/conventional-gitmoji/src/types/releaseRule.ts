@@ -631,6 +631,16 @@ const releaseRule: IReleaseRule = {
     name: 'camera-flash',
     semver: null,
   },
+  sponsor: {
+    branch: null,
+    code: ':money_with_wings:',
+    commit: 'sponsor',
+    description: 'Add sponsorships or money related infrastructure.',
+    emoji: '💸',
+    entity: '&#x1f4b8;',
+    name: 'money-with-wings',
+    semver: null,
+  },
   style: {
     branch: null,
     code: ':art:',
