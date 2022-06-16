@@ -93,7 +93,7 @@
     "@radix-ui/react-use-rect": "0.1.2-rc.34",
     "@radix-ui/react-use-size": "0.1.2-rc.34",
     "@radix-ui/react-visually-hidden": "0.1.5-rc.34",
-    "@react-aria/interactions": "3.9.0",
+    "@react-aria/interactions": "3.9.1",
     "@stitches/react": "1.2.8",
     "emoji-regex": "10.1.0",
     "node-emoji": "1.11.0",
