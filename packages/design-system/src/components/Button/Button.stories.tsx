@@ -1,12 +1,23 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { Button } from './Button'
+import mdx from './Button.mdx'
 
 const buttonText = 'Default Button Text'
 
 export default {
   title: 'Button',
   component: Button,
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'Hrm, I can see why people like **MDX** for _this_. Is there a way for both worlds?',
+        // story: 'This would (will) repeat for each Component w/in Story',
+      },
+      page: mdx,
+    },
+  },
   argTypes: {
     as: {
       control: false,
@@ -49,6 +60,13 @@ Default.args = {}
 
 export const Brand = Template.bind({})
 Brand.args = { children: 'Custom Brand Button', variant: 'brand' }
+Brand.parameters = {
+  docs: {
+    description: {
+      story: 'Custom Description for **Brand**',
+    },
+  },
+}
 
 export const Ghost = Template.bind({})
 Ghost.args = { ghost: true }

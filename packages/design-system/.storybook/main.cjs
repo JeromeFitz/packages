@@ -6,7 +6,7 @@ module.exports = {
     builder: '@storybook/builder-vite',
   },
   framework: '@storybook/react',
-  stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.tsx'],
+  stories: ['../src/**/*.stories.tsx'],
   async viteFinal(config, { configType }) {
     return {
       ...config,
