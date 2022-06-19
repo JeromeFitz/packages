@@ -37,7 +37,7 @@
     "semantic-release:mono": "semantic-release -e semantic-release-monorepo"
   },
   "dependencies": {
-    "lint-staged": "13.0.1"
+    "lint-staged": "13.0.2"
   },
   "type": "module",
   "sideEffects": false,
