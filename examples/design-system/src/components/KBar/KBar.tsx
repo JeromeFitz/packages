@@ -30,12 +30,12 @@ const KBar = () => {
         {/* <KBarSubscriptions /> */}
         <KBarSearch />
       </Box>
-      <Separator decorative margin="my2" size="full" />
+      <Separator decorative my="my2" size="full" />
       <Box css={{ px: '$2' }}>
         <KBarSearchResults />
       </Box>
       <Box css={{ display: 'none', '@bp1': { display: 'block' } }}>
-        <Separator decorative margin="my2" size="full" />
+        <Separator decorative my="my2" size="full" />
         <KBarFooter />
       </Box>
       <Box css={{ py: '$2' }} />

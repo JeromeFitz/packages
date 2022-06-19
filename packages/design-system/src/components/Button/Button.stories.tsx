@@ -1,6 +1,8 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { Button } from './Button'
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import mdx from './Button.mdx'
 
 const buttonText = 'Default Button Text'

@@ -22,7 +22,7 @@ const SheetContent = React.forwardRef<
   React.ElementRef<typeof StyledContent>,
   SheetContentProps
 >(({ children, ...props }, forwardedRef) => (
-  <DialogPrimitive.Portal>
+  <DialogPrimitive.Portal forceMount>
     <StyledContent {...props} ref={forwardedRef}>
       {children}
       {/* <StyledCloseButton asChild>

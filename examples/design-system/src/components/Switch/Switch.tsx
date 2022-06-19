@@ -26,7 +26,7 @@ const SwitchImpl = () => {
         iconOn={<Icon.Moon />}
         iconOff={<Icon.Sun />}
       />
-      <Separator decorative margin="my3" size="full" />
+      <Separator decorative my="my3" size="full" />
       <SwitchIcon
         checked={theme === 'dark'}
         onCheckedChange={() => handleThemeToggle()}
@@ -36,9 +36,9 @@ const SwitchImpl = () => {
         // @ts-ignore
         size="4"
       />
-      <Separator decorative margin="my3" size="full" />
+      <Separator decorative my="my3" size="full" />
       <Switch />
-      <Separator decorative margin="my3" size="full" />
+      <Separator decorative my="my3" size="full" />
     </>
   )
 }

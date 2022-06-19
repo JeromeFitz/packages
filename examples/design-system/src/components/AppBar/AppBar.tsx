@@ -97,7 +97,7 @@ const _AppBar = ({}) => {
                 side="bottom"
               >
                 <Heading size="3">Menu</Heading>
-                <Separator decorative margin="my3" size="full" />
+                <Separator decorative my="my3" size="full" />
                 <Text>Hello.</Text>
               </SheetContent>
               {/* </Portal.Root> */}
