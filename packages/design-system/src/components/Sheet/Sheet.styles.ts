@@ -51,6 +51,8 @@ const StyledContent = styled(DialogPrimitive.Content, {
   position: 'fixed',
   top: 0,
   bottom: 0,
+  width: '90%',
+  zIndex: '$toast',
 
   // background: '$panel',
   // borderColor: '$panel',

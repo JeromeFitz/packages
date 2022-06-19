@@ -120,13 +120,13 @@ const ToastDemo = () => {
   return (
     <>
       <Toaster ref={toaster} />
-      <Separator decorative my="my3" size="full" />
+      <Separator decorative my="3" size="full" />
 
       <>
         <Heading css={{ mb: '$4' }} size="3">
           🍞️ Toast
         </Heading>
-        <Separator decorative my="my3" size="full" />
+        <Separator decorative my="3" size="full" />
         <Heading css={{ mb: '$4' }} size="2">
           📦️ Default
         </Heading>
@@ -146,7 +146,7 @@ const ToastDemo = () => {
             </React.Fragment>
           )
         })}
-        <Separator decorative my="my3" size="full" />
+        <Separator decorative my="3" size="full" />
         <Heading css={{ mb: '$4' }} size="2">
           🎛️ Custom
         </Heading>
