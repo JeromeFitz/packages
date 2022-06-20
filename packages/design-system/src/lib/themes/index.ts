@@ -191,6 +191,16 @@ const themes: Themes = {
       warningBorder: '$colors$orange6',
       warningText: '$colors$orange11',
       warningTextHover: '$colors$orange12',
+      // quote
+      quote: '$colors$brand11',
+      quoteHover: '$colors$brand10',
+      quoteEmphasis: '$colors$brand9',
+      quoteEmphasisHover: '$colors$brand8',
+      quoteBackground: '$colors$brand3',
+      quoteBackgroundHover: '$colors$brand4',
+      quoteBorder: '$colors$brand6',
+      quoteText: '$colors$brand11',
+      quoteTextHover: '$colors$brand12',
 
       // Typeface
       typefacePrimary: '$colors$slate12',
@@ -285,6 +295,16 @@ const themes: Themes = {
       warningBorder: '$colors$orange6',
       warningText: '$colors$orange11',
       warningTextHover: '$colors$orange12',
+      // quote
+      quote: '$colors$brand11',
+      quoteHover: '$colors$brand10',
+      quoteEmphasis: '$colors$brand9',
+      quoteEmphasisHover: '$colors$brand8',
+      quoteBackground: '$colors$brand3',
+      quoteBackgroundHover: '$colors$brand4',
+      quoteBorder: '$colors$brand6',
+      quoteText: '$colors$brand11',
+      quoteTextHover: '$colors$brand12',
 
       // Typeface
       typefacePrimary: '$colors$slate12',

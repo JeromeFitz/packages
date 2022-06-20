@@ -53,6 +53,7 @@ import {
   MoonIcon as MoonIconRadix,
   Pencil1Icon as Pencil1IconRadix,
   Pencil2Icon as Pencil2IconRadix,
+  QuoteIcon as QuoteIconRadix,
   Share1Icon as Share1IconRadix,
   SpeakerModerateIcon as SpeakerModerateIconRadix,
   SpeakerOffIcon as SpeakerOffIconRadix,
@@ -621,6 +622,17 @@ const Pencil2Icon = ({ label, ...props }: IconProps) => (
   </AccessibleIcon>
 )
 
+const QuoteIcon = ({ label, ...props }: IconProps) => (
+  <AccessibleIcon
+    label={
+      label ||
+      'An icon representing a quotation mark. An outline of a two quotation marks that would typically end a quote..'
+    }
+  >
+    <Box as={QuoteIconRadix} {...props} />
+  </AccessibleIcon>
+)
+
 const ReplyIcon = ({ css, label, style, ...props }: IconProps) => (
   <AccessibleIcon
     label={
@@ -873,6 +885,7 @@ export {
   MusicNoteIcon,
   Pencil1Icon,
   Pencil2Icon,
+  QuoteIcon,
   ReplyIcon,
   ReturnIcon,
   Share1Icon,

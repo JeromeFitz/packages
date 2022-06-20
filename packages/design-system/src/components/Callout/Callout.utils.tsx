@@ -15,6 +15,8 @@ const getVariantIcon = (variant: CalloutVariant): React.ReactNode => {
       return <Icon.Success />
     case 'warning':
       return <Icon.Warning />
+    case 'quote':
+      return <Icon.Quote />
   }
 }
 

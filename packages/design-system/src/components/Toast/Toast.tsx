@@ -66,41 +66,40 @@ const StyledToast = styled(ToastPrimitive.Root, {
   variants: {
     variant: {
       error: {
-        backgroundColor: '$colors$error',
+        backgroundColor: '$colors$errorBackground',
         borderColor: '$colors$errorEmphasis',
         color: '$colors$errorText',
         '&:hover': {
-          backgroundColor: '$colors$errorHover',
+          backgroundColor: '$colors$errorBackgroundHover',
           borderColor: '$colors$errorEmphasisHover',
           color: '$colors$errorTextHover',
         },
       },
       info: {
-        backgroundColor: '$colors$info',
-        borderColor: '$colors$infoEmphasis',
+        backgroundColor: '$colors$infoBackground',
         color: '$colors$infoText',
         '&:hover': {
-          backgroundColor: '$colors$infoHover',
+          backgroundColor: '$colors$infoBackgroundHover',
           borderColor: '$colors$infoEmphasisHover',
           color: '$colors$infoTextHover',
         },
       },
       success: {
-        backgroundColor: '$colors$success',
+        backgroundColor: '$colors$successBackground',
         borderColor: '$colors$successEmphasis',
         color: '$colors$successText',
         '&:hover': {
-          backgroundColor: '$colors$successHover',
+          backgroundColor: '$colors$successBackgroundHover',
           borderColor: '$colors$successEmphasisHover',
           color: '$colors$successTextHover',
         },
       },
       warning: {
-        backgroundColor: '$colors$warning',
+        backgroundColor: '$colors$warningBackground',
         borderColor: '$colors$warningEmphasis',
         color: '$colors$warningText',
         '&:hover': {
-          backgroundColor: '$colors$warningHover',
+          backgroundColor: '$colors$warningBackgroundHover',
           borderColor: '$colors$warningEmphasisHover',
           color: '$colors$warningTextHover',
         },

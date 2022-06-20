@@ -3,31 +3,37 @@ import { styled } from '../../lib/stitches.config'
 const StyledCalloutIconWrapper = styled('div', {
   position: 'absolute',
   display: 'flex',
-  top: '-24px',
-  right: '-16px',
+  top: '-12px',
+  left: '-8px',
   borderRadius: '50%',
   padding: '4px',
-  color: '$colors$body',
-  border: '2px solid $colors$body',
+  color: '$colors$typefacePrimary',
+  border: '1.75px solid $colors$body',
   background: 'var(--icon-background, $colors$body)',
 
   variants: {
     variant: {
       error: {
-        '--icon-background': '$colors$error',
-        border: '2px solid $colors$errorEmphasis',
+        '--icon-background': '$colors$errorBackground',
+        border: '1.75px solid $colors$errorEmphasis',
       },
       info: {
-        '--icon-background': '$colors$info',
-        border: '2px solid $colors$infoEmphasis',
+        '--icon-background': '$colors$infoBackground',
+        border: '1.75px solid $colors$infoEmphasis',
       },
       success: {
-        '--icon-background': '$colors$success',
-        border: '2px solid $colors$successEmphasis',
+        '--icon-background': '$colors$successBackground',
+        border: '1.75px solid $colors$successEmphasis',
       },
       warning: {
-        '--icon-background': '$colors$warning',
-        border: '2px solid $colors$warningEmphasis',
+        '--icon-background': '$colors$warningBackground',
+        border: '1.75px solid $colors$warningEmphasis',
+        color: '$colors$warningText',
+      },
+      quote: {
+        '--icon-background': '$colors$quoteBackground',
+        border: '1.75px solid $colors$quoteEmphasis',
+        color: '$colors$quoteText',
       },
     },
   },
@@ -36,8 +42,8 @@ const StyledCalloutIconWrapper = styled('div', {
 const StyledCalloutLabelWrapper = styled('div', {
   position: 'absolute',
   display: 'flex',
-  top: '-24px',
-  right: '-8px',
+  top: '-12px',
+  left: '-4px',
   borderRadius: '$radii$1',
   padding: '8px',
   color: '$colors$body',
@@ -49,16 +55,19 @@ const StyledCalloutLabelWrapper = styled('div', {
   variants: {
     variant: {
       error: {
-        '--icon-background': '$colors$error',
+        '--icon-background': '$colors$errorBackground',
       },
       info: {
-        '--icon-background': '$colors$info',
+        '--icon-background': '$colors$infoBackground',
       },
       success: {
-        '--icon-background': '$colors$success',
+        '--icon-background': '$colors$successBackground',
       },
       warning: {
-        '--icon-background': '$colors$warning',
+        '--icon-background': '$colors$warningBackground',
+      },
+      quote: {
+        '--icon-background': '$colors$quoteBackground',
       },
     },
   },
@@ -80,20 +89,24 @@ const StyledCallout = styled('aside', {
   variants: {
     variant: {
       error: {
-        '--callout-background': '$colors$error',
+        '--callout-background': '$colors$errorBackground',
         border: '1px solid $colors$errorEmpahsis',
       },
       info: {
-        '--callout-background': '$colors$info',
+        '--callout-background': '$colors$infoBackground',
         border: '1px solid $colors$infoEmpahsis',
       },
       success: {
-        '--callout-background': '$colors$success',
+        '--callout-background': '$colors$successBackground',
         border: '1px solid $colors$successEmpahsis',
       },
       warning: {
-        '--callout-background': '$colors$warning',
+        '--callout-background': '$colors$warningBackground',
         border: '1px solid $colors$warningEmpahsis',
+      },
+      quote: {
+        '--callout-background': '$colors$quoteBackground',
+        border: '1px solid $colors$quoteEmphasis',
       },
     },
   },

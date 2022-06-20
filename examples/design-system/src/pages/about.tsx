@@ -60,6 +60,11 @@ function Home({}) {
           Lorem ipsum dolor.
         </Text>
       </Callout>
+      <Callout variant="quote">
+        <Text as="p" variant="quote">
+          Lorem ipsum dolor.
+        </Text>
+      </Callout>
       <NextLink href="/" passHref>
         <Link>Back to Index</Link>
       </NextLink>
