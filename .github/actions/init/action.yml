@@ -6,24 +6,21 @@ author: 'JeromeFitz'
 runs:
   using: 'composite'
   steps:
-    - name: '🐙️  Checkout'
-      id: checkout
-      uses: actions/checkout@v3
-      with:
-        fetch-depth: 100 # push
-        # fetch-depth: 10 # pull
-        # fetch-depth: 1 # weekly
-      run: echo ::set-output name=NVMRC::$(cat .nvmrc)
     - name: '🔧  pnpm'
       id: pnpm-setup
       uses: pnpm/action-setup@v2
       with:
         version: 7.3.0
-    - name: '🔧  Node'
+    - name: '💽️  Node'
       id: node-setup
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v2
       with:
-        node-version: '${{ steps.checkout.outputs.NVMRC }}'
+        # architecture: 'x64'
+        cache-dependency-path: pnpm-lock.yaml
         cache: 'pnpm'
-    - run: pnpm install --frozen-lockfile
-    # - run: pnpm build
+        node-version: 16
+    - name: '📦️  Dependencies'
+      id: dependencies
+      shell: bash
+      run: |
+        pnpm install --frozen-lockfile
