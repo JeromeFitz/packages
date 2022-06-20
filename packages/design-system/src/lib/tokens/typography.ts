@@ -45,10 +45,10 @@ const fonts = {
   serif: '$fallback-serif',
 }
 
-// 1 => 14px => 0.75rem (!rem => mobile a11y)
-// 2 => 16px
+// 1 => 12px => 0.75rem (!rem => mobile a11y)
+// 2 => 14px
 const fontSizes = {
-  1: '14px',
+  1: '12px',
   2: '0.875rem',
   3: '1rem',
   4: '1.125rem',

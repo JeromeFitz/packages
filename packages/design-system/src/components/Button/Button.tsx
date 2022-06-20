@@ -23,7 +23,7 @@ const Button = styled('button', {
   // @custom
   height: '$5',
   px: '$2',
-  fontFamily: '$untitled',
+  fontFamily: '$sans',
   fontSize: '$2',
   fontVariationSettings: '"wght" $fontWeights$5',
   fontWeight: '$fontWeights$5',

@@ -3,7 +3,7 @@
  */
 import * as React from 'react'
 
-import { CSS } from '../../lib/stitches.config'
+import type { CSS } from '../../lib/stitches.config'
 
 import {
   NavigationMenuTrigger,

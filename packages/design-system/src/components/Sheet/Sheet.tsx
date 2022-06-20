@@ -97,7 +97,7 @@ const SheetContent = React.forwardRef<
           </Box>
           <Box
             css={{
-              background: '$panel',
+              background: 'red',
               borderColor: '$panel',
               borderStyle: 'solid',
               borderTopLeftRadius: '$4',

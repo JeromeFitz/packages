@@ -1,7 +1,7 @@
 import merge from 'lodash/merge'
 import * as React from 'react'
 
-import { CSS } from '../../lib/stitches.config'
+import type { CSS } from '../../lib/stitches.config'
 import { Text } from '../Text'
 
 import type {

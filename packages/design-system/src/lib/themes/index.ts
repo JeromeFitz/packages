@@ -194,8 +194,8 @@ const themes: Themes = {
 
       // Typeface
       typefacePrimary: '$colors$slate12',
-      typefaceSecondary: '$colors$slate11',
-      typefaceTertiary: '$colors$orange11',
+      typefaceSecondary: '$colors$slate12',
+      typefaceTertiary: '$colors$slate11',
       typefaceDanger: '$colors$gray11',
     },
   },

@@ -29,7 +29,7 @@ const DropdownMenuSeparator = styled(DropdownMenuPrimitive.Separator, {
 const itemCss = {
   display: 'flex',
   alignItems: 'center',
-  fontFamily: '$untitled',
+  fontFamily: '$sans',
   fontSize: '$1',
   fontVariantNumeric: 'tabular-nums',
   lineHeight: '1',

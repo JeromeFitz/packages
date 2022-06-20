@@ -16,6 +16,13 @@
     "strict": true,
     "target": "es5"
   },
-  "exclude": ["node_modules", "pages", "scripts"],
+  "exclude": [
+    ".storybook/*.ts",
+    ".storybook/*.tsx",
+    "node_modules",
+    "pages",
+    "scripts",
+    "tests/*.test.ts"
+  ],
   "include": ["next-env.d.ts", "**/*.ts", "**/.*.tsx"]
 }

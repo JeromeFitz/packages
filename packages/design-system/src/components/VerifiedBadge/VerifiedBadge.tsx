@@ -1,6 +1,7 @@
 import * as React from 'react'
 
-import { styled, CSS } from '../../lib/stitches.config'
+import { styled } from '../../lib/stitches.config'
+import type { CSS } from '../../lib/stitches.config'
 import { Icon, Flex } from '../index'
 
 const StyledVerifiedBadge = styled('div', Flex, {
