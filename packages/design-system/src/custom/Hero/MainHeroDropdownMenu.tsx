@@ -1,9 +1,10 @@
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
 import * as React from 'react'
 
+import { Box } from '../../components/Box'
+import { ButtonDemo } from '../../components/Button/ButtonDemo'
+import { Icon } from '../../components/Icon'
 import { styled } from '../../lib/stitches.config'
-import { ButtonDemo } from '../Button/ButtonDemo'
-import { Box, Icon } from '../index'
 
 const DropdownMenuArrow = styled(DropdownMenuPrimitive.Arrow, {
   fill: '$loContrast',

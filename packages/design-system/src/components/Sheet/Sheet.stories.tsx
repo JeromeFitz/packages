@@ -1,11 +1,9 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { useState } from 'react'
 
-import { Button } from '../Button/Button'
-import { Text } from '../Text'
+import { Button, Text } from '../index'
 
 import { Sheet, SheetContent, SheetTrigger } from './Sheet'
-import type { SheetContentPropsExtended } from './Sheet'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import mdx from './Sheet.mdx'
@@ -39,9 +37,9 @@ export default {
       control: { type: 'radio' },
     },
   },
-} as ComponentMeta<typeof SheetContentPropsExtended>
+} as ComponentMeta<typeof Sheet>
 
-const Template: ComponentStory<typeof SheetContentPropsExtended> = ({ ...args }) => {
+const Template: ComponentStory<typeof Sheet> = ({ ...args }) => {
   const [isSheetOpen, isSheetOpenSet] = useState(false)
   const handleIsSheetOpen = (newMenuState: boolean) => {
     isSheetOpenSet(newMenuState)

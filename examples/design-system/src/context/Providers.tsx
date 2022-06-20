@@ -1,8 +1,8 @@
 import {
-  KBarProvider,
   ToastProvider,
   ToastViewport,
 } from '@jeromefitz/design-system/src/components'
+import { KBarProvider } from '@jeromefitz/design-system/src/custom'
 import { darkTheme } from '@jeromefitz/design-system/src/lib/stitches.config'
 import { ThemeProvider } from 'next-themes'
 

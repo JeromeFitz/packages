@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import { Text } from '../Text'
+import { Text } from '../index'
 
 import { Alert } from './Alert'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment

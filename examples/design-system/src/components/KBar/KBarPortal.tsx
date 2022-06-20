@@ -1,4 +1,4 @@
-import { KBarPortal } from '@jeromefitz/design-system/src/components'
+import { KBarPortal } from '@jeromefitz/design-system/src/custom'
 import dynamic from 'next/dynamic'
 import * as React from 'react'
 

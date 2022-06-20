@@ -48,5 +48,4 @@ const Template: ComponentStory<typeof Badge> = ({ children, ...args }) => (
 export const Default = Template.bind({})
 Default.args = {
   children: dummyContent,
-  variant: 'brand',
 }
