@@ -2187,10 +2187,10 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@mantine/hooks@4.2.9":
-  version "4.2.9"
-  resolved "https://registry.yarnpkg.com/@mantine/hooks/-/hooks-4.2.9.tgz#ada020b0a2820dc208e8dde23374e2f260d9111c"
-  integrity sha512-oLtlSXkl99vPGBTR9yoVCWoCQ25Bc4WhPci31iERMLMM/0fz85CZayQcAC4etq6un6rDiRNu6jq0YB1S5stmPg==
+"@mantine/hooks@4.2.10":
+  version "4.2.10"
+  resolved "https://registry.yarnpkg.com/@mantine/hooks/-/hooks-4.2.10.tgz#ad55d5ad3c5814eab924dfb6fd04f9ffd44e3d30"
+  integrity sha512-gVYWeE4Ieu6FBwh9h/3FjcrrNzKx1k6Yw07/LSngJP0uT3fLt1gvY2p4PtPpOh7z2/RpTXBR1x+dOgEUKomYUQ==
 
 "@manypkg/cli@0.19.1":
   version "0.19.1"
@@ -7802,10 +7802,10 @@ damerau-levenshtein@^1.0.7:
   resolved "https://registry.yarnpkg.com/damerau-levenshtein/-/damerau-levenshtein-1.0.8.tgz#b43d286ccbd36bc5b2f7ed41caf2d0aba1f8a6e7"
   integrity sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==
 
-date-fns-tz@1.3.4:
-  version "1.3.4"
-  resolved "https://registry.yarnpkg.com/date-fns-tz/-/date-fns-tz-1.3.4.tgz#8b0e75beb771c7e9f1597aba467dc14431bb5403"
-  integrity sha512-O47vEyz85F2ax/ZdhMBJo187RivZGjH6V0cPjPzpm/yi6YffJg4upD/8ibezO11ezZwP3QYlBHh/t4JhRNx0Ow==
+date-fns-tz@1.3.5:
+  version "1.3.5"
+  resolved "https://registry.yarnpkg.com/date-fns-tz/-/date-fns-tz-1.3.5.tgz#415086b0095dab80121d66912b93f1dec5729e6e"
+  integrity sha512-SNhl/fWe7i2HoIB9ejLZhEEJ6ZtRRpOBbzizFrq11K2/iceS9Nk7fPN2VTYVOMgFB9u0f3eidSC4n1xaRONW2A==
 
 date-fns@2.28.0:
   version "2.28.0"
@@ -9075,10 +9075,10 @@ eslint-visitor-keys@^3.1.0, eslint-visitor-keys@^3.3.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.3.0.tgz#f6480fa6b1f30efe2d1968aa8ac745b862469826"
   integrity sha512-mQ+suqKJVyeuwGYHAdjMFqjCyfl8+Ldnxuyp3ldiMBFKkvytrXUZWaiPCEav8qDHKty44bD+qV1IP4T+w+xXRA==
 
-eslint@8.17.0:
-  version "8.17.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.17.0.tgz#1cfc4b6b6912f77d24b874ca1506b0fe09328c21"
-  integrity sha512-gq0m0BTJfci60Fz4nczYxNAlED+sMcihltndR8t9t1evnU/azx53x3t2UHXC/uRjcbvRw/XctpaNygSTcQD+Iw==
+eslint@8.18.0:
+  version "8.18.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.18.0.tgz#78d565d16c993d0b73968c523c0446b13da784fd"
+  integrity sha512-As1EfFMVk7Xc6/CvhssHUjsAQSkpfXvUGMFC3ce8JDe6WvqCgRrLOBQbVpsBFr1X1V+RACOadnzVvcUS5ni2bA==
   dependencies:
     "@eslint/eslintrc" "^1.3.0"
     "@humanwhocodes/config-array" "^0.9.2"
@@ -14423,10 +14423,10 @@ pkg-up@^2.0.0:
   dependencies:
     find-up "^2.1.0"
 
-plaiceholder@2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/plaiceholder/-/plaiceholder-2.3.0.tgz#741974b8a55d3816ac9ec49c20fc3503bb598396"
-  integrity sha512-wy9UzjfZiDjk+QU8S5S30+AKnL4+hNtqELtTk0JD+4kCwkq0M7Po0YG1CU4E83WykW7f/ssVmEJq3hb3ZNqkbA==
+plaiceholder@2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/plaiceholder/-/plaiceholder-2.4.0.tgz#3000954f00b2726f96b213c20c793c1b89eaf1d1"
+  integrity sha512-/LG70WkZdLEbGmUkamImvDIFzM84BtLRDVLiK7Dyhtw9fqRLDZx+OHtzuG5HFOuZXz1RvztPhS3tfQ3ecZ82eA==
   dependencies:
     blurhash "1.1.4"
     image-size "1.0.0"
