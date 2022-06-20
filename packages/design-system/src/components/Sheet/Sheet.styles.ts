@@ -27,7 +27,8 @@ const slideOut = keyframes({
 })
 
 const StyledOverlay = styled(DialogPrimitive.Overlay, {
-  backgroundColor: '$shadow',
+  // backgroundColor: '$shadow',
+  backgroundColor: '$blackA9',
   position: 'fixed',
   inset: 0,
   '&[data-state="open"]': {
@@ -51,7 +52,7 @@ const StyledContent = styled(DialogPrimitive.Content, {
   position: 'fixed',
   top: 0,
   bottom: 0,
-  width: '90%',
+  width: '100%',
   zIndex: '$toast',
 
   // background: '$panel',

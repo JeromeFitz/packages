@@ -10,41 +10,46 @@ const Alert = styled('div', {
     boxSizing: 'border-box',
   },
 
-  border: '1px solid',
+  border: '2px solid',
   borderRadius: '$2',
 
+  color: '$hiContrast',
+
   variants: {
-    size: {
-      '1': {
-        p: '$3',
-      },
-    },
     variant: {
       loContrast: {
-        backgroundColor: '$loContrast',
-        borderColor: '$slate6',
+        // backgroundColor: '$loContrast',
+        borderColor: '$hiContrast',
       },
-      gray: {
-        backgroundColor: '$slate2',
-        borderColor: '$slate6',
+      brand: {
+        backgroundColor: '$brand3',
+        borderColor: '$brand6',
+        color: '$brand11',
       },
-      blue: {
-        backgroundColor: '$blue2',
-        borderColor: '$blue6',
+      error: {
+        backgroundColor: '$errorBackground',
+        borderColor: '$errorBorder',
+        color: '$errorText',
       },
-      green: {
-        backgroundColor: '$green2',
-        borderColor: '$green6',
+      info: {
+        backgroundColor: '$infoBackground',
+        borderColor: '$infoBorder',
+        color: '$infoText',
       },
-      red: {
-        backgroundColor: '$red2',
-        borderColor: '$red6',
+      success: {
+        backgroundColor: '$successBackground',
+        borderColor: '$successBorder',
+        color: '$successText',
+      },
+      warning: {
+        backgroundColor: '$warningBackground',
+        borderColor: '$warningBorder',
+        color: '$warningText',
       },
     },
   },
   defaultVariants: {
-    size: '1',
-    variant: 'gray',
+    variant: 'loContrast',
   },
 })
 

@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { CSS, VariantProps } from '../../lib/stitches.config'
+import type { CSS, VariantProps } from '../../lib/stitches.config'
 import { Text } from '../index'
 
 const DEFAULT_TAG = 'p'
