@@ -16,7 +16,8 @@ const config: StorybookViteConfig = {
     },
     '@storybook/addon-storysource',
     '@storybook/addon-a11y',
-    'storybook-addon-themes',
+    // 'storybook-addon-themes',
+    'multiple-themes-stitches',
   ],
   core: {
     builder: '@storybook/builder-vite',
@@ -27,6 +28,7 @@ const config: StorybookViteConfig = {
     storyStoreV7: true,
   },
   framework: '@storybook/react',
+  staticDirs: ['../public'],
   typescript: {
     check: false,
     checkOptions: {},
@@ -38,7 +40,10 @@ const config: StorybookViteConfig = {
     },
   },
   stories: ['../src/**/*.stories.tsx'],
-  async viteFinal(config, { configType }) {
+  // async viteFinal(config, { configType }) {
+  //   return config
+  // },
+  viteFinal(config, {}) {
     return config
   },
 }

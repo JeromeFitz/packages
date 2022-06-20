@@ -1,6 +1,6 @@
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox'
 
-import { styled } from '../../lib/stitches.config'
+import { darkTheme, styled } from '../../lib/stitches.config'
 
 const StyledCheckbox = styled(CheckboxPrimitive.Root, {
   all: 'unset',
@@ -19,13 +19,24 @@ const StyledCheckbox = styled(CheckboxPrimitive.Root, {
   display: 'flex',
   justifyContent: 'center',
 
+  outline: 'none',
+
   boxShadow: `0 2px 10px $colors$blackA7`,
   '&:hover': {
     backgroundColor: '$colors$brand3',
     boxShadow: `0 2px 10px $colors$blackA8`,
+    cursor: 'pointer',
   },
   '&:focus': { boxShadow: `0 2px 10px $colors$blackA9` },
-  outline: 'none',
+  [`.${darkTheme} &`]: {
+    boxShadow: `0 2px 10px $colors$whiteA9`,
+    '&:hover': {
+      backgroundColor: '$colors$brand3',
+      boxShadow: `0 2px 10px $colors$whiteA10`,
+      cursor: 'pointer',
+    },
+    '&:focus': { boxShadow: `0 2px 10px $colors$whiteA11` },
+  },
 
   variants: {
     size: {

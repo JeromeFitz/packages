@@ -50,7 +50,13 @@ const {
   utils,
 })
 
+/**
+ * @note(storybook) duplicating root and light-theme currently
+ *                  please do not do this for non-storybook
+ *                  this will add like +200 dupe css vars
+ */
 const darkTheme = createTheme('dark-theme', themes.dark)
+const lightTheme = createTheme('light-theme', themes.light)
 
 export type CSS = StitchesCSS<typeof config>
 export type { VariantProps } from '@stitches/react'
@@ -63,6 +69,7 @@ export {
   getCssText,
   globalCss,
   keyframes,
+  lightTheme,
   reset,
   styled,
   theme,

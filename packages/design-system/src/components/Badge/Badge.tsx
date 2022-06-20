@@ -40,6 +40,8 @@ const Badge = styled('span', {
   borderRadius: '$pill',
   whiteSpace: 'nowrap',
   fontVariantNumeric: 'tabular-nums',
+  fontVariationSettings: '"wght" $fontWeights$6',
+  fontWeight: '$6',
 
   '@media (prefers-reduced-motion: no-preference)': {
     transition: 'background 300ms ease',
@@ -50,15 +52,36 @@ const Badge = styled('span', {
       '1': {
         height: '$5',
         px: '$3',
-        fontSize: '$1',
+        fontSize: '$2',
       },
       '2': {
         height: '$6',
         px: '$3',
-        fontSize: '$2',
+        fontSize: '$3',
       },
     },
-    variant: {},
+    variant: {
+      red: {
+        backgroundColor: '$red4',
+        color: '$red11',
+      },
+      brand: {
+        backgroundColor: '$brand4',
+        color: '$brand11',
+      },
+      blue: {
+        backgroundColor: '$blue4',
+        color: '$blue11',
+      },
+      green: {
+        backgroundColor: '$green4',
+        color: '$green11',
+      },
+      orange: {
+        backgroundColor: '$orange4',
+        color: '$orange11',
+      },
+    },
     interactive: {
       true: {},
     },
@@ -69,19 +92,17 @@ const Badge = styled('span', {
       interactive: true,
       variant: 'red',
       css: {
-        backgroundColor: '$red3',
-        color: '$red11',
         '@hover': {
           '&:hover': {
-            backgroundColor: '$red4',
+            backgroundColor: '$red5',
           },
         },
         '&:active': {
-          backgroundColor: '$red5',
+          backgroundColor: '$red6',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
           {
-            backgroundColor: '$red5',
+            backgroundColor: '$red6',
           },
       },
     },
@@ -89,19 +110,17 @@ const Badge = styled('span', {
       interactive: true,
       variant: 'brand',
       css: {
-        backgroundColor: '$brand3',
-        color: '$brand11',
         '@hover': {
           '&:hover': {
-            backgroundColor: '$brand4',
+            backgroundColor: '$brand5',
           },
         },
         '&:active': {
-          backgroundColor: '$brand5',
+          backgroundColor: '$brand6',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
           {
-            backgroundColor: '$brand5',
+            backgroundColor: '$brand6',
           },
       },
     },
@@ -109,19 +128,17 @@ const Badge = styled('span', {
       interactive: true,
       variant: 'blue',
       css: {
-        backgroundColor: '$blue3',
-        color: '$blue11',
         '@hover': {
           '&:hover': {
-            backgroundColor: '$blue4',
+            backgroundColor: '$blue5',
           },
         },
         '&:active': {
-          backgroundColor: '$blue5',
+          backgroundColor: '$blue6',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
           {
-            backgroundColor: '$blue5',
+            backgroundColor: '$blue6',
           },
       },
     },
@@ -129,19 +146,17 @@ const Badge = styled('span', {
       interactive: true,
       variant: 'green',
       css: {
-        backgroundColor: '$green3',
-        color: '$green11',
         '@hover': {
           '&:hover': {
-            backgroundColor: '$green4',
+            backgroundColor: '$green5',
           },
         },
         '&:active': {
-          backgroundColor: '$green5',
+          backgroundColor: '$green6',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
           {
-            backgroundColor: '$green5',
+            backgroundColor: '$green6',
           },
       },
     },
@@ -150,21 +165,19 @@ const Badge = styled('span', {
       interactive: true,
       variant: 'orange',
       css: {
-        backgroundColor: '$orange3',
-        color: '$orange11',
         '@hover': {
           '&:hover': {
-            backgroundColor: '$orange4',
+            backgroundColor: '$orange5',
             // color: '$orange12',
           },
         },
         '&:active': {
-          backgroundColor: '$orange5',
+          backgroundColor: '$orange6',
           // color: '$orange12',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
           {
-            backgroundColor: '$orange5',
+            backgroundColor: '$orange6',
             // color: '$orange12',
           },
       },
@@ -172,7 +185,7 @@ const Badge = styled('span', {
   ],
   defaultVariants: {
     size: '1',
-    interactive: true,
+    interactive: false,
   },
 })
 

@@ -1,54 +1,15 @@
 import { Box } from '../src/components'
-import { globalStyles as globalStylesDefault } from '../src/lib/globalStyles'
-import { globalCss, getCssText, reset } from '../src/lib/stitches.config'
-import _merge from 'lodash/merge'
-import React from 'react'
-import { withThemes } from 'storybook-addon-themes/react'
+import { lightTheme, darkTheme } from '../src/lib/stitches.config'
 
-import { globalStyles as globalStylesLocal } from '../../../examples/design-system/src/styles/globalStyles'
-
-const globalStyles = _merge(globalStylesDefault, globalStylesLocal)
-
-const getCssAndReset = () => {
-  const css = getCssText()
-  reset()
-  return css
-}
-
-export const decorators: any = [
+export const decorators = [
   (Story) => {
-    React.useEffect(() => {
-      console.dir(`🤕 stitches: once`)
-      console.dir(globalStyles)
-      // globalCss(globalStyles)()
-    }, [])
     return (
-      <>
-        {/* <style
-          id="stitches"
-          dangerouslySetInnerHTML={{ __html: getCssAndReset() }}
-        /> */}
-        <Box
-          css={{
-            backgroundColor: '$body',
-            fontFamily: '$sans',
-            margin: 0,
-            MozOsxFontSmoothing: 'grayscale',
-            WebkitFontSmoothing: 'antialiased',
-            WebkitTextSizeAdjust: '100%',
-          }}
-        >
-          <Story />
-        </Box>
-      </>
+      <Box css={{ p: '$4' }}>
+        <Story />
+      </Box>
     )
   },
-  withThemes,
 ]
-
-// export const decorators = [withThemes]
-// // addDecorator(withThemes)
-
 const REGEX_REMOVE_FC = /^\(\) => `(.*)`$/
 
 export const parameters = {
@@ -56,29 +17,24 @@ export const parameters = {
   chromatic: { disable: true },
   controls: { expanded: false },
   docs: {
-    transformSource: (src, storyContext) => {
+    // transformSource: (src, storyContext) => {
+    transformSource: (src) => {
       const match = REGEX_REMOVE_FC.exec(src)
       return match ? match[1] : src
     },
   },
-  themes: {
-    default: 'darkTheme',
-    list: [
+  globals: { theme: { value: 'Light' } },
+  layout: 'fullscreen',
+  multipleThemesStitches: {
+    default: 'Light',
+    values: [
       {
-        name: 'darkTheme',
-        class: ['dark-theme'],
-        style: {
-          colorScheme: 'dark',
-        },
-        color: 'black',
+        name: 'Light',
+        theme: lightTheme,
       },
       {
-        name: 'lightTheme',
-        class: ['light-theme'],
-        style: {
-          colorScheme: 'light',
-        },
-        color: 'yellow',
+        name: 'Dark',
+        theme: darkTheme,
       },
     ],
   },

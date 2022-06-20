@@ -42,7 +42,7 @@ export default {
 const Template: ComponentStory<typeof Checkbox> = ({ children, ...args }) => (
   <Flex css={{}}>
     <Checkbox {...args} />
-    <Label css={{ pl: '$3' }} htmlFor={args?.id}>
+    <Label css={{ pl: '$4' }} htmlFor={args?.id}>
       {children}
     </Label>
   </Flex>

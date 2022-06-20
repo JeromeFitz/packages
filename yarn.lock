@@ -3730,7 +3730,7 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@stitches/react@1.2.8":
+"@stitches/react@1.2.8", "@stitches/react@^1.2.7":
   version "1.2.8"
   resolved "https://registry.yarnpkg.com/@stitches/react/-/react-1.2.8.tgz#954f8008be8d9c65c4e58efa0937f32388ce3a38"
   integrity sha512-9g9dWI4gsSVe8bNLlb+lMkBYsnIKCZTmvqvDG+Avnn69XfmHZKiaMrx7cgTaddq7aTPPmXiTsbFcUy0xgI4+wA==
@@ -4458,7 +4458,7 @@
     regenerator-runtime "^0.13.7"
     ts-dedent "^2.0.0"
 
-"@storybook/csf@0.0.1":
+"@storybook/csf@0.0.1", "@storybook/csf@^0.0.1":
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/@storybook/csf/-/csf-0.0.1.tgz#95901507dc02f0bc6f9ac8ee1983e2fc5bb98ce6"
   integrity sha512-USTLkZze5gkel8MYCujSRBVIrUQ3YPBrLOx7GNk/0wttvVtlzWXAq9eLbQ4p/NicGxP+3T7KPEMVV//g+yubpw==
@@ -13202,6 +13202,14 @@ multimatch@^4.0.0:
     array-union "^2.1.0"
     arrify "^2.0.1"
     minimatch "^3.0.4"
+
+multiple-themes-stitches@0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/multiple-themes-stitches/-/multiple-themes-stitches-0.0.10.tgz#55a84017b0b6214855bd45bebbf19e841dbfb51e"
+  integrity sha512-sqm+ArHNf/NRP4sx3T9KFSKEZ18Bb8u/qjhA0eXF2bYYVo+JNqSWVtaBnNVr3vGE5ekgDwTdJmvqZP3eoq6UpA==
+  dependencies:
+    "@stitches/react" "^1.2.7"
+    "@storybook/csf" "^0.0.1"
 
 mute-stream@0.0.8, mute-stream@~0.0.4:
   version "0.0.8"

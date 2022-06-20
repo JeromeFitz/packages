@@ -1,16 +1,22 @@
 <!-- Jest -->
 <script>
-  window.global = window;
+  window.global = window
 </script>
 <!-- Typeface -->
-<link rel="preload" href="https://jerome.vercel.app/static/fonts/inter/inter-var.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link
+  rel="preload"
+  href="/static/fonts/inter/inter-var.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin="anonymous"
+/>
 <style>
   @font-face {
     font-display: swap;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 100 900;
-    src: url('https://jerome.vercel.app/static/fonts/inter/inter-var.woff2') format('woff2');
+    src: url('/static/fonts/inter/inter-var.woff2') format('woff2');
   }
   :root {
     --fonts-mono: var(--fonts-fallback-mono) !important;
@@ -29,7 +35,8 @@
 
   body {
     background-color: var(--colors-body);
-    font-feature-settings: "calt", "zero", "ss03", "cv01", "cv05", "cv08", "cv09", "cv10", "salt";
+    font-feature-settings: 'calt', 'zero', 'ss03', 'cv01', 'cv05', 'cv08', 'cv09',
+      'cv10', 'salt';
     font-family: var(--fonts-sans);
     margin: 0;
     -webkit-text-size-adjust: '100%';
@@ -44,7 +51,8 @@
     vertical-align: 'middle';
   }
 
-  pre, code {
+  pre,
+  code {
     margin: 0;
     font-family: var(--fonts-mono);
   }
@@ -54,8 +62,8 @@
     z-index: 0;
   }
 
-  .light-theme [data-hide='dark'], .dark-theme [data-hide='light'] {
+  .light-theme [data-hide='dark'],
+  .dark-theme [data-hide='light'] {
     display: 'none';
   }
 </style>
-
