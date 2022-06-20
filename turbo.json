@@ -18,10 +18,6 @@
       "cache": false,
       "dependsOn": []
     },
-    "semantic-release:mono": {
-      "cache": false,
-      "dependsOn": ["build"]
-    },
     "test": {
       "outputs": ["coverage/**"],
       "dependsOn": ["lint", "build"]
