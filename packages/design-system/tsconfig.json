@@ -38,6 +38,12 @@
     "target": "esnext",
     "tsBuildInfoFile": ".tsbuildinfo"
   },
-  "include": ["src", "index.d.ts", "next-env.d.ts"],
-  "exclude": ["node_modules", "**/*.test.ts"]
+  "include": [
+    ".storybook/*.ts",
+    ".storybook/*.tsx",
+    "src",
+    "index.d.ts",
+    "next-env.d.ts"
+  ],
+  "exclude": ["node_modules", "tests/*.test.ts"]
 }

@@ -1,7 +1,7 @@
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox'
 import * as React from 'react'
 
-import { CSS, VariantProps } from '../../lib/stitches.config'
+import type { CSS, VariantProps } from '../../lib/stitches.config'
 
 import type { StyledCheckbox } from './Checkbox.styles'
 

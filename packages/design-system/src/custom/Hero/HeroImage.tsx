@@ -5,8 +5,8 @@
 
 import NextImage from 'next/image'
 
+import { Box } from '../../components/Box'
 import { styled } from '../../lib/stitches.config'
-import { Box } from '../index'
 
 /**
  * @niceRec

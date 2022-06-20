@@ -4,7 +4,8 @@
 import * as PopoverPrimitive from '@radix-ui/react-popover'
 import * as React from 'react'
 
-import { styled, CSS } from '../../lib/stitches.config'
+import { styled } from '../../lib/stitches.config'
+import type { CSS } from '../../lib/stitches.config'
 import { Box } from '../index'
 import { panelStyles } from '../Panel/Panel.styles'
 

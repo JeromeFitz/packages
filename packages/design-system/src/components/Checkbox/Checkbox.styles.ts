@@ -1,6 +1,6 @@
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox'
 
-import { styled } from '../../lib/stitches.config'
+import { darkTheme, styled } from '../../lib/stitches.config'
 
 const StyledCheckbox = styled(CheckboxPrimitive.Root, {
   all: 'unset',
@@ -14,40 +14,43 @@ const StyledCheckbox = styled(CheckboxPrimitive.Root, {
   },
 
   alignItems: 'center',
-  appearance: 'none',
-  display: 'inline-flex',
+  backgroundColor: '$panel',
+  borderRadius: '$2',
+  display: 'flex',
   justifyContent: 'center',
-  lineHeight: '1',
-  margin: '0',
-  outline: 'none',
-  padding: '0',
-  WebkitTapHighlightColor: 'rgba(0,0,0,0)',
 
-  color: '$hiContrast',
-  boxShadow: 'inset 0 0 0 1px $colors$slate7',
-  overflow: 'hidden',
-  '@hover': {
-    '&:hover': {
-      boxShadow: 'inset 0 0 0 1px $colors$slate8',
-    },
+  outline: 'none',
+
+  boxShadow: `0 2px 10px $colors$blackA7`,
+  '&:hover': {
+    backgroundColor: '$colors$brand3',
+    boxShadow: `0 2px 10px $colors$blackA8`,
+    cursor: 'pointer',
   },
-  '&:focus': {
-    outline: 'none',
-    borderColor: '$red7',
-    boxShadow: 'inset 0 0 0 1px $colors$blue9, 0 0 0 1px $colors$blue9',
+  '&:focus': { boxShadow: `0 2px 10px $colors$blackA9` },
+  [`.${darkTheme} &`]: {
+    boxShadow: `0 2px 10px $colors$whiteA9`,
+    '&:hover': {
+      backgroundColor: '$colors$brand3',
+      boxShadow: `0 2px 10px $colors$whiteA10`,
+      cursor: 'pointer',
+    },
+    '&:focus': { boxShadow: `0 2px 10px $colors$whiteA11` },
   },
 
   variants: {
     size: {
       '1': {
-        width: '$3',
-        height: '$3',
-        borderRadius: '$1',
+        width: '$4',
+        height: '$4',
       },
       '2': {
         width: '$5',
         height: '$5',
-        borderRadius: '$2',
+      },
+      '3': {
+        width: '$6',
+        height: '$6',
       },
     },
   },
@@ -58,10 +61,15 @@ const StyledCheckbox = styled(CheckboxPrimitive.Root, {
 
 const StyledIndicator = styled(CheckboxPrimitive.Indicator, {
   alignItems: 'center',
+  color: '$colors$brand11',
   display: 'flex',
   height: '100%',
   justifyContent: 'center',
   width: '100%',
+  '& svg': {
+    height: '85%',
+    width: '85%',
+  },
 })
 
 export { StyledCheckbox, StyledIndicator }

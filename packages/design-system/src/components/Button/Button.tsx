@@ -22,8 +22,8 @@ const Button = styled('button', {
 
   // @custom
   height: '$5',
-  px: '$2',
-  fontFamily: '$untitled',
+  px: '$3',
+  fontFamily: '$sans',
   fontSize: '$2',
   fontVariationSettings: '"wght" $fontWeights$5',
   fontWeight: '$fontWeights$5',
@@ -40,22 +40,22 @@ const Button = styled('button', {
     size: {
       '1': {
         borderRadius: '$1',
-        height: '$5',
-        px: '$2',
-        fontSize: '$1',
+        height: '$6',
+        px: '$3',
+        fontSize: '$2',
         lineHeight: '$sizes$5',
       },
       '2': {
         borderRadius: '$2',
-        height: '$6',
-        px: '$3',
+        height: '$7',
+        px: '$4',
         fontSize: '$3',
         lineHeight: '$sizes$6',
       },
       '3': {
         borderRadius: '$2',
-        height: '$7',
-        px: '$4',
+        height: '$8',
+        px: '$5',
         fontSize: '$4',
         lineHeight: '$sizes$7',
       },

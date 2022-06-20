@@ -28,7 +28,7 @@ const _LoadingDots = () => {
           )
         })}
       </Flex>
-      <Separator decorative margin="my3" size="full" />
+      <Separator decorative my="3" size="full" />
       <LoadingDots
         css={{
           '$$loading-dots-size': '16px',
@@ -39,7 +39,7 @@ const _LoadingDots = () => {
         <span />
         <span />
       </LoadingDots>
-      <Separator decorative margin="my3" size="full" />
+      <Separator decorative my="3" size="full" />
       <LoadingDots
         css={{
           '& span': { backgroundColor: '$colors$red11' },
@@ -50,7 +50,7 @@ const _LoadingDots = () => {
         <span />
         <span />
       </LoadingDots>
-      <Separator decorative margin="my3" size="full" />
+      <Separator decorative my="3" size="full" />
     </>
   )
 }

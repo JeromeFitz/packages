@@ -1,6 +1,6 @@
 import { ActionImpl } from 'kbar/lib/action'
 
-import { Box, Flex, Focused, Icon, Kbd, Text } from '../index'
+import { Box, Flex, Focused, Icon, Kbd, Text } from '../../components/index'
 
 interface KBarSearchResultProps {
   active: boolean

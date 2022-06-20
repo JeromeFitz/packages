@@ -72,6 +72,9 @@ const Text = styled('span', {
       warning: {
         color: '$warningText',
       },
+      quote: {
+        color: '$quoteText',
+      },
     },
     gradient: {
       true: {

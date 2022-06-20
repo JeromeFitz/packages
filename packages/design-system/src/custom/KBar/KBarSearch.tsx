@@ -1,6 +1,6 @@
 import { KBarSearch } from 'kbar'
 
-import { Box, Flex, Heading, Icon } from '../index'
+import { Box, Flex, Heading, Icon } from '../../components/index'
 
 import { KBarSearchStyle } from './KBar.styles'
 

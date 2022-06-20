@@ -17,12 +17,12 @@ function Home({}) {
         title="About"
         description="Sample page for menu routing testing."
       />
-      <Separator decorative margin="my4" size="full" />
+      <Separator decorative my="4" size="full" />
       <Icon.Pencil />
       <Icon.GitHub css={{ color: '$colors$brand' }} />
       <Icon.GitHub css={{ color: '$colors$warning' }} />
       <Icon.ExternalLink />
-      <Separator decorative margin="my4" size="full" />
+      <Separator decorative my="4" size="full" />
       <Icon.Return
         style={{
           marginTop: '3px',
@@ -34,7 +34,7 @@ function Home({}) {
       <Icon.Map />
       <Icon.Map css={{ color: '$colors$brand' }} />
       <Icon.Ticket css={{ color: '$colors$brand' }} />
-      <Separator decorative margin="my4" size="full" />
+      <Separator decorative my="4" size="full" />
       <Box
         as="section"
         id="blockquote"
@@ -57,6 +57,11 @@ function Home({}) {
       </Box>
       <Callout variant="warning">
         <Text as="p" variant="warning">
+          Lorem ipsum dolor.
+        </Text>
+      </Callout>
+      <Callout variant="quote">
+        <Text as="p" variant="quote">
           Lorem ipsum dolor.
         </Text>
       </Callout>

@@ -11,7 +11,6 @@ import {
   Text,
 } from '@jeromefitz/design-system/src/components'
 import { darkTheme } from '@jeromefitz/design-system/src/lib/stitches.config'
-// import * as Portal from '@radix-ui/react-portal'
 import { useKBar } from 'kbar'
 import { useTheme } from 'next-themes'
 import * as React from 'react'
@@ -27,6 +26,11 @@ const _AppBar = ({}) => {
     document.documentElement.style.setProperty('color-scheme', newTheme)
     setTheme(newTheme)
   }, [setTheme, theme])
+
+  const [isSheetOpen, isSheetOpenSet] = React.useState(false)
+  const handleIsSheetOpen = (newMenuState: boolean) => {
+    isSheetOpenSet(newMenuState)
+  }
 
   return (
     <AppBar
@@ -80,27 +84,23 @@ const _AppBar = ({}) => {
           </Flex>
           {/* </Box> */}
           <Box css={{ '@bp1': { display: 'none' } }}>
-            <Sheet>
+            <Sheet open={isSheetOpen} onOpenChange={handleIsSheetOpen}>
               <SheetTrigger asChild>
                 <Button css={{ '&:hover': { cursor: 'pointer' } }} size="1">
                   Menu: Sheet
                 </Button>
               </SheetTrigger>
-              {/* <Portal.Root> */}
               <SheetContent
                 css={{
                   textAlign: 'center',
-                  borderTopLeftRadius: '$4',
-                  borderTopRightRadius: '$4',
-                  p: '$4',
                 }}
+                handleIsSheetOpen={handleIsSheetOpen}
                 side="bottom"
               >
                 <Heading size="3">Menu</Heading>
-                <Separator decorative margin="my3" size="full" />
+                <Separator decorative my="3" size="full" />
                 <Text>Hello.</Text>
               </SheetContent>
-              {/* </Portal.Root> */}
             </Sheet>
           </Box>
         </Flex>

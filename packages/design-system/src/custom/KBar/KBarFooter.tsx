@@ -1,4 +1,4 @@
-import { Box, Flex } from '../index'
+import { Box, Flex } from '../../components/index'
 
 // ⌘
 

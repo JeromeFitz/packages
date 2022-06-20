@@ -4,7 +4,8 @@
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
 import * as React from 'react'
 
-import { styled, CSS } from '../../lib/stitches.config'
+import { styled } from '../../lib/stitches.config'
+import type { CSS } from '../../lib/stitches.config'
 import { Box, Icon, Flex } from '../index'
 import { menuCss, separatorCss, itemCss, labelCss } from '../Menu/Menu.styles'
 import { panelStyles } from '../Panel/Panel.styles'

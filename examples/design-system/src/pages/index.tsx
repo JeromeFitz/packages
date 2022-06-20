@@ -5,9 +5,9 @@ import { PageHeading, Text } from '@jeromefitz/design-system/src/components'
 
 // import { LoadingDots } from '../components/LoadingDots'
 import { NavigationMenu } from '../components/NavigationMenu'
-import { Select } from '../components/Select'
-import { Switch } from '../components/Switch'
-// import { Toast } from '../components/Toast'
+// import { Select } from '../components/Select'
+// import { Switch } from '../components/Switch'
+import { Toast } from '../components/Toast'
 // import { ToggleGroup } from '../components/ToggleGroup'
 // import { Toolbar } from '../components/Toolbar'
 // import { LOTS_O_TEXT } from '../lib/constants'
@@ -21,9 +21,9 @@ function Home({}) {
       />
       {/* <LoadingDots /> */}
       <NavigationMenu />
-      <Select />
-      {/* <Toast /> */}
-      <Switch />
+      {/* <Select /> */}
+      <Toast />
+      {/* <Switch /> */}
       {/* <ToggleGroup /> */}
       {/* <Toolbar /> */}
       {/* <Text css={{ lineHeight: '1.25' }} size="5">

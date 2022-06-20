@@ -1,10 +1,12 @@
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 import * as React from 'react'
 
+import { ButtonDemo } from '../../components/Button/ButtonDemo'
+import { ButtonDemoIcon } from '../../components/Button/ButtonDemoIcon'
+import { Flex } from '../../components/Flex'
+import { Icon } from '../../components/Icon'
+import { Text } from '../../components/Text'
 import { styled } from '../../lib/stitches.config'
-import { ButtonDemo } from '../Button/ButtonDemo'
-import { ButtonDemoIcon } from '../Button/ButtonDemoIcon'
-import { Flex, Icon, Text } from '../index'
 
 const DialogContent = styled(DialogPrimitive.Content, {
   position: 'absolute',

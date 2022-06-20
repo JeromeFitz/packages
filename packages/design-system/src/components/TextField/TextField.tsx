@@ -30,7 +30,7 @@ const TextField = styled('input', {
   },
 
   '&:-webkit-autofill::first-line': {
-    fontFamily: '$untitled',
+    fontFamily: '$sans',
     fontSize: '1rem',
     color: '$hiContrast',
   },

@@ -40,28 +40,47 @@ const Badge = styled('span', {
   borderRadius: '$pill',
   whiteSpace: 'nowrap',
   fontVariantNumeric: 'tabular-nums',
+  fontVariationSettings: '"wght" $fontWeights$6',
+  fontWeight: '$6',
+
+  '@media (prefers-reduced-motion: no-preference)': {
+    transition: 'background 300ms ease',
+  },
 
   variants: {
     size: {
       '1': {
-        height: '$4',
-        px: '$2',
-        fontSize: '$1',
-      },
-      '2': {
         height: '$5',
         px: '$3',
         fontSize: '$2',
       },
+      '2': {
+        height: '$6',
+        px: '$3',
+        fontSize: '$3',
+      },
     },
     variant: {
-      // brand: {
-      //   backgroundColor: '$brand3',
-      //   color: '$brand11',
-      //   '&:focus': {
-      //     boxShadow: 'inset 0 0 0 1px $colors$brand8, 0 0 0 1px $colors$brand8',
-      //   },
-      // },
+      red: {
+        backgroundColor: '$red4',
+        color: '$red11',
+      },
+      brand: {
+        backgroundColor: '$brand4',
+        color: '$brand11',
+      },
+      blue: {
+        backgroundColor: '$blue4',
+        color: '$blue11',
+      },
+      green: {
+        backgroundColor: '$green4',
+        color: '$green11',
+      },
+      orange: {
+        backgroundColor: '$orange4',
+        color: '$orange11',
+      },
     },
     interactive: {
       true: {},
@@ -75,273 +94,98 @@ const Badge = styled('span', {
       css: {
         '@hover': {
           '&:hover': {
-            backgroundColor: '$red4',
+            backgroundColor: '$red5',
           },
         },
         '&:active': {
-          backgroundColor: '$red5',
+          backgroundColor: '$red6',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
           {
-            backgroundColor: '$red5',
+            backgroundColor: '$red6',
           },
       },
     },
-    // {
-    //   interactive: true,
-    //   variant: 'crimson',
-    //   css: {
-    //     '@hover': {
-    //       '&:hover': {
-    //         backgroundColor: '$crimson4',
-    //       },
-    //     },
-    //     '&:active': {
-    //       backgroundColor: '$crimson5',
-    //     },
-    //     '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
-    //       {
-    //         backgroundColor: '$crimson5',
-    //       },
-    //   },
-    // },
-    // {
-    //   interactive: true,
-    //   variant: 'pink',
-    //   css: {
-    //     '@hover': {
-    //       '&:hover': {
-    //         backgroundColor: '$pink4',
-    //       },
-    //     },
-    //     '&:active': {
-    //       backgroundColor: '$pink5',
-    //     },
-    //     '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
-    //       {
-    //         backgroundColor: '$pink5',
-    //       },
-    //   },
-    // },
-    // {
-    //   interactive: true,
-    //   variant: 'purple',
-    //   css: {
-    //     '@hover': {
-    //       '&:hover': {
-    //         backgroundColor: '$purple4',
-    //       },
-    //     },
-    //     '&:active': {
-    //       backgroundColor: '$purple5',
-    //     },
-    //     '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
-    //       {
-    //         backgroundColor: '$purple5',
-    //       },
-    //   },
-    // },
     {
       interactive: true,
       variant: 'brand',
       css: {
         '@hover': {
           '&:hover': {
-            backgroundColor: '$brand4',
+            backgroundColor: '$brand5',
           },
         },
         '&:active': {
-          backgroundColor: '$brand5',
+          backgroundColor: '$brand6',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
           {
-            backgroundColor: '$brand5',
+            backgroundColor: '$brand6',
           },
       },
     },
-    // {
-    //   interactive: true,
-    //   variant: 'indigo',
-    //   css: {
-    //     '@hover': {
-    //       '&:hover': {
-    //         backgroundColor: '$indigo4',
-    //       },
-    //     },
-    //     '&:active': {
-    //       backgroundColor: '$indigo5',
-    //     },
-    //     '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
-    //       {
-    //         backgroundColor: '$indigo5',
-    //       },
-    //   },
-    // },
     {
       interactive: true,
       variant: 'blue',
       css: {
         '@hover': {
           '&:hover': {
-            backgroundColor: '$blue4',
+            backgroundColor: '$blue5',
           },
         },
         '&:active': {
-          backgroundColor: '$blue5',
+          backgroundColor: '$blue6',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
           {
-            backgroundColor: '$blue5',
+            backgroundColor: '$blue6',
           },
       },
     },
-    // {
-    //   interactive: true,
-    //   variant: 'cyan',
-    //   css: {
-    //     '@hover': {
-    //       '&:hover': {
-    //         backgroundColor: '$cyan4',
-    //       },
-    //     },
-    //     '&:active': {
-    //       backgroundColor: '$cyan5',
-    //     },
-    //     '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
-    //       {
-    //         backgroundColor: '$cyan5',
-    //       },
-    //   },
-    // },
-    // {
-    //   interactive: true,
-    //   variant: 'teal',
-    //   css: {
-    //     '@hover': {
-    //       '&:hover': {
-    //         backgroundColor: '$teal4',
-    //       },
-    //     },
-    //     '&:active': {
-    //       backgroundColor: '$teal5',
-    //     },
-    //     '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
-    //       {
-    //         backgroundColor: '$teal5',
-    //       },
-    //   },
-    // },
     {
       interactive: true,
       variant: 'green',
       css: {
         '@hover': {
           '&:hover': {
-            backgroundColor: '$green4',
+            backgroundColor: '$green5',
           },
         },
         '&:active': {
-          backgroundColor: '$green5',
+          backgroundColor: '$green6',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
           {
-            backgroundColor: '$green5',
+            backgroundColor: '$green6',
           },
       },
     },
-    // {
-    //   interactive: true,
-    //   variant: 'lime',
-    //   css: {
-    //     '@hover': {
-    //       '&:hover': {
-    //         backgroundColor: '$lime4',
-    //       },
-    //     },
-    //     '&:active': {
-    //       backgroundColor: '$lime5',
-    //     },
-    //     '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
-    //       {
-    //         backgroundColor: '$lime5',
-    //       },
-    //   },
-    // },
-    // {
-    //   interactive: true,
-    //   variant: 'yellow',
-    //   css: {
-    //     '@hover': {
-    //       '&:hover': {
-    //         backgroundColor: '$yellow4',
-    //       },
-    //     },
-    //     '&:active': {
-    //       backgroundColor: '$yellow5',
-    //     },
-    //     '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
-    //       {
-    //         backgroundColor: '$yellow5',
-    //       },
-    //   },
-    // },
+
     {
       interactive: true,
       variant: 'orange',
       css: {
         '@hover': {
           '&:hover': {
-            backgroundColor: '$orange4',
+            backgroundColor: '$orange5',
+            // color: '$orange12',
           },
         },
         '&:active': {
-          backgroundColor: '$orange5',
+          backgroundColor: '$orange6',
+          // color: '$orange12',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
           {
-            backgroundColor: '$orange5',
+            backgroundColor: '$orange6',
+            // color: '$orange12',
           },
       },
     },
-    // {
-    //   interactive: true,
-    //   variant: 'gold',
-    //   css: {
-    //     '@hover': {
-    //       '&:hover': {
-    //         backgroundColor: '$gold4',
-    //       },
-    //     },
-    //     '&:active': {
-    //       backgroundColor: '$gold5',
-    //     },
-    //     '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
-    //       {
-    //         backgroundColor: '$gold5',
-    //       },
-    //   },
-    // },
-    // {
-    //   interactive: true,
-    //   variant: 'bronze',
-    //   css: {
-    //     '@hover': {
-    //       '&:hover': {
-    //         backgroundColor: '$bronze4',
-    //       },
-    //     },
-    //     '&:active': {
-    //       backgroundColor: '$bronze5',
-    //     },
-    //     '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
-    //       {
-    //         backgroundColor: '$bronze5',
-    //       },
-    //   },
-    // },
   ],
   defaultVariants: {
     size: '1',
+    interactive: false,
   },
 })
 

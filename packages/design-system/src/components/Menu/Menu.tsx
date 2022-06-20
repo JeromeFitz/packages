@@ -1,7 +1,8 @@
 import * as MenuPrimitive from '@radix-ui/react-menu'
 import * as React from 'react'
 
-import { styled, CSS } from '../../lib/stitches.config'
+import { styled } from '../../lib/stitches.config'
+import type { CSS } from '../../lib/stitches.config'
 import { Box, Flex, Icon } from '../index'
 import { panelStyles } from '../Panel/Panel.styles'
 

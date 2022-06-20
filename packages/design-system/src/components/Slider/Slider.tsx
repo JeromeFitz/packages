@@ -4,7 +4,8 @@
 import * as SliderPrimitive from '@radix-ui/react-slider'
 import * as React from 'react'
 
-import { styled, CSS } from '../../lib/stitches.config'
+import { styled } from '../../lib/stitches.config'
+import type { CSS } from '../../lib/stitches.config'
 
 const SliderTrack = styled(SliderPrimitive.Track, {
   position: 'relative',
