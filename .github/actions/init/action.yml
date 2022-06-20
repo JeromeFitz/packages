@@ -6,17 +6,24 @@ author: 'JeromeFitz'
 runs:
   using: 'composite'
   steps:
-    - name: '💽️  Node (16)'
-      id: node-setup
-      uses: actions/setup-node@v2
+    - name: '🐙️  Checkout'
+      id: checkout
+      uses: actions/checkout@v3
       with:
-        # architecture: 'x64'
-        cache-dependency-path: yarn.lock
-        cache: 'yarn'
-        node-version: '16'
-
-    - name: '📦️  Dependencies'
-      id: dependencies
-      shell: bash
-      run: |
-        yarn install --frozen-lockfile --ignore-engines --network-concurrency 1
+        fetch-depth: 100 # push
+        # fetch-depth: 10 # pull
+        # fetch-depth: 1 # weekly
+      run: echo ::set-output name=NVMRC::$(cat .nvmrc)
+    - name: '🔧  pnpm'
+      id: pnpm-setup
+      uses: pnpm/action-setup@v2
+      with:
+        version: 7.3.0
+    - name: '🔧  Node'
+      id: node-setup
+      uses: actions/setup-node@v3
+      with:
+        node-version: '${{ steps.checkout.outputs.NVMRC }}'
+        cache: 'pnpm'
+    - run: pnpm install --frozen-lockfile
+    # - run: pnpm build

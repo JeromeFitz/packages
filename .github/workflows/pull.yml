@@ -30,6 +30,8 @@ jobs:
     if: github.event.pull_request.draft == false && !contains(github.event.head_commit.message, '[skip ci]')
     timeout-minutes: 20
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
     env:
       GH_TOKEN: ${{ secrets.GH_DEPLOY_TOKEN }}
       GITHUB_TOKEN: ${{ secrets.GH_DEPLOY_TOKEN }}
@@ -37,11 +39,6 @@ jobs:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
     steps:
-      - name: '🐙️  Checkout'
-        id: pull-checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 1
       - name: '💽️  Init'
         id: pull-init
         uses: JeromeFitz/packages/.github/actions/init@main

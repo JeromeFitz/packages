@@ -16,4 +16,5 @@ if [[ -d ./packages/scripts/node_modules ]]; then rm -rf ./packages/scripts/node
 if [[ -d ./packages/semantic/node_modules ]]; then rm -rf ./packages/semantic/node_modules; fi
 if [[ -d ./packages/spotify/node_modules ]]; then rm -rf ./packages/spotify/node_modules; fi
 if [[ -d ./packages/utils/node_modules ]]; then rm -rf ./packages/utils/node_modules; fi
+if [[ -d ./pnpm-lock.yaml ]]; then rm  ./pnpm-lock.yaml; fi
 if [[ -d ./yarn.lock ]]; then rm  ./yarn.lock; fi

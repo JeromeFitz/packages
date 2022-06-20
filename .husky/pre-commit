@@ -7,5 +7,5 @@ if ps -o args= $PPID | grep -E -q ' --no-verify| -n | -n$' ; then
 :
 else
 :
-    yarn lint-staged
+    pnpm lint-staged
 fi

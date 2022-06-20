@@ -21,4 +21,4 @@ runs:
         GH_TOKEN: ${{ inputs.GH_TOKEN }}
         NPM_TOKEN: ${{ inputs.NPM_TOKEN }}
       run: |
-        yarn semantic-release
+        pnpm run semantic-release

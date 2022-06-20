@@ -8,8 +8,8 @@ elif ps -o args= $PPID | grep -E -q ' --continue| -c | -c$' ; then
 :
 else
 :
-    yarn pretty-quick --staged
+    pnpm run pretty-quick --staged
     exec < /dev/tty
-    # yarn git-cz --hook || true
+    # pnpm run git-cz --hook || true
     node ./packages/git-cz/dist/cli.js --hook || true
 fi

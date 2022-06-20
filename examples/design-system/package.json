@@ -18,7 +18,7 @@
     "directory": "examples/design-system"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=16"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"

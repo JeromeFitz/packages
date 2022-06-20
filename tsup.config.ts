@@ -6,7 +6,7 @@ const config: Options = {
   dts: true,
   format: ['esm', 'cjs'],
   minify: true,
-  onSuccess: 'yarn copy',
+  onSuccess: 'pnpm run copy',
   outDir: 'dist',
   silent: true,
   sourcemap: false,
