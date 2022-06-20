@@ -29,6 +29,9 @@
     "@jeromefitz/git-cz#build": {
       "dependsOn": ["@jeromefitz/conventional-gitmoji#build"]
     },
+    "@jeromefitz/notion#build": {
+      "dependsOn": ["@jeromefitz/utils#build"]
+    },
     "@jeromefitz/semantic#build": {
       "dependsOn": [
         "@jeromefitz/conventional-gitmoji#build",

@@ -14,7 +14,7 @@
     "directory": "packages/release-notes-generator"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=16"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
@@ -25,16 +25,16 @@
     "dev": "tsup --watch",
     "---": "",
     "clean": "rm -rf .turbo && rm -rf dist",
-    "clean:install": "yarn clean && rm -rf node_modules",
+    "clean:install": "pnpm run clean && rm -rf node_modules",
     "copy": "mkdir -p ./dist && ./scripts/copy.sh",
     "--- ": "",
     "lint:eslint": "eslint ./src --ext cjs,js,jsx,mjs,ts,tsx --max-warnings=0",
     "lint:prettier": "prettier \"./src/**/*.{cjs,js,jsx,mjs,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\" --ignore-unknown --loglevel warn",
-    "lint": "yarn lint:prettier --check && yarn lint:eslint",
-    "lint:fix": "yarn lint:eslint --fix && yarn lint:prettier --write",
+    "lint": "pnpm run lint:prettier --check && pnpm run lint:eslint",
+    "lint:fix": "pnpm run lint:eslint --fix && pnpm run lint:prettier --write",
     "---  ": "",
-    "semantic-release": "semantic-release",
-    "semantic-release:mono": "semantic-release -e semantic-release-monorepo"
+    "semantic-release:mono": "semantic-release -e semantic-release-monorepo",
+    "semantic-release:mono:dry": "pnpm run semantic-release -e semantic-release-monorepo --dry-run"
   },
   "devDependencies": {
     "@types/conventional-commits-parser": "3.0.2",
@@ -43,9 +43,11 @@
   },
   "dependencies": {
     "@octokit/core": "3.6.0",
+    "@octokit/rest": "18.12.0",
     "conventional-commits-filter": "2.0.7",
     "conventional-commits-parser": "3.2.4",
     "date-fns": "2.28.0",
+    "import-from": "4.0.0",
     "lodash": "4.17.21",
     "read-pkg-up": "7.0.1",
     "semver": "7.3.7"

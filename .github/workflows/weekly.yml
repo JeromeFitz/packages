@@ -28,6 +28,8 @@ jobs:
     if: github.ref == 'refs/heads/main'
     timeout-minutes: 20
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
     env:
       GH_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
       GITHUB_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
@@ -36,34 +38,34 @@ jobs:
       TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
     steps:
       - name: '🐙️  Checkout'
-        id: weekly-checkout
+        id: pull-checkout
         uses: actions/checkout@v2
         with:
-          fetch-depth: 10
+          fetch-depth: 100
       - name: '💽️  Init'
         id: weekly-init
-        uses: JeromeFitz/packages/.github/actions/init@main
+        uses: JeromeFitz/packages/.github/actions/init@canary
       - name: '🔺️  Cache (turbo)'
         id: pull-cache-turbo
-        uses: JeromeFitz/packages/.github/actions/cache-turbo@main
+        uses: JeromeFitz/packages/.github/actions/cache-turbo@canary
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       - name: '🚨️  Lint'
         id: weekly-lint
-        uses: JeromeFitz/packages/.github/actions/lint@main
+        uses: JeromeFitz/packages/.github/actions/lint@canary
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       - name: '🏗️  Build'
         id: weekly-build
-        uses: JeromeFitz/packages/.github/actions/build@main
+        uses: JeromeFitz/packages/.github/actions/build@canary
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       - name: '🏷️  Release'
         id: weekly-release
-        uses: JeromeFitz/packages/.github/actions/release@main
+        uses: JeromeFitz/packages/.github/actions/release@canary
         with:
           GH_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

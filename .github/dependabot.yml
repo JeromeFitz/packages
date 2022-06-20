@@ -20,5 +20,6 @@ updates:
       - dependency-name: '@radix-ui/*'
       - dependency-name: '@types/node'
       - dependency-name: 'kbar'
+      - dependency-name: 'inquirer'
       - dependency-name: 'read-pkg-up'
       - dependency-name: 'typescript'

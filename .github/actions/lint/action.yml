@@ -36,11 +36,11 @@ runs:
         TURBO_TEAM: ${{ inputs.TURBO_TEAM }}
         TURBO_TOKEN: ${{ inputs.TURBO_TOKEN }}
       run: |
-        yarn lint --cache-dir=".cache-turbo"
+        pnpm run lint --cache-dir=".cache-turbo"
 
     - name: '🧪️  Test'
       id: test
       shell: bash
       # @note(ci) comment out right now as this requires `build`
       run: |
-        echo # yarn test --cache-dir=".cache-turbo"
+        echo # pnpm run test --cache-dir=".cache-turbo"
