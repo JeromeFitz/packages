@@ -1,5 +1,8 @@
 import { Box } from '../src/components'
-import { lightTheme, darkTheme } from '../src/lib/stitches.config'
+import { createTheme, darkTheme } from '../src/lib/stitches.config'
+import themes from '../src/lib/themes'
+
+const lightTheme = createTheme('light-theme', themes.light)
 
 export const decorators = [
   (Story) => {
