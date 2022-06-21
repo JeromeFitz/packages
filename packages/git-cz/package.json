@@ -49,6 +49,7 @@
     "dry:run": "pnpm run build && node ./dist/cli"
   },
   "devDependencies": {
+    "@jeromefitz/conventional-gitmoji": "workspace:*",
     "@types/lodash": "4.14.182",
     "chai": "4.3.6",
     "isomorphic-unfetch": "3.1.0",
@@ -58,7 +59,6 @@
     "spawncommand": "2.2.0"
   },
   "dependencies": {
-    "@jeromefitz/conventional-gitmoji": "workspace:*",
     "colorize-template": "1.0.0",
     "fast-json-stable-stringify": "2.1.0",
     "fuzzy": "0.1.3",
@@ -69,6 +69,9 @@
     "picocolors": "1.0.0",
     "shellsync": "0.2.2",
     "word-wrap": "1.2.3"
+  },
+  "peerDependencies": {
+    "@jeromefitz/conventional-gitmoji": ">= 3.2.0"
   },
   "bin": {
     "git-cz": "./dist/cli.js",

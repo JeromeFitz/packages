@@ -363,7 +363,6 @@ importers:
       spawncommand: 2.2.0
       word-wrap: 1.2.3
     dependencies:
-      '@jeromefitz/conventional-gitmoji': link:../conventional-gitmoji
       colorize-template: 1.0.0
       fast-json-stable-stringify: 2.1.0
       fuzzy: 0.1.3
@@ -375,6 +374,7 @@ importers:
       shellsync: 0.2.2
       word-wrap: 1.2.3
     devDependencies:
+      '@jeromefitz/conventional-gitmoji': link:../conventional-gitmoji
       '@types/lodash': 4.14.182
       chai: 4.3.6
       isomorphic-unfetch: 3.1.0
@@ -394,13 +394,13 @@ importers:
       github-slugger: 1.4.0
       lodash: 4.17.21
     dependencies:
-      '@jeromefitz/utils': link:../utils
       '@notionhq/client': 1.0.4
       date-fns: 2.28.0
       date-fns-tz: 1.3.5_date-fns@2.28.0
       github-slugger: 1.4.0
       lodash: 4.17.21
     devDependencies:
+      '@jeromefitz/utils': link:../utils
       '@types/github-slugger': 1.3.0
       '@types/lodash': 4.14.182
 
@@ -462,7 +462,6 @@ importers:
       semantic-release-commit-filter: 1.0.2
       title: 3.4.4
     dependencies:
-      '@jeromefitz/conventional-gitmoji': link:../conventional-gitmoji
       '@octokit/core': 3.6.0
       '@semantic-release/commit-analyzer': 9.0.2_semantic-release@19.0.3
       '@semantic-release/exec': 6.0.3_semantic-release@19.0.3
@@ -476,6 +475,7 @@ importers:
       semantic-release-commit-filter: 1.0.2
       title: 3.4.4
     devDependencies:
+      '@jeromefitz/conventional-gitmoji': link:../conventional-gitmoji
       '@types/lodash': 4.14.182
       '@types/semantic-release': 17.2.3
       '@types/title': 3.4.1
@@ -489,12 +489,12 @@ importers:
       lodash: 4.17.21
       plaiceholder: 2.4.0
     dependencies:
-      '@jeromefitz/utils': link:../utils
       github-slugger: 1.4.0
       isomorphic-unfetch: 3.1.0
       lodash: 4.17.21
       plaiceholder: 2.4.0
     devDependencies:
+      '@jeromefitz/utils': link:../utils
       '@types/lodash': 4.14.182
 
   packages/utils:

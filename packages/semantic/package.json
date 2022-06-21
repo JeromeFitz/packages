@@ -36,12 +36,12 @@
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
+    "@jeromefitz/conventional-gitmoji": "workspace:*",
     "@types/lodash": "4.14.182",
     "@types/semantic-release": "17.2.3",
     "@types/title": "3.4.1"
   },
   "dependencies": {
-    "@jeromefitz/conventional-gitmoji": "workspace:*",
     "@octokit/core": "3.6.0",
     "@semantic-release/commit-analyzer": "9.0.2",
     "@semantic-release/exec": "6.0.3",
