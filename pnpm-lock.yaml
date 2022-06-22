@@ -102,7 +102,7 @@ importers:
       '@types/react-dom': 18.0.5
       date-fns: 2.28.0
       date-fns-tz: 1.3.5
-      framer-motion: 6.3.11
+      framer-motion: 6.3.13
       immer: 9.0.15
       kbar: 0.1.0-beta.36
       next: 12.1.6
@@ -119,7 +119,7 @@ importers:
       '@mantine/hooks': 4.2.10_react@18.2.0
       date-fns: 2.28.0
       date-fns-tz: 1.3.5_date-fns@2.28.0
-      framer-motion: 6.3.11_biqbaboplfbrettd7655fr4n2y
+      framer-motion: 6.3.13_biqbaboplfbrettd7655fr4n2y
       immer: 9.0.15
       kbar: 0.1.0-beta.36_biqbaboplfbrettd7655fr4n2y
       next: 12.1.6_biqbaboplfbrettd7655fr4n2y
@@ -234,7 +234,7 @@ importers:
       '@types/react-dom': 18.0.5
       '@vitejs/plugin-react': ^1.3.2
       emoji-regex: 10.1.0
-      framer-motion: 6.3.11
+      framer-motion: 6.3.13
       kbar: 0.1.0-beta.36
       lodash: 4.17.21
       multiple-themes-stitches: 0.0.10
@@ -328,7 +328,7 @@ importers:
       '@types/react': 18.0.14
       '@types/react-dom': 18.0.5
       '@vitejs/plugin-react': 1.3.2
-      framer-motion: 6.3.11_biqbaboplfbrettd7655fr4n2y
+      framer-motion: 6.3.13_biqbaboplfbrettd7655fr4n2y
       kbar: 0.1.0-beta.36_biqbaboplfbrettd7655fr4n2y
       lodash: 4.17.21
       multiple-themes-stitches: 0.0.10_klcqnchi7pqnrrrjofzkjj4saq
@@ -10869,7 +10869,7 @@ packages:
       mississippi: 3.0.0
       mkdirp: 0.5.6
       move-concurrently: 1.0.1
-      promise-inflight: 1.0.1
+      promise-inflight: 1.0.1_bluebird@3.7.2
       rimraf: 2.7.1
       ssri: 6.0.2
       unique-filename: 1.1.1
@@ -15010,10 +15010,10 @@ packages:
     dependencies:
       map-cache: 0.2.2
 
-  /framer-motion/6.3.11_biqbaboplfbrettd7655fr4n2y:
+  /framer-motion/6.3.13_biqbaboplfbrettd7655fr4n2y:
     resolution:
       {
-        integrity: sha512-xQLk+ZSklNs5QNCUmdWPpKMOuWiB8ZETsvcIOWw8xvri9K3TamuifgCI/B6XpaEDR0/V2ZQF2Wm+gUAZrXo+rw==,
+        integrity: sha512-z6UIxENuqa9bh/xE1fit7IUT+07TKSp81TE+C0DDBe9ly4bdEafpZUbcDZxNiN6UBU5hYdEY7rKhk+X1JlIkhg==,
       }
     peerDependencies:
       react: '>=16.8 || ^17.0.0 || ^18.0.0'
@@ -21099,6 +21099,20 @@ packages:
     peerDependenciesMeta:
       bluebird:
         optional: true
+    dev: true
+
+  /promise-inflight/1.0.1_bluebird@3.7.2:
+    resolution:
+      {
+        integrity: sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==,
+      }
+    peerDependencies:
+      bluebird: '*'
+    peerDependenciesMeta:
+      bluebird:
+        optional: true
+    dependencies:
+      bluebird: 3.7.2
     dev: true
 
   /promise.allsettled/1.0.5:
