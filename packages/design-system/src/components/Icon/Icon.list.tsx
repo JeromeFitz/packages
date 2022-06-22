@@ -14,6 +14,8 @@ import {
   ArrowRightIcon as ArrowRightIconRadix,
   ArrowTopRightIcon as ArrowTopRightIconRadix,
   BellIcon as BellIconRadix,
+  BookmarkIcon as BookmarkIconRadix,
+  BookmarkFilledIcon as BookmarkFilledIconRadix,
   CalendarIcon as CalendarIconRadix,
   CaretDownIcon as CaretDownIconRadix,
   CaretLeftIcon as CaretLeftIconRadix,
@@ -47,6 +49,7 @@ import {
   ImageIcon as ImageIconRadix,
   InfoCircledIcon as InfoCircledIconRadix,
   InstagramLogoIcon as InstagramLogoIconRadix,
+  Link1Icon as Link1IconRadix,
   LinkedInLogoIcon as LinkedInLogoIconRadix,
   ListBulletIcon as ListBulletIconRadix,
   MagnifyingGlassIcon as MagnifyingGlassIconRadix,
@@ -120,6 +123,28 @@ const BellIcon = ({ label, ...props }: IconProps) => (
     }
   >
     <Box as={BellIconRadix} {...props} />
+  </AccessibleIcon>
+)
+
+const BookmarkIcon = ({ label, ...props }: IconProps) => (
+  <AccessibleIcon
+    label={
+      label ||
+      'An icon representing a bookmark. An outline of the part of the bookmark that hangs at the bottom of the book. It has a small triangle cut out at the bottom for flair.'
+    }
+  >
+    <Box as={BookmarkIconRadix} {...props} />
+  </AccessibleIcon>
+)
+
+const BookmarkFilledIcon = ({ label, ...props }: IconProps) => (
+  <AccessibleIcon
+    label={
+      label ||
+      'An icon representing a bookmark. A filled in outline of the part of the bookmark that hangs at the bottom of the book. It has a small triangle cut out at the bottom for flair.'
+    }
+  >
+    <Box as={BookmarkFilledIconRadix} {...props} />
   </AccessibleIcon>
 )
 
@@ -840,6 +865,8 @@ export {
   ArrowRightIcon,
   ArrowTopRightIcon,
   BellIcon,
+  BookmarkIcon,
+  BookmarkFilledIcon,
   BookOpenIcon,
   CalendarIcon,
   CaretDownIcon,

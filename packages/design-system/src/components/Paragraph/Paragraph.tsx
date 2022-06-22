@@ -15,8 +15,7 @@ const Paragraph = React.forwardRef<
   React.ElementRef<typeof DEFAULT_TAG>,
   ParagraphProps
 >((props, forwardedRef) => {
-  // '2' here is the default Paragraph size variant
-  const { size = '1', ...textProps } = props
+  const { size = '1', weight = '4', ...textProps } = props
 
   // This is the mapping of Paragraph Variants to Text SizeVariants
   const textSize: Record<ParagraphSizeVariants, TextSizeVariants['size']> = {
@@ -68,6 +67,7 @@ const Paragraph = React.forwardRef<
       {...textProps}
       ref={forwardedRef}
       size={textSize[size]}
+      weight={weight}
       css={{
         ...merge(textCss[size], props.css),
       }}

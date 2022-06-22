@@ -3,6 +3,8 @@ import {
   ArrowRightIcon,
   ArrowTopRightIcon,
   BellIcon,
+  BookmarkIcon,
+  BookmarkFilledIcon,
   BookOpenIcon,
   CalendarIcon,
   CaretDownIcon,
@@ -72,6 +74,8 @@ Icon.ArrowLeft = ArrowLeftIcon
 Icon.ArrowRight = ArrowRightIcon
 Icon.ArrowTopRight = ArrowTopRightIcon
 Icon.Bell = BellIcon
+Icon.Bookmark = BookmarkIcon
+Icon.BookmarkFilled = BookmarkFilledIcon
 Icon.BookOpen = BookOpenIcon
 Icon.Calendar = CalendarIcon
 Icon.CaretDown = CaretDownIcon

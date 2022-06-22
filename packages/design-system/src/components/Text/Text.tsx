@@ -66,14 +66,17 @@ const Text = styled('span', {
       info: {
         color: '$infoText',
       },
+      note: {
+        color: '$typefacePrimary',
+      },
+      quote: {
+        color: '$quoteText',
+      },
       success: {
         color: '$successText',
       },
       warning: {
         color: '$warningText',
-      },
-      quote: {
-        color: '$quoteText',
       },
     },
     gradient: {

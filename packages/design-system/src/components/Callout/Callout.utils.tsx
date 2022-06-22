@@ -11,12 +11,14 @@ const getVariantIcon = (variant: CalloutVariant): React.ReactNode => {
       return <Icon.Error />
     case 'info':
       return <Icon.Info />
+    case 'note':
+      return <Icon.PencilWithPaper />
+    case 'quote':
+      return <Icon.Quote css={{ transform: 'rotate(180deg)' }} />
     case 'success':
       return <Icon.Success />
     case 'warning':
       return <Icon.Warning />
-    case 'quote':
-      return <Icon.Quote />
   }
 }
 
