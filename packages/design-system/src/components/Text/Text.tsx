@@ -100,6 +100,10 @@ const Text = styled('span', {
         fontVariationSettings: '"wght" $fontWeights$8',
         fontWeight: '$8',
       },
+      '9': {
+        fontVariationSettings: '"wght" $fontWeights$9',
+        fontWeight: '$9',
+      },
     },
   },
   compoundVariants: [

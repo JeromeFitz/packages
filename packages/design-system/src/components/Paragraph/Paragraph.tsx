@@ -7,7 +7,9 @@ import { Text } from '../index'
 import type {
   ParagraphProps,
   ParagraphSizeVariants,
+  // ParagraphWeightVariants,
   TextSizeVariants,
+  // TextWeightVariants,
 } from './Paragraph.types'
 import { DEFAULT_TAG } from './Paragraph.types'
 
@@ -19,12 +21,12 @@ const Paragraph = React.forwardRef<
 
   // This is the mapping of Paragraph Variants to Text SizeVariants
   const textSize: Record<ParagraphSizeVariants, TextSizeVariants['size']> = {
-    1: { '@initial': '3', '@bp2': '4' },
-    2: { '@initial': '4', '@bp2': '5' },
-    3: { '@initial': '5', '@bp2': '6' },
-    4: { '@initial': '6', '@bp2': '7' },
-    5: { '@initial': '7', '@bp2': '8' },
-    6: { '@initial': '8', '@bp2': '9' },
+    '1': { '@initial': '3', '@bp2': '4' },
+    '2': { '@initial': '4', '@bp2': '5' },
+    '3': { '@initial': '5', '@bp2': '6' },
+    '4': { '@initial': '6', '@bp2': '7' },
+    '5': { '@initial': '7', '@bp2': '8' },
+    '6': { '@initial': '8', '@bp2': '9' },
   }
 
   // This is the mapping of Paragraph Variants to Text CSS
@@ -60,6 +62,19 @@ const Paragraph = React.forwardRef<
       '@bp2': { lineHeight: '1.5' },
     },
   }
+
+  // // This is the mapping of Paragraph Variants to Text WeightVariants
+  // const textWeight: Record<ParagraphWeightVariants, TextWeightVariants['weight']> = {
+  //   '1': '1',
+  //   '2': '2',
+  //   '3': '3',
+  //   '4': '4',
+  //   '5': '5',
+  //   '6': '6',
+  //   '7': '7',
+  //   '8': '8',
+  //   '9': '9',
+  // }
 
   return (
     <Text

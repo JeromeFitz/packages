@@ -1,5 +1,5 @@
 import { Heading, Paragraph, Skeleton } from '../index'
-
+import type { ParagraphWeightVariants } from '../Paragraph/Paragraph.types'
 const SkeletonTitle = () => (
   <Skeleton
     as="span"
@@ -46,14 +46,19 @@ const SkeletonHeading = () => {
   )
 }
 
-const PageHeading = ({ title, description, weight = '5' }) => {
+type PageHeadingProps = {
+  title: string
+  description: string
+  weight?: ParagraphWeightVariants
+}
+const PageHeading = ({ title, description, weight = '5' }: PageHeadingProps) => {
   return (
     <>
       <Heading size="4">{title}</Heading>
       <Paragraph
-        size="2"
         as="p"
         css={{ mb: '$7', mt: '$2', ml: '$1' }}
+        size="2"
         weight={weight}
       >
         {description}
