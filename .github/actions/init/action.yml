@@ -6,17 +6,21 @@ author: 'JeromeFitz'
 runs:
   using: 'composite'
   steps:
-    - name: '💽️  Node (16)'
+    - name: '🔧  pnpm'
+      id: pnpm-setup
+      uses: pnpm/action-setup@v2
+      with:
+        version: 7.3.0
+    - name: '💽️  Node'
       id: node-setup
       uses: actions/setup-node@v2
       with:
         # architecture: 'x64'
-        cache-dependency-path: yarn.lock
-        cache: 'yarn'
-        node-version: '16'
-
+        cache-dependency-path: pnpm-lock.yaml
+        cache: 'pnpm'
+        node-version: 16
     - name: '📦️  Dependencies'
       id: dependencies
       shell: bash
       run: |
-        yarn install --frozen-lockfile --ignore-engines --network-concurrency 1
+        pnpm install --frozen-lockfile

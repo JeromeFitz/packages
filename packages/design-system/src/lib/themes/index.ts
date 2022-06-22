@@ -204,9 +204,9 @@ const themes: Themes = {
 
       // Typeface
       typefacePrimary: '$colors$slate12',
-      typefaceSecondary: '$colors$slate12',
-      typefaceTertiary: '$colors$slate11',
-      typefaceDanger: '$colors$gray11',
+      typefaceSecondary: '$colors$slate11',
+      typefaceTertiary: '$colors$emphasis',
+      typefaceDanger: '$colors$errorText',
     },
   },
   dark: {
@@ -308,9 +308,9 @@ const themes: Themes = {
 
       // Typeface
       typefacePrimary: '$colors$slate12',
-      typefaceSecondary: '$colors$slate12',
-      typefaceTertiary: '$colors$slate11',
-      typefaceDanger: '$colors$gray11',
+      typefaceSecondary: '$colors$slate11',
+      typefaceTertiary: '$colors$emphasis',
+      typefaceDanger: '$colors$errorText',
     },
   },
 }

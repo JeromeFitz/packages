@@ -3,37 +3,43 @@ import { styled } from '../../lib/stitches.config'
 const StyledCalloutIconWrapper = styled('div', {
   position: 'absolute',
   display: 'flex',
-  top: '-12px',
-  left: '-8px',
-  borderRadius: '50%',
-  padding: '4px',
-  color: '$colors$typefacePrimary',
-  border: '1.75px solid $colors$body',
+  top: '-$4',
+  left: '-$3',
+  padding: '$2',
+
   background: 'var(--icon-background, $colors$body)',
+  border: '1.75px solid var(--icon-border, $colors$typefacePrimary)',
+  borderRadius: '$round',
+  color: 'var(--icon-text, $colors$typefacePrimary)',
 
   variants: {
     variant: {
       error: {
         '--icon-background': '$colors$errorBackground',
-        border: '1.75px solid $colors$errorEmphasis',
+        '--icon-border': '$colors$errorEmphasis',
       },
       info: {
         '--icon-background': '$colors$infoBackground',
-        border: '1.75px solid $colors$infoEmphasis',
+        '--icon-border': '$colors$infoEmphasis',
       },
-      success: {
-        '--icon-background': '$colors$successBackground',
-        border: '1.75px solid $colors$successEmphasis',
-      },
-      warning: {
-        '--icon-background': '$colors$warningBackground',
-        border: '1.75px solid $colors$warningEmphasis',
-        color: '$colors$warningText',
+      note: {
+        // '--icon-background': '$colors$noteBackground',
+        // '--icon-border': '$colors$noteEmphasis',
+        // '--icon-text': '$colors$noteText',
       },
       quote: {
         '--icon-background': '$colors$quoteBackground',
-        border: '1.75px solid $colors$quoteEmphasis',
-        color: '$colors$quoteText',
+        '--icon-border': '$colors$quoteEmphasis',
+        '--icon-text': '$colors$quoteText',
+      },
+      success: {
+        '--icon-background': '$colors$successBackground',
+        '--icon-border': '$colors$successEmphasis',
+      },
+      warning: {
+        '--icon-background': '$colors$warningBackground',
+        '--icon-border': '$colors$warningEmphasis',
+        '--icon-text': '$colors$warningText',
       },
     },
   },
@@ -42,10 +48,10 @@ const StyledCalloutIconWrapper = styled('div', {
 const StyledCalloutLabelWrapper = styled('div', {
   position: 'absolute',
   display: 'flex',
-  top: '-12px',
-  left: '-4px',
+  top: '-$4',
+  left: '-$2',
   borderRadius: '$radii$1',
-  padding: '8px',
+  padding: '$3',
   color: '$colors$body',
   fontSize: '$fontSizes$1',
   fontWeight: '$fontWeights$3',
@@ -60,14 +66,17 @@ const StyledCalloutLabelWrapper = styled('div', {
       info: {
         '--icon-background': '$colors$infoBackground',
       },
+      note: {
+        // '--icon-background': '$colors$noteBackground',
+      },
+      quote: {
+        '--icon-background': '$colors$quoteBackground',
+      },
       success: {
         '--icon-background': '$colors$successBackground',
       },
       warning: {
         '--icon-background': '$colors$warningBackground',
-      },
-      quote: {
-        '--icon-background': '$colors$quoteBackground',
       },
     },
   },
@@ -79,34 +88,51 @@ const StyledCallout = styled('aside', {
   },
 
   position: 'relative',
-  padding: '30px 30px',
-  marginBottom: '2.25rem',
+
+  marginBottom: '1.25rem',
   borderRadius: '$radii$1',
   color: '$colors$typefacePrimary',
-  border: '1px solid $colors$emphasis',
-  background: 'var(--callout-background, $colors$emphasis)',
+  border: '1px solid var(--callout-emphasis, $colors$typefacePrimary)',
+  background: 'var(--callout-background, $colors$body)',
+
+  padding: '$5',
+  '@bp1': {
+    padding: '$7',
+  },
+
+  '@media (prefers-reduced-motion: no-preference)': {
+    transition: 'all 300ms ease',
+  },
 
   variants: {
     variant: {
       error: {
         '--callout-background': '$colors$errorBackground',
-        border: '1px solid $colors$errorEmpahsis',
+        '--callout-emphasis': '$colors$errorEmpahsis',
       },
       info: {
         '--callout-background': '$colors$infoBackground',
-        border: '1px solid $colors$infoEmpahsis',
+        '--callout-emphasis': '$colors$infoEmpahsis',
       },
-      success: {
-        '--callout-background': '$colors$successBackground',
-        border: '1px solid $colors$successEmpahsis',
-      },
-      warning: {
-        '--callout-background': '$colors$warningBackground',
-        border: '1px solid $colors$warningEmpahsis',
+      note: {
+        // '--callout-background': '$colors$noteBackground',
+        // '--callout-emphasis': '$colors$noteEmphasis',
+        padding: '$3 $4',
+        '@bp1': {
+          padding: '$5 $6',
+        },
       },
       quote: {
         '--callout-background': '$colors$quoteBackground',
-        border: '1px solid $colors$quoteEmphasis',
+        '--callout-emphasis': '$colors$quoteEmphasis',
+      },
+      success: {
+        '--callout-background': '$colors$successBackground',
+        '--callout-emphasis': '$colors$successEmpahsis',
+      },
+      warning: {
+        '--callout-background': '$colors$warningBackground',
+        '--callout-emphasis': '$colors$warningEmpahsis',
       },
     },
   },

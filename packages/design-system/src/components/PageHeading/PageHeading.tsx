@@ -1,5 +1,5 @@
 import { Heading, Paragraph, Skeleton } from '../index'
-
+import type { ParagraphWeightVariants } from '../Paragraph/Paragraph.types'
 const SkeletonTitle = () => (
   <Skeleton
     as="span"
@@ -22,9 +22,11 @@ const SkeletonDescription = () => (
     css={{
       fontSize: 'inherit',
       height: '$fontSizes$5',
+      pr: 'var(--width-2_4)',
+      //
       mb: '$7',
       mt: '$2',
-      pr: 'var(--width-2_4)',
+      ml: '$1',
     }}
   >
     &nbsp;
@@ -37,18 +39,28 @@ const SkeletonHeading = () => {
       <Heading size="4">
         <SkeletonTitle />
       </Heading>
-      <Paragraph size="2" as="p" css={{ mt: '$2', mb: '$7' }}>
+      <Paragraph size="2" as="p" css={{ mb: '$7', mt: '$2', ml: '$1' }} weight="5">
         <SkeletonDescription />
       </Paragraph>
     </>
   )
 }
 
-const PageHeading = ({ title, description }) => {
+type PageHeadingProps = {
+  title: string
+  description: string
+  weight?: ParagraphWeightVariants
+}
+const PageHeading = ({ title, description, weight = '5' }: PageHeadingProps) => {
   return (
     <>
       <Heading size="4">{title}</Heading>
-      <Paragraph size="2" as="p" css={{ mt: '$2', mb: '$7' }}>
+      <Paragraph
+        as="p"
+        css={{ mb: '$7', mt: '$2', ml: '$1' }}
+        size="2"
+        weight={weight}
+      >
         {description}
       </Paragraph>
     </>

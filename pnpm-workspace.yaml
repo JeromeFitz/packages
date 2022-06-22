@@ -1,0 +1,5 @@
+packages:
+  - 'config/*'
+  - 'examples/*'
+  - 'packages/*'
+enable-pre-post-scripts: true

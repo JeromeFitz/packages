@@ -1,6 +1,10 @@
 const config = require('./react.cjs')
 
-const _extends = [...config.extends, 'next/core-web-vitals', 'next']
+const _extends = [
+  ...config.extends,
+  'plugin:@next/next/core-web-vitals',
+  'plugin:@next/next/recommended',
+]
 
 module.exports = {
   ...config,

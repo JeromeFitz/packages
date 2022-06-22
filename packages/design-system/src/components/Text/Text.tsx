@@ -66,14 +66,17 @@ const Text = styled('span', {
       info: {
         color: '$infoText',
       },
+      note: {
+        color: '$typefacePrimary',
+      },
+      quote: {
+        color: '$quoteText',
+      },
       success: {
         color: '$successText',
       },
       warning: {
         color: '$warningText',
-      },
-      quote: {
-        color: '$quoteText',
       },
     },
     gradient: {
@@ -96,6 +99,10 @@ const Text = styled('span', {
       '8': {
         fontVariationSettings: '"wght" $fontWeights$8',
         fontWeight: '$8',
+      },
+      '9': {
+        fontVariationSettings: '"wght" $fontWeights$9',
+        fontWeight: '$9',
       },
     },
   },
