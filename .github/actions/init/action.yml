@@ -8,17 +8,30 @@ runs:
   steps:
     - name: '🔧  pnpm'
       id: pnpm-setup
-      uses: pnpm/action-setup@v2
+      uses: pnpm/action-setup@v2.2.2
       with:
-        version: 7.3.0
+        version: 7
+        run_install: false
     - name: '💽️  Node'
       id: node-setup
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
         # architecture: 'x64'
         cache-dependency-path: pnpm-lock.yaml
         cache: 'pnpm'
         node-version: 16
+    # - name: '🏪  pnpm store'
+    #   id: pnpm-cache
+    #   run: |
+    #     echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
+    # -  name: '🌵  pnpm cahce'
+    #    id: pnpm-cache-setup
+    #     uses: actions/cache@v3
+    #     with:
+    #       path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+    #       key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+    #       restore-keys: |
+    #         ${{ runner.os }}-pnpm-store-
     - name: '📦️  Dependencies'
       id: dependencies
       shell: bash
