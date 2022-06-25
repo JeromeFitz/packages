@@ -27,7 +27,7 @@ env:
 jobs:
   pull:
     name: '👷️  CI'
-    if: (contains(github.event.head_commit.message, '[build]') || contains(github.event.head_commit.message, '[b]') || github.ref == 'refs/heads/main') && !contains(github.event.head_commit.message, '[skip ci]')
+    if: (contains(github.event.head_commit.message, '[b]') || github.ref == 'refs/heads/main') && !contains(github.event.head_commit.message, '[skip ci]')
     timeout-minutes: 20
     runs-on: ubuntu-latest
     strategy:
@@ -46,29 +46,32 @@ jobs:
           fetch-depth: 10
       - name: '💽️  Init'
         id: push-init
-        uses: JeromeFitz/packages/.github/actions/init@main
+        uses: JeromeFitz/packages/.github/actions/init@fix/dependabot
+      - name: '📦  Install'
+        id: push-install
+        uses: JeromeFitz/packages/.github/actions/install@fix/dependabot
       - name: '🔺️  Cache (turbo)'
         id: pull-cache-turbo
-        uses: JeromeFitz/packages/.github/actions/cache-turbo@main
+        uses: JeromeFitz/packages/.github/actions/cache-turbo@fix/dependabot
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       - name: '🚨️  Lint'
         id: push-lint
-        uses: JeromeFitz/packages/.github/actions/lint@main
+        uses: JeromeFitz/packages/.github/actions/lint@fix/dependabot
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       - name: '🏗️  Build'
         id: push-build
-        uses: JeromeFitz/packages/.github/actions/build@main
+        uses: JeromeFitz/packages/.github/actions/build@fix/dependabot
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       - name: '🏷️  Release'
-        if: (contains(github.event.head_commit.message, '[build]') || contains(github.event.head_commit.message, '[b]')) && !contains(github.event.head_commit.message, '[skip ci]')
+        if: (contains(github.event.head_commit.message, '[b]')) && !contains(github.event.head_commit.message, '[skip ci]')
         id: push-release
-        uses: JeromeFitz/packages/.github/actions/release@main
+        uses: JeromeFitz/packages/.github/actions/release@fix/dependabot
         with:
           GH_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
