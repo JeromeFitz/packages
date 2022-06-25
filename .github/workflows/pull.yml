@@ -38,24 +38,46 @@ jobs:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+      IS_ACTOR_VERIFIED: ${{ github.actor == 'jeromefitz' || github.actor == 'dependabot[bot]' }}
+      IS_JEROMEFITZ: ${{ github.actor == 'jeromefitz' }}
+      IS_DEPENDABOT: ${{ github.actor == 'dependabot[bot]' }}
+      IS_LABEL_PNPM: ${{ contains( github.event.pull_request.labels.*.name, '📦 pnpm' ) }}
     steps:
       - name: '🐙️  Checkout'
         id: pull-checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
+          ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 1
+
       - name: '💽️  Init'
         id: pull-init
-        uses: JeromeFitz/packages/.github/actions/init@main
+        uses: JeromeFitz/packages/.github/actions/init@fix/dependabot
+
+      - name: '🔒  pnpm'
+        id: pull-pnpm
+        uses: JeromeFitz/packages/.github/actions/pnpm@fix/dependabot
+        if: ${{ env.IS_DEPENDABOT == 'true' || env.IS_LABEL_PNPM == 'true' }}
+        with:
+          IS_ACTOR_VERIFIED: ${{ env.IS_ACTOR_VERIFIED }}
+          IS_JEROMEFITZ: ${{ env.IS_JEROMEFITZ }}
+          IS_DEPENDABOT: ${{ env.IS_DEPENDABOT }}
+          IS_LABEL_PNPM: ${{ env.IS_LABEL_PNPM }}
+
+      - name: '📦  Install'
+        id: pull-install
+        uses: JeromeFitz/packages/.github/actions/install@fix/dependabot
+
       - name: '🔺️  Cache (turbo)'
         id: pull-cache-turbo
-        uses: JeromeFitz/packages/.github/actions/cache-turbo@main
+        uses: JeromeFitz/packages/.github/actions/cache-turbo@fix/dependabot
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+
       - name: '🚨️  Lint'
         id: pull-lint
-        uses: JeromeFitz/packages/.github/actions/lint@main
+        uses: JeromeFitz/packages/.github/actions/lint@fix/dependabot
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
