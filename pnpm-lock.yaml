@@ -220,21 +220,21 @@ importers:
       '@radix-ui/react-visually-hidden': 0.1.5-rc.40
       '@react-aria/interactions': 3.9.1
       '@stitches/react': 1.2.8
-      '@storybook/addon-a11y': ^6.5.9
-      '@storybook/addon-actions': ^6.5.9
-      '@storybook/addon-docs': ^6.5.9
-      '@storybook/addon-essentials': ^6.5.9
-      '@storybook/addon-knobs': ^6.4.0
-      '@storybook/addon-links': ^6.5.9
-      '@storybook/addon-notes': ^5.3.21
-      '@storybook/addon-storysource': ^6.5.9
-      '@storybook/builder-vite': ^0.1.36
-      '@storybook/react': ^6.5.9
-      '@storybook/theming': ^6.5.9
+      '@storybook/addon-a11y': 6.5.9
+      '@storybook/addon-actions': 6.5.9
+      '@storybook/addon-docs': 6.5.9
+      '@storybook/addon-essentials': 6.5.9
+      '@storybook/addon-knobs': 6.4.0
+      '@storybook/addon-links': 6.5.9
+      '@storybook/addon-notes': 5.3.21
+      '@storybook/addon-storysource': 6.5.9
+      '@storybook/builder-vite': 0.1.36
+      '@storybook/react': 6.5.9
+      '@storybook/theming': 6.5.9
       '@types/lodash': 4.14.182
       '@types/react': 18.0.14
       '@types/react-dom': 18.0.5
-      '@vitejs/plugin-react': ^1.3.2
+      '@vitejs/plugin-react': 1.3.2
       emoji-regex: 10.1.0
       framer-motion: 6.3.13
       kbar: 0.1.0-beta.36
@@ -246,11 +246,11 @@ importers:
       react-dom: 18.2.0
       serve: 13.0.2
       smoothscroll-polyfill: 0.4.4
-      storybook-addon-themes: ^6.1.0
+      storybook-addon-themes: 6.1.0
       swr: 1.3.0
       typescript: 4.7.4
-      use-delayed-render: ^0.0.7
-      vite: ^2.9.12
+      use-delayed-render: 0.0.7
+      vite: 2.9.12
     dependencies:
       '@radix-ui/primitive': 0.1.0
       '@radix-ui/react-accessible-icon': 0.1.5-rc.40_biqbaboplfbrettd7655fr4n2y
@@ -10871,7 +10871,7 @@ packages:
       mississippi: 3.0.0
       mkdirp: 0.5.6
       move-concurrently: 1.0.1
-      promise-inflight: 1.0.1
+      promise-inflight: 1.0.1_bluebird@3.7.2
       rimraf: 2.7.1
       ssri: 6.0.2
       unique-filename: 1.1.1
@@ -21101,6 +21101,20 @@ packages:
     peerDependenciesMeta:
       bluebird:
         optional: true
+    dev: true
+
+  /promise-inflight/1.0.1_bluebird@3.7.2:
+    resolution:
+      {
+        integrity: sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==,
+      }
+    peerDependencies:
+      bluebird: '*'
+    peerDependenciesMeta:
+      bluebird:
+        optional: true
+    dependencies:
+      bluebird: 3.7.2
     dev: true
 
   /promise.allsettled/1.0.5:
