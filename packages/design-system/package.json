@@ -115,7 +115,7 @@
     "@storybook/addon-links": "6.5.9",
     "@storybook/addon-notes": "5.3.21",
     "@storybook/addon-storysource": "6.5.9",
-    "@storybook/builder-vite": "0.1.36",
+    "@storybook/builder-vite": "0.1.37",
     "@storybook/react": "6.5.9",
     "@storybook/theming": "6.5.9",
     "@types/lodash": "4.14.182",
