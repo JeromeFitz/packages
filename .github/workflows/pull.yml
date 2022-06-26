@@ -38,7 +38,7 @@ jobs:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-      IS_ACTOR_VERIFIED: ${{ github.actor == 'jeromefitz' || github.actor == 'dependabot[bot]' }}
+      IS_ACTOR_VERIFIED: ${{ github.actor == 'jeromefitz' || github.actor == 'renovate[bot]' }}
       IS_ACTOR_JEROMEFITZ: ${{ github.actor == 'jeromefitz' }}
       IS_ACTOR_DEPENDABOT: ${{ github.actor == 'dependabot[bot]' }}
       IS_ACTOR_RENOVATE: ${{ github.actor == 'renovate[bot]' }}
@@ -53,56 +53,58 @@ jobs:
 
       - name: '💽️  Init'
         id: pull-init
-        uses: JeromeFitz/packages/.github/actions/init@renovate/configure
+        uses: JeromeFitz/packages/.github/actions/init@main
 
-      - name: '🚚💨 debug'
+      - name: '🧪 debug'
         id: pull-debug
         shell: bash
         run: |
-          echo 'IS_ACTOR_VERIFIED: ${{ env.IS_ACTOR_VERIFIED }}'
+          echo 'IS_ACTOR_VERIFIED:   ${{ env.IS_ACTOR_VERIFIED }}'
           echo 'IS_ACTOR_JEROMEFITZ: ${{ env.IS_ACTOR_JEROMEFITZ }}'
-          echo 'IS_ACTOR_DEPENDABOT: ${{ env.IS_ACTOR_DEPENDABOT }}'
-          echo 'IS_LABEL_PNPM: ${{ env.IS_LABEL_PNPM }}'
-          echo 'github.actor: ${{ github.actor }}'
+          echo 'IS_ACTOR_RENOVATE:   ${{ env.IS_ACTOR_RENOVATE }}'
+          echo 'IS_LABEL_PNPM:       ${{ env.IS_LABEL_PNPM }}'
+          echo 'github.actor:        ${{ github.actor }}'
 
-      - name: '🚚💨 debug ii'
+      - name: '🧪 debug ii'
         id: pull-debug-ii
-        if: ${{ env.IS_ACTOR_JEROMEFITZ == 'true' }}
+        if: ${{ env.IS_ACTOR_VERIFIED == 'true' }}
         shell: bash
         run: |
-          echo 'Verify strings or booleans: STRING'
+          echo 'Note: true is a string 😑'
 
-      - name: '🚚💨 debug iii'
+      - name: '🧪 debug iii'
         id: pull-debug-iii
-        if: ${{ env.IS_ACTOR_JEROMEFITZ == true' }}
+        if: ${{ env.IS_ACTOR_RENOVATE == 'true' || env.IS_LABEL_PNPM == 'true' }}
         shell: bash
         run: |
-          echo 'Verify strings or booleans: BOOLEAN'
+          echo 'Note: This _would_ run the pnpm check'
 
-      - name: '🔒  pnpm'
-        id: pull-pnpm
-        uses: JeromeFitz/packages/.github/actions/pnpm@renovate/configure
-        if: ${{ env.IS_ACTOR_DEPENDABOT == 'true' || env.IS_LABEL_PNPM == 'true' }}
-        with:
-          IS_ACTOR_VERIFIED: ${{ env.IS_ACTOR_VERIFIED }}
-          IS_ACTOR_JEROMEFITZ: ${{ env.IS_ACTOR_JEROMEFITZ }}
-          IS_ACTOR_DEPENDABOT: ${{ env.IS_ACTOR_DEPENDABOT }}
-          IS_LABEL_PNPM: ${{ env.IS_LABEL_PNPM }}
+      #  NOTE: Turn this off until determine if renovate handles this
+      # - name: '🔒  pnpm'
+      #   id: pull-pnpm
+      #   uses: JeromeFitz/packages/.github/actions/pnpm@main
+      #   if: ${{ env.IS_ACTOR_RENOVATE == 'true' || env.IS_LABEL_PNPM == 'true' }}
+      #   with:
+      #     IS_ACTOR_VERIFIED: ${{ env.IS_ACTOR_VERIFIED }}
+      #     IS_ACTOR_JEROMEFITZ: ${{ env.IS_ACTOR_JEROMEFITZ }}
+      #     IS_ACTOR_DEPENDABOT: ${{ env.IS_ACTOR_DEPENDABOT }}
+      #     IS_ACTOR_RENOVATE: ${{ env.IS_ACTOR_RENOVATE }}
+      #     IS_LABEL_PNPM: ${{ env.IS_LABEL_PNPM }}
 
       - name: '📦  Install'
         id: pull-install
-        uses: JeromeFitz/packages/.github/actions/install@renovate/configure
+        uses: JeromeFitz/packages/.github/actions/install@main
 
       - name: '🔺️  Cache (turbo)'
         id: pull-cache-turbo
-        uses: JeromeFitz/packages/.github/actions/cache-turbo@renovate/configure
+        uses: JeromeFitz/packages/.github/actions/cache-turbo@main
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
       - name: '🚨️  Lint'
         id: pull-lint
-        uses: JeromeFitz/packages/.github/actions/lint@renovate/configure
+        uses: JeromeFitz/packages/.github/actions/lint@main
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
