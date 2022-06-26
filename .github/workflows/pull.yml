@@ -55,29 +55,29 @@ jobs:
         id: pull-init
         uses: JeromeFitz/packages/.github/actions/init@main
 
-      - name: '🧪 debug'
-        id: pull-debug
-        shell: bash
-        run: |
-          echo 'IS_ACTOR_VERIFIED:   ${{ env.IS_ACTOR_VERIFIED }}'
-          echo 'IS_ACTOR_JEROMEFITZ: ${{ env.IS_ACTOR_JEROMEFITZ }}'
-          echo 'IS_ACTOR_RENOVATE:   ${{ env.IS_ACTOR_RENOVATE }}'
-          echo 'IS_LABEL_PNPM:       ${{ env.IS_LABEL_PNPM }}'
-          echo 'github.actor:        ${{ github.actor }}'
+      # - name: '🧪 debug'
+      #   id: pull-debug
+      #   shell: bash
+      #   run: |
+      #     echo 'IS_ACTOR_VERIFIED:   ${{ env.IS_ACTOR_VERIFIED }}'
+      #     echo 'IS_ACTOR_JEROMEFITZ: ${{ env.IS_ACTOR_JEROMEFITZ }}'
+      #     echo 'IS_ACTOR_RENOVATE:   ${{ env.IS_ACTOR_RENOVATE }}'
+      #     echo 'IS_LABEL_PNPM:       ${{ env.IS_LABEL_PNPM }}'
+      #     echo 'github.actor:        ${{ github.actor }}'
 
-      - name: '🧪 debug ii'
-        id: pull-debug-ii
-        if: ${{ env.IS_ACTOR_VERIFIED == 'true' }}
-        shell: bash
-        run: |
-          echo 'Note: true is a string 😑'
+      # - name: '🧪 debug ii'
+      #   id: pull-debug-ii
+      #   if: ${{ env.IS_ACTOR_VERIFIED == 'true' }}
+      #   shell: bash
+      #   run: |
+      #     echo 'Note: true is a string 😑'
 
-      - name: '🧪 debug iii'
-        id: pull-debug-iii
-        if: ${{ env.IS_ACTOR_RENOVATE == 'true' || env.IS_LABEL_PNPM == 'true' }}
-        shell: bash
-        run: |
-          echo 'Note: This _would_ run the pnpm check'
+      # - name: '🧪 debug iii'
+      #   id: pull-debug-iii
+      #   if: ${{ env.IS_ACTOR_RENOVATE == 'true' || env.IS_LABEL_PNPM == 'true' }}
+      #   shell: bash
+      #   run: |
+      #     echo 'Note: This _would_ run the pnpm check'
 
       #  NOTE: Turn this off until determine if renovate handles this
       # - name: '🔒  pnpm'
@@ -105,6 +105,13 @@ jobs:
       - name: '🚨️  Lint'
         id: pull-lint
         uses: JeromeFitz/packages/.github/actions/lint@main
+        with:
+          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+
+      - name: '🏗️  Build'
+        id: pull-build
+        uses: JeromeFitz/packages/.github/actions/build@main
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}

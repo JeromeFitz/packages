@@ -92,29 +92,26 @@ Built with [`radix-ui`](https://www.radix-ui.com) and [`stitches`](https://stitc
 
 ## :octocat: CI/CD Workflows
 
-- ⚗️ **pull**:
+- ⚗️ `**pull**`:
   - Branch(es):
     - `main|canary|develop`
   - Script(s):
-    - `lint|test`
-- 🔀️ **push**:
-
+    - `lint|test|build`
+- 🔀️ `**push**`:
   - Branch(es):
     - `main|canary|develop`
     - `(ci|feature|fix|refactor|release)/**`
   - Script(s):
     - `lint|test|build|semantic-release`
   - Note(s):
-    - `build` will be skipped unless `[b]` in commit subject
-    - `semantic-release` will be skipped unless `[b]` in commit subject
+    - `[b]` necessary for `semantic-release`
     - Pre-relase branches (aka `!main`):
       - Handled in root `release.config`
       - Can be overriden in any package
-
-- 🌃️ **weekly**:
+- 🌃️ `**weekly**`:
   - Branch(es):
     - `main`
   - Script(s):
     - `lint|test|build|semantic-release`
   - Note(s):
-    - `[b]` not necessary for `build|semantic-release`
+    - `[b]` not necessary for `semantic-release`
