@@ -47,29 +47,29 @@ jobs:
 
       - name: '💽️  Init'
         id: push-init
-        uses: JeromeFitz/packages/.github/actions/init@ci/turbo-remote-cache
+        uses: JeromeFitz/packages/.github/actions/init@main
 
       - name: '📦  Install'
         id: push-install
-        uses: JeromeFitz/packages/.github/actions/install@ci/turbo-remote-cache
+        uses: JeromeFitz/packages/.github/actions/install@main
 
       - name: '🔺️  Cache (turbo)'
         id: push-cache-turbo
-        uses: JeromeFitz/packages/.github/actions/cache-turbo@ci/turbo-remote-cache
+        uses: JeromeFitz/packages/.github/actions/cache-turbo@main
         with:
           TURBO_TEAM: ${{ env.TURBO_TEAM }}
           TURBO_TOKEN: ${{ env.TURBO_TOKEN }}
 
       - name: '🚨️  Lint'
         id: push-lint
-        uses: JeromeFitz/packages/.github/actions/lint@ci/turbo-remote-cache
+        uses: JeromeFitz/packages/.github/actions/lint@main
         with:
           TURBO_TEAM: ${{ env.TURBO_TEAM }}
           TURBO_TOKEN: ${{ env.TURBO_TOKEN }}
 
       - name: '🏗️  Build'
         id: push-build
-        uses: JeromeFitz/packages/.github/actions/build@ci/turbo-remote-cache
+        uses: JeromeFitz/packages/.github/actions/build@main
         with:
           TURBO_TEAM: ${{ env.TURBO_TEAM }}
           TURBO_TOKEN: ${{ env.TURBO_TOKEN }}
@@ -77,7 +77,7 @@ jobs:
       - name: '🏷️  Release'
         if: (contains(github.event.head_commit.message, '[b]'))
         id: push-release
-        uses: JeromeFitz/packages/.github/actions/release@ci/turbo-remote-cache
+        uses: JeromeFitz/packages/.github/actions/release@main
         with:
           GH_TOKEN: ${{ env.GH_BOT_TOKEN }}
           NPM_TOKEN: ${{ env.NPM_TOKEN }}
