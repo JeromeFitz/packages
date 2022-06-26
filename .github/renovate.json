@@ -1,16 +1,34 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"],
+  "extends": [
+    "config:base",
+    ":semanticCommitTypeAll(⬆️  )",
+    ":semanticCommitScope(deps)"
+  ],
   "baseBranches": ["main"],
   "branchPrefix": "deps/",
+  "commitMessageAction": "",
+  "commitMessagePrefix": "{{semanticCommitType}} ({{semanticCommitScope}}) ",
+  "commitMessageExtra": "{{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}v{{{newMajor}}}{{else}}{{#if isSingleVersion}}v{{{newVersion}}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}}",
   "commitMessageTopic": " {{depName}}",
   "dependencyDashboard": false,
   "ignoreDeps": ["@types/node", "inquirer", "read-pkg-up", "typescript"],
   "labels": ["📦️ Dependencies"],
+  "node": {
+    "enabled": false,
+    "semanticCommitScope": "node",
+    "semanticCommitType": "📦  "
+  },
   "packageRules": [
     {
-      "extends": [":semanticCommitScopeAll(deps-dev)"],
-      "groupName": "eslint-config",
+      "groupName": "github actions :octocat: ...",
+      "groupSlug": "github-acitons",
+      "matchPackagePatterns": ["^actions"],
+      "semanticCommitScope": "actions",
+      "semanticCommitType": "👷  "
+    },
+    {
+      "groupName": "eslint-config 📏 ...",
       "groupSlug": "eslint-config",
       "matchPackageNames": [
         "@babel/eslint-parser",
@@ -23,14 +41,19 @@
       "matchPackagePatterns": ["^eslint"]
     },
     {
-      "groupName": "next",
+      "groupName": "next 🔺 ...",
       "groupSlug": "next",
       "matchPackageNames": ["eslint-config-next", "next"]
     },
     {
-      "groupName": "radix-ui",
+      "groupName": "radix-ui 🌐 ...",
       "groupSlug": "radix-ui",
       "matchPackagePatterns": ["^@radix-ui/"]
+    },
+    {
+      "groupName": "react ⚛️ ...",
+      "groupSlug": "react",
+      "matchPackageNames": ["react", "react-dom"]
     }
   ],
   "prBodyColumns": ["Package", "Update", "Type", "Change"],
