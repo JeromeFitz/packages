@@ -17,6 +17,6 @@ runs:
       uses: actions/setup-node@v3
       with:
         # architecture: 'x64'
-        # cache-dependency-path: pnpm-lock.yaml
+        cache-dependency-path: pnpm-lock.yaml
         cache: 'pnpm'
         node-version: 16

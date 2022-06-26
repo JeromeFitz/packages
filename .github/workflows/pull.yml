@@ -95,16 +95,16 @@ jobs:
         id: pull-install
         uses: JeromeFitz/packages/.github/actions/install@ci/turbo-remote-cache
 
-      # - name: '🔺️  Cache (turbo)'
-      #   id: pull-cache-turbo
-      #   uses: JeromeFitz/packages/.github/actions/cache-turbo@ci/turbo-remote-cache
-      #   with:
-      #     TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-      #     TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      - name: '🔺️  Cache (turbo)'
+        id: pull-cache-turbo
+        uses: JeromeFitz/packages/.github/actions/cache-turbo@ci/turbo-remote-cache
+        with:
+          TURBO_TEAM: ${{ env.TURBO_TEAM }}
+          TURBO_TOKEN: ${{ env.TURBO_TOKEN }}
 
       - name: '🚨️  Lint'
         id: pull-lint
         uses: JeromeFitz/packages/.github/actions/lint@ci/turbo-remote-cache
         with:
-          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+          TURBO_TEAM: ${{ env.TURBO_TEAM }}
+          TURBO_TOKEN: ${{ env.TURBO_TOKEN }}
