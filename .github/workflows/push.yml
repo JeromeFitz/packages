@@ -57,22 +57,22 @@ jobs:
         id: push-cache-turbo
         uses: JeromeFitz/packages/.github/actions/cache-turbo@main
         with:
-          TURBO_TEAM: ${{ env.TURBO_TEAM }}
-          TURBO_TOKEN: ${{ env.TURBO_TOKEN }}
+          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
       - name: '🚨️  Lint'
         id: push-lint
         uses: JeromeFitz/packages/.github/actions/lint@main
         with:
-          TURBO_TEAM: ${{ env.TURBO_TEAM }}
-          TURBO_TOKEN: ${{ env.TURBO_TOKEN }}
+          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
       - name: '🏗️  Build'
         id: push-build
         uses: JeromeFitz/packages/.github/actions/build@main
         with:
-          TURBO_TEAM: ${{ env.TURBO_TEAM }}
-          TURBO_TOKEN: ${{ env.TURBO_TOKEN }}
+          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
       - name: '🏷️  Release'
         if: (contains(github.event.head_commit.message, '[b]'))
