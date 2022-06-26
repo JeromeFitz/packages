@@ -11,63 +11,6 @@ import {
 } from './Toast'
 import type { IToast, IToastVariant } from './Toast.types'
 
-const ToastImpl = ({
-  action,
-  actionAltText,
-  // @todo(toast) custom component
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  actionComponent,
-  actionText,
-  close,
-  // @todo(toast) custom component
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  closeComponent,
-  key,
-  description,
-  removeToastByKey,
-  title,
-  variant,
-  ...toastProps
-}) => {
-  const actionVisible = !!action && !!actionText
-  const closeVisible = !actionVisible && !!close
-  return (
-    <Toast
-      key={key}
-      onOpenChange={() => {
-        removeToastByKey(key)
-      }}
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      variant={variant}
-      {...toastProps}
-    >
-      {!!title && (
-        <ToastTitle>
-          {title} ({key})
-        </ToastTitle>
-      )}
-      <ToastDescription>{description}</ToastDescription>
-
-      {actionVisible && (
-        <ToastAction asChild altText={actionAltText || actionText}>
-          <Button onClick={action} size="1">
-            {actionText}
-          </Button>
-        </ToastAction>
-      )}
-
-      {closeVisible && (
-        <ToastClose asChild aria-label="Close">
-          <Button ghost size="1" onClick={!!close ? close : () => {}}>
-            <Icon.Cross2 />
-          </Button>
-        </ToastClose>
-      )}
-    </Toast>
-  )
-}
-
 const Toaster = React.forwardRef((props, forwardedRef) => {
   const [toasts, toastsSet] = React.useState<IToast[]>([])
 
@@ -133,11 +76,63 @@ const Toaster = React.forwardRef((props, forwardedRef) => {
 
   return (
     <>
-      {toasts.map(({ key, ...toastProps }) => {
-        return (
-          <ToastImpl key={key} removeToastByKey={removeToastByKey} {...toastProps} />
-        )
-      })}
+      {toasts.map(
+        ({
+          action,
+          actionAltText,
+          // @todo(toast) custom component
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          actionComponent,
+          actionText,
+          close,
+          // @todo(toast) custom component
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          closeComponent,
+          key,
+          description,
+          title,
+          variant,
+          ...toastProps
+        }) => {
+          const actionVisible = !!action && !!actionText
+          const closeVisible = !actionVisible && !!close
+          return (
+            <Toast
+              key={key}
+              onOpenChange={() => {
+                removeToastByKey(key)
+              }}
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-ignore
+              variant={variant}
+              {...toastProps}
+            >
+              {!!title && (
+                <ToastTitle>
+                  {title} ({key})
+                </ToastTitle>
+              )}
+              <ToastDescription>{description}</ToastDescription>
+
+              {actionVisible && (
+                <ToastAction asChild altText={actionAltText || actionText}>
+                  <Button onClick={action} size="1">
+                    {actionText}
+                  </Button>
+                </ToastAction>
+              )}
+
+              {closeVisible && (
+                <ToastClose asChild aria-label="Close">
+                  <Button ghost size="1" onClick={!!close ? close : () => {}}>
+                    <Icon.Cross2 />
+                  </Button>
+                </ToastClose>
+              )}
+            </Toast>
+          )
+        }
+      )}
     </>
   )
 })
