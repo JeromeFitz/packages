@@ -1,4 +1,42 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"]
+  "extends": ["config:base"],
+  "baseBranches": ["main"],
+  "branchPrefix": "deps/",
+  "commitMessageTopic": " {{depName}}",
+  "dependencyDashboard": false,
+  "ignoreDeps": ["@types/node", "inquirer", "read-pkg-up", "typescript"],
+  "labels": ["📦️ Dependencies"],
+  "packageRules": [
+    {
+      "extends": [":semanticCommitScopeAll(deps-dev)"],
+      "groupName": "eslint-config",
+      "groupSlug": "eslint-config",
+      "matchPackageNames": [
+        "@babel/eslint-parser",
+        "@typescript-eslint/eslint-plugin",
+        "@typescript-eslint/parser",
+        "prettier",
+        "pretty-quick",
+        "!eslint-config-next"
+      ],
+      "matchPackagePatterns": ["^eslint"]
+    },
+    {
+      "groupName": "next",
+      "groupSlug": "next",
+      "matchPackageNames": ["eslint-config-next", "next"]
+    },
+    {
+      "groupName": "radix-ui",
+      "groupSlug": "radix-ui",
+      "matchPackagePatterns": ["^@radix-ui/"]
+    }
+  ],
+  "prBodyColumns": ["Package", "Update", "Type", "Change"],
+  "prHourlyLimit": 2,
+  "rebaseWhen": "conflicted",
+  "semanticCommitScope": "deps",
+  "semanticCommitType": "⬆️  ",
+  "semanticCommits": "enabled"
 }
