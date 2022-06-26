@@ -27,7 +27,7 @@ env:
 jobs:
   pull:
     name: '👷️  CI'
-    if: (!contains(github.event.head_commit.message, '[skip ci]'))
+    if: (contains(github.event.head_commit.message, '[b]') || github.ref == 'refs/heads/main') && !contains(github.event.head_commit.message, '[skip ci]')
     timeout-minutes: 20
     runs-on: ubuntu-latest
     strategy:
@@ -67,6 +67,12 @@ jobs:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
+      # https://docs.github.com/en/actions/learn-github-actions/expressions
+      - name: '📛  Commit Message'
+        id: push-commit-message
+        run: |
+          echo "::set-output name=message::$(git log --no-merges -1 --oneline)"
+
       - name: '🏗️  Build'
         id: push-build
         uses: JeromeFitz/packages/.github/actions/build@main
@@ -75,8 +81,8 @@ jobs:
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
       - name: '🏷️  Release'
-        if: (contains(github.event.head_commit.message, '[b]'))
         id: push-release
+        if: ${{ contains(steps.push-commit-message.outputs.message, '[b]') }}
         uses: JeromeFitz/packages/.github/actions/release@main
         with:
           GH_TOKEN: ${{ env.GH_BOT_TOKEN }}

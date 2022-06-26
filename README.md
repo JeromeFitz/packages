@@ -105,9 +105,10 @@ Built with [`radix-ui`](https://www.radix-ui.com) and [`stitches`](https://stitc
     - `lint|test|build|semantic-release`
   - Note(s):
     - `[b]` necessary for `semantic-release`
-    - Pre-relase branches (aka `!main`):
-      - Handled in root `release.config`
-      - Can be overriden in any package
+      - Pre-relase branches (aka `!main`):
+        - Handled in root `release.config`
+        - Can be overriden in any package
+    - `[b]` necessary for `build` when not on `main`
 - 🌃️ `**weekly**`:
   - Branch(es):
     - `main`
