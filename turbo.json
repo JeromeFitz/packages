@@ -3,7 +3,8 @@
   "pipeline": {
     "build": {
       "outputs": ["dist/**", ".next/**"],
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build"],
+      "inputs": ["src/**", "*.cjs", "package.json"]
     },
     "clean": {
       "cache": false
@@ -12,7 +13,8 @@
       "cache": false
     },
     "lint": {
-      "dependsOn": []
+      "dependsOn": [],
+      "inputs": ["src/**", "*.cjs", "package.json"]
     },
     "lint:fix": {
       "cache": false,
@@ -23,20 +25,24 @@
       "dependsOn": ["lint", "build"]
     },
     "@jeromefitz/git-cz#build": {
-      "dependsOn": ["@jeromefitz/conventional-gitmoji#build"]
+      "dependsOn": ["@jeromefitz/conventional-gitmoji#build"],
+      "inputs": ["src/**", "*.cjs", "package.json"]
     },
     "@jeromefitz/notion#build": {
-      "dependsOn": ["@jeromefitz/utils#build"]
+      "dependsOn": ["@jeromefitz/utils#build"],
+      "inputs": ["src/**", "*.cjs", "package.json"]
     },
     "@jeromefitz/semantic#build": {
       "dependsOn": [
         "@jeromefitz/conventional-gitmoji#build",
         "@jeromefitz/git-cz#build",
         "@jeromefitz/release-notes-generator#build"
-      ]
+      ],
+      "inputs": ["src/**", "*.cjs", "package.json"]
     },
     "@jeromefitz/spotify#build": {
-      "dependsOn": ["@jeromefitz/utils#build"]
+      "dependsOn": ["@jeromefitz/utils#build"],
+      "inputs": ["src/**", "*.cjs", "package.json"]
     }
   }
 }
