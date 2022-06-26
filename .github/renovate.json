@@ -9,7 +9,7 @@
   "branchPrefix": "deps/",
   "commitMessageAction": "",
   "commitMessagePrefix": "{{semanticCommitType}} ({{semanticCommitScope}}) ",
-  "commitMessageExtra": "{{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}v{{{newMajor}}}{{else}}{{#if isSingleVersion}}v{{{newVersion}}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}}",
+  "commitMessageExtra": "{{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{{newMajor}}}{{else}}{{#if isSingleVersion}}{{{newVersion}}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}}",
   "commitMessageTopic": " {{depName}}",
   "dependencyDashboard": false,
   "ignoreDeps": ["@types/node", "inquirer", "read-pkg-up", "typescript"],
