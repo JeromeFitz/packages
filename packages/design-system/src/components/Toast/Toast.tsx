@@ -18,26 +18,26 @@ const slideIn = keyframes({
 })
 
 const swipeOut = keyframes({
-  from: { transform: 'translateX(var(--radix-toast-swipe-end-x))' },
+  from: { transform: 'translateX(0),' },
   to: { transform: `translateX(calc(100% + ${VIEWPORT_PADDING}px))` },
 })
 
 const StyledToast = styled(ToastPrimitive.Root, {
   alignItems: 'center',
   borderRadius: '$2',
-  columnGap: '$2',
+  columnGap: '$3',
   display: 'grid',
   gridTemplateAreas: '"title action" "description action"',
   gridTemplateColumns: 'auto max-content',
-  padding: '$4',
+  padding: '$5',
 
   '@media (prefers-reduced-motion: no-preference)': {
     transition: 'background-color 250ms ease',
     '&[data-state="open"]': {
-      animation: `${slideIn} 150ms cubic-bezier(0.16, 1, 0.3, 1)`,
+      animation: `${slideIn} 250ms cubic-bezier(0.16, 1, 0.3, 1)`,
     },
     '&[data-state="closed"]': {
-      animation: `${hide} 100ms ease-in forwards`,
+      animation: `${hide} 150ms ease-in forwards`,
     },
     '&[data-swipe="move"]': {
       transform: 'translateX(var(--radix-toast-swipe-move-x))',
@@ -49,7 +49,7 @@ const StyledToast = styled(ToastPrimitive.Root, {
       },
     },
     '&[data-swipe="end"]': {
-      animation: `${swipeOut} 100ms ease-out forwards`,
+      animation: `${swipeOut} 200ms ease-out forwards`,
     },
   },
 
@@ -110,17 +110,17 @@ const StyledToast = styled(ToastPrimitive.Root, {
 
 const StyledTitle = styled(ToastPrimitive.Title, {
   color: '$colors$primary',
-  fontSize: '0.9375rem',
+  fontSize: '$3',
   fontWeight: 500,
   gridArea: 'title',
-  marginBottom: '$1',
+  marginBottom: '$2',
 })
 
 const StyledDescription = styled(ToastPrimitive.Description, {
   color: '$colors$secondary',
-  fontSize: '0.8125rem',
+  fontSize: '$2',
   gridArea: 'description',
-  lineHeight: 1.3,
+  lineHeight: 1.2,
   margin: 0,
 })
 

@@ -16,9 +16,6 @@ const Providers = ({ children }) => {
       defaultTheme="system"
     >
       <ToastProvider duration={5000} swipeDirection="right" swipeThreshold={50}>
-        {/* @todo(react-18) */}
-        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-        {/* @ts-ignore */}
         <KBarProvider>
           {children}
           <KBarPortal />
