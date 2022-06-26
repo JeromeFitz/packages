@@ -237,7 +237,7 @@ importers:
       '@types/react-dom': 18.0.5
       '@vitejs/plugin-react': 1.3.2
       emoji-regex: 10.1.0
-      framer-motion: 6.3.13
+      framer-motion: 6.3.15
       kbar: 0.1.0-beta.36
       lodash: 4.17.21
       multiple-themes-stitches: 0.0.10
@@ -331,7 +331,7 @@ importers:
       '@types/react': 18.0.14
       '@types/react-dom': 18.0.5
       '@vitejs/plugin-react': 1.3.2
-      framer-motion: 6.3.13_biqbaboplfbrettd7655fr4n2y
+      framer-motion: 6.3.15_biqbaboplfbrettd7655fr4n2y
       kbar: 0.1.0-beta.36_biqbaboplfbrettd7655fr4n2y
       lodash: 4.17.21
       multiple-themes-stitches: 0.0.10_klcqnchi7pqnrrrjofzkjj4saq
@@ -11725,6 +11725,24 @@ packages:
       tslib: 2.4.0
     optionalDependencies:
       '@emotion/is-prop-valid': 0.8.8
+    dev: false
+
+  /framer-motion/6.3.15_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-tqyEaYfr+7p3rnMcMzdVxWoHLsAfpz7bk6xZljndSEfafQ0BfwlZ/CeFZkEETRFr16w/LxfDKBVhinU66ucDYw==}
+    peerDependencies:
+      react: '>=16.8 || ^17.0.0 || ^18.0.0'
+      react-dom: '>=16.8 || ^17.0.0 || ^18.0.0'
+    dependencies:
+      framesync: 6.0.1
+      hey-listen: 1.0.8
+      popmotion: 11.0.3
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      style-value-types: 5.0.0
+      tslib: 2.4.0
+    optionalDependencies:
+      '@emotion/is-prop-valid': 0.8.8
+    dev: true
 
   /framesync/6.0.1:
     resolution: {integrity: sha512-fUY88kXvGiIItgNC7wcTOl0SNRCVXMKSWW2Yzfmn7EKNc+MpCzcz9DhdHcdjbrtN3c6R4H5dTY2jiCpPdysEjA==}
