@@ -1,3 +1,3 @@
-const ci = ['workflow-release']
+const ci = []
 
 module.exports = ci
