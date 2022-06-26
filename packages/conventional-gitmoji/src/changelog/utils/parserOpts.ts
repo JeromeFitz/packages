@@ -5,6 +5,7 @@ const parserOpts = {
   // referenceActions: typeSpecs.map(({ type }) => type),
   revertPattern: /^Revert\s"([\s\S]*)"\s*This reverts commit (\w*)\./,
   //
+  // @todo(conventional-commits-parser) can this be removed w/ renovate?
   // @hack(conventional-commits-parser) 🤖️ dependabot workaround
   //      random uuid to ensure these will never get called
   issuePrefixes: ['1b9fe48b-292c-46e7-bfde-0599639d0ec0'],

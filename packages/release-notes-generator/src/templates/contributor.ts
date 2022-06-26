@@ -27,6 +27,8 @@ const contributorsProhibitListDefault = {
     'dependabot[bot]',
     'kodiakhq',
     'kodiakhq[bot]',
+    'renovate',
+    'renovate[bot]',
     'semantic-release-bot',
   ],
   email: [
