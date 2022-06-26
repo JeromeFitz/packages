@@ -42,30 +42,36 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 100
+
       - name: '💽️  Init'
         id: weekly-init
         uses: JeromeFitz/packages/.github/actions/init@ci/turbo-remote-cache
+
       - name: '📦  Install'
         id: weekly-install
         uses: JeromeFitz/packages/.github/actions/install@ci/turbo-remote-cache
+
       - name: '🔺️  Cache (turbo)'
         id: pull-cache-turbo
         uses: JeromeFitz/packages/.github/actions/cache-turbo@ci/turbo-remote-cache
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+
       - name: '🚨️  Lint'
         id: weekly-lint
         uses: JeromeFitz/packages/.github/actions/lint@ci/turbo-remote-cache
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+
       - name: '🏗️  Build'
         id: weekly-build
         uses: JeromeFitz/packages/.github/actions/build@ci/turbo-remote-cache
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+
       - name: '🏷️  Release'
         id: weekly-release
         uses: JeromeFitz/packages/.github/actions/release@ci/turbo-remote-cache

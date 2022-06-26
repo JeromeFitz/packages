@@ -108,3 +108,10 @@ jobs:
         with:
           TURBO_TEAM: ${{ env.TURBO_TEAM }}
           TURBO_TOKEN: ${{ env.TURBO_TOKEN }}
+
+      - name: '🏗️  Build'
+        id: pull-build
+        uses: JeromeFitz/packages/.github/actions/build@ci/turbo-remote-cache
+        with:
+          TURBO_TEAM: ${{ env.TURBO_TEAM }}
+          TURBO_TOKEN: ${{ env.TURBO_TOKEN }}
