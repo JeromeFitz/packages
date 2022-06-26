@@ -39,8 +39,9 @@ jobs:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
       IS_ACTOR_VERIFIED: ${{ github.actor == 'jeromefitz' || github.actor == 'dependabot[bot]' }}
-      IS_JEROMEFITZ: ${{ github.actor == 'jeromefitz' }}
-      IS_DEPENDABOT: ${{ github.actor == 'dependabot[bot]' }}
+      IS_ACTOR_JEROMEFITZ: ${{ github.actor == 'jeromefitz' }}
+      IS_ACTOR_DEPENDABOT: ${{ github.actor == 'dependabot[bot]' }}
+      IS_ACTOR_RENOVATE: ${{ github.actor == 'renovate[bot]' }}
       IS_LABEL_PNPM: ${{ contains( github.event.pull_request.labels.*.name, '📦 pnpm' ) }}
     steps:
       - name: '🐙️  Checkout'
@@ -52,32 +53,56 @@ jobs:
 
       - name: '💽️  Init'
         id: pull-init
-        uses: JeromeFitz/packages/.github/actions/init@main
+        uses: JeromeFitz/packages/.github/actions/init@renovate/configure
+
+      - name: '🚚💨 debug'
+        id: pull-debug
+        shell: bash
+        run: |
+          echo 'IS_ACTOR_VERIFIED: ${{ env.IS_ACTOR_VERIFIED }}'
+          echo 'IS_ACTOR_JEROMEFITZ: ${{ env.IS_ACTOR_JEROMEFITZ }}'
+          echo 'IS_ACTOR_DEPENDABOT: ${{ env.IS_ACTOR_DEPENDABOT }}'
+          echo 'IS_LABEL_PNPM: ${{ env.IS_LABEL_PNPM }}'
+          echo 'github.actor: ${{ github.actor }}'
+
+      - name: '🚚💨 debug ii'
+        id: pull-debug-ii
+        if: ${{ env.IS_ACTOR_JEROMEFITZ == 'true' }}
+        shell: bash
+        run: |
+          echo 'Verify strings or booleans: STRING'
+
+      - name: '🚚💨 debug iii'
+        id: pull-debug-iii
+        if: ${{ env.IS_ACTOR_JEROMEFITZ == true' }}
+        shell: bash
+        run: |
+          echo 'Verify strings or booleans: BOOLEAN'
 
       - name: '🔒  pnpm'
         id: pull-pnpm
-        uses: JeromeFitz/packages/.github/actions/pnpm@main
-        if: ${{ env.IS_DEPENDABOT == 'true' || env.IS_LABEL_PNPM == 'true' }}
+        uses: JeromeFitz/packages/.github/actions/pnpm@renovate/configure
+        if: ${{ env.IS_ACTOR_DEPENDABOT == 'true' || env.IS_LABEL_PNPM == 'true' }}
         with:
           IS_ACTOR_VERIFIED: ${{ env.IS_ACTOR_VERIFIED }}
-          IS_JEROMEFITZ: ${{ env.IS_JEROMEFITZ }}
-          IS_DEPENDABOT: ${{ env.IS_DEPENDABOT }}
+          IS_ACTOR_JEROMEFITZ: ${{ env.IS_ACTOR_JEROMEFITZ }}
+          IS_ACTOR_DEPENDABOT: ${{ env.IS_ACTOR_DEPENDABOT }}
           IS_LABEL_PNPM: ${{ env.IS_LABEL_PNPM }}
 
       - name: '📦  Install'
         id: pull-install
-        uses: JeromeFitz/packages/.github/actions/install@main
+        uses: JeromeFitz/packages/.github/actions/install@renovate/configure
 
       - name: '🔺️  Cache (turbo)'
         id: pull-cache-turbo
-        uses: JeromeFitz/packages/.github/actions/cache-turbo@main
+        uses: JeromeFitz/packages/.github/actions/cache-turbo@renovate/configure
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
       - name: '🚨️  Lint'
         id: pull-lint
-        uses: JeromeFitz/packages/.github/actions/lint@main
+        uses: JeromeFitz/packages/.github/actions/lint@renovate/configure
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}

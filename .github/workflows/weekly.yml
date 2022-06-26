@@ -44,31 +44,31 @@ jobs:
           fetch-depth: 100
       - name: '💽️  Init'
         id: weekly-init
-        uses: JeromeFitz/packages/.github/actions/init@main
+        uses: JeromeFitz/packages/.github/actions/init@renovate/configure
       - name: '📦  Install'
         id: weekly-install
-        uses: JeromeFitz/packages/.github/actions/install@main
+        uses: JeromeFitz/packages/.github/actions/install@renovate/configure
       - name: '🔺️  Cache (turbo)'
         id: pull-cache-turbo
-        uses: JeromeFitz/packages/.github/actions/cache-turbo@main
+        uses: JeromeFitz/packages/.github/actions/cache-turbo@renovate/configure
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       - name: '🚨️  Lint'
         id: weekly-lint
-        uses: JeromeFitz/packages/.github/actions/lint@main
+        uses: JeromeFitz/packages/.github/actions/lint@renovate/configure
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       - name: '🏗️  Build'
         id: weekly-build
-        uses: JeromeFitz/packages/.github/actions/build@main
+        uses: JeromeFitz/packages/.github/actions/build@renovate/configure
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       - name: '🏷️  Release'
         id: weekly-release
-        uses: JeromeFitz/packages/.github/actions/release@main
+        uses: JeromeFitz/packages/.github/actions/release@renovate/configure
         with:
           GH_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
