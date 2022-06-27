@@ -1,15 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base",
-    ":semanticCommitTypeAll(⬆️  )",
-    ":semanticCommitScope(deps)"
-  ],
+  "extends": ["config:base"],
   "baseBranches": ["main"],
   "branchPrefix": "deps/",
   "commitMessageAction": "",
-  "commitMessagePrefix": "{{semanticCommitType}} ({{semanticCommitScope}}) ",
   "commitMessageExtra": "",
+  "commitMessageSuffix": "",
   "commitMessageTopic": " {{depName}}{{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{{newMajor}}}{{else}}{{#if isSingleVersion}}@{{{newVersion}}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}@{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}}",
   "dependencyDashboard": false,
   "ignoreDeps": ["@types/node", "inquirer", "read-pkg-up", "typescript"],
@@ -28,6 +24,7 @@
       "semanticCommitType": "👷  "
     },
     {
+      "excludePackageNames": ["eslint-config-next"],
       "groupName": "eslint-config 📏 ...",
       "groupSlug": "eslint-config",
       "matchPackageNames": [
@@ -35,8 +32,7 @@
         "@typescript-eslint/eslint-plugin",
         "@typescript-eslint/parser",
         "prettier",
-        "pretty-quick",
-        "!eslint-config-next"
+        "pretty-quick"
       ],
       "matchPackagePatterns": ["^eslint"]
     },
@@ -53,7 +49,17 @@
     {
       "groupName": "react ⚛️ ...",
       "groupSlug": "react",
-      "matchPackageNames": ["react", "react-dom"]
+      "matchPackageNames": ["@types/react", "react", "react-dom"]
+    },
+    {
+      "matchDepTypes": ["peerDependencies"],
+      "semanticCommitScope": "deps-peer",
+      "semanticCommitType": "⬆️  "
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "semanticCommitScope": "deps-dev",
+      "semanticCommitType": "⬆️  "
     }
   ],
   "prBodyColumns": ["Package", "Update", "Type", "Change"],
