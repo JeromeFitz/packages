@@ -199,7 +199,7 @@ const releaseRule: IReleaseRule = {
     emoji: '📦️',
     entity: '&#1F4E6;',
     name: 'package',
-    semver: 'patch',
+    semver: null,
   },
   deploy: {
     branch: null,
