@@ -7,6 +7,7 @@ import {
   PageHeading,
   Separator,
   Text,
+  VisuallyHidden,
 } from '@jeromefitz/design-system/src/components'
 import NextLink from 'next/link'
 
@@ -17,6 +18,9 @@ function Home({}) {
         title="About"
         description="Sample page for menu routing testing."
       />
+      <VisuallyHidden>
+        <Text>Not visible.</Text>
+      </VisuallyHidden>
       <Separator decorative my="4" size="full" />
       <Icon.Pencil />
       <Icon.GitHub css={{ color: '$colors$brand' }} />

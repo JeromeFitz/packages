@@ -203,3 +203,4 @@ export {
 export { Tooltip } from './Tooltip'
 export { TreeItem } from './TreeItem'
 export { VerifiedBadge } from './VerifiedBadge'
+export { VisuallyHidden } from './VisuallyHidden'
