@@ -34,32 +34,40 @@
         "prettier",
         "pretty-quick"
       ],
-      "matchPackagePatterns": ["^eslint"]
+      "matchPackagePatterns": ["^eslint"],
+      "semanticCommitScope": "deps",
+      "semanticCommitType": "⬆️  "
     },
     {
       "groupName": "next 🔺 ...",
       "groupSlug": "next",
-      "matchPackageNames": ["eslint-config-next", "next"]
+      "matchPackageNames": ["eslint-config-next", "next"],
+      "semanticCommitScope": "deps",
+      "semanticCommitType": "⬆️  "
     },
     {
       "groupName": "radix-ui 🌐 ...",
       "groupSlug": "radix-ui",
-      "matchPackagePatterns": ["^@radix-ui/"]
+      "matchPackagePatterns": ["^@radix-ui/"],
+      "semanticCommitScope": "deps",
+      "semanticCommitType": "⬆️  "
     },
     {
       "groupName": "react ⚛️ ...",
       "groupSlug": "react",
-      "matchPackageNames": ["@types/react", "react", "react-dom"]
+      "matchPackageNames": ["@types/react", "react", "react-dom"],
+      "semanticCommitScope": "deps",
+      "semanticCommitType": "⬆️  "
     },
     {
       "matchDepTypes": ["peerDependencies"],
       "semanticCommitScope": "deps-peer",
-      "semanticCommitType": "⬆️  "
+      "semanticCommitType": "📦  "
     },
     {
       "matchDepTypes": ["devDependencies"],
       "semanticCommitScope": "deps-dev",
-      "semanticCommitType": "⬆️  "
+      "semanticCommitType": "📦  "
     }
   ],
   "prBodyColumns": ["Package", "Update", "Type", "Change"],
