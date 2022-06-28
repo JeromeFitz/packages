@@ -38,15 +38,17 @@
   },
   "dependencies": {
     "grapheme-splitter": "1.0.4",
-    "lodash": "4.17.21",
-    "semantic-release": "19.0.3",
     "title": "3.4.4"
   },
   "devDependencies": {
     "@types/lodash": "4.14.182",
     "@types/semantic-release": "17.2.3",
     "@types/title": "3.4.1",
-    "gitmojis": "3.10.0"
+    "gitmojis": "3.10.0",
+    "lodash": "4.17.21"
+  },
+  "peerDependencies": {
+    "lodash": "^4.17.21"
   },
   "type": "module",
   "sideEffects": false,
