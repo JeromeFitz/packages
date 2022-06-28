@@ -40,16 +40,17 @@
   },
   "devDependencies": {
     "@jeromefitz/utils": "workspace:*",
-    "@types/lodash": "4.14.182"
+    "@types/lodash": "4.14.182",
+    "lodash": "4.17.21"
   },
   "dependencies": {
     "github-slugger": "1.4.0",
     "isomorphic-unfetch": "3.1.0",
-    "lodash": "4.17.21",
     "plaiceholder": "2.4.0"
   },
   "peerDependencies": {
-    "@jeromefitz/utils": ">= 2.1.0"
+    "@jeromefitz/utils": "^2.1.0",
+    "lodash": "^4.17.21"
   },
   "type": "module",
   "sideEffects": false,
