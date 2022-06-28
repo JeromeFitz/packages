@@ -39,11 +39,13 @@
     "---  ": "",
     "semantic-release": "semantic-release"
   },
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "@types/lodash": "4.14.182",
     "lodash": "4.17.21"
   },
-  "devDependencies": {
-    "@types/lodash": "4.14.182"
+  "peerDependencies": {
+    "lodash": "^4.17.21"
   },
   "type": "module",
   "sideEffects": false,
