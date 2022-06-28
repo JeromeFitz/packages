@@ -1,10 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"],
+  "extends": [":semanticCommitsDisabled"],
   "baseBranches": ["main"],
   "branchPrefix": "deps/",
+  "commitMessage": "{{{commitMessagePrefix}}} {{{commitMessageAction}}} {{{commitMessageTopic}}} {{{commitMessageExtra}}} {{{commitMessageSuffix}}}",
   "commitMessageAction": "",
   "commitMessageExtra": "",
+  "commitMessagePrefix": "⬆️  (deps)",
   "commitMessageSuffix": "",
   "commitMessageTopic": " {{depName}}{{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{{newMajor}}}{{else}}{{#if isSingleVersion}}@{{{newVersion}}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}@{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}}",
   "dependencyDashboard": false,
@@ -15,13 +17,12 @@
   },
   "packageRules": [
     {
+      "commitMessagePrefix": "👷  (actions)",
       "commitMessageExtra": "@{{depName}}{{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{{newMajor}}}{{else}}{{#if isSingleVersion}}v{{{newVersion}}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}v{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}}",
       "commitMessageTopic": " {{depName}}",
       "groupName": "github actions :octocat: ...",
-      "groupSlug": "github-acitons",
-      "matchPackagePatterns": ["^actions"],
-      "semanticCommitScope": "actions",
-      "semanticCommitType": "👷  "
+      "groupSlug": "github-actions",
+      "matchPackagePatterns": ["^actions"]
     },
     {
       "excludePackageNames": ["eslint-config-next"],
@@ -39,41 +40,42 @@
       "semanticCommitType": "⬆️  "
     },
     {
+      "commitMessagePrefix": "⬆️  (deps)",
+      "commitMessageSuffix": "[b]",
       "groupName": "next 🔺 ...",
       "groupSlug": "next",
-      "matchPackageNames": ["eslint-config-next", "next"],
-      "semanticCommitScope": "deps",
-      "semanticCommitType": "⬆️  "
+      "matchPackageNames": ["eslint-config-next", "next"]
     },
     {
+      "assignees": ["JeromeFitz"],
+      "commitMessagePrefix": "⬆️  (deps)",
       "groupName": "radix-ui 🌐 ...",
       "groupSlug": "radix-ui",
       "matchPackagePatterns": ["^@radix-ui/"],
-      "semanticCommitScope": "deps",
-      "semanticCommitType": "⬆️  "
+      "reviewers": ["JeromeFitz"]
     },
     {
+      "commitMessagePrefix": "⬆️  (deps)",
       "groupName": "react ⚛️ ...",
       "groupSlug": "react",
-      "matchPackageNames": ["@types/react", "react", "react-dom"],
-      "semanticCommitScope": "deps",
-      "semanticCommitType": "⬆️  "
+      "matchPackageNames": ["@types/react", "react", "react-dom"]
     },
     {
-      "matchDepTypes": ["peerDependencies"],
-      "semanticCommitScope": "deps-peer",
-      "semanticCommitType": "📦  "
+      "commitMessagePrefix": "⬆️  (deps)",
+      "matchDepTypes": ["dependencies"]
     },
     {
-      "matchDepTypes": ["devDependencies"],
-      "semanticCommitScope": "deps-dev",
-      "semanticCommitType": "📦  "
+      "commitMessagePrefix": "📦  (deps-peer)",
+      "matchDepTypes": ["peerDependencies"]
+    },
+    {
+      "commitMessagePrefix": "📦  (deps-dev)",
+      "matchDepTypes": ["devDependencies"]
     }
   ],
   "prBodyColumns": ["Package", "Update", "Type", "Change"],
   "prHourlyLimit": 2,
+  "prTitle": "{{{commitMessagePrefix}}} {{{commitMessageAction}}} {{{commitMessageTopic}}} {{{commitMessageExtra}}} {{{commitMessageSuffix}}}",
   "rebaseWhen": "conflicted",
-  "semanticCommitScope": "deps",
-  "semanticCommitType": "⬆️  ",
-  "semanticCommits": "enabled"
+  "semanticCommits": "disabled"
 }
