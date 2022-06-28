@@ -1,11 +1,17 @@
+/**
+ * @ref(tsup) https://tsup.egoist.sh
+ *
+ */
 import { defineConfig } from 'tsup'
 import type { Options } from 'tsup'
 
 const config: Options = {
   clean: false,
   dts: true,
+  external: [],
   format: ['esm', 'cjs'],
   minify: true,
+  noExternal: [],
   onSuccess: 'pnpm run copy',
   outDir: 'dist',
   silent: true,

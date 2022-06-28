@@ -1,5 +1,6 @@
 // import isCI from 'is-ci'
 import { defineConfig } from 'tsup'
+import type { Options } from 'tsup'
 
 import { config as _config } from '../../tsup.config'
 
@@ -38,6 +39,9 @@ const entry = [
   // '!src/components/**/*.md',
 ]
 
+/**
+ * @todo(tsup) tsup-node does this automatically we can remove
+ */
 const external = [
   ...Object.keys(pkg.dependencies || {}),
   ...Object.keys(pkg.devDependencies || {}),
@@ -46,18 +50,13 @@ const external = [
 
 const inject = ['./react-shim.js']
 
-const config = {
+const config: Options = {
   ..._config,
   entry,
   external,
   inject,
-  // jsxFactory: 'createElement',
-  // jsxFragment: 'Fragment',
   minify: true,
-  // silent: false,
   splitting: true,
-  // target: ['esnext'],
-  // treeshake: true,
   tsconfig: 'tsconfig.json',
 }
 
