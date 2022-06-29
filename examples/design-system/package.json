@@ -37,7 +37,7 @@
     "framer-motion": "6.3.16",
     "immer": "9.0.15",
     "kbar": "0.1.0-beta.36",
-    "next": "12.1.6",
+    "next": "12.2.0",
     "next-themes": "0.2.0",
     "ramda": "0.28.0",
     "react": "18.2.0",
