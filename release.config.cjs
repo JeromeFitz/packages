@@ -12,7 +12,7 @@
  * - take head back out of oven
  *
  */
-const configDefault = require('@jeromefitz/semantic-release-config')
+// const configDefault = require('@jeromefitz/semantic-release-config')
 const _map = require('lodash/map.js')
 
 /**
@@ -63,9 +63,13 @@ const branches = [
 ]
 
 const config = {
-  ...configDefault,
+  // ...configDefault,
   branches,
   // extends: ['@jeromefitz/semantic-release-config'],
+  extends: [
+    '@jeromefitz/semantic-release-monorepo',
+    '@jeromefitz/semantic-release-config',
+  ],
 }
 
 /**
