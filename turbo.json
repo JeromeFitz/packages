@@ -3,7 +3,7 @@
   "pipeline": {
     "build": {
       "outputs": ["dist/**", ".next/**"],
-      "dependsOn": ["^build"],
+      "dependsOn": ["^build", "@jeromefitz/semantic-release-config#build"],
       "inputs": ["src/**", "*.cjs", "package.json"]
     },
     "clean": {
@@ -34,6 +34,7 @@
     },
     "@jeromefitz/semantic#build": {
       "dependsOn": [
+        "@jeromefitz/semantic-release-config#build",
         "@jeromefitz/conventional-gitmoji#build",
         "@jeromefitz/git-cz#build",
         "@jeromefitz/release-notes-generator#build"
