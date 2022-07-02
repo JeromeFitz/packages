@@ -1,17 +1,15 @@
-/* eslint-disable import/order */
-const isCI = require('is-ci')
-!isCI && require('dotenv').config({ path: '../../.env' })
-
-const { config: configDefault } = require('../../release.config.cjs')
-const { getConfig } = require('@jeromefitz/semantic')
+const { getConfig } = require('../../release.config.cjs')
 
 const { name } = require('./package.json')
 
-const configPassed = {
-  ...configDefault,
+const configOverride = {
+  dryRun: true,
   tagFormat: `${name}@\${version}`,
 }
 
-const config = getConfig(configPassed)
+const config = getConfig(configOverride)
+
+console.dir(`> config`)
+console.dir(config)
 
 module.exports = config
