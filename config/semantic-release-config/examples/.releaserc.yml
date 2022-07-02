@@ -1,0 +1,10 @@
+branches: [
+    # x.y.z
+    'main',
+    # x.y.z-canary.1|2|3...
+    { 'name': 'canary' },
+    # x.y.z-develop.1|2|3...
+    { 'name': 'develop' },
+  ]
+extends: '@jeromefitz/semantic-release-config'
+tagFormat: 'packageName@${version}'
