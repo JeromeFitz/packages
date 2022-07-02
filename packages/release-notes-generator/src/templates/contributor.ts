@@ -1,9 +1,11 @@
 import { Octokit } from '@octokit/rest'
 import _findIndex from 'lodash/findIndex'
+import _map from 'lodash/map'
 import _sample from 'lodash/sample'
 import _uniqBy from 'lodash/uniqBy'
 
 const gh = new Octokit({ auth: process.env.GH_TOKEN })
+const PLUGIN_NAME = '@jeromefitz/release-notes-generator'
 
 interface IAuthor {
   email: string
@@ -39,10 +41,10 @@ const contributorsProhibitListDefault = {
 }
 
 const contributorsSubtitle = [
-  'Props to',
-  'Kudos to',
-  'Thanks to',
   'Brought to you by',
+  'Kudos to',
+  'Props to',
+  'Thanks to',
 ]
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -57,12 +59,16 @@ const contributor = async (context, commits, meta) => {
     'name'
   )
 
-  const {
-    options: { contributorsProhibitList },
-  } = context
+  const { options } = context
+  // const { contributorsProhibitList } = options
 
-  // console.dir(`> context`)
-  // console.dir(context)
+  const pluginOptions = _map(options?.plugins, (plugin) => {
+    if (plugin[0] == PLUGIN_NAME) return plugin
+    return
+  }).filter(function (element) {
+    return element !== undefined
+  })[0][1]
+  const { contributorsProhibitList } = pluginOptions
 
   await Promise.all(
     authors.map((author: any, authorIdx) =>
@@ -82,18 +88,17 @@ const contributor = async (context, commits, meta) => {
   )
 
   // @note could we lift this better somehow and reduce API calls?
-  const contributorsProhibitListLogin = [
-    ...contributorsProhibitListDefault.login,
-    ...contributorsProhibitList.login,
-  ]
+  const contributorsProhibitListLogin = !!contributorsProhibitList
+    ? [...contributorsProhibitListDefault?.login, ...contributorsProhibitList?.login]
+    : [...contributorsProhibitListDefault?.login]
+  const contributorsProhibitListEmail = !!contributorsProhibitList
+    ? [...contributorsProhibitListDefault?.email, ...contributorsProhibitList?.email]
+    : [...contributorsProhibitListDefault?.email]
+
   contributorsProhibitListLogin.map((eject) => {
     const ejectIndex = _findIndex(authors, ['login', eject])
     if (ejectIndex !== -1) authors.splice(ejectIndex)
   })
-  const contributorsProhibitListEmail = [
-    ...contributorsProhibitListDefault.email,
-    ...contributorsProhibitList.email,
-  ]
   contributorsProhibitListEmail.map((eject) => {
     const ejectIndex = _findIndex(authors, (author: any) =>
       author.email.includes(eject)
