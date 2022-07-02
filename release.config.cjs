@@ -1,5 +1,4 @@
-const isCI = require('is-ci')
-!isCI && require('dotenv').config({ path: './.env' })
+const configDefault = require('@jeromefitz/semantic-release-config')
 const _map = require('lodash/map.js')
 
 /**
@@ -50,8 +49,9 @@ const branches = [
 ]
 
 const config = {
+  ...configDefault,
   branches,
-  extends: ['@jeromefitz/semantic-release-config'],
+  // extends: ['@jeromefitz/semantic-release-config'],
 }
 
 /**
