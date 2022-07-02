@@ -1,48 +1,12 @@
-const { releaseRules } = require('@jeromefitz/conventional-gitmoji')
-const isCI = require('is-ci')
-!isCI && require('dotenv').config({ path: '../../.env' })
+const { getConfig } = require('../../release.config.cjs')
 
-const config = {
-  branches: [
-    { name: 'main' },
-    { name: 'develop', prerelease: 'develop' },
-    { name: 'canary', prerelease: 'canary' },
-    { name: 'feature/src', prerelease: 'src' },
-  ],
+const { name } = require('./package.json')
+
+const configOverride = {
   dryRun: true,
-  tagFormat: `@jeromefitz/semantic-release-config@\${version}`,
-  // extends: '@jeromefitz/semantic-release-config',
-  // extends: './dist/index.cjs',
-  plugins: [
-    [
-      '@semantic-release/commit-analyzer',
-      {
-        config: '@jeromefitz/conventional-gitmoji',
-        releaseRules,
-      },
-    ],
-    [
-      '@jeromefitz/release-notes-generator',
-      {
-        config: '@jeromefitz/conventional-gitmoji',
-      },
-    ],
-    [
-      '@semantic-release/npm',
-      {
-        pkgRoot: './dist',
-      },
-    ],
-    [
-      '@semantic-release/github',
-      {
-        addReleases: false,
-        labels: false,
-        releasedLabels: false,
-        successComment: false,
-      },
-    ],
-  ],
+  tagFormat: `${name}@\${version}`,
 }
+
+const config = getConfig(configOverride)
 
 module.exports = config

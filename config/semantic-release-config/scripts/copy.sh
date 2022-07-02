@@ -25,4 +25,5 @@ fi
 # @custom(build)
 ###
 
-cp ./release.config.cjs ./dist/index.cjs
+cp ./src/index.cjs ./dist/index.cjs
+rm ./dist/zzz*
