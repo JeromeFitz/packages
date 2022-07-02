@@ -25,6 +25,7 @@ const config: StorybookViteConfig = {
   },
   features: {
     previewCsfV3: true,
+    previewMdx2: false,
     storyStoreV7: true,
   },
   framework: '@storybook/react',
