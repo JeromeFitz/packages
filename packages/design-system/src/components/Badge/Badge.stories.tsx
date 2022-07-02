@@ -13,9 +13,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component:
-          'Hrm, I can see why people like **MDX** for _this_. Is there a way for both worlds?',
-        // story: 'This would (will) repeat for each Component w/in Story',
+        component: 'MDX Content is TBD',
       },
       // page: mdx,
     },
