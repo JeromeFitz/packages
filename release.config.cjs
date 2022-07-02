@@ -1,3 +1,17 @@
+/**
+ * @note(semantic-release) monorepo
+ *
+ * All of this movement to use `extends` and you cannot
+ *  because of the clash of globals plugins and it is
+ *  right back where it started with the `@jeromefitz/semantic`
+ *  package. Great use of time here.
+ *
+ * If this ever gets 'fixed'
+ * - remove configDefault import
+ * - go back to extends instead of ...
+ * - take head back out of oven
+ *
+ */
 const configDefault = require('@jeromefitz/semantic-release-config')
 const _map = require('lodash/map.js')
 
