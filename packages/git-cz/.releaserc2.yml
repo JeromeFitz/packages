@@ -1,0 +1,10 @@
+branches:
+  [
+    'main',
+    { 'name': 'canary' },
+    { 'name': 'develop' },
+    { 'name': 'feature/src', 'prerelease': 'src' },
+  ]
+dryRun: true
+extends: ['@jeromefitz/semantic-release-config']
+tagFormat: '@jeromefitz/git-cz@${version}'

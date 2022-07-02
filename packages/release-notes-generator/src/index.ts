@@ -28,6 +28,7 @@ const configGithub = {
   issuePrefixes: ['#', 'gh-'],
 }
 
+// @todo(complexity) 13
 // eslint-disable-next-line complexity
 async function generateNotes(pluginConfig, context) {
   // const { parserOpts, writerOpts } = pluginConfig
