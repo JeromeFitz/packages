@@ -1,0 +1,45 @@
+{
+  "name": "@jeromefitz/semantic-release-config",
+  "version": "0.0.0",
+  "description": "Semantic Release Configuration",
+  "author": {
+    "name": "Jerome Fitzgerald",
+    "email": "j@jeromefitzgerald.com",
+    "url": "https://jeromefitzgerald.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/jeromefitz/packages.git",
+    "directory": "config/semantic-release-config"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "private": false,
+  "scripts": {
+    "build": "tsup-node",
+    "dev": "tsup-node  --watch",
+    "---": "",
+    "clean": "rm -rf .turbo && rm -rf dist",
+    "clean:install": "pnpm run clean && rm -rf node_modules",
+    "copy": "mkdir -p ./dist && ./scripts/copy.sh",
+    "--- ": "",
+    "lint:eslint": "eslint ./src --ext cjs,js,jsx,mjs,ts,tsx --max-warnings=0",
+    "lint:prettier": "prettier \"./src/**/*.{cjs,js,jsx,mjs,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\" --ignore-unknown --loglevel warn",
+    "lint": "pnpm run lint:prettier --check && pnpm run lint:eslint",
+    "lint:fix": "pnpm run lint:eslint --fix && pnpm run lint:prettier --write",
+    "---  ": "",
+    "semantic-release": "semantic-release"
+  },
+  "devDependencies": {
+    "@jeromefitz/conventional-gitmoji": "workspace:*",
+    "@jeromefitz/release-notes-generator": "workspace:*"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs"
+}
