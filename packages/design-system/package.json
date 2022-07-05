@@ -121,7 +121,7 @@
     "@types/react": "18.0.14",
     "@types/react-dom": "18.0.5",
     "@vitejs/plugin-react": "1.3.2",
-    "framer-motion": "6.3.16",
+    "framer-motion": "6.4.1",
     "kbar": "0.1.0-beta.36",
     "lodash": "4.17.21",
     "multiple-themes-stitches": "0.0.10",
