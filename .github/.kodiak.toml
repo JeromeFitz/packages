@@ -25,6 +25,9 @@ body = "pull_request_body"
 include_pr_number = true
 body_type = "markdown"
 strip_html_comments = true
+cut_body_after = "<!-- COMMIT_BODY_TEXT_BEGIN -->"
+cut_body_before = "<!-- COMMIT_BODY_TEXT_END -->"
+cut_body_and_text = true
 
 [update]
 always = true

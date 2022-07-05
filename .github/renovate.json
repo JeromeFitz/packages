@@ -74,6 +74,8 @@
     }
   ],
   "prBodyColumns": ["Package", "Update", "Type", "Change"],
+  "prFooter": "<!-- COMMIT_BODY_TEXT_END -->",
+  "prHeader": "<!-- COMMIT_BODY_TEXT_BEGIN -->",
   "prHourlyLimit": 2,
   "prTitle": "{{{commitMessagePrefix}}} {{{commitMessageAction}}} {{{commitMessageTopic}}} {{{commitMessageExtra}}} {{{commitMessageSuffix}}}",
   "rebaseWhen": "conflicted",
