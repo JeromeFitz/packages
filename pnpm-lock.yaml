@@ -242,7 +242,7 @@ importers:
       node-emoji: 1.11.0
       react: 18.2.0
       react-dom: 18.2.0
-      serve: 13.0.2
+      serve: 13.0.4
       smoothscroll-polyfill: 0.4.4
       storybook-addon-themes: 6.1.0
       swr: 1.3.0
@@ -333,7 +333,7 @@ importers:
       next: 12.2.0_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      serve: 13.0.2
+      serve: 13.0.4
       storybook-addon-themes: 6.1.0_biqbaboplfbrettd7655fr4n2y
       swr: 1.3.0_react@18.2.0
       typescript: 4.7.4
@@ -17604,8 +17604,8 @@ packages:
       - supports-color
     dev: true
 
-  /serve/13.0.2:
-    resolution: {integrity: sha512-71R6fKvNgKrqARAag6lYJNnxDzpH7DCNrMuvPY5PLVaC2PDhJsGTj/34o4o4tPWhTuLgEXqvgnAWbATQ9zGZTQ==}
+  /serve/13.0.4:
+    resolution: {integrity: sha512-Lj8rhXmphJCRQVv5qwu0NQZ2h+0MrRyRJxDZu5y3qLH2i/XY6a0FPj/VmjMUdkJb672MBfE8hJ274PU6JzBd0Q==}
     hasBin: true
     dependencies:
       '@zeit/schemas': 2.6.0
