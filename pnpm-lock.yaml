@@ -225,7 +225,7 @@ importers:
       '@storybook/addon-links': 6.5.9
       '@storybook/addon-notes': 5.3.21
       '@storybook/addon-storysource': 6.5.9
-      '@storybook/builder-vite': 0.1.38
+      '@storybook/builder-vite': 0.1.39
       '@storybook/mdx2-csf': 0.0.3
       '@storybook/react': 6.5.9
       '@storybook/theming': 6.5.9
@@ -318,7 +318,7 @@ importers:
       '@storybook/addon-links': 6.5.9_biqbaboplfbrettd7655fr4n2y
       '@storybook/addon-notes': 5.3.21_bb2bxwco6ptpubzwpazr52qf6i
       '@storybook/addon-storysource': 6.5.9_biqbaboplfbrettd7655fr4n2y
-      '@storybook/builder-vite': 0.1.38_gycxgvra3hzpx7nauwoowdbk4a
+      '@storybook/builder-vite': 0.1.39_gycxgvra3hzpx7nauwoowdbk4a
       '@storybook/mdx2-csf': 0.0.3
       '@storybook/react': 6.5.9_btiesyu4nsvahhobwljjtt6llu
       '@storybook/theming': 6.5.9_biqbaboplfbrettd7655fr4n2y
@@ -5581,8 +5581,8 @@ packages:
       util-deprecate: 1.0.2
     dev: true
 
-  /@storybook/builder-vite/0.1.38_gycxgvra3hzpx7nauwoowdbk4a:
-    resolution: {integrity: sha512-aCBuVP3phWGpT4548dCjSWC9X4TOhzVOt+jq8BVbzZ/Cyou8UFN45Z5kMxtpVsVnJEQ0abC/BdkRuRtGEL/vJQ==}
+  /@storybook/builder-vite/0.1.39_gycxgvra3hzpx7nauwoowdbk4a:
+    resolution: {integrity: sha512-lLRbB2Ut8/LT0U/D6hVu+gyalMzMNyhDAm04ik6FuNASn/roBML5G1NTvzt4zrsYTNpZoeCic7IKpe1NHsSfhQ==}
     peerDependencies:
       '@storybook/core-common': '>=6.4.3 || >=6.5.0-alpha.0'
       '@storybook/mdx2-csf': ^0.0.3
