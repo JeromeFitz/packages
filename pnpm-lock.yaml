@@ -247,7 +247,7 @@ importers:
       storybook-addon-themes: 6.1.0
       swr: 1.3.0
       typescript: 4.7.4
-      vite: 2.9.13
+      vite: 2.9.14
     dependencies:
       '@radix-ui/primitive': 0.1.0
       '@radix-ui/react-accessible-icon': 0.1.5-rc.41_biqbaboplfbrettd7655fr4n2y
@@ -318,7 +318,7 @@ importers:
       '@storybook/addon-links': 6.5.9_biqbaboplfbrettd7655fr4n2y
       '@storybook/addon-notes': 5.3.21_bb2bxwco6ptpubzwpazr52qf6i
       '@storybook/addon-storysource': 6.5.9_biqbaboplfbrettd7655fr4n2y
-      '@storybook/builder-vite': 0.1.39_gycxgvra3hzpx7nauwoowdbk4a
+      '@storybook/builder-vite': 0.1.39_kxf5obeprxdz3hqt45cy7yv3pe
       '@storybook/mdx2-csf': 0.0.3
       '@storybook/react': 6.5.9_btiesyu4nsvahhobwljjtt6llu
       '@storybook/theming': 6.5.9_biqbaboplfbrettd7655fr4n2y
@@ -337,7 +337,7 @@ importers:
       storybook-addon-themes: 6.1.0_biqbaboplfbrettd7655fr4n2y
       swr: 1.3.0_react@18.2.0
       typescript: 4.7.4
-      vite: 2.9.13
+      vite: 2.9.14
 
   packages/git-cz:
     specifiers:
@@ -3356,7 +3356,7 @@ packages:
       chalk: 4.1.2
     dev: true
 
-  /@joshwooding/vite-plugin-react-docgen-typescript/0.0.4_hcbhbela4dsabngu7n2naeo4la:
+  /@joshwooding/vite-plugin-react-docgen-typescript/0.0.4_lahzunkvacnqvhsxgkxtoghzza:
     resolution: {integrity: sha512-ezL7SU//1OV4Oyt/zQ3CsX8uLujVEYUHuULkqgcW6wOuQfRnvgkn99HZtLWwS257GmZVwszGQzhL7VE3PbMAYw==}
     peerDependencies:
       typescript: '>= 4.3.x'
@@ -3367,7 +3367,7 @@ packages:
       magic-string: 0.26.2
       react-docgen-typescript: 2.2.2_typescript@4.7.4
       typescript: 4.7.4
-      vite: 2.9.13
+      vite: 2.9.14
     dev: true
 
   /@jridgewell/gen-mapping/0.1.1:
@@ -5697,7 +5697,7 @@ packages:
       util-deprecate: 1.0.2
     dev: true
 
-  /@storybook/builder-vite/0.1.39_gycxgvra3hzpx7nauwoowdbk4a:
+  /@storybook/builder-vite/0.1.39_kxf5obeprxdz3hqt45cy7yv3pe:
     resolution: {integrity: sha512-lLRbB2Ut8/LT0U/D6hVu+gyalMzMNyhDAm04ik6FuNASn/roBML5G1NTvzt4zrsYTNpZoeCic7IKpe1NHsSfhQ==}
     peerDependencies:
       '@storybook/core-common': '>=6.4.3 || >=6.5.0-alpha.0'
@@ -5708,7 +5708,7 @@ packages:
       '@storybook/mdx2-csf':
         optional: true
     dependencies:
-      '@joshwooding/vite-plugin-react-docgen-typescript': 0.0.4_hcbhbela4dsabngu7n2naeo4la
+      '@joshwooding/vite-plugin-react-docgen-typescript': 0.0.4_lahzunkvacnqvhsxgkxtoghzza
       '@storybook/mdx1-csf': 0.0.4_react@18.2.0
       '@storybook/mdx2-csf': 0.0.3
       '@storybook/source-loader': 6.5.9_biqbaboplfbrettd7655fr4n2y
@@ -5721,7 +5721,7 @@ packages:
       react-docgen: 6.0.0-alpha.3
       slash: 3.0.0
       sveltedoc-parser: 4.2.1
-      vite: 2.9.13
+      vite: 2.9.14
     transitivePeerDependencies:
       - '@babel/core'
       - react
@@ -19649,8 +19649,8 @@ packages:
       vfile-message: 3.1.2
     dev: true
 
-  /vite/2.9.13:
-    resolution: {integrity: sha512-AsOBAaT0AD7Mhe8DuK+/kE4aWYFMx/i0ZNi98hJclxb4e0OhQcZYUrvLjIaQ8e59Ui7txcvKMiJC1yftqpQoDw==}
+  /vite/2.9.14:
+    resolution: {integrity: sha512-P/UCjSpSMcE54r4mPak55hWAZPlyfS369svib/gpmz8/01L822lMPOJ/RYW6tLCe1RPvMvOsJ17erf55bKp4Hw==}
     engines: {node: '>=12.2.0'}
     hasBin: true
     peerDependencies:
