@@ -104,7 +104,7 @@ importers:
       '@types/react-dom': 18.0.6
       date-fns: 2.28.0
       date-fns-tz: 1.3.5
-      framer-motion: 6.4.2
+      framer-motion: 6.4.3
       immer: 9.0.15
       kbar: 0.1.0-beta.36
       next: 12.2.0
@@ -122,7 +122,7 @@ importers:
       '@mantine/hooks': 4.2.12_react@18.2.0
       date-fns: 2.28.0
       date-fns-tz: 1.3.5_date-fns@2.28.0
-      framer-motion: 6.4.2_biqbaboplfbrettd7655fr4n2y
+      framer-motion: 6.4.3_biqbaboplfbrettd7655fr4n2y
       immer: 9.0.15
       kbar: 0.1.0-beta.36_biqbaboplfbrettd7655fr4n2y
       next: 12.2.0_biqbaboplfbrettd7655fr4n2y
@@ -234,7 +234,7 @@ importers:
       '@types/react-dom': 18.0.6
       '@vitejs/plugin-react': 1.3.2
       emoji-regex: 10.1.0
-      framer-motion: 6.4.2
+      framer-motion: 6.4.3
       kbar: 0.1.0-beta.36
       lodash: 4.17.21
       multiple-themes-stitches: 0.0.10
@@ -326,7 +326,7 @@ importers:
       '@types/react': 18.0.15
       '@types/react-dom': 18.0.6
       '@vitejs/plugin-react': 1.3.2
-      framer-motion: 6.4.2_biqbaboplfbrettd7655fr4n2y
+      framer-motion: 6.4.3_biqbaboplfbrettd7655fr4n2y
       kbar: 0.1.0-beta.36_biqbaboplfbrettd7655fr4n2y
       lodash: 4.17.21
       multiple-themes-stitches: 0.0.10_klcqnchi7pqnrrrjofzkjj4saq
@@ -11519,8 +11519,8 @@ packages:
     dependencies:
       map-cache: 0.2.2
 
-  /framer-motion/6.4.2_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-SmrJbPTpvWGuAAYZMkjWsMc74wOREpXq9Lkq8lhm6IxvuJJitO7E0V5v1RulmTdNIrerJIUxvIZhrYSCb7UAgw==}
+  /framer-motion/6.4.3_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-prcyOGFkGjwGEgbxObIWteVz1ihuWaDLdR03626cbA1GxTaPRpLb8ioJfWPmP5mwcWC7TlhMOjS5kBYnuiktFA==}
     peerDependencies:
       react: '>=16.8 || ^17.0.0 || ^18.0.0'
       react-dom: '>=16.8 || ^17.0.0 || ^18.0.0'
