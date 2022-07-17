@@ -4,6 +4,7 @@
 .next
 .vercel
 dist
+storybook-static
 out
 # Webpack Analyzer ----------
 bundles
