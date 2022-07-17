@@ -25,6 +25,8 @@
     "test": "turbo run test",
     "clean": "turbo run clean",
     "clean:install": "turbo run clean && ./scripts/clean.sh",
+    "deduplicate": "npx pnpm-deduplicate",
+    "deduplicate:check": "npx pnpm-deduplicate --list",
     "---- ": "# @lint",
     "pretty-quick": "pretty-quick",
     "lint:fix": "turbo run lint:fx ",
