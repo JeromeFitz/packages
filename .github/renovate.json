@@ -81,6 +81,12 @@
     {
       "commitMessagePrefix": "📦  (deps-dev)",
       "matchDepTypes": ["devDependencies"]
+    },
+    {
+      "assignees": ["JeromeFitz"],
+      "matchUpdateTypes": ["major"],
+      "labels": ["📦 Dependencies 💥 Breaking 💥", "🛑️ Do Not Merge"],
+      "reviewers": ["JeromeFitz"]
     }
   ],
   "prBodyColumns": ["Package", "Update", "Type", "Change"],
