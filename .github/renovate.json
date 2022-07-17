@@ -8,7 +8,7 @@
   "commitMessageExtra": "",
   "commitMessagePrefix": "⬆️  (deps)",
   "commitMessageSuffix": "",
-  "commitMessageTopic": " {{depName}}{{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{{newMajor}}}{{else}}{{#if isSingleVersion}}@{{{newVersion}}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}@{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}}",
+  "commitMessageTopic": " {{depName}}{{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}@{{{newMajor}}} 💥 {{else}}{{#if isSingleVersion}}@{{{newVersion}}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}@{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}}",
   "dependencyDashboard": false,
   "ignoreDeps": ["@types/node", "inquirer", "read-pkg-up", "typescript"],
   "labels": ["📦️ Dependencies"],
@@ -18,7 +18,7 @@
   "packageRules": [
     {
       "commitMessagePrefix": "👷  (actions)",
-      "commitMessageExtra": "@{{depName}}{{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{{newMajor}}}{{else}}{{#if isSingleVersion}}v{{{newVersion}}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}v{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}}",
+      "commitMessageExtra": "@{{depName}}{{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}v{{{newMajor}}} 💥 {{else}}{{#if isSingleVersion}}v{{{newVersion}}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}v{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}}",
       "commitMessageTopic": " {{depName}}",
       "groupName": "github actions :octocat: ...",
       "groupSlug": "github-actions",
@@ -40,11 +40,21 @@
       "semanticCommitType": "⬆️  "
     },
     {
-      "commitMessagePrefix": "⬆️  (deps)",
+      "commitMessagePrefix": "📦  (deps-dev)",
       "commitMessageSuffix": "[b]",
       "groupName": "next 🔺 ...",
       "groupSlug": "next",
       "matchPackageNames": ["eslint-config-next", "next"]
+    },
+    {
+      "commitMessagePrefix": "📦  (deps-dev)",
+      "groupName": "vite ⚡ ...",
+      "groupSlug": "vite",
+      "matchPackageNames": [
+        "@storybook/builder-vite",
+        "@vitejs/plugin-react",
+        "vite"
+      ]
     },
     {
       "assignees": ["JeromeFitz"],
@@ -71,6 +81,12 @@
     {
       "commitMessagePrefix": "📦  (deps-dev)",
       "matchDepTypes": ["devDependencies"]
+    },
+    {
+      "assignees": ["JeromeFitz"],
+      "matchUpdateTypes": ["major"],
+      "labels": ["📦 Dependencies 💥 Breaking 💥", "🛑️ Do Not Merge"],
+      "reviewers": ["JeromeFitz"]
     }
   ],
   "prBodyColumns": ["Package", "Update", "Type", "Change"],
