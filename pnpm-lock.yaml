@@ -142,7 +142,7 @@ importers:
   packages/conventional-gitmoji:
     specifiers:
       '@types/lodash': 4.14.182
-      '@types/semantic-release': 17.2.3
+      '@types/semantic-release': 17.2.4
       '@types/title': 3.4.1
       gitmojis: 3.10.0
       grapheme-splitter: 1.0.4
@@ -153,7 +153,7 @@ importers:
       title: 3.4.4
     devDependencies:
       '@types/lodash': 4.14.182
-      '@types/semantic-release': 17.2.3
+      '@types/semantic-release': 17.2.4
       '@types/title': 3.4.1
       gitmojis: 3.10.0
       lodash: 4.17.21
@@ -447,7 +447,7 @@ importers:
       '@semantic-release/github': 8.0.5
       '@semantic-release/npm': 9.0.1
       '@semantic-release/release-notes-generator': 10.0.3
-      '@types/semantic-release': 17.2.3
+      '@types/semantic-release': 17.2.4
       '@types/title': 3.4.1
       semantic-release: 19.0.3
       semantic-release-commit-filter: 1.0.2
@@ -464,7 +464,7 @@ importers:
       title: 3.4.4
     devDependencies:
       '@jeromefitz/conventional-gitmoji': link:../conventional-gitmoji
-      '@types/semantic-release': 17.2.3
+      '@types/semantic-release': 17.2.4
       '@types/title': 3.4.1
 
   packages/spotify:
@@ -8059,7 +8059,7 @@ packages:
   /@types/resolve/1.17.1:
     resolution: {integrity: sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==}
     dependencies:
-      '@types/node': 16.11.39
+      '@types/node': 18.0.0
     dev: true
 
   /@types/responselike/1.0.0:
@@ -8075,10 +8075,10 @@ packages:
   /@types/scheduler/0.16.2:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
 
-  /@types/semantic-release/17.2.3:
-    resolution: {integrity: sha512-iSqx8cZbDRQSCi/VR1LtmUV4OFiDZVAvfpVdVeq3rPveXYU+xb3bzmVphXSw7wkFgE7LwAoaoE96RV4nkL0Rvg==}
+  /@types/semantic-release/17.2.4:
+    resolution: {integrity: sha512-Ud2GB2+0WgyBrKB7PbyZA+bud3QD0z3Iv6KPx6FfeMUNDekw3EWgZi3eLKXoeGDPBo+hev74NN1pEPMp0rL2vQ==}
     dependencies:
-      '@types/node': 16.11.39
+      '@types/node': 18.0.0
     dev: true
 
   /@types/semver/6.2.3:
@@ -14922,7 +14922,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 16.11.39
+      '@types/node': 18.0.0
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: true
