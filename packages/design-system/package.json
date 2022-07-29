@@ -47,7 +47,7 @@
     "@radix-ui/react-accessible-icon": "1.0.0",
     "@radix-ui/react-accordion": "1.0.0",
     "@radix-ui/react-alert-dialog": "1.0.0",
-    "@radix-ui/react-announce": "0.1.5-rc.41",
+    "@radix-ui/react-announce": "0.1.5",
     "@radix-ui/react-arrow": "1.0.0",
     "@radix-ui/react-aspect-ratio": "1.0.0",
     "@radix-ui/react-avatar": "1.0.0",
