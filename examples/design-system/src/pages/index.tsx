@@ -1,7 +1,15 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 // @ts-ignore
-import { PageHeading, Text } from '@jeromefitz/design-system/src/components'
+import { Box, PageHeading, Text } from '@jeromefitz/design-system/src/components'
+import {
+  Tooltip,
+  TooltipProvider,
+  TooltipPortal,
+  TooltipTrigger,
+  TooltipContent,
+  TooltipArrow,
+} from '@jeromefitz/design-system/src/custom/Tooltip'
 
 // import { LoadingDots } from '../components/LoadingDots'
 import { NavigationMenu } from '../components/NavigationMenu'
@@ -19,6 +27,24 @@ function Home({}) {
         title="Design System"
         description="An example of in-progress work."
       />
+      <Box css={{ width: '10%' }}>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Text>Tooltip Trigger</Text>
+            </TooltipTrigger>
+            <TooltipPortal>
+              <TooltipContent
+                align="end"
+                css={{ display: 'none', '@bp1': { display: 'inline-flex' } }}
+              >
+                <>Tooltip Content</>
+                <TooltipArrow />
+              </TooltipContent>
+            </TooltipPortal>
+          </Tooltip>
+        </TooltipProvider>
+      </Box>
       {/* <LoadingDots /> */}
       <NavigationMenu />
       {/* <Select /> */}
