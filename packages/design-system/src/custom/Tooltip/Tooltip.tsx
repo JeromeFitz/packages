@@ -31,6 +31,7 @@ const StyledContent = styled(TooltipPrimitive.Content, {
   backgroundColor: '$hiContrast',
   boxShadow:
     'hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px',
+  userSelect: 'none',
   '@media (prefers-reduced-motion: no-preference)': {
     animationDuration: '400ms',
     animationTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
@@ -49,8 +50,17 @@ const StyledArrow = styled(TooltipPrimitive.Arrow, {
 })
 
 const Tooltip = TooltipPrimitive.Root
-const TooltipTrigger = TooltipPrimitive.Trigger
-const TooltipContent = StyledContent
 const TooltipArrow = StyledArrow
+const TooltipContent = StyledContent
+const TooltipPortal = TooltipPrimitive.Portal
+const TooltipProvider = TooltipPrimitive.Provider
+const TooltipTrigger = TooltipPrimitive.Trigger
 
-export { Tooltip, TooltipTrigger, TooltipContent, TooltipArrow }
+export {
+  Tooltip,
+  TooltipArrow,
+  TooltipContent,
+  TooltipPortal,
+  TooltipProvider,
+  TooltipTrigger,
+}
