@@ -10,6 +10,7 @@ import {
   getNotionListingByDate,
   getNotionSlug,
   getNotionSlugByRoute,
+  getPagePropertyItem,
   getPagesById,
   getPathVariables,
   getQuery,
@@ -25,6 +26,7 @@ type CustomProps = {
   getDatabasesByIdQuery: any
   getDeepFetchAllChildren: any
   getInfoType: any
+  getPagePropertyItem: any
   getPagesById: any
   getPathVariables: any
   getQuery: any
@@ -75,6 +77,12 @@ class Client extends _Client {
       return getInfoType({ ...props, config: this.#config })
     },
 
+    getPagePropertyItem: async (props) =>
+      await getPagePropertyItem({
+        ...props,
+        getPagePropertyItemRetrieve: this.pages.properties.retrieve,
+      }),
+
     getPagesById: async (props) =>
       await getPagesById({ ...props, getPagesRetrieve: this.pages.retrieve }),
 
@@ -85,6 +93,7 @@ class Client extends _Client {
       await getQuery({
         ...props,
         config: this.#config,
+        getPagePropertyItem: this.custom.getPagePropertyItem,
         notionDatabasesQuery: this.databases.query,
       }),
   }
@@ -99,12 +108,13 @@ class Client extends _Client {
       routeType: any
       slug?: any
     }) => {
-      // console.dir(`📦️ [@jeromefitz/notion] => ${DATA_TYPES.LISTING}`)
+      console.dir(`📦️ [@jeromefitz/notion] => ${DATA_TYPES.LISTING}`)
       return await getNotionListing({
         ...props,
         config: this.#config,
         getBlocksByIdChildren: this.custom.getBlocksByIdChildren,
         getDatabasesByIdQuery: this.custom.getDatabasesByIdQuery,
+        getPagePropertyItem: this.custom.getPagePropertyItem,
         getPagesById: this.custom.getPagesById,
       })
     },
@@ -114,12 +124,13 @@ class Client extends _Client {
       routeType: any
       slug: any
     }) => {
-      // console.dir(`📦️ [@jeromefitz/notion] => ${DATA_TYPES.LISTING_BY_DATE}`)
+      console.dir(`📦️ [@jeromefitz/notion] => ${DATA_TYPES.LISTING_BY_DATE}`)
       return await getNotionListingByDate({
         ...props,
         config: this.#config,
         getBlocksByIdChildren: this.custom.getBlocksByIdChildren,
         getDatabasesByIdQuery: this.custom.getDatabasesByIdQuery,
+        // getPagePropertyItem: this.custom.getPagePropertyItem,
         getPagesById: this.custom.getPagesById,
       })
     },
@@ -129,14 +140,18 @@ class Client extends _Client {
       routeType: any
       slug: any
     }) => {
-      // console.dir(`📦️ [@jeromefitz/notion] => ${DATA_TYPES.SLUG}`)
-      return await getNotionSlug({
+      console.dir(`📦️ [@jeromefitz/notion] => ${DATA_TYPES.SLUG}`)
+      const dataReturn = await getNotionSlug({
         ...props,
         config: this.#config,
         getBlocksByIdChildren: this.custom.getBlocksByIdChildren,
         getDatabasesByIdQuery: this.custom.getDatabasesByIdQuery,
         getDeepFetchAllChildren: this.custom.getDeepFetchAllChildren,
+        getPagePropertyItem: this.custom.getPagePropertyItem,
       })
+      // console.dir(`FINALLLLLL`)
+      // console.dir(dataReturn)
+      return dataReturn
     },
 
     [DATA_TYPES.SLUG_BY_ROUTE]: async (props: {
@@ -144,12 +159,13 @@ class Client extends _Client {
       routeType: any
       slug: any
     }) => {
-      // console.dir(`📦️ [@jeromefitz/notion] => ${DATA_TYPES.SLUG_BY_ROUTE}`)
+      console.dir(`📦️ [@jeromefitz/notion] => ${DATA_TYPES.SLUG_BY_ROUTE}`)
       return await getNotionSlugByRoute({
         ...props,
         config: this.#config,
         getBlocksByIdChildren: this.custom.getBlocksByIdChildren,
         getDatabasesByIdQuery: this.custom.getDatabasesByIdQuery,
+        getPagePropertyItem: this.custom.getPagePropertyItem,
         getQuery: this.custom.getQuery,
       })
     },

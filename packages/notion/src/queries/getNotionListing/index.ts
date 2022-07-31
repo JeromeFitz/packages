@@ -1,5 +1,6 @@
-import { sortObject } from '@jeromefitz/utils'
-import _map from 'lodash/map.js'
+// import { sortObject } from '@jeromefitz/utils'
+import { asyncForEach, noop as _noop } from '@jeromefitz/utils'
+// import _map from 'lodash/map.js'
 import _omit from 'lodash/omit.js'
 
 import { PROPERTIES } from '../../constants'
@@ -9,6 +10,7 @@ const getNotionListing = async ({
   config,
   getBlocksByIdChildren,
   getDatabasesByIdQuery,
+  getPagePropertyItem,
   getPagesById,
   pathVariables,
   routeType,
@@ -27,9 +29,24 @@ const getNotionListing = async ({
   }
   if (_info?.object === 'page') {
     info = _omit(_info, 'properties')
-    info['properties'] = sortObject(
-      dataNormalized({ config, data: _info, pathVariables, pageId: info.id })
-    )
+    // info['properties'] = sortObject(
+    //   dataNormalized({
+    //     config,
+    //     data: _info,
+    //     getPagePropertyItem,
+    //     pathVariables,
+    //     pageId: info.id,
+    //   })
+    // )
+    const foo = await dataNormalized({
+      config,
+      data: _info,
+      pathVariables,
+      getPagePropertyItem,
+      pageId: info.id,
+    })
+    // console.dir(foo)
+    info['properties'] = foo
   }
 
   const property =
@@ -67,18 +84,37 @@ const getNotionListing = async ({
     },
   })
   const results: any[] = []
-  _map(_items.results, (item) => {
+  console.dir(`~~~ results: start`)
+  // console.dir(_items.results)
+  // _map(_items.results, async (item) => {
+  await asyncForEach(_items.results, async (item: any) => {
     let itemInit = item
     itemInit = _omit(itemInit, 'properties')
-    itemInit['properties'] = sortObject(
-      dataNormalized({ config, data: item, pathVariables, pageId: item.id })
-    )
+    // itemInit['properties'] = sortObject(
+    //   dataNormalized({
+    //     config,
+    //     data: item,
+    //     getPagePropertyItem,
+    //     pathVariables,
+    //     pageId: item.id,
+    //   })
+    // )
+    const foo = await dataNormalized({
+      config,
+      data: item,
+      getPagePropertyItem,
+      pathVariables,
+      pageId: item.id,
+    })
+    // console.dir(foo)
+    itemInit['properties'] = foo
     results.push(itemInit)
     // console.dir(`> last_edited_time`)
     // console.dir(item.id)
     // console.dir(item.last_edited_time)
     // console.dir(`---`)
-  })
+  }).catch(_noop)
+  console.dir(`~~~ results: end`)
   const items = _omit(_items, 'results')
   items.results = results
 

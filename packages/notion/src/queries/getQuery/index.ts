@@ -1,4 +1,5 @@
-import { avoidRateLimit, isObjectEmpty } from '@jeromefitz/utils'
+// import { avoidRateLimit, isObjectEmpty } from '@jeromefitz/utils'
+import { isObjectEmpty } from '@jeromefitz/utils'
 import _map from 'lodash/map.js'
 import _omit from 'lodash/omit.js'
 import _size from 'lodash/size.js'
@@ -17,7 +18,12 @@ const SORTS: SortItem[] = [
   },
 ]
 
-const getQuery = async ({ config, reqQuery, notionDatabasesQuery }) => {
+const getQuery = async ({
+  config,
+  getPagePropertyItem,
+  reqQuery,
+  notionDatabasesQuery,
+}) => {
   const { NOTION } = config
   const { databaseType } = reqQuery
   const routeType = databaseType
@@ -82,6 +88,7 @@ const getQuery = async ({ config, reqQuery, notionDatabasesQuery }) => {
 
   if (!hasError && (!data || isObjectEmpty(data))) {
     await avoidRateLimit(0)
+    // await avoidRateLimit(0)
     // @todo(types) any
     let contentData: Pick<any, string | number | symbol>
     if (!!filter) {
@@ -103,8 +110,10 @@ const getQuery = async ({ config, reqQuery, notionDatabasesQuery }) => {
       })
 
       data = contentData
-      items = dataNormalizedResults({
+      console.dir(`!!! why why why why`)
+      items = await dataNormalizedResults({
         config,
+        getPagePropertyItem,
         results: contentData.results,
         routeType,
       })

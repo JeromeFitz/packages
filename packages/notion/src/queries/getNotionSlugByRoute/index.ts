@@ -1,4 +1,5 @@
-import { sortObject } from '@jeromefitz/utils'
+// import { sortObject } from '@jeromefitz/utils'
+// import { asyncForEach, noop as _noop } from '@jeromefitz/utils'
 import _omit from 'lodash/omit.js'
 import _size from 'lodash/size.js'
 
@@ -22,6 +23,7 @@ const getNotionSlugByRoute__getDataByParentRouteType = async ({
   config,
   getBlocksByIdChildren,
   getDatabasesByIdQuery,
+  getPagePropertyItem,
   getQuery,
   pathVariables,
   routeType,
@@ -57,9 +59,17 @@ const getNotionSlugByRoute__getDataByParentRouteType = async ({
     return { info: {}, content: {}, items: {}, images: {} }
   }
   const info = _omit(_info, 'properties')
-  info['properties'] = sortObject(
-    dataNormalized({ config, data: _info, pathVariables, pageId: info.id })
-  )
+  // info['properties'] = sortObject(
+  //   dataNormalized({ config, data: _info, pathVariables, pageId: info.id })
+  // )
+  const foo = await dataNormalized({
+    config,
+    data: _info,
+    pathVariables,
+    getPagePropertyItem,
+    pageId: info.id,
+  })
+  info['properties'] = foo
   const content = await getBlocksByIdChildren({ block_id: info.id })
   let items = {}
 
@@ -69,6 +79,7 @@ const getNotionSlugByRoute__getDataByParentRouteType = async ({
   if (!isChild) {
     items = await getQuery({
       config,
+      getPagePropertyItem,
       reqQuery: {
         podcasts: info.id,
         databaseType: NOTION[CHILD].routeType.toUpperCase(),
@@ -93,6 +104,7 @@ const getNotionSlugByRoute__getDataByListingDate = async ({
   config,
   getBlocksByIdChildren,
   getDatabasesByIdQuery,
+  getPagePropertyItem,
   // getQuery,
   pathVariables,
   routeType,
@@ -147,9 +159,17 @@ const getNotionSlugByRoute__getDataByListingDate = async ({
   }
 
   const info = _omit(_info, 'properties')
-  info['properties'] = sortObject(
-    dataNormalized({ config, data: _info, pathVariables, pageId: info.id })
-  )
+  // info['properties'] = sortObject(
+  //   dataNormalized({ config, data: _info, pathVariables, pageId: info.id })
+  // )
+  const foo = await dataNormalized({
+    config,
+    data: _info,
+    pathVariables,
+    getPagePropertyItem,
+    pageId: info.id,
+  })
+  info['properties'] = foo
   const content = await getBlocksByIdChildren({ block_id: info.id })
 
   return { info, content, items: {}, images: {} }
@@ -159,6 +179,7 @@ const getNotionSlugByRoute = async ({
   config,
   getBlocksByIdChildren,
   getDatabasesByIdQuery,
+  getPagePropertyItem,
   getQuery,
   pathVariables,
   routeType,
@@ -178,6 +199,7 @@ const getNotionSlugByRoute = async ({
       config,
       getBlocksByIdChildren,
       getDatabasesByIdQuery,
+      getPagePropertyItem,
       getQuery,
       pathVariables,
       routeType,
@@ -198,6 +220,7 @@ const getNotionSlugByRoute = async ({
       config,
       getBlocksByIdChildren,
       getDatabasesByIdQuery,
+      getPagePropertyItem,
       // getQuery,
       pathVariables,
       routeType,

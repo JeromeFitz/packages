@@ -1,4 +1,6 @@
-const rich_text = (data: any) =>
-  !!data?.rich_text ? data?.rich_text[0]?.plain_text : null
+const rich_text = (data: any) => {
+  const dataType = !!data?.results ? 'results' : 'rich_text'
+  return data[dataType][0]?.rich_text?.plain_text
+}
 
 export default rich_text

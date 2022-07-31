@@ -1,30 +1,35 @@
 import _map from 'lodash/map.js'
 import _sortBy from 'lodash/sortBy.js'
 
-import type { RollupFunction } from '../../schema'
+// import type { RollupFunction } from '../../schema'
 import getTypes from '../../utils/getTypes'
 
 /**
  * @note(notion) https://github.com/JeromeFitz/packages/issues/631
  */
-type Rollup = {
-  type: 'array'
-  array: any
-  function: RollupFunction
-}
+// type Rollup = {
+//   type: 'array'
+//   array: any
+//   function: RollupFunction
+// }
 
 // @todo(types)
 const rollup = (data: any) => {
-  const rollupData: Rollup = data?.rollup
+  const rollupData: any = data?.results
   return _sortBy(
-    _map(rollupData?.array, (item) =>
-      _map(item[item?.type], (itemData) =>
-        getTypes[item?.type]({
-          type: item?.type,
-          [item?.type]: [itemData],
-        })
-      )
-    )
+    _map(rollupData, (item) => {
+      /**
+       * @hack(notion) dear evan hansen why
+       */
+      if (item?.type === 'title') {
+        return item.title.plain_text
+      }
+
+      return getTypes[item?.type]({
+        type: item?.type,
+        [item?.type]: [item],
+      })
+    })
   ).flat()
 }
 

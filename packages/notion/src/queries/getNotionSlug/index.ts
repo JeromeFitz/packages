@@ -1,8 +1,10 @@
-import { sortObject } from '@jeromefitz/utils'
+// import { sortObject } from '@jeromefitz/utils'
 // import _filter from 'lodash/filter.js'
+// import _map from 'lodash/map.js'
 import _omit from 'lodash/omit.js'
 
 import { QUERIES } from '../../constants'
+// import { dataNormalized, getTypes } from '../../utils'
 import { dataNormalized } from '../../utils'
 
 const getNotionSlug = async ({
@@ -10,6 +12,7 @@ const getNotionSlug = async ({
   getBlocksByIdChildren,
   getDatabasesByIdQuery,
   getDeepFetchAllChildren,
+  getPagePropertyItem,
   pathVariables,
   routeType,
   slug,
@@ -39,10 +42,55 @@ const getNotionSlug = async ({
     return {}
   }
 
+  console.dir(`📦️ [@jeromefitz/notion] => 00`)
+  // console.dir(_info.properties)
+
   const info = _omit(_info, 'properties')
-  info['properties'] = sortObject(
-    dataNormalized({ config, data: _info, pathVariables, pageId: info.id })
-  )
+
+  // const DATA_NORMALIZED = {}
+  // _map(_info.properties, async (item) => {
+  //   const dataFromNotion = _info.properties[item.id]
+  //   console.dir(item)
+  //   console.dir(`dataFromNotion: ${!!dataFromNotion} (${item.id})`)
+  //   DATA_NORMALIZED[item.key] = null
+  //   if (!!dataFromNotion) {
+  //     console.dir(`>> `)
+  //     // let dataToNormalize: any
+  //     const foo = await getPagePropertyItem({
+  //       getPagePropertyItemRetrive: getPagePropertyItem,
+  //       page_id: info.id,
+  //       property_id: dataFromNotion.id,
+  //     })
+  //     console.dir(`>>> foo`)
+  //     console.dir(foo)
+  //     const dataToNormalize = getTypes[item.type](dataFromNotion, info.id)
+  //     console.dir(`>>> dataToNormalize`)
+  //     console.dir(dataToNormalize)
+  //     DATA_NORMALIZED[item.key] = !!dataToNormalize ? dataToNormalize : null
+  //   }
+  // })
+  // info['properties'] = DATA_NORMALIZED
+  // info['properties'] = sortObject(
+  //   dataNormalized({
+  //     config,
+  //     data: _info,
+  //     pathVariables,
+  //     getPagePropertyItem,
+  //     pageId: info.id,
+  //   })
+  // )
+  const foo = await dataNormalized({
+    config,
+    data: _info,
+    pathVariables,
+    getPagePropertyItem,
+    pageId: info.id,
+  })
+  // console.dir(foo)
+  info['properties'] = foo
+
+  console.dir(`📦️ [@jeromefitz/notion] => 01`)
+  // console.dir(info)
 
   const _content = await getBlocksByIdChildren({ block_id: info.id })
   const blocks = [...(await getDeepFetchAllChildren({ blocks: _content.results }))]
@@ -59,7 +107,10 @@ const getNotionSlug = async ({
    *
    * Pass empty `images` object for SSR/API takeover
    */
-  return { info, content, items: {}, images: {} }
+  const dataReturn = { info, content, items: {}, images: {} }
+  // console.dir(`> dataReturn`)
+  // console.dir(dataReturn)
+  return dataReturn
 }
 
 export default getNotionSlug

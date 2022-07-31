@@ -1,4 +1,5 @@
-import _map from 'lodash/map.js'
+import { asyncForEach, noop as _noop } from '@jeromefitz/utils'
+// import _map from 'lodash/map.js'
 
 import { LOOKUP, PROPERTIES_LOOKUP } from '../../constants'
 import { getTypes } from '../../utils'
@@ -8,7 +9,13 @@ import { getTypes } from '../../utils'
  *
  * Refactor to remove `config` as a parameter, or move this to `queries`
  */
-const dataNormalized = ({ config, data, pathVariables, pageId }) => {
+const dataNormalized = async ({
+  config,
+  data,
+  getPagePropertyItem,
+  pathVariables,
+  pageId,
+}) => {
   const { NOTION } = config
   const DATA_NORMALIZED = {}
   if (!data?.properties) return DATA_NORMALIZED
@@ -26,7 +33,7 @@ const dataNormalized = ({ config, data, pathVariables, pageId }) => {
 
   const items = !!routeType ? LOOKUP[routeType.toUpperCase()] : PROPERTIES_LOOKUP
 
-  _map(items, (item) => {
+  await asyncForEach(items, async (item: any) => {
     let dataToNormalize: any
 
     const dataFromNotion = properties[item.notion]
@@ -37,10 +44,18 @@ const dataNormalized = ({ config, data, pathVariables, pageId }) => {
      */
     DATA_NORMALIZED[item.key] = null
     if (!!dataFromNotion) {
-      dataToNormalize = getTypes[item.type](dataFromNotion, pageId)
+      // console.dir(`>> `)
+      // console.dir(`item.type: ${item.type} (${pageId} / ${item.notion})`)
+      const foo = await getPagePropertyItem({
+        getPagePropertyItemRetrive: getPagePropertyItem,
+        page_id: pageId,
+        property_id: dataFromNotion.id,
+      })
+      // console.dir(`>>> foo: getPagePropertyItem (${dataFromNotion.id})`)
+      dataToNormalize = getTypes[item.type](foo, pageId)
       DATA_NORMALIZED[item.key] = !!dataToNormalize ? dataToNormalize : null
     }
-  })
+  }).catch(_noop)
 
   return DATA_NORMALIZED
 }
