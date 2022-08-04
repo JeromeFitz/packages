@@ -25,6 +25,7 @@
       "matchPackagePatterns": ["^actions"]
     },
     {
+      "commitMessagePrefix": "⬆️  (deps)",
       "excludePackageNames": ["eslint-config-next"],
       "groupName": "eslint-config 📏 ...",
       "groupSlug": "eslint-config",
@@ -35,9 +36,7 @@
         "prettier",
         "pretty-quick"
       ],
-      "matchPackagePatterns": ["^eslint"],
-      "semanticCommitScope": "deps",
-      "semanticCommitType": "⬆️  "
+      "matchPackagePatterns": ["^eslint"]
     },
     {
       "commitMessagePrefix": "📦  (deps-dev)",
@@ -45,6 +44,14 @@
       "groupName": "next 🔺 ...",
       "groupSlug": "next",
       "matchPackageNames": ["eslint-config-next", "next"]
+    },
+    {
+      "commitMessagePrefix": "📦  (deps-dev)",
+      "excludePackageNames": ["@storybook/builder-vite"],
+      "groupName": "storybook 📙 ...",
+      "groupSlug": "storybook",
+      "matchPackageNames": ["storybook-addon-themes"],
+      "matchPackagePatterns": ["^@storybook/"]
     },
     {
       "commitMessagePrefix": "📦  (deps-dev)",
@@ -85,7 +92,11 @@
     {
       "assignees": ["JeromeFitz"],
       "matchUpdateTypes": ["major"],
-      "labels": ["📦 Dependencies 💥 Breaking 💥", "🛑️ Do Not Merge"],
+      "labels": [
+        "📦 Dependencies",
+        "📦 Dependencies 💥 Breaking 💥",
+        "🛑️ Do Not Merge"
+      ],
       "reviewers": ["JeromeFitz"]
     }
   ],
