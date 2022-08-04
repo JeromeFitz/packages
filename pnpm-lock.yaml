@@ -218,7 +218,7 @@ importers:
       '@storybook/builder-vite': 0.2.2
       '@storybook/mdx2-csf': 0.0.3
       '@storybook/react': 6.5.9
-      '@storybook/theming': 6.5.9
+      '@storybook/theming': 6.5.10
       '@types/lodash': 4.14.182
       '@types/react': 18.0.15
       '@types/react-dom': 18.0.6
@@ -311,7 +311,7 @@ importers:
       '@storybook/builder-vite': 0.2.2_3riov4n7jyrbnfbgtoalwbwvt4
       '@storybook/mdx2-csf': 0.0.3
       '@storybook/react': 6.5.9_btiesyu4nsvahhobwljjtt6llu
-      '@storybook/theming': 6.5.9_biqbaboplfbrettd7655fr4n2y
+      '@storybook/theming': 6.5.10_biqbaboplfbrettd7655fr4n2y
       '@types/lodash': 4.14.182
       '@types/react': 18.0.15
       '@types/react-dom': 18.0.6
@@ -319,7 +319,7 @@ importers:
       framer-motion: 6.5.1_biqbaboplfbrettd7655fr4n2y
       kbar: 0.1.0-beta.36_biqbaboplfbrettd7655fr4n2y
       lodash: 4.17.21
-      multiple-themes-stitches: 0.0.10_klcqnchi7pqnrrrjofzkjj4saq
+      multiple-themes-stitches: 0.0.10_kiodsmzukfhr6kkgyjk6met7fe
       next: 12.2.1_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -7021,7 +7021,7 @@ packages:
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
       '@storybook/client-logger': 6.5.9
-      core-js: 3.23.1
+      core-js: 3.23.3
       memoizerific: 1.11.3
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -15180,7 +15180,7 @@ packages:
       minimatch: 3.1.2
     dev: false
 
-  /multiple-themes-stitches/0.0.10_klcqnchi7pqnrrrjofzkjj4saq:
+  /multiple-themes-stitches/0.0.10_kiodsmzukfhr6kkgyjk6met7fe:
     resolution: {integrity: sha512-sqm+ArHNf/NRP4sx3T9KFSKEZ18Bb8u/qjhA0eXF2bYYVo+JNqSWVtaBnNVr3vGE5ekgDwTdJmvqZP3eoq6UpA==}
     peerDependencies:
       '@storybook/addons': ^6.3.6
@@ -15198,7 +15198,7 @@ packages:
     dependencies:
       '@stitches/react': 1.2.8_react@18.2.0
       '@storybook/csf': 0.0.1
-      '@storybook/theming': 6.5.9_biqbaboplfbrettd7655fr4n2y
+      '@storybook/theming': 6.5.10_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     dev: true
@@ -18192,7 +18192,7 @@ packages:
       '@storybook/api': 6.5.9_biqbaboplfbrettd7655fr4n2y
       '@storybook/components': 6.5.9_biqbaboplfbrettd7655fr4n2y
       '@storybook/core-events': 6.5.9
-      '@storybook/theming': 6.5.9_biqbaboplfbrettd7655fr4n2y
+      '@storybook/theming': 6.5.10_biqbaboplfbrettd7655fr4n2y
       core-js: 3.23.1
       global: 4.4.0
       memoizerific: 1.11.3
