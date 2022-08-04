@@ -103,7 +103,7 @@ importers:
       '@types/react-dom': 18.0.6
       date-fns: 2.29.1
       date-fns-tz: 1.3.6
-      framer-motion: 6.5.1
+      framer-motion: 7.0.0
       kbar: 0.1.0-beta.36
       next: 12.2.1
       next-compose-plugins: 2.2.1
@@ -117,7 +117,7 @@ importers:
       '@mantine/hooks': 5.0.2_react@18.2.0
       date-fns: 2.29.1
       date-fns-tz: 1.3.6_date-fns@2.29.1
-      framer-motion: 6.5.1_biqbaboplfbrettd7655fr4n2y
+      framer-motion: 7.0.0_biqbaboplfbrettd7655fr4n2y
       kbar: 0.1.0-beta.36_biqbaboplfbrettd7655fr4n2y
       next: 12.2.1_biqbaboplfbrettd7655fr4n2y
       next-themes: 0.2.0_mhihrgpmhoktude7gn4rdcr2ka
@@ -224,7 +224,7 @@ importers:
       '@types/react-dom': 18.0.6
       '@vitejs/plugin-react': 2.0.0
       emoji-regex: 10.1.0
-      framer-motion: 6.5.1
+      framer-motion: 7.0.0
       kbar: 0.1.0-beta.36
       lodash: 4.17.21
       multiple-themes-stitches: 0.0.10
@@ -316,7 +316,7 @@ importers:
       '@types/react': 18.0.15
       '@types/react-dom': 18.0.6
       '@vitejs/plugin-react': 2.0.0_vite@3.0.4
-      framer-motion: 6.5.1_biqbaboplfbrettd7655fr4n2y
+      framer-motion: 7.0.0_biqbaboplfbrettd7655fr4n2y
       kbar: 0.1.0-beta.36_biqbaboplfbrettd7655fr4n2y
       lodash: 4.17.21
       multiple-themes-stitches: 0.0.10_klcqnchi7pqnrrrjofzkjj4saq
@@ -3845,44 +3845,44 @@ packages:
     resolution: {integrity: sha512-H1rQc1ZOHANWBvPcW+JpGwr+juXSxM8Q8YCkm3GhZd8REu1fHR3z99CErO1p9pkcfcxZnMdIZdIsXkOHY0NilA==}
     dev: true
 
-  /@motionone/animation/10.12.0:
-    resolution: {integrity: sha512-SCWkVjMChQwA4Cnt1pdmhCi0OC4cAR+rqsskNEqmbgfG59zmn50TfOP6vgqjkYbaSZXXLeEb03Mez362jIEHRg==}
+  /@motionone/animation/10.13.1:
+    resolution: {integrity: sha512-dxQ+1wWxL6iFHDy1uv6hhcPjIdOg36eDT56jN4LI7Z5HZRyLpq8x1t7JFQclo/IEIb+6Bk4atmyinGFdXVECuA==}
     dependencies:
-      '@motionone/easing': 10.12.0
-      '@motionone/types': 10.12.0
-      '@motionone/utils': 10.12.0
+      '@motionone/easing': 10.13.1
+      '@motionone/types': 10.13.0
+      '@motionone/utils': 10.13.1
       tslib: 2.4.0
 
-  /@motionone/dom/10.12.0:
-    resolution: {integrity: sha512-UdPTtLMAktHiqV0atOczNYyDd/d8Cf5fFsd1tua03PqTwwCe/6lwhLSQ8a7TbnQ5SN0gm44N1slBfj+ORIhrqw==}
+  /@motionone/dom/10.13.1:
+    resolution: {integrity: sha512-zjfX+AGMIt/fIqd/SL1Lj93S6AiJsEA3oc5M9VkUr+Gz+juRmYN1vfvZd6MvEkSqEjwPQgcjN7rGZHrDB9APfQ==}
     dependencies:
-      '@motionone/animation': 10.12.0
-      '@motionone/generators': 10.12.0
-      '@motionone/types': 10.12.0
-      '@motionone/utils': 10.12.0
+      '@motionone/animation': 10.13.1
+      '@motionone/generators': 10.13.1
+      '@motionone/types': 10.13.0
+      '@motionone/utils': 10.13.1
       hey-listen: 1.0.8
       tslib: 2.4.0
 
-  /@motionone/easing/10.12.0:
-    resolution: {integrity: sha512-kdwcn1ja/0//BBHRElX3In1yfqMEhqUoL3G0njDan8R+gfPy3DanyuCtio4VruHQ1m3XN3LcrqavbClzcGo7IA==}
+  /@motionone/easing/10.13.1:
+    resolution: {integrity: sha512-INEsInHHDHVgx0dp5qlXi1lMXBqYicgLMMSn3zfGzaIvcaEbI1Uz8BoyNV4BiclTupG7RYIh+T6BU83ZcEe74g==}
     dependencies:
-      '@motionone/utils': 10.12.0
+      '@motionone/utils': 10.13.1
       tslib: 2.4.0
 
-  /@motionone/generators/10.12.0:
-    resolution: {integrity: sha512-QM8/ndOve80HLXImChwW8ogrEM/8m9xzZEl2Ci2ep1uGLAQ+ADiwzKtl11inGESrxiFDrUdD12WXacCn+y172Q==}
+  /@motionone/generators/10.13.1:
+    resolution: {integrity: sha512-+HK5u2YcNJCckTTqfOLgSVcrWv2z1dVwrSZEMVJuAh0EnWEWGDJRvMBoPc0cFf/osbkA2Rq9bH2+vP0Ex/D8uw==}
     dependencies:
-      '@motionone/types': 10.12.0
-      '@motionone/utils': 10.12.0
+      '@motionone/types': 10.13.0
+      '@motionone/utils': 10.13.1
       tslib: 2.4.0
 
-  /@motionone/types/10.12.0:
-    resolution: {integrity: sha512-D9k7ijkAT6JJOCMUVn9IgJqWolp7N3oBbWRQTIRGGO41Bmr/JzLv4GzAb00PvkYAzZX+BpnSTKqXI19zrSjC5w==}
+  /@motionone/types/10.13.0:
+    resolution: {integrity: sha512-qegk4qg8U1N9ZwAJ187BG3TkZz1k9LP/pvNtCSlqdq/PMUDKlCFG4ZnjJ481P0IOH/vIw1OzIbKIuyg0A3rk9g==}
 
-  /@motionone/utils/10.12.0:
-    resolution: {integrity: sha512-2g3tCqYYwb/tgzCDRbILbD5edXJB45HV51NbnhwKVOOl0PhFraRDtehzLKo9wLHdaTnO/IjVn6cHQsw6RjdolA==}
+  /@motionone/utils/10.13.1:
+    resolution: {integrity: sha512-TjDPTIppaf3ofBXQv4ZzAketJgN0sclALXfZ6mfrkjJkOy83mLls9744F+6S+VKCpBmvbZcBY4PQfrfhAfeMtA==}
     dependencies:
-      '@motionone/types': 10.12.0
+      '@motionone/types': 10.13.0
       hey-listen: 1.0.8
       tslib: 2.4.0
 
@@ -11822,19 +11822,19 @@ packages:
     dependencies:
       map-cache: 0.2.2
 
-  /framer-motion/6.5.1_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-o1BGqqposwi7cgDrtg0dNONhkmPsUFDaLcKXigzuTFC5x58mE8iyTazxSudFzmT6MEyJKfjjU8ItoMe3W+3fiw==}
+  /framer-motion/7.0.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-mOUKle6LouYVP4KLz+cMiNI6fL3qP9hQY4PBaN3E1FyPhcvuAgvs/JPgYktvK5zdRbIRU0gpBsr0CW5hP2KzKA==}
     peerDependencies:
-      react: '>=16.8 || ^17.0.0 || ^18.0.0'
-      react-dom: '>=16.8 || ^17.0.0 || ^18.0.0'
+      react: ^18.0.0
+      react-dom: ^18.0.0
     dependencies:
-      '@motionone/dom': 10.12.0
+      '@motionone/dom': 10.13.1
       framesync: 6.0.1
       hey-listen: 1.0.8
       popmotion: 11.0.3
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      style-value-types: 5.0.0
+      style-value-types: 5.1.0
       tslib: 2.4.0
     optionalDependencies:
       '@emotion/is-prop-valid': 0.8.8
@@ -18418,6 +18418,12 @@ packages:
 
   /style-value-types/5.0.0:
     resolution: {integrity: sha512-08yq36Ikn4kx4YU6RD7jWEv27v4V+PUsOGa4n/as8Et3CuODMJQ00ENeAVXAeydX4Z2j1XHZF1K2sX4mGl18fA==}
+    dependencies:
+      hey-listen: 1.0.8
+      tslib: 2.4.0
+
+  /style-value-types/5.1.0:
+    resolution: {integrity: sha512-DRIfBtjxQ4ztBZpexkFcI+UR7pODC5qLMf2Syt+bH98PAHHRH2tQnzxBuDQlqcAoYar6GzWnj8iAfqfwnEzCiQ==}
     dependencies:
       hey-listen: 1.0.8
       tslib: 2.4.0
