@@ -209,7 +209,7 @@ importers:
       '@radix-ui/react-visually-hidden': 1.0.0
       '@stitches/react': 1.2.8
       '@storybook/addon-a11y': 6.5.10
-      '@storybook/addon-actions': 6.5.9
+      '@storybook/addon-actions': 6.5.10
       '@storybook/addon-docs': 6.5.9
       '@storybook/addon-essentials': 6.5.9
       '@storybook/addon-links': 6.5.9
@@ -302,7 +302,7 @@ importers:
       '@radix-ui/colors': 0.1.8
       '@radix-ui/react-icons': 1.1.1_react@18.2.0
       '@storybook/addon-a11y': 6.5.10_biqbaboplfbrettd7655fr4n2y
-      '@storybook/addon-actions': 6.5.9_biqbaboplfbrettd7655fr4n2y
+      '@storybook/addon-actions': 6.5.10_biqbaboplfbrettd7655fr4n2y
       '@storybook/addon-docs': 6.5.9_btiesyu4nsvahhobwljjtt6llu
       '@storybook/addon-essentials': 6.5.9_btiesyu4nsvahhobwljjtt6llu
       '@storybook/addon-links': 6.5.9_biqbaboplfbrettd7655fr4n2y
@@ -5354,6 +5354,40 @@ packages:
       util-deprecate: 1.0.2
     dev: true
 
+  /@storybook/addon-actions/6.5.10_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-vpCnEu81fmtYzOf0QsRYoDuf9wXgVVl2VysE1dWRebRhIUDU0JurrthTnw322e38D4FzaoNGqZE7wnBYBohzZA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      '@storybook/addons': 6.5.10_biqbaboplfbrettd7655fr4n2y
+      '@storybook/api': 6.5.10_biqbaboplfbrettd7655fr4n2y
+      '@storybook/client-logger': 6.5.10
+      '@storybook/components': 6.5.10_biqbaboplfbrettd7655fr4n2y
+      '@storybook/core-events': 6.5.10
+      '@storybook/csf': 0.0.2--canary.4566f4d.1
+      '@storybook/theming': 6.5.10_biqbaboplfbrettd7655fr4n2y
+      core-js: 3.23.3
+      fast-deep-equal: 3.1.3
+      global: 4.4.0
+      lodash: 4.17.21
+      polished: 4.2.2
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-inspector: 5.1.1_react@18.2.0
+      regenerator-runtime: 0.13.9
+      telejson: 6.0.8
+      ts-dedent: 2.2.0
+      util-deprecate: 1.0.2
+      uuid-browser: 3.1.0
+    dev: true
+
   /@storybook/addon-actions/6.5.9_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-wDYm3M1bN+zcYZV3Q24M03b/P8DDpvj1oSoY6VLlxDAi56h8qZB/voeIS2I6vWXOB79C5tbwljYNQO0GsufS0g==}
     peerDependencies:
@@ -5372,7 +5406,7 @@ packages:
       '@storybook/core-events': 6.5.9
       '@storybook/csf': 0.0.2--canary.4566f4d.1
       '@storybook/theming': 6.5.9_biqbaboplfbrettd7655fr4n2y
-      core-js: 3.23.1
+      core-js: 3.23.3
       fast-deep-equal: 3.1.3
       global: 4.4.0
       lodash: 4.17.21
