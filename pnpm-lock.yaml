@@ -212,7 +212,7 @@ importers:
       '@storybook/addon-actions': 6.5.9
       '@storybook/addon-docs': 6.5.9
       '@storybook/addon-essentials': 6.5.9
-      '@storybook/addon-links': 6.5.9
+      '@storybook/addon-links': 6.5.10
       '@storybook/addon-notes': 5.3.21
       '@storybook/addon-storysource': 6.5.9
       '@storybook/builder-vite': 0.2.2
@@ -305,7 +305,7 @@ importers:
       '@storybook/addon-actions': 6.5.9_biqbaboplfbrettd7655fr4n2y
       '@storybook/addon-docs': 6.5.9_btiesyu4nsvahhobwljjtt6llu
       '@storybook/addon-essentials': 6.5.9_btiesyu4nsvahhobwljjtt6llu
-      '@storybook/addon-links': 6.5.9_biqbaboplfbrettd7655fr4n2y
+      '@storybook/addon-links': 6.5.10_biqbaboplfbrettd7655fr4n2y
       '@storybook/addon-notes': 5.3.21_bb2bxwco6ptpubzwpazr52qf6i
       '@storybook/addon-storysource': 6.5.9_biqbaboplfbrettd7655fr4n2y
       '@storybook/builder-vite': 0.2.2_3riov4n7jyrbnfbgtoalwbwvt4
@@ -5590,8 +5590,8 @@ packages:
       - webpack-command
     dev: true
 
-  /@storybook/addon-links/6.5.9_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-4BYC7pkxL3NLRnEgTA9jpIkObQKril+XFj1WtmY/lngF90vvK0Kc/TtvTA2/5tSgrHfxEuPevIdxMIyLJ4ejWQ==}
+  /@storybook/addon-links/6.5.10_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-r3WzYIPz7WjHiaPObC2Tg6bHuZRBb/Kt/X+Eitw+jTqBel7ksvkO36tn81q8Eyj61qIdNQmUWAaX/0aewT0kLA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -5601,13 +5601,13 @@ packages:
       react-dom:
         optional: true
     dependencies:
-      '@storybook/addons': 6.5.9_biqbaboplfbrettd7655fr4n2y
-      '@storybook/client-logger': 6.5.9
-      '@storybook/core-events': 6.5.9
+      '@storybook/addons': 6.5.10_biqbaboplfbrettd7655fr4n2y
+      '@storybook/client-logger': 6.5.10
+      '@storybook/core-events': 6.5.10
       '@storybook/csf': 0.0.2--canary.4566f4d.1
-      '@storybook/router': 6.5.9_biqbaboplfbrettd7655fr4n2y
+      '@storybook/router': 6.5.10_biqbaboplfbrettd7655fr4n2y
       '@types/qs': 6.9.7
-      core-js: 3.23.1
+      core-js: 3.23.3
       global: 4.4.0
       prop-types: 15.8.1
       qs: 6.10.5
