@@ -82,6 +82,7 @@ const rewrites: RewritesProps[] = [
   { from: 'technologist', to: 'dx' },
   { from: 'closed-lock-with-key', to: 'secrets' },
   { from: 'money-with-wings', to: 'sponsor' },
+  { from: 'thread', to: 'concurrency' },
 ]
 
 export default rewrites
