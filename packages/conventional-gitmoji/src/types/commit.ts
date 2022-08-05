@@ -15,6 +15,7 @@ const commit: ICommit[] = [
   'clean',
   'compat',
   'config',
+  'concurrency',
   'contrib-add',
   'data',
   'db',

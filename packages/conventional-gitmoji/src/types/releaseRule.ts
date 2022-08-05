@@ -141,6 +141,16 @@ const releaseRule: IReleaseRule = {
     name: 'wrench',
     semver: 'patch',
   },
+  concurrency: {
+    branch: null,
+    code: ':thread:',
+    commit: 'concurrency',
+    description: 'Add or update code related to multithreading or concurrency..',
+    emoji: '🧵',
+    entity: '&#x1F9F5;',
+    name: 'thread',
+    semver: 'patch',
+  },
   'contrib-add': {
     branch: null,
     code: ':busts_in_silhouette:',

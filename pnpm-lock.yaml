@@ -134,7 +134,7 @@ importers:
       '@types/lodash': 4.14.182
       '@types/semantic-release': 17.2.4
       '@types/title': 3.4.1
-      gitmojis: 3.11.1
+      gitmojis: 3.12.0
       grapheme-splitter: 1.0.4
       lodash: 4.17.21
       title: 3.4.4
@@ -145,7 +145,7 @@ importers:
       '@types/lodash': 4.14.182
       '@types/semantic-release': 17.2.4
       '@types/title': 3.4.1
-      gitmojis: 3.11.1
+      gitmojis: 3.12.0
       lodash: 4.17.21
 
   packages/design-system:
@@ -12148,8 +12148,8 @@ packages:
   /github-slugger/1.4.0:
     resolution: {integrity: sha512-w0dzqw/nt51xMVmlaV1+JRzN+oCa1KfcgGEWhxUG16wbdA+Xnt/yoFO8Z8x/V82ZcZ0wy6ln9QDup5avbhiDhQ==}
 
-  /gitmojis/3.11.1:
-    resolution: {integrity: sha512-9hEYN+AEUFHVoEgfKZ28pMeZanV7JlVykYVdze5bXxc/eitSfN/Xsbx0SfLgrG9jzh5SfL3eYY+zl7WIdo/xTw==}
+  /gitmojis/3.12.0:
+    resolution: {integrity: sha512-07dBXkB1PZkOxs4BEJfcMCubWkNo34YEslGLMmnlkbIxtU7PqMjitUT1k73jpNrUck33LjXR1T7KEsoM5zBSbw==}
     engines: {node: '16'}
     dev: true
 
