@@ -98,7 +98,7 @@ importers:
     specifiers:
       '@heroicons/react': 1.0.6
       '@jeromefitz/design-system': workspace:*
-      '@mantine/hooks': 5.1.1
+      '@mantine/hooks': 5.1.3
       '@types/react': 18.0.17
       '@types/react-dom': 18.0.6
       date-fns: 2.29.1
@@ -114,7 +114,7 @@ importers:
     dependencies:
       '@heroicons/react': 1.0.6_react@18.2.0
       '@jeromefitz/design-system': link:../../packages/design-system
-      '@mantine/hooks': 5.1.1_react@18.2.0
+      '@mantine/hooks': 5.1.3_react@18.2.0
       date-fns: 2.29.1
       date-fns-tz: 1.3.6_date-fns@2.29.1
       framer-motion: 7.1.0_biqbaboplfbrettd7655fr4n2y
@@ -151,7 +151,7 @@ importers:
   packages/design-system:
     specifiers:
       '@heroicons/react': 1.0.6
-      '@mantine/hooks': 5.1.1
+      '@mantine/hooks': 5.1.3
       '@radix-ui/colors': 0.1.8
       '@radix-ui/primitive': 1.0.0
       '@radix-ui/react-accessible-icon': 1.0.0
@@ -298,7 +298,7 @@ importers:
       smoothscroll-polyfill: 0.4.4
     devDependencies:
       '@heroicons/react': 1.0.6_react@18.2.0
-      '@mantine/hooks': 5.1.1_react@18.2.0
+      '@mantine/hooks': 5.1.3_react@18.2.0
       '@radix-ui/colors': 0.1.8
       '@radix-ui/react-icons': 1.1.1_react@18.2.0
       '@storybook/addon-a11y': 6.5.10_biqbaboplfbrettd7655fr4n2y
@@ -3711,8 +3711,8 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.13
     dev: true
 
-  /@mantine/hooks/5.1.1_react@18.2.0:
-    resolution: {integrity: sha512-paixen37qs9a8g/hYMIAMXCl+WUK2DdGqSPahGpza1BdNqtYEIfbu12LcuZkfswufIY8DaagdabG0yL6Swh+bg==}
+  /@mantine/hooks/5.1.3_react@18.2.0:
+    resolution: {integrity: sha512-ZQqtht0Tdbr9MWlif8WOE1sBJ8xJo9CiWbhrlNLAcb4uDY+BV5nMT6aluOa80Wf6ykv9lbqw0ju7N1xxzZ/A+A==}
     peerDependencies:
       react: '>=16.8.0'
     dependencies:
