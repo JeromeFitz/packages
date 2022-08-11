@@ -103,7 +103,7 @@
   },
   "devDependencies": {
     "@heroicons/react": "1.0.6",
-    "@mantine/hooks": "5.1.1",
+    "@mantine/hooks": "5.1.3",
     "@radix-ui/colors": "0.1.8",
     "@radix-ui/react-icons": "1.1.1",
     "@storybook/addon-a11y": "6.5.10",
