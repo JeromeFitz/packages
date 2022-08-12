@@ -71,7 +71,7 @@
     "pinst": "3.0.0",
     "semantic-release": "19.0.3",
     "semantic-release-monorepo": "7.0.5",
-    "tsup": "6.2.1",
+    "tsup": "6.2.2",
     "turbo": "1.4.3"
   }
 }
