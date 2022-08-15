@@ -103,7 +103,7 @@ importers:
       '@types/react-dom': 18.0.6
       date-fns: 2.29.1
       date-fns-tz: 1.3.6
-      framer-motion: 7.1.0
+      framer-motion: 7.1.1
       kbar: 0.1.0-beta.36
       next: 12.2.1
       next-compose-plugins: 2.2.1
@@ -117,7 +117,7 @@ importers:
       '@mantine/hooks': 5.1.5_react@18.2.0
       date-fns: 2.29.1
       date-fns-tz: 1.3.6_date-fns@2.29.1
-      framer-motion: 7.1.0_biqbaboplfbrettd7655fr4n2y
+      framer-motion: 7.1.1_biqbaboplfbrettd7655fr4n2y
       kbar: 0.1.0-beta.36_biqbaboplfbrettd7655fr4n2y
       next: 12.2.1_biqbaboplfbrettd7655fr4n2y
       next-themes: 0.2.0_mhihrgpmhoktude7gn4rdcr2ka
@@ -224,7 +224,7 @@ importers:
       '@types/react-dom': 18.0.6
       '@vitejs/plugin-react': 2.0.1
       emoji-regex: 10.1.0
-      framer-motion: 7.1.0
+      framer-motion: 7.1.1
       kbar: 0.1.0-beta.36
       lodash: 4.17.21
       multiple-themes-stitches: 0.0.10
@@ -316,7 +316,7 @@ importers:
       '@types/react': 18.0.17
       '@types/react-dom': 18.0.6
       '@vitejs/plugin-react': 2.0.1_vite@3.0.7
-      framer-motion: 7.1.0_biqbaboplfbrettd7655fr4n2y
+      framer-motion: 7.1.1_biqbaboplfbrettd7655fr4n2y
       kbar: 0.1.0-beta.36_biqbaboplfbrettd7655fr4n2y
       lodash: 4.17.21
       multiple-themes-stitches: 0.0.10_kiodsmzukfhr6kkgyjk6met7fe
@@ -12292,25 +12292,25 @@ packages:
     dependencies:
       map-cache: 0.2.2
 
-  /framer-motion/7.1.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-It0LIsooAr83kGwT55sRRo5pQ/chbvPKGeGmHCl1ARVeWGaeFFfNWSoSF1UgsjWtni/lsUxNsf2BCg1Hy7W3Ag==}
+  /framer-motion/7.1.1_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-ONFaG7as1GBBYYIqzX8ENVsfa4eh6f7/nSc3QCADAHOaCt1Lh3UdWbQ0+HVGOOORvEW2L99GlCr4wQc0GLddXg==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
     dependencies:
       '@motionone/dom': 10.13.1
-      framesync: 6.1.1
+      framesync: 6.1.2
       hey-listen: 1.0.8
-      popmotion: 11.0.4
+      popmotion: 11.0.5
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      style-value-types: 5.1.1
+      style-value-types: 5.1.2
       tslib: 2.4.0
     optionalDependencies:
       '@emotion/is-prop-valid': 0.8.8
 
-  /framesync/6.1.1:
-    resolution: {integrity: sha512-ApprAm7ey4LSp7BPucYz/JPMdRvL1VnBmQ64e61dkns/WPM4aCU8oSKiMRF/p4NtVEG9sZeVyHOBoVaA9+p3sA==}
+  /framesync/6.1.2:
+    resolution: {integrity: sha512-jBTqhX6KaQVDyus8muwZbBeGGP0XgujBRbQ7gM7BRdS3CadCZIHiawyzYLnafYcvZIh5j8WE7cxZKFn7dXhu9g==}
     dependencies:
       tslib: 2.4.0
 
@@ -16723,12 +16723,12 @@ packages:
       '@babel/runtime': 7.18.3
     dev: true
 
-  /popmotion/11.0.4:
-    resolution: {integrity: sha512-gY9zNSzpEaToyS5Nm+PpE9x6Vu5HhuRVbVER+haML+1OkO8B3yCp0rD5UKZUrt5fClX2r2DY7RtDjkp5bcwyPg==}
+  /popmotion/11.0.5:
+    resolution: {integrity: sha512-la8gPM1WYeFznb/JqF4GiTkRRPZsfaj2+kCxqQgr2MJylMmIKUwBfWW8Wa5fml/8gmtlD5yI01MP1QCZPWmppA==}
     dependencies:
-      framesync: 6.1.1
+      framesync: 6.1.2
       hey-listen: 1.0.8
-      style-value-types: 5.1.1
+      style-value-types: 5.1.2
       tslib: 2.4.0
 
   /popper.js/1.16.1:
@@ -18886,8 +18886,8 @@ packages:
       inline-style-parser: 0.1.1
     dev: true
 
-  /style-value-types/5.1.1:
-    resolution: {integrity: sha512-s1p02MYD7E2f1b8lr6CjW8n6CEt+6PdK6QMuUfuTA3yqA6jYktZ1MOWpk7ZpaADl5WAkktBcJAOlDgYIg4yEsQ==}
+  /style-value-types/5.1.2:
+    resolution: {integrity: sha512-Vs9fNreYF9j6W2VvuDTP7kepALi7sk0xtk2Tu8Yxi9UoajJdEVpNpCov0HsLTqXvNGKX+Uv09pkozVITi1jf3Q==}
     dependencies:
       hey-listen: 1.0.8
       tslib: 2.4.0
