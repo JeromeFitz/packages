@@ -36,7 +36,7 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "@octokit/rest": "19.0.3",
+    "@octokit/rest": "19.0.4",
     "colorize-template": "1.0.0",
     "picocolors": "1.0.0"
   },
