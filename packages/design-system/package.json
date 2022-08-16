@@ -117,7 +117,7 @@
     "@storybook/mdx2-csf": "0.0.3",
     "@storybook/react": "6.5.10",
     "@storybook/theming": "6.5.10",
-    "@types/lodash": "4.14.182",
+    "@types/lodash": "4.14.183",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
     "@vitejs/plugin-react": "2.0.1",

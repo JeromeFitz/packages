@@ -50,7 +50,7 @@
   },
   "devDependencies": {
     "@jeromefitz/conventional-gitmoji": "workspace:*",
-    "@types/lodash": "4.14.182",
+    "@types/lodash": "4.14.183",
     "chai": "4.3.6",
     "isomorphic-unfetch": "3.1.0",
     "lodash": "4.17.21",
