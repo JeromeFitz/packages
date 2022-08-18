@@ -256,7 +256,7 @@ const StyledCommandShortCuts = styled(Box, {
 // @note(cmdk) this goes away when radix is upgraded in cmdk
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-const _Command = StyledCommand
+const _Command: any = StyledCommand
 const CommandInput = StyledCommandInput
 const CommandTopShine = StyledCommandTopShine
 const CommandBadge = StyledCommandBadge
