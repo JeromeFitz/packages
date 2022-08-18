@@ -76,11 +76,15 @@ const StyledCommandInput = styled(Command.Input, {
   borderRadius: '$0',
   color: '$gray12',
   fontFamily: '$sans',
-  fontSize: '$4',
   outline: 'none',
   padding: '$4',
   '&::placeholder': {
     color: '$gray9',
+  },
+  // ref: https://twitter.com/joshwcomeau/status/1379782931116351490?s=12
+  fontSize: '16px',
+  '@bp1': {
+    fontSize: '$4',
   },
 })
 const StyledCommandTopShine = styled(Box, {

@@ -27,8 +27,6 @@ function CommandMenuData() {
   const activePage = pages[pages.length - 1]
   const isHome = activePage === 'home'
 
-  console.dir(`pages: ${pages}`)
-
   const popPage = React.useCallback(() => {
     setPages((pages) => {
       const x = [...pages]
