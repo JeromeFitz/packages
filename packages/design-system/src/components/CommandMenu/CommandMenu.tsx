@@ -1,7 +1,8 @@
-import { Box, Kbd } from '@jeromefitz/design-system/src/components'
 import { Command } from 'cmdk'
 import { AnimatePresence, motion } from 'framer-motion'
 import React from 'react'
+
+import { Box, Kbd } from '../index'
 
 import { CommandItem, CommandShortCuts } from './CommandMenu.styles'
 
