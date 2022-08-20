@@ -44,7 +44,7 @@ function CommandMenuData() {
         if (ref.current) {
           ref.current.style.transform = ''
         }
-      }, 100)
+      }, 125)
 
       setInputValue('')
     }
@@ -65,6 +65,9 @@ function CommandMenuData() {
     >
       <Command
         ref={ref}
+        onClick={() => {
+          bounce()
+        }}
         onKeyDown={(e: React.KeyboardEvent) => {
           if (e.key === 'Enter') {
             bounce()

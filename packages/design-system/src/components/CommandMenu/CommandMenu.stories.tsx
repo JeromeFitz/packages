@@ -2,6 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
 
 import shows from '../../../../../examples/design-system/src/components/CommandMenu/data/shows.json'
+import useDelayedRender from '../../hooks/useDelayedRender'
 import { Box, Flex, Icon } from '../index'
 
 import { CommandMenu, CommandMenuItem } from './CommandMenu'
@@ -134,7 +135,7 @@ function CommandMenuData() {
         if (ref.current) {
           ref.current.style.transform = ''
         }
-      }, 100)
+      }, 125)
 
       setInputValue('')
     }
@@ -155,6 +156,9 @@ function CommandMenuData() {
     >
       <Command
         ref={ref}
+        onClick={() => {
+          bounce()
+        }}
         onKeyDown={(e: React.KeyboardEvent) => {
           if (e.key === 'Enter') {
             bounce()
@@ -214,9 +218,8 @@ function Home({ searchShows }: { searchShows: Function }) {
         >
           <Flex gap="3">
             <Icon.MagnifyingGlass />
-            Search Shows..
+            Search Shows...
           </Flex>
-          .
         </CommandMenuItem>
         <CommandMenuItem
           onSelect={() => {
@@ -225,9 +228,8 @@ function Home({ searchShows }: { searchShows: Function }) {
         >
           <Flex gap="3">
             <Icon.MagnifyingGlass />
-            Search Podcast
+            Search Podcast...
           </Flex>
-          s...
         </CommandMenuItem>
       </CommandGroup>
       <CommandGroup heading="Pages">
@@ -269,8 +271,12 @@ const Template: ComponentStory<typeof CommandMenu> = ({
     return () => document.removeEventListener('keydown', down)
   }, [args?.open])
 
+  const { mounted } = useDelayedRender(open, {
+    exitDelay: 125,
+  })
+
   return (
-    <CommandMenu open={open} onOpenChange={setOpen}>
+    <CommandMenu open={mounted} onOpenChange={setOpen}>
       {children()}
     </CommandMenu>
   )

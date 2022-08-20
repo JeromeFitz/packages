@@ -20,7 +20,7 @@ function CommandMenuWrapper() {
   }, [])
 
   return (
-    <CommandMenu open={open} setOpen={setOpen}>
+    <CommandMenu open={open} onOpenChange={setOpen}>
       <CommandMenuData />
     </CommandMenu>
   )

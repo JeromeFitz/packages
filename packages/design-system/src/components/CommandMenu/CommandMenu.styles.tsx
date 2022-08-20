@@ -25,6 +25,7 @@ const StyledCommand = styled(Command, {
   borderRadius: '$3',
   boxShadow: 'var(--cmdk-shadow)',
   display: 'flex',
+  height: 'inherit',
   flexDirection: 'column',
   fontFamily: '$sans',
   justifyContent: 'flex-start',

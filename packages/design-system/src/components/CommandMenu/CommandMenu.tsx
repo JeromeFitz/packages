@@ -53,11 +53,13 @@ function CommandMenu({
   const css = {
     alignItems: 'center',
     display: 'flex',
+    height: '95%',
     justifyItems: 'center',
     margin: '0 auto',
     position: 'fixed',
-    top: '5rem',
+    top: '1rem',
     width: '100%',
+    '@bp1': { top: '5rem', height: '100%' },
     ...wrapperCss,
   }
 
@@ -67,7 +69,7 @@ function CommandMenu({
         <Box
           animate={{ opacity: 1, scale: 1 }}
           as={motion.div}
-          exit={{ opacity: 0, scale: 0.98 }}
+          exit={{ opacity: 0, scale: 0.96 }}
           initial={{ opacity: 0, scale: 0.98 }}
           transition={{ duration: 0.125 }}
           css={css}
