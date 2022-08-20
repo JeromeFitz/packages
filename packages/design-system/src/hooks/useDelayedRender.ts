@@ -1,7 +1,8 @@
 /**
- * Copyright: pacocoursey
+ * Author: pacocoursey
  * Reference: https://github.com/pacocoursey/use-delayed-render
- * Why?: Needed Security Updates
+ * Why Not Import This?: Security Updates Needed
+ *
  */
 
 import { useState, useRef, useCallback } from 'react'
