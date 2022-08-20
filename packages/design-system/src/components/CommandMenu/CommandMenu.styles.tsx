@@ -68,7 +68,7 @@ const StyledCommand = styled(Command, {
     width: 'calc(100% + 2px)',
     height: 'calc(100% + 2px)',
     boxShadow: '0 0 0 1px transparent',
-    animation: `${borderKeyframe} 2s linear forwards 0.5s`,
+    animation: `${borderKeyframe} 1s linear forwards 0.5s`,
   },
 })
 const StyledCommandInput = styled(Command.Input, {
@@ -95,7 +95,7 @@ const StyledCommandTopShine = styled(Box, {
       90deg,
       rgba(56, 189, 248, 0),
       $colors$gray5 20%,
-      $colors$gray11 65.19%,
+      $colors$gray11 67.19%,
       rgba(236, 72, 153, 0)
     )`,
   height: '1px',
