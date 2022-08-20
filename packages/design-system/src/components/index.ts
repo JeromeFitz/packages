@@ -39,6 +39,22 @@ export {
 export { Checkbox } from './Checkbox'
 export { Code } from './Code'
 export {
+  Command,
+  CommandInput,
+  CommandTopShine,
+  CommandBadge,
+  CommandLoader,
+  CommandList,
+  CommandSeparator,
+  CommandGroup,
+  CommandEmpty,
+  CommandShortCuts,
+  CommandItem,
+  //
+  CommandMenu,
+  CommandMenuItem,
+} from './CommandMenu'
+export {
   ContextMenu,
   ContextMenuTrigger,
   ContextMenuContent,

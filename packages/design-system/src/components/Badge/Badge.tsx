@@ -81,6 +81,10 @@ const Badge = styled('span', {
         backgroundColor: '$orange4',
         color: '$orange11',
       },
+      gray: {
+        backgroundColor: '$gray4',
+        color: '$gray11',
+      },
     },
     interactive: {
       true: {},

@@ -3,12 +3,19 @@ import { Box, Container } from '@jeromefitz/design-system/src/components'
 import { globalCss } from '@jeromefitz/design-system/src/lib/stitches.config'
 import _merge from 'lodash/merge'
 import type { AppProps } from 'next/app'
+import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import * as React from 'react'
 
-import { Header } from '../components/Header'
 import { Providers } from '../context/Providers'
 import { globalStyles as globalStylesLocal } from '../styles/globalStyles'
+
+const CommandMenu = dynamic(() => import('../components/CommandMenu'), {
+  ssr: true,
+})
+const Header = dynamic(() => import('../components/Header'), {
+  ssr: true,
+})
 
 const globalStyles = _merge(globalStylesDefault, globalStylesLocal)
 
@@ -28,6 +35,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           <Component {...pageProps} key={router.route} />
         </Box>
       </Container>
+      <CommandMenu />
     </Providers>
   )
 }

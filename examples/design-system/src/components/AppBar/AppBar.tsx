@@ -11,12 +11,10 @@ import {
   Text,
 } from '@jeromefitz/design-system/src/components'
 import { darkTheme } from '@jeromefitz/design-system/src/lib/stitches.config'
-import { useKBar } from 'kbar'
 import { useTheme } from 'next-themes'
 import * as React from 'react'
 
 const _AppBar = ({}) => {
-  const kbar = useKBar()
   const { theme, setTheme } = useTheme()
 
   const handleThemeToggle = React.useCallback(() => {
@@ -76,10 +74,9 @@ const _AppBar = ({}) => {
                 },
               }}
               size="1"
-              onClick={kbar.query.toggle}
               ghost
             >
-              Menu: KBar
+              Menu: Command (Todo)
             </Button>
           </Flex>
           {/* </Box> */}
