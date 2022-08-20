@@ -56,10 +56,10 @@ function CommandMenuData() {
         margin: '0 auto',
         width: '100%',
         maxWidth: '100%',
-        padding: '0 $3',
+        padding: '0',
         '@bp1': {
           maxWidth: '640px',
-          padding: '0',
+          // padding: '0 $3',
         },
       }}
     >

@@ -25,14 +25,18 @@ const StyledCommand = styled(Command, {
   borderRadius: '$3',
   boxShadow: 'var(--cmdk-shadow)',
   display: 'flex',
-  height: 'inherit',
+  height: '100%',
   flexDirection: 'column',
   fontFamily: '$sans',
   justifyContent: 'flex-start',
-  padding: '$4',
+  padding: '$4 $2',
   position: 'relative',
+  top: 0,
   transition: 'transform 100ms ease',
-  width: '100%',
+
+  '@bp1': {
+    width: '100%',
+  },
 
   '&:after': {
     content: '""',

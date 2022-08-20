@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
+// import { useCommandState as useCmdk } from 'cmdk'
 import React from 'react'
 
 import shows from '../../../../../examples/design-system/src/components/CommandMenu/data/shows.json'
@@ -147,10 +148,10 @@ function CommandMenuData() {
         margin: '0 auto',
         width: '100%',
         maxWidth: '100%',
-        padding: '0 $3',
+        padding: '0',
         '@bp1': {
           maxWidth: '640px',
-          padding: '0',
+          // padding: '0 $3',
         },
       }}
     >
@@ -177,11 +178,31 @@ function CommandMenuData() {
       >
         <CommandTopShine cmdk-top-shine="" />
         <div>
-          {pages.map((p) => (
-            <CommandBadge key={p} cmdk-badge="">
-              {p}
-            </CommandBadge>
-          ))}
+          {pages.map((p) => {
+            /**
+             * @hack(cmdk) tidy this up please
+             */
+            const isLink = p === 'home' && pages?.length > 1
+            return (
+              <CommandBadge
+                as={isLink ? 'a' : 'div'}
+                css={{
+                  '@hover': {
+                    '&:hover': {
+                      cursor: isLink ? 'pointer' : 'default',
+                    },
+                  },
+                }}
+                key={p}
+                cmdk-badge=""
+                onClick={() => {
+                  isLink && popPage()
+                }}
+              >
+                {p}
+              </CommandBadge>
+            )
+          })}
         </div>
         <CommandInput
           autoFocus
@@ -218,7 +239,7 @@ function Home({ searchShows }: { searchShows: Function }) {
         >
           <Flex gap="3">
             <Icon.MagnifyingGlass />
-            Search Shows...
+            Search Shows…
           </Flex>
         </CommandMenuItem>
         <CommandMenuItem
@@ -228,7 +249,7 @@ function Home({ searchShows }: { searchShows: Function }) {
         >
           <Flex gap="3">
             <Icon.MagnifyingGlass />
-            Search Podcast...
+            Search Podcast…
           </Flex>
         </CommandMenuItem>
       </CommandGroup>

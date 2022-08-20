@@ -53,13 +53,14 @@ function CommandMenu({
   const css = {
     alignItems: 'center',
     display: 'flex',
-    height: '95%',
+    // height: '95%',
     justifyItems: 'center',
+    padding: '0 $4',
     margin: '0 auto',
     position: 'fixed',
     top: '1rem',
     width: '100%',
-    '@bp1': { top: '5rem', height: '100%' },
+    '@bp1': { top: '5rem', height: 'inherit' },
     ...wrapperCss,
   }
 
