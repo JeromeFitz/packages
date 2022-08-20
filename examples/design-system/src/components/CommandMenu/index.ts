@@ -1,1 +1,1 @@
-export { CommandMenu } from './CommandMenuWrapper'
+export { CommandMenu as default } from './CommandMenuWrapper'

@@ -5,8 +5,6 @@ import {
 import { darkTheme } from '@jeromefitz/design-system/src/lib/stitches.config'
 import { ThemeProvider } from 'next-themes'
 
-import { CommandMenu } from '../components/CommandMenu'
-
 const Providers = ({ children }) => {
   return (
     <ThemeProvider
@@ -16,7 +14,6 @@ const Providers = ({ children }) => {
     >
       <ToastProvider duration={5000} swipeDirection="right" swipeThreshold={50}>
         {children}
-        <CommandMenu />
         <ToastViewport />
       </ToastProvider>
     </ThemeProvider>

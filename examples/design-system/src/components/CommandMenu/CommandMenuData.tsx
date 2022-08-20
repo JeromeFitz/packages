@@ -12,8 +12,10 @@ import {
   // CommandShortCuts,
   // CommandItem,
   CommandMenuItem,
+  Flex,
   Icon,
 } from '@jeromefitz/design-system/src/components'
+// import { useCommandState as useCmdk } from 'cmdk'
 import React from 'react'
 
 import { Settings } from './Settings'
@@ -49,7 +51,18 @@ function CommandMenuData() {
   }
 
   return (
-    <Box css={{ margin: '0 auto' }}>
+    <Box
+      css={{
+        margin: '0 auto',
+        width: '100%',
+        maxWidth: '100%',
+        padding: '0 $3',
+        '@bp1': {
+          maxWidth: '640px',
+          padding: '0',
+        },
+      }}
+    >
       <Command
         ref={ref}
         onKeyDown={(e: React.KeyboardEvent) => {
@@ -93,12 +106,22 @@ function CommandMenuData() {
             />
           )}
           {activePage === 'shows' && <Shows />}
+          {/* <SubItem>Test</SubItem> */}
         </CommandList>
       </Command>
     </Box>
   )
 }
-
+// const SubItem = (props) => {
+//   const cmd = useCmdk((state) => state)
+//   const search = useCmdk((state) => state.search)
+//   console.dir(`cmd`)
+//   console.dir(cmd)
+//   console.dir(`search`)
+//   console.dir(search)
+//   if (!search) return null
+//   return <CommandMenuItem {...props} />
+// }
 /* eslint-disable @typescript-eslint/ban-types */
 function Home({ searchShows }: { searchShows: Function }) {
   return (
@@ -108,27 +131,38 @@ function Home({ searchShows }: { searchShows: Function }) {
           onSelect={() => {
             searchShows()
           }}
+          value={'search-shows'}
         >
-          <Icon.MagnifyingGlass />
-          Search Shows...
+          <Flex gap="3">
+            <Icon.MagnifyingGlass />
+            Search Shows...
+          </Flex>
         </CommandMenuItem>
+
         <CommandMenuItem
           onSelect={() => {
             searchShows()
           }}
+          value={'search-podcasts'}
         >
-          <Icon.MagnifyingGlass />
-          Search Podcasts...
+          <Flex gap="3">
+            <Icon.MagnifyingGlass />
+            Search Podcasts...
+          </Flex>
         </CommandMenuItem>
       </CommandGroup>
       <CommandGroup heading="Pages">
-        <CommandMenuItem>
-          <Icon.IdCard />
-          About
+        <CommandMenuItem value={'about'}>
+          <Flex gap="3">
+            <Icon.IdCard />
+            About
+          </Flex>
         </CommandMenuItem>
-        <CommandMenuItem>
-          <Icon.BookOpen />
-          Books
+        <CommandMenuItem value={'books'}>
+          <Flex gap="3">
+            <Icon.BookOpen />
+            Books
+          </Flex>
         </CommandMenuItem>
       </CommandGroup>
       <CommandGroup heading="Settings">

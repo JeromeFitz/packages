@@ -1,5 +1,6 @@
 import {
   CommandMenuItem,
+  Flex,
   Icon,
   Toaster,
 } from '@jeromefitz/design-system/src/components'
@@ -41,14 +42,25 @@ function Shows() {
             const { description, id, slug, title } = show
 
             return (
-              <CommandMenuItem key={id} onSelect={() => handleToastInfo(slug)}>
-                <Icon.Star />
-                {title}
+              <CommandMenuItem
+                key={id}
+                onSelect={() => handleToastInfo(slug)}
+                value={slug}
+              >
+                <Flex gap="3">
+                  <Icon.Star />
+                  {title}
+                </Flex>
               </CommandMenuItem>
             )
           })}
-          <CommandMenuItem onSelect={() => handleToastInfo('View All')}>
-            <Icon.ListBullet /> View All
+          <CommandMenuItem
+            onSelect={() => handleToastInfo('View All')}
+            value="View-All"
+          >
+            <Flex gap="3">
+              <Icon.ListBullet /> View All
+            </Flex>
           </CommandMenuItem>
         </>
       )}

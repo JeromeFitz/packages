@@ -6,20 +6,23 @@ import { Box, Kbd } from '../index'
 
 import { CommandItem, CommandShortCuts } from './CommandMenu.styles'
 
+interface CommandMenuItemProps {
+  children: React.ReactNode
+  onSelect?: (value: string) => void
+  shortcut?: string
+  value?: string | any
+}
 function CommandMenuItem({
   children,
-  shortcut,
   onSelect = () => {},
-}: {
-  children: React.ReactNode
-  shortcut?: string
-  onSelect?: (value: string) => void
-}) {
+  shortcut,
+  value = children,
+}: CommandMenuItemProps) {
   return (
-    <CommandItem onSelect={onSelect}>
+    <CommandItem onSelect={onSelect} value={value}>
       {children}
       {shortcut && (
-        <CommandShortCuts cmdk-vercel-shortcuts="">
+        <CommandShortCuts cmdk-shortcuts="">
           {shortcut.split(' ').map((key) => {
             return <Kbd key={key}>{key}</Kbd>
           })}
@@ -29,46 +32,45 @@ function CommandMenuItem({
   )
 }
 
-function CommandMenu({ children }) {
+interface CommandMenuProps {
+  children: React.ReactNode | any
+  open: boolean
+  onOpenChange: (open: boolean) => void
+  wrapperCss?: any
+}
+function CommandMenu({
+  children,
+  open = false,
+  onOpenChange,
+  wrapperCss = {},
+}: CommandMenuProps) {
   const inputRef = React.useRef<HTMLInputElement | null>(null)
 
   React.useEffect(() => {
     inputRef?.current?.focus()
   }, [])
 
-  const [open, setOpen] = React.useState(false)
-
-  // Toggle the menu when ⌘K is pressed
-  React.useEffect(() => {
-    const down = (e) => {
-      if (e.key === 'k' && e.metaKey) {
-        e.preventDefault()
-        setOpen((open) => !open)
-      }
-    }
-
-    document.addEventListener('keydown', down)
-    return () => document.removeEventListener('keydown', down)
-  }, [])
+  const css = {
+    alignItems: 'center',
+    display: 'flex',
+    justifyItems: 'center',
+    margin: '0 auto',
+    position: 'fixed',
+    top: '5rem',
+    width: '100%',
+    ...wrapperCss,
+  }
 
   return (
-    <Command.Dialog open={open} onOpenChange={setOpen} label="Command Menu">
+    <Command.Dialog open={open} onOpenChange={onOpenChange} label="Command Menu">
       <AnimatePresence>
         <Box
           animate={{ opacity: 1, scale: 1 }}
           as={motion.div}
           exit={{ opacity: 0, scale: 0.98 }}
           initial={{ opacity: 0, scale: 0.98 }}
-          transition={{ duration: 0.1 }}
-          css={{
-            alignItems: 'center',
-            display: 'flex',
-            justifyItems: 'center',
-            margin: '0 auto',
-            position: 'fixed',
-            top: '5rem',
-            width: '100%',
-          }}
+          transition={{ duration: 0.125 }}
+          css={css}
         >
           {children}
         </Box>

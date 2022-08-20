@@ -1,5 +1,6 @@
 import {
   CommandMenuItem,
+  Flex,
   Icon,
   Toaster,
 } from '@jeromefitz/design-system/src/components'
@@ -36,18 +37,24 @@ function Settings() {
           handleToastInfo('Theme')
           handleThemeToggle()
         }}
+        value={'toggle-theme'}
       >
-        {theme === 'light' ? <Icon.Moon /> : <Icon.Sun />}
-        Toggle Theme
+        <Flex gap="3">
+          {theme === 'light' ? <Icon.Moon /> : <Icon.Sun />}
+          Toggle Theme
+        </Flex>
       </CommandMenuItem>
       <CommandMenuItem
         onSelect={() => {
           handleToastInfo('Theme')
           handleThemeToggle()
         }}
+        value={'toggle-audio'}
       >
-        {theme === 'light' ? <Icon.SpeakerModerate /> : <Icon.SpeakerOff />}
-        Toggle Audio
+        <Flex gap="3">
+          {theme === 'light' ? <Icon.SpeakerModerate /> : <Icon.SpeakerOff />}
+          Toggle Audio
+        </Flex>
       </CommandMenuItem>
       <Toaster ref={toaster} />
     </>
