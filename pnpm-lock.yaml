@@ -135,10 +135,10 @@ importers:
       gitmojis: 3.12.0
       grapheme-splitter: 1.0.4
       lodash: 4.17.21
-      title: 3.5.2
+      title: 3.5.3
     dependencies:
       grapheme-splitter: 1.0.4
-      title: 3.5.2
+      title: 3.5.3
     devDependencies:
       '@types/lodash': 4.14.184
       '@types/semantic-release': 17.2.4
@@ -437,7 +437,7 @@ importers:
       '@types/title': 3.4.1
       semantic-release: 19.0.3
       semantic-release-commit-filter: 1.0.2
-      title: 3.5.2
+      title: 3.5.3
     dependencies:
       '@semantic-release/commit-analyzer': 9.0.2_semantic-release@19.0.3
       '@semantic-release/exec': 6.0.3_semantic-release@19.0.3
@@ -447,7 +447,7 @@ importers:
       '@semantic-release/release-notes-generator': 10.0.3_semantic-release@19.0.3
       semantic-release: 19.0.3
       semantic-release-commit-filter: 1.0.2
-      title: 3.5.2
+      title: 3.5.3
     devDependencies:
       '@jeromefitz/conventional-gitmoji': link:../conventional-gitmoji
       '@types/semantic-release': 17.2.4
@@ -19311,8 +19311,8 @@ packages:
     dev: true
     optional: true
 
-  /title/3.5.2:
-    resolution: {integrity: sha512-PD9x2repsKvhDr/aE8mz9JlcyGKbTPOhIRraioVi9gc8AZEVok875UPFnWHFs97ddIomPC/oThpENPx3HhV5kg==}
+  /title/3.5.3:
+    resolution: {integrity: sha512-20JyowYglSEeCvZv3EZ0nZ046vLarO37prvV0mbtQV7C8DJPGgN967r8SJkqd3XK3K3lD3/Iyfp3avjfil8Q2Q==}
     hasBin: true
     dependencies:
       arg: 1.0.0
