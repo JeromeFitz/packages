@@ -46,7 +46,7 @@
   "dependencies": {
     "github-slugger": "1.4.0",
     "isomorphic-unfetch": "3.1.0",
-    "plaiceholder": "2.4.0"
+    "plaiceholder": "2.5.0"
   },
   "peerDependencies": {
     "@jeromefitz/utils": "^2.1.0",
