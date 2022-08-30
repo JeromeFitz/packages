@@ -117,7 +117,7 @@
     "@storybook/react": "6.5.10",
     "@storybook/theming": "6.5.10",
     "@types/lodash": "4.14.184",
-    "@types/react": "18.0.17",
+    "@types/react": "18.0.18",
     "@types/react-dom": "18.0.6",
     "@vitejs/plugin-react": "2.0.1",
     "cmdk": "0.1.19",
