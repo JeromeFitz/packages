@@ -430,7 +430,7 @@ importers:
       '@semantic-release/commit-analyzer': 9.0.2
       '@semantic-release/exec': 6.0.3
       '@semantic-release/git': 10.0.1
-      '@semantic-release/github': 8.0.5
+      '@semantic-release/github': 8.0.6
       '@semantic-release/npm': 9.0.1
       '@semantic-release/release-notes-generator': 10.0.3
       '@types/semantic-release': 17.2.4
@@ -442,7 +442,7 @@ importers:
       '@semantic-release/commit-analyzer': 9.0.2_semantic-release@19.0.5
       '@semantic-release/exec': 6.0.3_semantic-release@19.0.5
       '@semantic-release/git': 10.0.1_semantic-release@19.0.5
-      '@semantic-release/github': 8.0.5_semantic-release@19.0.5
+      '@semantic-release/github': 8.0.6_semantic-release@19.0.5
       '@semantic-release/npm': 9.0.1_semantic-release@19.0.5
       '@semantic-release/release-notes-generator': 10.0.3_semantic-release@19.0.5
       semantic-release: 19.0.5
@@ -4235,16 +4235,6 @@ packages:
     resolution: {integrity: sha512-40U39YoFBhJhmkAg6gbJnh9U8aueJwCuiTW0mXY2pNl9/+E7dUxXiMPOrIUGT12XqLinroaXYA3FUiw3BMeNfg==}
     dev: false
 
-  /@octokit/plugin-paginate-rest/3.0.0_@octokit+core@4.0.4:
-    resolution: {integrity: sha512-fvw0Q5IXnn60D32sKeLIxgXCEZ7BTSAjJd8cFAE6QU5qUp0xo7LjFUjjX1J5D7HgN355CN4EXE4+Q1/96JaNUA==}
-    engines: {node: '>= 14'}
-    peerDependencies:
-      '@octokit/core': '>=4'
-    dependencies:
-      '@octokit/core': 4.0.4
-      '@octokit/types': 6.39.0
-    dev: false
-
   /@octokit/plugin-paginate-rest/4.0.0_@octokit+core@4.0.4:
     resolution: {integrity: sha512-g4GJMt/7VDmIMMdQenN6bmsmRoZca1c7IxOdF2yMiMwQYrE2bmmypGQeQSD5rsaffsFMCUS7Br4pMVZamareYA==}
     engines: {node: '>= 14'}
@@ -4293,18 +4283,6 @@ packages:
       is-plain-object: 5.0.0
       node-fetch: 2.6.7
       universal-user-agent: 6.0.0
-    transitivePeerDependencies:
-      - encoding
-    dev: false
-
-  /@octokit/rest/19.0.3:
-    resolution: {integrity: sha512-5arkTsnnRT7/sbI4fqgSJ35KiFaN7zQm0uQiQtivNQLI8RQx8EHwJCajcTUwmaCMNDg7tdCvqAnc7uvHHPxrtQ==}
-    engines: {node: '>= 14'}
-    dependencies:
-      '@octokit/core': 4.0.4
-      '@octokit/plugin-paginate-rest': 3.0.0_@octokit+core@4.0.4
-      '@octokit/plugin-request-log': 1.0.4_@octokit+core@4.0.4
-      '@octokit/plugin-rest-endpoint-methods': 6.0.0_@octokit+core@4.0.4
     transitivePeerDependencies:
       - encoding
     dev: false
@@ -5485,10 +5463,6 @@ packages:
       - supports-color
     dev: false
 
-  /@semantic-release/error/2.2.0:
-    resolution: {integrity: sha512-9Tj/qn+y2j+sjCI3Jd+qseGtHjOAeg7dU2/lVcqIQ9TV3QDaDXDYXcoOHU+7o2Hwh8L8ymL4gfuO7KxDs3q2zg==}
-    dev: false
-
   /@semantic-release/error/3.0.0:
     resolution: {integrity: sha512-5hiM4Un+tpl4cKw3lV4UgzJj+SmfNIDCLLw0TepzQxz9ZGV5ixnqkzIVF+3tp0ZHgcMKE+VNGHJjEeyFG2dcSw==}
     engines: {node: '>=14.17'}
@@ -5530,14 +5504,14 @@ packages:
       - supports-color
     dev: false
 
-  /@semantic-release/github/8.0.5_semantic-release@19.0.5:
-    resolution: {integrity: sha512-9pGxRM3gv1hgoZ/muyd4pWnykdIUVfCiev6MXE9lOyGQof4FQy95GFE26nDcifs9ZG7bBzV8ue87bo/y1zVf0g==}
+  /@semantic-release/github/8.0.6_semantic-release@19.0.5:
+    resolution: {integrity: sha512-ZxgaxYCeqt9ylm2x3OPqUoUqBw1p60LhxzdX6BqJlIBThupGma98lttsAbK64T6L6AlNa2G5T66BbiG8y0PIHQ==}
     engines: {node: '>=14.17'}
     peerDependencies:
       semantic-release: '>=18.0.0-beta.1'
     dependencies:
-      '@octokit/rest': 19.0.3
-      '@semantic-release/error': 2.2.0
+      '@octokit/rest': 19.0.4
+      '@semantic-release/error': 3.0.0
       aggregate-error: 3.1.0
       bottleneck: 2.19.5
       debug: 4.3.4
@@ -18216,7 +18190,7 @@ packages:
     dependencies:
       '@semantic-release/commit-analyzer': 9.0.2_semantic-release@19.0.5
       '@semantic-release/error': 3.0.0
-      '@semantic-release/github': 8.0.5_semantic-release@19.0.5
+      '@semantic-release/github': 8.0.6_semantic-release@19.0.5
       '@semantic-release/npm': 9.0.1_semantic-release@19.0.5
       '@semantic-release/release-notes-generator': 10.0.3_semantic-release@19.0.5
       aggregate-error: 3.1.0
