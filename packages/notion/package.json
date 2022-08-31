@@ -43,7 +43,7 @@
   "dependencies": {
     "@notionhq/client": "1.0.4",
     "date-fns": "2.29.2",
-    "date-fns-tz": "1.3.6",
+    "date-fns-tz": "1.3.7",
     "github-slugger": "1.4.0"
   },
   "devDependencies": {
