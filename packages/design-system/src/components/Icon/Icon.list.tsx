@@ -1,13 +1,13 @@
 import {
+  ArrowUturnLeft as ArrowUturnLeftHero,
   BookOpenIcon as BookOpenIconHero,
-  LocationMarkerIcon as LocationMarkerIconHero,
   MapIcon as MapIconHero,
+  MapPinIcon as MapPinIconHero,
   MicrophoneIcon as MicrophoneIconHero,
-  MusicNoteIcon as MusicNoteIconHero,
-  ReplyIcon as ReplyIconHero,
+  MusicalNoteIcon as MusicalNoteIconHero,
   TagIcon as TagIconHero,
   TicketIcon as TicketIconHero,
-} from '@heroicons/react/outline'
+} from '@heroicons/react/24/outline'
 import { AccessibleIcon } from '@radix-ui/react-accessible-icon'
 import {
   ArrowLeftIcon as ArrowLeftIconRadix,
@@ -535,7 +535,7 @@ const LocationMarkerIcon = ({ css, label, style, ...props }: IconProps) => (
     }
   >
     <Box
-      as={LocationMarkerIconHero}
+      as={MapPinIconHero}
       css={{
         ...cssHeroToRadix,
         ...css,
@@ -606,7 +606,7 @@ const MoonIcon = ({ label, ...props }: IconProps) => (
   </AccessibleIcon>
 )
 
-const MusicNoteIcon = ({ css, label, style, ...props }: IconProps) => (
+const MusicalNoteIcon = ({ css, label, style, ...props }: IconProps) => (
   <AccessibleIcon
     label={
       label ||
@@ -614,7 +614,7 @@ const MusicNoteIcon = ({ css, label, style, ...props }: IconProps) => (
     }
   >
     <Box
-      as={MusicNoteIconHero}
+      as={MusicalNoteIconHero}
       css={{
         ...cssHeroToRadix,
         ...css,
@@ -658,7 +658,7 @@ const QuoteIcon = ({ label, ...props }: IconProps) => (
   </AccessibleIcon>
 )
 
-const ReplyIcon = ({ css, label, style, ...props }: IconProps) => (
+const ArrowUturnLeft = ({ css, label, style, ...props }: IconProps) => (
   <AccessibleIcon
     label={
       label ||
@@ -666,7 +666,7 @@ const ReplyIcon = ({ css, label, style, ...props }: IconProps) => (
     }
   >
     <Box
-      as={ReplyIconHero}
+      as={ArrowUturnLeftHero}
       css={{
         ...cssHeroToRadix,
         ...css,
@@ -685,7 +685,7 @@ const ReturnIcon = ({ css, label, style, ...props }: IconProps) => (
     }
   >
     <Box
-      as={ReplyIconHero}
+      as={ArrowUturnLeftHero}
       css={{
         ...cssHeroToRadix,
         ...css,
@@ -864,9 +864,10 @@ export {
   ArrowLeftIcon,
   ArrowRightIcon,
   ArrowTopRightIcon,
+  ArrowUturnLeft,
   BellIcon,
-  BookmarkIcon,
   BookmarkFilledIcon,
+  BookmarkIcon,
   BookOpenIcon,
   CalendarIcon,
   CaretDownIcon,
@@ -875,8 +876,8 @@ export {
   CaretSortIcon,
   CaretUpIcon,
   ChatBubbleIcon,
-  CheckIcon,
   CheckCircledIcon,
+  CheckIcon,
   ChevronDownIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -909,11 +910,10 @@ export {
   MapIcon,
   MicrophoneIcon,
   MoonIcon,
-  MusicNoteIcon,
+  MusicalNoteIcon,
   Pencil1Icon,
   Pencil2Icon,
   QuoteIcon,
-  ReplyIcon,
   ReturnIcon,
   Share1Icon,
   SpeakerModerateIcon,
