@@ -2,7 +2,7 @@ import {
   ArrowLeftIcon,
   ArrowRightIcon,
   ArrowTopRightIcon,
-  ArrowUturnLeft,
+  ArrowUturnLeftIcon,
   BellIcon,
   BookmarkFilledIcon,
   BookmarkIcon,
@@ -152,7 +152,7 @@ Icon.LinkedIn = LinkedInLogoIcon
 Icon.MusicalNote = MusicalNoteIcon
 Icon.Pencil = Pencil1Icon
 Icon.PencilWithPaper = Pencil2Icon
-Icon.Reply = ArrowUturnLeft
+Icon.Reply = ArrowUturnLeftIcon
 Icon.SocialShare = Share1Icon
 Icon.Success = CheckCircledIcon
 Icon.Twitter = TwitterLogoIcon

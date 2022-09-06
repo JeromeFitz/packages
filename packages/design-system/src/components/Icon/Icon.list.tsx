@@ -1,5 +1,5 @@
 import {
-  ArrowUturnLeft as ArrowUturnLeftHero,
+  ArrowUturnLeftIcon as ArrowUturnLeftHero,
   BookOpenIcon as BookOpenIconHero,
   MapIcon as MapIconHero,
   MapPinIcon as MapPinIconHero,
@@ -75,17 +75,20 @@ import { Box } from '../Box'
 import { IconProps } from './Icon.types'
 
 /**
- * @hack(icon) Attempt at Radix-UI icon style mimicry
- * @note(icon) Override by passing css|style object to Icon.XYZ
+ * @hack(icon)
+ *  Hero Icons to Radix-UI mimicry
+ *  A few icons we need are not in Radix-UI
+ *
+ * @note(icon)
+ *  Still allow _this_ hack to be overriden
+ *  Override by passing css object to Icon.XYZ
+ *
  */
 const cssHeroToRadix = {
-  '& > path': {
-    strokeWidth: '1.5',
-  },
-}
-const styleHeroToRadix = {
   marginTop: '1px',
-  width: '1rem',
+  '& > path': {
+    strokeWidth: '1.75',
+  },
 }
 
 const ArrowLeftIcon = ({ label, ...props }: IconProps) => (
@@ -148,7 +151,7 @@ const BookmarkFilledIcon = ({ label, ...props }: IconProps) => (
   </AccessibleIcon>
 )
 
-const BookOpenIcon = ({ css, label, style, ...props }: IconProps) => (
+const BookOpenIcon = ({ css, label, ...props }: IconProps) => (
   <AccessibleIcon
     label={
       label ||
@@ -161,7 +164,6 @@ const BookOpenIcon = ({ css, label, style, ...props }: IconProps) => (
         ...cssHeroToRadix,
         ...css,
       }}
-      style={{ ...styleHeroToRadix, ...style }}
       {...props}
     />
   </AccessibleIcon>
@@ -527,7 +529,7 @@ const ListBulletIcon = ({ label, ...props }: IconProps) => (
   </AccessibleIcon>
 )
 
-const LocationMarkerIcon = ({ css, label, style, ...props }: IconProps) => (
+const LocationMarkerIcon = ({ css, label, ...props }: IconProps) => (
   <AccessibleIcon
     label={
       label ||
@@ -540,7 +542,6 @@ const LocationMarkerIcon = ({ css, label, style, ...props }: IconProps) => (
         ...cssHeroToRadix,
         ...css,
       }}
-      style={{ ...styleHeroToRadix, ...style }}
       {...props}
     />
   </AccessibleIcon>
@@ -557,7 +558,7 @@ const MagnifyingGlassIcon = ({ label, ...props }: IconProps) => (
   </AccessibleIcon>
 )
 
-const MapIcon = ({ css, label, style, ...props }: IconProps) => (
+const MapIcon = ({ css, label, ...props }: IconProps) => (
   <AccessibleIcon
     label={
       label ||
@@ -570,13 +571,12 @@ const MapIcon = ({ css, label, style, ...props }: IconProps) => (
         ...cssHeroToRadix,
         ...css,
       }}
-      style={{ ...styleHeroToRadix, ...style }}
       {...props}
     />
   </AccessibleIcon>
 )
 
-const MicrophoneIcon = ({ css, label, style, ...props }: IconProps) => (
+const MicrophoneIcon = ({ css, label, ...props }: IconProps) => (
   <AccessibleIcon
     label={
       label ||
@@ -589,7 +589,6 @@ const MicrophoneIcon = ({ css, label, style, ...props }: IconProps) => (
         ...cssHeroToRadix,
         ...css,
       }}
-      style={{ ...styleHeroToRadix, ...style }}
       {...props}
     />
   </AccessibleIcon>
@@ -606,7 +605,7 @@ const MoonIcon = ({ label, ...props }: IconProps) => (
   </AccessibleIcon>
 )
 
-const MusicalNoteIcon = ({ css, label, style, ...props }: IconProps) => (
+const MusicalNoteIcon = ({ css, label, ...props }: IconProps) => (
   <AccessibleIcon
     label={
       label ||
@@ -619,7 +618,6 @@ const MusicalNoteIcon = ({ css, label, style, ...props }: IconProps) => (
         ...cssHeroToRadix,
         ...css,
       }}
-      style={{ ...styleHeroToRadix, ...style }}
       {...props}
     />
   </AccessibleIcon>
@@ -658,7 +656,7 @@ const QuoteIcon = ({ label, ...props }: IconProps) => (
   </AccessibleIcon>
 )
 
-const ArrowUturnLeft = ({ css, label, style, ...props }: IconProps) => (
+const ArrowUturnLeftIcon = ({ css, label, ...props }: IconProps) => (
   <AccessibleIcon
     label={
       label ||
@@ -671,13 +669,12 @@ const ArrowUturnLeft = ({ css, label, style, ...props }: IconProps) => (
         ...cssHeroToRadix,
         ...css,
       }}
-      style={{ ...styleHeroToRadix, ...style }}
       {...props}
     />
   </AccessibleIcon>
 )
 
-const ReturnIcon = ({ css, label, style, ...props }: IconProps) => (
+const ReturnIcon = ({ css, label, ...props }: IconProps) => (
   <AccessibleIcon
     label={
       label ||
@@ -689,11 +686,7 @@ const ReturnIcon = ({ css, label, style, ...props }: IconProps) => (
       css={{
         ...cssHeroToRadix,
         ...css,
-      }}
-      style={{
         transform: 'rotate(180deg) scaleX(-1)',
-        ...styleHeroToRadix,
-        ...style,
       }}
       {...props}
     />
@@ -766,7 +759,7 @@ const SunIcon = ({ label, ...props }: IconProps) => (
   </AccessibleIcon>
 )
 
-const TagIcon = ({ css, label, style, ...props }: IconProps) => (
+const TagIcon = ({ css, label, ...props }: IconProps) => (
   <AccessibleIcon
     label={
       label ||
@@ -778,10 +771,6 @@ const TagIcon = ({ css, label, style, ...props }: IconProps) => (
       css={{
         ...cssHeroToRadix,
         ...css,
-      }}
-      style={{
-        ...styleHeroToRadix,
-        ...style,
       }}
       {...props}
     />
@@ -827,7 +816,7 @@ const TextAlignRightIcon = ({ label, ...props }: IconProps) => (
   </AccessibleIcon>
 )
 
-const TicketIcon = ({ css, label, style, ...props }: IconProps) => (
+const TicketIcon = ({ css, label, ...props }: IconProps) => (
   <AccessibleIcon
     label={
       label ||
@@ -839,10 +828,6 @@ const TicketIcon = ({ css, label, style, ...props }: IconProps) => (
       css={{
         ...cssHeroToRadix,
         ...css,
-      }}
-      style={{
-        ...styleHeroToRadix,
-        ...style,
       }}
       {...props}
     />
@@ -864,7 +849,7 @@ export {
   ArrowLeftIcon,
   ArrowRightIcon,
   ArrowTopRightIcon,
-  ArrowUturnLeft,
+  ArrowUturnLeftIcon,
   BellIcon,
   BookmarkFilledIcon,
   BookmarkIcon,
