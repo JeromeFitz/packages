@@ -257,13 +257,31 @@ function Home({ searchShows }: { searchShows: Function }) {
         <CommandMenuItem>
           <Flex gap="3">
             <Icon.IdCard />
-            About
+            IdCard (Radix)
+          </Flex>
+        </CommandMenuItem>
+        <CommandMenuItem>
+          <Flex gap="3">
+            <Icon.Microphone />
+            Microphone (Hero)
           </Flex>
         </CommandMenuItem>
         <CommandMenuItem>
           <Flex gap="3">
             <Icon.BookOpen />
-            Books
+            BookOpen (Hero)
+          </Flex>
+        </CommandMenuItem>
+        <CommandMenuItem>
+          <Flex gap="3">
+            <Icon.Return />
+            Return (Hero)
+          </Flex>
+        </CommandMenuItem>
+        <CommandMenuItem>
+          <Flex gap="3">
+            <Icon.Sun />
+            Sun (Radix)
           </Flex>
         </CommandMenuItem>
       </CommandGroup>

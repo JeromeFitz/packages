@@ -2,9 +2,10 @@ import {
   ArrowLeftIcon,
   ArrowRightIcon,
   ArrowTopRightIcon,
+  ArrowUturnLeftIcon,
   BellIcon,
-  BookmarkIcon,
   BookmarkFilledIcon,
+  BookmarkIcon,
   BookOpenIcon,
   CalendarIcon,
   CaretDownIcon,
@@ -13,8 +14,8 @@ import {
   CaretSortIcon,
   CaretUpIcon,
   ChatBubbleIcon,
-  CheckIcon,
   CheckCircledIcon,
+  CheckIcon,
   ChevronDownIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -47,11 +48,10 @@ import {
   MapIcon,
   MicrophoneIcon,
   MoonIcon,
-  MusicNoteIcon,
+  MusicalNoteIcon,
   Pencil1Icon,
   Pencil2Icon,
   QuoteIcon,
-  ReplyIcon,
   ReturnIcon,
   Share1Icon,
   SpeakerModerateIcon,
@@ -73,6 +73,7 @@ const Icon = () => {}
 Icon.ArrowLeft = ArrowLeftIcon
 Icon.ArrowRight = ArrowRightIcon
 Icon.ArrowTopRight = ArrowTopRightIcon
+Icon.ArrowUturnLeft = ArrowUturnLeftIcon
 Icon.Bell = BellIcon
 Icon.Bookmark = BookmarkIcon
 Icon.BookmarkFilled = BookmarkFilledIcon
@@ -118,11 +119,10 @@ Icon.MagnifyingGlass = MagnifyingGlassIcon
 Icon.Map = MapIcon
 Icon.Microphone = MicrophoneIcon
 Icon.Moon = MoonIcon
-Icon.MusicNote = MusicNoteIcon
+Icon.MusicNote = MusicalNoteIcon
 Icon.Pencil1 = Pencil1Icon
 Icon.Pencil2 = Pencil2Icon
 Icon.Quote = QuoteIcon
-Icon.Reply = ReplyIcon
 Icon.Return = ReturnIcon
 Icon.Share1 = Share1Icon
 Icon.SpeakerModerate = SpeakerModerateIcon
@@ -149,8 +149,10 @@ Icon.Info = InfoCircledIcon
 Icon.Instagram = InstagramLogoIcon
 Icon.Link = Link1Icon
 Icon.LinkedIn = LinkedInLogoIcon
+Icon.MusicalNote = MusicalNoteIcon
 Icon.Pencil = Pencil1Icon
 Icon.PencilWithPaper = Pencil2Icon
+Icon.Reply = ArrowUturnLeftIcon
 Icon.SocialShare = Share1Icon
 Icon.Success = CheckCircledIcon
 Icon.Twitter = TwitterLogoIcon
