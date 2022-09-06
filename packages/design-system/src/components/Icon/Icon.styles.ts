@@ -111,7 +111,7 @@ const StyledSVG = styled('svg', {
 const StyledHeroSVG = styled('div', {
   marginTop: '3px',
   '& > path': {
-    strokeWidth: '1.75 !important',
+    strokeWidth: '1.5 !important',
   },
 })
 

@@ -86,8 +86,9 @@ import { IconProps } from './Icon.types'
  */
 const cssHeroToRadix = {
   marginTop: '1px',
+  width: '1rem',
   '& > path': {
-    strokeWidth: '1.75',
+    strokeWidth: '1.5',
   },
 }
 
