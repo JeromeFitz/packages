@@ -10,6 +10,7 @@ const { name } = require('./package.json')
 const branches = [
   ...configDefault.branches,
   { name: 'feature/next-notion', prerelease: 'next-notion' },
+  { name: 'feature/notion-2', prerelease: 'notion-2' },
 ]
 
 const configPassed = {
