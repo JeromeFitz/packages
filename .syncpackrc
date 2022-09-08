@@ -1,0 +1,83 @@
+{
+  "dev": true,
+  "filter": ".",
+  "indent": "  ",
+  "overrides": true,
+  "peer": false,
+  "pnpmOverrides": true,
+  "prod": true,
+  "resolutions": true,
+  "semverGroups": [
+    {
+      "range": "",
+      "dependencyTypes": [
+        "prod",
+        "resolutions",
+        "overrides",
+        "pnpmOverrides",
+        "workspace"
+      ],
+      "dependencies": [
+        "**"
+      ],
+      "packages": [
+        "**"
+      ]
+    },
+    {
+      "range": "^",
+      "dependencyTypes": [
+        "dev",
+        "peer"
+      ],
+      "dependencies": [
+        "**"
+      ],
+      "packages": [
+        "**"
+      ]
+    }
+  ],
+  "sortAz": [
+    "contributors",
+    "dependencies",
+    "devDependencies",
+    "keywords",
+    "peerDependencies",
+    "resolutions"
+  ],
+  "sortFirst": [
+    "private",
+    "license",
+    "version",
+    "name",
+    "description",
+    "author",
+    "contributors",
+    "funding",
+    "homepage",
+    "repository",
+    "source",
+    "publishConfig",
+    "keywords",
+    "engines",
+    "bugs",
+    "type",
+    "main",
+    "module",
+    "exports",
+    "typings",
+    "typesVersions",
+    "files",
+    "sideEffects",
+    "scripts",
+    "browserslist",
+    "dependencies",
+    "devDependencies",
+    "peerDependencies",
+    "resolutions"
+  ],
+  "source": [],
+  "versionGroups": [],
+  "workspace": false
+}

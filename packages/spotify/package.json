@@ -1,28 +1,29 @@
 {
-  "name": "@jeromefitz/spotify",
+  "private": false,
+  "license": "MIT",
   "version": "0.0.0",
+  "name": "@jeromefitz/spotify",
   "description": "Spotify Wrapper for: Now Playing, Top Artists, & Top Tracks",
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
     "url": "https://jeromefitzgerald.com"
   },
-  "keywords": [
-    "spotify"
-  ],
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "ssh://git@github.com/jeromefitz/packages.git",
-    "directory": "packages/spotify"
-  },
-  "engines": {
-    "node": ">=16"
-  },
+  "repository": "jeromefitz/packages.git",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "private": false,
+  "keywords": [
+    "spotify"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "sideEffects": false,
   "scripts": {
     "build": "tsup-node",
     "dev": "tsup-node --watch",
@@ -38,23 +39,18 @@
     "---  ": "",
     "semantic-release": "semantic-release"
   },
-  "devDependencies": {
-    "@jeromefitz/utils": "workspace:*",
-    "@types/lodash": "4.14.184",
-    "lodash": "4.17.21"
-  },
   "dependencies": {
     "github-slugger": "1.4.0",
     "isomorphic-unfetch": "3.1.0",
     "plaiceholder": "2.5.0"
   },
+  "devDependencies": {
+    "@jeromefitz/utils": "workspace:*",
+    "@types/lodash": "4.14.184",
+    "lodash": "4.17.21"
+  },
   "peerDependencies": {
     "@jeromefitz/utils": "^2.1.0",
     "lodash": "^4.17.21"
-  },
-  "type": "module",
-  "sideEffects": false,
-  "typings": "./dist/index.d.ts",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js"
+  }
 }

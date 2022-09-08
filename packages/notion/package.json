@@ -1,30 +1,31 @@
 {
-  "name": "@jeromefitz/notion",
+  "private": false,
+  "license": "MIT",
   "version": "0.0.0",
+  "name": "@jeromefitz/notion",
   "description": "Notion: Custom Client for jeromefitzgerald.com",
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
     "url": "https://jeromefitzgerald.com"
   },
-  "keywords": [
-    "notion",
-    "next",
-    "next.js"
-  ],
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "ssh://git@github.com/jeromefitz/packages.git",
-    "directory": "packages/notion"
-  },
-  "engines": {
-    "node": ">=16"
-  },
+  "repository": "jeromefitz/packages.git",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "private": false,
+  "keywords": [
+    "next",
+    "next.js",
+    "notion"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "sideEffects": false,
   "scripts": {
     "build": "tsup-node",
     "dev": "tsup-node --watch",
@@ -55,10 +56,5 @@
   "peerDependencies": {
     "@jeromefitz/utils": "^2.1.0",
     "lodash": "^4.17.21"
-  },
-  "type": "module",
-  "sideEffects": false,
-  "typings": "./dist/index.d.ts",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js"
+  }
 }

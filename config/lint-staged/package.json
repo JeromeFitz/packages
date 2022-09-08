@@ -1,25 +1,25 @@
 {
-  "name": "@jeromefitz/lint-staged",
+  "private": false,
+  "license": "MIT",
   "version": "0.0.0",
+  "name": "@jeromefitz/lint-staged",
   "description": "Lint Staged Configuration",
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
     "url": "https://jeromefitzgerald.com"
   },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "ssh://git@github.com/jeromefitz/packages.git",
-    "directory": "config/lint-staged"
+  "repository": "jeromefitz/packages.git",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "engines": {
     "node": ">=16"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
-  "private": false,
+  "type": "module",
+  "main": "./dist/lint-staged.config.js",
+  "module": "./dist/lint-staged.config.js",
+  "sideEffects": false,
   "scripts": {
     "build": "tsup-node",
     "dev": "tsup-node  --watch",
@@ -37,9 +37,5 @@
   },
   "dependencies": {
     "lint-staged": "13.0.3"
-  },
-  "type": "module",
-  "sideEffects": false,
-  "main": "./dist/lint-staged.config.js",
-  "module": "./dist/lint-staged.config.js"
+  }
 }
