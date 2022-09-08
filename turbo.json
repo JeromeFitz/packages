@@ -16,7 +16,7 @@
       "dependsOn": [],
       "inputs": ["src/**", "*.cjs", "package.json"]
     },
-    "lint:fix": {
+    "format:lint": {
       "cache": false,
       "dependsOn": []
     },

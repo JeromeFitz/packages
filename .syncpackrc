@@ -44,7 +44,8 @@
     "devDependencies",
     "keywords",
     "peerDependencies",
-    "resolutions"
+    "resolutions",
+    "scripts"
   ],
   "sortFirst": [
     "private",
@@ -61,6 +62,7 @@
     "publishConfig",
     "keywords",
     "engines",
+    "packageManager",
     "bugs",
     "type",
     "main",
