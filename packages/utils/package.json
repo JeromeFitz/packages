@@ -1,29 +1,30 @@
 {
-  "name": "@jeromefitz/utils",
+  "private": false,
+  "license": "MIT",
   "version": "0.0.0",
+  "name": "@jeromefitz/utils",
   "description": "Utilities used by @JeromeFitz that may be helpful",
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
     "url": "https://jeromefitzgerald.com"
   },
-  "keywords": [
-    "utils",
-    "utilities"
-  ],
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "ssh://git@github.com/jeromefitz/packages.git",
-    "directory": "packages/utils"
-  },
-  "engines": {
-    "node": ">=16"
-  },
+  "repository": "jeromefitz/packages.git",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "private": false,
+  "keywords": [
+    "utilities",
+    "utils"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "sideEffects": false,
   "scripts": {
     "build": "tsup-node",
     "dev": "tsup-node --watch",
@@ -46,10 +47,5 @@
   },
   "peerDependencies": {
     "lodash": "^4.17.21"
-  },
-  "type": "module",
-  "sideEffects": false,
-  "typings": "./dist/index.d.ts",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js"
+  }
 }

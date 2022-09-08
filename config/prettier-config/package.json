@@ -1,25 +1,24 @@
 {
-  "name": "@jeromefitz/prettier-config",
+  "private": false,
+  "license": "MIT",
   "version": "0.0.0",
+  "name": "@jeromefitz/prettier-config",
   "description": "ESLint Configuration",
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
     "url": "https://jeromefitzgerald.com"
   },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "ssh://git@github.com/jeromefitz/packages.git",
-    "directory": "config/eslint-config"
+  "repository": "jeromefitz/packages.git",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "engines": {
     "node": ">=16"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
-  "private": false,
+  "type": "module",
+  "main": "./.prettierrc.cjs",
+  "sideEffects": false,
   "scripts": {
     "build": "tsup-node",
     "dev": "tsup-node  --watch",
@@ -34,8 +33,5 @@
     "lint:fix": "pnpm run lint:eslint --fix && pnpm run lint:prettier --write",
     "---  ": "",
     "semantic-release": "semantic-release"
-  },
-  "type": "module",
-  "sideEffects": false,
-  "main": "./.prettierrc.cjs"
+  }
 }

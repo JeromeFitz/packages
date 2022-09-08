@@ -1,6 +1,8 @@
 {
-  "name": "@jeromefitz/git-cz",
+  "private": false,
+  "license": "MIT",
   "version": "0.0.0",
+  "name": "@jeromefitz/git-cz",
   "description": "git(moji)-cz => conventional commits, gitflow branching",
   "author": {
     "name": "Vadim Dalecky",
@@ -13,12 +15,7 @@
       "url": "https://jeromefitzgerald.com"
     }
   ],
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "ssh://git@github.com/jeromefitz/packages.git",
-    "directory": "packages/git-cz"
-  },
+  "repository": "jeromefitz/packages.git",
   "keywords": [
     "commit",
     "conventional changelog",
@@ -30,7 +27,11 @@
   "engines": {
     "node": ">=16"
   },
-  "private": false,
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "sideEffects": false,
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
@@ -48,17 +49,6 @@
     "-----": "",
     "dry:run": "pnpm run build && node ./dist/cli"
   },
-  "devDependencies": {
-    "@jeromefitz/conventional-gitmoji": "workspace:*",
-    "@types/lodash": "4.14.184",
-    "chai": "4.3.6",
-    "isomorphic-unfetch": "3.1.0",
-    "lodash": "4.17.21",
-    "jest": "29.0.2",
-    "mocha": "10.0.0",
-    "rimraf": "3.0.2",
-    "spawncommand": "2.2.0"
-  },
   "dependencies": {
     "colorize-template": "1.0.0",
     "fast-json-stable-stringify": "2.1.0",
@@ -70,6 +60,17 @@
     "shellsync": "0.2.2",
     "word-wrap": "1.2.3"
   },
+  "devDependencies": {
+    "@jeromefitz/conventional-gitmoji": "workspace:*",
+    "@types/lodash": "4.14.184",
+    "chai": "4.3.6",
+    "isomorphic-unfetch": "3.1.0",
+    "jest": "29.0.2",
+    "lodash": "4.17.21",
+    "mocha": "10.0.0",
+    "rimraf": "3.0.2",
+    "spawncommand": "2.2.0"
+  },
   "peerDependencies": {
     "@jeromefitz/conventional-gitmoji": "^3.2.0",
     "lodash": "^4.17.21"
@@ -77,10 +78,5 @@
   "bin": {
     "git-cz": "./dist/cli.js",
     "gitcz": "./dist/cli.js"
-  },
-  "type": "module",
-  "sideEffects": false,
-  "typings": "./dist/index.d.ts",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js"
+  }
 }

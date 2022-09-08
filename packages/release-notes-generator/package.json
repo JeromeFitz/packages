@@ -1,25 +1,26 @@
 {
-  "name": "@jeromefitz/release-notes-generator",
+  "private": false,
+  "license": "MIT",
   "version": "0.0.0",
+  "name": "@jeromefitz/release-notes-generator",
   "description": "Custom Release Note Generator for Semantic Release.",
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
     "url": "https://jeromefitzgerald.com"
   },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "ssh://git@github.com/jeromefitz/packages.git",
-    "directory": "packages/release-notes-generator"
+  "repository": "jeromefitz/packages.git",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "engines": {
     "node": ">=16"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
-  "private": false,
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "sideEffects": false,
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
@@ -35,12 +36,6 @@
     "---  ": "",
     "semantic-release": "semantic-release"
   },
-  "devDependencies": {
-    "@types/conventional-commits-parser": "3.0.2",
-    "@types/lodash": "4.14.184",
-    "@types/read-pkg-up": "6.0.0",
-    "lodash": "4.17.21"
-  },
   "dependencies": {
     "@octokit/rest": "19.0.4",
     "conventional-commits-filter": "2.0.7",
@@ -50,12 +45,13 @@
     "read-pkg-up": "7.0.1",
     "semver": "7.3.7"
   },
+  "devDependencies": {
+    "@types/conventional-commits-parser": "3.0.2",
+    "@types/lodash": "4.14.184",
+    "@types/read-pkg-up": "6.0.0",
+    "lodash": "4.17.21"
+  },
   "peerDependencies": {
     "lodash": "^4.17.21"
-  },
-  "type": "module",
-  "sideEffects": false,
-  "typings": "./dist/index.d.ts",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js"
+  }
 }

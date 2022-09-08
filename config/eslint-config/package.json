@@ -1,25 +1,23 @@
 {
-  "name": "@jeromefitz/eslint-config",
+  "private": false,
+  "license": "MIT",
   "version": "0.0.0",
+  "name": "@jeromefitz/eslint-config",
   "description": "ESLint Configuration",
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
     "url": "https://jeromefitzgerald.com"
   },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "ssh://git@github.com/jeromefitz/packages.git",
-    "directory": "config/eslint-config"
+  "repository": "jeromefitz/packages.git",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "engines": {
     "node": ">=16"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
-  "private": false,
+  "type": "module",
+  "sideEffects": false,
   "scripts": {
     "build": "tsup-node",
     "dev": "tsup-node  --watch",
@@ -49,7 +47,5 @@
     "eslint-plugin-react-hooks": "4.6.0",
     "prettier": "2.7.1",
     "pretty-quick": "3.1.3"
-  },
-  "type": "module",
-  "sideEffects": false
+  }
 }
