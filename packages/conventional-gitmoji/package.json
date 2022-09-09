@@ -35,6 +35,7 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
+    "fast-json-stable-stringify": "2.1.0",
     "grapheme-splitter": "1.0.4",
     "title": "3.5.3"
   },
