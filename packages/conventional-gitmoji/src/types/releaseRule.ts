@@ -258,7 +258,7 @@ const releaseRule: IReleaseRule = {
     description: 'Improve developer experience',
     emoji: '🧑‍💻',
     entity: '&#129489;&#8205;&#128187;',
-    name: 'technologist',
+    name: 'dx',
     semver: null,
   },
   egg: {

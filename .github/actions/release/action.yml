@@ -5,10 +5,10 @@ author: 'JeromeFitz'
 
 inputs:
   GH_TOKEN:
-    descirption: 'Github Token'
+    description: 'Github Token'
     required: true
   NPM_TOKEN:
-    descirption: 'NPM Token'
+    description: 'NPM Token'
     required: true
 
 runs:

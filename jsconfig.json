@@ -1,12 +1,6 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "paths": {
-      "@ds/stitches.config": ["./packages/design-system/src/lib/stitches.config"],
-      "@ds/components": ["./packages/design-system/src/components/index"],
-      "@ds/components/*": ["./packages/design-system/src/components/*"],
-      "@ds/custom/*": ["./packages/design-system/src/custom/*"],
-      "@ds/hooks/*": ["./packages/design-system/src/hooks/*"]
-    }
+    "paths": {}
   }
 }

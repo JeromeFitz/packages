@@ -49,11 +49,11 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: ${{ github.event.pull_request.head.ref }}
-          fetch-depth: 1
+          fetch-depth: 10
 
       - name: '💽️  Init'
         id: pull-init
-        uses: JeromeFitz/packages/.github/actions/init@main
+        uses: JeromeFitz/packages/.github/actions/init@ci/only-build-lint-when-files-change
 
       # - name: '🧪 debug'
       #   id: pull-debug
@@ -82,7 +82,7 @@ jobs:
       #  NOTE: Turn this off until determine if renovate handles this
       # - name: '🔒  pnpm'
       #   id: pull-pnpm
-      #   uses: JeromeFitz/packages/.github/actions/pnpm@main
+      #   uses: JeromeFitz/packages/.github/actions/pnpm@ci/only-build-lint-when-files-change
       #   if: ${{ env.IS_ACTOR_RENOVATE == 'true' || env.IS_LABEL_PNPM == 'true' }}
       #   with:
       #     IS_ACTOR_VERIFIED: ${{ env.IS_ACTOR_VERIFIED }}
@@ -93,18 +93,18 @@ jobs:
 
       - name: '📦  Install'
         id: pull-install
-        uses: JeromeFitz/packages/.github/actions/install@main
+        uses: JeromeFitz/packages/.github/actions/install@ci/only-build-lint-when-files-change
 
       - name: '🔺️  Cache (turbo)'
         id: pull-cache-turbo
-        uses: JeromeFitz/packages/.github/actions/cache-turbo@main
+        uses: JeromeFitz/packages/.github/actions/cache-turbo@ci/only-build-lint-when-files-change
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
       - name: '🚨️  Lint'
         id: pull-lint
-        uses: JeromeFitz/packages/.github/actions/lint@main
+        uses: JeromeFitz/packages/.github/actions/lint@ci/only-build-lint-when-files-change
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
@@ -117,7 +117,8 @@ jobs:
 
       - name: '🏗️  Build'
         id: pull-build
-        uses: JeromeFitz/packages/.github/actions/build@main
+        uses: JeromeFitz/packages/.github/actions/build@ci/only-build-lint-when-files-change
         with:
+          BUILD_COMMAND: 'build'
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}

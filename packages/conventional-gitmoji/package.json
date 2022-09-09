@@ -23,21 +23,19 @@
   "sideEffects": false,
   "scripts": {
     "build": "tsup",
-    "dev": "tsup --watch",
-    "generate:types": "node ./scripts/generateTypes.js && pnpm run lint:fix",
-    "---": "",
     "clean": "rm -rf .turbo && rm -rf dist",
     "clean:install": "pnpm run clean && rm -rf node_modules",
     "copy": "mkdir -p ./dist && ./scripts/copy.sh",
-    "--- ": "",
+    "dev": "tsup --watch",
+    "format:lint": "pnpm run lint:eslint --fix && pnpm run format:prettier --write",
+    "format:prettier": "prettier \"./src/**/*.{cjs,js,jsx,mjs,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\" --ignore-unknown --loglevel warn",
+    "generate:types": "node ./scripts/generateTypes.js && pnpm run format:lint",
+    "lint": "pnpm run format:prettier --check && pnpm run lint:eslint",
     "lint:eslint": "eslint ./src --ext cjs,js,jsx,mjs,ts,tsx --max-warnings=0",
-    "lint:prettier": "prettier \"./src/**/*.{cjs,js,jsx,mjs,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\" --ignore-unknown --loglevel warn",
-    "lint": "pnpm run lint:prettier --check && pnpm run lint:eslint",
-    "lint:fix": "pnpm run lint:eslint --fix && pnpm run lint:prettier --write",
-    "---  ": "",
     "semantic-release": "semantic-release"
   },
   "dependencies": {
+    "fast-json-stable-stringify": "2.1.0",
     "grapheme-splitter": "1.0.4",
     "title": "3.5.3"
   },

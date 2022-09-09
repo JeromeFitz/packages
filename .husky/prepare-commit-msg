@@ -8,7 +8,7 @@ elif ps -o args= $PPID | grep -E -q ' --continue| -c | -c$' ; then
 :
 else
 :
-    pnpm run pretty-quick --staged
+    pnpm run format:prettier --staged
     exec < /dev/tty
     # pnpm run git-cz --hook || true
     node ./packages/git-cz/dist/cli.js --hook || true
