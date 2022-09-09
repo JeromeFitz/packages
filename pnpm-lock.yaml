@@ -108,7 +108,7 @@ importers:
       framer-motion: 7.3.2
       next: 12.2.5
       next-compose-plugins: 2.2.1
-      next-themes: 0.2.0
+      next-themes: 0.2.1
       next-transpile-modules: 9.0.0
       react: 18.2.0
       react-dom: 18.2.0
@@ -120,7 +120,7 @@ importers:
       date-fns-tz: 1.3.7_date-fns@2.29.2
       framer-motion: 7.3.2_biqbaboplfbrettd7655fr4n2y
       next: 12.2.5_biqbaboplfbrettd7655fr4n2y
-      next-themes: 0.2.0_3xcjr4wz26biff45sz3jtokgje
+      next-themes: 0.2.1_3xcjr4wz26biff45sz3jtokgje
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     devDependencies:
@@ -8781,7 +8781,7 @@ packages:
       mississippi: 3.0.0
       mkdirp: 0.5.6
       move-concurrently: 1.0.1
-      promise-inflight: 1.0.1_bluebird@3.7.2
+      promise-inflight: 1.0.1
       rimraf: 2.7.1
       ssri: 6.0.2
       unique-filename: 1.1.1
@@ -15325,8 +15325,8 @@ packages:
     resolution: {integrity: sha512-OjJ+fV15FXO2uQXQagLD4C0abYErBjyjE0I0FHpOEIB8upw0hg1ldFP6cqHTJBH1cZqy96OeR3u1dJ+Ez2D4Bg==}
     dev: true
 
-  /next-themes/0.2.0_3xcjr4wz26biff45sz3jtokgje:
-    resolution: {integrity: sha512-myhpDL4vadBD9YDSHiewqvzorGzB03N84e+3LxCwHRlM/hiBOaW+UsKsQojQAzC7fdcJA0l2ppveXcYaVV+hxQ==}
+  /next-themes/0.2.1_3xcjr4wz26biff45sz3jtokgje:
+    resolution: {integrity: sha512-B+AKNfYNIzh0vqQQKqQItTS8evEouKD7H5Hj3kmuPERwddR2TxvDSFZuTj6T7Jfn1oyeUyJMydPl1Bkxkh0W7A==}
     peerDependencies:
       next: '*'
       react: '*'
@@ -16553,17 +16553,6 @@ packages:
     peerDependenciesMeta:
       bluebird:
         optional: true
-    dev: true
-
-  /promise-inflight/1.0.1_bluebird@3.7.2:
-    resolution: {integrity: sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==}
-    peerDependencies:
-      bluebird: '*'
-    peerDependenciesMeta:
-      bluebird:
-        optional: true
-    dependencies:
-      bluebird: 3.7.2
     dev: true
 
   /promise.allsettled/1.0.5:
