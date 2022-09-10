@@ -63,7 +63,7 @@ importers:
       eslint-config-next: 12.2.5
       eslint-config-prettier: 8.5.0
       eslint-plugin-import: 2.26.0
-      eslint-plugin-jest: 27.0.3
+      eslint-plugin-jest: 27.0.4
       eslint-plugin-jsx-a11y: 6.6.1
       eslint-plugin-react: 7.31.8
       eslint-plugin-react-hooks: 4.6.0
@@ -77,7 +77,7 @@ importers:
       eslint-config-next: 12.2.5_eslint@8.23.0
       eslint-config-prettier: 8.5.0_eslint@8.23.0
       eslint-plugin-import: 2.26.0_iepzrjnvahcxaf6zc7cutko6om
-      eslint-plugin-jest: 27.0.3_zko7vy5ljylfnjbd43q67qnl6a
+      eslint-plugin-jest: 27.0.4_zko7vy5ljylfnjbd43q67qnl6a
       eslint-plugin-jsx-a11y: 6.6.1_eslint@8.23.0
       eslint-plugin-react: 7.31.8_eslint@8.23.0
       eslint-plugin-react-hooks: 4.6.0_eslint@8.23.0
@@ -11019,8 +11019,8 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-plugin-jest/27.0.3_zko7vy5ljylfnjbd43q67qnl6a:
-    resolution: {integrity: sha512-nAbUw+doEUUj0YM0k6C1hqVOxu2QX9l5alPG1bpBEWX/uQW3u/W4jrwGIfaZ9gKVBmUEYUNTgVoFaVIwPBXL+Q==}
+  /eslint-plugin-jest/27.0.4_zko7vy5ljylfnjbd43q67qnl6a:
+    resolution: {integrity: sha512-BuvY78pHMpMJ6Cio7sKg6jrqEcnRYPUc4Nlihku4vKx3FjlmMINSX4vcYokZIe+8TKcyr1aI5Kq7vYwgJNdQSA==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': ^5.0.0
