@@ -37,7 +37,7 @@
     "@octokit/rest": "19.0.4",
     "conventional-commits-filter": "2.0.7",
     "conventional-commits-parser": "3.2.4",
-    "date-fns": "2.29.2",
+    "date-fns": "2.29.3",
     "import-from": "4.0.0",
     "read-pkg-up": "7.0.1",
     "semver": "7.3.7"

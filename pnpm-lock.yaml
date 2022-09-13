@@ -103,7 +103,7 @@ importers:
       '@types/react': 18.0.19
       '@types/react-dom': 18.0.6
       cmdk: 0.1.20
-      date-fns: 2.29.2
+      date-fns: 2.29.3
       date-fns-tz: 1.3.7
       framer-motion: 7.3.2
       next: 12.2.5
@@ -116,8 +116,8 @@ importers:
       '@heroicons/react': 2.0.11_react@18.2.0
       '@jeromefitz/design-system': link:../../packages/design-system
       cmdk: 0.1.20_nylzxt5ale4dsv666zkb25cgtm
-      date-fns: 2.29.2
-      date-fns-tz: 1.3.7_date-fns@2.29.2
+      date-fns: 2.29.3
+      date-fns-tz: 1.3.7_date-fns@2.29.3
       framer-motion: 7.3.2_biqbaboplfbrettd7655fr4n2y
       next: 12.2.5_biqbaboplfbrettd7655fr4n2y
       next-themes: 0.2.0_3xcjr4wz26biff45sz3jtokgje
@@ -374,14 +374,14 @@ importers:
       '@notionhq/client': 2.2.0
       '@types/github-slugger': 1.3.0
       '@types/lodash': 4.14.185
-      date-fns: 2.29.2
+      date-fns: 2.29.3
       date-fns-tz: 1.3.7
       github-slugger: 1.4.0
       lodash: 4.17.21
     dependencies:
       '@notionhq/client': 2.2.0
-      date-fns: 2.29.2
-      date-fns-tz: 1.3.7_date-fns@2.29.2
+      date-fns: 2.29.3
+      date-fns-tz: 1.3.7_date-fns@2.29.3
       github-slugger: 1.4.0
     devDependencies:
       '@jeromefitz/utils': link:../utils
@@ -397,7 +397,7 @@ importers:
       '@types/read-pkg-up': 6.0.0
       conventional-commits-filter: 2.0.7
       conventional-commits-parser: 3.2.4
-      date-fns: 2.29.2
+      date-fns: 2.29.3
       import-from: 4.0.0
       lodash: 4.17.21
       read-pkg-up: 7.0.1
@@ -406,7 +406,7 @@ importers:
       '@octokit/rest': 19.0.4
       conventional-commits-filter: 2.0.7
       conventional-commits-parser: 3.2.4
-      date-fns: 2.29.2
+      date-fns: 2.29.3
       import-from: 4.0.0
       read-pkg-up: 7.0.1
       semver: 7.3.7
@@ -8781,7 +8781,7 @@ packages:
       mississippi: 3.0.0
       mkdirp: 0.5.6
       move-concurrently: 1.0.1
-      promise-inflight: 1.0.1_bluebird@3.7.2
+      promise-inflight: 1.0.1
       rimraf: 2.7.1
       ssri: 6.0.2
       unique-filename: 1.1.1
@@ -9746,16 +9746,16 @@ packages:
     resolution: {integrity: sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==}
     dev: false
 
-  /date-fns-tz/1.3.7_date-fns@2.29.2:
+  /date-fns-tz/1.3.7_date-fns@2.29.3:
     resolution: {integrity: sha512-1t1b8zyJo+UI8aR+g3iqr5fkUHWpd58VBx8J/ZSQ+w7YrGlw80Ag4sA86qkfCXRBLmMc4I2US+aPMd4uKvwj5g==}
     peerDependencies:
       date-fns: '>=2.0.0'
     dependencies:
-      date-fns: 2.29.2
+      date-fns: 2.29.3
     dev: false
 
-  /date-fns/2.29.2:
-    resolution: {integrity: sha512-0VNbwmWJDS/G3ySwFSJA3ayhbURMTJLtwM2DTxf9CWondCnh6DTNlO9JgRSq6ibf4eD0lfMJNBxUdEAHHix+bA==}
+  /date-fns/2.29.3:
+    resolution: {integrity: sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==}
     engines: {node: '>=0.11'}
     dev: false
 
@@ -16557,17 +16557,6 @@ packages:
     peerDependenciesMeta:
       bluebird:
         optional: true
-    dev: true
-
-  /promise-inflight/1.0.1_bluebird@3.7.2:
-    resolution: {integrity: sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==}
-    peerDependencies:
-      bluebird: '*'
-    peerDependenciesMeta:
-      bluebird:
-        optional: true
-    dependencies:
-      bluebird: 3.7.2
     dev: true
 
   /promise.allsettled/1.0.5:
