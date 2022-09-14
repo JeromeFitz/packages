@@ -119,7 +119,7 @@
     "@types/react-dom": "18.0.6",
     "@vitejs/plugin-react": "2.1.0",
     "cmdk": "0.1.20",
-    "framer-motion": "7.3.2",
+    "framer-motion": "7.3.5",
     "lodash": "4.17.21",
     "multiple-themes-stitches": "0.0.10",
     "next": "12.2.5",
