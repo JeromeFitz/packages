@@ -105,7 +105,7 @@ importers:
       cmdk: 0.1.20
       date-fns: 2.29.3
       date-fns-tz: 1.3.7
-      framer-motion: 7.3.6
+      framer-motion: 7.4.0
       next: 12.2.5
       next-compose-plugins: 2.2.1
       next-themes: 0.2.1
@@ -118,7 +118,7 @@ importers:
       cmdk: 0.1.20_rj7ozvcq3uehdlnj3cbwzbi5ce
       date-fns: 2.29.3
       date-fns-tz: 1.3.7_date-fns@2.29.3
-      framer-motion: 7.3.6_biqbaboplfbrettd7655fr4n2y
+      framer-motion: 7.4.0_biqbaboplfbrettd7655fr4n2y
       next: 12.2.5_biqbaboplfbrettd7655fr4n2y
       next-themes: 0.2.1_3xcjr4wz26biff45sz3jtokgje
       react: 18.2.0
@@ -226,7 +226,7 @@ importers:
       '@vitejs/plugin-react': 2.1.0
       cmdk: 0.1.20
       emoji-regex: 10.1.0
-      framer-motion: 7.3.6
+      framer-motion: 7.4.0
       lodash: 4.17.21
       multiple-themes-stitches: 0.0.10
       next: 12.2.5
@@ -317,7 +317,7 @@ importers:
       '@types/react-dom': 18.0.6
       '@vitejs/plugin-react': 2.1.0_vite@3.1.3
       cmdk: 0.1.20_rj7ozvcq3uehdlnj3cbwzbi5ce
-      framer-motion: 7.3.6_biqbaboplfbrettd7655fr4n2y
+      framer-motion: 7.4.0_biqbaboplfbrettd7655fr4n2y
       lodash: 4.17.21
       multiple-themes-stitches: 0.0.10_a2re3u5yns77akomflt5frnjoy
       next: 12.2.5_biqbaboplfbrettd7655fr4n2y
@@ -11800,8 +11800,8 @@ packages:
     dependencies:
       map-cache: 0.2.2
 
-  /framer-motion/7.3.6_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-en8mLpDv6IcieZo54acHg56HSLpOSryRLZtMOd1Sj1s7hBbUTWnJsv68CWaHI2ysPKcbH/olGfAhRh4yrJn5tw==}
+  /framer-motion/7.4.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-tcvL5L1cASYjIeBG6mQHhzfndm7MdyHjOwqIdOzOetIVa1yUqeYMufAoljgqg69XFgsgZet+c4iuSuFF+Vgbjg==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
