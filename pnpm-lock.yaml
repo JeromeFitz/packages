@@ -16,7 +16,7 @@ importers:
       '@manypkg/cli': 0.19.2
       '@types/is-ci': 3.0.0
       '@types/node': 16.11.7
-      dotenv: 16.0.2
+      dotenv: 16.0.3
       husky: 8.0.1
       is-ci: 3.0.1
       lint-staged: 13.0.3
@@ -41,7 +41,7 @@ importers:
       '@manypkg/cli': 0.19.2
       '@types/is-ci': 3.0.0
       '@types/node': 16.11.7
-      dotenv: 16.0.2
+      dotenv: 16.0.3
       husky: 8.0.1
       is-ci: 3.0.1
       lint-staged: 13.0.3
@@ -10039,8 +10039,8 @@ packages:
     resolution: {integrity: sha512-YXQl1DSa4/PQyRfgrv6aoNjhasp/p4qs9FjJ4q4cQk+8m4r6k4ZSiEyytKG8f8W9gi8WsQtIObNmKd+tMzNTmA==}
     dev: true
 
-  /dotenv/16.0.2:
-    resolution: {integrity: sha512-JvpYKUmzQhYoIFgK2MOnF3bciIZoItIIoryihy0rIA+H4Jy0FmgyKYAHCTN98P5ybGSJcIFbh6QKeJdtZd1qhA==}
+  /dotenv/16.0.3:
+    resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
     engines: {node: '>=12'}
     dev: false
 
