@@ -105,7 +105,7 @@ importers:
       cmdk: 0.1.20
       date-fns: 2.29.3
       date-fns-tz: 1.3.7
-      framer-motion: 7.4.0
+      framer-motion: 7.5.0
       next: 12.3.1
       next-compose-plugins: 2.2.1
       next-themes: 0.2.1
@@ -118,7 +118,7 @@ importers:
       cmdk: 0.1.20_rj7ozvcq3uehdlnj3cbwzbi5ce
       date-fns: 2.29.3
       date-fns-tz: 1.3.7_date-fns@2.29.3
-      framer-motion: 7.4.0_biqbaboplfbrettd7655fr4n2y
+      framer-motion: 7.5.0_biqbaboplfbrettd7655fr4n2y
       next: 12.3.1_biqbaboplfbrettd7655fr4n2y
       next-themes: 0.2.1_azq6kxkn3od7qdylwkyksrwopy
       react: 18.2.0
@@ -226,7 +226,7 @@ importers:
       '@vitejs/plugin-react': 2.1.0
       cmdk: 0.1.20
       emoji-regex: 10.1.0
-      framer-motion: 7.4.0
+      framer-motion: 7.5.0
       lodash: 4.17.21
       multiple-themes-stitches: 0.0.10
       next: 12.3.1
@@ -317,7 +317,7 @@ importers:
       '@types/react-dom': 18.0.6
       '@vitejs/plugin-react': 2.1.0_vite@3.1.4
       cmdk: 0.1.20_rj7ozvcq3uehdlnj3cbwzbi5ce
-      framer-motion: 7.4.0_biqbaboplfbrettd7655fr4n2y
+      framer-motion: 7.5.0_biqbaboplfbrettd7655fr4n2y
       lodash: 4.17.21
       multiple-themes-stitches: 0.0.10_a2re3u5yns77akomflt5frnjoy
       next: 12.3.1_biqbaboplfbrettd7655fr4n2y
@@ -8671,7 +8671,7 @@ packages:
       mississippi: 3.0.0
       mkdirp: 0.5.6
       move-concurrently: 1.0.1
-      promise-inflight: 1.0.1_bluebird@3.7.2
+      promise-inflight: 1.0.1
       rimraf: 2.7.1
       ssri: 6.0.2
       unique-filename: 1.1.1
@@ -11772,8 +11772,8 @@ packages:
     dependencies:
       map-cache: 0.2.2
 
-  /framer-motion/7.4.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-tcvL5L1cASYjIeBG6mQHhzfndm7MdyHjOwqIdOzOetIVa1yUqeYMufAoljgqg69XFgsgZet+c4iuSuFF+Vgbjg==}
+  /framer-motion/7.5.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-uz42xPsO5VmoRrT0Q2I1UZBvQ+Px0Is2c+7mum2z/UhC9m2Q1/2DmSR82ncc5qRtO/4OerNEm473ktOEX3unRg==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
@@ -16449,17 +16449,6 @@ packages:
     peerDependenciesMeta:
       bluebird:
         optional: true
-    dev: true
-
-  /promise-inflight/1.0.1_bluebird@3.7.2:
-    resolution: {integrity: sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==}
-    peerDependencies:
-      bluebird: '*'
-    peerDependenciesMeta:
-      bluebird:
-        optional: true
-    dependencies:
-      bluebird: 3.7.2
     dev: true
 
   /promise.allsettled/1.0.5:
