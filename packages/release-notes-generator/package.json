@@ -40,7 +40,7 @@
     "date-fns": "2.29.3",
     "import-from": "4.0.0",
     "read-pkg-up": "7.0.1",
-    "semver": "7.3.7"
+    "semver": "7.3.8"
   },
   "devDependencies": {
     "@types/conventional-commits-parser": "3.0.2",
