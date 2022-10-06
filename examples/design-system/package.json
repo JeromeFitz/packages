@@ -25,7 +25,7 @@
     "web:dev": "next dev -p 3001"
   },
   "dependencies": {
-    "@heroicons/react": "2.0.11",
+    "@heroicons/react": "2.0.12",
     "@jeromefitz/design-system": "workspace:*",
     "cmdk": "0.1.20",
     "date-fns": "2.29.3",
