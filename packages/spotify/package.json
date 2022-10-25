@@ -37,7 +37,7 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "github-slugger": "1.4.0",
+    "github-slugger": "1.5.0",
     "isomorphic-unfetch": "3.1.0",
     "plaiceholder": "2.5.0"
   },
