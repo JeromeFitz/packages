@@ -376,13 +376,13 @@ importers:
       '@types/lodash': 4.14.186
       date-fns: 2.29.3
       date-fns-tz: 1.3.7
-      github-slugger: 1.4.0
+      github-slugger: 1.5.0
       lodash: 4.17.21
     dependencies:
       '@notionhq/client': 2.2.1
       date-fns: 2.29.3
       date-fns-tz: 1.3.7_date-fns@2.29.3
-      github-slugger: 1.4.0
+      github-slugger: 1.5.0
     devDependencies:
       '@jeromefitz/utils': link:../utils
       '@types/github-slugger': 1.3.0
@@ -459,12 +459,12 @@ importers:
     specifiers:
       '@jeromefitz/utils': workspace:*
       '@types/lodash': 4.14.186
-      github-slugger: 1.4.0
+      github-slugger: 1.5.0
       isomorphic-unfetch: 3.1.0
       lodash: 4.17.21
       plaiceholder: 2.5.0
     dependencies:
-      github-slugger: 1.4.0
+      github-slugger: 1.5.0
       isomorphic-unfetch: 3.1.0
       plaiceholder: 2.5.0
     devDependencies:
@@ -11975,8 +11975,8 @@ packages:
       traverse: 0.6.6
     dev: false
 
-  /github-slugger/1.4.0:
-    resolution: {integrity: sha512-w0dzqw/nt51xMVmlaV1+JRzN+oCa1KfcgGEWhxUG16wbdA+Xnt/yoFO8Z8x/V82ZcZ0wy6ln9QDup5avbhiDhQ==}
+  /github-slugger/1.5.0:
+    resolution: {integrity: sha512-wIh+gKBI9Nshz2o46B0B3f5k/W+WI9ZAv6y5Dn5WJ5SK1t0TnDimB4WE5rmTD05ZAIn8HALCZVmCsvj0w0v0lw==}
 
   /gitmojis/3.12.0:
     resolution: {integrity: sha512-07dBXkB1PZkOxs4BEJfcMCubWkNo34YEslGLMmnlkbIxtU7PqMjitUT1k73jpNrUck33LjXR1T7KEsoM5zBSbw==}
@@ -17260,7 +17260,7 @@ packages:
   /remark-slug/6.1.0:
     resolution: {integrity: sha512-oGCxDF9deA8phWvxFuyr3oSJsdyUAxMFbA0mZ7Y1Sas+emILtO+e5WutF9564gDsEN4IXaQXm5pFo6MLH+YmwQ==}
     dependencies:
-      github-slugger: 1.4.0
+      github-slugger: 1.5.0
       mdast-util-to-string: 1.1.0
       unist-util-visit: 2.0.3
     dev: true
