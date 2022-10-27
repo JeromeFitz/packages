@@ -42,7 +42,7 @@
     "@notionhq/client": "2.2.1",
     "date-fns": "2.29.3",
     "date-fns-tz": "1.3.7",
-    "github-slugger": "1.5.0"
+    "github-slugger": "2.0.0"
   },
   "devDependencies": {
     "@jeromefitz/utils": "workspace:*",
