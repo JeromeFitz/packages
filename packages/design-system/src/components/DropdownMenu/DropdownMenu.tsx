@@ -2,7 +2,8 @@
  * https://www.radix-ui.com/docs/primitives/components/dropdown-menu
  */
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
-import * as React from 'react'
+import { forwardRef } from 'react'
+import type { ComponentProps, ElementRef } from 'react'
 
 import { styled } from '../../lib/stitches.config'
 import type { CSS } from '../../lib/stitches.config'
@@ -22,13 +23,13 @@ const DropdownMenuItem = styled(DropdownMenuPrimitive.Item, itemCss)
 
 const StyledDropdownMenuRadioItem = styled(DropdownMenuPrimitive.RadioItem, itemCss)
 
-type DialogMenuRadioItemPrimitiveProps = React.ComponentProps<
+type DialogMenuRadioItemPrimitiveProps = ComponentProps<
   typeof DropdownMenuPrimitive.RadioItem
 >
 type DialogMenuRadioItemProps = DialogMenuRadioItemPrimitiveProps & { css?: CSS }
 
-const DropdownMenuRadioItem = React.forwardRef<
-  React.ElementRef<typeof StyledDropdownMenuRadioItem>,
+const DropdownMenuRadioItem = forwardRef<
+  ElementRef<typeof StyledDropdownMenuRadioItem>,
   DialogMenuRadioItemProps
 >(({ children, ...props }, forwardedRef) => (
   <StyledDropdownMenuRadioItem {...props} ref={forwardedRef}>
@@ -62,15 +63,15 @@ const StyledDropdownMenuCheckboxItem = styled(
   itemCss
 )
 
-type DialogMenuCheckboxItemPrimitiveProps = React.ComponentProps<
+type DialogMenuCheckboxItemPrimitiveProps = ComponentProps<
   typeof DropdownMenuPrimitive.CheckboxItem
 >
 type DialogMenuCheckboxItemProps = DialogMenuCheckboxItemPrimitiveProps & {
   css?: CSS
 }
 
-const DropdownMenuCheckboxItem = React.forwardRef<
-  React.ElementRef<typeof StyledDropdownMenuCheckboxItem>,
+const DropdownMenuCheckboxItem = forwardRef<
+  ElementRef<typeof StyledDropdownMenuCheckboxItem>,
   DialogMenuCheckboxItemProps
 >(({ children, ...props }, forwardedRef) => (
   <StyledDropdownMenuCheckboxItem {...props} ref={forwardedRef}>

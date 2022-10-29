@@ -1,11 +1,11 @@
-import * as React from 'react'
+import { forwardRef } from 'react'
 
 import { Box } from '../index'
 
 import { StyledButton } from './ButtonMarketing.styles'
 import { ButtonMarketingProps } from './ButtonMarketing.types'
 
-const ButtonMarketing = React.forwardRef<HTMLButtonElement, ButtonMarketingProps>(
+const ButtonMarketing = forwardRef<HTMLButtonElement, ButtonMarketingProps>(
   ({ children, icon: Icon, ...props }, forwardedRef) => {
     return (
       <StyledButton ref={forwardedRef} {...props}>

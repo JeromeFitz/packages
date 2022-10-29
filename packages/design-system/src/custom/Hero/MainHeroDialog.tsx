@@ -1,5 +1,5 @@
 import * as DialogPrimitive from '@radix-ui/react-dialog'
-import * as React from 'react'
+import { useRef } from 'react'
 
 import { ButtonDemo } from '../../components/Button/ButtonDemo'
 import { ButtonDemoIcon } from '../../components/Button/ButtonDemoIcon'
@@ -29,7 +29,7 @@ const DialogContent = styled(DialogPrimitive.Content, {
 function MainHeroDialog() {
   // We prevent the initial auto focus because it's a demo rather than a real UI,
   // so the parent page focus is not stolen.
-  const initialAutoFocusPrevented = React.useRef(false)
+  const initialAutoFocusPrevented = useRef(false)
 
   return (
     <DialogPrimitive.Root modal={false} defaultOpen>

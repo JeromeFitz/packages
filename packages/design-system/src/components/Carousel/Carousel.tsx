@@ -8,7 +8,8 @@ import { useComposedRefs } from '@radix-ui/react-compose-refs'
 import { createContext } from '@radix-ui/react-context'
 import { useCallbackRef } from '@radix-ui/react-use-callback-ref'
 import debounce from 'lodash/debounce'
-import * as React from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
+import type { ElementRef, RefObject } from 'react'
 import smoothscroll from 'smoothscroll-polyfill'
 
 import { styled } from '../../lib/stitches.config'
@@ -16,7 +17,7 @@ import { Box } from '../index'
 
 const [CarouselProvider, useCarouselContext] = createContext<{
   _: any
-  slideListRef: React.RefObject<HTMLElement>
+  slideListRef: RefObject<HTMLElement>
   onNextClick(): void
   onPrevClick(): void
   nextDisabled: boolean
@@ -24,15 +25,15 @@ const [CarouselProvider, useCarouselContext] = createContext<{
 }>('Carousel')
 
 const Carousel = (props) => {
-  const ref = React.useRef<React.ElementRef<typeof Box>>(null)
+  const ref = useRef<ElementRef<typeof Box>>(null)
   const { children, ...carouselProps } = props
-  const slideListRef = React.useRef<HTMLElement>(null)
-  const [_, force] = React.useState({})
-  const [nextDisabled, setNextDisabled] = React.useState(false)
-  const [prevDisabled, setPrevDisabled] = React.useState(true)
-  const timeoutRef = React.useRef<ReturnType<typeof setTimeout>>()
-  const navigationUpdateDelay = React.useRef(100)
-  React.useEffect(() => smoothscroll.polyfill(), [])
+  const slideListRef = useRef<HTMLElement>(null)
+  const [_, force] = useState({})
+  const [nextDisabled, setNextDisabled] = useState(false)
+  const [prevDisabled, setPrevDisabled] = useState(true)
+  const timeoutRef = useRef<ReturnType<typeof setTimeout>>()
+  const navigationUpdateDelay = useRef(100)
+  useEffect(() => smoothscroll.polyfill(), [])
 
   const getSlideInDirection = useCallbackRef((direction: 1 | -1) => {
     // @todo(any)
@@ -53,7 +54,7 @@ const Carousel = (props) => {
     }
   })
 
-  const handleNextClick = React.useCallback(() => {
+  const handleNextClick = useCallback(() => {
     // @todo(any)
     const nextSlide: any = getSlideInDirection(1)
     if (nextSlide) {
@@ -73,7 +74,7 @@ const Carousel = (props) => {
     }
   }, [getSlideInDirection, setPrevDisabled])
 
-  const handlePrevClick = React.useCallback(() => {
+  const handlePrevClick = useCallback(() => {
     // @todo(any)
     const prevSlide: any = getSlideInDirection(-1)
     if (prevSlide) {
@@ -93,7 +94,7 @@ const Carousel = (props) => {
     }
   }, [getSlideInDirection, setPrevDisabled])
 
-  React.useEffect(() => {
+  useEffect(() => {
     // Keep checking for whether we need to disable the navigation buttons, debounced
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current)
@@ -110,7 +111,7 @@ const Carousel = (props) => {
     }, navigationUpdateDelay.current)
   })
 
-  React.useEffect(() => {
+  useEffect(() => {
     const slidesList = slideListRef.current
     if (slidesList) {
       const handleScrollStartAndEnd = debounce(() => force({}), 100, {
@@ -146,9 +147,9 @@ const Carousel = (props) => {
 
 const CarouselSlideList = (props) => {
   const context = useCarouselContext('CarouselSlideList')
-  const ref = React.useRef<React.ElementRef<typeof Box>>(null)
+  const ref = useRef<ElementRef<typeof Box>>(null)
   const composedRefs = useComposedRefs(ref, context.slideListRef)
-  const [dragStart, setDragStart] = React.useState(null)
+  const [dragStart, setDragStart] = useState(null)
 
   const handleMouseMove = useCallbackRef((event) => {
     if (ref.current) {
@@ -202,11 +203,11 @@ const CarouselSlideList = (props) => {
 const CarouselSlide = (props) => {
   const { as: Comp = Box, ...slideProps } = props
   const context = useCarouselContext('CarouselSlide')
-  const ref = React.useRef<React.ElementRef<typeof Box>>(null)
-  const [intersectionRatio, setIntersectionRatio] = React.useState(0)
-  const isDraggingRef = React.useRef(false)
+  const ref = useRef<ElementRef<typeof Box>>(null)
+  const [intersectionRatio, setIntersectionRatio] = useState(0)
+  const isDraggingRef = useRef(false)
 
-  React.useEffect(() => {
+  useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => setIntersectionRatio(entry.intersectionRatio),
       { root: context.slideListRef.current, threshold: [0, 0.5, 1] }

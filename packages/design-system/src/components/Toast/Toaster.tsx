@@ -1,4 +1,4 @@
-import * as React from 'react'
+import { forwardRef, useImperativeHandle, useState } from 'react'
 
 import { Button, Icon } from '../index'
 
@@ -11,8 +11,8 @@ import {
 } from './Toast'
 import type { IToast, IToastVariant } from './Toast.types'
 
-const Toaster = React.forwardRef((props, forwardedRef) => {
-  const [toasts, toastsSet] = React.useState<IToast[]>([])
+const Toaster = forwardRef((props, forwardedRef) => {
+  const [toasts, toastsSet] = useState<IToast[]>([])
 
   const handleToast = (
     toast: Partial<IToast> | string,
@@ -69,7 +69,7 @@ const Toaster = React.forwardRef((props, forwardedRef) => {
     handleToast(toast, 'default')
   }
 
-  React.useImperativeHandle(forwardedRef, () => ({
+  useImperativeHandle(forwardedRef, () => ({
     createToast,
     removeToastByKey,
   }))

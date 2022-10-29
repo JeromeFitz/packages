@@ -1,7 +1,8 @@
 /**
  * https://www.radix-ui.com/docs/primitives/components/avatar
  */
-import * as React from 'react'
+import { forwardRef } from 'react'
+import type { ElementRef } from 'react'
 
 import { Box, Status } from '../index'
 
@@ -12,10 +13,7 @@ import {
 } from './Avatar.styles'
 import type { AvatarOwnProps } from './Avatar.types'
 
-const Avatar = React.forwardRef<
-  React.ElementRef<typeof StyledAvatar>,
-  AvatarOwnProps
->(
+const Avatar = forwardRef<ElementRef<typeof StyledAvatar>, AvatarOwnProps>(
   (
     { alt, src, fallback, size, variant, shape, css, status, ...props },
     forwardedRef

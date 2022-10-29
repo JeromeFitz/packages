@@ -1,10 +1,12 @@
+import type { ComponentProps, ComponentType } from 'react'
+
 import { StyledButton } from './ButtonMarketing.styles'
 
 type ButtonMarketingProps = {
   as: any
   disabled?: boolean
   href?: string
-  icon?: React.ComponentType<any>
-} & React.ComponentProps<typeof StyledButton>
+  icon?: ComponentType<any>
+} & ComponentProps<typeof StyledButton>
 
 export type { ButtonMarketingProps }

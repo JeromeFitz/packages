@@ -1,4 +1,4 @@
-import * as React from 'react'
+import type { ComponentProps } from 'react'
 
 import type { CSS, VariantProps } from '../../lib/stitches.config'
 import { Text } from '../index'
@@ -13,7 +13,7 @@ type ParagraphVariants = {
   size?: ParagraphSizeVariants
   weight?: ParagraphWeightVariants
 } & Omit<VariantProps<typeof Text>, 'size'>
-type ParagraphProps = React.ComponentProps<typeof DEFAULT_TAG> &
+type ParagraphProps = ComponentProps<typeof DEFAULT_TAG> &
   ParagraphVariants & { css?: CSS; as?: any }
 
 export type {

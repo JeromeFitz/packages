@@ -4,7 +4,7 @@
  *
  * @note can be replaced by useReducedMotion via framer-motion
  */
-import * as React from 'react'
+import { useEffect, useState } from 'react'
 
 const QUERY = '(prefers-reduced-motion: no-preference)'
 const isRenderingOnServer = typeof window === 'undefined'
@@ -16,9 +16,8 @@ const getInitialState = () => {
   return isRenderingOnServer ? true : !window.matchMedia(QUERY).matches
 }
 function usePrefersReducedMotion() {
-  const [prefersReducedMotion, setPrefersReducedMotion] =
-    React.useState(getInitialState)
-  React.useEffect(() => {
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(getInitialState)
+  useEffect(() => {
     const mediaQueryList = window.matchMedia(QUERY)
     const listener = (event) => {
       setPrefersReducedMotion(!event.matches)

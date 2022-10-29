@@ -1,5 +1,5 @@
 // import type { ToastImplProps } from '@radix-ui/react-toast'
-import * as React from 'react'
+import type { ElementType } from 'react'
 
 type IToastVariant =
   | 'default'
@@ -15,9 +15,9 @@ interface IToast {
   action?: () => void
   actionAltText?: string
   actionText?: string
-  actionComponent?: React.ElementType
+  actionComponent?: ElementType
   close?: () => void
-  closeComponent?: React.ElementType
+  closeComponent?: ElementType
   description: string
   key: string
   title?: string

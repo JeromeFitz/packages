@@ -2,7 +2,8 @@
  * https://www.radix-ui.com/docs/primitives/components/context-menu
  */
 import * as ContextMenuPrimitive from '@radix-ui/react-context-menu'
-import * as React from 'react'
+import { forwardRef } from 'react'
+import type { ComponentProps, ElementRef } from 'react'
 
 import { styled } from '../../lib/stitches.config'
 import type { CSS } from '../../lib/stitches.config'
@@ -21,13 +22,13 @@ const ContextMenuItem = styled(ContextMenuPrimitive.Item, itemCss)
 
 const StyledContextMenuRadioItem = styled(ContextMenuPrimitive.RadioItem, itemCss)
 
-type ContextMenuRadioItemPrimitiveProps = React.ComponentProps<
+type ContextMenuRadioItemPrimitiveProps = ComponentProps<
   typeof ContextMenuPrimitive.RadioItem
 >
 type ContextMenuRadioItemProps = ContextMenuRadioItemPrimitiveProps & { css?: CSS }
 
-const ContextMenuRadioItem = React.forwardRef<
-  React.ElementRef<typeof StyledContextMenuRadioItem>,
+const ContextMenuRadioItem = forwardRef<
+  ElementRef<typeof StyledContextMenuRadioItem>,
   ContextMenuRadioItemProps
 >(({ children, ...props }, forwardedRef) => (
   <StyledContextMenuRadioItem {...props} ref={forwardedRef}>
@@ -61,15 +62,15 @@ const StyledContextMenuCheckboxItem = styled(
   itemCss
 )
 
-type ContextMenuCheckboxItemPrimitiveProps = React.ComponentProps<
+type ContextMenuCheckboxItemPrimitiveProps = ComponentProps<
   typeof ContextMenuPrimitive.CheckboxItem
 >
 type ContextMenuCheckboxItemProps = ContextMenuCheckboxItemPrimitiveProps & {
   css?: CSS
 }
 
-const ContextMenuCheckboxItem = React.forwardRef<
-  React.ElementRef<typeof StyledContextMenuCheckboxItem>,
+const ContextMenuCheckboxItem = forwardRef<
+  ElementRef<typeof StyledContextMenuCheckboxItem>,
   ContextMenuCheckboxItemProps
 >(({ children, ...props }, forwardedRef) => (
   <StyledContextMenuCheckboxItem {...props} ref={forwardedRef}>

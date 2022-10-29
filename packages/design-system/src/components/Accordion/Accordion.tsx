@@ -2,14 +2,15 @@
  * https://www.radix-ui.com/docs/primitives/components/accordion
  */
 import * as AccordionPrimitive from '@radix-ui/react-accordion'
-import * as React from 'react'
+import { forwardRef } from 'react'
+import type { ForwardedRef, ReactNode } from 'react'
 
 import { styled, keyframes } from '../../lib/stitches.config'
 import { Icon } from '../Icon'
 
-type ForwardedRefType = React.ForwardedRef<any>
+type ForwardedRefType = ForwardedRef<any>
 type PropsChildren = {
-  children?: React.ReactNode
+  children?: ReactNode
 }
 
 const slideDown = keyframes({
@@ -101,7 +102,7 @@ const StyledChevron = styled(Icon.ChevronDown, {
   },
 })
 
-const AccordionTrigger = React.forwardRef<ForwardedRefType, PropsChildren>(
+const AccordionTrigger = forwardRef<ForwardedRefType, PropsChildren>(
   ({ children, ...props }, forwardedRef) => (
     <StyledHeader>
       {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
@@ -115,7 +116,7 @@ const AccordionTrigger = React.forwardRef<ForwardedRefType, PropsChildren>(
 )
 AccordionTrigger.displayName = 'AccordionTrigger'
 
-const AccordionContent = React.forwardRef<ForwardedRefType, PropsChildren>(
+const AccordionContent = forwardRef<ForwardedRefType, PropsChildren>(
   ({ children, ...props }, forwardedRef) => (
     <>
       {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}

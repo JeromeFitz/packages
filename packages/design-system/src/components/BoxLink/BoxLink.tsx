@@ -1,5 +1,3 @@
-// import * as React from 'react'
-
 import { styled } from '../../lib/stitches.config'
 
 const BoxLink = styled('a', {

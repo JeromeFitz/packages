@@ -1,5 +1,5 @@
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
-import * as React from 'react'
+import { useRef, useState } from 'react'
 
 import { Box } from '../../components/Box'
 import { ButtonDemo } from '../../components/Button/ButtonDemo'
@@ -64,12 +64,12 @@ const DropdownMenuCheckboxItem = styled(DropdownMenuPrimitive.CheckboxItem, item
 function MainHeroDropdownMenu() {
   // We prevent the initial auto focus because it's a demo rather than a real UI,
   // so the parent page focus is not stolen.
-  const initialAutoFocusPrevented = React.useRef(false)
-  const [showToolbar, setShowToolbar] = React.useState(true)
-  const [showUrls, setShowUrls] = React.useState(false)
-  const triggerRef = React.useRef<HTMLButtonElement>(null)
-  const contentRef = React.useRef<HTMLDivElement>(null)
-  const [open, setOpen] = React.useState(true)
+  const initialAutoFocusPrevented = useRef(false)
+  const [showToolbar, setShowToolbar] = useState(true)
+  const [showUrls, setShowUrls] = useState(false)
+  const triggerRef = useRef<HTMLButtonElement>(null)
+  const contentRef = useRef<HTMLDivElement>(null)
+  const [open, setOpen] = useState(true)
 
   return (
     <DropdownMenuPrimitive.Root modal={false} open={open} onOpenChange={setOpen}>
