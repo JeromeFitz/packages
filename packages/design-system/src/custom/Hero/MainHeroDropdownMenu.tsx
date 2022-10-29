@@ -65,8 +65,8 @@ function MainHeroDropdownMenu() {
   // We prevent the initial auto focus because it's a demo rather than a real UI,
   // so the parent page focus is not stolen.
   const initialAutoFocusPrevented = useRef(false)
-  const [showToolbar, setShowToolbar] = useState(true)
-  const [showUrls, setShowUrls] = useState(false)
+  const [showToolbar, setShowToolbar] = useState<boolean | 'indeterminate'>(true)
+  const [showUrls, setShowUrls] = useState<boolean | 'indeterminate'>(false)
   const triggerRef = useRef<HTMLButtonElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
   const [open, setOpen] = useState(true)
@@ -149,9 +149,6 @@ function MainHeroDropdownMenu() {
           <DropdownMenuSeparator />
           <DropdownMenuCheckboxItem
             checked={showToolbar}
-            // @todo(radix) indeterminate is a breaking change (#891)
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore
             onCheckedChange={setShowToolbar}
           >
             <DropdownMenuPrimitive.ItemIndicator>
@@ -159,13 +156,7 @@ function MainHeroDropdownMenu() {
             </DropdownMenuPrimitive.ItemIndicator>
             Show Toolbar
           </DropdownMenuCheckboxItem>
-          <DropdownMenuCheckboxItem
-            checked={showUrls}
-            // @todo(radix) indeterminate is a breaking change (#891)
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore
-            onCheckedChange={setShowUrls}
-          >
+          <DropdownMenuCheckboxItem checked={showUrls} onCheckedChange={setShowUrls}>
             <DropdownMenuPrimitive.ItemIndicator>
               <Icon.Check style={{ marginLeft: -18, marginRight: 0 }} />
             </DropdownMenuPrimitive.ItemIndicator>
