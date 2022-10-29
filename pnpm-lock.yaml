@@ -135,7 +135,7 @@ importers:
       '@types/semantic-release': 17.2.4
       '@types/title': 3.4.1
       fast-json-stable-stringify: 2.1.0
-      gitmojis: 3.12.0
+      gitmojis: 3.13.0
       grapheme-splitter: 1.0.4
       lodash: 4.17.21
       title: 3.5.3
@@ -147,7 +147,7 @@ importers:
       '@types/lodash': 4.14.186
       '@types/semantic-release': 17.2.4
       '@types/title': 3.4.1
-      gitmojis: 3.12.0
+      gitmojis: 3.13.0
       lodash: 4.17.21
 
   packages/design-system:
@@ -11807,8 +11807,8 @@ packages:
     resolution: {integrity: sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw==}
     dev: false
 
-  /gitmojis/3.12.0:
-    resolution: {integrity: sha512-07dBXkB1PZkOxs4BEJfcMCubWkNo34YEslGLMmnlkbIxtU7PqMjitUT1k73jpNrUck33LjXR1T7KEsoM5zBSbw==}
+  /gitmojis/3.13.0:
+    resolution: {integrity: sha512-vBRPLpEakxS6oJrX7IoJqEEigNFgXdLCnGv9EaH0+txozhpvat+PvdDH3h+mM4adgGAA932Za3Hgeupt5/XqyQ==}
     engines: {node: '16'}
     dev: true
 

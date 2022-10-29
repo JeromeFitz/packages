@@ -73,6 +73,7 @@ type ICommit =
   | 'ui'
   | 'upgrade'
   | 'ux'
+  | 'validation'
   | 'wip'
 
 export type { ICommit }
