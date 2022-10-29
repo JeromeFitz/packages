@@ -1,19 +1,24 @@
-import Slugger from 'github-slugger'
+/**
+ * @hack(!cache)
+ *
+ * If two images (tracks) are the same (album)
+ *  => We _do_ want the same slug
+ *
+ */
+import { slug as _slug } from 'github-slugger'
 import { getPlaiceholder } from 'plaiceholder'
 
 /**
  * @hack(!cache)
  *
- * - if two images (tracks)
- * - are the same (album),
- * - we _do_ want same slug
- *
+ * Otherwise we would import the default, and
+ *  provide new() outside of function
  */
-// const slugger = new Slugger()
+// // eslint-disable-next-line @typescript-eslint/unbound-method
+// const { slug: _slug } = new Slugger()
 
 const getImage = async (url: string) => {
-  // const slug = slugger.slug(url)
-  const slug = Slugger.slug(url)
+  const slug = _slug(url)
   const { base64, img } = await getPlaiceholder(url)
 
   return {
