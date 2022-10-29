@@ -4,7 +4,7 @@ import { URL as _URL, URLSearchParams } from 'url'
 
 import { asyncForEach, noop as _noop } from '@jeromefitz/utils'
 import fetch from 'isomorphic-unfetch'
-import _omit from 'lodash/omit'
+import _omit from 'lodash/omit.js'
 
 import {
   API_VERSION,
