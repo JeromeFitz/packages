@@ -12,6 +12,7 @@ import { Emoji } from './Emoji'
 
 const EmojiParser = ({ id, text }) => {
   if (!text) return null
+  // const { default: emojiRegex } = await import('emoji-regex');
   const regex = emojiRegex()
   // const textLength = text.length
   const emojiMapping = {}
