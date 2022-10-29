@@ -149,6 +149,9 @@ function MainHeroDropdownMenu() {
           <DropdownMenuSeparator />
           <DropdownMenuCheckboxItem
             checked={showToolbar}
+            // @todo(radix) indeterminate is a breaking change (#891)
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
             onCheckedChange={setShowToolbar}
           >
             <DropdownMenuPrimitive.ItemIndicator>
@@ -156,7 +159,13 @@ function MainHeroDropdownMenu() {
             </DropdownMenuPrimitive.ItemIndicator>
             Show Toolbar
           </DropdownMenuCheckboxItem>
-          <DropdownMenuCheckboxItem checked={showUrls} onCheckedChange={setShowUrls}>
+          <DropdownMenuCheckboxItem
+            checked={showUrls}
+            // @todo(radix) indeterminate is a breaking change (#891)
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            onCheckedChange={setShowUrls}
+          >
             <DropdownMenuPrimitive.ItemIndicator>
               <Icon.Check style={{ marginLeft: -18, marginRight: 0 }} />
             </DropdownMenuPrimitive.ItemIndicator>
