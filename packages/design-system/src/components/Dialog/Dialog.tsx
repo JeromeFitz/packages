@@ -3,7 +3,7 @@
  */
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { forwardRef } from 'react'
-import type { ComponentProps, ReactNode } from 'react'
+import type { ComponentProps, ElementRef, ReactNode } from 'react'
 
 import { styled } from '../../lib/stitches.config'
 import type { CSS } from '../../lib/stitches.config'
