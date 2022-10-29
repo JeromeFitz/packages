@@ -75,6 +75,7 @@ const commit: ICommit[] = [
   'ui',
   'upgrade',
   'ux',
+  'validation',
   'wip',
 ]
 
