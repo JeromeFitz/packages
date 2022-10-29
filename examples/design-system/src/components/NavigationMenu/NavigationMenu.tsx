@@ -22,7 +22,7 @@ import {
 } from '@jeromefitz/design-system/src/components'
 import { LayoutGroup } from 'framer-motion'
 import NextLink from 'next/link'
-import * as React from 'react'
+import { useState } from 'react'
 
 const menu = [
   {
@@ -117,8 +117,8 @@ const menu = [
 ]
 
 const NavigationMenuContentContainer = ({ id, items, layout }) => {
-  const [focused, setFocused] = React.useState(null)
-  const [selected, setSelected] = React.useState(null)
+  const [focused, setFocused] = useState(null)
+  const [selected, setSelected] = useState(null)
 
   const isCallout = id === 'events'
   const calloutId = 'callout-id'
@@ -137,7 +137,7 @@ const NavigationMenuContentContainer = ({ id, items, layout }) => {
             }}
             key={calloutId}
           >
-            <NextLink href="/" passHref>
+            <NextLink href="/" legacyBehavior passHref>
               <NavigationMenuListItemLink
                 onClick={() => setSelected(calloutId)}
                 onKeyDown={(event: { key: string }) =>
@@ -183,7 +183,7 @@ const NavigationMenuContentContainer = ({ id, items, layout }) => {
         )}
         {items.map((item) => (
           <NavigationMenuListItem css={{ mb: '$2' }} key={item.id}>
-            <NextLink passHref href={item.url}>
+            <NextLink href={item.url} legacyBehavior passHref>
               <NavigationMenuListItemLink
                 onClick={() => setSelected(item.id)}
                 onKeyDown={(event: { key: string }) =>

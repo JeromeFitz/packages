@@ -5,12 +5,12 @@ import {
   Toaster,
 } from '@jeromefitz/design-system/src/components'
 import { Command } from 'cmdk'
-import React from 'react'
+import { useRef } from 'react'
 
 import shows from './data/shows.json'
 
 function Shows() {
-  const toaster = React.useRef<any>()
+  const toaster = useRef<any>()
   const handleToastInfo = (path) => {
     if (toaster && toaster.current) {
       toaster.current.createToast({

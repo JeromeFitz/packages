@@ -6,10 +6,10 @@ import {
 } from '@jeromefitz/design-system/src/components'
 import { darkTheme } from '@jeromefitz/design-system/src/lib/stitches.config'
 import { useTheme } from 'next-themes'
-import React from 'react'
+import { useCallback, useRef } from 'react'
 
 function Settings() {
-  const toaster = React.useRef<any>()
+  const toaster = useRef<any>()
   const handleToastInfo = (path) => {
     if (toaster && toaster.current) {
       toaster.current.createToast({
@@ -22,7 +22,7 @@ function Settings() {
   }
 
   const { resolvedTheme: theme, setTheme } = useTheme()
-  const handleThemeToggle = React.useCallback(() => {
+  const handleThemeToggle = useCallback(() => {
     const newTheme = theme === 'dark' ? 'light' : 'dark'
     document.documentElement.classList.toggle(darkTheme?.className)
     document.documentElement.classList.toggle('light-theme')

@@ -6,11 +6,11 @@ import {
 } from '@jeromefitz/design-system/src/components'
 import { darkTheme } from '@jeromefitz/design-system/src/lib/stitches.config'
 import { useTheme } from 'next-themes'
-import * as React from 'react'
+import { useCallback } from 'react'
 
 const SwitchImpl = () => {
   const { theme, setTheme } = useTheme()
-  const handleThemeToggle = React.useCallback(() => {
+  const handleThemeToggle = useCallback(() => {
     const newTheme = theme === 'dark' ? 'light' : 'dark'
     document.documentElement.classList.toggle(darkTheme?.className)
     document.documentElement.classList.toggle('light-theme')

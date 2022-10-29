@@ -16,20 +16,21 @@ import {
   Icon,
 } from '@jeromefitz/design-system/src/components'
 // import { useCommandState as useCmdk } from 'cmdk'
-import React from 'react'
+import { useCallback, useRef, useState } from 'react'
+import type { KeyboardEvent } from 'react'
 
 import { Settings } from './Settings'
 import { Shows } from './Shows'
 
 function CommandMenuData() {
-  const ref = React.useRef<HTMLDivElement | null>(null)
-  const [inputValue, setInputValue] = React.useState('')
+  const ref = useRef<HTMLDivElement | null>(null)
+  const [inputValue, setInputValue] = useState('')
 
-  const [pages, setPages] = React.useState<string[]>(['home'])
+  const [pages, setPages] = useState<string[]>(['home'])
   const activePage = pages[pages.length - 1]
   const isHome = activePage === 'home'
 
-  const popPage = React.useCallback(() => {
+  const popPage = useCallback(() => {
     setPages((pages) => {
       const x = [...pages]
       x.splice(-1, 1)
@@ -68,7 +69,7 @@ function CommandMenuData() {
         onClick={() => {
           bounce()
         }}
-        onKeyDown={(e: React.KeyboardEvent) => {
+        onKeyDown={(e: KeyboardEvent) => {
           if (e.key === 'Enter') {
             bounce()
           }

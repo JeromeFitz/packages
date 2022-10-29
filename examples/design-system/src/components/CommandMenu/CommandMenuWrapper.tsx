@@ -1,13 +1,13 @@
 import { CommandMenu } from '@jeromefitz/design-system/src/components'
-import React from 'react'
+import { useEffect, useState } from 'react'
 
 import { CommandMenuData } from './CommandMenuData'
 
 function CommandMenuWrapper() {
-  const [open, setOpen] = React.useState(false)
+  const [open, setOpen] = useState(false)
 
   // Toggle the menu when ⌘K is pressed
-  React.useEffect(() => {
+  useEffect(() => {
     const down = (e) => {
       if (e.key === 'k' && e.metaKey) {
         e.preventDefault()
