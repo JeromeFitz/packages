@@ -24,7 +24,7 @@ const meta = {
 const _Banner = () => {
   return (
     <Container breakout>
-      <NextLink href="/about" passHref>
+      <NextLink href="/about" legacyBehavior passHref>
         <Link>
           <Banner css={{ py: '$2', width: '100%' }}>
             <Icon.Calendar />

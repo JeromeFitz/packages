@@ -122,7 +122,7 @@
     "framer-motion": "7.6.2",
     "lodash": "4.17.21",
     "multiple-themes-stitches": "0.0.10",
-    "next": "12.3.1",
+    "next": "13.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "serve": "14.0.1",
@@ -138,7 +138,7 @@
     "cmdk": "^0.1.20-beta.0",
     "framer-motion": "^7.0.0",
     "lodash": "^4.17.21",
-    "next": "^12.1.6",
+    "next": "^13.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "swr": "^1.2.2"

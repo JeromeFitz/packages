@@ -1,5 +1,6 @@
 import * as MenuPrimitive from '@radix-ui/react-menu'
-import * as React from 'react'
+import { forwardRef } from 'react'
+import type { ComponentProps, ElementRef } from 'react'
 
 import { styled } from '../../lib/stitches.config'
 import type { CSS } from '../../lib/stitches.config'
@@ -17,13 +18,11 @@ const MenuItem = styled(MenuPrimitive.Item, itemCss)
 
 const StyledMenuRadioItem = styled(MenuPrimitive.RadioItem, itemCss)
 
-type MenuRadioItemPrimitiveProps = React.ComponentProps<
-  typeof MenuPrimitive.RadioItem
->
+type MenuRadioItemPrimitiveProps = ComponentProps<typeof MenuPrimitive.RadioItem>
 type MenuRadioItemProps = MenuRadioItemPrimitiveProps & { css?: CSS }
 
-const MenuRadioItem = React.forwardRef<
-  React.ElementRef<typeof StyledMenuRadioItem>,
+const MenuRadioItem = forwardRef<
+  ElementRef<typeof StyledMenuRadioItem>,
   MenuRadioItemProps
 >(({ children, ...props }, forwardedRef) => (
   <StyledMenuRadioItem {...props} ref={forwardedRef}>
@@ -54,13 +53,13 @@ const MenuRadioItem = React.forwardRef<
 
 const StyledMenuCheckboxItem = styled(MenuPrimitive.CheckboxItem, itemCss)
 
-type MenuCheckboxItemPrimitiveProps = React.ComponentProps<
+type MenuCheckboxItemPrimitiveProps = ComponentProps<
   typeof MenuPrimitive.CheckboxItem
 >
 type MenuCheckboxItemProps = MenuCheckboxItemPrimitiveProps & { css?: CSS }
 
-const MenuCheckboxItem = React.forwardRef<
-  React.ElementRef<typeof StyledMenuCheckboxItem>,
+const MenuCheckboxItem = forwardRef<
+  ElementRef<typeof StyledMenuCheckboxItem>,
   MenuCheckboxItemProps
 >(({ children, ...props }, forwardedRef) => (
   <StyledMenuCheckboxItem {...props} ref={forwardedRef}>

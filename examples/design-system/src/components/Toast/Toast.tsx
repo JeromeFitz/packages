@@ -23,7 +23,7 @@ import type {
   IToastVariant,
 } from '@jeromefitz/design-system/src/components/Toast/Toast.types'
 import _debounce from 'lodash/debounce'
-import * as React from 'react'
+import { useEffect, useMemo, useRef, useState, Fragment } from 'react'
 
 const description = 'EARTHGANG Spillage Village...'
 const descriptionJoiner = ' [JOIN] '
@@ -36,7 +36,7 @@ interface IItems {
 // const variants: IToastVariant[] = ['default', 'error', 'info', 'success', 'warning']
 interface IVariant {
   variant: IToastVariant
-  icon: React.ReactElement
+  icon: ReactElement
 }
 const variants: IVariant[] = [
   { variant: 'default', icon: <Icon.Bell /> },
@@ -85,11 +85,11 @@ const items: IItems[] = [
 
 const ToastDemo = () => {
   // @todo(types)
-  const toaster = React.useRef<any>()
+  const toaster = useRef<any>()
 
-  const [description, descriptionSet] = React.useState('')
-  const [title, titleSet] = React.useState('')
-  const [variant, variantSet] = React.useState('default')
+  const [description, descriptionSet] = useState('')
+  const [title, titleSet] = useState('')
+  const [variant, variantSet] = useState('default')
 
   const handleDescriptionChange = (event) => {
     descriptionSet(event.target.value)
@@ -97,21 +97,18 @@ const ToastDemo = () => {
   const handleTitleChange = (event) => {
     titleSet(event.target.value)
   }
-  const debouncedDescriptionHandler = React.useMemo(
+  const debouncedDescriptionHandler = useMemo(
     () => _debounce(handleDescriptionChange, 300),
     []
   )
-  React.useEffect(() => {
+  useEffect(() => {
     return () => {
       debouncedDescriptionHandler.cancel()
     }
   }, [debouncedDescriptionHandler])
 
-  const debouncedTitleHandler = React.useMemo(
-    () => _debounce(handleTitleChange, 300),
-    []
-  )
-  React.useEffect(() => {
+  const debouncedTitleHandler = useMemo(() => _debounce(handleTitleChange, 300), [])
+  useEffect(() => {
     return () => {
       debouncedTitleHandler.cancel()
     }
@@ -132,7 +129,7 @@ const ToastDemo = () => {
         </Heading>
         {items.map((item, itemIdx) => {
           return (
-            <React.Fragment key={`toast-${itemIdx}`}>
+            <Fragment key={`toast-${itemIdx}`}>
               <Button
                 css={{ mr: '$2', mb: '$2' }}
                 onClick={() => {
@@ -143,7 +140,7 @@ const ToastDemo = () => {
               >
                 {item.title}
               </Button>
-            </React.Fragment>
+            </Fragment>
           )
         })}
         <Separator decorative my="3" size="full" />

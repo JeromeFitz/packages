@@ -69,7 +69,7 @@ function Home({}) {
           Lorem ipsum dolor.
         </Text>
       </Callout>
-      <NextLink href="/" passHref>
+      <NextLink href="/" legacyBehavior passHref>
         <Link>Back to Index</Link>
       </NextLink>
     </>

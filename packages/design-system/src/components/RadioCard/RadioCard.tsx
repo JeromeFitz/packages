@@ -1,4 +1,5 @@
-import * as React from 'react'
+import { forwardRef } from 'react'
+import type { ElementRef } from 'react'
 
 import {
   RadioCardGroup,
@@ -8,17 +9,16 @@ import {
 } from './RadioCard.styles'
 import type { RadioCardProps } from './RadioCard.types'
 
-const RadioCard = React.forwardRef<
-  React.ElementRef<typeof StyledRadio>,
-  RadioCardProps
->((props, forwardedRef) => (
-  <StyledRadio {...props} ref={forwardedRef}>
-    <StyledRadioButton>
-      <StyledRadioIndicator />
-    </StyledRadioButton>
-    {props.children}
-  </StyledRadio>
-))
+const RadioCard = forwardRef<ElementRef<typeof StyledRadio>, RadioCardProps>(
+  (props, forwardedRef) => (
+    <StyledRadio {...props} ref={forwardedRef}>
+      <StyledRadioButton>
+        <StyledRadioIndicator />
+      </StyledRadioButton>
+      {props.children}
+    </StyledRadio>
+  )
+)
 
 RadioCard.displayName = 'RadioCard'
 

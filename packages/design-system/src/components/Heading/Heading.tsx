@@ -1,5 +1,6 @@
 import merge from 'lodash/merge'
-import * as React from 'react'
+import { forwardRef } from 'react'
+import type { ElementRef } from 'react'
 
 import type { CSS } from '../../lib/stitches.config'
 import { Text } from '../Text'
@@ -11,7 +12,7 @@ import type {
 } from './Heading.types'
 import { DEFAULT_TAG } from './Heading.types'
 
-const Heading = React.forwardRef<React.ElementRef<typeof DEFAULT_TAG>, HeadingProps>(
+const Heading = forwardRef<ElementRef<typeof DEFAULT_TAG>, HeadingProps>(
   (props, forwardedRef) => {
     // '2' here is the default heading size variant
     const { size = '1', ...textProps } = props

@@ -1,18 +1,13 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const { withPlugins } = require('next-compose-plugins')
-const withTM = require('next-transpile-modules')(['@jeromefitz/design-system'])
-
 /**
  * @type {import('next').NextConfig}
  **/
 const nextConfig = {
-  compress: true,
   eslint: {
-    build: false,
+    ignoreDuringBuilds: true,
   },
   experimental: {
-    concurrentFeatures: false,
-    serverComponents: false,
+    appDir: false,
+    transpilePackages: ['@jeromefitz/design-system'],
   },
   swcMinify: true,
 }
@@ -21,4 +16,6 @@ const nextConfig = {
  * @note
  * [plugin, pluginConfig]
  */
-module.exports = withPlugins([[withTM]], nextConfig)
+// const plugins = []
+// module.exports = plugins.reduce((config, plugin) => plugin(config), nextConfig)
+module.exports = nextConfig

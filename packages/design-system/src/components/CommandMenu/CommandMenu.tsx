@@ -1,13 +1,14 @@
 import { Command } from 'cmdk'
 import { AnimatePresence, motion } from 'framer-motion'
-import React from 'react'
+import { useEffect, useRef } from 'react'
+import type { ReactNode } from 'react'
 
 import { Box, Kbd } from '../index'
 
 import { CommandItem, CommandShortCuts } from './CommandMenu.styles'
 
 interface CommandMenuItemProps {
-  children: React.ReactNode
+  children: ReactNode
   onSelect?: (value: string) => void
   shortcut?: string
   value?: string | any
@@ -33,7 +34,7 @@ function CommandMenuItem({
 }
 
 interface CommandMenuProps {
-  children: React.ReactNode | any
+  children: ReactNode | any
   open: boolean
   onOpenChange: (open: boolean) => void
   wrapperCss?: any
@@ -44,9 +45,9 @@ function CommandMenu({
   onOpenChange,
   wrapperCss = {},
 }: CommandMenuProps) {
-  const inputRef = React.useRef<HTMLInputElement | null>(null)
+  const inputRef = useRef<HTMLInputElement | null>(null)
 
-  React.useEffect(() => {
+  useEffect(() => {
     inputRef?.current?.focus()
   }, [])
 

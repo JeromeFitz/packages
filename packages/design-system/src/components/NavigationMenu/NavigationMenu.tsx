@@ -1,7 +1,8 @@
 /**
  * https://www.radix-ui.com/docs/primitives/components/navigation-menu
  */
-import * as React from 'react'
+import { forwardRef } from 'react'
+import type { ComponentProps, ElementRef } from 'react'
 
 import type { CSS } from '../../lib/stitches.config'
 
@@ -17,15 +18,13 @@ import {
 /**
  * @core
  */
-type StyledTriggerWithCaretProps = React.ComponentProps<
-  typeof NavigationMenuTrigger
-> & {
+type StyledTriggerWithCaretProps = ComponentProps<typeof NavigationMenuTrigger> & {
   children?: any
   css?: CSS
 }
 
-const StyledTriggerWithCaret = React.forwardRef<
-  React.ElementRef<typeof NavigationMenuTrigger>,
+const StyledTriggerWithCaret = forwardRef<
+  ElementRef<typeof NavigationMenuTrigger>,
   StyledTriggerWithCaretProps
 >(({ children, css, ...props }, forwardedRef) => (
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -36,7 +35,7 @@ const StyledTriggerWithCaret = React.forwardRef<
   </NavigationMenuTrigger>
 ))
 
-const StyledIndicatorWithArrow = React.forwardRef((props, forwardedRef) => (
+const StyledIndicatorWithArrow = forwardRef((props, forwardedRef) => (
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   <NavigationMenuIndicator {...props} ref={forwardedRef}>
@@ -51,7 +50,7 @@ const NavigationMenuIndicatorWithArrow = StyledIndicatorWithArrow
 /**
  * @custom
  */
-const Focused = React.forwardRef((props: any, forwardedRef) => (
+const Focused = forwardRef((props: any, forwardedRef) => (
   <NavigationMenuListItemFocus
     ref={forwardedRef}
     transition={{
@@ -63,7 +62,7 @@ const Focused = React.forwardRef((props: any, forwardedRef) => (
     {...props}
   />
 ))
-const Selected = React.forwardRef((props: any, forwardedRef) => (
+const Selected = forwardRef((props: any, forwardedRef) => (
   <NavigationMenuListItemSelect ref={forwardedRef} {...props} />
 ))
 

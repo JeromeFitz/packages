@@ -2,7 +2,8 @@
  * https://www.radix-ui.com/docs/primitives/components/dialog
  */
 import * as DialogPrimitive from '@radix-ui/react-dialog'
-import * as React from 'react'
+import { forwardRef } from 'react'
+import type { ComponentProps, ElementRef, ReactNode } from 'react'
 
 import { styled } from '../../lib/stitches.config'
 import type { CSS } from '../../lib/stitches.config'
@@ -10,8 +11,8 @@ import { Icon, IconButton } from '../index'
 import { overlayStyles } from '../Overlay/Overlay.styles'
 import { panelStyles } from '../Panel/Panel.styles'
 
-type DialogProps = React.ComponentProps<typeof DialogPrimitive.Root> & {
-  children: React.ReactNode
+type DialogProps = ComponentProps<typeof DialogPrimitive.Root> & {
+  children: ReactNode
 }
 
 const StyledOverlay = styled(DialogPrimitive.Overlay, overlayStyles, {
@@ -57,13 +58,11 @@ const StyledCloseButton = styled(DialogPrimitive.Close, {
   right: '$2',
 })
 
-type DialogContentPrimitiveProps = React.ComponentProps<
-  typeof DialogPrimitive.Content
->
+type DialogContentPrimitiveProps = ComponentProps<typeof DialogPrimitive.Content>
 type DialogContentProps = DialogContentPrimitiveProps & { css?: CSS }
 
-export const DialogContent = React.forwardRef<
-  React.ElementRef<typeof StyledContent>,
+export const DialogContent = forwardRef<
+  ElementRef<typeof StyledContent>,
   DialogContentProps
 >(({ children, ...props }, forwardedRef) => (
   <StyledContent {...props} ref={forwardedRef}>

@@ -1,9 +1,9 @@
-import React from 'react'
+import type { FC } from 'react'
 
 import { BlockquoteContent, BlockquoteWrapper } from './Blockquote.styles'
 import type { BlockquoteProps } from './Blockquote.types'
 
-const Blockquote: React.FC = ({ children, ...rest }: BlockquoteProps) => {
+const Blockquote: FC = ({ children, ...rest }: BlockquoteProps) => {
   return (
     <BlockquoteWrapper {...rest}>
       <BlockquoteContent>{children}</BlockquoteContent>

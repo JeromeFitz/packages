@@ -3,7 +3,8 @@
  *       not an implementation _from_.
  */
 
-import NextImage from 'next/image'
+// @todo(next) upgrade to new image
+import NextImage from 'next/legacy/image'
 
 import { Box } from '../../components/Box'
 import { styled } from '../../lib/stitches.config'

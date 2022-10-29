@@ -2,7 +2,8 @@
  * https://www.radix-ui.com/docs/primitives/components/slider
  */
 import * as SliderPrimitive from '@radix-ui/react-slider'
-import * as React from 'react'
+import { forwardRef } from 'react'
+import type { ComponentProps, ElementRef } from 'react'
 
 import { styled } from '../../lib/stitches.config'
 import type { CSS } from '../../lib/stitches.config'
@@ -94,10 +95,10 @@ const StyledSlider = styled(SliderPrimitive.Root, {
   },
 })
 
-type SliderPrimitiveProps = React.ComponentProps<typeof SliderPrimitive.Root>
+type SliderPrimitiveProps = ComponentProps<typeof SliderPrimitive.Root>
 type SliderProps = SliderPrimitiveProps & { css?: CSS }
 
-const Slider = React.forwardRef<React.ElementRef<typeof StyledSlider>, SliderProps>(
+const Slider = forwardRef<ElementRef<typeof StyledSlider>, SliderProps>(
   (props, forwardedRef) => {
     const hasRange = Array.isArray(props.defaultValue || props.value)
     const thumbsArray = hasRange

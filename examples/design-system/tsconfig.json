@@ -53,8 +53,13 @@
       "~svg/*": ["src/svg/*"],
       "~theme/*": ["src/theme/*"],
       "~utils/*": ["src/utils/*"]
-    }
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  "include": ["src", "index.d.ts", "next-env.d.ts"],
+  "include": ["src", "index.d.ts", "next-env.d.ts", ".next/types/**/*.ts"],
   "exclude": ["node_modules", "tests/*.test.ts"]
 }

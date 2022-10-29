@@ -1,10 +1,10 @@
-import React from 'react'
+import type { ReactNode } from 'react'
 
 type CalloutVariant = 'error' | 'info' | 'note' | 'quote' | 'success' | 'warning'
 
 interface CalloutProps {
-  children: React.ReactNode
-  label?: React.ReactNode | string
+  children: ReactNode
+  label?: ReactNode | string
   variant?: CalloutVariant
 }
 

@@ -1,7 +1,7 @@
 /**
  * https://www.radix-ui.com/docs/primitives/components/scroll-area
  */
-import * as React from 'react'
+import { useEffect, useLayoutEffect, useRef } from 'react'
 
 import { Flex, Box } from '../index'
 
@@ -13,9 +13,7 @@ function canUseDOM() {
   )
 }
 
-const useIsomorphicLayoutEffect = canUseDOM()
-  ? React.useLayoutEffect
-  : React.useEffect
+const useIsomorphicLayoutEffect = canUseDOM() ? useLayoutEffect : useEffect
 
 type Point = {
   x: number
@@ -32,12 +30,12 @@ type ScrollAreaProps = {
 }
 
 const ScrollArea = (props: ScrollAreaProps) => {
-  const thumbRef = React.useRef<HTMLDivElement>(null)
-  const wrapperRef = React.useRef<HTMLDivElement>(null)
-  const contentRef = React.useRef<HTMLDivElement>(null)
-  const frameUpdateRef = React.useRef<number>(0)
-  const lastDragPos = React.useRef<Point>({ x: 0, y: 0 })
-  const originalBodyPointerEvents = React.useRef(
+  const thumbRef = useRef<HTMLDivElement>(null)
+  const wrapperRef = useRef<HTMLDivElement>(null)
+  const contentRef = useRef<HTMLDivElement>(null)
+  const frameUpdateRef = useRef<number>(0)
+  const lastDragPos = useRef<Point>({ x: 0, y: 0 })
+  const originalBodyPointerEvents = useRef(
     typeof document === 'undefined' ? '' : document.body.style.pointerEvents
   )
 

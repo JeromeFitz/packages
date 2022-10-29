@@ -8,7 +8,6 @@ import {
   ToolbarToggleGroup,
   ToolbarToggleItem,
 } from '@jeromefitz/design-system/src/components'
-import * as React from 'react'
 
 // import { NavigationMenu } from '../NavigationMenu'
 

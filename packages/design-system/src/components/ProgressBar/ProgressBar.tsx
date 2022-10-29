@@ -2,7 +2,8 @@
  * https://www.radix-ui.com/docs/primitives/components/progress
  */
 import * as ProgressPrimitive from '@radix-ui/react-progress'
-import * as React from 'react'
+import { forwardRef } from 'react'
+import type { ComponentProps, ElementRef } from 'react'
 
 import { styled, keyframes } from '../../lib/stitches.config'
 import type { CSS, VariantProps } from '../../lib/stitches.config'
@@ -82,12 +83,12 @@ const ProgressBarIndicator = styled(ProgressPrimitive.Indicator, {
 })
 
 type ProgressBarVariants = VariantProps<typeof StyledProgressBar>
-type ProgressBarPrimitiveProps = React.ComponentProps<typeof ProgressPrimitive.Root>
+type ProgressBarPrimitiveProps = ComponentProps<typeof ProgressPrimitive.Root>
 type ProgressBarProps = ProgressBarPrimitiveProps &
   ProgressBarVariants & { css?: CSS }
 
-const ProgressBar = React.forwardRef<
-  React.ElementRef<typeof StyledProgressBar>,
+const ProgressBar = forwardRef<
+  ElementRef<typeof StyledProgressBar>,
   ProgressBarProps
 >(({ value, max = 100, ...props }, forwardedRef) => {
   const percentage = value != null ? Math.round((value / max) * 100) : null

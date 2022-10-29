@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react'
+
 import { Icon } from '../Icon'
 
 import type { CalloutVariant } from './Callout.types'
@@ -5,7 +7,7 @@ import type { CalloutVariant } from './Callout.types'
 /**
  * @question(icon) should we be able to pass custom labels to Icon?
  */
-const getVariantIcon = (variant: CalloutVariant): React.ReactNode => {
+const getVariantIcon = (variant: CalloutVariant): ReactNode => {
   switch (variant) {
     case 'error':
       return <Icon.Error />

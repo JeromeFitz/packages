@@ -1,6 +1,7 @@
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { motion, AnimatePresence } from 'framer-motion'
-import * as React from 'react'
+import { forwardRef, useId } from 'react'
+import type { ElementRef } from 'react'
 
 import { Box } from '../Box'
 import { Flex } from '../Flex'
@@ -50,12 +51,12 @@ interface SheetContentPropsExtended extends SheetContentProps {
   handleIsSheetOpen: (k: boolean) => void
 }
 
-const SheetContent = React.forwardRef<
-  React.ElementRef<typeof StyledContent>,
+const SheetContent = forwardRef<
+  ElementRef<typeof StyledContent>,
   SheetContentPropsExtended
 >(({ children, handleIsSheetOpen, ...props }, forwardedRef) => {
-  const keyBox1 = React.useId()
-  const keyBox2 = React.useId()
+  const keyBox1 = useId()
+  const keyBox2 = useId()
   return (
     <DialogPrimitive.Portal>
       <StyledContent {...props} ref={forwardedRef}>

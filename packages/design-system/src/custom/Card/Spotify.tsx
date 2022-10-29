@@ -14,7 +14,8 @@
  *  breaks through it like the Kool-Aid Man.
  */
 
-import NextImage from 'next/image'
+// @todo(next) upgrade to new image
+import NextImage from 'next/legacy/image'
 
 import { Box } from '../../components/Box'
 import { Flex } from '../../components/Flex'

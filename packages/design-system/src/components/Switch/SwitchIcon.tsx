@@ -2,7 +2,8 @@
  * https://www.radix-ui.com/docs/primitives/components/switch
  */
 import * as SwitchPrimitive from '@radix-ui/react-switch'
-import * as React from 'react'
+import { forwardRef, useMemo } from 'react'
+import type { ElementRef, ReactNode } from 'react'
 
 import { darkTheme, styled } from '../../lib/stitches.config'
 // import { styled } from '../../lib/stitches.config'
@@ -137,34 +138,33 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
 })
 
 interface SwitchIconProps extends SwitchProps {
-  icon?: React.ReactNode
-  iconOff?: React.ReactNode
-  iconOn?: React.ReactNode
+  icon?: ReactNode
+  iconOff?: ReactNode
+  iconOn?: ReactNode
 }
 
-const SwitchIcon = React.forwardRef<
-  React.ElementRef<typeof StyledSwitch>,
-  SwitchIconProps
->(({ checked, icon, iconOff, iconOn, ...props }, forwardedRef) => {
-  const iconSwitch = React.useMemo(() => {
-    const hasIcon = icon || iconOn || iconOff
-    const hasIconOn = Boolean(iconOn)
-    const hasIconOff = Boolean(iconOff)
+const SwitchIcon = forwardRef<ElementRef<typeof StyledSwitch>, SwitchIconProps>(
+  ({ checked, icon, iconOff, iconOn, ...props }, forwardedRef) => {
+    const iconSwitch = useMemo(() => {
+      const hasIcon = icon || iconOn || iconOff
+      const hasIconOn = Boolean(iconOn)
+      const hasIconOff = Boolean(iconOff)
 
-    if (!hasIcon) return null
-    if (hasIconOn && checked) return iconOn
-    if (hasIconOff && !checked) return iconOff
-    return hasIcon
-  }, [checked, icon, iconOff, iconOn])
+      if (!hasIcon) return null
+      if (hasIconOn && checked) return iconOn
+      if (hasIconOff && !checked) return iconOff
+      return hasIcon
+    }, [checked, icon, iconOff, iconOn])
 
-  return (
-    <StyledSwitch checked={checked} {...props} ref={forwardedRef}>
-      <StyledThumb>
-        <StyledSwitchIcon>{iconSwitch}</StyledSwitchIcon>
-      </StyledThumb>
-    </StyledSwitch>
-  )
-})
+    return (
+      <StyledSwitch checked={checked} {...props} ref={forwardedRef}>
+        <StyledThumb>
+          <StyledSwitchIcon>{iconSwitch}</StyledSwitchIcon>
+        </StyledThumb>
+      </StyledSwitch>
+    )
+  }
+)
 
 SwitchIcon.displayName = 'SwitchIcon'
 

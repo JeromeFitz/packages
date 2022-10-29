@@ -17,12 +17,12 @@ import {
   SelectScrollUpButton,
   SelectScrollDownButton,
 } from '@jeromefitz/design-system/src/components'
-import * as React from 'react'
+import { useState } from 'react'
 
 const defaultValue = 'blueberry'
 
 const SelectDemo = () => {
-  const [selectValue, selectValueSet] = React.useState(defaultValue)
+  const [selectValue, selectValueSet] = useState(defaultValue)
 
   return (
     <Box>
