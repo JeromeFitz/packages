@@ -113,7 +113,7 @@ jobs:
       - name: '📛  Commit Message'
         id: pull-commit-message
         run: |
-          echo "::set-output name=message::$(git log --no-merges -1 --oneline)"
+          echo "message=$(git log --no-merges -1 --oneline)" >> $GITHUB_OUTPUT
 
       - name: '🏗️  Build'
         id: pull-build
