@@ -203,7 +203,7 @@ importers:
       '@radix-ui/react-use-rect': 1.0.0
       '@radix-ui/react-use-size': 1.0.0
       '@radix-ui/react-visually-hidden': 1.0.1
-      '@stitches/react': 1.2.8
+      '@stitches/react': 1.3.1-1
       '@storybook/addon-a11y': 6.5.13
       '@storybook/addon-actions': 6.5.13
       '@storybook/addon-docs': 6.5.13
@@ -288,7 +288,7 @@ importers:
       '@radix-ui/react-use-rect': 1.0.0_react@18.2.0
       '@radix-ui/react-use-size': 1.0.0_react@18.2.0
       '@radix-ui/react-visually-hidden': 1.0.1_biqbaboplfbrettd7655fr4n2y
-      '@stitches/react': 1.2.8_react@18.2.0
+      '@stitches/react': 1.3.1-1_react@18.2.0
       emoji-regex: 10.2.1
       node-emoji: 1.11.0
       smoothscroll-polyfill: 0.4.4
@@ -314,7 +314,7 @@ importers:
       cmdk: 0.1.20_knhnagtyfncgg2hpin7s37uixq
       framer-motion: 7.6.2_biqbaboplfbrettd7655fr4n2y
       lodash: 4.17.21
-      multiple-themes-stitches: 0.0.10_wie4s37meamnszwyplrdyzdzeq
+      multiple-themes-stitches: 0.0.10_mkzmvda5eugef23jzfwqqvrlmu
       next: 13.0.0_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -6354,10 +6354,10 @@ packages:
       '@sinonjs/commons': 1.8.3
     dev: true
 
-  /@stitches/react/1.2.8_react@18.2.0:
+  /@stitches/react/1.3.1-1_react@18.2.0:
     resolution:
       {
-        integrity: sha512-9g9dWI4gsSVe8bNLlb+lMkBYsnIKCZTmvqvDG+Avnn69XfmHZKiaMrx7cgTaddq7aTPPmXiTsbFcUy0xgI4+wA==,
+        integrity: sha512-ErptbQehV25Da6LtZuM/51kGNK/UvlRY2da9IhhfXQ9h4bmf2f+lYFiJQ9j43O1kwYr6iYJIBRM47FEbsUWffw==,
       }
     peerDependencies:
       react: '>= 16.3.0'
@@ -19898,7 +19898,7 @@ packages:
       minimatch: 3.1.2
     dev: false
 
-  /multiple-themes-stitches/0.0.10_wie4s37meamnszwyplrdyzdzeq:
+  /multiple-themes-stitches/0.0.10_mkzmvda5eugef23jzfwqqvrlmu:
     resolution:
       {
         integrity: sha512-sqm+ArHNf/NRP4sx3T9KFSKEZ18Bb8u/qjhA0eXF2bYYVo+JNqSWVtaBnNVr3vGE5ekgDwTdJmvqZP3eoq6UpA==,
@@ -19918,7 +19918,7 @@ packages:
       react-dom:
         optional: true
     dependencies:
-      '@stitches/react': 1.2.8_react@18.2.0
+      '@stitches/react': 1.3.1-1_react@18.2.0
       '@storybook/csf': 0.0.1
       '@storybook/theming': 6.5.13_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
