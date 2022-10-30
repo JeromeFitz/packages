@@ -37,3 +37,7 @@ tsconfig.tsbuildinfo
 .turbo
 .tsbuildinfo
 !.github/actions/release
+
+# pnpm
+# # Note sure why this started happening :X
+~/*
