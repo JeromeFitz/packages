@@ -40,8 +40,12 @@ interface CredentialProps {
   refreshToken: string
 }
 
+interface NowPlayingProps {
+  withImages?: boolean
+}
+
 type GetProps = {
-  nowPlaying({ withImages: boolean }): any
+  nowPlaying({ withImages }: NowPlayingProps): any
   topArtists({ limit, offset, time_range, withImages }: QueryProps): any
   topTracks({ limit, offset, time_range, withImages }: QueryProps): any
 }
