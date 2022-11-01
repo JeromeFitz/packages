@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@jeromefitz/utils": "workspace:*",
-    "@types/lodash": "4.14.186",
+    "@types/lodash": "4.14.187",
     "lodash": "4.17.21"
   },
   "peerDependencies": {
