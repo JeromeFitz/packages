@@ -98,7 +98,7 @@ importers:
 
   examples/design-system:
     specifiers:
-      '@heroicons/react': 2.0.12
+      '@heroicons/react': 2.0.13
       '@jeromefitz/design-system': workspace:*
       '@types/react': 18.0.24
       '@types/react-dom': 18.0.8
@@ -111,7 +111,7 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0
     dependencies:
-      '@heroicons/react': 2.0.12_react@18.2.0
+      '@heroicons/react': 2.0.13_react@18.2.0
       '@jeromefitz/design-system': link:../../packages/design-system
       cmdk: 0.1.20_knhnagtyfncgg2hpin7s37uixq
       date-fns: 2.29.3
@@ -148,7 +148,7 @@ importers:
 
   packages/design-system:
     specifiers:
-      '@heroicons/react': 2.0.12
+      '@heroicons/react': 2.0.13
       '@radix-ui/colors': 0.1.8
       '@radix-ui/primitive': 1.0.0
       '@radix-ui/react-accessible-icon': 1.0.1
@@ -294,7 +294,7 @@ importers:
       node-emoji: 1.11.0
       smoothscroll-polyfill: 0.4.4
     devDependencies:
-      '@heroicons/react': 2.0.12_react@18.2.0
+      '@heroicons/react': 2.0.13_react@18.2.0
       '@radix-ui/colors': 0.1.8
       '@radix-ui/react-icons': 1.1.1_react@18.2.0
       '@storybook/addon-a11y': 6.5.13_biqbaboplfbrettd7655fr4n2y
@@ -3128,8 +3128,8 @@ packages:
     resolution: {integrity: sha512-82cpyJyKRoQoRi+14ibCeGPu0CwypgtBAdBhq1WfvagpCZNKqwXbKwXllYSMG91DhmG4jt9gN8eP6lGOtozuaw==}
     dev: true
 
-  /@heroicons/react/2.0.12_react@18.2.0:
-    resolution: {integrity: sha512-FZxKh3i9aKIDxyALTgIpSF2t6V6/eZfF5mRu41QlwkX3Oxzecdm1u6dpft6PQGxIBwO7TKYWaMAYYL8mp/EaOg==}
+  /@heroicons/react/2.0.13_react@18.2.0:
+    resolution: {integrity: sha512-iSN5XwmagrnirWlYEWNPdCDj9aRYVD/lnK3JlsC9/+fqGF80k8C7rl+1HCvBX0dBoagKqOFBs6fMhJJ1hOg1EQ==}
     peerDependencies:
       react: '>= 16'
     dependencies:
