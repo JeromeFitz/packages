@@ -45,7 +45,7 @@
     "@jeromefitz/utils": "workspace:*",
     "@types/lodash": "4.14.187",
     "lodash": "4.17.21",
-    "sharp": "0.31.1"
+    "sharp": "0.31.2"
   },
   "peerDependencies": {
     "@jeromefitz/utils": "^2.1.0",
