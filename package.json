@@ -59,7 +59,7 @@
     "@types/is-ci": "3.0.0",
     "@types/node": "16.11.7",
     "dotenv": "16.0.3",
-    "husky": "8.0.1",
+    "husky": "8.0.2",
     "is-ci": "3.0.1",
     "lint-staged": "13.0.3",
     "lodash": "4.17.21",

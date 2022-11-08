@@ -17,7 +17,7 @@ importers:
       '@types/is-ci': 3.0.0
       '@types/node': 16.11.7
       dotenv: 16.0.3
-      husky: 8.0.1
+      husky: 8.0.2
       is-ci: 3.0.1
       lint-staged: 13.0.3
       lodash: 4.17.21
@@ -42,7 +42,7 @@ importers:
       '@types/is-ci': 3.0.0
       '@types/node': 16.11.7
       dotenv: 16.0.3
-      husky: 8.0.1
+      husky: 8.0.2
       is-ci: 3.0.1
       lint-staged: 13.0.3
       lodash: 4.17.21
@@ -12542,8 +12542,8 @@ packages:
     engines: {node: '>=12.20.0'}
     dev: false
 
-  /husky/8.0.1:
-    resolution: {integrity: sha512-xs7/chUH/CKdOCs7Zy0Aev9e/dKOMZf3K1Az1nar3tzlv0jfqnYtu235bstsWTmXOR0EfINrPa97yy4Lz6RiKw==}
+  /husky/8.0.2:
+    resolution: {integrity: sha512-Tkv80jtvbnkK3mYWxPZePGFpQ/tT3HNSs/sasF9P2YfkMezDl3ON37YN6jUUI4eTg5LcyVynlb6r4eyvOmspvg==}
     engines: {node: '>=14'}
     hasBin: true
     dev: false
