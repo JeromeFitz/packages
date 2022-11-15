@@ -234,7 +234,7 @@ importers:
       storybook-addon-themes: 6.1.0
       swr: 1.3.0
       typescript: 4.8.4
-      vite: 3.2.3
+      vite: 3.2.4
     dependencies:
       '@radix-ui/primitive': 1.0.0
       '@radix-ui/react-accessible-icon': 1.0.1_biqbaboplfbrettd7655fr4n2y
@@ -304,14 +304,14 @@ importers:
       '@storybook/addon-links': 6.5.13_biqbaboplfbrettd7655fr4n2y
       '@storybook/addon-notes': 5.3.21_2zx2umvpluuhvlq44va5bta2da
       '@storybook/addon-storysource': 6.5.13_biqbaboplfbrettd7655fr4n2y
-      '@storybook/builder-vite': 0.2.5_yiv3o2p6fbnlld6djxksxcvkd4
+      '@storybook/builder-vite': 0.2.5_rgkdlyzugzxrnahoth2cjw4oga
       '@storybook/mdx2-csf': 0.0.3
       '@storybook/react': 6.5.13_fbefk2eymgu7oopij3e3f5ww4u
       '@storybook/theming': 6.5.13_biqbaboplfbrettd7655fr4n2y
       '@types/lodash': 4.14.189
       '@types/react': 18.0.25
       '@types/react-dom': 18.0.9
-      '@vitejs/plugin-react': 2.2.0_vite@3.2.3
+      '@vitejs/plugin-react': 2.2.0_vite@3.2.4
       cmdk: 0.1.20_2zx2umvpluuhvlq44va5bta2da
       framer-motion: 7.6.7_biqbaboplfbrettd7655fr4n2y
       lodash: 4.17.21
@@ -323,7 +323,7 @@ importers:
       storybook-addon-themes: 6.1.0_biqbaboplfbrettd7655fr4n2y
       swr: 1.3.0_react@18.2.0
       typescript: 4.8.4
-      vite: 3.2.3
+      vite: 3.2.4
 
   packages/git-cz:
     specifiers:
@@ -3435,7 +3435,7 @@ packages:
       chalk: 4.1.2
     dev: true
 
-  /@joshwooding/vite-plugin-react-docgen-typescript/0.0.5_a6ew7tpsyhac2tv7oyit7cvkku:
+  /@joshwooding/vite-plugin-react-docgen-typescript/0.0.5_vxr3pvdk3bafxjnkdtcaac2ycq:
     resolution: {integrity: sha512-HwAEj/vAP1+hzBfIv9DTCyg+1O0/LG48Up7j1RmJ+pFwjb/wRxzUBco4LqKFKe7SZ0M6IyASNh1oKP3yHnJElA==}
     peerDependencies:
       typescript: '>= 4.3.x'
@@ -3447,7 +3447,7 @@ packages:
       magic-string: 0.26.7
       react-docgen-typescript: 2.2.2_typescript@4.8.4
       typescript: 4.8.4
-      vite: 3.2.3
+      vite: 3.2.4
     dev: true
 
   /@jridgewell/gen-mapping/0.1.1:
@@ -5714,7 +5714,7 @@ packages:
       util-deprecate: 1.0.2
     dev: true
 
-  /@storybook/builder-vite/0.2.5_yiv3o2p6fbnlld6djxksxcvkd4:
+  /@storybook/builder-vite/0.2.5_rgkdlyzugzxrnahoth2cjw4oga:
     resolution: {integrity: sha512-0PktEaYsbR6gGE/YDkW/tI1VxVnaPNZpHGpiWfDU7c5hjCajWYzdFTgHOwcXT8tiTs+WN/rvoCPT2iAhSCcHIw==}
     peerDependencies:
       '@storybook/mdx2-csf': ^0.0.3
@@ -5732,14 +5732,14 @@ packages:
       vue-docgen-api:
         optional: true
     dependencies:
-      '@joshwooding/vite-plugin-react-docgen-typescript': 0.0.5_a6ew7tpsyhac2tv7oyit7cvkku
+      '@joshwooding/vite-plugin-react-docgen-typescript': 0.0.5_vxr3pvdk3bafxjnkdtcaac2ycq
       '@storybook/core-common': 6.5.13_yalvw3r2waubxycyb7k7qsruca
       '@storybook/mdx1-csf': 0.0.4_react@18.2.0
       '@storybook/mdx2-csf': 0.0.3
       '@storybook/node-logger': 6.5.13
       '@storybook/semver': 7.3.2
       '@storybook/source-loader': 6.5.13_biqbaboplfbrettd7655fr4n2y
-      '@vitejs/plugin-react': 2.2.0_vite@3.2.3
+      '@vitejs/plugin-react': 2.2.0_vite@3.2.4
       ast-types: 0.14.2
       es-module-lexer: 0.9.3
       glob: 7.2.3
@@ -5748,7 +5748,7 @@ packages:
       react-docgen: 6.0.0-alpha.3
       slash: 3.0.0
       sveltedoc-parser: 4.2.1
-      vite: 3.2.3
+      vite: 3.2.4
     transitivePeerDependencies:
       - '@babel/core'
       - eslint
@@ -7347,7 +7347,7 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: false
 
-  /@vitejs/plugin-react/2.2.0_vite@3.2.3:
+  /@vitejs/plugin-react/2.2.0_vite@3.2.4:
     resolution: {integrity: sha512-FFpefhvExd1toVRlokZgxgy2JtnBOdp4ZDsq7ldCWaqGSGn9UhWMAVm/1lxPL14JfNS5yGz+s9yFrQY6shoStA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -7360,7 +7360,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.19.6_@babel+core@7.19.6
       magic-string: 0.26.7
       react-refresh: 0.14.0
-      vite: 3.2.3
+      vite: 3.2.4
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -19638,8 +19638,8 @@ packages:
       vfile-message: 3.1.2
     dev: true
 
-  /vite/3.2.3:
-    resolution: {integrity: sha512-h8jl1TZ76eGs3o2dIBSsvXDLb1m/Ec1iej8ZMdz+PsaFUsftZeWe2CZOI3qogEsMNaywc17gu0q6cQDzh/weCQ==}
+  /vite/3.2.4:
+    resolution: {integrity: sha512-Z2X6SRAffOUYTa+sLy3NQ7nlHFU100xwanq1WDwqaiFiCe+25zdxP1TfCS5ojPV2oDDcXudHIoPnI1Z/66B7Yw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
