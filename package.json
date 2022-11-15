@@ -68,7 +68,7 @@
     "semantic-release": "19.0.5",
     "semantic-release-monorepo": "7.0.5",
     "syncpack": "8.3.9",
-    "tsup": "6.4.0",
+    "tsup": "6.5.0",
     "turbo": "1.6.3"
   }
 }
