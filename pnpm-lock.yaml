@@ -229,7 +229,7 @@ importers:
       node-emoji: 1.11.0
       react: 18.2.0
       react-dom: 18.2.0
-      serve: 14.1.1
+      serve: 14.1.2
       smoothscroll-polyfill: 0.4.4
       storybook-addon-themes: 6.1.0
       swr: 1.3.0
@@ -319,7 +319,7 @@ importers:
       next: 13.0.0_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      serve: 14.1.1
+      serve: 14.1.2
       storybook-addon-themes: 6.1.0_biqbaboplfbrettd7655fr4n2y
       swr: 1.3.0_react@18.2.0
       typescript: 4.8.4
@@ -17772,8 +17772,8 @@ packages:
       - supports-color
     dev: true
 
-  /serve/14.1.1:
-    resolution: {integrity: sha512-7RhRDEirZ7Qyee4QWhBHO9qRtjIGsIPGecDDPzNzlOsjDiZWcq36GS8FioVJAuJPVJBBDTsGp33WWOO4B9A82g==}
+  /serve/14.1.2:
+    resolution: {integrity: sha512-luwVfJwbeE7dhCKeRU0vIBpt4bXdbAfzwsWJIQ5eqrIW2e+4nLWXbSlZ0WzelSFHQq+FlueOW6dr90jEewS9zw==}
     engines: {node: '>= 14'}
     hasBin: true
     dependencies:
