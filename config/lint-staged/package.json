@@ -33,6 +33,6 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "lint-staged": "13.0.4"
+    "lint-staged": "13.1.0"
   }
 }
