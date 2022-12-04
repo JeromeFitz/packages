@@ -61,7 +61,7 @@
     "dotenv": "16.0.3",
     "husky": "8.0.2",
     "is-ci": "3.0.1",
-    "lint-staged": "13.0.4",
+    "lint-staged": "13.1.0",
     "lodash": "4.17.21",
     "pinst": "3.0.0",
     "pretty-quick": "3.1.3",
