@@ -37,3 +37,4 @@ tsconfig.tsbuildinfo
 .turbo
 .tsbuildinfo
 !.github/actions/release
+.vscode/settings.json
