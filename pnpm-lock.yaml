@@ -386,7 +386,7 @@ importers:
   packages/release-notes-generator:
     specifiers:
       '@octokit/rest': 19.0.5
-      '@types/conventional-commits-parser': 3.0.2
+      '@types/conventional-commits-parser': 3.0.3
       '@types/lodash': 4.14.191
       '@types/read-pkg-up': 6.0.0
       conventional-commits-filter: 2.0.7
@@ -405,7 +405,7 @@ importers:
       read-pkg-up: 7.0.1
       semver: 7.3.8
     devDependencies:
-      '@types/conventional-commits-parser': 3.0.2
+      '@types/conventional-commits-parser': 3.0.3
       '@types/lodash': 4.14.191
       '@types/read-pkg-up': 6.0.0
       lodash: 4.17.21
@@ -7089,10 +7089,10 @@ packages:
       '@babel/types': 7.19.4
     dev: true
 
-  /@types/conventional-commits-parser/3.0.2:
-    resolution: {integrity: sha512-1kVPUHFaart1iGRFxKn8WNXYEDVAgMb+DLatgql2dGg9jTGf3bNxWtN//C/tDG3ckOLg4u7SSx+qcn8VjzI5zg==}
+  /@types/conventional-commits-parser/3.0.3:
+    resolution: {integrity: sha512-aoUKfRQYvGMH+spFpOTX9jO4nZoz9/BKp4hlHPxL3Cj2r2Xj+jEcwlXtFIyZr5uL8bh1nbWynDEYaAota+XqPg==}
     dependencies:
-      '@types/node': 16.11.39
+      '@types/node': 18.0.0
     dev: true
 
   /@types/debug/4.1.7:
@@ -7225,10 +7225,6 @@ packages:
   /@types/node/12.20.55:
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
     dev: false
-
-  /@types/node/16.11.39:
-    resolution: {integrity: sha512-K0MsdV42vPwm9L6UwhIxMAOmcvH/1OoVkZyCgEtVu4Wx7sElGloy/W7kMBNe/oJ7V/jW9BVt1F6RahH6e7tPXw==}
-    dev: true
 
   /@types/node/16.11.41:
     resolution: {integrity: sha512-mqoYK2TnVjdkGk8qXAVGc/x9nSaTpSrFaGFm43BUH3IdoBV0nta6hYaGmdOvIMlbHJbUEVen3gvwpwovAZKNdQ==}
@@ -8927,7 +8923,7 @@ packages:
       mississippi: 3.0.0
       mkdirp: 0.5.6
       move-concurrently: 1.0.1
-      promise-inflight: 1.0.1_bluebird@3.7.2
+      promise-inflight: 1.0.1
       rimraf: 2.7.1
       ssri: 6.0.2
       unique-filename: 1.1.1
@@ -16598,17 +16594,6 @@ packages:
     peerDependenciesMeta:
       bluebird:
         optional: true
-    dev: true
-
-  /promise-inflight/1.0.1_bluebird@3.7.2:
-    resolution: {integrity: sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==}
-    peerDependencies:
-      bluebird: '*'
-    peerDependenciesMeta:
-      bluebird:
-        optional: true
-    dependencies:
-      bluebird: 3.7.2
     dev: true
 
   /promise.allsettled/1.0.5:
