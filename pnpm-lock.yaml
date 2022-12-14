@@ -105,7 +105,7 @@ importers:
       cmdk: 0.1.20
       date-fns: 2.29.3
       date-fns-tz: 1.3.7
-      framer-motion: 7.8.0
+      framer-motion: 7.9.1
       next: 13.0.0
       next-themes: 0.2.1
       react: 18.2.0
@@ -116,7 +116,7 @@ importers:
       cmdk: 0.1.20_ib3m5ricvtkl2cll7qpr2f6lvq
       date-fns: 2.29.3
       date-fns-tz: 1.3.7_date-fns@2.29.3
-      framer-motion: 7.8.0_biqbaboplfbrettd7655fr4n2y
+      framer-motion: 7.9.1_biqbaboplfbrettd7655fr4n2y
       next: 13.0.0_biqbaboplfbrettd7655fr4n2y
       next-themes: 0.2.1_r5sq4deac3rmm2d5onhwvomqve
       react: 18.2.0
@@ -222,7 +222,7 @@ importers:
       '@vitejs/plugin-react': 2.2.0
       cmdk: 0.1.20
       emoji-regex: 10.2.1
-      framer-motion: 7.8.0
+      framer-motion: 7.9.1
       lodash: 4.17.21
       multiple-themes-stitches: 0.0.10
       next: 13.0.0
@@ -313,7 +313,7 @@ importers:
       '@types/react-dom': 18.0.9
       '@vitejs/plugin-react': 2.2.0_vite@3.2.5
       cmdk: 0.1.20_ib3m5ricvtkl2cll7qpr2f6lvq
-      framer-motion: 7.8.0_biqbaboplfbrettd7655fr4n2y
+      framer-motion: 7.9.1_biqbaboplfbrettd7655fr4n2y
       lodash: 4.17.21
       multiple-themes-stitches: 0.0.10_lrmibt5y37j5zwp36d47by7ccq
       next: 13.0.0_biqbaboplfbrettd7655fr4n2y
@@ -8923,7 +8923,7 @@ packages:
       mississippi: 3.0.0
       mkdirp: 0.5.6
       move-concurrently: 1.0.1
-      promise-inflight: 1.0.1
+      promise-inflight: 1.0.1_bluebird@3.7.2
       rimraf: 2.7.1
       ssri: 6.0.2
       unique-filename: 1.1.1
@@ -11848,8 +11848,8 @@ packages:
       map-cache: 0.2.2
     dev: true
 
-  /framer-motion/7.8.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-Yzbc0RGzKnkdRxPZbJIVtizX40hLGErXBRI6Uz1WE0OLNZpZqqZa9HaI/sdAhrx4215uczQ+m3C9PA+pwHf+gA==}
+  /framer-motion/7.9.1_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-oYZkESoGsLAc5P+ycz+IrPEkXB9i+e1LeIMZczO8cHKSo5LW4r4JXan9wRjn2u77Zn59K0UK1kGjxcNyLzbFPQ==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
@@ -16587,6 +16587,17 @@ packages:
     peerDependenciesMeta:
       bluebird:
         optional: true
+    dev: true
+
+  /promise-inflight/1.0.1_bluebird@3.7.2:
+    resolution: {integrity: sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==}
+    peerDependencies:
+      bluebird: '*'
+    peerDependenciesMeta:
+      bluebird:
+        optional: true
+    dependencies:
+      bluebird: 3.7.2
     dev: true
 
   /promise.allsettled/1.0.5:
