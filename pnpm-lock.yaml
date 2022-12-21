@@ -457,16 +457,16 @@ importers:
       isomorphic-unfetch: 3.1.0
       lodash: 4.17.21
       plaiceholder: 2.5.0
-      sharp: 0.31.2
+      sharp: 0.31.3
     dependencies:
       github-slugger: 2.0.0
       isomorphic-unfetch: 3.1.0
-      plaiceholder: 2.5.0_sharp@0.31.2
+      plaiceholder: 2.5.0_sharp@0.31.3
     devDependencies:
       '@jeromefitz/utils': link:../utils
       '@types/lodash': 4.14.191
       lodash: 4.17.21
-      sharp: 0.31.2
+      sharp: 0.31.3
 
   packages/utils:
     specifiers:
@@ -16284,7 +16284,7 @@ packages:
       find-up: 2.1.0
     dev: false
 
-  /plaiceholder/2.5.0_sharp@0.31.2:
+  /plaiceholder/2.5.0_sharp@0.31.3:
     resolution: {integrity: sha512-rygdNSWuYzs1GxxGjq2FiJdJB1AUaKhUHP/M7PIrSjAAGuoJC5ACiJx+cZZ+hDmMalxsxOMw0Sbbx3LF8jemGg==}
     peerDependencies:
       sharp: '>= 0.30.6'
@@ -16294,7 +16294,7 @@ packages:
       image-size: 1.0.2
       node-cache: 5.1.2
       node-fetch: 2.6.7_encoding@0.1.13
-      sharp: 0.31.2
+      sharp: 0.31.3
     dev: false
 
   /pnp-webpack-plugin/1.6.4_typescript@4.8.4:
@@ -17945,8 +17945,8 @@ packages:
     resolution: {integrity: sha512-y0m1JoUZSlPAjXVtPPW70aZWfIL/dSP7AFkRnniLCrK/8MDKog3TySTBmckD+RObVxH0v4Tox67+F14PdED2oQ==}
     dev: true
 
-  /sharp/0.31.2:
-    resolution: {integrity: sha512-DUdNVEXgS5A97cTagSLIIp8dUZ/lZtk78iNVZgHdHbx1qnQR7JAHY0BnXnwwH39Iw+VKhO08CTYhIg0p98vQ5Q==}
+  /sharp/0.31.3:
+    resolution: {integrity: sha512-XcR4+FCLBFKw1bdB+GEhnUNXNXvnt0tDo4WsBsraKymuo/IAuPuCBVAL2wIkUw2r/dwFW5Q5+g66Kwl2dgDFVg==}
     engines: {node: '>=14.15.0'}
     requiresBuild: true
     dependencies:
