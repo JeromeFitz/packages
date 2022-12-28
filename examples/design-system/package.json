@@ -21,8 +21,8 @@
     "node": ">=16"
   },
   "scripts": {
-    "semantic-release": "echo SKIP semantic-release",
-    "web:dev": "next dev -p 3001"
+    "dev:web": "next dev -p 3001",
+    "semantic-release": "echo SKIP semantic-release"
   },
   "dependencies": {
     "@heroicons/react": "2.0.13",
