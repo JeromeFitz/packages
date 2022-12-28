@@ -43,7 +43,7 @@
     "@types/lodash": "4.14.191",
     "@types/semantic-release": "17.2.4",
     "@types/title": "3.4.1",
-    "gitmojis": "3.13.0",
+    "gitmojis": "3.13.1",
     "lodash": "4.17.21"
   },
   "peerDependencies": {
