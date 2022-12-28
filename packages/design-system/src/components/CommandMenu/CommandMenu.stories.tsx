@@ -157,7 +157,7 @@ function CommandMenuData() {
       }}
     >
       <Command
-        ref={ref}
+        loop
         onClick={() => {
           bounce()
         }}
@@ -176,6 +176,7 @@ function CommandMenuData() {
             bounce()
           }
         }}
+        ref={ref}
       >
         <CommandTopShine cmdk-top-shine="" />
         <div>
