@@ -9,10 +9,11 @@
     "email": "j@jeromefitzgerald.com",
     "url": "https://jeromefitzgerald.com"
   },
+  "homepage": "https://github.com/JeromeFitz/packages/tree/main/packages/ccommit#readme",
+  "repository": "jeromefitz/packages.git",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "repository": "jeromefitz/packages.git",
   "keywords": [
     "commit",
     "conventional changelog",
@@ -54,8 +55,8 @@
     "pkg-dir": "7.0.0"
   },
   "devDependencies": {
-    "@types/inquirer-autocomplete-prompt": "3.0.0",
     "@types/inquirer": "9.0.3",
+    "@types/inquirer-autocomplete-prompt": "3.0.0",
     "pkg": "5.8.0"
   },
   "peerDependencies": {},
