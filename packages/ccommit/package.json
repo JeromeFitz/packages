@@ -1,0 +1,66 @@
+{
+  "private": false,
+  "license": "MIT",
+  "version": "0.0.0",
+  "name": "ccommit",
+  "description": "Conventional Commit Generator that interprets commit types from gitmoji and conventional",
+  "author": {
+    "name": "Jerome Fitzgerald",
+    "email": "j@jeromefitzgerald.com",
+    "url": "https://jeromefitzgerald.com"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": "jeromefitz/packages.git",
+  "keywords": [
+    "commit",
+    "conventional changelog",
+    "conventional commits",
+    "format",
+    "gitflow",
+    "githubflow",
+    "gitmoji",
+    "semver"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "clean": "rm -rf .turbo && rm -rf dist",
+    "clean:install": "pnpm run clean && rm -rf node_modules",
+    "copy": "mkdir -p ./dist && ./scripts/copy.sh",
+    "dev": "tsup --watch",
+    "dry:run": "pnpm run build && node ./dist/cli",
+    "format:lint": "pnpm run lint:eslint --fix && pnpm run format:prettier --write",
+    "format:prettier": "prettier \"./src/**/*.{cjs,js,jsx,mjs,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\" --ignore-unknown --loglevel warn",
+    "lint": "pnpm run format:prettier --check && pnpm run lint:eslint",
+    "lint:eslint": "eslint ./src --ext cjs,js,jsx,mjs,ts,tsx --max-warnings=0",
+    "package": "pkg . --output ./.bin/ccommit --targets latest-linux-x64,latest-macos-x64,latest-win-x64",
+    "semantic-release": "semantic-release"
+  },
+  "dependencies": {
+    "colorize-template": "1.0.0",
+    "execa": "6.1.0",
+    "fuse.js": "6.6.2",
+    "inquirer": "9.1.4",
+    "inquirer-autocomplete-prompt": "3.0.0",
+    "lodash": "4.17.21",
+    "meow": "11.0.0",
+    "picocolors": "1.0.0",
+    "pkg-dir": "7.0.0"
+  },
+  "devDependencies": {
+    "@types/inquirer-autocomplete-prompt": "3.0.0",
+    "@types/inquirer": "9.0.3",
+    "pkg": "5.8.0"
+  },
+  "peerDependencies": {},
+  "bin": {
+    "ccommit": "./dist/index.js"
+  }
+}

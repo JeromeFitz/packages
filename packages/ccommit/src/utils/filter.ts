@@ -1,0 +1,23 @@
+import Fuse from 'fuse.js'
+
+const options = {
+  threshold: 0.4,
+  keys: [
+    {
+      name: 'id',
+      weight: 0.44,
+    },
+    {
+      name: 'description',
+      weight: 0.56,
+    },
+  ],
+}
+
+const filterGitmojis = (input: string, gitmojis: any) => {
+  const fuse = new Fuse(gitmojis, options)
+
+  return input ? fuse.search(input).map((gitmoji) => gitmoji.item) : gitmojis
+}
+
+export { filterGitmojis }
