@@ -130,25 +130,23 @@ importers:
     specifiers:
       '@types/inquirer': 9.0.3
       '@types/inquirer-autocomplete-prompt': 3.0.0
-      colorize-template: 1.0.0
+      chalk: 5.2.0
       execa: 6.1.0
       fuse.js: 6.6.2
       inquirer: 9.1.4
       inquirer-autocomplete-prompt: 3.0.0
       lodash: 4.17.21
       meow: 11.0.0
-      picocolors: 1.0.0
       pkg: 5.8.0
       pkg-dir: 7.0.0
     dependencies:
-      colorize-template: 1.0.0
+      chalk: 5.2.0
       execa: 6.1.0
       fuse.js: 6.6.2
       inquirer: 9.1.4
       inquirer-autocomplete-prompt: 3.0.0_inquirer@9.1.4
       lodash: 4.17.21
       meow: 11.0.0
-      picocolors: 1.0.0
       pkg-dir: 7.0.0
     devDependencies:
       '@types/inquirer': 9.0.3
@@ -8053,8 +8051,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /ansi-styles/6.1.0:
-    resolution: {integrity: sha512-VbqNsoz55SYGczauuup0MFUyXNQviSpFTj1RQtFzmQLk18qbVSpTFFGMT293rmDaQuKCT6InmbuEyUne4mTuxQ==}
+  /ansi-styles/6.2.1:
+    resolution: {integrity: sha512-bN798gFfQX+viw3R7yrGWRqnrN2oRkEkUjjl4JNn4E8GxxbjtG3FbrEIIY3l8/hrwUwIeCZvi4QuOTP4MErVug==}
     engines: {node: '>=12'}
 
   /ansi-to-html/0.6.15:
@@ -18549,7 +18547,7 @@ packages:
     resolution: {integrity: sha512-FC+lgizVPfie0kkhqUScwRu1O/lF6NOgJmlCgK+/LYxDCTk8sGelYaHDhFcDN+Sn3Cv+3VSa4Byeo+IMCzpMgQ==}
     engines: {node: '>=12'}
     dependencies:
-      ansi-styles: 6.1.0
+      ansi-styles: 6.2.1
       is-fullwidth-code-point: 4.0.0
     dev: false
 
@@ -20576,7 +20574,7 @@ packages:
     resolution: {integrity: sha512-QFF+ufAqhoYHvoHdajT/Po7KoXVBPXS2bgjIam5isfWJPfIOnQZ50JtUiVvCv/sjgacf3yRrt2ZKUZ/V4itN4g==}
     engines: {node: '>=12'}
     dependencies:
-      ansi-styles: 6.1.0
+      ansi-styles: 6.2.1
       string-width: 5.1.2
       strip-ansi: 7.0.1
 

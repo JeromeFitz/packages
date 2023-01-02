@@ -1,21 +1,13 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "lib": ["es2022"],
-    "module": "es2022",
-    "moduleResolution": "node",
     "paths": {
       "~ccommit*": ["../../packages/ccommit/src/*"]
     },
-    "skipLibCheck": true,
-    "strict": true,
-    "target": "es2022",
     "outDir": "./dist",
     "rootDir": "./src"
   },
-  "extends": "@jeromefitz/tsconfig/node14.json",
+  "extends": "@jeromefitz/tsconfig/node16.json",
   "include": ["src"],
   "exclude": ["node_modules"]
 }

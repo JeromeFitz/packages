@@ -8,6 +8,7 @@ const entry = ['src/**']
 const config: Options = {
   ..._config,
   clean: true,
+  dts: false,
   entry,
   format: ['esm'],
   splitting: true,

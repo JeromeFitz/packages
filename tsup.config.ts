@@ -1,5 +1,5 @@
 /**
- * @ref(tsup) https://tsup.egoist.sh
+ * @ref(tsup) https://tsup.egoist.dev/
  *
  */
 import { defineConfig } from 'tsup'

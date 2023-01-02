@@ -1,5 +1,4 @@
-import pico from 'picocolors'
-const { green, yellow, red } = pico
+import chalk from 'chalk'
 
 import { LOGS } from '~ccommit/lib'
 
@@ -9,15 +8,15 @@ const generateLog: GenerateLog = (type, message, replace) => {
   const msg = replace ? message.replace(/\{REPLACE\}/g, replace) : message
 
   if (type === LOGS.TYPES.ERROR) {
-    return red(msg)
+    return chalk.red(msg)
   }
   if (type === LOGS.TYPES.INFO) {
     return msg
   }
   if (type === LOGS.TYPES.WARNING) {
-    return yellow(msg)
+    return chalk.yellow(msg)
   }
-  return green(msg)
+  return chalk.green(msg)
 }
 
 export { generateLog }
