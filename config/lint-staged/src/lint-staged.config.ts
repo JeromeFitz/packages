@@ -8,9 +8,7 @@ const config = {
   '**/*.{cjs,js,jsx,mjs,ts,tsx}': (files: any) => {
     const filenames = escapedFileNames(files)
     return isCI
-      ? [
-          `prettier --with-node-modules --list-different ${filenames} --ignore-unknown --loglevel log`,
-        ]
+      ? [`prettier --list-different ${filenames} --ignore-unknown --loglevel log`]
       : [
           `eslint --no-ignore --max-warnings=0 --fix ${filenames}`,
           `git add ${filenames}`,
@@ -19,9 +17,7 @@ const config = {
   '**/*.{json,md,mdx,css,html,yml,yaml,scss}': (files: any) => {
     const filenames = escapedFileNames(files)
     return isCI
-      ? [
-          `prettier --with-node-modules --list-different ${filenames} --ignore-unknown --loglevel log`,
-        ]
+      ? [`prettier --list-different ${filenames} --ignore-unknown --loglevel log`]
       : []
   },
 }

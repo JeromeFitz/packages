@@ -34,5 +34,8 @@
   },
   "dependencies": {
     "lint-staged": "13.1.0"
+  },
+  "peerDependencies": {
+    "is-ci": "^3.0.1"
   }
 }
