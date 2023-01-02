@@ -101,22 +101,54 @@ ccommit --hook || true
 ## Options
 
 ```bash
-pnpm ccommit -h
-```
+▲ packages [main] pnpm ccommit -h
 
-You can pass `option` arguments via the command line directly. If you choose this method, you are opting-out of the command line generator and will need to supply at least `type|title`.
+  Conventional Commit Generator that interprets commit types from gitmoji and conventional
+
+  Usage
+    $ ccommit -c
+
+  Flags
+    --breaking, -b       💥  Breaking Change
+    --commit, -c         💽  Mode: Client
+    --dryrun, -n         🎽  Mode: Dry Run
+    --emoji, -e          😜  Emoji (default)
+    --hook, -u           🪝  Mode: Hook
+    --list, -l           📖  List all types
+    --version, -v        📦  Print installed version
+
+  Options
+    --format             😜  Commit Format: conventional|gitmoji (default)
+    --message            📝  Commit Message
+    --scope              🔬  Commit Scope
+    --title              📓  Commit Title
+    --type               ✨  Commit Type
+
+  Notes
+    - Pass any non-format options the following will be required: --title, --type
+    - If you do not pass any options the Conventional Commit Generator prompt will run
+      - Branch Name detection is enabled to pre-populate Issue Tracker information in prompt
+```
 
 ## Formats
 
 ### Gitmoji
 
 - 😜 [gitmoji](https://gitmoji.dev)
+- 🧪 Examples
+  - ✨ (scope) ABC-123 subject
+  - 💚 (github) subject
+  - 🐛 subject
 
 ### Conventional
 
 - 👔 [conventional](https://www.conventionalcommits.org)
   - a mapping of `gitmoji` to what could be construed as it’s more in-depth `conventional` counterparts
   - can pass `--noemoji|-xe` and turn emojis off within `conventional`
+- 🧪 Examples
+  - feat(scope): ✨ ABC-123 subject
+  - fix-ci(github): 💚 subject
+  - fix: 🐛 subject
 
 <!--
 ### Custom
@@ -128,7 +160,7 @@ You can pass `option` arguments via the command line directly. If you choose thi
 - `.ccommit.js`
 
 By providing configuration options for your project.
- -->
+-->
 
 ## Roadmap
 
