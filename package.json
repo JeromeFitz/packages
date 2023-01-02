@@ -49,7 +49,6 @@
     "@babel/eslint-parser": "7.19.1",
     "@jeromefitz/conventional-gitmoji": "workspace:*",
     "@jeromefitz/eslint-config": "workspace:*",
-    "@jeromefitz/git-cz": "workspace:*",
     "@jeromefitz/lint-staged": "workspace:*",
     "@jeromefitz/prettier-config": "workspace:*",
     "@jeromefitz/release-notes-generator": "workspace:*",
