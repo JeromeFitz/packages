@@ -1,15 +1,21 @@
 #!/bin/sh
 
+#!/bin/sh
 [ -n "$CI" ] && exit 0
+# shellcheck source=/dev/null
+. "$(dirname "$0")/_/husky.sh"
 
-if ps -o args= $PPID | grep -E -q ' --no-verify| -n | -n$' ; then
-:
-elif ps -o args= $PPID | grep -E -q ' --continue| -c | -c$' ; then
-:
-else
-:
-    pnpm run format:prettier --staged
+FILE_ENV=.env
+if [ -f "$FILE_ENV" ]; then
+    # shellcheck disable=SC2046
+    [ ! -f "$FILE_ENV" ] || export $(grep -v '^#' $FILE_ENV | xargs)
+fi
+
+if [ "$HUSKY" = "0" ]; then
+    exit 0
+fi
+
+if [ ! "$HUSKY__PREPARE_COMMITMSG__CONVENTIONAL" = "0" ]; then
     exec < /dev/tty
-    # pnpm run git-cz --hook || true
-    node ./packages/git-cz/dist/cli.js --hook || true
+    pnpm ccommit --hook || true
 fi

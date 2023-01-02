@@ -1,0 +1,13 @@
+# !bin/
+# !binaries/
+# data/
+# !dist/
+node_modules/
+scripts/
+src/
+test/
+.env
+.gitkeep
+jsconfig.json
+release.config.cjs
+tsconfig.json

@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~ccommit*": ["../../packages/ccommit/src/*"]
+    },
+    "outDir": "./dist",
+    "rootDir": "./src"
+  },
+  "extends": "@jeromefitz/tsconfig/node16.json",
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}

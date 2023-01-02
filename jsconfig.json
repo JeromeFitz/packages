@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "~ccommit/*": ["packages/ccommit/src/*"]
+    }
   }
 }

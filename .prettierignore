@@ -4,5 +4,5 @@
 **/.turbo/**
 **/dist/**
 **/node_modules/**
-yarn.lock
+**/storybook-static/**
 pnpm-lock.yaml

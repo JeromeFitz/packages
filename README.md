@@ -31,6 +31,8 @@ Built with [`radix-ui`](https://www.radix-ui.com) and [`stitches`](https://stitc
 
 ### ⚡ Release Management Tools
 
+- [`ccommit`](https://github.com/JeromeFitz/packages/tree/main/packages/ccommit)
+  - conventional commit generator that interprets commit types from `gitmoji` through `conventional-commits`
 - [`@jeromefitz/conventional-gitmoji`](https://github.com/JeromeFitz/packages/tree/main/packages/conventional-gitmoji)
   - Map [`gitmoji`](https://gitmoji.dev) to [`conventional-commits`](https://www.conventionalcommits.org)
     - `feat => ✨️`
@@ -40,11 +42,6 @@ Built with [`radix-ui`](https://www.radix-ui.com) and [`stitches`](https://stitc
     - `...`
   - Allows you to keep `semver` consistent by expanding both
   - You _most likely_ do not need to use this, unless you are using this for your separate tooling. This is more of a configuration stop-gap for ...
-- [`@jeromefitz/git-cz`](https://github.com/JeromeFitz/packages/tree/main/packages/git-cz)
-  - cli prompt for (expanded) [**conventional commits**](https://www.conventionalcommits.org) and **conventional branches** as no one needs to remember all the different types
-    - 📝 Formats your commit message for you
-    - 🖲️ Integrate with your Issue Tracking System
-    - 🔢 Customize which commit types get which semver
 - [`@jeromefitz/semantic`](https://github.com/JeromeFitz/packages/tree/main/packages/semantic)
   - Automatic Semantic Versioning through [`semantic-release`](https://github.com/semantic-release/semantic-release) with support for `gitmoji`.
 - [`@jeromefitz/release-notes-generator`](https://github.com/JeromeFitz/packages/tree/main/packages/release-notes-generator)
@@ -75,6 +72,14 @@ Built with [`radix-ui`](https://www.radix-ui.com) and [`stitches`](https://stitc
 
 - [`@jeromefitz/dotfiles`](https://github.com/JeromeFitz/dotfiles): Separate from this repository
   - zsh + homebrew computer setup
+
+### 🪦 Deprecated
+
+- [`@jeromefitz/git-cz`](https://github.com/JeromeFitz/packages/tree/main/packages/git-cz)
+  - cli prompt for (expanded) [**conventional commits**](https://www.conventionalcommits.org) and **conventional branches** as no one needs to remember all the different types
+    - 📝 Formats your commit message for you
+    - 🖲️ Integrate with your Issue Tracking System
+    - 🔢 Customize which commit types get which semver
 
 ## 👷️ CI/CD Overview
 
@@ -116,3 +121,9 @@ Built with [`radix-ui`](https://www.radix-ui.com) and [`stitches`](https://stitc
     - `lint|test|build|semantic-release`
   - Note(s):
     - `[b]` not necessary for `semantic-release`
+
+## 🥳 Contributing
+
+If you would like to opt-out of the `git hooks` please look at `.env.example`.
+
+Normally, these would be opt-in and may change to that in the future.
