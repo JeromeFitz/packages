@@ -17,7 +17,6 @@
   "packageManager": "^pnpm@7.11.0",
   "type": "module",
   "scripts": {
-    "branch": "git-cz -m branch --allow-empty",
     "build": "turbo run build --filter=[HEAD^1]",
     "build:all": "turbo run build",
     "clean": "turbo run clean --filter=[HEAD^1]",
