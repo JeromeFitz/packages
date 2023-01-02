@@ -131,7 +131,7 @@ importers:
       '@types/semantic-release': 17.2.4
       '@types/title': 3.4.1
       fast-json-stable-stringify: 2.1.0
-      gitmojis: 3.13.1
+      gitmojis: 3.13.2
       grapheme-splitter: 1.0.4
       lodash: 4.17.21
       title: 3.5.3
@@ -143,7 +143,7 @@ importers:
       '@types/lodash': 4.14.191
       '@types/semantic-release': 17.2.4
       '@types/title': 3.4.1
-      gitmojis: 3.13.1
+      gitmojis: 3.13.2
       lodash: 4.17.21
 
   packages/design-system:
@@ -8905,7 +8905,7 @@ packages:
       mississippi: 3.0.0
       mkdirp: 0.5.6
       move-concurrently: 1.0.1
-      promise-inflight: 1.0.1_bluebird@3.7.2
+      promise-inflight: 1.0.1
       rimraf: 2.7.1
       ssri: 6.0.2
       unique-filename: 1.1.1
@@ -12070,8 +12070,8 @@ packages:
     resolution: {integrity: sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw==}
     dev: false
 
-  /gitmojis/3.13.1:
-    resolution: {integrity: sha512-HA9iV+NBT8UR3T8LlUgPtvMKcBJa7RKenljoJhScWT/0gaggeQtyqXbPzLTv3u6BptTNOdadFDV5PiXMUDn2+g==}
+  /gitmojis/3.13.2:
+    resolution: {integrity: sha512-LqtmY8cectRus+1/hoXotA/ln0Fgjxwn/SUSzvZdYtkArvzrTEfACIU6bWC1Jw/wezYHIIzZdJbJhePKcYKzpw==}
     dev: true
 
   /glob-parent/3.1.0:
@@ -16568,17 +16568,6 @@ packages:
     peerDependenciesMeta:
       bluebird:
         optional: true
-    dev: true
-
-  /promise-inflight/1.0.1_bluebird@3.7.2:
-    resolution: {integrity: sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==}
-    peerDependencies:
-      bluebird: '*'
-    peerDependenciesMeta:
-      bluebird:
-        optional: true
-    dependencies:
-      bluebird: 3.7.2
     dev: true
 
   /promise.allsettled/1.0.5:
