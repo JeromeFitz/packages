@@ -2,4 +2,5 @@ packages:
   - 'config/*'
   - 'examples/*'
   - 'packages/*'
+  - '!packages/git-cz'
 enable-pre-post-scripts: true
