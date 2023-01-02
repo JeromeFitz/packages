@@ -4,7 +4,7 @@ const options = {
   threshold: 0.4,
   keys: [
     {
-      name: 'id',
+      name: 'type',
       weight: 0.44,
     },
     {

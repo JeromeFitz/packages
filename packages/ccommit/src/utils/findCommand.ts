@@ -1,5 +1,5 @@
 import { COMMIT_FORMATS, COMMIT_MODES, LOGS, FLAGS, OPTIONS } from '~ccommit/lib'
-import { generateLog } from '~ccommit/utils'
+import { generateLog, getStagedFiles } from '~ccommit/utils'
 
 const getOptionsForCommand = (command: string, flags: any): any => {
   const commandsWithOptions = [FLAGS.COMMIT, FLAGS.HOOK]
@@ -36,6 +36,13 @@ const findCommand = (cli: any, options: any): void => {
   const commandFlag = Object.keys(flags)
     .map((flag) => flags[flag] && flag)
     .find((flag) => options[flag])
+
+  const filesChanged = getStagedFiles()
+
+  if (!flags[FLAGS.DRYRUN] && !filesChanged) {
+    console.log(generateLog(LOGS.TYPES.WARNING, LOGS.MESSAGES.STAGED_FILES))
+    process.exit(2)
+  }
 
   if (flags[FLAGS.COMMIT] && flags[FLAGS.HOOK]) {
     console.log(generateLog(LOGS.TYPES.ERROR, LOGS.MESSAGES.MODE_CONFLICT))

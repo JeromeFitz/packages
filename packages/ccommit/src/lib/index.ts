@@ -60,6 +60,8 @@ const LOGS = {
     MODE_CONFLICT:
       '>> [ccommit] Please choose one or the other: --commit, -c | --hook, -u',
     REPLACE: '{REPLACE}',
+    STAGED_FILES:
+      '>> [commit] There are no staged files for git. Did you mean to do a dry-run (-n)?',
     TYPE_INCORRECT:
       '>> [ccommit] There is no gitmoji/type associated with: {REPLACE}',
   },

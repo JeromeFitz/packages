@@ -18,6 +18,7 @@ const withClient = async (answers, options) => {
     } else {
       await execa('git', commitArray, {
         buffer: false,
+        // env: { HUSKY: '0' },
         stdio: 'inherit',
       })
     }
