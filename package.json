@@ -40,8 +40,8 @@
     "preinstall": "npx only-allow pnpm",
     "prepublishOnly": "pinst --disable",
     "semantic-release": "pnpm semantic-release:mono",
-    "semantic-release:dry": "pnpm --filter @jeromefitz/* -r --workspace-concurrency=1 exec -- npx --no-install semantic-release -e semantic-release-monorepo --dry-run",
-    "semantic-release:mono": "pnpm --filter @jeromefitz/* -r --workspace-concurrency=1 exec -- npx --no-install semantic-release -e semantic-release-monorepo",
+    "semantic-release:dry": "pnpm --filter @jeromefitz/* --filter ccommit -r --workspace-concurrency=1 exec -- npx --no-install semantic-release -e semantic-release-monorepo --dry-run",
+    "semantic-release:mono": "pnpm --filter @jeromefitz/* --filter ccommit -r --workspace-concurrency=1 exec -- npx --no-install semantic-release -e semantic-release-monorepo",
     "test": "turbo run test --filter=[HEAD^1]",
     "test:all": "turbo run test"
   },
