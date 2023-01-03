@@ -9,7 +9,7 @@ const { name } = require('./package.json')
 
 const branches = [
   ...configDefault.branches,
-  { name: 'feat/ccommit', prerelease: 'ccommit' },
+  { name: 'refactor/reduce', prerelease: 'reduce' },
 ]
 
 const configPassed = {
