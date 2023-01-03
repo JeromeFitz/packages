@@ -2,8 +2,8 @@
 import { SEMVER } from '~ccommit/lib'
 
 // @hack(ccommit) emojiLength is to help with formatting until can do it programmatically
-const types = {
-  access: {
+const types = [
+  {
     code: ':wheelchair:',
     description: 'Improve Accessibility',
     emoji: '♿️',
@@ -11,7 +11,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'access',
   },
-  analytics: {
+  {
     code: ':chart_with_upwards_trend:',
     description: 'Add or Update Analytics or Track Code',
     emoji: '📈',
@@ -19,7 +19,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'analytics',
   },
-  animation: {
+  {
     code: ':dizzy:',
     description: 'Add or Update Animations and Transitions',
     emoji: '💫',
@@ -27,7 +27,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'animation',
   },
-  arch: {
+  {
     code: ':building_construction:',
     description: 'Make Architectural Changes',
     emoji: '🏗️',
@@ -35,7 +35,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'arch',
   },
-  assets: {
+  {
     code: ':bento:',
     description: 'Add or Update Assets',
     emoji: '🍱',
@@ -43,7 +43,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'assets',
   },
-  beer: {
+  {
     code: ':beers:',
     description: 'Write Code Drunkenly',
     emoji: '🍻',
@@ -51,7 +51,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'beer',
   },
-  breaking: {
+  {
     code: ':boom:',
     description: 'Introduce Breaking Changes',
     emoji: '💥',
@@ -59,7 +59,7 @@ const types = {
     semver: SEMVER.MAJOR,
     type: 'breaking',
   },
-  build: {
+  {
     code: ':hammer:',
     description: 'Add or Update Development Scripts',
     emoji: '🔨',
@@ -67,7 +67,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'build',
   },
-  catch: {
+  {
     code: ':goal_net:',
     description: 'Catch Errors',
     emoji: '🥅',
@@ -75,7 +75,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'catch',
   },
-  chore: {
+  {
     code: ':computer_disk:',
     description: 'Changes That Don’t Modify Src or Test Files',
     emoji: '💽️',
@@ -83,7 +83,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'chore',
   },
-  ci: {
+  {
     code: ':construction_worker:',
     description: 'Add or Update CI Build System',
     emoji: '👷',
@@ -91,7 +91,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'ci',
   },
-  clean: {
+  {
     code: ':wastebasket:',
     description: 'Deprecate Code That Needs to Be Cleaned Up',
     emoji: '🗑️',
@@ -99,7 +99,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'clean',
   },
-  compat: {
+  {
     code: ':alien:',
     description: 'Update Code Due to External API Changes',
     emoji: '👽️',
@@ -107,7 +107,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'compat',
   },
-  concurrency: {
+  {
     code: ':thread:',
     description: 'Add or Update Code Related to Multithreading or Concurrency',
     emoji: '🧵',
@@ -115,7 +115,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'concurrency',
   },
-  config: {
+  {
     code: ':wrench:',
     description: 'Add or Update Configuration Files',
     emoji: '🔧',
@@ -123,7 +123,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'config',
   },
-  'contrib-add': {
+  {
     code: ':busts_in_silhouette:',
     description: 'Add or Update Contributor(s)',
     emoji: '👥',
@@ -131,7 +131,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'contrib-add',
   },
-  data: {
+  {
     code: ':monocle_face:',
     description: 'Data Exploration/inspection',
     emoji: '🧐',
@@ -139,7 +139,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'data',
   },
-  db: {
+  {
     code: ':card_file_box:',
     description: 'Perform Database Related Changes',
     emoji: '🗃️',
@@ -147,7 +147,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'db',
   },
-  'dep-add': {
+  {
     code: ':heavy_plus_sign:',
     description: 'Add a Dependency',
     emoji: '➕',
@@ -155,7 +155,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'dep-add',
   },
-  'dep-rm': {
+  {
     code: ':heavy_minus_sign:',
     description: 'Remove a Dependency',
     emoji: '➖',
@@ -163,7 +163,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'dep-rm',
   },
-  'dep-up': {
+  {
     code: ':package:',
     description: 'Add or Update Compiled Files or Packages',
     emoji: '📦️',
@@ -171,7 +171,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'dep-up',
   },
-  deploy: {
+  {
     code: ':rocket:',
     description: 'Deploy Stuff',
     emoji: '🚀',
@@ -179,7 +179,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'deploy',
   },
-  'docs-code': {
+  {
     code: ':bulb:',
     description: 'Add or Update Comments in Source Code',
     emoji: '💡',
@@ -187,7 +187,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'docs-code',
   },
-  docs: {
+  {
     code: ':memo:',
     description: 'Add or Update Documentation',
     emoji: '📝',
@@ -195,7 +195,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'docs',
   },
-  downgrade: {
+  {
     code: ':arrow_down:',
     description: 'Downgrade Dependencies',
     emoji: '⬇️',
@@ -203,7 +203,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'downgrade',
   },
-  dx: {
+  {
     code: ':technologist:',
     description: 'Improve Developer Experience',
     emoji: '💻',
@@ -211,7 +211,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'dx',
   },
-  egg: {
+  {
     code: ':egg:',
     description: 'Add or Update an Easter Egg',
     emoji: '🥚',
@@ -219,7 +219,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'egg',
   },
-  experiment: {
+  {
     code: ':alembic:',
     description: 'Perform Experiments',
     emoji: '⚗️',
@@ -227,7 +227,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'experiment',
   },
-  feat: {
+  {
     code: ':sparkles:',
     description: 'Introduce New Features',
     emoji: '✨',
@@ -235,7 +235,7 @@ const types = {
     semver: SEMVER.MINOR,
     type: 'feat',
   },
-  fix: {
+  {
     code: ':bug:',
     description: 'Fix a Bug',
     emoji: '🐛',
@@ -243,7 +243,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'fix',
   },
-  'fix-ci': {
+  {
     code: ':green_heart:',
     description: 'Fix CI Build',
     emoji: '💚',
@@ -251,7 +251,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'fix-ci',
   },
-  flags: {
+  {
     code: ':triangular_flag_on_post:',
     description: 'Add Update or Remove Feature Flags',
     emoji: '🚩',
@@ -259,7 +259,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'flags',
   },
-  healthcheck: {
+  {
     code: ':stethoscope:',
     description: 'Add or Update Healthcheck',
     emoji: '🩺',
@@ -267,7 +267,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'healthcheck',
   },
-  hotfix: {
+  {
     code: ':ambulance:',
     description: 'Critical Hotfix',
     emoji: '🚑️',
@@ -275,7 +275,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'hotfix',
   },
-  i18n: {
+  {
     code: ':globe_with_meridians:',
     description: 'Internationalization and Localization',
     emoji: '🌐',
@@ -283,7 +283,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'i18n',
   },
-  ignore: {
+  {
     code: ':see_no_evil:',
     description: 'Add or Update a Gitignore File.',
     emoji: '🙈',
@@ -291,7 +291,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'ignore',
   },
-  inf: {
+  {
     code: ':bricks:',
     description: 'Infrastructure Related Changes',
     emoji: '🧱',
@@ -299,7 +299,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'inf',
   },
-  init: {
+  {
     code: ':tada:',
     description: 'Begin a Project',
     emoji: '🎉',
@@ -307,7 +307,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'init',
   },
-  iphone: {
+  {
     code: ':iphone:',
     description: 'Work on Responsive Design',
     emoji: '📱',
@@ -315,7 +315,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'iphone',
   },
-  license: {
+  {
     code: ':page_facing_up:',
     description: 'Add or Update License',
     emoji: '📄',
@@ -323,7 +323,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'license',
   },
-  lint: {
+  {
     code: ':rotating_light:',
     description: 'Fix Compiler / Linter Warnings',
     emoji: '🚨',
@@ -331,7 +331,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'lint',
   },
-  'log-add': {
+  {
     code: ':loud_sound:',
     description: 'Add or Update Logs',
     emoji: '🔊',
@@ -339,7 +339,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'log-add',
   },
-  'log-rm': {
+  {
     code: ':mute:',
     description: 'Remove Logs',
     emoji: '🔇',
@@ -347,7 +347,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'log-rm',
   },
-  logic: {
+  {
     code: ':necktie:',
     description: 'Add or Update Business Logic',
     emoji: '👔',
@@ -355,7 +355,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'logic',
   },
-  merge: {
+  {
     code: ':twisted_rightwards_arrows:',
     description: 'Merge Branches',
     emoji: '🔀',
@@ -363,7 +363,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'merge',
   },
-  mock: {
+  {
     code: ':clown_face:',
     description: 'Mock Things',
     emoji: '🤡',
@@ -371,7 +371,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'mock',
   },
-  mv: {
+  {
     code: ':truck:',
     description: 'Move or Rename Resources (Eg.: Files Paths Routes).',
     emoji: '🚚',
@@ -379,7 +379,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'mv',
   },
-  patch: {
+  {
     code: ':adhesive_bandage:',
     description: 'Simple Fix for a Non-Critical Issue',
     emoji: '🩹',
@@ -387,7 +387,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'patch',
   },
-  perf: {
+  {
     code: ':zap:',
     description: 'Improve Performance',
     emoji: '⚡️',
@@ -395,7 +395,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'perf',
   },
-  poo: {
+  {
     code: ':poop:',
     description: 'Write Bad Code That Needs to Be Improved',
     emoji: '💩',
@@ -403,7 +403,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'poo',
   },
-  prune: {
+  {
     code: ':fire:',
     description: 'Remove Code or Files',
     emoji: '🔥',
@@ -411,7 +411,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'prune',
   },
-  pushpin: {
+  {
     code: ':pushpin:',
     description: 'Pin Dependencies to Specific Versions',
     emoji: '📌',
@@ -419,7 +419,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'pushpin',
   },
-  refactor: {
+  {
     code: ':recycle:',
     description: 'Refactor Code',
     emoji: '♻️',
@@ -427,7 +427,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'refactor',
   },
-  release: {
+  {
     code: ':bookmark:',
     description: 'Release / Version Tags',
     emoji: '🔖',
@@ -435,7 +435,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'release',
   },
-  revert: {
+  {
     code: ':rewind:',
     description: 'Revert Changes',
     emoji: '⏪️',
@@ -443,7 +443,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'revert',
   },
-  rip: {
+  {
     code: ':coffin:',
     description: 'Remove Dead Code',
     emoji: '⚰️',
@@ -451,7 +451,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'rip',
   },
-  roles: {
+  {
     code: ':passport_control:',
     description: 'Work on Code Related to Authorization Roles and Permissions',
     emoji: '🛂',
@@ -459,7 +459,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'roles',
   },
-  rollforward: {
+  {
     code: ':fast_forward:',
     description: 'Create Rollforward Version',
     emoji: '⏩️',
@@ -467,7 +467,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'rollforward',
   },
-  'run-build': {
+  {
     code: ':rocket:',
     description: 'Custom Type for CI/CD to Hook into Run Build Override',
     emoji: '🚀️',
@@ -475,7 +475,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'run-build',
   },
-  secrets: {
+  {
     code: ':closed_lock_with_key:',
     description: 'Add or Update Secrets',
     emoji: '🔐',
@@ -483,7 +483,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'secrets',
   },
-  security: {
+  {
     code: ':lock:',
     description: 'Fix Security Issues',
     emoji: '🔒️',
@@ -491,7 +491,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'security',
   },
-  seed: {
+  {
     code: ':seedling:',
     description: 'Add or Update Seed Files',
     emoji: '🌱',
@@ -499,7 +499,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'seed',
   },
-  seo: {
+  {
     code: ':mag:',
     description: 'Improve Seo',
     emoji: '🔍️',
@@ -507,7 +507,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'seo',
   },
-  snapshot: {
+  {
     code: ':camera_flash:',
     description: 'Add or Update Snapshots',
     emoji: '📸',
@@ -515,7 +515,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'snapshot',
   },
-  sponsor: {
+  {
     code: ':money_with_wings:',
     description: 'Add Sponsorships or Money Related Infrastructure',
     emoji: '💸',
@@ -523,7 +523,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'sponsor',
   },
-  style: {
+  {
     code: ':art:',
     description: 'Improve Structure / Format of the Code',
     emoji: '🎨',
@@ -531,7 +531,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'style',
   },
-  'test-fail': {
+  {
     code: ':test_tube:',
     description: 'Add a Failing Test',
     emoji: '🧪',
@@ -539,7 +539,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'test-fail',
   },
-  test: {
+  {
     code: ':white_check_mark:',
     description: 'Add Update or Pass Tests',
     emoji: '✅',
@@ -547,7 +547,7 @@ const types = {
     semver: SEMVER.NULL,
     type: 'test',
   },
-  texts: {
+  {
     code: ':speech_balloon:',
     description: 'Add or Update Text and Literals',
     emoji: '💬',
@@ -555,7 +555,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'texts',
   },
-  types: {
+  {
     code: ':label:',
     description: 'Add or Update Types',
     emoji: '🏷️',
@@ -563,7 +563,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'types',
   },
-  typo: {
+  {
     code: ':pencil2:',
     description: 'Fix Typos',
     emoji: '✏️',
@@ -571,7 +571,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'typo',
   },
-  ui: {
+  {
     code: ':lipstick:',
     description: 'Add or Update the UI and Style Files',
     emoji: '💄',
@@ -579,7 +579,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'ui',
   },
-  upgrade: {
+  {
     code: ':arrow_up:',
     description: 'Upgrade Dependencies',
     emoji: '⬆️',
@@ -587,7 +587,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'upgrade',
   },
-  ux: {
+  {
     code: ':children_crossing:',
     description: 'Improve User Experience / Usability',
     emoji: '🚸',
@@ -595,7 +595,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'ux',
   },
-  validation: {
+  {
     code: ':safety_vest:',
     description: 'Add or update code related to validation',
     emoji: '🦺',
@@ -603,7 +603,7 @@ const types = {
     semver: SEMVER.PATCH,
     type: 'validation',
   },
-  wip: {
+  {
     code: ':construction:',
     description: 'Work in Progress',
     emoji: '🚧',
@@ -611,6 +611,6 @@ const types = {
     semver: SEMVER.NULL,
     type: 'wip',
   },
-}
+]
 
 export default types
