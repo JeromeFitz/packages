@@ -17,7 +17,7 @@ importers:
       '@types/node': 16.11.7
       ccommit: workspace:*
       dotenv: 16.0.3
-      husky: 8.0.2
+      husky: 8.0.3
       is-ci: 3.0.1
       lint-staged: 13.1.0
       lodash: 4.17.21
@@ -41,7 +41,7 @@ importers:
       '@types/node': 16.11.7
       ccommit: link:packages/ccommit
       dotenv: 16.0.3
-      husky: 8.0.2
+      husky: 8.0.3
       is-ci: 3.0.1
       lint-staged: 13.1.0
       lodash: 4.17.21
@@ -8578,7 +8578,7 @@ packages:
       mississippi: 3.0.0
       mkdirp: 0.5.6
       move-concurrently: 1.0.1
-      promise-inflight: 1.0.1_bluebird@3.7.2
+      promise-inflight: 1.0.1
       rimraf: 2.7.1
       ssri: 6.0.2
       unique-filename: 1.1.1
@@ -12270,8 +12270,8 @@ packages:
     engines: {node: '>=12.20.0'}
     dev: false
 
-  /husky/8.0.2:
-    resolution: {integrity: sha512-Tkv80jtvbnkK3mYWxPZePGFpQ/tT3HNSs/sasF9P2YfkMezDl3ON37YN6jUUI4eTg5LcyVynlb6r4eyvOmspvg==}
+  /husky/8.0.3:
+    resolution: {integrity: sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==}
     engines: {node: '>=14'}
     hasBin: true
     dev: false
@@ -15815,17 +15815,6 @@ packages:
     peerDependenciesMeta:
       bluebird:
         optional: true
-    dev: true
-
-  /promise-inflight/1.0.1_bluebird@3.7.2:
-    resolution: {integrity: sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==}
-    peerDependencies:
-      bluebird: '*'
-    peerDependenciesMeta:
-      bluebird:
-        optional: true
-    dependencies:
-      bluebird: 3.7.2
     dev: true
 
   /promise.allsettled/1.0.5:
