@@ -1,5 +1,3 @@
-import _map from 'lodash/map.js'
-
 import { COMMIT_FORMATS, FORMAT, TYPE } from '~ccommit/lib'
 
 const formatCliEmoji = ({ emoji, emojiLength }) =>
@@ -10,9 +8,7 @@ const formatCliType = (type) => type?.padEnd(TYPE.MAX)
 const formatCliTypes = (commitTypes: any) => {
   // console.log(`EMOJI  TYPE            DESCRIPTION`)
   // console.log(`-----  ----            -----------`)
-  return _map(commitTypes, (commitType: any) => {
-    const { description, emoji, emojiLength, type } = commitType
-
+  return commitTypes.map(({ description, emoji, emojiLength, type }) => {
     console.log(
       `${formatCliEmoji({
         emoji,

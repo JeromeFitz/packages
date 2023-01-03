@@ -1,16 +1,9 @@
-import _map from 'lodash/map.js'
-
-const getEmojis = (commitTypes: any) => {
-  return _map(commitTypes, (commitType: any) => {
-    const { description, emoji, emojiLength, type } = commitType
-
-    return {
-      emoji,
-      emojiLength,
-      description,
-      type,
-    }
-  })
-}
+const getEmojis = (commitTypes: any) =>
+  commitTypes.map(({ description, emoji, emojiLength, type }) => ({
+    emoji,
+    emojiLength,
+    description,
+    type,
+  }))
 
 export { getEmojis }
