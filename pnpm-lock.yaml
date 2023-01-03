@@ -133,19 +133,15 @@ importers:
       fuse.js: 6.6.2
       inquirer: 9.1.4
       inquirer-autocomplete-prompt: 3.0.0
-      lodash: 4.17.21
       meow: 11.0.0
       pkg: 5.8.0
-      pkg-dir: 7.0.0
     dependencies:
       chalk: 5.2.0
       execa: 6.1.0
       fuse.js: 6.6.2
       inquirer: 9.1.4
       inquirer-autocomplete-prompt: 3.0.0_inquirer@9.1.4
-      lodash: 4.17.21
       meow: 11.0.0
-      pkg-dir: 7.0.0
     devDependencies:
       '@types/inquirer': 9.0.3
       '@types/inquirer-autocomplete-prompt': 3.0.0
@@ -8578,7 +8574,7 @@ packages:
       mississippi: 3.0.0
       mkdirp: 0.5.6
       move-concurrently: 1.0.1
-      promise-inflight: 1.0.1
+      promise-inflight: 1.0.1_bluebird@3.7.2
       rimraf: 2.7.1
       ssri: 6.0.2
       unique-filename: 1.1.1
@@ -15475,13 +15471,6 @@ packages:
       find-up: 5.0.0
     dev: true
 
-  /pkg-dir/7.0.0:
-    resolution: {integrity: sha512-Ie9z/WINcxxLp27BKOCHGde4ITq9UklYKDzVo1nhk5sqGEXU3FpkwP5GM2voTGJkGd9B3Otl+Q4uwSOeSUtOBA==}
-    engines: {node: '>=14.16'}
-    dependencies:
-      find-up: 6.3.0
-    dev: false
-
   /pkg-fetch/3.4.2:
     resolution: {integrity: sha512-0+uijmzYcnhC0hStDjm/cl2VYdrmVVBpe7Q8k9YBojxmR5tG8mvR9/nooQq3QSXiQqORDVOTY3XqMEqJVIzkHA==}
     hasBin: true
@@ -15815,6 +15804,17 @@ packages:
     peerDependenciesMeta:
       bluebird:
         optional: true
+    dev: true
+
+  /promise-inflight/1.0.1_bluebird@3.7.2:
+    resolution: {integrity: sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==}
+    peerDependencies:
+      bluebird: '*'
+    peerDependenciesMeta:
+      bluebird:
+        optional: true
+    dependencies:
+      bluebird: 3.7.2
     dev: true
 
   /promise.allsettled/1.0.5:
