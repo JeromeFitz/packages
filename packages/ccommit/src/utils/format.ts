@@ -1,4 +1,4 @@
-import { COMMIT_FORMATS, FORMAT, TYPE } from '~ccommit/lib'
+import { COMMIT_FORMATS, FORMAT, TYPE } from '~ccommit/lib/index.js'
 
 const formatCliEmoji = ({ emoji, emojiLength }) =>
   emojiLength === 0 ? `${emoji}     ` : `${emoji}    `
@@ -24,7 +24,6 @@ const formatCommitSubject = (options, answers) => {
   // @note(ccommit) two spaces after emoji
   const emoji = answers?.gitmoji ? `${answers?.gitmoji}  ` : ''
 
-  // @note(ccommit) this is where breaking info should be checked out?
   let scope = answers?.scope
     ? `(${answers?.scope
         .replace(/ {2}/g, '--')
@@ -35,9 +34,19 @@ const formatCommitSubject = (options, answers) => {
   // @note(ccommit) only add space to scope if format is: gitmoji
   scope = scope && options?.format === COMMIT_FORMATS.GITMOJI ? `${scope} ` : scope
 
+  /**
+   * @todo(ccommit) breaking identification in commit subject
+   */
+  // const breaking = answers?.breaking
+  //   ? options?.format === COMMIT_FORMATS.GITMOJI
+  //     ? `💥 `
+  //     : '!'
+  //   : ''
+
   return format
     .replace(/\{emoji\}/g, emoji)
     .replace(/\{scope\}/g, scope)
+    .replace(/\{breaking\}/g, '')
     .replace(/\{title\}/g, answers?.title)
     .replace(/\{type\}/g, answers?.type)
 }

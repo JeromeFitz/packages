@@ -1,17 +1,18 @@
-import fs from 'fs'
+import fs from 'node:fs'
+import process from 'node:process'
 import { join } from 'path'
 
-import { getGitRootDir, printDryRun } from '~ccommit/utils'
+import { getGitRootDir, printDryRun } from '~ccommit/utils/index.js'
 
 const commitMsgFile = join(getGitRootDir(), '.git', 'COMMIT_EDITMSG')
 
 const withHook = (answers, options) => {
   try {
     let commitMessage = answers?.subject
-    if (answers?.message) {
+    if (answers?.message && answers?.message !== '\n') {
       commitMessage += `\n\n${answers.message}`
     }
-    if (answers?.messageBreaking) {
+    if (answers?.messageBreaking && answers?.messageBreaking !== '\n') {
       commitMessage += `\n\n${answers.messageBreaking}`
     }
 

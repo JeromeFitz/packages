@@ -3,7 +3,7 @@
   "license": "MIT",
   "version": "0.0.0",
   "name": "ccommit",
-  "description": "Conventional Commit Generator that interprets commit types from gitmoji and conventional",
+  "description": "😜 ➕ 👔 🟰  ccommit \n  Conventional Commit Generator that interprets commit types from gitmoji and conventional",
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
@@ -18,6 +18,7 @@
     "commit",
     "conventional changelog",
     "conventional commits",
+    "enquirer",
     "format",
     "gitflow",
     "githubflow",
@@ -45,16 +46,13 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "chalk": "5.2.0",
+    "ansi-colors": "4.1.3",
+    "enquirer": "2.3.6",
     "execa": "6.1.0",
     "fuse.js": "6.6.2",
-    "inquirer": "9.1.4",
-    "inquirer-autocomplete-prompt": "3.0.0",
     "meow": "11.0.0"
   },
   "devDependencies": {
-    "@types/inquirer": "9.0.3",
-    "@types/inquirer-autocomplete-prompt": "3.0.0",
     "pkg": "5.8.0"
   },
   "peerDependencies": {},

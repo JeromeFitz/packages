@@ -1,7 +1,9 @@
+import process from 'node:process'
+
 import { execa } from 'execa'
 
-import { LOGS } from '~ccommit/lib'
-import { generateLog, printDryRun } from '~ccommit/utils'
+import { LOGS } from '~ccommit/lib/index.js'
+import { generateLog, printDryRun } from '~ccommit/utils/index.js'
 
 const withClient = async (answers, options) => {
   try {
@@ -14,7 +16,7 @@ const withClient = async (answers, options) => {
     if (messageBreaking) commitArray.push('-m', messageBreaking)
 
     if (options?.dryrun) {
-      printDryRun(['git', ...commitArray])
+      printDryRun(['git', ...commitArray].join(' '))
     } else {
       await execa('git', commitArray, {
         buffer: false,
