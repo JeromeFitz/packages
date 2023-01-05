@@ -1,4 +1,4 @@
-import { execSync } from 'child_process'
+import { execSync } from 'node:child_process'
 
 const getGitRootDir = () => {
   const devNull = process.platform === 'win32' ? ' nul' : '/dev/null'

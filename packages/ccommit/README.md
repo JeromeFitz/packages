@@ -164,11 +164,9 @@ By providing configuration options for your project.
 
 ## Roadmap
 
-This was meant to sunset `@jeromefitz/git-cz` as a year-end personal hackathon. This will keep up with `gitmoji` and ideally some tenets of ‘best of both worlds’ could make it to `gitmoji-cli` some day. (There are a few closed issues on ‘boring’ versions already.)
+This was meant to sunset `@jeromefitz/git-cz` as a year-end personal hackathon. This will keep up with `gitmoji` and ideally some tenets of ‘best of both worlds’ could make it to `gitmoji-cli` some day. (There are a few closed issues on ‘boring’ versions already, and with this using `enquirer` probably less and less of a chance.)
 
 As a result it is a mash-up of both and I have tried to add references where applicable:
 
 - 🔗 [`gitmoji-cli`](https://github.com/carloscuesta/gitmoji-cli)
-  - This repo started from scratch, but then reworked to be more close to above for potential future feature addition
-  - 📄 Additional MIT LICENSE provided as `LICENSE-gitmoji-cli`
 - 🔗 [`@jeromefitz/git-cz`](https://github.com/jeromefitz/packages)
