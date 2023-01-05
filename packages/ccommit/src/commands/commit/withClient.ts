@@ -1,3 +1,5 @@
+import process from 'node:process'
+
 import { execa } from 'execa'
 
 import { LOGS } from '~ccommit/lib/index.js'

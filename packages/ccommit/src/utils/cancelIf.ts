@@ -1,7 +1,8 @@
 /*!
  * reference: https://github.com/carloscuesta/gitmoji-cli
  */
-import fs from 'fs'
+import fs from 'node:fs'
+import process from 'node:process'
 
 import { execa } from 'execa'
 

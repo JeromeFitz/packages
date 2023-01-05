@@ -47,15 +47,13 @@ const LOGS = {
   MESSAGES: {
     COMMAND_LINE_WITHOUT_REQUIRED:
       '❯ Command line option requires both: --title, --type',
-    COMMIT_FAIL: `\n
-      Oops! An error occurred. There is likely additional logging output above.\n
-      You can run the same commit with this command:\n
-      \t
+    COMMIT_FAIL: `❯ \n
+      ❯ Oops! An error occurred. There is likely additional logging output above.\n
+      ❯ You can run the same commit with this command:\n
+      ❯ \t
       {REPLACE}
     `,
     GENERATOR_TAKING_OVER: '❯ Generator will take it from here (CTRL+C to quit)',
-    LENGTH_MAX: '[ccommit] Cannot exceed {REPLACE} characters',
-    LENGTH_MIN: '[ccommit] Must have at least {REPLACE} characters',
     MODE_CONFLICT: '❯ Please choose one or the other: --commit, -c | --hook, -u',
     REPLACE: '{REPLACE}',
     STAGED_FILES:

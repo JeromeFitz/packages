@@ -1,12 +1,17 @@
-#!/usr/bin / env node
+#!/usr/bin/env node
 /*!
  * For license information please see index.js.LICENSE.txt
  */
+import { URL } from 'node:url'
+
 import meow from 'meow'
 
 import { commit, list } from '~ccommit/commands/index.js'
 import { COMMANDS, COMMIT_FORMATS, FLAGS, OPTIONS } from '~ccommit/lib/index.js'
 import { findCommand } from '~ccommit/utils/index.js'
+
+let url = import.meta.url
+if (!url.startsWith('file://')) url = new URL(`file://${import.meta.url}`).toString()
 
 const cli = meow(
   `
@@ -35,7 +40,9 @@ const cli = meow(
       - Branch Name detection is enabled to pre-populate Issue Tracker information in prompt
 `,
   {
-    importMeta: import.meta,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    importMeta: { url },
     flags: {
       // Flags
       [FLAGS.BREAKING]: { type: 'boolean', alias: 'b', default: false },

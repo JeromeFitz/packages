@@ -1,3 +1,5 @@
+import process from 'node:process'
+
 import enquirer from 'enquirer'
 
 import { COMMIT_MODES, FIND_BY, LOGS } from '~ccommit/lib/index.js'

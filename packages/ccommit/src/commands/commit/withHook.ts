@@ -1,4 +1,5 @@
-import fs from 'fs'
+import fs from 'node:fs'
+import process from 'node:process'
 import { join } from 'path'
 
 import { getGitRootDir, printDryRun } from '~ccommit/utils/index.js'
