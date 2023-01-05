@@ -48,7 +48,7 @@ const findCommand = (cli: any, options: any): void => {
   const filesChanged = getStagedFiles()
 
   if (!flags[FLAGS.DRYRUN] && !filesChanged) {
-    console.log(generateLog(LOGS.TYPES.WARNING, LOGS.MESSAGES.STAGED_FILES))
+    console.log(generateLog(LOGS.TYPES.ERROR, LOGS.MESSAGES.STAGED_FILES))
     process.exit(2)
   }
 

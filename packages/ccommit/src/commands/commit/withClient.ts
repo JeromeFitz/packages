@@ -11,9 +11,9 @@ const withClient = async (answers, options) => {
     const message = answers?.message
     const messageBreaking = answers?.messageBreaking
 
-    const commitArray = ['commit', '-m', `"${title}"`]
-    if (message) commitArray.push('-m', `"${message}"`)
-    if (messageBreaking) commitArray.push('-m', `"${messageBreaking}"`)
+    const commitArray = ['commit', '-m', title]
+    if (message) commitArray.push('-m', message)
+    if (messageBreaking) commitArray.push('-m', messageBreaking)
 
     if (options?.dryrun) {
       printDryRun(['git', ...commitArray].join(' '))
