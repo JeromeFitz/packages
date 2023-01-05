@@ -1,5 +1,11 @@
-import { COMMIT_FORMATS, COMMIT_MODES, LOGS, FLAGS, OPTIONS } from '~ccommit/lib'
-import { generateLog, getStagedFiles } from '~ccommit/utils'
+import {
+  COMMIT_FORMATS,
+  COMMIT_MODES,
+  LOGS,
+  FLAGS,
+  OPTIONS,
+} from '~ccommit/lib/index.js'
+import { generateLog, getStagedFiles } from '~ccommit/utils/index.js'
 
 const getOptionsForCommand = (command: string, flags: any): any => {
   const commandsWithOptions = [FLAGS.COMMIT, FLAGS.HOOK]
@@ -64,7 +70,7 @@ const findCommand = (cli: any, options: any): void => {
     } else {
       flags[FLAGS.SKIP] = false
       console.log(
-        generateLog(LOGS.TYPES.WARNING, LOGS.MESSAGES.COMMAND_LINE_WITHOUT_REQUIRED)
+        generateLog(LOGS.TYPES.ERROR, LOGS.MESSAGES.COMMAND_LINE_WITHOUT_REQUIRED)
       )
       flags[OPTIONS.TITLE] = undefined
       flags[OPTIONS.TYPE] = undefined

@@ -32,9 +32,9 @@ const FLAGS = Object.freeze({
 })
 
 const FORMAT = {
-  [COMMIT_FORMATS.CONVENTIONAL]: '{type}{scope}: {emoji}{title}',
-  [COMMIT_FORMATS.CONVENTIONAL_NO_EMOJI]: '{type}{scope}: {title}',
-  [COMMIT_FORMATS.GITMOJI]: '{emoji}{scope}{title}',
+  [COMMIT_FORMATS.CONVENTIONAL]: '{type}{scope}{breaking}: {emoji}{title}',
+  [COMMIT_FORMATS.CONVENTIONAL_NO_EMOJI]: '{type}{scope}{breaking}: {title}',
+  [COMMIT_FORMATS.GITMOJI]: '{emoji}{breaking}{scope}{title}',
 }
 
 const LOGS = {
@@ -46,24 +46,21 @@ const LOGS = {
   },
   MESSAGES: {
     COMMAND_LINE_WITHOUT_REQUIRED:
-      '>> [ccommit] Command line option requires both: --title, --type',
+      '❯ Command line option requires both: --title, --type',
     COMMIT_FAIL: `\n
       Oops! An error occurred. There is likely additional logging output above.\n
       You can run the same commit with this command:\n
       \t
       {REPLACE}
     `,
-    GENERATOR_TAKING_OVER:
-      '>> [ccommit] Generator will take it from here (CTRL+C to quit)',
+    GENERATOR_TAKING_OVER: '❯ Generator will take it from here (CTRL+C to quit)',
     LENGTH_MAX: '[ccommit] Cannot exceed {REPLACE} characters',
     LENGTH_MIN: '[ccommit] Must have at least {REPLACE} characters',
-    MODE_CONFLICT:
-      '>> [ccommit] Please choose one or the other: --commit, -c | --hook, -u',
+    MODE_CONFLICT: '❯ Please choose one or the other: --commit, -c | --hook, -u',
     REPLACE: '{REPLACE}',
     STAGED_FILES:
-      '>> [commit] There are no staged files for git. Did you mean to do a dry-run (-n)?',
-    TYPE_INCORRECT:
-      '>> [ccommit] There is no gitmoji/type associated with: {REPLACE}',
+      '❯ There are no staged files for git. Did you mean to do a dry-run (-n)?',
+    TYPE_INCORRECT: '❯ There is no gitmoji/type associated with: {REPLACE}',
   },
 }
 

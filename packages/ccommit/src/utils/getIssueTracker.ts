@@ -1,12 +1,12 @@
 import { execSync } from 'child_process'
 
 const getIssueTracker = () => {
-  let init = ''
+  let init = '',
+    branch: any
 
-  const branch = execSync('git rev-parse --abbrev-ref HEAD')
-    .toString()
-    .trim()
-    .split('/')
+  //  branch = 'ABC-123'
+  branch = execSync('git rev-parse --abbrev-ref HEAD')
+  branch = branch.toString().trim().split('/')
   const branchType = branch[0]
   const branchName = !branch[1] ? branchType : branch[1]
 
@@ -18,7 +18,6 @@ const getIssueTracker = () => {
   if (!isNaN(parseFloat(itNumber)) && isFinite(parseFloat(itNumber))) {
     init = itTicket
   }
-
   return init
 }
 

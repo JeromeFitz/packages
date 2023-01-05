@@ -1,4 +1,4 @@
-/**
+/*!
  * reference: https://github.com/carloscuesta/gitmoji-cli
  */
 import fs from 'fs'
@@ -25,7 +25,7 @@ const cancelIfAmending = (): Promise<void> =>
   new Promise<void>((resolve) => {
     /*
       from https://git-scm.com/docs/githooks#_prepare_commit_msg
-      the commit message source is passed as second argument and corresponding 4 for gitmoji-cli
+      the commit message source is passed as second argument and corresponding 4 for ccommit
       `gitmoji --hook $1 $2`
     */
     const commitMessageSource: string = process.argv[COMMIT_MESSAGE_SOURCE]

@@ -1,22 +1,40 @@
-import chalk from 'chalk'
+import colors from 'ansi-colors'
 
-import { LOGS } from '~ccommit/lib'
+import { LOGS } from '~ccommit/lib/index.js'
 
 type GenerateLog = (type: string, message: string, replace?: string) => void
-
+/**
+ * @todo(ccommit) this is a bit much, can we reduce?
+ */
 const generateLog: GenerateLog = (type, message, replace) => {
+  let msg = replace ? message.replace(/\{REPLACE\}/g, replace) : message
+  msg = `\n${msg}\n`
+
+  if (type === LOGS.TYPES.ERROR) {
+    return colors.magenta.bold(msg)
+  }
+  if (type === LOGS.TYPES.INFO) {
+    return colors.blue.bold(msg)
+  }
+  if (type === LOGS.TYPES.WARNING) {
+    return colors.yellow.bold(msg)
+  }
+  return colors.green.bold(msg)
+}
+
+const generateCount: GenerateLog = (type, message, replace) => {
   const msg = replace ? message.replace(/\{REPLACE\}/g, replace) : message
 
   if (type === LOGS.TYPES.ERROR) {
-    return chalk.red(msg)
+    return colors.red.bold(msg)
   }
   if (type === LOGS.TYPES.INFO) {
-    return msg
+    return colors.white.bold(msg)
   }
   if (type === LOGS.TYPES.WARNING) {
-    return chalk.yellow(msg)
+    return colors.yellow.bold(msg)
   }
-  return chalk.green(msg)
+  return colors.green.bold(msg)
 }
 
-export { generateLog }
+export { generateCount, generateLog }

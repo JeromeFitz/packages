@@ -1,4 +1,4 @@
-/**
+/*!
  * reference: https://github.com/carloscuesta/gitmoji-cli
  */
 const registerHookInterruptionHandler = () => {

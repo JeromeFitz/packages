@@ -1,9 +1,12 @@
-#!/usr/bin/env node
+#!/usr/bin / env node
+/*!
+ * For license information please see index.js.LICENSE.txt
+ */
 import meow from 'meow'
 
-import { commit, list } from '~ccommit/commands'
-import { COMMANDS, COMMIT_FORMATS, FLAGS, OPTIONS } from '~ccommit/lib'
-import { findCommand } from '~ccommit/utils'
+import { commit, list } from '~ccommit/commands/index.js'
+import { COMMANDS, COMMIT_FORMATS, FLAGS, OPTIONS } from '~ccommit/lib/index.js'
+import { findCommand } from '~ccommit/utils/index.js'
 
 const cli = meow(
   `

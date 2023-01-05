@@ -1,17 +1,19 @@
-import inquirer from 'inquirer'
+import enquirer from 'enquirer'
 
-import { COMMIT_MODES, FIND_BY, LOGS } from '~ccommit/lib'
+import { COMMIT_MODES, FIND_BY, LOGS } from '~ccommit/lib/index.js'
 import {
   cancelIfNeeded,
   findBy,
   formatCommitSubject,
   generateLog,
   registerHookInterruptionHandler,
-} from '~ccommit/utils'
+} from '~ccommit/utils/index.js'
 
-import prompts from './prompts'
-import withClient from './withClient'
-import withHook from './withHook'
+import questions from './questions.js'
+import withClient from './withClient.js'
+import withHook from './withHook.js'
+
+const { prompt } = enquirer
 
 export type CommitOptions = {
   message?: string
@@ -25,7 +27,7 @@ export type CommitOptions = {
  * @todo(ccommit) this is a hacky way to bypass the generator :X
  */
 const promptAndCommit = async (options: CommitOptions) => {
-  let data: any
+  let data: any = {}
 
   if (options.skip) {
     data = options
@@ -38,26 +40,18 @@ const promptAndCommit = async (options: CommitOptions) => {
       process.exit(2)
     }
   } else {
-    const questions = prompts(options)
-    await inquirer.prompt(questions).then((answers) => {
-      // @note(ccommit) set type via which emoji was selected
-      answers.type = findBy(answers.gitmoji, FIND_BY.EMOJI, FIND_BY.TYPE)
-      if (!answers.gitmoji) {
-        console.log(
-          generateLog(
-            LOGS.TYPES.ERROR,
-            LOGS.MESSAGES.TYPE_INCORRECT,
-            answers.gitmoji
-          )
-        )
-        process.exit(2)
-      }
-      data = answers
-    })
+    await prompt(questions)
+      .then((answers: any) => {
+        answers.type = findBy(answers.gitmoji, FIND_BY.EMOJI, FIND_BY.TYPE)
+        return answers
+      })
+      .then((answers) => {
+        data = answers
+      })
+      .catch(console.error)
   }
 
-  const subject = formatCommitSubject(options, data)
-  data.subject = subject
+  data.subject = !!data ? formatCommitSubject(options, data) : ''
 
   if (options.mode === COMMIT_MODES.HOOK) {
     return withHook(data, options)

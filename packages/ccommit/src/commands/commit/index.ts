@@ -1,3 +1,3 @@
-import commit from './commit'
+import commit from './commit.js'
 
 export default commit
