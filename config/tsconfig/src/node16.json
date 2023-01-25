@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "@jeromefitz/tsconfig-node-16",
+  "display": "@jeromefitz/src/tsconfig-node-16",
   "extends": "./base.json",
   "compilerOptions": {
     "esModuleInterop": true,

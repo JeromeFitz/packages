@@ -25,12 +25,10 @@ fi
 # @custom(build)
 ###
 
-cp ./*.json ./dist
-rm ./dist/zzz*
-rm ./dist/tsconfig.json
+cp ./src/*.json ./dist
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  sed -i "" "s|dist/lint|lint|g" dist/package.json
+  sed -i "" "s|dist/tsconfig|tsconfig|g" dist/package.json
 else
-  sed -i -e "s|dist/lint|lint|g" dist/package.json
+  sed -i -e "s|dist/tsconfig|tsconfig|g" dist/package.json
 fi

@@ -1,3 +1,0 @@
-const noIhateThisWhyyyyyyyy = () => {}
-
-export { noIhateThisWhyyyyyyyy }
