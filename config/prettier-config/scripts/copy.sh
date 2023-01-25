@@ -28,7 +28,7 @@ fi
 cp ./src/*.cjs ./dist
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  sed -i "" "s|dist/index|index|g" dist/package.json
+  sed -i "" "s|src/index|index|g" dist/package.json
 else
-  sed -i -e "s|dist/index|index|g" dist/package.json
+  sed -i -e "s|src/index|index|g" dist/package.json
 fi
