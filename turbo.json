@@ -4,7 +4,7 @@
     "build": {
       "outputs": ["dist/**", ".next/**"],
       "dependsOn": ["^build"],
-      "inputs": ["src/**", "*.cjs", "package.json"]
+      "inputs": ["scripts/copy.sh", "src/**", "*.cjs", "package.json"]
     },
     "clean": {
       "cache": false

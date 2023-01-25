@@ -22,7 +22,7 @@ else
 fi
 
 ###
-# @custom(build)
+# @custom(build) prettier
 ###
 
 cp ./src/*.cjs ./dist
