@@ -1,25 +1,21 @@
 {
-  "private": false,
-  "license": "MIT",
-  "version": "0.0.0",
   "name": "@jeromefitz/lint-staged",
+  "version": "0.0.0",
+  "type": "module",
   "description": "Lint Staged Configuration",
+  "repository": "jeromefitz/packages.git",
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
     "url": "https://jeromefitzgerald.com"
   },
-  "repository": "jeromefitz/packages.git",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
+  "license": "MIT",
+  "private": false,
   "engines": {
     "node": ">=16"
   },
-  "type": "module",
   "main": "./dist/lint-staged.config.js",
   "module": "./dist/lint-staged.config.js",
-  "sideEffects": false,
   "scripts": {
     "build": "tsup-node",
     "clean": "rm -rf .turbo && rm -rf dist",
@@ -32,10 +28,14 @@
     "lint:eslint": "eslint ./src --ext cjs,js,jsx,mjs,ts,tsx --max-warnings=0",
     "semantic-release": "semantic-release"
   },
+  "peerDependencies": {
+    "is-ci": "^3.0.1"
+  },
   "dependencies": {
     "lint-staged": "13.1.0"
   },
-  "peerDependencies": {
-    "is-ci": "^3.0.1"
-  }
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "sideEffects": false
 }

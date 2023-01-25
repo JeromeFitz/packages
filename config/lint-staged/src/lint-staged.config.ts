@@ -11,7 +11,7 @@ const config = {
       ? [`prettier --list-different ${filenames} --ignore-unknown --loglevel log`]
       : [
           `eslint --no-ignore --max-warnings=0 --fix ${filenames}`,
-          `git add ${filenames}`,
+          `git add ${filenames} -u`,
         ]
   },
   '**/*.{json,md,mdx,css,html,yml,yaml,scss}': (files: any) => {
