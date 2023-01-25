@@ -10,7 +10,7 @@
     "outDir": "./dist",
     "rootDir": "./src"
   },
-  "extends": "@jeromefitz/tsconfig/base.json",
+  "extends": "@jeromefitz/tsconfig/src/base.json",
   "include": ["src"],
   "exclude": ["node_modules"]
 }
