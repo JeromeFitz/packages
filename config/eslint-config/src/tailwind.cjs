@@ -15,13 +15,13 @@ const TAILWIND_CONFIG = {
 module.exports.react = {
   ...reactConfig,
   extends: [...reactConfig.extends, ...TAILWIND_CONFIG.extends],
-  rules: TAILWIND_CONFIG.rules,
+  rules: { ...reactConfig.rules, ...TAILWIND_CONFIG.rules },
 }
 
 const tailwindConfig = {
   ...nextConfig,
   extends: [...nextConfig.extends, ...TAILWIND_CONFIG.extends],
-  rules: TAILWIND_CONFIG.rules,
+  rules: { ...nextConfig.rules, ...TAILWIND_CONFIG.rules },
 }
 
 module.exports.next = tailwindConfig
