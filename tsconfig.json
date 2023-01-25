@@ -4,6 +4,6 @@
     "noImplicitAny": false,
     "noEmit": true
   },
-  "extends": "@jeromefitz/tsconfig/node14.json",
+  "extends": "@jeromefitz/tsconfig/src/node16.json",
   "exclude": []
 }
