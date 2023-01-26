@@ -374,7 +374,7 @@ importers:
 
   packages/release-notes-generator:
     specifiers:
-      '@octokit/rest': 19.0.5
+      '@octokit/rest': 19.0.7
       '@types/conventional-commits-parser': 3.0.3
       '@types/lodash': 4.14.191
       '@types/read-pkg-up': 6.0.0
@@ -386,7 +386,7 @@ importers:
       read-pkg-up: 7.0.1
       semver: 7.3.8
     dependencies:
-      '@octokit/rest': 19.0.5
+      '@octokit/rest': 19.0.7
       conventional-commits-filter: 2.0.7
       conventional-commits-parser: 3.2.4
       date-fns: 2.29.3
@@ -401,11 +401,11 @@ importers:
 
   packages/scripts:
     specifiers:
-      '@octokit/rest': 19.0.5
+      '@octokit/rest': 19.0.7
       colorize-template: 1.0.0
       picocolors: 1.0.0
     dependencies:
-      '@octokit/rest': 19.0.5
+      '@octokit/rest': 19.0.7
       colorize-template: 1.0.0
       picocolors: 1.0.0
 
@@ -3635,14 +3635,18 @@ packages:
     resolution: {integrity: sha512-HNWisMYlR8VCnNurDU6os2ikx0s0VyEjDYHNS/h4cgb8DeOxQ0n72HyinUtdDVxJhFy3FWLGl0DJhfEWk3P5Iw==}
     dev: false
 
-  /@octokit/plugin-paginate-rest/5.0.1_@octokit+core@4.1.0:
-    resolution: {integrity: sha512-7A+rEkS70pH36Z6JivSlR7Zqepz3KVucEFVDnSrgHXzG7WLAzYwcHZbKdfTXHwuTHbkT1vKvz7dHl1+HNf6Qyw==}
+  /@octokit/openapi-types/16.0.0:
+    resolution: {integrity: sha512-JbFWOqTJVLHZSUUoF4FzAZKYtqdxWu9Z5m2QQnOyEa04fOFljvyh7D3GYKbfuaSWisqehImiVIMG4eyJeP5VEA==}
+    dev: false
+
+  /@octokit/plugin-paginate-rest/6.0.0_@octokit+core@4.1.0:
+    resolution: {integrity: sha512-Sq5VU1PfT6/JyuXPyt04KZNVsFOSBaYOAq2QRZUwzVlI10KFvcbUo8lR258AAQL1Et60b0WuVik+zOWKLuDZxw==}
     engines: {node: '>= 14'}
     peerDependencies:
       '@octokit/core': '>=4'
     dependencies:
       '@octokit/core': 4.1.0
-      '@octokit/types': 8.0.0
+      '@octokit/types': 9.0.0
     dev: false
 
   /@octokit/plugin-request-log/1.0.4_@octokit+core@4.1.0:
@@ -3653,14 +3657,14 @@ packages:
       '@octokit/core': 4.1.0
     dev: false
 
-  /@octokit/plugin-rest-endpoint-methods/6.7.0_@octokit+core@4.1.0:
-    resolution: {integrity: sha512-orxQ0fAHA7IpYhG2flD2AygztPlGYNAdlzYz8yrD8NDgelPfOYoRPROfEyIe035PlxvbYrgkfUZIhSBKju/Cvw==}
+  /@octokit/plugin-rest-endpoint-methods/7.0.1_@octokit+core@4.1.0:
+    resolution: {integrity: sha512-pnCaLwZBudK5xCdrR823xHGNgqOzRnJ/mpC/76YPpNP7DybdsJtP7mdOwh+wYZxK5jqeQuhu59ogMI4NRlBUvA==}
     engines: {node: '>= 14'}
     peerDependencies:
       '@octokit/core': '>=3'
     dependencies:
       '@octokit/core': 4.1.0
-      '@octokit/types': 8.0.0
+      '@octokit/types': 9.0.0
       deprecation: 2.3.1
     dev: false
 
@@ -3687,14 +3691,14 @@ packages:
       - encoding
     dev: false
 
-  /@octokit/rest/19.0.5:
-    resolution: {integrity: sha512-+4qdrUFq2lk7Va+Qff3ofREQWGBeoTKNqlJO+FGjFP35ZahP+nBenhZiGdu8USSgmq4Ky3IJ/i4u0xbLqHaeow==}
+  /@octokit/rest/19.0.7:
+    resolution: {integrity: sha512-HRtSfjrWmWVNp2uAkEpQnuGMJsu/+dBr47dRc5QVgsCbnIc1+GFEaoKBWkYG+zjrsHpSqcAElMio+n10c0b5JA==}
     engines: {node: '>= 14'}
     dependencies:
       '@octokit/core': 4.1.0
-      '@octokit/plugin-paginate-rest': 5.0.1_@octokit+core@4.1.0
+      '@octokit/plugin-paginate-rest': 6.0.0_@octokit+core@4.1.0
       '@octokit/plugin-request-log': 1.0.4_@octokit+core@4.1.0
-      '@octokit/plugin-rest-endpoint-methods': 6.7.0_@octokit+core@4.1.0
+      '@octokit/plugin-rest-endpoint-methods': 7.0.1_@octokit+core@4.1.0
     transitivePeerDependencies:
       - encoding
     dev: false
@@ -3709,6 +3713,12 @@ packages:
     resolution: {integrity: sha512-65/TPpOJP1i3K4lBJMnWqPUJ6zuOtzhtagDvydAWbEXpbFYA0oMKKyLb95NFZZP0lSh/4b6K+DQlzvYQJQQePg==}
     dependencies:
       '@octokit/openapi-types': 14.0.0
+    dev: false
+
+  /@octokit/types/9.0.0:
+    resolution: {integrity: sha512-LUewfj94xCMH2rbD5YJ+6AQ4AVjFYTgpp6rboWM5T7N3IsIF65SBEOVcYMGAEzO/kKNiNaW4LoWtoThOhH06gw==}
+    dependencies:
+      '@octokit/openapi-types': 16.0.0
     dev: false
 
   /@pkgr/utils/2.3.1:
@@ -4822,7 +4832,7 @@ packages:
     peerDependencies:
       semantic-release: '>=18.0.0-beta.1'
     dependencies:
-      '@octokit/rest': 19.0.5
+      '@octokit/rest': 19.0.7
       '@semantic-release/error': 3.0.0
       aggregate-error: 3.1.0
       bottleneck: 2.19.5
@@ -8666,7 +8676,7 @@ packages:
       mississippi: 3.0.0
       mkdirp: 0.5.6
       move-concurrently: 1.0.1
-      promise-inflight: 1.0.1_bluebird@3.7.2
+      promise-inflight: 1.0.1
       rimraf: 2.7.1
       ssri: 6.0.2
       unique-filename: 1.1.1
@@ -16131,17 +16141,6 @@ packages:
     peerDependenciesMeta:
       bluebird:
         optional: true
-    dev: true
-
-  /promise-inflight/1.0.1_bluebird@3.7.2:
-    resolution: {integrity: sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==}
-    peerDependencies:
-      bluebird: '*'
-    peerDependenciesMeta:
-      bluebird:
-        optional: true
-    dependencies:
-      bluebird: 3.7.2
     dev: true
 
   /promise.allsettled/1.0.5:
