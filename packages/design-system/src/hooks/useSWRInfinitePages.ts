@@ -95,6 +95,7 @@ const useSWRInfinitePages = <
     if (isLoadingMore || isFetching.current) return null
 
     void setSize((size) => {
+      // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
       return size + 1
     })
   }, [isLoadingMore, setSize])

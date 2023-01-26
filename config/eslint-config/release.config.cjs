@@ -7,8 +7,14 @@ const { getConfig } = require('@jeromefitz/semantic')
 
 const { name } = require('./package.json')
 
+const branches = [
+  ...configDefault.branches,
+  { name: 'feat/config-canary', prerelease: 'canary' },
+]
+
 const configPassed = {
   ...configDefault,
+  branches,
   tagFormat: `${name}@\${version}`,
 }
 

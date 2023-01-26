@@ -2,9 +2,9 @@
   "baseBranch": "origin/main",
   "pipeline": {
     "build": {
-      "outputs": ["dist/**", ".next/**"],
       "dependsOn": ["^build"],
-      "inputs": ["src/**", "*.cjs", "package.json"]
+      "inputs": ["scripts/copy.sh", "src/**", "*.cjs", "package.json"],
+      "outputs": ["dist/**", ".next/**"]
     },
     "clean": {
       "cache": false
@@ -21,8 +21,8 @@
       "dependsOn": []
     },
     "test": {
-      "outputs": ["coverage/**"],
-      "dependsOn": ["lint", "build"]
+      "dependsOn": ["lint", "build"],
+      "outputs": ["coverage/**"]
     },
     "@jeromefitz/notion#build": {
       "dependsOn": ["@jeromefitz/utils#build"],

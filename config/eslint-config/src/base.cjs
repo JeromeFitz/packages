@@ -17,7 +17,7 @@ module.exports = {
     },
     requireConfigFile: false,
   },
-  plugins: ['import'],
+  plugins: ['import', 'typescript-sort-keys'],
   root: true,
   // http://eslint.org/docs/rules/
   rules: {

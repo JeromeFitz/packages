@@ -25,8 +25,7 @@ fi
 # @custom(build)
 ###
 
-cp ./*.cjs ./dist
-rm ./dist/zzz*
+cp ./src/*.cjs ./dist
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   sed -i "" "s|dist/lint|lint|g" dist/package.json

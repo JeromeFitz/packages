@@ -1,4 +1,4 @@
-const config = require('@jeromefitz/eslint-config/react.cjs')
+const config = require('@jeromefitz/eslint-config/src/react.cjs')
 
 const overrides = [
   {
@@ -16,7 +16,7 @@ const overrides = [
 ]
 
 const eslint = {
-  extends: '@jeromefitz/eslint-config/react.cjs',
+  extends: '@jeromefitz/eslint-config/src/react.cjs',
   root: true,
   overrides,
 }

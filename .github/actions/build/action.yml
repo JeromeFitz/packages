@@ -25,4 +25,6 @@ runs:
         TURBO_TOKEN: ${{ inputs.TURBO_TOKEN }}
         TURBO_TEAM: ${{ inputs.TURBO_TEAM }}
       run: |
-        pnpm run ${{ inputs.BUILD_COMMAND }} --cache-dir=".cache-turbo"
+        pnpm run ${{ inputs.BUILD_COMMAND }} \
+          --cache-dir=".cache-turbo" \
+          --output-logs="errors-only"

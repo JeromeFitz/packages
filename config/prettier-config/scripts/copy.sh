@@ -22,14 +22,13 @@ else
 fi
 
 ###
-# @custom(build)
+# @custom(build) prettier
 ###
 
-cp ./.prettierrc.cjs ./dist/.prettierrc.cjs
-rm ./dist/zzz*
+cp ./src/*.cjs ./dist
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  sed -i "" "s|dist/.prettier|.prettier|g" dist/package.json
+  sed -i "" "s|src/index|index|g" dist/package.json
 else
-  sed -i -e "s|dist/.prettier|.prettier|g" dist/package.json
+  sed -i -e "s|src/index|index|g" dist/package.json
 fi

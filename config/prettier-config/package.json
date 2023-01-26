@@ -1,30 +1,27 @@
 {
-  "private": false,
-  "license": "MIT",
-  "version": "0.0.0",
   "name": "@jeromefitz/prettier-config",
-  "description": "ESLint Configuration",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Prettier Configuration",
+  "repository": "jeromefitz/packages.git",
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
     "url": "https://jeromefitzgerald.com"
   },
-  "repository": "jeromefitz/packages.git",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
+  "license": "MIT",
+  "private": false,
   "engines": {
     "node": ">=16"
   },
-  "type": "module",
-  "main": "./.prettierrc.cjs",
-  "sideEffects": false,
+  "main": "./src/index.cjs",
+  "module": "./src/index.cjs",
   "scripts": {
-    "build": "tsup-node",
+    "build": "pnpm run clean && pnpm run copy",
     "clean": "rm -rf .turbo && rm -rf dist",
     "clean:install": "pnpm run clean && rm -rf node_modules",
     "copy": "mkdir -p ./dist && ./scripts/copy.sh",
-    "dev": "tsup-node  --watch",
+    "dev": "echo '# tsup-node  --watch'",
     "format:lint": "pnpm run lint:eslint --fix && pnpm run format:prettier --write",
     "format:prettier": "prettier \"./src/**/*.{cjs,js,jsx,mjs,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\" --ignore-unknown --loglevel warn",
     "lint": "pnpm run format:prettier --check && pnpm run lint:eslint",
@@ -32,7 +29,13 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "prettier": "2.7.1",
+    "prettier": "2.8.3",
+    "prettier-plugin-pkg": "0.17.1",
+    "prettier-plugin-tailwindcss": "0.2.2",
     "pretty-quick": "3.1.3"
-  }
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "sideEffects": false
 }
