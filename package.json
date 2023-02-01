@@ -49,7 +49,7 @@
     "@jeromefitz/release-notes-generator": "workspace:*",
     "@jeromefitz/semantic": "workspace:*",
     "@jeromefitz/tsconfig": "workspace:*",
-    "@manypkg/cli": "0.19.2",
+    "@manypkg/cli": "0.20.0",
     "@types/is-ci": "3.0.0",
     "@types/node": "16.11.7",
     "ccommit": "workspace:*",
