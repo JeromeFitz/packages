@@ -27,4 +27,5 @@ runs:
       run: |
         pnpm run ${{ inputs.BUILD_COMMAND }} \
           --cache-dir=".cache-turbo" \
-          --output-logs="errors-only"
+          --output-logs="errors-only" \
+          --force
