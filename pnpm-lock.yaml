@@ -113,7 +113,7 @@ importers:
       '@jeromefitz/design-system': workspace:*
       '@types/react': 18.0.27
       '@types/react-dom': 18.0.10
-      cmdk: 0.1.21
+      cmdk: 0.1.22
       date-fns: 2.29.3
       date-fns-tz: 1.3.7
       framer-motion: 8.1.8
@@ -124,7 +124,7 @@ importers:
     dependencies:
       '@heroicons/react': 2.0.14_react@18.2.0
       '@jeromefitz/design-system': link:../../packages/design-system
-      cmdk: 0.1.21_5ndqzdd6t4rivxsukjv3i3ak2q
+      cmdk: 0.1.22_5ndqzdd6t4rivxsukjv3i3ak2q
       date-fns: 2.29.3
       date-fns-tz: 1.3.7_date-fns@2.29.3
       framer-motion: 8.1.8_biqbaboplfbrettd7655fr4n2y
@@ -248,7 +248,7 @@ importers:
       '@types/react': 18.0.27
       '@types/react-dom': 18.0.10
       '@vitejs/plugin-react': 2.2.0
-      cmdk: 0.1.21
+      cmdk: 0.1.22
       emoji-regex: 10.2.1
       framer-motion: 8.1.8
       lodash: 4.17.21
@@ -340,7 +340,7 @@ importers:
       '@types/react': 18.0.27
       '@types/react-dom': 18.0.10
       '@vitejs/plugin-react': 2.2.0_vite@3.2.5
-      cmdk: 0.1.21_5ndqzdd6t4rivxsukjv3i3ak2q
+      cmdk: 0.1.22_5ndqzdd6t4rivxsukjv3i3ak2q
       framer-motion: 8.1.8_biqbaboplfbrettd7655fr4n2y
       lodash: 4.17.21
       multiple-themes-stitches: 0.0.10_bss4kvy6gwub7jfp3j2x6kr56q
@@ -2789,6 +2789,7 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.13.10
+    dev: false
 
   /@babel/runtime/7.20.13:
     resolution: {integrity: sha512-gt3PKXs0DBoL9xCvOIIZ2NEqAGZqHjAnmVbfQtB620V0uReIQutpel14KcneZuer7UioY8ALKZ7iocavvzTNFA==}
@@ -3946,7 +3947,7 @@ packages:
       react: ^16.8 || ^17.0 || ^18.0
       react-dom: ^16.8 || ^17.0 || ^18.0
     dependencies:
-      '@babel/runtime': 7.20.0
+      '@babel/runtime': 7.20.13
       '@radix-ui/primitive': 1.0.0
       '@radix-ui/react-compose-refs': 1.0.0_react@18.2.0
       '@radix-ui/react-context': 1.0.0_react@18.2.0
@@ -9077,8 +9078,8 @@ packages:
     engines: {node: '>=0.8'}
     dev: false
 
-  /cmdk/0.1.21_5ndqzdd6t4rivxsukjv3i3ak2q:
-    resolution: {integrity: sha512-O5oiYmoBdcoqmax4RMOsnJHrseaXlnkzfCSWgNdyBxneTaSCmUByBF5MliJbsveoHJsjkyL2uNUs2kTBBMmIaw==}
+  /cmdk/0.1.22_5ndqzdd6t4rivxsukjv3i3ak2q:
+    resolution: {integrity: sha512-F0ffliBO/U6SXKGRud9AjsNuINvfF+d9BVUgi/y2+v3TSBHVOmIXl43CWLEyEEIOwc2DTnlXvIQenhGAEpwW0Q==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
