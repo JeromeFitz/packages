@@ -63,7 +63,7 @@
     "semantic-release-monorepo": "7.0.5",
     "syncpack": "8.5.14",
     "tsup": "6.5.0",
-    "turbo": "1.7.3"
+    "turbo": "1.7.4"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
