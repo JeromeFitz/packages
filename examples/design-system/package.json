@@ -25,7 +25,7 @@
     "semantic-release": "echo SKIP semantic-release"
   },
   "dependencies": {
-    "@heroicons/react": "2.0.14",
+    "@heroicons/react": "2.0.15",
     "@jeromefitz/design-system": "workspace:*",
     "cmdk": "0.1.22",
     "date-fns": "2.29.3",
