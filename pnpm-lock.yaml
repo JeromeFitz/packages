@@ -25,7 +25,7 @@ importers:
       semantic-release: 19.0.5
       semantic-release-monorepo: 7.0.5
       syncpack: 8.5.14
-      tsup: 6.6.0
+      tsup: 6.6.2
       turbo: 1.7.4
     dependencies:
       '@babel/eslint-parser': 7.19.1
@@ -49,7 +49,7 @@ importers:
       semantic-release: 19.0.5
       semantic-release-monorepo: 7.0.5_semantic-release@19.0.5
       syncpack: 8.5.14
-      tsup: 6.6.0
+      tsup: 6.6.2
       turbo: 1.7.4
 
   config/eslint-config:
@@ -18770,8 +18770,8 @@ packages:
   /tslib/2.4.1:
     resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==}
 
-  /tsup/6.6.0:
-    resolution: {integrity: sha512-HxZE7Hj5yNxLFftCXdcJ+Jsax8dI4oKb0bt8fIvd1g/W0FZ46sU1pFBVo15WpOERFcEMH7Hykey/Q+hKO4s9RQ==}
+  /tsup/6.6.2:
+    resolution: {integrity: sha512-+yQ6SI4rVtp1+YpcYOePumJLEVQ896CDNRt9dJ2L/DeMnLf1+FTOCVw5eioLBH0xLdHgogO9NQ6vPNF5MfkSJw==}
     engines: {node: '>=14'}
     hasBin: true
     peerDependencies:
