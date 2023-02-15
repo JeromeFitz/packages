@@ -116,7 +116,7 @@
     "@storybook/theming": "6.5.16",
     "@types/lodash": "4.14.191",
     "@types/react": "18.0.28",
-    "@types/react-dom": "18.0.10",
+    "@types/react-dom": "18.0.11",
     "@vitejs/plugin-react": "2.2.0",
     "cmdk": "0.1.22",
     "framer-motion": "8.1.8",
