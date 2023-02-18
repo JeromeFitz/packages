@@ -109,7 +109,7 @@ importers:
 
   examples/design-system:
     specifiers:
-      '@heroicons/react': 2.0.15
+      '@heroicons/react': 2.0.16
       '@jeromefitz/design-system': workspace:*
       '@types/react': 18.0.28
       '@types/react-dom': 18.0.11
@@ -122,7 +122,7 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0
     dependencies:
-      '@heroicons/react': 2.0.15_react@18.2.0
+      '@heroicons/react': 2.0.16_react@18.2.0
       '@jeromefitz/design-system': link:../../packages/design-system
       cmdk: 0.1.22_zula6vjvt3wdocc4mwcxqa6nzi
       date-fns: 2.29.3
@@ -176,7 +176,7 @@ importers:
 
   packages/design-system:
     specifiers:
-      '@heroicons/react': 2.0.15
+      '@heroicons/react': 2.0.16
       '@radix-ui/colors': 0.1.8
       '@radix-ui/primitive': 1.0.0
       '@radix-ui/react-accessible-icon': 1.0.1
@@ -322,7 +322,7 @@ importers:
       node-emoji: 1.11.0
       smoothscroll-polyfill: 0.4.4
     devDependencies:
-      '@heroicons/react': 2.0.15_react@18.2.0
+      '@heroicons/react': 2.0.16_react@18.2.0
       '@radix-ui/colors': 0.1.8
       '@radix-ui/react-icons': 1.1.1_react@18.2.0
       '@storybook/addon-a11y': 6.5.16_biqbaboplfbrettd7655fr4n2y
@@ -3262,8 +3262,8 @@ packages:
     resolution: {integrity: sha512-82cpyJyKRoQoRi+14ibCeGPu0CwypgtBAdBhq1WfvagpCZNKqwXbKwXllYSMG91DhmG4jt9gN8eP6lGOtozuaw==}
     dev: true
 
-  /@heroicons/react/2.0.15_react@18.2.0:
-    resolution: {integrity: sha512-CZ2dGWgWG3/z5LEoD5D3MEr1syn45JM/OB2aDpw531Ryecgkz2V7TWQ808P0lva7zP003PVW6WlwbofsYyga3A==}
+  /@heroicons/react/2.0.16_react@18.2.0:
+    resolution: {integrity: sha512-x89rFxH3SRdYaA+JCXwfe+RkE1SFTo9GcOkZettHer71Y3T7V+ogKmfw5CjTazgS3d0ClJ7p1NA+SP7VQLQcLw==}
     peerDependencies:
       react: '>= 16'
     dependencies:
@@ -8845,7 +8845,7 @@ packages:
       mississippi: 3.0.0
       mkdirp: 0.5.6
       move-concurrently: 1.0.1
-      promise-inflight: 1.0.1_bluebird@3.7.2
+      promise-inflight: 1.0.1
       rimraf: 2.7.1
       ssri: 6.0.2
       unique-filename: 1.1.1
@@ -16260,17 +16260,6 @@ packages:
     peerDependenciesMeta:
       bluebird:
         optional: true
-    dev: true
-
-  /promise-inflight/1.0.1_bluebird@3.7.2:
-    resolution: {integrity: sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==}
-    peerDependencies:
-      bluebird: '*'
-    peerDependenciesMeta:
-      bluebird:
-        optional: true
-    dependencies:
-      bluebird: 3.7.2
     dev: true
 
   /promise.allsettled/1.0.5:
