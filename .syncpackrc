@@ -1,12 +1,13 @@
 {
-  "dev": true,
+  "dependencyTypes": [
+    "dev",
+    "overrides",
+    "pnpmOverrides",
+    "prod",
+    "resolutions"
+  ],
   "filter": ".",
   "indent": "  ",
-  "overrides": true,
-  "peer": false,
-  "pnpmOverrides": true,
-  "prod": true,
-  "resolutions": true,
   "semverGroups": [
     {
       "range": "",
@@ -39,6 +40,5 @@
     }
   ],
   "source": [],
-  "versionGroups": [],
-  "workspace": false
+  "versionGroups": []
 }
