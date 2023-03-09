@@ -59,7 +59,7 @@
     "@jeromefitz/conventional-gitmoji": "workspace:*",
     "@types/lodash": "4.14.191",
     "chai": "4.3.7",
-    "isomorphic-unfetch": "3.1.0",
+    "isomorphic-unfetch": "4.0.2",
     "jest": "29.5.0",
     "lodash": "4.17.21",
     "mocha": "10.2.0",
