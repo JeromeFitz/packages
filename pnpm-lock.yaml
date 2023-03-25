@@ -446,16 +446,16 @@ importers:
       isomorphic-unfetch: 4.0.2
       lodash: 4.17.21
       plaiceholder: 2.5.0
-      sharp: 0.31.3
+      sharp: 0.32.0
     dependencies:
       github-slugger: 2.0.0
       isomorphic-unfetch: 4.0.2
-      plaiceholder: 2.5.0_sharp@0.31.3
+      plaiceholder: 2.5.0_sharp@0.32.0
     devDependencies:
       '@jeromefitz/utils': link:../utils
       '@types/lodash': 4.14.191
       lodash: 4.17.21
-      sharp: 0.31.3
+      sharp: 0.32.0
 
   packages/utils:
     specifiers:
@@ -14553,8 +14553,8 @@ packages:
     dependencies:
       semver: 7.3.8
 
-  /node-addon-api/5.0.0:
-    resolution: {integrity: sha512-CvkDw2OEnme7ybCykJpVcKH+uAOLV2qLqiyla128dN9TkEWfrYmxG6C2boDe5KcNQqZF3orkqzGgOMvZ/JNekA==}
+  /node-addon-api/6.0.0:
+    resolution: {integrity: sha512-GyHvgPvUXBvAkXa0YvYnhilSB1A+FRYMpIVggKzPZqdaZfevZOuzfWzyvgzOwRLHBeo/MMswmJFsrNF4Nw1pmA==}
 
   /node-cache/5.1.2:
     resolution: {integrity: sha512-t1QzWwnk4sjLWaQAS8CHgOJ+RAfmHpxFWmc36IWTiWHQfs0w5JDMBS1b1ZxQteo0vVVuWJvIUKHDkkeK7vIGCg==}
@@ -15504,7 +15504,7 @@ packages:
       - supports-color
     dev: true
 
-  /plaiceholder/2.5.0_sharp@0.31.3:
+  /plaiceholder/2.5.0_sharp@0.32.0:
     resolution: {integrity: sha512-rygdNSWuYzs1GxxGjq2FiJdJB1AUaKhUHP/M7PIrSjAAGuoJC5ACiJx+cZZ+hDmMalxsxOMw0Sbbx3LF8jemGg==}
     peerDependencies:
       sharp: '>= 0.30.6'
@@ -15514,7 +15514,7 @@ packages:
       image-size: 1.0.2
       node-cache: 5.1.2
       node-fetch: 2.6.7_encoding@0.1.13
-      sharp: 0.31.3
+      sharp: 0.32.0
     dev: false
 
   /pnp-webpack-plugin/1.6.4_typescript@4.8.4:
@@ -17233,14 +17233,14 @@ packages:
     resolution: {integrity: sha512-y0m1JoUZSlPAjXVtPPW70aZWfIL/dSP7AFkRnniLCrK/8MDKog3TySTBmckD+RObVxH0v4Tox67+F14PdED2oQ==}
     dev: true
 
-  /sharp/0.31.3:
-    resolution: {integrity: sha512-XcR4+FCLBFKw1bdB+GEhnUNXNXvnt0tDo4WsBsraKymuo/IAuPuCBVAL2wIkUw2r/dwFW5Q5+g66Kwl2dgDFVg==}
+  /sharp/0.32.0:
+    resolution: {integrity: sha512-yLAypVcqj1toSAqRSwbs86nEzfyZVDYqjuUX8grhFpeij0DDNagKJXELS/auegDBRDg1XBtELdOGfo2X1cCpeA==}
     engines: {node: '>=14.15.0'}
     requiresBuild: true
     dependencies:
       color: 4.2.3
       detect-libc: 2.0.1
-      node-addon-api: 5.0.0
+      node-addon-api: 6.0.0
       prebuild-install: 7.1.1
       semver: 7.3.8
       simple-get: 4.0.1
