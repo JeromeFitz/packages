@@ -35,7 +35,7 @@ const getNotionSlugByRoute__getDataByParentRouteType = async ({
   const [parentSlug, slug] = meta
   const isChild = _size(meta) === 2
 
-  const CHILD = NOTION[ROUTE_TYPE]?.hasChild.toUpperCase()
+  const CHILD = NOTION[ROUTE_TYPE]?.hasChild?.toUpperCase()
 
   const __info: any = await getDatabasesByIdQuery({
     database_id:
@@ -173,7 +173,7 @@ const getNotionSlugByRoute = async ({
    * // @todo(next-notion) move to `isChild`
    *
    */
-  if (!!NOTION[routeType.toUpperCase()].hasChild) {
+  if (!!NOTION[routeType?.toUpperCase()]?.hasChild) {
     return await getNotionSlugByRoute__getDataByParentRouteType({
       config,
       getBlocksByIdChildren,
