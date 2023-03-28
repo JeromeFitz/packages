@@ -60,14 +60,14 @@ importers:
       eslint: 8.33.0
       eslint-config-next: 13.1.6
       eslint-config-prettier: 8.6.0
-      eslint-config-turbo: 0.0.7
+      eslint-config-turbo: 1.8.6
       eslint-plugin-import: 2.27.5
       eslint-plugin-jest: 27.2.1
       eslint-plugin-jsx-a11y: 6.7.1
       eslint-plugin-react: 7.32.2
       eslint-plugin-react-hooks: 4.6.0
       eslint-plugin-tailwindcss: 3.8.3
-      eslint-plugin-turbo: 0.0.7
+      eslint-plugin-turbo: 1.8.6
       eslint-plugin-typescript-sort-keys: 2.1.0
     dependencies:
       '@babel/eslint-parser': 7.19.1_eslint@8.33.0
@@ -76,14 +76,14 @@ importers:
       eslint: 8.33.0
       eslint-config-next: 13.1.6_eslint@8.33.0
       eslint-config-prettier: 8.6.0_eslint@8.33.0
-      eslint-config-turbo: 0.0.7_eslint@8.33.0
+      eslint-config-turbo: 1.8.6_eslint@8.33.0
       eslint-plugin-import: 2.27.5_ufewo3pl5nnmz6lltvjrdi2hii
       eslint-plugin-jest: 27.2.1_em664yknwwyh76zplyjni24oay
       eslint-plugin-jsx-a11y: 6.7.1_eslint@8.33.0
       eslint-plugin-react: 7.32.2_eslint@8.33.0
       eslint-plugin-react-hooks: 4.6.0_eslint@8.33.0
       eslint-plugin-tailwindcss: 3.8.3
-      eslint-plugin-turbo: 0.0.7_eslint@8.33.0
+      eslint-plugin-turbo: 1.8.6_eslint@8.33.0
       eslint-plugin-typescript-sort-keys: 2.1.0_ufewo3pl5nnmz6lltvjrdi2hii
 
   config/lint-staged:
@@ -10348,13 +10348,13 @@ packages:
       eslint: 8.33.0
     dev: false
 
-  /eslint-config-turbo/0.0.7_eslint@8.33.0:
-    resolution: {integrity: sha512-WbrGlyfs94rOXrhombi1wjIAYGdV2iosgJRndOZtmDQeq5GLTzYmBUCJQZWtLBEBUPCj96RxZ2OL7Cn+xv/Azg==}
+  /eslint-config-turbo/1.8.6_eslint@8.33.0:
+    resolution: {integrity: sha512-LSMqrHmFeQcYRuBnzrzw+B2bJ3+o8wxPkRwfK0Y+SSLsq2F/niRJ2kqB8j4uOSCfxybHHpFEB2CgUpQiiyfeoQ==}
     peerDependencies:
       eslint: '>6.6.0'
     dependencies:
       eslint: 8.33.0
-      eslint-plugin-turbo: 0.0.7_eslint@8.33.0
+      eslint-plugin-turbo: 1.8.6_eslint@8.33.0
     dev: false
 
   /eslint-import-resolver-node/0.3.7:
@@ -10601,8 +10601,8 @@ packages:
       postcss: 8.4.18
     dev: false
 
-  /eslint-plugin-turbo/0.0.7_eslint@8.33.0:
-    resolution: {integrity: sha512-iajOH8eD4jha3duztGVBD1BEmvNrQBaA/y3HFHf91vMDRYRwH7BpHSDFtxydDpk5ghlhRxG299SFxz7D6z4MBQ==}
+  /eslint-plugin-turbo/1.8.6_eslint@8.33.0:
+    resolution: {integrity: sha512-LieXzur+4XtIsLst8GdupTMhvGn2ebFetG3AVErh2jHBy1EobPHbatjcdNZQMy5EsdG35axQVB8KFF3jo4u+OQ==}
     peerDependencies:
       eslint: '>6.6.0'
     dependencies:
