@@ -155,7 +155,7 @@ importers:
 
   packages/conventional-gitmoji:
     specifiers:
-      '@types/lodash': 4.14.191
+      '@types/lodash': 4.14.192
       '@types/semantic-release': 17.2.4
       '@types/title': 3.4.1
       fast-json-stable-stringify: 2.1.0
@@ -168,7 +168,7 @@ importers:
       grapheme-splitter: 1.0.4
       title: 3.5.3
     devDependencies:
-      '@types/lodash': 4.14.191
+      '@types/lodash': 4.14.192
       '@types/semantic-release': 17.2.4
       '@types/title': 3.4.1
       gitmojis: 3.13.4
@@ -244,7 +244,7 @@ importers:
       '@storybook/mdx2-csf': 0.0.4
       '@storybook/react': 6.5.16
       '@storybook/theming': 6.5.16
-      '@types/lodash': 4.14.191
+      '@types/lodash': 4.14.192
       '@types/react': 18.0.30
       '@types/react-dom': 18.0.11
       '@vitejs/plugin-react': 3.1.0
@@ -336,7 +336,7 @@ importers:
       '@storybook/mdx2-csf': 0.0.4
       '@storybook/react': 6.5.16_4wccqbpdwocofcsge2dye67z2a
       '@storybook/theming': 6.5.16_biqbaboplfbrettd7655fr4n2y
-      '@types/lodash': 4.14.191
+      '@types/lodash': 4.14.192
       '@types/react': 18.0.30
       '@types/react-dom': 18.0.11
       '@vitejs/plugin-react': 3.1.0_vite@4.2.1
@@ -357,7 +357,7 @@ importers:
     specifiers:
       '@jeromefitz/utils': workspace:*
       '@notionhq/client': 2.2.3
-      '@types/lodash': 4.14.191
+      '@types/lodash': 4.14.192
       date-fns: 2.29.3
       date-fns-tz: 2.0.0
       github-slugger: 2.0.0
@@ -369,14 +369,14 @@ importers:
       github-slugger: 2.0.0
     devDependencies:
       '@jeromefitz/utils': link:../utils
-      '@types/lodash': 4.14.191
+      '@types/lodash': 4.14.192
       lodash: 4.17.21
 
   packages/release-notes-generator:
     specifiers:
       '@octokit/rest': 19.0.7
       '@types/conventional-commits-parser': 3.0.3
-      '@types/lodash': 4.14.191
+      '@types/lodash': 4.14.192
       '@types/read-pkg-up': 6.0.0
       conventional-commits-filter: 2.0.7
       conventional-commits-parser: 3.2.4
@@ -395,7 +395,7 @@ importers:
       semver: 7.3.8
     devDependencies:
       '@types/conventional-commits-parser': 3.0.3
-      '@types/lodash': 4.14.191
+      '@types/lodash': 4.14.192
       '@types/read-pkg-up': 6.0.0
       lodash: 4.17.21
 
@@ -441,7 +441,7 @@ importers:
   packages/spotify:
     specifiers:
       '@jeromefitz/utils': workspace:*
-      '@types/lodash': 4.14.191
+      '@types/lodash': 4.14.192
       github-slugger: 2.0.0
       isomorphic-unfetch: 4.0.2
       lodash: 4.17.21
@@ -453,16 +453,16 @@ importers:
       plaiceholder: 2.5.0_sharp@0.32.0
     devDependencies:
       '@jeromefitz/utils': link:../utils
-      '@types/lodash': 4.14.191
+      '@types/lodash': 4.14.192
       lodash: 4.17.21
       sharp: 0.32.0
 
   packages/utils:
     specifiers:
-      '@types/lodash': 4.14.191
+      '@types/lodash': 4.14.192
       lodash: 4.17.21
     devDependencies:
-      '@types/lodash': 4.14.191
+      '@types/lodash': 4.14.192
       lodash: 4.17.21
 
 packages:
@@ -6330,7 +6330,7 @@ packages:
       '@babel/preset-env': 7.18.2
       '@babel/types': 7.21.2
       '@mdx-js/mdx': 1.6.22
-      '@types/lodash': 4.14.191
+      '@types/lodash': 4.14.192
       js-string-escape: 1.0.1
       loader-utils: 2.0.4
       lodash: 4.17.21
@@ -6349,7 +6349,7 @@ packages:
       '@babel/preset-env': 7.18.2_@babel+core@7.21.0
       '@babel/types': 7.21.2
       '@mdx-js/mdx': 1.6.22
-      '@types/lodash': 4.14.191
+      '@types/lodash': 4.14.192
       js-string-escape: 1.0.1
       loader-utils: 2.0.4
       lodash: 4.17.21
@@ -6907,8 +6907,8 @@ packages:
       '@types/node': 18.0.0
     dev: false
 
-  /@types/lodash/4.14.191:
-    resolution: {integrity: sha512-BdZ5BCCvho3EIXw6wUCXHe7rS53AIDPLE+JzwgT+OsJk53oBfbSmZZ7CX4VaRoN78N+TJpFi9QPlfIVNmJYWxQ==}
+  /@types/lodash/4.14.192:
+    resolution: {integrity: sha512-km+Vyn3BYm5ytMO13k9KTp27O75rbQ0NFw+U//g+PX7VZyjCioXaRFisqSIJRECljcTv73G3i6BpglNGHgUQ5A==}
     dev: true
 
   /@types/mdast/3.0.10:
