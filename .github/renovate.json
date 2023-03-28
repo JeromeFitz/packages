@@ -32,8 +32,12 @@
     },
     {
       "commitMessagePrefix": "⬆️  (deps)",
-      "excludePackageNames": ["eslint-config-next"],
-      "groupName": "eslint-config 📏 ...",
+      "excludePackageNames": [
+        "eslint-config-next",
+        "eslint-config-turbo",
+        "eslint-plugin-turbo"
+      ],
+      "groupName": "eslint-config 📏 ",
       "groupSlug": "eslint-config",
       "matchPackageNames": [
         "@babel/eslint-parser",
@@ -45,23 +49,30 @@
       "matchPackagePatterns": ["^eslint"]
     },
     {
-      "commitMessagePrefix": "📦  (deps-dev)",
-      "commitMessageSuffix": "[b]",
-      "groupName": "next 🔺 ...",
+      "commitMessagePrefix": "⬆️  (deps)",
+      "commitMessageSuffix": "",
+      "groupName": "next 🔺 ",
       "groupSlug": "next",
       "matchPackageNames": ["eslint-config-next", "next"]
     },
     {
       "commitMessagePrefix": "📦  (deps-dev)",
       "excludePackageNames": ["@storybook/builder-vite"],
-      "groupName": "storybook 📙 ...",
+      "groupName": "storybook 📙 ",
       "groupSlug": "storybook",
       "matchPackageNames": ["storybook-addon-themes"],
       "matchPackagePatterns": ["^@storybook/"]
     },
     {
+      "commitMessagePrefix": "⬆️  (deps)",
+      "commitMessageSuffix": "",
+      "groupName": "turbo 🔺 ",
+      "groupSlug": "turbo",
+      "matchPackageNames": ["eslint-config-turbo", "eslint-plugin-turbo", "turbo"]
+    },
+    {
       "commitMessagePrefix": "📦  (deps-dev)",
-      "groupName": "vite ⚡ ...",
+      "groupName": "vite ⚡ ",
       "groupSlug": "vite",
       "matchPackageNames": [
         "@storybook/builder-vite",
@@ -72,14 +83,14 @@
     {
       "assignees": ["JeromeFitz"],
       "commitMessagePrefix": "⬆️  (deps)",
-      "groupName": "radix-ui 🌐 ...",
+      "groupName": "radix-ui 🌐 ",
       "groupSlug": "radix-ui",
       "matchPackagePatterns": ["^@radix-ui/"],
       "reviewers": ["JeromeFitz"]
     },
     {
       "commitMessagePrefix": "⬆️  (deps)",
-      "groupName": "react ⚛️ ...",
+      "groupName": "react ⚛️ ",
       "groupSlug": "react",
       "matchPackageNames": ["@types/react", "react", "react-dom"]
     },
