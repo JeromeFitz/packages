@@ -1,26 +1,22 @@
 {
-  "private": false,
-  "license": "MIT",
-  "version": "0.0.0",
   "name": "@jeromefitz/conventional-gitmoji",
+  "version": "0.0.0",
+  "type": "module",
   "description": "Helper package for dual gitmoji / conventional commits",
+  "repository": "jeromefitz/packages.git",
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
     "url": "https://jeromefitzgerald.com"
   },
-  "repository": "jeromefitz/packages.git",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
+  "license": "MIT",
+  "private": false,
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
-  "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "typings": "./dist/index.d.ts",
-  "sideEffects": false,
   "scripts": {
     "build": "tsup",
     "clean": "rm -rf .turbo && rm -rf dist",
@@ -34,6 +30,9 @@
     "lint:eslint": "eslint ./src --ext cjs,js,jsx,mjs,ts,tsx --max-warnings=0",
     "semantic-release": "semantic-release"
   },
+  "peerDependencies": {
+    "lodash": "^4.17.21"
+  },
   "dependencies": {
     "fast-json-stable-stringify": "2.1.0",
     "grapheme-splitter": "1.0.4",
@@ -41,12 +40,13 @@
   },
   "devDependencies": {
     "@types/lodash": "4.14.192",
-    "@types/semantic-release": "17.2.4",
+    "@types/semantic-release": "20.0.1",
     "@types/title": "3.4.1",
     "gitmojis": "3.13.4",
     "lodash": "4.17.21"
   },
-  "peerDependencies": {
-    "lodash": "^4.17.21"
-  }
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "sideEffects": false
 }

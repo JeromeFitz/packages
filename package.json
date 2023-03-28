@@ -11,7 +11,7 @@
   "private": true,
   "packageManager": "^pnpm@8.0.0",
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
   "scripts": {
     "build": "turbo run build --filter=[HEAD^1]",
@@ -51,7 +51,7 @@
     "@jeromefitz/tsconfig": "workspace:*",
     "@manypkg/cli": "0.20.0",
     "@types/is-ci": "3.0.0",
-    "@types/node": "16.11.7",
+    "@types/node": "18.15.11",
     "ccommit": "workspace:*",
     "dotenv": "16.0.3",
     "husky": "8.0.3",
@@ -59,10 +59,10 @@
     "lint-staged": "13.2.0",
     "lodash": "4.17.21",
     "pinst": "3.0.0",
-    "semantic-release": "19.0.5",
+    "semantic-release": "21.0.0",
     "semantic-release-monorepo": "7.0.5",
     "syncpack": "9.8.4",
-    "tsup": "6.6.2",
+    "tsup": "6.7.0",
     "turbo": "1.8.6"
   },
   "publishConfig": {

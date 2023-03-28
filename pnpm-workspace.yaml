@@ -1,6 +1,7 @@
 packages:
   - 'config/*'
-  - 'examples/*'
+  - '!examples/*'
   - 'packages/*'
+  - '!packages/design-system'
   - '!packages/git-cz'
 enable-pre-post-scripts: true

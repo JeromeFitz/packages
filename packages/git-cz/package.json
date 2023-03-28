@@ -1,9 +1,9 @@
 {
-  "private": false,
-  "license": "MIT",
-  "version": "0.0.0",
   "name": "@jeromefitz/git-cz",
+  "version": "0.0.0",
+  "type": "module",
   "description": "git(moji)-cz => conventional commits, gitflow branching",
+  "repository": "jeromefitz/packages.git",
   "author": {
     "name": "Vadim Dalecky",
     "url": "http://onp4.com/@vadim/~js"
@@ -15,7 +15,18 @@
       "url": "https://jeromefitzgerald.com"
     }
   ],
-  "repository": "jeromefitz/packages.git",
+  "license": "MIT",
+  "private": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "git-cz": "./dist/cli.js",
+    "gitcz": "./dist/cli.js"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
   "keywords": [
     "commit",
     "conventional changelog",
@@ -24,14 +35,6 @@
     "gitmoji",
     "pretty"
   ],
-  "engines": {
-    "node": ">=16"
-  },
-  "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "typings": "./dist/index.d.ts",
-  "sideEffects": false,
   "scripts": {
     "build": "tsup",
     "clean": "rm -rf .turbo && rm -rf dist",
@@ -44,6 +47,10 @@
     "lint": "pnpm run format:prettier --check && pnpm run lint:eslint",
     "lint:eslint": "eslint ./src --ext cjs,js,jsx,mjs,ts,tsx --max-warnings=0",
     "semantic-release": "semantic-release"
+  },
+  "peerDependencies": {
+    "@jeromefitz/conventional-gitmoji": "^3.2.0",
+    "lodash": "^4.17.21"
   },
   "dependencies": {
     "colorize-template": "1.0.0",
@@ -66,12 +73,5 @@
     "rimraf": "4.4.1",
     "spawncommand": "2.2.0"
   },
-  "peerDependencies": {
-    "@jeromefitz/conventional-gitmoji": "^3.2.0",
-    "lodash": "^4.17.21"
-  },
-  "bin": {
-    "git-cz": "./dist/cli.js",
-    "gitcz": "./dist/cli.js"
-  }
+  "sideEffects": false
 }

@@ -19,4 +19,4 @@ runs:
         # architecture: 'x64'
         cache-dependency-path: pnpm-lock.yaml
         cache: 'pnpm'
-        node-version: 16
+        node-version: 18
