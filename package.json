@@ -41,7 +41,7 @@
     "test:all": "turbo run test"
   },
   "dependencies": {
-    "@babel/eslint-parser": "7.19.1",
+    "@babel/eslint-parser": "7.21.3",
     "@jeromefitz/conventional-gitmoji": "workspace:*",
     "@jeromefitz/eslint-config": "workspace:*",
     "@jeromefitz/lint-staged": "workspace:*",
@@ -56,14 +56,14 @@
     "dotenv": "16.0.3",
     "husky": "8.0.3",
     "is-ci": "3.0.1",
-    "lint-staged": "13.2.0",
+    "lint-staged": "13.2.1",
     "lodash": "4.17.21",
     "pinst": "3.0.0",
     "semantic-release": "19.0.5",
     "semantic-release-monorepo": "7.0.5",
     "syncpack": "9.8.4",
     "tsup": "6.6.2",
-    "turbo": "1.8.6"
+    "turbo": "1.9.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
