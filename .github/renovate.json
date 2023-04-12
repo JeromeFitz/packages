@@ -18,6 +18,7 @@
     "inquirer-autocomplete-prompt",
     "inquirer",
     "read-pkg-up",
+    "tsup",
     "typescript"
   ],
   "labels": ["📦️ Dependencies"],
