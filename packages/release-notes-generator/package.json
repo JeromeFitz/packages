@@ -1,26 +1,22 @@
 {
-  "private": false,
-  "license": "MIT",
-  "version": "0.0.0",
   "name": "@jeromefitz/release-notes-generator",
+  "version": "0.0.0",
+  "type": "module",
   "description": "Custom Release Note Generator for Semantic Release.",
+  "repository": "jeromefitz/packages.git",
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
     "url": "https://jeromefitzgerald.com"
   },
-  "repository": "jeromefitz/packages.git",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
+  "license": "MIT",
+  "private": false,
   "engines": {
     "node": ">=16"
   },
-  "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "typings": "./dist/index.d.ts",
-  "sideEffects": false,
   "scripts": {
     "build": "tsup",
     "clean": "rm -rf .turbo && rm -rf dist",
@@ -33,6 +29,9 @@
     "lint:eslint": "eslint ./src --ext cjs,js,jsx,mjs,ts,tsx --max-warnings=0",
     "semantic-release": "semantic-release"
   },
+  "peerDependencies": {
+    "lodash": "^4.17.21"
+  },
   "dependencies": {
     "@octokit/rest": "19.0.7",
     "conventional-commits-filter": "2.0.7",
@@ -40,7 +39,7 @@
     "date-fns": "2.29.3",
     "import-from": "4.0.0",
     "read-pkg-up": "7.0.1",
-    "semver": "7.3.8"
+    "semver": "7.4.0"
   },
   "devDependencies": {
     "@types/conventional-commits-parser": "3.0.3",
@@ -48,7 +47,8 @@
     "@types/read-pkg-up": "6.0.0",
     "lodash": "4.17.21"
   },
-  "peerDependencies": {
-    "lodash": "^4.17.21"
-  }
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "sideEffects": false
 }
