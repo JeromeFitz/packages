@@ -9,6 +9,9 @@
   "commitMessagePrefix": "⬆️  (deps)",
   "commitMessageSuffix": "",
   "commitMessageTopic": " {{depName}}{{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}@{{{newMajor}}} 💥 {{else}}{{#if isSingleVersion}}@{{{newVersion}}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}@{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}}",
+  "constraints": {
+    "pnpm": ">8.0.0"
+  },
   "dependencyDashboard": false,
   "ignoreDeps": [
     "@types/node",
@@ -117,6 +120,7 @@
       "reviewers": ["JeromeFitz"]
     }
   ],
+  "postUpdateOptions": ["pnpmDedupe"],
   "prBodyColumns": ["Package", "Update", "Type", "Change"],
   "prFooter": "<!-- COMMIT_BODY_TEXT_END -->",
   "prHeader": "<!-- COMMIT_BODY_TEXT_BEGIN -->",
