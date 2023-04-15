@@ -1,9 +1,6 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 
 import { Heading } from './Heading'
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-// import mdx from './Heading.mdx'
 
 const dummyContent = 'Lorem ipsum dolor sit amet.'
 
@@ -15,7 +12,6 @@ export default {
       description: {
         component: 'MDX Content is TBD',
       },
-      // page: mdx,
     },
   },
   argTypes: {
@@ -33,14 +29,17 @@ export default {
       control: { type: 'select' },
     },
   },
-} as ComponentMeta<typeof Heading>
+} as Meta<typeof Heading>
 
-const Template: ComponentStory<typeof Heading> = ({ children, ...args }) => (
+const Template: StoryFn<typeof Heading> = ({ children, ...args }) => (
   <Heading {...args}> {children}</Heading>
 )
 
-export const Default = Template.bind({})
-Default.args = {
-  children: dummyContent,
-  size: '3',
+export const Default = {
+  render: Template,
+
+  args: {
+    children: dummyContent,
+    size: '3',
+  },
 }

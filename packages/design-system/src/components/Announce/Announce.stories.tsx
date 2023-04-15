@@ -1,9 +1,6 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 
 import { Announce } from './Announce'
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-// import mdx from './Announce.mdx'
 
 const dummyContent = 'Hello'
 
@@ -15,7 +12,6 @@ export default {
       description: {
         component: 'MDX Content is TBD',
       },
-      // page: mdx,
     },
   },
   argTypes: {
@@ -29,13 +25,16 @@ export default {
       control: false,
     },
   },
-} as ComponentMeta<typeof Announce>
+} as Meta<typeof Announce>
 
-const Template: ComponentStory<typeof Announce> = ({ children, ...args }) => (
+const Template: StoryFn<typeof Announce> = ({ children, ...args }) => (
   <Announce {...args}>{children}</Announce>
 )
 
-export const Default = Template.bind({})
-Default.args = {
-  children: dummyContent,
+export const Default = {
+  render: Template,
+
+  args: {
+    children: dummyContent,
+  },
 }
