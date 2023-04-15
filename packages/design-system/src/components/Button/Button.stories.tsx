@@ -1,9 +1,6 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 
 import { Button } from './Button'
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import mdx from './Button.mdx'
 
 const buttonText = 'Default Button Text'
 
@@ -15,7 +12,6 @@ export default {
       description: {
         component: 'MDX Content is TBD',
       },
-      page: mdx,
     },
   },
   argTypes: {
@@ -42,37 +38,41 @@ export default {
       control: { type: 'select' },
     },
   },
-} as ComponentMeta<typeof Button>
+} as Meta<typeof Button>
 
-const Template: ComponentStory<typeof Button> = ({
-  children = buttonText,
-  ...args
-}) => <Button {...args}>{children}</Button>
+const Template: StoryFn<typeof Button> = ({ children = buttonText, ...args }) => (
+  <Button {...args}>{children}</Button>
+)
 
-// export const Default: ComponentStory<typeof Button> = (props) => (
-//   <Button variant="brand" {...props}>
-//     Brand Button
-//   </Button>
-// )
+export const Default = {
+  render: Template,
+  args: {},
+}
 
-export const Default = Template.bind({})
-Default.args = {}
+export const Brand = {
+  render: Template,
+  args: { children: 'Custom Brand Button', variant: 'brand' },
 
-export const Brand = Template.bind({})
-Brand.args = { children: 'Custom Brand Button', variant: 'brand' }
-Brand.parameters = {
-  docs: {
-    description: {
-      story: 'Custom Description for **Brand**',
+  parameters: {
+    docs: {
+      description: {
+        story: 'Custom Description for **Brand**',
+      },
     },
   },
 }
 
-export const Ghost = Template.bind({})
-Ghost.args = { ghost: true }
+export const Ghost = {
+  render: Template,
+  args: { ghost: true },
+}
 
-export const Size2 = Template.bind({})
-Size2.args = { size: '2' }
+export const Size2 = {
+  render: Template,
+  args: { size: '2' },
+}
 
-export const Size3 = Template.bind({})
-Size3.args = { size: '3' }
+export const Size3 = {
+  render: Template,
+  args: { size: '3' },
+}

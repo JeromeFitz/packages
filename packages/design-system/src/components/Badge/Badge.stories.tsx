@@ -1,9 +1,6 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 
 import { Badge } from './Badge'
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-// import mdx from './Badge.mdx'
 
 const dummyContent = 'Hello'
 
@@ -15,7 +12,6 @@ export default {
       description: {
         component: 'MDX Content is TBD',
       },
-      // page: mdx,
     },
   },
   argTypes: {
@@ -37,13 +33,16 @@ export default {
       control: { type: 'select' },
     },
   },
-} as ComponentMeta<typeof Badge>
+} as Meta<typeof Badge>
 
-const Template: ComponentStory<typeof Badge> = ({ children, ...args }) => (
+const Template: StoryFn<typeof Badge> = ({ children, ...args }) => (
   <Badge {...args}>{children}</Badge>
 )
 
-export const Default = Template.bind({})
-Default.args = {
-  children: dummyContent,
+export const Default = {
+  render: Template,
+
+  args: {
+    children: dummyContent,
+  },
 }

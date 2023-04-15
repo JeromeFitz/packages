@@ -1,11 +1,8 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 
 import { Flex, Label } from '../index'
 
 import { Checkbox } from './Checkbox'
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-// import mdx from './Checkbox.mdx'
 
 const dummyContent = 'Hello'
 
@@ -17,7 +14,6 @@ export default {
       description: {
         component: 'MDX Content is TBD',
       },
-      // page: mdx,
     },
   },
   argTypes: {
@@ -35,9 +31,9 @@ export default {
       control: { type: 'select' },
     },
   },
-} as ComponentMeta<typeof Checkbox>
+} as Meta<typeof Checkbox>
 
-const Template: ComponentStory<typeof Checkbox> = ({ children, ...args }) => (
+const Template: StoryFn<typeof Checkbox> = ({ children, ...args }) => (
   <Flex css={{}}>
     <Checkbox {...args} />
     <Label css={{ pl: '$4' }} htmlFor={args?.id}>
@@ -46,9 +42,12 @@ const Template: ComponentStory<typeof Checkbox> = ({ children, ...args }) => (
   </Flex>
 )
 
-export const Default = Template.bind({})
-Default.args = {
-  children: dummyContent,
-  defaultChecked: true,
-  id: 'customCheckbox1',
+export const Default = {
+  render: Template,
+
+  args: {
+    children: dummyContent,
+    defaultChecked: true,
+    id: 'customCheckbox1',
+  },
 }

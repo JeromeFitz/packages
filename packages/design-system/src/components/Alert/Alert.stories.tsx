@@ -1,11 +1,8 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 
 import { Text } from '../index'
 
 import { Alert } from './Alert'
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-// import mdx from './Alert.mdx'
 
 const dummyContent = <Text css={{ p: '$3' }}>Dummy Content Here</Text>
 
@@ -17,7 +14,6 @@ export default {
       description: {
         component: 'MDX Content is TBD',
       },
-      // page: mdx,
     },
   },
   argTypes: {
@@ -39,13 +35,16 @@ export default {
       control: { type: 'select' },
     },
   },
-} as ComponentMeta<typeof Alert>
+} as Meta<typeof Alert>
 
-const Template: ComponentStory<typeof Alert> = ({ children, ...args }) => (
+const Template: StoryFn<typeof Alert> = ({ children, ...args }) => (
   <Alert {...args}>{children}</Alert>
 )
 
-export const Default = Template.bind({})
-Default.args = {
-  children: dummyContent,
+export const Default = {
+  render: Template,
+
+  args: {
+    children: dummyContent,
+  },
 }

@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 
 import { Text } from '../index'
 
@@ -8,9 +8,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from './Accordion'
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-// import mdx from './Accordion.mdx'
 
 const dummyContent = <Text css={{ p: '$3' }}>Dummy Content Here</Text>
 
@@ -22,7 +19,6 @@ export default {
       description: {
         component: 'MDX Content is TBD',
       },
-      // page: mdx,
     },
   },
   argTypes: {
@@ -36,9 +32,9 @@ export default {
       control: false,
     },
   },
-} as ComponentMeta<typeof Accordion>
+} as Meta<typeof Accordion>
 
-const Template: ComponentStory<typeof Accordion> = ({ children, ...args }) => (
+const Template: StoryFn<typeof Accordion> = ({ children, ...args }) => (
   // <Alert {...args}>{children}</Alert>
   <Accordion type="single" collapsible>
     <AccordionItem value={`toggle`}>
@@ -52,8 +48,11 @@ const Template: ComponentStory<typeof Accordion> = ({ children, ...args }) => (
   </Accordion>
 )
 
-export const Default = Template.bind({})
-Default.args = {
-  children: dummyContent,
-  title: 'Title of Accordion',
+export const Default = {
+  render: Template,
+
+  args: {
+    children: dummyContent,
+    title: 'Title of Accordion',
+  },
 }

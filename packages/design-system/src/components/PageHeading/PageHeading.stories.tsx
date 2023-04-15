@@ -1,9 +1,6 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 
 import { PageHeading } from './PageHeading'
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-// import mdx from './PageHeading.mdx'
 
 const dummyTitle = 'Lorem ipsum dolor sit amet.'
 const dummyDescription = 'Lorem ipsum dolor sit amet.'
@@ -16,7 +13,6 @@ export default {
       description: {
         component: 'MDX Content is TBD',
       },
-      // page: mdx,
     },
   },
   argTypes: {
@@ -34,14 +30,17 @@ export default {
       control: { type: 'select' },
     },
   },
-} as ComponentMeta<typeof PageHeading>
+} as Meta<typeof PageHeading>
 
-const Template: ComponentStory<typeof PageHeading> = ({ ...args }) => (
+const Template: StoryFn<typeof PageHeading> = ({ ...args }) => (
   <PageHeading {...args} />
 )
 
-export const Default = Template.bind({})
-Default.args = {
-  title: dummyTitle,
-  description: dummyDescription,
+export const Default = {
+  render: Template,
+
+  args: {
+    title: dummyTitle,
+    description: dummyDescription,
+  },
 }

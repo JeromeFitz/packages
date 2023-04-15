@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 // import { useCommandState as useCmdk } from 'cmdk'
 import { useEffect, useRef, useState } from 'react'
 import type { KeyboardEvent } from 'react'
@@ -8,7 +8,6 @@ import useDelayedRender from '../../hooks/useDelayedRender'
 import { Box, Flex, Icon } from '../index'
 
 import { CommandMenu, CommandMenuItem } from './CommandMenu'
-import mdx from './CommandMenu.mdx'
 import {
   Command,
   CommandInput,
@@ -33,7 +32,6 @@ export default {
       description: {
         component: 'MDX Content is TBD',
       },
-      page: mdx,
     },
   },
   argTypes: {
@@ -42,7 +40,7 @@ export default {
     //   control: { type: 'radio' },
     // },
   },
-} as ComponentMeta<typeof CommandMenu>
+} as Meta<typeof CommandMenu>
 
 function Settings() {
   return (
@@ -294,7 +292,7 @@ function Home({ searchShows }: { searchShows: Function }) {
   )
 }
 
-const Template: ComponentStory<typeof CommandMenu> = ({
+const Template: StoryFn<typeof CommandMenu> = ({
   children = CommandMenuData,
   ...args
 }) => {
@@ -323,5 +321,7 @@ const Template: ComponentStory<typeof CommandMenu> = ({
   )
 }
 
-export const Default = Template.bind({})
-Default.args = {}
+export const Default = {
+  render: Template,
+  args: {},
+}

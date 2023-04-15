@@ -64,7 +64,6 @@
       "excludePackageNames": ["@storybook/builder-vite"],
       "groupName": "storybook 📙 ",
       "groupSlug": "storybook",
-      "matchPackageNames": ["storybook-addon-themes"],
       "matchPackagePatterns": ["^@storybook/"]
     },
     {
