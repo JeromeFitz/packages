@@ -1,4 +1,4 @@
-import type { StorybookConfig } from '@storybook/react-vite'
+import type { StorybookConfig } from '@storybook/nextjs'
 const config: StorybookConfig = {
   addons: [
     '@storybook/addon-links',
@@ -15,14 +15,13 @@ const config: StorybookConfig = {
     },
     '@storybook/addon-storysource',
     '@storybook/addon-a11y',
-    '@storybook/addon-mdx-gfm',
   ],
   core: {
     disableTelemetry: true,
   },
   features: {},
   framework: {
-    name: '@storybook/react-vite',
+    name: '@storybook/nextjs',
     options: {},
   },
   staticDirs: ['../public'],
@@ -36,12 +35,6 @@ const config: StorybookConfig = {
     },
   },
   stories: ['../src/**.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
-  // async viteFinal(config, { configType }) {
-  //   return config
-  // },
-  viteFinal(config, {}) {
-    return config
-  },
   docs: {
     autodocs: true,
   },
