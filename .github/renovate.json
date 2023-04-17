@@ -55,16 +55,17 @@
     {
       "commitMessagePrefix": "⬆️  (deps)",
       "commitMessageSuffix": "",
+      "excludePackageNames": ["@storybook/nextjs"],
       "groupName": "next 🔺 ",
       "groupSlug": "next",
       "matchPackageNames": ["eslint-config-next", "next"]
     },
     {
       "commitMessagePrefix": "📦  (deps-dev)",
-      "excludePackageNames": ["@storybook/builder-vite"],
+      "excludePackageNames": [],
       "groupName": "storybook 📙 ",
       "groupSlug": "storybook",
-      "matchPackageNames": ["storybook-addon-themes"],
+      "matchPackageNames": ["storybook"],
       "matchPackagePatterns": ["^@storybook/"]
     },
     {
@@ -73,16 +74,6 @@
       "groupName": "turbo 🔺 ",
       "groupSlug": "turbo",
       "matchPackageNames": ["eslint-config-turbo", "eslint-plugin-turbo", "turbo"]
-    },
-    {
-      "commitMessagePrefix": "📦  (deps-dev)",
-      "groupName": "vite ⚡ ",
-      "groupSlug": "vite",
-      "matchPackageNames": [
-        "@storybook/builder-vite",
-        "@vitejs/plugin-react",
-        "vite"
-      ]
     },
     {
       "assignees": ["JeromeFitz"],

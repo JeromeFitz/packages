@@ -1,9 +1,6 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 
 import { Text } from './Text'
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-// import mdx from './Text.mdx'
 
 const dummyContent =
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut urna mauris. Donec efficitur mattis arcu, nec rutrum justo egestas aliquet. Proin quis finibus turpis. Sed a hendrerit odio, sed tristique dui. Phasellus pulvinar, lorem a commodo porta, velit diam vulputate nunc, tempor hendrerit urna nunc eget ipsum. Integer tristique sodales ultrices. Nullam eget neque ut libero ullamcorper tempus sit amet et enim. Curabitur sagittis auctor lectus sed facilisis.'
@@ -16,7 +13,6 @@ export default {
       description: {
         component: 'MDX Content is TBD',
       },
-      // page: mdx,
     },
   },
   argTypes: {
@@ -34,14 +30,17 @@ export default {
       control: { type: 'select' },
     },
   },
-} as ComponentMeta<typeof Text>
+} as Meta<typeof Text>
 
-const Template: ComponentStory<typeof Text> = ({ children, ...args }) => (
+const Template: StoryFn<typeof Text> = ({ children, ...args }) => (
   <Text {...args}> {children}</Text>
 )
 
-export const Default = Template.bind({})
-Default.args = {
-  children: dummyContent,
-  size: '3',
+export const Default = {
+  render: Template,
+
+  args: {
+    children: dummyContent,
+    size: '3',
+  },
 }

@@ -1,12 +1,9 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 import { useState } from 'react'
 
 import { Button, Text } from '../index'
 
 import { Sheet, SheetContent, SheetTrigger } from './Sheet'
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import mdx from './Sheet.mdx'
 
 export default {
   title: 'Sheet',
@@ -16,7 +13,6 @@ export default {
       description: {
         component: 'MDX Content is TBD',
       },
-      page: mdx,
     },
   },
   argTypes: {
@@ -35,9 +31,9 @@ export default {
       control: { type: 'radio' },
     },
   },
-} as ComponentMeta<typeof Sheet>
+} as Meta<typeof Sheet>
 
-const Template: ComponentStory<typeof Sheet> = ({ ...args }) => {
+const Template: StoryFn<typeof Sheet> = ({ ...args }) => {
   const [isSheetOpen, isSheetOpenSet] = useState(false)
   const handleIsSheetOpen = (newMenuState: boolean) => {
     isSheetOpenSet(newMenuState)
@@ -59,5 +55,7 @@ const Template: ComponentStory<typeof Sheet> = ({ ...args }) => {
   )
 }
 
-export const Default = Template.bind({})
-Default.args = {}
+export const Default = {
+  render: Template,
+  args: {},
+}

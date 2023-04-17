@@ -1,6 +1,5 @@
-import type { StorybookViteConfig } from '@storybook/builder-vite'
-
-const config: StorybookViteConfig = {
+import type { StorybookConfig } from '@storybook/nextjs'
+const config: StorybookConfig = {
   addons: [
     '@storybook/addon-links',
     {
@@ -16,23 +15,18 @@ const config: StorybookViteConfig = {
     },
     '@storybook/addon-storysource',
     '@storybook/addon-a11y',
-    // 'storybook-addon-themes',
-    'multiple-themes-stitches',
   ],
   core: {
-    builder: '@storybook/builder-vite',
     disableTelemetry: true,
   },
-  features: {
-    previewCsfV3: true,
-    previewMdx2: false,
-    storyStoreV7: true,
+  features: {},
+  framework: {
+    name: '@storybook/nextjs',
+    options: {},
   },
-  framework: '@storybook/react',
   staticDirs: ['../public'],
   typescript: {
     check: false,
-    checkOptions: {},
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
       shouldExtractLiteralValuesFromEnum: true,
@@ -40,13 +34,9 @@ const config: StorybookViteConfig = {
         prop.parent ? !/node_modules/.test(prop.parent.fileName) : true,
     },
   },
-  stories: ['../src/**/*.stories.tsx'],
-  // async viteFinal(config, { configType }) {
-  //   return config
-  // },
-  viteFinal(config, {}) {
-    return config
+  stories: ['../src/**.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  docs: {
+    autodocs: true,
   },
 }
-
 export default config
