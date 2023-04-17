@@ -11,7 +11,7 @@
   "private": true,
   "packageManager": "^pnpm@8.0.0",
   "engines": {
-    "node": ">=16"
+    "node": ">=16.14.0"
   },
   "scripts": {
     "build": "turbo run build --filter=[HEAD^1]",
