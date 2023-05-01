@@ -109,7 +109,6 @@
       "reviewers": ["JeromeFitz"]
     }
   ],
-  "postUpdateOptions": ["pnpmDedupe"],
   "prBodyColumns": ["Package", "Update", "Type", "Change"],
   "prFooter": "<!-- COMMIT_BODY_TEXT_END -->",
   "prHeader": "<!-- COMMIT_BODY_TEXT_BEGIN -->",
