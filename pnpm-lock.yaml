@@ -157,11 +157,11 @@ importers:
         specifier: 0.2.0
         version: 0.2.0(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
       date-fns:
-        specifier: 2.29.3
-        version: 2.29.3
+        specifier: 2.30.0
+        version: 2.30.0
       date-fns-tz:
         specifier: 2.0.0
-        version: 2.0.0(date-fns@2.29.3)
+        version: 2.0.0(date-fns@2.30.0)
       framer-motion:
         specifier: 10.12.4
         version: 10.12.4(react-dom@18.2.0)(react@18.2.0)
@@ -500,11 +500,11 @@ importers:
         specifier: 2.2.4
         version: 2.2.4
       date-fns:
-        specifier: 2.29.3
-        version: 2.29.3
+        specifier: 2.30.0
+        version: 2.30.0
       date-fns-tz:
         specifier: 2.0.0
-        version: 2.0.0(date-fns@2.29.3)
+        version: 2.0.0(date-fns@2.30.0)
       github-slugger:
         specifier: 2.0.0
         version: 2.0.0
@@ -531,8 +531,8 @@ importers:
         specifier: 3.2.4
         version: 3.2.4
       date-fns:
-        specifier: 2.29.3
-        version: 2.29.3
+        specifier: 2.30.0
+        version: 2.30.0
       import-from:
         specifier: 4.0.0
         version: 4.0.0
@@ -7967,17 +7967,19 @@ packages:
     engines: {node: '>= 12'}
     dev: false
 
-  /date-fns-tz@2.0.0(date-fns@2.29.3):
+  /date-fns-tz@2.0.0(date-fns@2.30.0):
     resolution: {integrity: sha512-OAtcLdB9vxSXTWHdT8b398ARImVwQMyjfYGkKD2zaGpHseG2UPHbHjXELReErZFxWdSLph3c2zOaaTyHfOhERQ==}
     peerDependencies:
       date-fns: '>=2.0.0'
     dependencies:
-      date-fns: 2.29.3
+      date-fns: 2.30.0
     dev: false
 
-  /date-fns@2.29.3:
-    resolution: {integrity: sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==}
+  /date-fns@2.30.0:
+    resolution: {integrity: sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==}
     engines: {node: '>=0.11'}
+    dependencies:
+      '@babel/runtime': 7.21.0
     dev: false
 
   /dateformat@3.0.3:
