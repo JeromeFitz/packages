@@ -1,6 +1,6 @@
-const eslintBase = require('./base.cjs')
+const config = require('./base.cjs')
 
-const eslintTypescript = {
+const configTs = {
   overrides: [
     {
       files: ['**/*.ts?(x)'],
@@ -41,6 +41,6 @@ const eslintTypescript = {
 }
 
 module.exports = {
-  ...eslintBase,
-  ...eslintTypescript,
+  ...config,
+  ...configTs,
 }

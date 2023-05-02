@@ -1,4 +1,4 @@
-module.exports = {
+const baseConfig = {
   env: {
     browser: true,
     commonjs: true,
@@ -43,3 +43,5 @@ module.exports = {
     ],
   },
 }
+
+module.exports = baseConfig

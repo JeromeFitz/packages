@@ -1,6 +1,6 @@
 const config = require('./typescript.cjs')
 
-module.exports = {
+const reactConfig = {
   ...config,
   plugins: [...config.plugins, 'jsx-a11y', 'react-hooks'],
   rules: {
@@ -14,3 +14,5 @@ module.exports = {
     },
   },
 }
+
+module.exports = reactConfig
