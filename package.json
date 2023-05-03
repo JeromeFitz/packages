@@ -41,7 +41,7 @@
     "test:all": "turbo run test"
   },
   "dependencies": {
-    "@babel/eslint-parser": "7.21.3",
+    "@babel/eslint-parser": "7.21.8",
     "@jeromefitz/conventional-gitmoji": "workspace:*",
     "@jeromefitz/eslint-config": "workspace:*",
     "@jeromefitz/lint-staged": "workspace:*",
