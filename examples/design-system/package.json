@@ -34,7 +34,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@types/react": "18.2.4",
+    "@types/react": "18.2.5",
     "@types/react-dom": "18.2.3"
   },
   "publishConfig": {
