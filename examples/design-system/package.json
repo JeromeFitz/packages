@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@types/react": "18.2.5",
-    "@types/react-dom": "18.2.3"
+    "@types/react-dom": "18.2.4"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
