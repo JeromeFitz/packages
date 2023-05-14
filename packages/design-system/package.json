@@ -127,7 +127,7 @@
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
     "cmdk": "0.2.0",
-    "framer-motion": "10.12.8",
+    "framer-motion": "10.12.10",
     "lodash": "4.17.21",
     "next": "13.3.3",
     "react": "18.2.0",
