@@ -540,8 +540,8 @@ importers:
         specifier: 7.0.1
         version: 7.0.1
       semver:
-        specifier: 7.5.0
-        version: 7.5.0
+        specifier: 7.5.1
+        version: 7.5.1
     devDependencies:
       '@types/conventional-commits-parser':
         specifier: 3.0.3
@@ -4767,7 +4767,7 @@ packages:
       read-pkg: 5.2.0
       registry-auth-token: 4.2.2
       semantic-release: 19.0.5
-      semver: 7.5.0
+      semver: 7.5.1
       tempy: 1.0.1
     dev: false
 
@@ -5259,7 +5259,7 @@ packages:
       process: 0.11.10
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      semver: 7.5.0
+      semver: 7.5.1
       style-loader: 3.3.2(webpack@5.79.0)
       terser-webpack-plugin: 5.3.7(webpack@5.79.0)
       ts-dedent: 2.2.0
@@ -5338,7 +5338,7 @@ packages:
       prompts: 2.4.2
       puppeteer-core: 2.1.1
       read-pkg-up: 7.0.1
-      semver: 7.5.0
+      semver: 7.5.1
       shelljs: 0.8.5
       simple-update-notifier: 1.1.0
       strip-json-comments: 3.1.1
@@ -5478,7 +5478,7 @@ packages:
       pretty-hrtime: 1.0.3
       prompts: 2.4.2
       read-pkg-up: 7.0.1
-      semver: 7.5.0
+      semver: 7.5.1
       serve-favicon: 2.5.0
       telejson: 7.1.0
       ts-dedent: 2.2.0
@@ -5576,7 +5576,7 @@ packages:
       memoizerific: 1.11.3
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      semver: 7.5.0
+      semver: 7.5.1
       store2: 2.14.2
       telejson: 7.1.0
       ts-dedent: 2.2.0
@@ -5717,7 +5717,7 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       react-refresh: 0.11.0
-      semver: 7.5.0
+      semver: 7.5.1
       typescript: 4.8.4
       webpack: 5.79.0
     transitivePeerDependencies:
@@ -6350,7 +6350,7 @@ packages:
       debug: 4.3.4
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.5.0
+      semver: 7.5.1
       tsutils: 3.21.0
     transitivePeerDependencies:
       - supports-color
@@ -6370,7 +6370,7 @@ packages:
       debug: 4.3.4
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.5.0
+      semver: 7.5.1
       tsutils: 3.21.0
     transitivePeerDependencies:
       - supports-color
@@ -6390,7 +6390,7 @@ packages:
       debug: 4.3.4
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.5.0
+      semver: 7.5.1
       tsutils: 3.21.0
     transitivePeerDependencies:
       - supports-color
@@ -6410,7 +6410,7 @@ packages:
       '@typescript-eslint/typescript-estree': 5.58.0
       eslint: 8.39.0
       eslint-scope: 5.1.1
-      semver: 7.5.0
+      semver: 7.5.1
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -6430,7 +6430,7 @@ packages:
       '@typescript-eslint/typescript-estree': 5.59.0
       eslint: 8.39.0
       eslint-scope: 5.1.1
-      semver: 7.5.0
+      semver: 7.5.1
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -6450,7 +6450,7 @@ packages:
       '@typescript-eslint/typescript-estree': 5.59.2
       eslint: 8.39.0
       eslint-scope: 5.1.1
-      semver: 7.5.0
+      semver: 7.5.1
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -7914,7 +7914,7 @@ packages:
       postcss-modules-scope: 3.0.0(postcss@8.4.21)
       postcss-modules-values: 4.0.0(postcss@8.4.21)
       postcss-value-parser: 4.2.0
-      semver: 7.5.0
+      semver: 7.5.1
     dev: true
 
   /css-loader@6.7.3(webpack@5.79.0):
@@ -7930,7 +7930,7 @@ packages:
       postcss-modules-scope: 3.0.0(postcss@8.4.21)
       postcss-modules-values: 4.0.0(postcss@8.4.21)
       postcss-value-parser: 4.2.0
-      semver: 7.5.0
+      semver: 7.5.1
       webpack: 5.79.0
     dev: true
 
@@ -9332,7 +9332,7 @@ packages:
       minimatch: 3.1.2
       node-abort-controller: 3.1.1
       schema-utils: 3.1.2
-      semver: 7.5.0
+      semver: 7.5.1
       tapable: 2.2.1
       typescript: 4.8.4
       webpack: 5.79.0
@@ -11367,7 +11367,7 @@ packages:
     resolution: {integrity: sha512-fRlDb4I0eLcQeUvGq7IY3xHrSb0c9ummdvDSYWfT9+LKP+3jCKw/tKoqaM7r1BAoiAC6GtwyjaGnOz6B3OtF+A==}
     engines: {node: '>=10'}
     dependencies:
-      semver: 7.5.0
+      semver: 7.5.1
 
   /node-abort-controller@3.1.1:
     resolution: {integrity: sha512-AGK2yQKIjRuqnc6VkX2Xj5d+QW8xZ87pa1UK6yA6ouUyuxfHuMP6umE5QK7UmTeOAymo+Zx1Fxiuw9rVx8taHQ==}
@@ -11460,7 +11460,7 @@ packages:
     dependencies:
       hosted-git-info: 4.1.0
       is-core-module: 2.12.0
-      semver: 7.5.0
+      semver: 7.5.1
       validate-npm-package-license: 3.0.4
     dev: false
 
@@ -11470,7 +11470,7 @@ packages:
     dependencies:
       hosted-git-info: 5.2.1
       is-core-module: 2.12.0
-      semver: 7.5.0
+      semver: 7.5.1
       validate-npm-package-license: 3.0.4
     dev: false
 
@@ -12067,7 +12067,7 @@ packages:
       https-proxy-agent: 5.0.1
       node-fetch: 2.6.9
       progress: 2.0.3
-      semver: 7.5.0
+      semver: 7.5.1
       tar-fs: 2.1.1
       yargs: 16.2.0
     transitivePeerDependencies:
@@ -12173,7 +12173,7 @@ packages:
       cosmiconfig-typescript-loader: 4.3.0(@types/node@16.11.7)(cosmiconfig@8.1.3)(typescript@4.8.4)
       klona: 2.0.6
       postcss: 8.4.21
-      semver: 7.5.0
+      semver: 7.5.1
       typescript: 4.8.4
     transitivePeerDependencies:
       - '@types/node'
@@ -13228,7 +13228,7 @@ packages:
       p-reduce: 2.1.0
       read-pkg-up: 7.0.1
       resolve-from: 5.0.0
-      semver: 7.5.0
+      semver: 7.5.1
       semver-diff: 3.1.1
       signale: 1.4.0
       yargs: 16.2.0
@@ -13271,6 +13271,13 @@ packages:
 
   /semver@7.5.0:
     resolution: {integrity: sha512-+XC0AD/R7Q2mPSRuy2Id0+CGTZ98+8f+KvwirxOKIEyid+XSx6HbC63p+O4IndTHuX5Z+JxQ0TghCkO5Cg/2HA==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      lru-cache: 6.0.0
+
+  /semver@7.5.1:
+    resolution: {integrity: sha512-Wvss5ivl8TMRZXXESstBA4uR5iXgEN/VC5/sOcuXdVLzcdkz4HWetIoRfG5gb5X+ij/G9rw9YoGn3QoQ8OCSpw==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
@@ -13383,7 +13390,7 @@ packages:
       detect-libc: 2.0.1
       node-addon-api: 6.1.0
       prebuild-install: 7.1.1
-      semver: 7.5.0
+      semver: 7.5.1
       simple-get: 4.0.1
       tar-fs: 2.1.1
       tunnel-agent: 0.6.0
