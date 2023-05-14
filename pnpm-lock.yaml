@@ -522,8 +522,8 @@ importers:
   packages/release-notes-generator:
     dependencies:
       '@octokit/rest':
-        specifier: 19.0.7
-        version: 19.0.7
+        specifier: 19.0.8
+        version: 19.0.8
       conventional-commits-filter:
         specifier: 2.0.7
         version: 2.0.7
@@ -559,8 +559,8 @@ importers:
   packages/scripts:
     dependencies:
       '@octokit/rest':
-        specifier: 19.0.7
-        version: 19.0.7
+        specifier: 19.0.8
+        version: 19.0.8
       colorize-template:
         specifier: 1.0.0
         version: 1.0.0
@@ -3563,18 +3563,18 @@ packages:
     resolution: {integrity: sha512-HNWisMYlR8VCnNurDU6os2ikx0s0VyEjDYHNS/h4cgb8DeOxQ0n72HyinUtdDVxJhFy3FWLGl0DJhfEWk3P5Iw==}
     dev: false
 
-  /@octokit/openapi-types@16.0.0:
-    resolution: {integrity: sha512-JbFWOqTJVLHZSUUoF4FzAZKYtqdxWu9Z5m2QQnOyEa04fOFljvyh7D3GYKbfuaSWisqehImiVIMG4eyJeP5VEA==}
+  /@octokit/openapi-types@17.1.2:
+    resolution: {integrity: sha512-OaS7Ol4Y+U50PbejfzQflGWRMxO04nYWO5ZBv6JerqMKE2WS/tI9VoVDDPXHBlRMGG2fOdKwtVGlFfc7AVIstw==}
     dev: false
 
-  /@octokit/plugin-paginate-rest@6.0.0(@octokit/core@4.1.0):
-    resolution: {integrity: sha512-Sq5VU1PfT6/JyuXPyt04KZNVsFOSBaYOAq2QRZUwzVlI10KFvcbUo8lR258AAQL1Et60b0WuVik+zOWKLuDZxw==}
+  /@octokit/plugin-paginate-rest@6.1.0(@octokit/core@4.1.0):
+    resolution: {integrity: sha512-5T4iXjJdYCVA1rdWS1C+uZV9AvtZY9QgTG74kFiSFVj94dZXowyi/YK8f4SGjZaL69jZthGlBaDKRdCMCF9log==}
     engines: {node: '>= 14'}
     peerDependencies:
       '@octokit/core': '>=4'
     dependencies:
       '@octokit/core': 4.1.0
-      '@octokit/types': 9.0.0
+      '@octokit/types': 9.2.2
     dev: false
 
   /@octokit/plugin-request-log@1.0.4(@octokit/core@4.1.0):
@@ -3585,14 +3585,14 @@ packages:
       '@octokit/core': 4.1.0
     dev: false
 
-  /@octokit/plugin-rest-endpoint-methods@7.0.1(@octokit/core@4.1.0):
-    resolution: {integrity: sha512-pnCaLwZBudK5xCdrR823xHGNgqOzRnJ/mpC/76YPpNP7DybdsJtP7mdOwh+wYZxK5jqeQuhu59ogMI4NRlBUvA==}
+  /@octokit/plugin-rest-endpoint-methods@7.1.0(@octokit/core@4.1.0):
+    resolution: {integrity: sha512-SWwz/hc47GaKJR6BlJI4WIVRodbAFRvrR0QRPSoPMs7krb7anYPML3psg+ThEz/kcwOdSNh/oA8qThi/Wvs4Fw==}
     engines: {node: '>= 14'}
     peerDependencies:
       '@octokit/core': '>=3'
     dependencies:
       '@octokit/core': 4.1.0
-      '@octokit/types': 9.0.0
+      '@octokit/types': 9.2.2
       deprecation: 2.3.1
     dev: false
 
@@ -3619,14 +3619,14 @@ packages:
       - encoding
     dev: false
 
-  /@octokit/rest@19.0.7:
-    resolution: {integrity: sha512-HRtSfjrWmWVNp2uAkEpQnuGMJsu/+dBr47dRc5QVgsCbnIc1+GFEaoKBWkYG+zjrsHpSqcAElMio+n10c0b5JA==}
+  /@octokit/rest@19.0.8:
+    resolution: {integrity: sha512-/PKrzqn+zDzXKwBMwLI2IKrvk8yv8cedJOdcmxrjR3gmu6UIzURhP5oQj+4qkn7+uQi1gg7QqV4SqlaQ1HYW1Q==}
     engines: {node: '>= 14'}
     dependencies:
       '@octokit/core': 4.1.0
-      '@octokit/plugin-paginate-rest': 6.0.0(@octokit/core@4.1.0)
+      '@octokit/plugin-paginate-rest': 6.1.0(@octokit/core@4.1.0)
       '@octokit/plugin-request-log': 1.0.4(@octokit/core@4.1.0)
-      '@octokit/plugin-rest-endpoint-methods': 7.0.1(@octokit/core@4.1.0)
+      '@octokit/plugin-rest-endpoint-methods': 7.1.0(@octokit/core@4.1.0)
     transitivePeerDependencies:
       - encoding
     dev: false
@@ -3643,10 +3643,10 @@ packages:
       '@octokit/openapi-types': 14.0.0
     dev: false
 
-  /@octokit/types@9.0.0:
-    resolution: {integrity: sha512-LUewfj94xCMH2rbD5YJ+6AQ4AVjFYTgpp6rboWM5T7N3IsIF65SBEOVcYMGAEzO/kKNiNaW4LoWtoThOhH06gw==}
+  /@octokit/types@9.2.2:
+    resolution: {integrity: sha512-9BjDxjgQIvCjNWZsbqyH5QC2Yni16oaE6xL+8SUBMzcYPF4TGQBXGA97Cl3KceK9mwiNMb1mOYCz6FbCCLEL+g==}
     dependencies:
-      '@octokit/openapi-types': 16.0.0
+      '@octokit/openapi-types': 17.1.2
     dev: false
 
   /@pkgr/utils@2.3.1:
@@ -4727,7 +4727,7 @@ packages:
     peerDependencies:
       semantic-release: '>=18.0.0-beta.1'
     dependencies:
-      '@octokit/rest': 19.0.7
+      '@octokit/rest': 19.0.8
       '@semantic-release/error': 3.0.0
       aggregate-error: 3.1.0
       bottleneck: 2.19.5
