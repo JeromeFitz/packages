@@ -148,8 +148,8 @@ importers:
   examples/design-system:
     dependencies:
       '@heroicons/react':
-        specifier: 2.0.17
-        version: 2.0.17(react@18.2.0)
+        specifier: 2.0.18
+        version: 2.0.18(react@18.2.0)
       '@jeromefitz/design-system':
         specifier: workspace:*
         version: link:../../packages/design-system
@@ -410,8 +410,8 @@ importers:
         version: 0.4.4
     devDependencies:
       '@heroicons/react':
-        specifier: 2.0.17
-        version: 2.0.17(react@18.2.0)
+        specifier: 2.0.18
+        version: 2.0.18(react@18.2.0)
       '@radix-ui/colors':
         specifier: 0.1.8
         version: 0.1.8
@@ -3202,8 +3202,8 @@ packages:
       - '@types/react'
     dev: false
 
-  /@heroicons/react@2.0.17(react@18.2.0):
-    resolution: {integrity: sha512-90GMZktkA53YbNzHp6asVEDevUQCMtxWH+2UK2S8OpnLEu7qckTJPhNxNQG52xIR1WFTwFqtH6bt7a60ZNcLLA==}
+  /@heroicons/react@2.0.18(react@18.2.0):
+    resolution: {integrity: sha512-7TyMjRrZZMBPa+/5Y8lN0iyvUU/01PeMGX2+RE7cQWpEUIcb4QotzUObFkJDejj/HUH4qjP/eQ0gzzKs2f+6Yw==}
     peerDependencies:
       react: '>= 16'
     dependencies:
