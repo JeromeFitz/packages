@@ -1,19 +1,24 @@
 {
-  "private": false,
-  "license": "MIT",
-  "version": "0.0.0",
   "name": "ccommit",
+  "version": "0.0.0",
+  "type": "module",
   "description": "😜 ➕ 👔 🟰  ccommit \n  Conventional Commit Generator that interprets commit types from gitmoji and conventional",
+  "repository": "jeromefitz/packages.git",
+  "homepage": "https://github.com/JeromeFitz/packages/tree/main/packages/ccommit#readme",
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
     "url": "https://jeromefitzgerald.com"
   },
-  "homepage": "https://github.com/JeromeFitz/packages/tree/main/packages/ccommit#readme",
-  "repository": "jeromefitz/packages.git",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+  "license": "MIT",
+  "private": false,
+  "engines": {
+    "node": ">=16"
   },
+  "bin": {
+    "ccommit": "./dist/index.js"
+  },
+  "exports": "./dist/index.js",
   "keywords": [
     "commit",
     "conventional changelog",
@@ -25,19 +30,13 @@
     "gitmoji",
     "semver"
   ],
-  "engines": {
-    "node": ">=16"
-  },
-  "type": "module",
-  "exports": "./dist/index.js",
-  "sideEffects": false,
   "scripts": {
     "build": "tsup",
     "clean": "rm -rf .turbo && rm -rf dist",
     "clean:install": "pnpm run clean && rm -rf node_modules",
     "copy": "mkdir -p ./dist && ./scripts/copy.sh",
     "dev": "tsup --watch",
-    "dry:run": "pnpm run build && node ./dist/cli",
+    "dry:run": "pnpm run build && node ./dist/index.js -c -n",
     "format:lint": "pnpm run lint:eslint --fix && pnpm run format:prettier --write",
     "format:prettier": "prettier \"./src/**/*.{cjs,js,jsx,mjs,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\" --ignore-unknown --loglevel warn",
     "lint": "pnpm run format:prettier --check && pnpm run lint:eslint",
@@ -45,6 +44,7 @@
     "package": "pkg . --output ./.bin/ccommit --targets latest-linux-x64,latest-macos-x64,latest-win-x64",
     "semantic-release": "semantic-release"
   },
+  "peerDependencies": {},
   "dependencies": {
     "ansi-colors": "4.1.3",
     "enquirer": "2.3.6",
@@ -55,8 +55,8 @@
   "devDependencies": {
     "pkg": "5.8.1"
   },
-  "peerDependencies": {},
-  "bin": {
-    "ccommit": "./dist/index.js"
-  }
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "sideEffects": false
 }

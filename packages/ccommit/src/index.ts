@@ -2,16 +2,11 @@
 /*!
  * For license information please see index.js.LICENSE.txt
  */
-import { URL } from 'node:url'
-
 import meow from 'meow'
 
 import { commit, list } from '~ccommit/commands/index.js'
 import { COMMANDS, COMMIT_FORMATS, FLAGS, OPTIONS } from '~ccommit/lib/index.js'
 import { findCommand } from '~ccommit/utils/index.js'
-
-let url = import.meta.url
-if (!url.startsWith('file://')) url = new URL(`file://${import.meta.url}`).toString()
 
 const cli = meow(
   `
@@ -40,20 +35,18 @@ const cli = meow(
       - Branch Name detection is enabled to pre-populate Issue Tracker information in prompt
 `,
   {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    importMeta: { url },
+    importMeta: import.meta,
     flags: {
       // Flags
-      [FLAGS.BREAKING]: { type: 'boolean', alias: 'b', default: false },
-      [FLAGS.COMMIT]: { type: 'boolean', alias: 'c' },
-      [FLAGS.DRYRUN]: { type: 'boolean', alias: 'n' },
-      [FLAGS.EMOJI]: { type: 'boolean', alias: 'e', default: true },
-      [FLAGS.HELP]: { type: 'boolean', alias: 'h' },
-      [FLAGS.HOOK]: { type: 'boolean', alias: 'u' },
-      [FLAGS.LIST]: { type: 'boolean', alias: 'l' },
+      [FLAGS.BREAKING]: { type: 'boolean', shortFlag: 'b', default: false },
+      [FLAGS.COMMIT]: { type: 'boolean', shortFlag: 'c' },
+      [FLAGS.DRYRUN]: { type: 'boolean', shortFlag: 'n' },
+      [FLAGS.EMOJI]: { type: 'boolean', shortFlag: 'e', default: true },
+      [FLAGS.HELP]: { type: 'boolean', shortFlag: 'h' },
+      [FLAGS.HOOK]: { type: 'boolean', shortFlag: 'u' },
+      [FLAGS.LIST]: { type: 'boolean', shortFlag: 'l' },
       [FLAGS.SKIP]: { type: 'boolean', default: false },
-      [FLAGS.VERSION]: { type: 'boolean', alias: 'v' },
+      [FLAGS.VERSION]: { type: 'boolean', shortFlag: 'v' },
       // Options
       [OPTIONS.FORMAT]: { type: 'string', default: COMMIT_FORMATS.GITMOJI },
       [OPTIONS.MESSAGE]: { type: 'string' },
