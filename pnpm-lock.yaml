@@ -469,6 +469,9 @@ importers:
       '@types/lodash':
         specifier: 4.14.194
         version: 4.14.194
+      '@types/node-emoji':
+        specifier: 1.8.2
+        version: 1.8.2
       '@types/react':
         specifier: 18.2.6
         version: 18.2.6
@@ -6150,6 +6153,10 @@ packages:
   /@types/minimist@1.2.2:
     resolution: {integrity: sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==}
     dev: false
+
+  /@types/node-emoji@1.8.2:
+    resolution: {integrity: sha512-PfF1qL/9veo8BSHLV84C9ORNr3lHSlnWJ6yU8OdNufoftajeWHTLVbGHvp2B7e7DPDS9gMs6cfeSsqo5rqSitg==}
+    dev: true
 
   /@types/node-fetch@2.6.3:
     resolution: {integrity: sha512-ETTL1mOEdq/sxUtgtOhKjyB2Irra4cjxksvcMUR5Zr4n+PxVhsCD9WS46oPbHL3et9Zde7CNRr+WUNlcHvsX+w==}
