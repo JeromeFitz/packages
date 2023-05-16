@@ -12,7 +12,7 @@ const TAILWIND_CONFIG = {
   },
 }
 
-module.exports.react = {
+const tailWindConfigReactOnly = {
   ...reactConfig,
   extends: [...reactConfig.extends, ...TAILWIND_CONFIG.extends],
   rules: { ...reactConfig.rules, ...TAILWIND_CONFIG.rules },
@@ -25,4 +25,5 @@ const tailwindConfig = {
 }
 
 module.exports.next = tailwindConfig
+module.exports.react = tailWindConfigReactOnly
 module.exports = tailwindConfig

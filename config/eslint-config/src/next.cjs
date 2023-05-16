@@ -1,9 +1,10 @@
 const config = require('./react.cjs')
 
-module.exports = {
+const nextConfig = {
   ...config,
   extends: [
     ...config.extends,
+    'plugin:storybook/recommended',
     'plugin:@next/next/core-web-vitals',
     'plugin:@next/next/recommended',
   ],
@@ -19,3 +20,5 @@ module.exports = {
     ],
   },
 }
+
+module.exports = nextConfig
