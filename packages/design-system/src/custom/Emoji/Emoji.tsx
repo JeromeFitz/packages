@@ -1,4 +1,4 @@
-import { find as findEmoji } from 'node-emoji'
+import nodeEmoji from 'node-emoji'
 
 import { styled } from '../../lib/stitches.config'
 // import { Box } from '../../components'
@@ -34,7 +34,7 @@ const EmojiHtml = ({ emoji, label, margin }) => {
 }
 
 const Emoji = ({ character, margin = false }) => {
-  const emojiFound = findEmoji(character)
+  const emojiFound = nodeEmoji.find(character)
 
   if (emojiFound === undefined) {
     return (
