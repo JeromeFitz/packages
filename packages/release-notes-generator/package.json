@@ -33,7 +33,7 @@
     "lodash": "^4.17.21"
   },
   "dependencies": {
-    "@octokit/rest": "19.0.9",
+    "@octokit/rest": "19.0.10",
     "conventional-commits-filter": "2.0.7",
     "conventional-commits-parser": "3.2.4",
     "date-fns": "2.30.0",
