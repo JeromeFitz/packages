@@ -175,8 +175,8 @@ importers:
         specifier: 2.0.0
         version: 2.0.0(date-fns@2.30.0)
       framer-motion:
-        specifier: 10.12.12
-        version: 10.12.12(react-dom@18.2.0)(react@18.2.0)
+        specifier: 10.12.13
+        version: 10.12.13(react-dom@18.2.0)(react@18.2.0)
       next:
         specifier: 13.3.3
         version: 13.3.3(react-dom@18.2.0)(react@18.2.0)
@@ -479,8 +479,8 @@ importers:
         specifier: 0.2.0
         version: 0.2.0(@types/react@18.2.6)(react-dom@18.2.0)(react@18.2.0)
       framer-motion:
-        specifier: 10.12.12
-        version: 10.12.12(react-dom@18.2.0)(react@18.2.0)
+        specifier: 10.12.13
+        version: 10.12.13(react-dom@18.2.0)(react@18.2.0)
       lodash:
         specifier: 4.17.21
         version: 4.17.21
@@ -9538,8 +9538,8 @@ packages:
     engines: {node: '>= 0.6'}
     dev: true
 
-  /framer-motion@10.12.12(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-DDCqp60U6hR7aUrXj/BXc/t0Sd/U4ep6w/NZQkw898K+u7s+Vv/P8yxq4WTNA86kU9QCsqOgn1Qhz2DpYK0Oag==}
+  /framer-motion@10.12.13(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-JczRkFlu1ayXetPkUSoaUmoaK0+PsSHAnb25UFGiJeT2hTsX6IKwC+l0/rJYn+HdyzNbudWFKjeeNSHcykPI4Q==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
