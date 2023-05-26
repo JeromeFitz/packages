@@ -232,8 +232,8 @@ importers:
         version: 3.5.3
     devDependencies:
       '@types/lodash':
-        specifier: 4.14.194
-        version: 4.14.194
+        specifier: 4.14.195
+        version: 4.14.195
       '@types/semantic-release':
         specifier: 17.2.4
         version: 17.2.4
@@ -467,8 +467,8 @@ importers:
         specifier: 7.0.18
         version: 7.0.18(react-dom@18.2.0)(react@18.2.0)
       '@types/lodash':
-        specifier: 4.14.194
-        version: 4.14.194
+        specifier: 4.14.195
+        version: 4.14.195
       '@types/react':
         specifier: 18.2.6
         version: 18.2.6
@@ -525,8 +525,8 @@ importers:
         specifier: workspace:*
         version: link:../utils
       '@types/lodash':
-        specifier: 4.14.194
-        version: 4.14.194
+        specifier: 4.14.195
+        version: 4.14.195
       lodash:
         specifier: 4.17.21
         version: 4.17.21
@@ -559,8 +559,8 @@ importers:
         specifier: 3.0.3
         version: 3.0.3
       '@types/lodash':
-        specifier: 4.14.194
-        version: 4.14.194
+        specifier: 4.14.195
+        version: 4.14.195
       '@types/read-pkg-up':
         specifier: 6.0.0
         version: 6.0.0
@@ -636,8 +636,8 @@ importers:
         specifier: workspace:*
         version: link:../utils
       '@types/lodash':
-        specifier: 4.14.194
-        version: 4.14.194
+        specifier: 4.14.195
+        version: 4.14.195
       lodash:
         specifier: 4.17.21
         version: 4.17.21
@@ -648,8 +648,8 @@ importers:
   packages/utils:
     devDependencies:
       '@types/lodash':
-        specifier: 4.14.194
-        version: 4.14.194
+        specifier: 4.14.195
+        version: 4.14.195
       lodash:
         specifier: 4.17.21
         version: 4.17.21
@@ -5191,7 +5191,7 @@ packages:
       '@storybook/preview-api': 7.0.18
       '@storybook/theming': 7.0.18(react-dom@18.2.0)(react@18.2.0)
       '@storybook/types': 7.0.18
-      '@types/lodash': 4.14.194
+      '@types/lodash': 4.14.195
       color-convert: 2.0.1
       dequal: 2.0.3
       lodash: 4.17.21
@@ -6125,8 +6125,8 @@ packages:
       '@types/node': 16.11.7
     dev: false
 
-  /@types/lodash@4.14.194:
-    resolution: {integrity: sha512-r22s9tAS7imvBt2lyHC9B8AGwWnXaYb1tY09oyLkXDs4vArpYJzw09nj8MLx5VfciBPGIb+ZwG0ssYnEPJxn/g==}
+  /@types/lodash@4.14.195:
+    resolution: {integrity: sha512-Hwx9EUgdwf2GLarOjQp5ZH8ZmblzcbTBC2wtQWNKARBSxM9ezRIAUpeDTgoQRAFB0+8CNWXVA9+MaSOzOF3nPg==}
     dev: true
 
   /@types/mdx@2.0.4:
