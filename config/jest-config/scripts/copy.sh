@@ -34,7 +34,7 @@ else
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  sed -i "" "s|jest-presets/src/jest|jest-presets/jest|g" dist/jest.config.mjs
+  sed -i "" "s|jest-presets/src/jest|jest-presets/jest|g" dist/jest.config.js
 else
-  sed -i -e "s|jest-presets/src/jest|jest-presets/jest|g" dist/jest.config.mjs
+  sed -i -e "s|jest-presets/src/jest|jest-presets/jest|g" dist/jest.config.js
 fi

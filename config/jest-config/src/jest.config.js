@@ -1,16 +1,15 @@
-import jestNode from '@jeromefitz/jest-presets/src/jest/node/jest-preset.mjs'
-import jestNext from 'next/jest'
+const jestNode = require('@jeromefitz/jest-presets/jest/node/jest-preset')
+const jestNext = require('next/jest')
 
 /** @type {import('jest').Config} */
 const config = {
   coverageReporters: ['text', 'html'],
   // preset: '@jeromefitz/jest-presets/jest/node',
-  setupFilesAfterEnv: ['@jeromefitz/jest-config/jest.setup.mjs'],
+  setupFilesAfterEnv: ['@jeromefitz/jest-config/jest.setup.js'],
   testEnvironment: 'jest-environment-jsdom',
   watchman: false,
   ...jestNode,
 }
 
 const defineConfig = jestNext({ dir: './' })
-
-export default defineConfig(config)
+module.exports = defineConfig(config)

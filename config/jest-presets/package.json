@@ -1,7 +1,7 @@
 {
   "name": "@jeromefitz/jest-presets",
   "version": "0.0.0",
-  "type": "module",
+  "type": "commonjs",
   "description": "Jest Presets Configuration",
   "repository": "jeromefitz/packages.git",
   "author": {
@@ -14,7 +14,7 @@
   "engines": {
     "node": ">=16"
   },
-  "main": "./src/jest/node/jest-preset.cjs",
+  "main": "./src/jest/node/jest-preset.js",
   "scripts": {
     "build": "pnpm run clean && pnpm run copy",
     "clean": "rm -rf .turbo && rm -rf dist",
