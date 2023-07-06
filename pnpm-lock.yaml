@@ -140,9 +140,6 @@ importers:
 
   config/jest-config:
     dependencies:
-      '@jeromefitz/jest-presets':
-        specifier: workspace:*
-        version: link:../jest-presets
       '@testing-library/dom':
         specifier: 9.3.1
         version: 9.3.1
@@ -168,6 +165,9 @@ importers:
         specifier: 29.6.1
         version: 29.6.1
     devDependencies:
+      '@jeromefitz/jest-presets':
+        specifier: workspace:*
+        version: link:../jest-presets
       next:
         specifier: 13.3.3
         version: 13.3.3
