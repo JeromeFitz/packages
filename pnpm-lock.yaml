@@ -167,6 +167,7 @@ importers:
       jest-environment-jsdom:
         specifier: 29.6.1
         version: 29.6.1
+    devDependencies:
       next:
         specifier: 13.3.3
         version: 13.3.3
@@ -12654,7 +12655,7 @@ packages:
     transitivePeerDependencies:
       - '@babel/core'
       - babel-plugin-macros
-    dev: false
+    dev: true
 
   /next@13.3.3(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-2OLN2cdsqPboaDWFn3Z7KDIxPcjZAsxEbtRh/+LfE8pJQHXduyaoxISQZQH4eB4gpr6FVnTDDKFEi6n2C9lPgw==}
@@ -15370,7 +15371,7 @@ packages:
         optional: true
     dependencies:
       client-only: 0.0.1
-    dev: false
+    dev: true
 
   /styled-jsx@5.1.1(react@18.2.0):
     resolution: {integrity: sha512-pW7uC1l4mBZ8ugbiZrcIsiIvVx1UmTfw7UkC3Um2tmfUq9Bhk8IiyEIPl6F8agHgjzku6j0xQEZbfA5uSgSaCw==}

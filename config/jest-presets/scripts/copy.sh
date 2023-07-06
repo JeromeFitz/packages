@@ -22,13 +22,20 @@ else
 fi
 
 ###
-# @custom(build) jest
+# @custom(build) jest-presets
 ###
 
-cp ./src/* ./dist
+mkdir -p ./dist/jest/node
+cp ./src/jest/node/* ./dist/jest/node
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   sed -i "" "s|src/index|index|g" dist/package.json
 else
   sed -i -e "s|src/index|index|g" dist/package.json
+fi
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  sed -i "" "s|src/jest|jest|g" dist/package.json
+else
+  sed -i -e "s|src/jest|jest|g" dist/package.json
 fi
