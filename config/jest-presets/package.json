@@ -1,0 +1,9 @@
+{
+  "name": "@jeromefitz/jest-presets",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./jest/node/jest-preset.js",
+  "dependencies": {
+    "ts-jest": "29.1.1"
+  }
+}
