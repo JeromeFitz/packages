@@ -5,7 +5,7 @@ import jestNext from 'next/jest'
 const config = {
   coverageReporters: ['text', 'html'],
   // preset: '@jeromefitz/jest-presets/jest/node',
-  setupFilesAfterEnv: ['@jeromefitz/jest-config/jest.setup.cjs'],
+  setupFilesAfterEnv: ['@jeromefitz/jest-config/jest.setup.mjs'],
   testEnvironment: 'jest-environment-jsdom',
   watchman: false,
   ...jestNode,
