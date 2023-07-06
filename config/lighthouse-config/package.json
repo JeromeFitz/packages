@@ -1,0 +1,31 @@
+{
+  "name": "@jeromefitz/lighthouse-config",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Lighthouse Configuration",
+  "repository": "jeromefitz/packages.git",
+  "author": {
+    "name": "Jerome Fitzgerald",
+    "email": "j@jeromefitzgerald.com",
+    "url": "https://jeromefitzgerald.com"
+  },
+  "license": "MIT",
+  "private": false,
+  "engines": {
+    "node": ">=16"
+  },
+  "main": "./src/lighthouse.config.cjs",
+  "module": "./src/lighthouse.config.cjs",
+  "scripts": {
+    "build": "pnpm run clean && pnpm run copy",
+    "clean": "rm -rf .turbo && rm -rf dist",
+    "clean:install": "pnpm run clean && rm -rf node_modules",
+    "copy": "mkdir -p ./dist && ./scripts/copy.sh",
+    "dev": "echo '# tsup-node  --watch'",
+    "format:lint": "pnpm run lint:eslint --fix && pnpm run format:prettier --write",
+    "format:prettier": "prettier \"./src/**/*.{cjs,js,jsx,mjs,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\" --ignore-unknown --loglevel warn",
+    "lint": "pnpm run format:prettier --check && pnpm run lint:eslint",
+    "lint:eslint": "eslint ./src --ext cjs,js,jsx,mjs,ts,tsx --max-warnings=0",
+    "semantic-release": "semantic-release"
+  }
+}
