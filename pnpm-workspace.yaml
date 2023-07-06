@@ -2,5 +2,7 @@ packages:
   - 'config/*'
   - 'examples/*'
   - 'packages/*'
+  - '!config/jest-config'
+  - '!config/jest-presets'
   - '!packages/git-cz'
 enable-pre-post-scripts: true
