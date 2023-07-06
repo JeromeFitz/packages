@@ -1,4 +1,4 @@
-const jestNode = require('@jeromefitz/jest-presets/jest/node/jest-preset')
+const jestNode = require('@jeromefitz/jest-presets/jest/node/jest-preset.cjs')
 const jestNext = require('next/jest')
 
 /** @type {import('jest').Config} */
