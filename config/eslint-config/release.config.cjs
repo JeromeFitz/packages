@@ -9,7 +9,7 @@ const { name } = require('./package.json')
 
 const branches = [
   ...configDefault.branches,
-  { name: 'feat/config-canary', prerelease: 'canary' },
+  { name: 'NICE-54', prerelease: 'canary' },
 ]
 
 const configPassed = {
