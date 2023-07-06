@@ -14,7 +14,7 @@
   "engines": {
     "node": ">=16"
   },
-  "main": "./src/jest/node/jest-preset.js",
+  "main": "./src/jest/node/jest-preset.cjs",
   "scripts": {
     "build": "pnpm run clean && pnpm run copy",
     "clean": "rm -rf .turbo && rm -rf dist",
