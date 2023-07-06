@@ -14,16 +14,12 @@ fi
 # shellcheck disable=SC2009
 if ps -o args= $PPID | grep -E -q ' --no-verify| -n | -n$' ; then
     exit 0
-elif [ "$HUSKY" = "0" ]; then
-    exit 0
-elif [[ "$HUSKY__PRE_COMMIT__FORMAT" = "0" && "$HUSKY__PRE_COMMIT__LINT" = "0" ]]; then
+fi
+
+if [ "$HUSKY" = "0" ]; then
     exit 0
 fi
 
-if [ ! "$HUSKY__PRE_COMMIT__FORMAT" = "0" ]; then
-    pnpm pretty-quick --staged
-fi
-
-if [ ! "$HUSKY__PRE_COMMIT__LINT" = "0" ]; then
+if [ ! "$HUSKY__PRE_COMMIT__LINT_STAGED" = "0" ]; then
     pnpm lint-staged
 fi

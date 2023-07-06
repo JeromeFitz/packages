@@ -32,7 +32,8 @@
     "is-ci": "^3.0.1"
   },
   "dependencies": {
-    "lint-staged": "13.2.2"
+    "lint-staged": "13.2.2",
+    "micromatch": "4.0.5"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
