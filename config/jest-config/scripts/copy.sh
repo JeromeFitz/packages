@@ -32,3 +32,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 else
   sed -i -e "s|src/index|index|g" dist/package.json
 fi
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  sed -i "" "s|jest-presets/src/jest|jest-presets/jest|g" dist/jest.config.mjs
+else
+  sed -i -e "s|jest-presets/src/jest|jest-presets/jest|g" dist/jest.config.mjs
+fi

@@ -1,5 +1,5 @@
-const jestNode = require('@jeromefitz/jest-presets/jest/node/jest-preset.cjs')
-const jestNext = require('next/jest')
+import jestNode from '@jeromefitz/jest-presets/src/jest/node/jest-preset.mjs'
+import jestNext from 'next/jest'
 
 /** @type {import('jest').Config} */
 const config = {
@@ -12,4 +12,5 @@ const config = {
 }
 
 const defineConfig = jestNext({ dir: './' })
-module.exports = defineConfig(config)
+
+export default defineConfig(config)

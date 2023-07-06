@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
   roots: ['<rootDir>'],
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
@@ -11,3 +11,5 @@ module.exports = {
   ],
   preset: 'ts-jest',
 }
+
+export default config
