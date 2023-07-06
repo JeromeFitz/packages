@@ -1,8 +1,8 @@
 {
-  "name": "@jeromefitz/lint-staged",
+  "name": "@jeromefitz/lighthouse-config",
   "version": "0.0.0",
   "type": "module",
-  "description": "Lint Staged Configuration",
+  "description": "Lighthouse Configuration",
   "repository": "jeromefitz/packages.git",
   "author": {
     "name": "Jerome Fitzgerald",
@@ -14,29 +14,18 @@
   "engines": {
     "node": ">=16"
   },
-  "main": "./dist/lint-staged.config.js",
-  "module": "./dist/lint-staged.config.js",
+  "main": "./src/lighthouse.config.cjs",
+  "module": "./src/lighthouse.config.cjs",
   "scripts": {
-    "build": "tsup-node",
+    "build": "pnpm run clean && pnpm run copy",
     "clean": "rm -rf .turbo && rm -rf dist",
     "clean:install": "pnpm run clean && rm -rf node_modules",
     "copy": "mkdir -p ./dist && ./scripts/copy.sh",
-    "dev": "tsup-node  --watch",
+    "dev": "echo '# tsup-node  --watch'",
     "format:lint": "pnpm run lint:eslint --fix && pnpm run format:prettier --write",
     "format:prettier": "prettier \"./src/**/*.{cjs,js,jsx,mjs,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\" --ignore-unknown --loglevel warn",
     "lint": "pnpm run format:prettier --check && pnpm run lint:eslint",
     "lint:eslint": "eslint ./src --ext cjs,js,jsx,mjs,ts,tsx --max-warnings=0",
     "semantic-release": "semantic-release"
-  },
-  "peerDependencies": {
-    "is-ci": "^3.0.1"
-  },
-  "dependencies": {
-    "lint-staged": "13.2.2",
-    "micromatch": "4.0.5"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
-  "sideEffects": false
+  }
 }

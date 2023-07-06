@@ -1,26 +1,22 @@
 {
-  "private": false,
-  "license": "MIT",
-  "version": "0.0.0",
   "name": "@jeromefitz/scripts",
+  "version": "0.0.0",
+  "type": "module",
   "description": "Scripts",
+  "repository": "jeromefitz/packages.git",
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
     "url": "https://jeromefitzgerald.com"
   },
-  "repository": "jeromefitz/packages.git",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
+  "license": "MIT",
+  "private": false,
   "engines": {
     "node": ">=16"
   },
-  "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "typings": "./dist/index.d.ts",
-  "sideEffects": false,
   "scripts": {
     "build": "tsup-node",
     "clean": "rm -rf .turbo && rm -rf dist",
@@ -37,5 +33,9 @@
     "@octokit/rest": "19.0.11",
     "colorize-template": "1.0.0",
     "picocolors": "1.0.0"
-  }
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "sideEffects": false
 }
