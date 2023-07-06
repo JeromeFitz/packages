@@ -1,26 +1,22 @@
 {
-  "private": false,
-  "license": "MIT",
-  "version": "0.0.0",
   "name": "@jeromefitz/semantic",
+  "version": "0.0.0",
+  "type": "module",
   "description": "Semantic Versioning, Conventional Commits with CI/CD for GitHub Actions.",
+  "repository": "jeromefitz/packages.git",
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
     "url": "https://jeromefitzgerald.com"
   },
-  "repository": "jeromefitz/packages.git",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
+  "license": "MIT",
+  "private": false,
   "engines": {
     "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
   },
-  "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "typings": "./dist/index.d.ts",
-  "sideEffects": false,
   "scripts": {
     "build": "tsup",
     "clean": "rm -rf .turbo && rm -rf dist",
@@ -32,6 +28,9 @@
     "lint": "pnpm run format:prettier --check && pnpm run lint:eslint",
     "lint:eslint": "eslint ./src --ext cjs,js,jsx,mjs,ts,tsx --max-warnings=0",
     "semantic-release": "semantic-release"
+  },
+  "peerDependencies": {
+    "@jeromefitz/conventional-gitmoji": "^3.3.1"
   },
   "dependencies": {
     "@semantic-release/commit-analyzer": "9.0.2",
@@ -49,7 +48,8 @@
     "@types/semantic-release": "17.2.4",
     "@types/title": "3.4.1"
   },
-  "peerDependencies": {
-    "@jeromefitz/conventional-gitmoji": "^3.3.1"
-  }
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "sideEffects": false
 }
