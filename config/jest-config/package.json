@@ -22,7 +22,7 @@
     "semantic-release": "semantic-release"
   },
   "peerDependencies": {
-    "@jeromefitz/jest-presets": "^1.0.0",
+    "@jeromefitz/jest-presets": "^1.0.0-canary",
     "next": "^13.3.3"
   },
   "dependencies": {
