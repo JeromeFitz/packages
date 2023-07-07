@@ -6,8 +6,8 @@
  *
  */
 import { slug as _slug } from 'github-slugger'
+import fetch from 'isomorphic-unfetch'
 import { getPlaiceholder } from 'plaiceholder'
-import fetch from 'unfetch'
 
 const _getImage = async (src: string) => {
   const buffer = await fetch(src).then(async (res: any) =>

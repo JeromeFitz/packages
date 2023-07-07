@@ -635,9 +635,6 @@ importers:
       plaiceholder:
         specifier: 3.0.0
         version: 3.0.0(sharp@0.32.1)
-      unfetch:
-        specifier: 4.2.0
-        version: 4.2.0
     devDependencies:
       '@jeromefitz/utils':
         specifier: workspace:*
@@ -14883,6 +14880,7 @@ packages:
 
   /unfetch@4.2.0:
     resolution: {integrity: sha512-F9p7yYCn6cIW9El1zi0HI6vqpeIvBsr3dSuRO6Xuppb1u5rXpCPmMvLSyECLhybr9isec8Ohl0hPekMVrEinDA==}
+    dev: true
 
   /unfetch@5.0.0:
     resolution: {integrity: sha512-3xM2c89siXg0nHvlmYsQ2zkLASvVMBisZm5lF3gFDqfF2xonNStDJyMpvaOBe0a1Edxmqrf2E0HBdmy9QyZaeg==}
