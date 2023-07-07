@@ -538,8 +538,8 @@ importers:
   packages/release-notes-generator:
     dependencies:
       '@octokit/rest':
-        specifier: 19.0.11
-        version: 19.0.11
+        specifier: 19.0.13
+        version: 19.0.13
       conventional-commits-filter:
         specifier: 2.0.7
         version: 2.0.7
@@ -575,8 +575,8 @@ importers:
   packages/scripts:
     dependencies:
       '@octokit/rest':
-        specifier: 19.0.11
-        version: 19.0.11
+        specifier: 19.0.13
+        version: 19.0.13
       colorize-template:
         specifier: 1.0.0
         version: 1.0.0
@@ -3583,7 +3583,7 @@ packages:
       '@octokit/graphql': 5.0.0
       '@octokit/request': 6.0.2
       '@octokit/request-error': 3.0.0
-      '@octokit/types': 9.2.2
+      '@octokit/types': 9.2.3
       before-after-hook: 2.2.2
       universal-user-agent: 6.0.0
     transitivePeerDependencies:
@@ -3612,10 +3612,6 @@ packages:
 
   /@octokit/openapi-types@12.8.0:
     resolution: {integrity: sha512-ydcKLs2KKcxlhpdWLzJxEBDEk/U5MUeqtqkXlrtAUXXFPs6vLl1PEGghFC/BbpleosB7iXs0Z4P2DGe7ZT5ZNg==}
-    dev: false
-
-  /@octokit/openapi-types@17.1.2:
-    resolution: {integrity: sha512-OaS7Ol4Y+U50PbejfzQflGWRMxO04nYWO5ZBv6JerqMKE2WS/tI9VoVDDPXHBlRMGG2fOdKwtVGlFfc7AVIstw==}
     dev: false
 
   /@octokit/openapi-types@17.2.0:
@@ -3675,8 +3671,8 @@ packages:
       - encoding
     dev: false
 
-  /@octokit/rest@19.0.11:
-    resolution: {integrity: sha512-m2a9VhaP5/tUw8FwfnW2ICXlXpLPIqxtg3XcAiGMLj/Xhw3RSBfZ8le/466ktO1Gcjr8oXudGnHhxV1TXJgFxw==}
+  /@octokit/rest@19.0.13:
+    resolution: {integrity: sha512-/EzVox5V9gYGdbAI+ovYj3nXQT1TtTHRT+0eZPcuC05UFSWO3mdO9UY1C0i2eLF9Un1ONJkAk+IEtYGAC+TahA==}
     engines: {node: '>= 14'}
     dependencies:
       '@octokit/core': 4.2.1
@@ -3695,12 +3691,6 @@ packages:
     resolution: {integrity: sha512-Mq4N9sOAYCitTsBtDdRVrBE80lIrMBhL9Jbrw0d+j96BAzlq4V+GLHFJbHokEsVvO/9tQupQdoFdgVYhD2C8UQ==}
     dependencies:
       '@octokit/openapi-types': 12.8.0
-    dev: false
-
-  /@octokit/types@9.2.2:
-    resolution: {integrity: sha512-9BjDxjgQIvCjNWZsbqyH5QC2Yni16oaE6xL+8SUBMzcYPF4TGQBXGA97Cl3KceK9mwiNMb1mOYCz6FbCCLEL+g==}
-    dependencies:
-      '@octokit/openapi-types': 17.1.2
     dev: false
 
   /@octokit/types@9.2.3:
@@ -4787,7 +4777,7 @@ packages:
     peerDependencies:
       semantic-release: '>=18.0.0-beta.1'
     dependencies:
-      '@octokit/rest': 19.0.11
+      '@octokit/rest': 19.0.13
       '@semantic-release/error': 3.0.0
       aggregate-error: 3.1.0
       bottleneck: 2.19.5
