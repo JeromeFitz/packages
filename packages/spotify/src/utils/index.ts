@@ -1,3 +1,1 @@
-import getImage from './getImage'
-
-export { getImage }
+export { getImage } from './getImage'
