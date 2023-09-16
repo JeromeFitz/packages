@@ -60,7 +60,7 @@
     "lint-staged": "13.2.2",
     "lodash": "4.17.21",
     "pinst": "3.0.0",
-    "semantic-release": "19.0.5",
+    "semantic-release": "21.1.2",
     "semantic-release-monorepo": "7.0.5",
     "syncpack": "10.7.3",
     "tsup": "6.6.2",
