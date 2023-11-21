@@ -239,8 +239,8 @@ importers:
         specifier: 4.14.195
         version: 4.14.195
       '@types/semantic-release':
-        specifier: 17.2.4
-        version: 17.2.4
+        specifier: 17.2.11
+        version: 17.2.11
       '@types/title':
         specifier: 3.4.1
         version: 3.4.1
@@ -618,8 +618,8 @@ importers:
         specifier: workspace:*
         version: link:../conventional-gitmoji
       '@types/semantic-release':
-        specifier: 17.2.4
-        version: 17.2.4
+        specifier: 17.2.11
+        version: 17.2.11
       '@types/title':
         specifier: 3.4.1
         version: 3.4.1
@@ -3006,6 +3006,7 @@ packages:
 
   /@emotion/memoize@0.7.4:
     resolution: {integrity: sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==}
+    requiresBuild: true
     optional: true
 
   /@emotion/use-insertion-effect-with-fallbacks@1.0.0(react@18.2.0):
@@ -6245,8 +6246,8 @@ packages:
   /@types/scheduler@0.16.3:
     resolution: {integrity: sha512-5cJ8CB4yAx7BH1oMvdU0Jh9lrEXyPkar6F9G/ERswkCuvP4KQZfZkSjcMbAICCpQTN4OuZn8tz0HiKv9TGZgrQ==}
 
-  /@types/semantic-release@17.2.4:
-    resolution: {integrity: sha512-Ud2GB2+0WgyBrKB7PbyZA+bud3QD0z3Iv6KPx6FfeMUNDekw3EWgZi3eLKXoeGDPBo+hev74NN1pEPMp0rL2vQ==}
+  /@types/semantic-release@17.2.11:
+    resolution: {integrity: sha512-K2jytWmDwbgDaaI9IPqdygS777ONV+5O+ydXi18qQuGUNHRK2Lx+TAoCpcJJYNya4jdwBBqJnuFjrA/OBCTF0w==}
     dependencies:
       '@types/node': 16.11.7
     dev: true
