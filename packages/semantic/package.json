@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "@jeromefitz/conventional-gitmoji": "workspace:*",
-    "@types/semantic-release": "17.2.4",
+    "@types/semantic-release": "20.0.6",
     "@types/title": "3.4.1"
   },
   "publishConfig": {
