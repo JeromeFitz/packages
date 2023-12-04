@@ -513,8 +513,8 @@ importers:
   packages/notion:
     dependencies:
       '@notionhq/client':
-        specifier: 2.2.6
-        version: 2.2.6
+        specifier: 2.2.14
+        version: 2.2.14
       date-fns:
         specifier: 2.30.0
         version: 2.30.0
@@ -3006,6 +3006,7 @@ packages:
 
   /@emotion/memoize@0.7.4:
     resolution: {integrity: sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==}
+    requiresBuild: true
     optional: true
 
   /@emotion/use-insertion-effect-with-fallbacks@1.0.0(react@18.2.0):
@@ -3558,8 +3559,8 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
 
-  /@notionhq/client@2.2.6:
-    resolution: {integrity: sha512-QmYN43nOLOBjQ450/nEb98EvTlkDq4t2/F39kiSxaqtse4EG7nctJLeJZrKR1glz9V4K8y2kHmNo8Bz+1XrwYQ==}
+  /@notionhq/client@2.2.14:
+    resolution: {integrity: sha512-oqUefZtCiJPCX+74A1Os9OVTef3fSnVWe2eVQtU1HJSD+nsfxfhwvDKnzJTh2Tw1ZHKLxpieHB/nzGdY+Uo12A==}
     engines: {node: '>=12'}
     dependencies:
       '@types/node-fetch': 2.6.3
