@@ -53,10 +53,9 @@ const config = (files) => {
     files,
     micromatch.braces('**/package.json', { expand: true }),
   )
-  // @todo(add-back) temp removal
-  // if (filesSyncpack.length) {
-  //   isCI ? lintStaged.push() : lintStaged.push(`pnpm run lint:packages`)
-  // }
+  if (filesSyncpack.length) {
+    isCI ? lintStaged.push() : lintStaged.push(`pnpm run lint:packages`)
+  }
 
   return lintStaged
 }

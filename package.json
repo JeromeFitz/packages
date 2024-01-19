@@ -29,7 +29,7 @@
     "generate:releaseRules": "node ./packages/semantic/scripts/generateReleaseRules.js && pnpm run format:lint",
     "lint": "turbo run lint --filter=[HEAD^1]",
     "lint:all": "turbo run lint",
-    "lint:packages": "syncpack lint",
+    "lint:packages": "syncpack lint --config .syncpackrc.cjs",
     "lint:repo": "manypkg check",
     "postinstall": "is-ci || husky install",
     "postpublish": "pinst --enable",
