@@ -52,7 +52,7 @@ async function generateNotes(pluginConfig, context) {
     []
   // eslint-disable-next-line prefer-const
   let { hostname, port, pathname, protocol } = new URL(
-    match ? `ssh://${auth ? `${auth}@` : ''}${host}/${path}` : repositoryUrl
+    match ? `ssh://${auth ? `${auth}@` : ''}${host}/${path}` : repositoryUrl,
   )
   port = protocol.includes('ssh') ? '' : port
   protocol = protocol && /http[^s]/.test(protocol) ? 'http' : 'https'
@@ -80,7 +80,7 @@ async function generateNotes(pluginConfig, context) {
       linkReferences,
       commit: commitConfig,
       issue: issueConfig,
-    }
+    },
   )
 
   const commitsParsed = conventionalCommitsFilter(
@@ -101,7 +101,7 @@ async function generateNotes(pluginConfig, context) {
           }),
         }
         return commitPassed
-      })
+      }),
   )
 
   let commits: any = []
@@ -109,7 +109,7 @@ async function generateNotes(pluginConfig, context) {
     const commitProcessed: any = await processCommit(
       commitParsed,
       writerOpts.transform,
-      context
+      context,
     )
     commits.push(commitProcessed)
   })

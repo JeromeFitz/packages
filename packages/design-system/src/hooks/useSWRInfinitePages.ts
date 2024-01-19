@@ -10,7 +10,7 @@ import useSWRInfinite from 'swr/infinite'
 
 type PageKeyMaker<Page, Key extends any[]> = (
   index: number,
-  previousPageData?: Page
+  previousPageData?: Page,
   /**
    * Mutable ref object. Set this to `true` before the request and `false` afterwards if the request is fetching more.
    *
@@ -34,11 +34,11 @@ const useSWRInfinitePages = <
   /**
    * Path to your list data
    */
-  Key extends any[] = any[]
+  Key extends any[] = any[],
 >(
   key: PageKeyMaker<Page, Key>,
   fetcher: PageFetcher<Page, Key>,
-  { limit = 20, dataPath: path, ...options }: UseSWRInfinitePagesConfig<Page>
+  { limit = 20, dataPath: path, ...options }: UseSWRInfinitePagesConfig<Page>,
 ) => {
   const isFetching = useRef(false)
   const dataPath = Array.isArray(path) ? path.join('.') : path
@@ -75,7 +75,7 @@ const useSWRInfinitePages = <
 
       return val
     },
-    { revalidateAll: false, revalidateFirstPage: false, ...options }
+    { revalidateAll: false, revalidateFirstPage: false, ...options },
   )
 
   const firstPageData = _get(data?.[0], dataPath)

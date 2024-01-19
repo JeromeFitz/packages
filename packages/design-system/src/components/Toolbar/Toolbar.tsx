@@ -37,7 +37,7 @@ const StyledButton = styled(
     color: 'white',
     backgroundColor: '$colors$brand9',
   },
-  { '&:hover': { color: 'white', backgroundColor: '$colors$brand10' } }
+  { '&:hover': { color: 'white', backgroundColor: '$colors$brand10' } },
 )
 
 const StyledLink = styled(
@@ -50,7 +50,7 @@ const StyledLink = styled(
     justifyContent: 'center',
     alignItems: 'center',
   },
-  { '&:hover': { backgroundColor: 'transparent', cursor: 'pointer' } }
+  { '&:hover': { backgroundColor: 'transparent', cursor: 'pointer' } },
 )
 
 const StyledSeparator = styled(ToolbarPrimitive.Separator, {

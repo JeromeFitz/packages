@@ -59,7 +59,7 @@ const files = (data: any, pageId: string) => {
       // }
 
       // return
-    }
+    },
   )
 
   return _files

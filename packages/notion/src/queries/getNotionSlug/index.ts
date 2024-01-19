@@ -41,7 +41,7 @@ const getNotionSlug = async ({
 
   const info = _omit(_info, 'properties')
   info['properties'] = sortObject(
-    dataNormalized({ config, data: _info, pathVariables, pageId: info.id })
+    dataNormalized({ config, data: _info, pathVariables, pageId: info.id }),
   )
 
   const _content = await getBlocksByIdChildren({ block_id: info.id })

@@ -99,12 +99,12 @@ const scrollButtonStyles = {
 
 const StyledScrollUpButton = styled(
   SelectPrimitive.ScrollUpButton,
-  scrollButtonStyles
+  scrollButtonStyles,
 )
 
 const StyledScrollDownButton = styled(
   SelectPrimitive.ScrollDownButton,
-  scrollButtonStyles
+  scrollButtonStyles,
 )
 
 const Select = SelectPrimitive.Root

@@ -61,7 +61,7 @@ const getQuery = async ({ config, reqQuery, notionDatabasesQuery }) => {
           relation: {
             contains: id,
           },
-        })
+        }),
       )
     filter = { or: [...filterTagEpisodesByPodcasts] }
   } else {

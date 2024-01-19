@@ -15,7 +15,7 @@ const TabsList = forwardRef<ElementRef<typeof StyledTabsList>, TabsListProps>(
       <StyledTabsList {...props} ref={forwardedRef} />
       <Separator />
     </>
-  )
+  ),
 )
 TabsList.displayName = 'TabsList'
 

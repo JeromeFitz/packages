@@ -54,7 +54,7 @@ const cli = meow(
       [OPTIONS.TITLE]: { type: 'string' },
       [OPTIONS.TYPE]: { type: 'string' },
     },
-  }
+  },
 )
 
 const commands = {

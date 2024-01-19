@@ -8,7 +8,7 @@ function useOnScreen(ref: MutableRefObject<undefined>) {
     if (!ref.current) return null
 
     const observer = new IntersectionObserver(([entry]) =>
-      setIntersecting(entry.isIntersecting)
+      setIntersecting(entry.isIntersecting),
     )
 
     observer.observe(ref.current)

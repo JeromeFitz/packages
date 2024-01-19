@@ -112,7 +112,7 @@ const AccordionTrigger = forwardRef<ForwardedRefType, PropsChildren>(
         <StyledChevron aria-hidden />
       </StyledTrigger>
     </StyledHeader>
-  )
+  ),
 )
 AccordionTrigger.displayName = 'AccordionTrigger'
 
@@ -125,7 +125,7 @@ const AccordionContent = forwardRef<ForwardedRefType, PropsChildren>(
         <StyledContentText>{children}</StyledContentText>
       </StyledContent>
     </>
-  )
+  ),
 )
 AccordionContent.displayName = 'AccordionContent'
 

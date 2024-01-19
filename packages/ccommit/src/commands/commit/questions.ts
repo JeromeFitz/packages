@@ -101,7 +101,7 @@ const questions = [
     limit: 18,
     footer() {
       return `${colors.dim.cyan(`›`)} ${colors.dim.bold(
-        `scroll up and down to reveal more ↕`
+        `scroll up and down to reveal more ↕`,
       )}`
     },
     highlight(str) {
@@ -164,7 +164,7 @@ const questions = [
     multiline: true,
     footer() {
       return `${colors.dim.cyan(`›`)} ${colors.dim(
-        'Return twice to submit/skip: ⮑  ⮑'
+        'Return twice to submit/skip: ⮑  ⮑',
       )}`
     },
     result(input) {

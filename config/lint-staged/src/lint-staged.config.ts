@@ -21,8 +21,8 @@ const config = (files) => {
       '**.{cjs,js,jsx,mjs,ts,tsx,html,json,md,mdx,css,scss,yml,yaml}',
       {
         expand: true,
-      }
-    )
+      },
+    ),
   )
   if (filesPrettier.length) {
     const filenames = escapedFileNames(filesPrettier)
@@ -30,13 +30,13 @@ const config = (files) => {
       ? lintStaged.push(`prettier --ignore-unknown --check ${filenames}`)
       : lintStaged.push(
           `prettier --ignore-unknown --write ${filenames}`,
-          `git add ${filenames} -u`
+          `git add ${filenames} -u`,
         )
   }
 
   const filesEslint = micromatch(
     files,
-    micromatch.braces('**.{cjs,js,jsx,mjs,ts,tsx}', { expand: true })
+    micromatch.braces('**.{cjs,js,jsx,mjs,ts,tsx}', { expand: true }),
   )
   if (filesEslint.length) {
     const filenames = escapedFileNames(filesEslint)
@@ -44,14 +44,14 @@ const config = (files) => {
       ? lintStaged.push()
       : lintStaged.push(
           `eslint --max-warnings=0 --no-ignore --fix ${filenames}`,
-          `git add ${filenames} -u`
+          `git add ${filenames} -u`,
         )
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const filesSyncpack = micromatch(
     files,
-    micromatch.braces('**/package.json', { expand: true })
+    micromatch.braces('**/package.json', { expand: true }),
   )
   // @todo(add-back) temp removal
   // if (filesSyncpack.length) {

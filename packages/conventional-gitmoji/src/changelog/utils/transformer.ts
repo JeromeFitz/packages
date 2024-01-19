@@ -26,7 +26,7 @@ const transformer = (commit: any, context: any) => {
         type === v ||
         type === e
       )
-    }
+    },
   )
 
   /**

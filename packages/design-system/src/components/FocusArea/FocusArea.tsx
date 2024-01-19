@@ -92,7 +92,7 @@ const FocusArea = forwardRef<HTMLDivElement, ComponentProps<typeof StyledFocusAr
         <div data-focus-area-exit {...exitProps} />
       </StyledFocusArea>
     )
-  }
+  },
 )
 
 FocusArea.displayName = 'FocusArea'

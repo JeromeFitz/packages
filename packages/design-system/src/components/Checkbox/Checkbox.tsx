@@ -16,7 +16,7 @@ const Checkbox = forwardRef<ElementRef<typeof StyledCheckbox>, CheckboxProps>(
         <Icon.Check />
       </StyledIndicator>
     </StyledCheckbox>
-  )
+  ),
 )
 
 Checkbox.displayName = 'Checkbox'

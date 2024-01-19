@@ -13,7 +13,7 @@ const formatCliTypes = (commitTypes: any) => {
       `${formatCliEmoji({
         emoji,
         emojiLength,
-      })} ${formatCliType(type)} ${description}`
+      })} ${formatCliType(type)} ${description}`,
     )
   })
 }

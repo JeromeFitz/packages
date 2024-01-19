@@ -71,7 +71,7 @@ const EmojiParser = ({ id, text }) => {
           />
         ) : (
           item.text
-        )
+        ),
       )
       if (
         _size(emojiMapping) === _size(emojiMappingStitch) &&

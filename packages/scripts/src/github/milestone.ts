@@ -31,7 +31,7 @@ async function createMilestones({ owner, repo }) {
         ...milestone,
       })
       console.log(
-        colorize`{green.bold ✅️  success: ${owner}/${repo} => createMilestone: ${milestone.name}}`
+        colorize`{green.bold ✅️  success: ${owner}/${repo} => createMilestone: ${milestone.name}}`,
       )
     })
   } catch (error) {

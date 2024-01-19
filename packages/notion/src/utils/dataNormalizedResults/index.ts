@@ -20,7 +20,7 @@ const dataNormalizedResults = ({ config, results, routeType }) => {
         data: result,
         pathVariables: routeType,
         pageId: result?.id,
-      })
+      }),
     )
     normalizedResults.push(normalizedResult)
   })

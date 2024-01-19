@@ -87,7 +87,7 @@ const Paragraph = forwardRef<ElementRef<typeof DEFAULT_TAG>, ParagraphProps>(
         }}
       />
     )
-  }
+  },
 )
 
 Paragraph.displayName = 'Paragraph'

@@ -59,11 +59,11 @@ async function setPullRequest({
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const issue_number = pull_number
       console.log(
-        colorize`{orange.bold 🤔️  ${pull_number} => Exists, should we update PR ?}`
+        colorize`{orange.bold 🤔️  ${pull_number} => Exists, should we update PR ?}`,
       )
       console.log(colorize`{orange.bold 🤪️  Right now we are not}`)
       console.log(
-        colorize`{orange.bold 😵️  https://github.com/${repo_id}/pull/${pull_number}}`
+        colorize`{orange.bold 😵️  https://github.com/${repo_id}/pull/${pull_number}}`,
       )
 
       // await octokit.rest.pulls.update({

@@ -17,7 +17,7 @@ const RadioCard = forwardRef<ElementRef<typeof StyledRadio>, RadioCardProps>(
       </StyledRadioButton>
       {props.children}
     </StyledRadio>
-  )
+  ),
 )
 
 RadioCard.displayName = 'RadioCard'

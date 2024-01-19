@@ -19,6 +19,7 @@ const { prompt } = enquirer
 
 export type CommitOptions = {
   message?: string
+  // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents, @typescript-eslint/no-duplicate-type-constituents
   mode: typeof COMMIT_MODES.CLIENT | typeof COMMIT_MODES.HOOK
   scope?: string
   skip: boolean
@@ -37,7 +38,7 @@ const promptAndCommit = async (options: CommitOptions) => {
     data.gitmoji = findBy(data.type, FIND_BY.TYPE, FIND_BY.EMOJI)
     if (!data.gitmoji) {
       console.log(
-        generateLog(LOGS.TYPES.ERROR, LOGS.MESSAGES.TYPE_INCORRECT, data.type)
+        generateLog(LOGS.TYPES.ERROR, LOGS.MESSAGES.TYPE_INCORRECT, data.type),
       )
       process.exit(2)
     }

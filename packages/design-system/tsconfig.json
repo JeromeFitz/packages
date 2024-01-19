@@ -37,14 +37,14 @@
     "strictNullChecks": false, // @todo(lint)
     "strictPropertyInitialization": false, // @todo(lint)
     "target": "esnext",
-    "tsBuildInfoFile": ".tsbuildinfo"
+    "tsBuildInfoFile": ".tsbuildinfo",
   },
   "include": [
     ".storybook/*.ts",
     ".storybook/*.tsx",
     "src",
     "index.d.ts",
-    "next-env.d.ts"
+    "next-env.d.ts",
   ],
-  "exclude": ["node_modules", "tests/*.test.ts"]
+  "exclude": ["node_modules", "tests/*.test.ts"],
 }

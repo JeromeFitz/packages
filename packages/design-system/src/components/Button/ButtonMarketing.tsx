@@ -20,7 +20,7 @@ const ButtonMarketing = forwardRef<HTMLButtonElement, ButtonMarketingProps>(
         )}
       </StyledButton>
     )
-  }
+  },
 )
 
 ButtonMarketing.displayName = 'ButtonMarketing'

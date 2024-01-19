@@ -52,9 +52,9 @@ const contributor = async (context, commits, meta) => {
       (commit): IAuthor => ({
         email: commit.author.email,
         name: commit.author.name,
-      })
+      }),
     ),
-    'name'
+    'name',
   )
 
   const {
@@ -77,8 +77,8 @@ const contributor = async (context, commits, meta) => {
             return login
           }
           return ''
-        })
-    )
+        }),
+    ),
   )
 
   // @note could we lift this better somehow and reduce API calls?
@@ -96,7 +96,7 @@ const contributor = async (context, commits, meta) => {
   ]
   contributorsProhibitListEmail.map((eject) => {
     const ejectIndex = _findIndex(authors, (author: any) =>
-      author.email.includes(eject)
+      author.email.includes(eject),
     )
     if (ejectIndex !== -1) authors.splice(ejectIndex)
   })

@@ -33,7 +33,7 @@ async function createLabels({ owner, repo }) {
         ...label,
       })
       console.log(
-        colorize`{green.bold ✅️  success: ${owner}/${repo} => createLabel: ${label.name}}`
+        colorize`{green.bold ✅️  success: ${owner}/${repo} => createLabel: ${label.name}}`,
       )
     })
   } catch (error) {

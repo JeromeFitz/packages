@@ -354,7 +354,7 @@ class Client {
   // @todo(types)
   private async getAccessToken() {
     const basic = Buffer.from(`${this.#clientId}:${this.#clientSecret}`).toString(
-      'base64'
+      'base64',
     )
     const res = await this.#fetch(URL.TOKEN, {
       method: 'POST',

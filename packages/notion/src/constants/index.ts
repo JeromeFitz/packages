@@ -1325,7 +1325,7 @@ const getDataTypes: DataTypes[] = [LISTING, LISTING_BY_DATE, SLUG, SLUG_BY_ROUTE
 
 const DATA_TYPES: DataTypesObject = Object.assign(
   {},
-  ...getDataTypes.map((d) => ({ [d]: d })).flat(1)
+  ...getDataTypes.map((d) => ({ [d]: d })).flat(1),
 )
 
 export {

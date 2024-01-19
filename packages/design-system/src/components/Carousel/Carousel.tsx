@@ -38,7 +38,7 @@ const Carousel = (props) => {
   const getSlideInDirection = useCallbackRef((direction: 1 | -1) => {
     // @todo(any)
     const slides: any = ref.current?.querySelectorAll<HTMLElement>(
-      '[data-slide-intersection-ratio]'
+      '[data-slide-intersection-ratio]',
     )
     if (slides) {
       // @todo(any)
@@ -49,7 +49,7 @@ const Carousel = (props) => {
       }
       return slidesArray.find(
         // @todo(any)
-        (slide: any) => slide.dataset.slideIntersectionRatio !== '0'
+        (slide: any) => slide.dataset.slideIntersectionRatio !== '0',
       )
     }
   })
@@ -181,7 +181,7 @@ const CarouselSlideList = (props) => {
               pointerX: event.clientX,
             })
           }
-        }
+        },
       )}
       onPointerDown={composeEventHandlers(
         props.onPointerDown,
@@ -189,7 +189,7 @@ const CarouselSlideList = (props) => {
           const element = event.target as HTMLElement
           element.style.userSelect = 'none'
           element.setPointerCapture(event.pointerId)
-        }
+        },
       )}
       onPointerUp={composeEventHandlers(props.onPointerUp, (event: PointerEvent) => {
         const element = event.target as HTMLElement
@@ -210,7 +210,7 @@ const CarouselSlide = (props) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => setIntersectionRatio(entry.intersectionRatio),
-      { root: context.slideListRef.current, threshold: [0, 0.5, 1] }
+      { root: context.slideListRef.current, threshold: [0, 0.5, 1] },
     )
     observer.observe(ref.current)
     return () => observer.disconnect()

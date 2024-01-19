@@ -25,6 +25,7 @@ const StyledContextMenuRadioItem = styled(ContextMenuPrimitive.RadioItem, itemCs
 type ContextMenuRadioItemPrimitiveProps = ComponentProps<
   typeof ContextMenuPrimitive.RadioItem
 >
+// eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
 type ContextMenuRadioItemProps = ContextMenuRadioItemPrimitiveProps & { css?: CSS }
 
 const ContextMenuRadioItem = forwardRef<
@@ -59,12 +60,13 @@ const ContextMenuRadioItem = forwardRef<
 
 const StyledContextMenuCheckboxItem = styled(
   ContextMenuPrimitive.CheckboxItem,
-  itemCss
+  itemCss,
 )
 
 type ContextMenuCheckboxItemPrimitiveProps = ComponentProps<
   typeof ContextMenuPrimitive.CheckboxItem
 >
+// eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
 type ContextMenuCheckboxItemProps = ContextMenuCheckboxItemPrimitiveProps & {
   css?: CSS
 }

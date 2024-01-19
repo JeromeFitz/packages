@@ -29,7 +29,7 @@
     "generate:releaseRules": "node ./packages/semantic/scripts/generateReleaseRules.js && pnpm run format:lint",
     "lint": "turbo run lint --filter=[HEAD^1]",
     "lint:all": "turbo run lint",
-    "lint:packages": "syncpack lint-semver-ranges --config .syncpackrc",
+    "lint:packages": "syncpack lint",
     "lint:repo": "manypkg check",
     "postinstall": "is-ci || husky install",
     "postpublish": "pinst --enable",
@@ -42,7 +42,8 @@
     "test:all": "turbo run test"
   },
   "dependencies": {
-    "@babel/eslint-parser": "7.21.8",
+    "@babel/core": "7.23.7",
+    "@babel/eslint-parser": "7.23.3",
     "@jeromefitz/conventional-gitmoji": "workspace:*",
     "@jeromefitz/eslint-config": "workspace:*",
     "@jeromefitz/lint-staged": "workspace:*",
@@ -51,20 +52,21 @@
     "@jeromefitz/semantic": "workspace:*",
     "@jeromefitz/tsconfig": "workspace:*",
     "@manypkg/cli": "0.20.0",
-    "@types/is-ci": "3.0.0",
+    "@types/is-ci": "3.0.4",
     "@types/node": "20.11.5",
     "ccommit": "workspace:*",
     "dotenv": "16.3.2",
     "husky": "8.0.3",
     "is-ci": "3.0.1",
-    "lint-staged": "13.2.2",
+    "lint-staged": "15.2.0",
     "lodash": "4.17.21",
     "pinst": "3.0.0",
     "semantic-release": "23.0.0",
     "semantic-release-monorepo": "8.0.0",
-    "syncpack": "10.7.3",
+    "syncpack": "12.3.0",
     "tsup": "8.0.1",
-    "turbo": "1.11.3"
+    "turbo": "1.11.3",
+    "typescript": "5.3.3"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"

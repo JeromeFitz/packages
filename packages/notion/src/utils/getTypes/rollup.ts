@@ -22,9 +22,9 @@ const rollup = (data: any) => {
         getTypes[item?.type]({
           type: item?.type,
           [item?.type]: [itemData],
-        })
-      )
-    )
+        }),
+      ),
+    ),
   ).flat()
 }
 

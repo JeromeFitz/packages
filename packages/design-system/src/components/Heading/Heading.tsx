@@ -62,7 +62,7 @@ const Heading = forwardRef<ElementRef<typeof DEFAULT_TAG>, HeadingProps>(
         }}
       />
     )
-  }
+  },
 )
 
 Heading.displayName = 'Heading'

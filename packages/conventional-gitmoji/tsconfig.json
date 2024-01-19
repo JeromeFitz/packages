@@ -8,9 +8,9 @@
     "strict": true,
     "target": "es2020",
     "outDir": "./dist",
-    "rootDir": "./src"
+    "rootDir": "./src",
   },
   "extends": "@jeromefitz/tsconfig/src/base.json",
   "include": ["src"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
 }

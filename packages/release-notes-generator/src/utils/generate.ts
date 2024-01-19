@@ -33,7 +33,7 @@ function generate(options, commits, context, keyCommit) {
     {},
     context,
     keyCommit,
-    getExtraContext(filteredCommits, notes, options)
+    getExtraContext(filteredCommits, notes, options),
   )
 
   if (keyCommit && keyCommit.committerDate) {
