@@ -1,0 +1,19 @@
+diff --git a/src/index.js b/src/index.js
+index 073f2652256c923b5c3e0736d5a671cb25b7ce78..6b3c18f1f4f9d7cdcf397c3f9f35bfbd26158120 100644
+--- a/src/index.js
++++ b/src/index.js
+@@ -1,4 +1,4 @@
+-import readPkg from 'read-pkg';
++import { readPackageSync } from 'read-pkg';
+ import { compose } from 'ramda';
+ import { wrapStep } from 'semantic-release-plugin-decorators';
+ import { withOnlyPackageCommits } from './only-package-commits.js';
+@@ -53,7 +53,7 @@ const fail = wrapStep(
+   }
+ );
+ 
+-const tagFormat = `${readPkg.sync().name}-v\${version}`;
++const tagFormat = `${readPackageSync().name}-v\${version}`;
+ 
+ //TODO Change to esm export when https://github.com/semantic-release/semantic-release/pull/3037 is merged
+ module.exports = { analyzeCommits, generateNotes, success, fail, tagFormat };

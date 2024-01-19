@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: false
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  semantic-release-monorepo@8.0.0:
+    hash: 2f6ajmmhhu64xe6vu47wfykaay
+    path: patches/semantic-release-monorepo@8.0.0.patch
+
 importers:
 
   .:
@@ -70,7 +75,7 @@ importers:
         version: 23.0.0(typescript@5.3.3)
       semantic-release-monorepo:
         specifier: 8.0.0
-        version: 8.0.0(semantic-release@23.0.0)
+        version: 8.0.0(patch_hash=2f6ajmmhhu64xe6vu47wfykaay)(semantic-release@23.0.0)
       syncpack:
         specifier: 12.3.0
         version: 12.3.0(typescript@5.3.3)
@@ -5917,7 +5922,7 @@ packages:
     resolution: {integrity: sha512-LpIB1UN78oRmJnqgPdvA/qRgVitih5V1Ybyszv8GcOBAJWJBHGWI1PmSrOfdEmbf1ZvGkdK/NNDdBHbuSQqSyQ==}
     dev: false
 
-  /semantic-release-monorepo@8.0.0(semantic-release@23.0.0):
+  /semantic-release-monorepo@8.0.0(patch_hash=2f6ajmmhhu64xe6vu47wfykaay)(semantic-release@23.0.0):
     resolution: {integrity: sha512-mCJ0W8oUxcaYBKdBwqzcDVjPgVs4+CYVZzRMSg8F9Eo5kelZFF5v/SBpHhpWI/LXXHxmwtwZ5y6Qe+uoJ8A7QQ==}
     peerDependencies:
       semantic-release: '>=20'
@@ -5939,6 +5944,7 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: false
+    patched: true
 
   /semantic-release-plugin-decorators@4.0.0(semantic-release@23.0.0):
     resolution: {integrity: sha512-5eqaITbgGJu7AWCqY/ZwDh3TCS84Q9i470AImwP9vw3YcFRyR8sEb499Zbnqa076bv02yFUn88GtloQMXQsBrg==}

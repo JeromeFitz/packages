@@ -70,5 +70,10 @@
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "semantic-release-monorepo@8.0.0": "patches/semantic-release-monorepo@8.0.0.patch"
+    }
   }
 }
