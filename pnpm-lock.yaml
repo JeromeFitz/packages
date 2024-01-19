@@ -59,9 +59,6 @@ importers:
       lodash:
         specifier: 4.17.21
         version: 4.17.21
-      pinst:
-        specifier: 3.0.0
-        version: 3.0.0
       semantic-release:
         specifier: 23.0.0
         version: 23.0.0(typescript@5.3.3)
@@ -5102,12 +5099,6 @@ packages:
   /pify@3.0.0:
     resolution: {integrity: sha512-C3FsVNH1udSEX48gGX1xfvwTWfsYWj5U+8/uK15BGzIGrKoUpghX8hWZwa/OFnakBiiVNmBvemTJR5mcy7iPcg==}
     engines: {node: '>=4'}
-    dev: false
-
-  /pinst@3.0.0:
-    resolution: {integrity: sha512-cengSmBxtCyaJqtRSvJorIIZXMXg+lJ3sIljGmtBGUVonMnMsVJbnzl6jGN1HkOWwxNuJynCJ2hXxxqCQrFDdw==}
-    engines: {node: '>=12.0.0'}
-    hasBin: true
     dev: false
 
   /pirates@4.0.6:
