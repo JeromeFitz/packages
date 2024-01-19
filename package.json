@@ -51,7 +51,7 @@
     "@jeromefitz/release-notes-generator": "workspace:*",
     "@jeromefitz/semantic": "workspace:*",
     "@jeromefitz/tsconfig": "workspace:*",
-    "@manypkg/cli": "0.20.0",
+    "@manypkg/cli": "0.21.2",
     "@types/is-ci": "3.0.4",
     "@types/node": "20.11.5",
     "ccommit": "workspace:*",

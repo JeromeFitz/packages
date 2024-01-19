@@ -33,10 +33,10 @@
     "lodash": "^4.17.21"
   },
   "dependencies": {
-    "@octokit/rest": "19.0.11",
+    "@octokit/rest": "20.0.2",
     "conventional-commits-filter": "4.0.0",
     "conventional-commits-parser": "5.0.0",
-    "date-fns": "2.30.0",
+    "date-fns": "3.2.0",
     "import-from": "4.0.0",
     "read-package-up": "11.0.0",
     "semver": "7.5.4"

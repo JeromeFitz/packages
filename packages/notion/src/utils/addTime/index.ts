@@ -1,6 +1,8 @@
-import _addDays from 'date-fns/addDays/index.js'
-import _addMonths from 'date-fns/addMonths/index.js'
-import _addYears from 'date-fns/addYears/index.js'
+import {
+  addDays as _addDays,
+  addMonths as _addMonths,
+  addYears as _addYears,
+} from 'date-fns'
 
 const addTime = (date, type) => {
   switch (type) {
