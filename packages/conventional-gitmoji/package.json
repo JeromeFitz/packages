@@ -39,10 +39,10 @@
     "title": "3.5.3"
   },
   "devDependencies": {
-    "@types/lodash": "4.14.195",
+    "@types/lodash": "4.14.202",
     "@types/semantic-release": "20.0.6",
-    "@types/title": "3.4.1",
-    "gitmojis": "3.13.4",
+    "@types/title": "3.4.3",
+    "gitmojis": "3.14.0",
     "lodash": "4.17.21"
   },
   "publishConfig": {

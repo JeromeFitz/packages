@@ -196,17 +196,17 @@ importers:
         version: 3.5.3
     devDependencies:
       '@types/lodash':
-        specifier: 4.14.195
-        version: 4.14.195
+        specifier: 4.14.202
+        version: 4.14.202
       '@types/semantic-release':
         specifier: 20.0.6
         version: 20.0.6
       '@types/title':
-        specifier: 3.4.1
-        version: 3.4.1
+        specifier: 3.4.3
+        version: 3.4.3
       gitmojis:
-        specifier: 3.13.4
-        version: 3.13.4
+        specifier: 3.14.0
+        version: 3.14.0
       lodash:
         specifier: 4.17.21
         version: 4.17.21
@@ -230,8 +230,8 @@ importers:
         specifier: workspace:*
         version: link:../utils
       '@types/lodash':
-        specifier: 4.14.195
-        version: 4.14.195
+        specifier: 4.14.202
+        version: 4.14.202
       lodash:
         specifier: 4.17.21
         version: 4.17.21
@@ -264,8 +264,8 @@ importers:
         specifier: 3.0.6
         version: 3.0.6
       '@types/lodash':
-        specifier: 4.14.195
-        version: 4.14.195
+        specifier: 4.14.202
+        version: 4.14.202
       lodash:
         specifier: 4.17.21
         version: 4.17.21
@@ -319,8 +319,8 @@ importers:
         specifier: 20.0.6
         version: 20.0.6
       '@types/title':
-        specifier: 3.4.1
-        version: 3.4.1
+        specifier: 3.4.3
+        version: 3.4.3
 
   packages/spotify:
     dependencies:
@@ -338,8 +338,8 @@ importers:
         specifier: workspace:*
         version: link:../utils
       '@types/lodash':
-        specifier: 4.14.195
-        version: 4.14.195
+        specifier: 4.14.202
+        version: 4.14.202
       lodash:
         specifier: 4.17.21
         version: 4.17.21
@@ -350,8 +350,8 @@ importers:
   packages/utils:
     devDependencies:
       '@types/lodash':
-        specifier: 4.14.195
-        version: 4.14.195
+        specifier: 4.14.202
+        version: 4.14.202
       lodash:
         specifier: 4.17.21
         version: 4.17.21
@@ -1473,8 +1473,8 @@ packages:
       '@types/node': 20.11.5
     dev: false
 
-  /@types/lodash@4.14.195:
-    resolution: {integrity: sha512-Hwx9EUgdwf2GLarOjQp5ZH8ZmblzcbTBC2wtQWNKARBSxM9ezRIAUpeDTgoQRAFB0+8CNWXVA9+MaSOzOF3nPg==}
+  /@types/lodash@4.14.202:
+    resolution: {integrity: sha512-OvlIYQK9tNneDlS0VN54LLd5uiPCBOp7gS5Z0f1mjoJYBrtStzgmJBxONW3U6OZqdtNzZPmn9BS/7WI7BFFcFQ==}
     dev: true
 
   /@types/minimist@1.2.2:
@@ -1529,8 +1529,8 @@ packages:
     resolution: {integrity: sha512-21cFJr9z3g5dW8B0CVI9g2O9beqaThGQ6ZFBqHfwhzLDKUxaqTIy3vnfah/UPkfOiF2pLq+tGz+W8RyCskuslw==}
     dev: false
 
-  /@types/title@3.4.1:
-    resolution: {integrity: sha512-GAt+5DJl84n7Qz+/weJteapG8j2csP/5NOg8H4dnaTxuqsK6AcZ4hPYsvvjAjcEVv5l9dfK8rz4pOfpgjlrNqg==}
+  /@types/title@3.4.3:
+    resolution: {integrity: sha512-mjupLOb4kwUuoUFokkacy/VMRVBH2qtqZ5AX7K7iha6+iKIkX80n/Y4EoNVEVRmer8dYJU/ry+fppUaDFVQh7Q==}
     dev: true
 
   /@typescript-eslint/eslint-plugin@5.59.6(@typescript-eslint/parser@5.59.6)(eslint@8.40.0):
@@ -3758,8 +3758,8 @@ packages:
     resolution: {integrity: sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw==}
     dev: false
 
-  /gitmojis@3.13.4:
-    resolution: {integrity: sha512-TRYhqnD36Xs9GHuATVRmo7hzBb+6wXYC0zxBFvLs3nma7N1WQGWW2vPTQ0+3GsGcPwSp0XVGfe3Besn4a6ip5Q==}
+  /gitmojis@3.14.0:
+    resolution: {integrity: sha512-wPdXxKWfp2dJE6/ch8TDJjYdXvr+4uV67AEcbImj5QC4DmP6Byje1goJL8WgMPFnLY63eadK6oxtnSjdRFzS6g==}
     dev: true
 
   /glob-parent@5.1.2:
