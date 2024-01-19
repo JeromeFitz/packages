@@ -5,4 +5,6 @@ packages:
   - '!config/jest-config'
   - '!config/jest-presets'
   - '!config/lighthouse-config'
+  - '!examples/design-system'
+  - '!packages/design-system'
 enable-pre-post-scripts: true

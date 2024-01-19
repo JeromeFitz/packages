@@ -1,5 +1,11 @@
 # `@jeromefitz/design-system`
 
+## ⚠️ ⚠️ ⚠️ ⚠️ ⚠️
+
+This is in the process of being deprecated and currently decoupled from the build system and `pnpm`.
+
+## 📝 📝 📝 📝 📝
+
 Design System for [`jeromefitzgerald.com`](https://jeromefitzgerald.com).
 
 ## Overview
