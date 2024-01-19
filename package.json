@@ -36,11 +36,10 @@
     "preinstall": "npx only-allow pnpm",
     "prepublishOnly": "pinst --disable",
     "semantic-release": "pnpm semantic-release:mono",
-    "semantic-release:dry": "pnpm turbo run build --filter=\"@jeromefitz/semantic\" && pnpm --filter=\"@jeromefitz/*\" --filter=\"ccommit\" -r --workspace-concurrency=1 exec -- npx --no-install semantic-release -e semantic-release-monorepo --dry-run",
-    "semantic-release:mono": "pnpm turbo run build --filter=\"@jeromefitz/semantic\" && pnpm --filter=\"@jeromefitz/*\" --filter=\"ccommit\" -r --workspace-concurrency=1 exec -- npx --no-install semantic-release -e semantic-release-monorepo",
+    "semantic-release:dry": "pnpm turbo run build --filter=\"@jeromefitz/semantic\" && pnpm --filter=\"@jeromefitz/*\" --filter=\"ccommit\" -r --workspace-concurrency=1 exec -- npx --no-install semantic-release --dry-run",
+    "semantic-release:mono": "pnpm turbo run build --filter=\"@jeromefitz/semantic\" && pnpm --filter=\"@jeromefitz/*\" --filter=\"ccommit\" -r --workspace-concurrency=1 exec -- npx --no-install semantic-release",
     "test": "turbo run test --filter=[HEAD^1]",
-    "test:all": "turbo run test",
-    "zzz": "pnpm turbo run build --filter=\"@jeromefitz/semantic\" && pnpm --filter=\"@jeromefitz/*\" --filter=\"ccommit\" -r --workspace-concurrency=1 exec -- semantic-release --dry-run"
+    "test:all": "turbo run test"
   },
   "dependencies": {
     "@babel/core": "7.23.7",
