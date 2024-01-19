@@ -34,15 +34,15 @@
   },
   "dependencies": {
     "@octokit/rest": "19.0.11",
-    "conventional-commits-filter": "2.0.7",
-    "conventional-commits-parser": "3.2.4",
+    "conventional-commits-filter": "4.0.0",
+    "conventional-commits-parser": "5.0.0",
     "date-fns": "2.30.0",
     "import-from": "4.0.0",
-    "read-pkg-up": "7.0.1",
-    "semver": "7.5.1"
+    "read-pkg-up": "11.0.0",
+    "semver": "7.5.4"
   },
   "devDependencies": {
-    "@types/conventional-commits-parser": "3.0.3",
+    "@types/conventional-commits-parser": "3.0.6",
     "@types/lodash": "4.14.195",
     "@types/read-pkg-up": "6.0.0",
     "lodash": "4.17.21"

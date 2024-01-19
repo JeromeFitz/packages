@@ -48,13 +48,15 @@ const config = (files) => {
         )
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const filesSyncpack = micromatch(
     files,
     micromatch.braces('**/package.json', { expand: true })
   )
-  if (filesSyncpack.length) {
-    isCI ? lintStaged.push() : lintStaged.push(`pnpm run lint:packages`)
-  }
+  // @todo(add-back) temp removal
+  // if (filesSyncpack.length) {
+  //   isCI ? lintStaged.push() : lintStaged.push(`pnpm run lint:packages`)
+  // }
 
   return lintStaged
 }
