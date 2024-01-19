@@ -2,8 +2,8 @@ import { sortObject } from '@jeromefitz/utils'
 // import _filter from 'lodash/filter.js'
 import _omit from 'lodash/omit.js'
 
-import { QUERIES } from '../../constants'
-import { dataNormalized } from '../../utils'
+import { QUERIES } from '../../constants/index.js'
+import { dataNormalized } from '../../utils/index.js'
 
 const getNotionSlug = async ({
   config,

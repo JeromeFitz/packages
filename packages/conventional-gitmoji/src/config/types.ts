@@ -1,4 +1,4 @@
-import type { IReleaseRule } from '../types'
+import type { IReleaseRule } from '../types/index.js'
 
 /**
  * @note

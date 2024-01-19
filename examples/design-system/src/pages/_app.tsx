@@ -1,7 +1,7 @@
 import { globalStyles as globalStylesDefault } from '@jeromefitz/design-system/src'
 import { Box, Container } from '@jeromefitz/design-system/src/components'
 import { globalCss } from '@jeromefitz/design-system/src/lib/stitches.config'
-import _merge from 'lodash/merge'
+import _merge from 'lodash/merge.js'
 import type { AppProps } from 'next/app'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'

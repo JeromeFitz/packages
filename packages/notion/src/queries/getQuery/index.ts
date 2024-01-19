@@ -3,9 +3,9 @@ import _map from 'lodash/map.js'
 import _omit from 'lodash/omit.js'
 import _size from 'lodash/size.js'
 
-import { PROPERTIES } from '../../constants'
-import type { SortItem } from '../../schema'
-import dataNormalizedResults from '../../utils/dataNormalizedResults'
+import { PROPERTIES } from '../../constants/index.js'
+import type { SortItem } from '../../schema/index.js'
+import dataNormalizedResults from '../../utils/dataNormalizedResults/index.js'
 
 // const useCache = process.env.NEXT_PUBLIC__NOTION_USE_CACHE
 // const useCache = false

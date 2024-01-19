@@ -18,7 +18,10 @@
   "bin": {
     "ccommit": "./dist/index.js"
   },
-  "exports": "./dist/index.js",
+  "exports": {
+    "default": "./dist/index.js",
+    "types": "./dist/index.d.ts"
+  },
   "keywords": [
     "commit",
     "conventional changelog",

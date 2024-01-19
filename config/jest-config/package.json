@@ -1,7 +1,7 @@
 {
   "name": "@jeromefitz/jest-config",
   "version": "0.0.0",
-  "type": "commonjs",
+  "type": "module",
   "description": "Jest Configuration",
   "repository": "jeromefitz/packages.git",
   "author": {

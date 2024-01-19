@@ -1,11 +1,7 @@
-// /* eslint-disable import/order */
-// const isCI = require('is-ci')
-// !isCI && require('dotenv').config({ path: './.env' })
-// const { getConfig } = require('@jeromefitz/semantic')
-const _map = require('lodash/map.js')
+import _map from 'lodash/map.js'
 
-const { getConfig } = require('./packages/semantic/dist/index.cjs')
-const releaseBranchTypes = require('./scripts/release-branch-types/index.cjs')
+import { getConfig } from './packages/semantic/dist/index.js'
+import releaseBranchTypes from './scripts/release-branch-types/index.cjs'
 
 const branchTypes = _map(
   releaseBranchTypes,
@@ -33,9 +29,13 @@ const config = {
     email: [],
     login: ['BotJerome', 'JeromeFitz'],
   },
+  // extends: 'semantic-release-monorepo',
 }
 
 // const _config = getConfig(config)
 
-module.exports.config = config
-module.exports.getConfig = getConfig
+const _config = config
+const _getConfig = getConfig
+
+export { _config as config }
+export { _getConfig as getConfig }

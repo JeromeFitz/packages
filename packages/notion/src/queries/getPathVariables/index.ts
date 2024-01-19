@@ -10,8 +10,8 @@ import _join from 'lodash/join.js'
 import _last from 'lodash/last.js'
 import _size from 'lodash/size.js'
 
-// import { DATA_TYPES } from '../../constants'
-import { getDataType } from '../../utils'
+// import { DATA_TYPES } from '../../constants/index.js'
+import { getDataType } from '../../utils/index.js'
 
 const getPathVariables = ({ config, catchAll }) => {
   const { NOTION, PAGES__HOMEPAGE, ROUTE_META, ROUTE_TYPES } = config

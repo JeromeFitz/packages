@@ -32,7 +32,7 @@ This extends [`@jeromefitz/git-cz`](../git-cz).
 
 ### Semantic Release
 
-`./release.config.cjs`
+`./release.config.js`
 
 Custom values:
 

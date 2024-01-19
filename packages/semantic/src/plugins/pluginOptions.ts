@@ -1,9 +1,9 @@
 import { parserOpts, writerOpts } from '@jeromefitz/conventional-gitmoji'
 import type { PluginSpec } from 'semantic-release'
 
-import type { PluginOptions } from './pluginOptions.types'
+import type { PluginOptions } from './pluginOptions.types.js'
 
-import { commitAnalyzer, git, github, npm } from './index'
+import { commitAnalyzer, git, github, npm } from './index.js'
 
 const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec[] => {
   const optionsDefault = {
@@ -22,7 +22,11 @@ const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec[] => {
     // tarballDir: 'release',
   }
 
-  const options: PluginOptions = {
+  /**
+   * @todo(types) any
+   */
+  // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
+  const options: PluginOptions | any = {
     ...optionsDefault,
     ...optionsPassed,
   }

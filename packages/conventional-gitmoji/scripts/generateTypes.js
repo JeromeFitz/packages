@@ -1,4 +1,3 @@
-/* eslint-disable import/order */
 import { writeFile } from 'fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, join, resolve } from 'path'
@@ -116,7 +115,7 @@ const generateCommitType = () => {
 const generateCommit = () => {
   const t = typeSpecs.map((typeSpec) => `'${typeSpec.type}'`).join(', ')
 
-  const data = `import type { ICommit } from './commit.types'
+  const data = `import type { ICommit } from './commit.types.js'
 
 const commit: ICommit[] = [${t}]
 

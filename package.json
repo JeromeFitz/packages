@@ -39,7 +39,8 @@
     "semantic-release:dry": "pnpm turbo run build --filter=\"@jeromefitz/semantic\" && pnpm --filter=\"@jeromefitz/*\" --filter=\"ccommit\" -r --workspace-concurrency=1 exec -- npx --no-install semantic-release -e semantic-release-monorepo --dry-run",
     "semantic-release:mono": "pnpm turbo run build --filter=\"@jeromefitz/semantic\" && pnpm --filter=\"@jeromefitz/*\" --filter=\"ccommit\" -r --workspace-concurrency=1 exec -- npx --no-install semantic-release -e semantic-release-monorepo",
     "test": "turbo run test --filter=[HEAD^1]",
-    "test:all": "turbo run test"
+    "test:all": "turbo run test",
+    "zzz": "pnpm turbo run build --filter=\"@jeromefitz/eslint-config\" && pnpm -r --workspace-concurrency=1 exec -- semantic-release --dry-run"
   },
   "dependencies": {
     "@babel/core": "7.23.7",
@@ -61,6 +62,7 @@
     "lint-staged": "15.2.0",
     "lodash": "4.17.21",
     "pinst": "3.0.0",
+    "read-pkg": "5.2.0",
     "semantic-release": "23.0.0",
     "semantic-release-monorepo": "8.0.0",
     "syncpack": "12.3.0",
@@ -72,6 +74,13 @@
     "registry": "https://registry.npmjs.org/"
   },
   "pnpm": {
+    "packageExtensions": {
+      "semantic-release-monorepo": {
+        "peerDependencies": {
+          "read-pkg": "^5.2.0"
+        }
+      }
+    },
     "patchedDependencies": {
       "semantic-release-monorepo@8.0.0": "patches/semantic-release-monorepo@8.0.0.patch"
     }

@@ -1,19 +1,41 @@
-diff --git a/src/index.js b/src/index.js
-index 073f2652256c923b5c3e0736d5a671cb25b7ce78..6b3c18f1f4f9d7cdcf397c3f9f35bfbd26158120 100644
---- a/src/index.js
-+++ b/src/index.js
-@@ -1,4 +1,4 @@
--import readPkg from 'read-pkg';
-+import { readPackageSync } from 'read-pkg';
- import { compose } from 'ramda';
- import { wrapStep } from 'semantic-release-plugin-decorators';
- import { withOnlyPackageCommits } from './only-package-commits.js';
-@@ -53,7 +53,7 @@ const fail = wrapStep(
-   }
- );
- 
--const tagFormat = `${readPkg.sync().name}-v\${version}`;
-+const tagFormat = `${readPackageSync().name}-v\${version}`;
- 
- //TODO Change to esm export when https://github.com/semantic-release/semantic-release/pull/3037 is merged
- module.exports = { analyzeCommits, generateNotes, success, fail, tagFormat };
+diff --git a/package.json b/package.json
+index 3fc87e56fd5cad80d2e35467fed869d3913de4ee..3fdb14cb4b3ea526b85eccac65fe648fdb36e53d 100644
+--- a/package.json
++++ b/package.json
+@@ -2,7 +2,7 @@
+   "name": "semantic-release-monorepo",
+   "version": "8.0.0",
+   "description": "Plugins for `semantic-release` allowing it to be used with a monorepo.",
+-  "main": "src/index.js",
++  "main": "src/index.mjs",
+   "files": [
+     "src"
+   ],
+diff --git a/src/git-utils.js b/src/git-utils.mjs
+similarity index 100%
+rename from src/git-utils.js
+rename to src/git-utils.mjs
+diff --git a/src/index.js b/src/index.mjs
+similarity index 100%
+rename from src/index.js
+rename to src/index.mjs
+diff --git a/src/lens-utils.js b/src/lens-utils.mjs
+similarity index 100%
+rename from src/lens-utils.js
+rename to src/lens-utils.mjs
+diff --git a/src/log-plugin-version.js b/src/log-plugin-version.mjs
+similarity index 100%
+rename from src/log-plugin-version.js
+rename to src/log-plugin-version.mjs
+diff --git a/src/only-package-commits.js b/src/only-package-commits.mjs
+similarity index 100%
+rename from src/only-package-commits.js
+rename to src/only-package-commits.mjs
+diff --git a/src/options-transforms.js b/src/options-transforms.mjs
+similarity index 100%
+rename from src/options-transforms.js
+rename to src/options-transforms.mjs
+diff --git a/src/version-to-git-tag.js b/src/version-to-git-tag.mjs
+similarity index 100%
+rename from src/version-to-git-tag.js
+rename to src/version-to-git-tag.mjs

@@ -4,9 +4,11 @@ settings:
   autoInstallPeers: false
   excludeLinksFromLockfile: false
 
+packageExtensionsChecksum: bde48e17d3db112a1bc4368e425b5b7c
+
 patchedDependencies:
   semantic-release-monorepo@8.0.0:
-    hash: 2f6ajmmhhu64xe6vu47wfykaay
+    hash: nv3e24uu63h5wx7hp45o5mhwym
     path: patches/semantic-release-monorepo@8.0.0.patch
 
 importers:
@@ -70,12 +72,15 @@ importers:
       pinst:
         specifier: 3.0.0
         version: 3.0.0
+      read-pkg:
+        specifier: 5.2.0
+        version: 5.2.0
       semantic-release:
         specifier: 23.0.0
         version: 23.0.0(typescript@5.3.3)
       semantic-release-monorepo:
         specifier: 8.0.0
-        version: 8.0.0(patch_hash=2f6ajmmhhu64xe6vu47wfykaay)(semantic-release@23.0.0)
+        version: 8.0.0(patch_hash=nv3e24uu63h5wx7hp45o5mhwym)(read-pkg@5.2.0)(semantic-release@23.0.0)
       syncpack:
         specifier: 12.3.0
         version: 12.3.0(typescript@5.3.3)
@@ -5922,9 +5927,10 @@ packages:
     resolution: {integrity: sha512-LpIB1UN78oRmJnqgPdvA/qRgVitih5V1Ybyszv8GcOBAJWJBHGWI1PmSrOfdEmbf1ZvGkdK/NNDdBHbuSQqSyQ==}
     dev: false
 
-  /semantic-release-monorepo@8.0.0(patch_hash=2f6ajmmhhu64xe6vu47wfykaay)(semantic-release@23.0.0):
+  /semantic-release-monorepo@8.0.0(patch_hash=nv3e24uu63h5wx7hp45o5mhwym)(read-pkg@5.2.0)(semantic-release@23.0.0):
     resolution: {integrity: sha512-mCJ0W8oUxcaYBKdBwqzcDVjPgVs4+CYVZzRMSg8F9Eo5kelZFF5v/SBpHhpWI/LXXHxmwtwZ5y6Qe+uoJ8A7QQ==}
     peerDependencies:
+      read-pkg: ^5.2.0
       semantic-release: '>=20'
     dependencies:
       debug: 4.3.4

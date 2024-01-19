@@ -2,7 +2,7 @@ import conventionalCommitsFilter from 'conventional-commits-filter'
 import _clone from 'lodash/clone'
 import _forEach from 'lodash/forEach'
 import _map from 'lodash/map'
-import _merge from 'lodash/merge'
+import _merge from 'lodash/merge.js'
 import semver from 'semver'
 
 import getExtraContext from './getExtraContent'

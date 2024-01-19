@@ -10,4 +10,5 @@ test/
 .gitkeep
 jsconfig.json
 release.config.cjs
+release.config.js
 tsconfig.json

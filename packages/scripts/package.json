@@ -14,9 +14,10 @@
   "engines": {
     "node": ">=20"
   },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "typings": "./dist/index.d.ts",
+  "exports": {
+    "default": "./dist/index.js",
+    "types": "./dist/index.d.ts"
+  },
   "scripts": {
     "build": "tsup-node",
     "clean": "rm -rf .turbo && rm -rf dist",

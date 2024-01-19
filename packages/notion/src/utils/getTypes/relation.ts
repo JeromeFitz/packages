@@ -1,6 +1,6 @@
 import _map from 'lodash/map.js'
 
-import getTypes from '../../utils/getTypes'
+import getTypes from '../../utils/getTypes/index.js'
 
 const relation = (data: any) => {
   if (data.type === 'rollup') {

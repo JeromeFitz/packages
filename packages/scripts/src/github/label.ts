@@ -5,9 +5,12 @@ import { createColorize } from 'colorize-template'
 import isCI from 'is-ci'
 import pico from 'picocolors'
 
-import getLabels from '../data/labels'
-!isCI && require('dotenv').config({ path: './.env' })
+import getLabels from '../data/labels.js'
 
+if (!isCI) {
+  const dotenv = await import('dotenv')
+  dotenv.config({ path: '../../.env' })
+}
 const colorize = createColorize(pico)
 const octokit = new Octokit({ auth: process.env.GH_TOKEN })
 
@@ -26,6 +29,7 @@ const labels = getLabels.map((label) => ({
 // eslint-disable-next-line @typescript-eslint/require-await
 async function createLabels({ owner, repo }) {
   try {
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     labels.map(async (label) => {
       await octokit.rest.issues.createLabel({
         owner,

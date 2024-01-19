@@ -1,6 +1,6 @@
 import type { PluginSpec } from 'semantic-release'
 
-import type { GithubPluginOptions } from './github.types'
+import type { GithubPluginOptions } from './github.types.js'
 
 const github = (options: GithubPluginOptions = {}): PluginSpec => {
   const optionsEmpty =

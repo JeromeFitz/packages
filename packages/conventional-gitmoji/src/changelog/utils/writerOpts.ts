@@ -1,4 +1,4 @@
-import transformer from './transformer'
+import transformer from './transformer.js'
 
 /**
  * @note (semantic)

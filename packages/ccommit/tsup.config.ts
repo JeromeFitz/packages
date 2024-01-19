@@ -2,7 +2,7 @@
 import { defineConfig } from 'tsup'
 import type { Options } from 'tsup'
 
-import { config as _config } from '../../tsup.config'
+import { config as _config } from '../../tsup.config.js'
 
 const entry = ['src/index.ts']
 const config: Options = {

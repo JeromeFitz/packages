@@ -10,8 +10,12 @@ import { createColorize } from 'colorize-template'
 import isCI from 'is-ci'
 import pico from 'picocolors'
 
-!isCI && require('dotenv').config({ path: './.env' })
-import PULL_REQUEST from '../templates/PULL_REQUEST__RELEASE'
+import PULL_REQUEST from '../templates/PULL_REQUEST__RELEASE.js'
+
+if (!isCI) {
+  const dotenv = await import('dotenv')
+  dotenv.config({ path: '../../.env' })
+}
 
 const colorize = createColorize(pico)
 const octokit = new Octokit({ auth: process.env.GH_TOKEN })

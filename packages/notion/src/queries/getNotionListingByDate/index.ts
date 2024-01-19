@@ -3,9 +3,9 @@ import _map from 'lodash/map.js'
 import _omit from 'lodash/omit.js'
 import _size from 'lodash/size.js'
 
-import { PROPERTIES, QUERIES } from '../../constants'
-import type { SortItem } from '../../schema'
-import { addTime, dataNormalized } from '../../utils'
+import { PROPERTIES, QUERIES } from '../../constants/index.js'
+import type { SortItem } from '../../schema/index.js'
+import { addTime, dataNormalized } from '../../utils/index.js'
 
 const getNotionListingByDate__getFilter = ({
   config,

@@ -1,4 +1,4 @@
-import type { IReleaseRule } from './releaseRule.types'
+import type { IReleaseRule } from './releaseRule.types.js'
 
 const releaseRule: IReleaseRule = {
   access: {

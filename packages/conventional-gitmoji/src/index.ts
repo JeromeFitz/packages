@@ -1,8 +1,8 @@
-import conventionalChangelog from './changelog'
-import type { ICommit, IReleaseRuleProps, IReleaseRule } from './types'
-import getGitmojiConventional from './utils/getGitmojiConventional'
-import getReleaseRules from './utils/getReleaseRules'
-import getTypeSpecs from './utils/getTypeSpecs'
+import conventionalChangelog from './changelog/index.js'
+import type { ICommit, IReleaseRuleProps, IReleaseRule } from './types/index.js'
+import getGitmojiConventional from './utils/getGitmojiConventional.js'
+import getReleaseRules from './utils/getReleaseRules.js'
+import getTypeSpecs from './utils/getTypeSpecs.js'
 
 const { parserOpts, writerOpts } = conventionalChangelog
 const types = getGitmojiConventional()

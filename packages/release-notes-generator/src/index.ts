@@ -2,13 +2,13 @@ import { format, URL } from 'url'
 
 import conventionalCommitsFilter from 'conventional-commits-filter'
 import { sync as conventionalCommitsParser } from 'conventional-commits-parser'
-import _merge from 'lodash/merge'
+import _merge from 'lodash/merge.js'
 import { readPackageUp } from 'read-package-up'
 
-import generate from './utils/generate'
-import { getChangelogConfig } from './utils/getChangelogConfig'
-import { getMarkdown } from './utils/getMarkdown'
-import { processCommit } from './utils/processCommit'
+import generate from './utils/generate.js'
+import { getChangelogConfig } from './utils/getChangelogConfig.js'
+import { getMarkdown } from './utils/getMarkdown.js'
+import { processCommit } from './utils/processCommit.js'
 
 const configGithub = {
   hostname: 'github.com',

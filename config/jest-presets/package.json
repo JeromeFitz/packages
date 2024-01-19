@@ -1,7 +1,7 @@
 {
   "name": "@jeromefitz/jest-presets",
   "version": "0.0.0",
-  "type": "commonjs",
+  "type": "module",
   "description": "Jest Presets Configuration",
   "repository": "jeromefitz/packages.git",
   "author": {
