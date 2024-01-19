@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["ESNext"],
+    "module": "NodeNext",
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ESNext",
+    "outDir": "./dist",
+    "rootDir": "./src",
+  },
+  "extends": "@jeromefitz/tsconfig/src/node20.json",
+  "include": ["src"],
+  "exclude": ["node_modules", "release.config.js"],
+}

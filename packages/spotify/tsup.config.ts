@@ -8,7 +8,6 @@ const entry = ['src/**']
 const config: Options = {
   ..._config,
   entry,
-  format: ['esm'],
 }
 
 export default defineConfig({

@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   arrowParens: 'always',
   endOfLine: 'auto',
   printWidth: 85,

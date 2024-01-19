@@ -14,8 +14,9 @@
   "engines": {
     "node": ">=20"
   },
-  "main": "./dist/lint-staged.config.js",
-  "module": "./dist/lint-staged.config.js",
+  "exports": {
+    "default": "./dist/lint-staged.config.js"
+  },
   "scripts": {
     "build": "tsup-node",
     "clean": "rm -rf .turbo && rm -rf dist",

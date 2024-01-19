@@ -10,7 +10,6 @@ const config: Options = {
   clean: true,
   dts: false,
   entry,
-  format: ['esm'],
   splitting: true,
   treeshake: true,
 }

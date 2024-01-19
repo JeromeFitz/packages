@@ -60,4 +60,5 @@ const config = (files) => {
   return lintStaged
 }
 
+export type Foo = any
 export default config
