@@ -9,7 +9,7 @@ const config: Options = {
   clean: false,
   dts: true,
   external: [],
-  format: ['esm', 'cjs'],
+  format: ['esm'],
   minify: true,
   noExternal: [],
   onSuccess: 'pnpm run copy',
@@ -18,7 +18,7 @@ const config: Options = {
   sourcemap: false,
   splitting: false,
   treeshake: false,
-  target: ['node16'],
+  target: ['node20'],
 }
 
 export { config }

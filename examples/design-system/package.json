@@ -11,7 +11,7 @@
   "license": "MIT",
   "private": false,
   "engines": {
-    "node": ">=16"
+    "node": ">=20"
   },
   "keywords": [
     "design system",

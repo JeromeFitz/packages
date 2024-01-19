@@ -18,7 +18,7 @@
   "license": "MIT",
   "private": false,
   "engines": {
-    "node": ">=16"
+    "node": ">=20"
   },
   "bin": {
     "git-cz": "./dist/cli.js",

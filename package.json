@@ -9,9 +9,9 @@
   },
   "license": "MIT",
   "private": true,
-  "packageManager": "^pnpm@8.0.0",
+  "packageManager": "^pnpm@8.14.0",
   "engines": {
-    "node": ">=16.14.0"
+    "node": ">=20"
   },
   "scripts": {
     "build": "turbo run build --filter=[HEAD^1]",
@@ -52,7 +52,7 @@
     "@jeromefitz/tsconfig": "workspace:*",
     "@manypkg/cli": "0.20.0",
     "@types/is-ci": "3.0.0",
-    "@types/node": "16.11.7",
+    "@types/node": "20.11.5",
     "ccommit": "workspace:*",
     "dotenv": "16.3.2",
     "husky": "8.0.3",
@@ -63,8 +63,8 @@
     "semantic-release": "23.0.0",
     "semantic-release-monorepo": "8.0.0",
     "syncpack": "10.7.3",
-    "tsup": "6.6.2",
-    "turbo": "1.9.1"
+    "tsup": "8.0.1",
+    "turbo": "1.11.3"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
