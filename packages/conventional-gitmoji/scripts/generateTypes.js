@@ -7,7 +7,6 @@ import stringify from 'fast-json-stable-stringify'
 
 // import title from 'title'
 
-// import config from '../../git-cz/dist/themes/gitmoji.js'
 import { default as getGitmojiConventional } from '../dist/utils/getGitmojiConventional.js'
 import { default as getTypeSpecs } from '../dist/utils/getTypeSpecs.js'
 // import { default as getReleaseRules } from '../dist/utils/getReleaseRules.js'

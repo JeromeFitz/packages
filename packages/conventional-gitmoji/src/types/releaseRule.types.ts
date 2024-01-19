@@ -1,7 +1,6 @@
 import type { ICommit } from './commit.types'
 
 type IReleaseRuleProps = {
-  // @jeromefitz/git-cz doubles up on this field for gitflow
   branch: string | null
   code: string
   commit: ICommit
