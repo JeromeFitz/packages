@@ -1,8 +1,8 @@
-import _cloneDeep from 'lodash/cloneDeep'
-import _forEach from 'lodash/forEach'
-import _get from 'lodash/get'
-import _isFunction from 'lodash/isFunction'
-import _set from 'lodash/set'
+import _cloneDeep from 'lodash/cloneDeep.js'
+import _forEach from 'lodash/forEach.js'
+import _get from 'lodash/get.js'
+import _isFunction from 'lodash/isFunction.js'
+import _set from 'lodash/set.js'
 
 /**
  * @ref lifted from release-notes-generator

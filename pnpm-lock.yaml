@@ -266,9 +266,9 @@ importers:
       date-fns:
         specifier: 3.2.0
         version: 3.2.0
-      import-from:
-        specifier: 4.0.0
-        version: 4.0.0
+      import-from-esm:
+        specifier: 1.3.3
+        version: 1.3.3
       read-package-up:
         specifier: 11.0.0
         version: 11.0.0
@@ -3991,11 +3991,6 @@ packages:
       import-meta-resolve: 4.0.0
     transitivePeerDependencies:
       - supports-color
-    dev: false
-
-  /import-from@4.0.0:
-    resolution: {integrity: sha512-P9J71vT5nLlDeV8FHs5nNxaLbrpfAV5cF5srvbZfpwpcJoM/xZR3hiv+q+SAnuSmuGbXMWud063iIMx/V/EWZQ==}
-    engines: {node: '>=12.2'}
     dev: false
 
   /import-meta-resolve@4.0.0:

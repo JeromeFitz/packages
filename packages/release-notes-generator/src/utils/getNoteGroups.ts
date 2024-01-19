@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import _forEach from 'lodash/forEach'
-import _orderBy from 'lodash/orderBy'
+import _forEach from 'lodash/forEach.js'
+import _orderBy from 'lodash/orderBy.js'
 
 function getNoteGroups(notes, noteGroupsSort, notesSort) {
   const noteGroups: any = []
