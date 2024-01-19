@@ -61,7 +61,6 @@
     "lint-staged": "15.2.0",
     "lodash": "4.17.21",
     "pinst": "3.0.0",
-    "read-pkg": "5.2.0",
     "semantic-release": "23.0.0",
     "semantic-release-monorepo": "8.0.0",
     "syncpack": "12.3.0",
