@@ -19,7 +19,7 @@ const name = '@jeromefitz/eslint-config'
 const branches = [
   ...configDefault.branches,
   { name: 'refactor/NICE-54', prerelease: 'canary' },
-  { name: 'refactor/semantic-release-23', prerelease: 'canary' },
+  { name: 'refactor/canary', prerelease: 'canary' },
 ]
 
 const configPassed = {

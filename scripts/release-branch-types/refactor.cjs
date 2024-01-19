@@ -1,3 +1,3 @@
-const refactor = ['semantic-release-23']
+const refactor = ['canary']
 
 module.exports = refactor
