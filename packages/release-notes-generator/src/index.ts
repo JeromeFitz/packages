@@ -3,7 +3,7 @@ import { format, URL } from 'url'
 import conventionalCommitsFilter from 'conventional-commits-filter'
 import { sync as conventionalCommitsParser } from 'conventional-commits-parser'
 import _merge from 'lodash/merge'
-import readPkgUp from 'read-pkg-up'
+import { readPackageUp } from 'read-package-up'
 
 import generate from './utils/generate'
 import { getChangelogConfig } from './utils/getChangelogConfig'
@@ -71,7 +71,8 @@ async function generateNotes(pluginConfig, context) {
       linkCompare: currentTag && previousTag,
       issue,
       commit,
-      packageData: ((await readPkgUp({ normalize: false, cwd })) || {}).packageJson,
+      packageData: ((await readPackageUp({ normalize: false, cwd })) || {})
+        .packageJson,
     },
     {
       host: hostConfig,

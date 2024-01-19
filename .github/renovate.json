@@ -14,7 +14,7 @@
     "@types/node",
     "inquirer-autocomplete-prompt",
     "inquirer",
-    "read-pkg-up",
+    "read-package-up",
     "tsup",
     "typescript"
   ],
