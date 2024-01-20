@@ -24,7 +24,7 @@ fi
 ###
 # @custom(build)
 ###
-###
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
   if [[ "$OSTYPE" == "darwin"* ]]; then
   sed -i "" "s|dist/||g" dist/package.json

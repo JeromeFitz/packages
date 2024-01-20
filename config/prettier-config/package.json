@@ -16,16 +16,16 @@
   },
   "exports": {
     ".": {
-      "default": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
     },
     "./base": {
-      "default": "./dist/base.js",
-      "types": "./dist/base.d.ts"
+      "types": "./dist/base.d.ts",
+      "default": "./dist/base.js"
     },
     "./tailwind": {
-      "default": "./dist/tailwind.js",
-      "types": "./dist/tailwind.d.ts"
+      "types": "./dist/tailwind.d.ts",
+      "default": "./dist/tailwind.js"
     }
   },
   "scripts": {
