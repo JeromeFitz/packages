@@ -29,6 +29,9 @@ const config = {
     email: [],
     login: ['BotJerome', 'JeromeFitz'],
   },
+  /**
+   * @note(semantic) what a second after ALL THIS we are not even using this?!
+   */
   // extends: 'semantic-release-monorepo',
 }
 
