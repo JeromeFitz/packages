@@ -17,8 +17,7 @@ const { name } = pkg
 
 const branches = [
   ...configDefault.branches,
-  { name: 'feature/next-notion', prerelease: 'next-notion' },
-  { name: 'feature/cmdk', prerelease: 'cmdk' },
+  { name: 'refactor/NICE-123', prerelease: 'canary' },
 ]
 
 const configPassed = {

@@ -17,7 +17,7 @@ const { name } = pkg
 
 const branches = [
   ...configDefault.branches,
-  { name: 'refactor/plaiceholder-3', prerelease: 'canary' },
+  { name: 'refactor/NICE-123', prerelease: 'canary' },
 ]
 
 const configPassed = {
