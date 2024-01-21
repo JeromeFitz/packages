@@ -2,8 +2,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "noImplicitAny": false,
-    "noEmit": true
+    "noEmit": true,
   },
-  "extends": "@jeromefitz/tsconfig/src/node16.json",
-  "exclude": []
+  "extends": "@jeromefitz/tsconfig/src/node20.json",
+  "exclude": [],
 }

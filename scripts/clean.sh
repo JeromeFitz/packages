@@ -7,9 +7,9 @@ if [[ -d ./config/tsconfig/node_modules ]]; then rm -rf ./config/tsconfig/node_m
 if [[ -d ./config/lint-staged/node_modules ]]; then rm -rf ./config/lint-staged/node_modules; fi
 
 # if [[ -d ./packages/codestyle/node_modules ]]; then rm -rf ./packages/codestyle/node_modules; fi
+if [[ -d ./packages/ccommit/node_modules ]]; then rm -rf ./packages/ccommit/node_modules; fi
 if [[ -d ./packages/conventional-gitmoji/node_modules ]]; then rm -rf ./packages/conventional-gitmoji/node_modules; fi
 if [[ -d ./packages/design-system/node_modules ]]; then rm -rf ./packages/design-system/node_modules; fi
-if [[ -d ./packages/git-cz/node_modules ]]; then rm -rf ./packages/git-cz/node_modules; fi
 if [[ -d ./packages/notion/node_modules ]]; then rm -rf ./packages/notion/node_modules; fi
 if [[ -d ./packages/release-notes-generator/node_modules ]]; then rm -rf ./packages/release-notes-generator/node_modules; fi
 if [[ -d ./packages/scripts/node_modules ]]; then rm -rf ./packages/scripts/node_modules; fi

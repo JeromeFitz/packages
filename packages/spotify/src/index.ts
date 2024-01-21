@@ -15,7 +15,7 @@ import {
   PACKAGE_NAME,
   PACKAGE_VERSION,
   URL,
-} from './constants'
+} from './constants/index.js'
 
 type TimeRangeProps = 'long_term' | 'medium_term' | 'short_term'
 
@@ -270,7 +270,7 @@ class Client {
     let image = {}
     if (withImages) {
       const url = item?.album?.images[0].url
-      const { getImage } = await import('./utils')
+      const { getImage } = await import('./utils/index.js')
       image = await getImage(url)
     }
 
@@ -294,7 +294,7 @@ class Client {
     const items: any[] = []
     await asyncForEach(data.items, async (artist: any) => {
       const url = artist?.images[0].url
-      const { getImage } = await import('./utils')
+      const { getImage } = await import('./utils/index.js')
       const image = await getImage(url)
       items.push({
         ...artist,
@@ -333,7 +333,7 @@ class Client {
       await asyncForEach(items, async (item: any, itemIndex: number) => {
         const album: any = item?.album
         const url = album?.images[0].url
-        const { getImage } = await import('./utils')
+        const { getImage } = await import('./utils/index.js')
         const image = await getImage(url)
         items[itemIndex] = {
           ...item,
@@ -354,7 +354,7 @@ class Client {
   // @todo(types)
   private async getAccessToken() {
     const basic = Buffer.from(`${this.#clientId}:${this.#clientSecret}`).toString(
-      'base64'
+      'base64',
     )
     const res = await this.#fetch(URL.TOKEN, {
       method: 'POST',

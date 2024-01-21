@@ -8,13 +8,13 @@ function getExtraContext(commits, notes, options) {
     options.groupBy,
     commits,
     options.commitGroupsSort,
-    options.commitsSort
+    options.commitsSort,
   )
 
   context.noteGroups = getNoteGroups(
     notes,
     options.noteGroupsSort,
-    options.notesSort
+    options.notesSort,
   )
 
   return context

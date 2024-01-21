@@ -1,5 +1,5 @@
 // swr-esque
-import _isArray from 'lodash/isArray'
+import _isArray from 'lodash/isArray.js'
 
 interface Unsubscribe {
   unsubscribe(): void

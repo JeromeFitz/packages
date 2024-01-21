@@ -52,7 +52,7 @@ const items: IItems[] = [
     title: 'Multi-Line',
     toast: {
       description: [description, description, description, description].join(
-        descriptionJoiner
+        descriptionJoiner,
       ),
     },
   },
@@ -99,7 +99,7 @@ const ToastDemo = () => {
   }
   const debouncedDescriptionHandler = useMemo(
     () => _debounce(handleDescriptionChange, 300),
-    []
+    [],
   )
   useEffect(() => {
     return () => {

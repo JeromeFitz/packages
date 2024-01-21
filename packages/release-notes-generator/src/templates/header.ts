@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/restrict-plus-operands */
-import _format from 'date-fns/format'
+import { format as _format } from 'date-fns'
 
 const header = (context, commits, meta) => {
   // @todo(release-notes) pass as option

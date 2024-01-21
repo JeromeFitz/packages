@@ -1,7 +1,7 @@
 {
   "name": "@jeromefitz/jest-config",
   "version": "0.0.0",
-  "type": "commonjs",
+  "type": "module",
   "description": "Jest Configuration",
   "repository": "jeromefitz/packages.git",
   "author": {
@@ -12,7 +12,7 @@
   "license": "MIT",
   "private": false,
   "engines": {
-    "node": ">=16"
+    "node": ">=20"
   },
   "scripts": {
     "build": "pnpm run clean && pnpm run copy",

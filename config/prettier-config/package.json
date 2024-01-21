@@ -12,26 +12,38 @@
   "license": "MIT",
   "private": false,
   "engines": {
-    "node": ">=16"
+    "node": ">=20"
   },
-  "main": "./src/index.cjs",
-  "module": "./src/index.cjs",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./base": {
+      "types": "./dist/base.d.ts",
+      "default": "./dist/base.js"
+    },
+    "./tailwind": {
+      "types": "./dist/tailwind.d.ts",
+      "default": "./dist/tailwind.js"
+    }
+  },
   "scripts": {
-    "build": "pnpm run clean && pnpm run copy",
+    "build": "tsup-node",
     "clean": "rm -rf .turbo && rm -rf dist",
     "clean:install": "pnpm run clean && rm -rf node_modules",
     "copy": "mkdir -p ./dist && ./scripts/copy.sh",
-    "dev": "echo '# tsup-node  --watch'",
+    "dev": "tsup-node --watch",
     "format:lint": "pnpm run lint:eslint --fix && pnpm run format:prettier --write",
-    "format:prettier": "prettier \"./src/**/*.{cjs,js,jsx,mjs,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\" --ignore-unknown --loglevel warn",
+    "format:prettier": "prettier \"./src/**/*.{cjs,js,jsx,mjs,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\" --ignore-unknown --log-level warn",
     "lint": "pnpm run format:prettier --check && pnpm run lint:eslint",
     "lint:eslint": "eslint ./src --ext cjs,js,jsx,mjs,ts,tsx --max-warnings=0",
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "prettier": "2.8.8",
-    "prettier-plugin-pkg": "0.17.1",
-    "prettier-plugin-tailwindcss": "0.3.0"
+    "prettier": "3.2.4",
+    "prettier-plugin-pkg": "0.18.1",
+    "prettier-plugin-tailwindcss": "0.5.11"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"

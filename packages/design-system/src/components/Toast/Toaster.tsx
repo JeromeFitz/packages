@@ -15,8 +15,9 @@ const Toaster = forwardRef((props, forwardedRef) => {
   const [toasts, toastsSet] = useState<IToast[]>([])
 
   const handleToast = (
+    // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
     toast: Partial<IToast> | string,
-    toastVariant: IToastVariant
+    toastVariant: IToastVariant,
   ) => {
     // @todo(types) + defaults
     let action,
@@ -65,6 +66,7 @@ const Toaster = forwardRef((props, forwardedRef) => {
     toastsSet((prev) => prev.filter((p) => p.key !== key))
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
   const createToast = (toast: Partial<IToast> | string) => {
     handleToast(toast, 'default')
   }
@@ -131,7 +133,7 @@ const Toaster = forwardRef((props, forwardedRef) => {
               )}
             </Toast>
           )
-        }
+        },
       )}
     </>
   )

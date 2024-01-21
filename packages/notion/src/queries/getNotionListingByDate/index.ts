@@ -3,9 +3,9 @@ import _map from 'lodash/map.js'
 import _omit from 'lodash/omit.js'
 import _size from 'lodash/size.js'
 
-import { PROPERTIES, QUERIES } from '../../constants'
-import type { SortItem } from '../../schema'
-import { addTime, dataNormalized } from '../../utils'
+import { PROPERTIES, QUERIES } from '../../constants/index.js'
+import type { SortItem } from '../../schema/index.js'
+import { addTime, dataNormalized } from '../../utils/index.js'
 
 const getNotionListingByDate__getFilter = ({
   config,
@@ -22,7 +22,7 @@ const getNotionListingByDate__getFilter = ({
   const timestampQuery = new Date(
     `${!!year ? year : dateTimestamp.slice(0, 4)}-${!!month ? month : '01'}-${
       !!day ? day : '01'
-    }`
+    }`,
   )
 
   /**
@@ -151,7 +151,7 @@ const getNotionListingByDate = async ({
   if (_info.object === 'page') {
     info = _omit(_info, 'properties')
     info['properties'] = sortObject(
-      dataNormalized({ config, data: _info, pathVariables, pageId: _info.id })
+      dataNormalized({ config, data: _info, pathVariables, pageId: _info.id }),
     )
   }
 
@@ -181,7 +181,7 @@ const getNotionListingByDate = async ({
   _map(___items.results, (i) => {
     const item = _omit(i, 'properties')
     item['properties'] = sortObject(
-      dataNormalized({ config, data: i, pathVariables, pageId: item.id })
+      dataNormalized({ config, data: i, pathVariables, pageId: item.id }),
     )
     !!item && __items.push(item)
   })

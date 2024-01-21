@@ -2,8 +2,8 @@ import { sortObject } from '@jeromefitz/utils'
 import _omit from 'lodash/omit.js'
 import _size from 'lodash/size.js'
 
-import { DATA_TYPES, PROPERTIES, QUERIES } from '../../constants'
-import { addTime, dataNormalized } from '../../utils'
+import { DATA_TYPES, PROPERTIES, QUERIES } from '../../constants/index.js'
+import { addTime, dataNormalized } from '../../utils/index.js'
 
 /**
  * @note Determine if PARENT|CHILD should be returned:
@@ -58,7 +58,7 @@ const getNotionSlugByRoute__getDataByParentRouteType = async ({
   }
   const info = _omit(_info, 'properties')
   info['properties'] = sortObject(
-    dataNormalized({ config, data: _info, pathVariables, pageId: info.id })
+    dataNormalized({ config, data: _info, pathVariables, pageId: info.id }),
   )
   const content = await getBlocksByIdChildren({ block_id: info.id })
   let items = {}
@@ -110,7 +110,7 @@ const getNotionSlugByRoute__getDataByListingDate = async ({
   const timestampQuery = new Date(
     `${!!year ? year : dateTimestamp.slice(0, 4)}-${!!month ? month : '01'}-${
       !!day ? day : '01'
-    }`
+    }`,
   )
   const property =
     NOTION[routeType.toUpperCase()]?.infoType?.notion ??
@@ -148,7 +148,7 @@ const getNotionSlugByRoute__getDataByListingDate = async ({
 
   const info = _omit(_info, 'properties')
   info['properties'] = sortObject(
-    dataNormalized({ config, data: _info, pathVariables, pageId: info.id })
+    dataNormalized({ config, data: _info, pathVariables, pageId: info.id }),
   )
   const content = await getBlocksByIdChildren({ block_id: info.id })
 
@@ -191,7 +191,7 @@ const getNotionSlugByRoute = async ({
    */
   if (
     ROUTE_TYPES_BY_DATA_TYPES[DATA_TYPES.LISTING_BY_DATE].includes(
-      routeType.toUpperCase()
+      routeType.toUpperCase(),
     )
   ) {
     return await getNotionSlugByRoute__getDataByListingDate({

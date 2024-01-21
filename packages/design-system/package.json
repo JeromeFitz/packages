@@ -12,11 +12,12 @@
   "license": "MIT",
   "private": false,
   "engines": {
-    "node": ">=16"
+    "node": ">=20"
   },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "typings": "./dist/index.d.ts",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "default": "./dist/index.js"
+  },
   "keywords": [
     "design system",
     "radix-ui"
@@ -28,7 +29,7 @@
     "copy": "mkdir -p ./dist && ./scripts/copy.sh",
     "dev": "tsup-node --watch",
     "format:lint": "pnpm run lint:eslint --fix && pnpm run format:prettier --write",
-    "format:prettier": "prettier \"./src/**/*.{cjs,js,jsx,mjs,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\" --ignore-unknown --loglevel warn",
+    "format:prettier": "prettier \"./src/**/*.{cjs,js,jsx,mjs,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\" --ignore-unknown --log-level warn",
     "lint": "pnpm run format:prettier --check && pnpm run lint:eslint",
     "lint:eslint": "eslint ./src --ext cjs,js,jsx,mjs,ts,tsx --max-warnings=0",
     "semantic-release": "semantic-release",
@@ -135,7 +136,7 @@
     "serve": "14.2.0",
     "storybook": "7.0.18",
     "swr": "2.1.5",
-    "typescript": "4.8.4"
+    "typescript": "5.3.3"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"

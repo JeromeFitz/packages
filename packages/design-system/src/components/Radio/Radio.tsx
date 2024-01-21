@@ -12,7 +12,7 @@ const Radio = forwardRef<ElementRef<typeof StyledRadio>, RadioProps>(
     <StyledRadio {...props} ref={forwardedRef}>
       <StyledIndicator />
     </StyledRadio>
-  )
+  ),
 )
 
 Radio.displayName = 'Radio'

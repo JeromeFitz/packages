@@ -1,11 +1,11 @@
 import conventionalCommitsFilter from 'conventional-commits-filter'
-import _clone from 'lodash/clone'
-import _forEach from 'lodash/forEach'
-import _map from 'lodash/map'
-import _merge from 'lodash/merge'
+import _clone from 'lodash/clone.js'
+import _forEach from 'lodash/forEach.js'
+import _map from 'lodash/map.js'
+import _merge from 'lodash/merge.js'
 import semver from 'semver'
 
-import getExtraContext from './getExtraContent'
+import getExtraContext from './getExtraContent.js'
 
 function generate(options, commits, context, keyCommit) {
   let notes = []
@@ -33,7 +33,7 @@ function generate(options, commits, context, keyCommit) {
     {},
     context,
     keyCommit,
-    getExtraContext(filteredCommits, notes, options)
+    getExtraContext(filteredCommits, notes, options),
   )
 
   if (keyCommit && keyCommit.committerDate) {

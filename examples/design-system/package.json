@@ -11,7 +11,7 @@
   "license": "MIT",
   "private": false,
   "engines": {
-    "node": ">=16"
+    "node": ">=20"
   },
   "keywords": [
     "design system",
@@ -23,10 +23,10 @@
   },
   "dependencies": {
     "@heroicons/react": "2.0.18",
+    "@jeromefitz/date-fns-tz": "3.0.0-canary.8",
     "@jeromefitz/design-system": "workspace:*",
     "cmdk": "0.2.0",
     "date-fns": "2.30.0",
-    "date-fns-tz": "2.0.0",
     "framer-motion": "10.12.16",
     "next": "13.3.3",
     "next-themes": "0.2.1",

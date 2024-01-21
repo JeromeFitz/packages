@@ -2,7 +2,7 @@ import { sortObject } from '@jeromefitz/utils'
 import _map from 'lodash/map.js'
 import _omit from 'lodash/omit.js'
 
-import { dataNormalized } from '../../utils'
+import { dataNormalized } from '../../utils/index.js'
 
 /**
  * @todo(notion)
@@ -20,7 +20,7 @@ const dataNormalizedResults = ({ config, results, routeType }) => {
         data: result,
         pathVariables: routeType,
         pageId: result?.id,
-      })
+      }),
     )
     normalizedResults.push(normalizedResult)
   })

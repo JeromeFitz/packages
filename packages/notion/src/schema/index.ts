@@ -24,6 +24,7 @@ type DatabaseInfo = {
     hasChild: string | null
     infoType: any
     isChild: string | null
+    // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
     isChildInfoType: any | null
     name: string
     page_id__seo: string

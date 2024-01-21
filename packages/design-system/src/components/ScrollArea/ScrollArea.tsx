@@ -36,7 +36,7 @@ const ScrollArea = (props: ScrollAreaProps) => {
   const frameUpdateRef = useRef<number>(0)
   const lastDragPos = useRef<Point>({ x: 0, y: 0 })
   const originalBodyPointerEvents = useRef(
-    typeof document === 'undefined' ? '' : document.body.style.pointerEvents
+    typeof document === 'undefined' ? '' : document.body.style.pointerEvents,
   )
 
   useIsomorphicLayoutEffect(() => {

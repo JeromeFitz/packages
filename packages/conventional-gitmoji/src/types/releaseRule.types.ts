@@ -1,7 +1,6 @@
-import type { ICommit } from './commit.types'
+import type { ICommit } from './commit.types.js'
 
 type IReleaseRuleProps = {
-  // @jeromefitz/git-cz doubles up on this field for gitflow
   branch: string | null
   code: string
   commit: ICommit

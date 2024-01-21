@@ -16,7 +16,7 @@ const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger
 const DropdownMenuContent = styled(
   DropdownMenuPrimitive.Content,
   menuCss,
-  panelStyles
+  panelStyles,
 )
 const DropdownMenuSeparator = styled(DropdownMenuPrimitive.Separator, separatorCss)
 const DropdownMenuItem = styled(DropdownMenuPrimitive.Item, itemCss)
@@ -26,6 +26,7 @@ const StyledDropdownMenuRadioItem = styled(DropdownMenuPrimitive.RadioItem, item
 type DialogMenuRadioItemPrimitiveProps = ComponentProps<
   typeof DropdownMenuPrimitive.RadioItem
 >
+// eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
 type DialogMenuRadioItemProps = DialogMenuRadioItemPrimitiveProps & { css?: CSS }
 
 const DropdownMenuRadioItem = forwardRef<
@@ -60,12 +61,13 @@ const DropdownMenuRadioItem = forwardRef<
 
 const StyledDropdownMenuCheckboxItem = styled(
   DropdownMenuPrimitive.CheckboxItem,
-  itemCss
+  itemCss,
 )
 
 type DialogMenuCheckboxItemPrimitiveProps = ComponentProps<
   typeof DropdownMenuPrimitive.CheckboxItem
 >
+// eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
 type DialogMenuCheckboxItemProps = DialogMenuCheckboxItemPrimitiveProps & {
   css?: CSS
 }

@@ -2,8 +2,8 @@ import { sortObject } from '@jeromefitz/utils'
 // import _filter from 'lodash/filter.js'
 import _omit from 'lodash/omit.js'
 
-import { QUERIES } from '../../constants'
-import { dataNormalized } from '../../utils'
+import { QUERIES } from '../../constants/index.js'
+import { dataNormalized } from '../../utils/index.js'
 
 const getNotionSlug = async ({
   config,
@@ -41,7 +41,7 @@ const getNotionSlug = async ({
 
   const info = _omit(_info, 'properties')
   info['properties'] = sortObject(
-    dataNormalized({ config, data: _info, pathVariables, pageId: info.id })
+    dataNormalized({ config, data: _info, pathVariables, pageId: info.id }),
   )
 
   const _content = await getBlocksByIdChildren({ block_id: info.id })

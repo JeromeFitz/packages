@@ -1,7 +1,7 @@
 import GraphemeSplitter from 'grapheme-splitter'
 import _pullAt from 'lodash/pullAt.js'
 
-import { typeSpecs } from '../../index'
+import { typeSpecs } from '../../index.js'
 
 const splitter = new GraphemeSplitter()
 
@@ -26,7 +26,7 @@ const transformer = (commit: any, context: any) => {
         type === v ||
         type === e
       )
-    }
+    },
   )
 
   /**

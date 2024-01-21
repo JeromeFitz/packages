@@ -96,6 +96,7 @@ const StyledSlider = styled(SliderPrimitive.Root, {
 })
 
 type SliderPrimitiveProps = ComponentProps<typeof SliderPrimitive.Root>
+// eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
 type SliderProps = SliderPrimitiveProps & { css?: CSS }
 
 const Slider = forwardRef<ElementRef<typeof StyledSlider>, SliderProps>(
@@ -115,7 +116,7 @@ const Slider = forwardRef<ElementRef<typeof StyledSlider>, SliderProps>(
         ))}
       </StyledSlider>
     )
-  }
+  },
 )
 
 export { StyledSlider, Slider }

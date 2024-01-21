@@ -10,8 +10,12 @@ import { createColorize } from 'colorize-template'
 import isCI from 'is-ci'
 import pico from 'picocolors'
 
-!isCI && require('dotenv').config({ path: './.env' })
-import PULL_REQUEST from '../templates/PULL_REQUEST__RELEASE'
+import PULL_REQUEST from '../templates/PULL_REQUEST__RELEASE.js'
+
+if (!isCI) {
+  const dotenv = await import('dotenv')
+  dotenv.config({ path: '../../.env' })
+}
 
 const colorize = createColorize(pico)
 const octokit = new Octokit({ auth: process.env.GH_TOKEN })
@@ -59,11 +63,11 @@ async function setPullRequest({
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const issue_number = pull_number
       console.log(
-        colorize`{orange.bold 🤔️  ${pull_number} => Exists, should we update PR ?}`
+        colorize`{orange.bold 🤔️  ${pull_number} => Exists, should we update PR ?}`,
       )
       console.log(colorize`{orange.bold 🤪️  Right now we are not}`)
       console.log(
-        colorize`{orange.bold 😵️  https://github.com/${repo_id}/pull/${pull_number}}`
+        colorize`{orange.bold 😵️  https://github.com/${repo_id}/pull/${pull_number}}`,
       )
 
       // await octokit.rest.pulls.update({

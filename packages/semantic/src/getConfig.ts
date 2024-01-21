@@ -1,6 +1,6 @@
 import type { Options as SemanticReleaseOptions } from 'semantic-release'
 
-import { getPluginOptions } from './plugins'
+import { getPluginOptions } from './plugins/index.js'
 
 /**
  * @todo

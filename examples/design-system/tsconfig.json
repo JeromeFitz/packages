@@ -52,14 +52,14 @@
       "~styles/*": ["src/styles/*"],
       "~svg/*": ["src/svg/*"],
       "~theme/*": ["src/theme/*"],
-      "~utils/*": ["src/utils/*"]
+      "~utils/*": ["src/utils/*"],
     },
     "plugins": [
       {
-        "name": "next"
-      }
-    ]
+        "name": "next",
+      },
+    ],
   },
   "include": ["src", "index.d.ts", "next-env.d.ts", ".next/types/**/*.ts"],
-  "exclude": ["node_modules", "tests/*.test.ts"]
+  "exclude": ["node_modules", "tests/*.test.ts"],
 }

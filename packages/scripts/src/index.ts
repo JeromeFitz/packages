@@ -1,10 +1,10 @@
-import labels from './data/labels'
-import milestones from './data/milestones'
-import githubLabel from './github/label'
-import githubMilestone from './github/milestone'
-import githubPullRequest from './github/pullRequest'
-import templatePullRequestRelease from './templates/PULL_REQUEST__RELEASE'
-import { space } from './utils/getChars'
+import labels from './data/labels.js'
+import milestones from './data/milestones.js'
+import githubLabel from './github/label.js'
+import githubMilestone from './github/milestone.js'
+import githubPullRequest from './github/pullRequest.js'
+import templatePullRequestRelease from './templates/PULL_REQUEST__RELEASE.js'
+import { space } from './utils/getChars.js'
 
 export {
   labels,

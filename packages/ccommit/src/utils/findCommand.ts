@@ -72,7 +72,7 @@ const findCommand = (cli: any, options: any): void => {
     } else {
       flags[FLAGS.SKIP] = false
       console.log(
-        generateLog(LOGS.TYPES.ERROR, LOGS.MESSAGES.COMMAND_LINE_WITHOUT_REQUIRED)
+        generateLog(LOGS.TYPES.ERROR, LOGS.MESSAGES.COMMAND_LINE_WITHOUT_REQUIRED),
       )
       flags[OPTIONS.TITLE] = undefined
       flags[OPTIONS.TYPE] = undefined

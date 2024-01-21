@@ -7,6 +7,7 @@
 cp package.json ./dist/
 cp README.md ./dist/
 cp ../../LICENSE ./dist/
+cp ../../.npmignore ./dist/
 
 ###
 # @note(build): Replace `dist/index` w/ `index`

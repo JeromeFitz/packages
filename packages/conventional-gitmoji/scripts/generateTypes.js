@@ -1,4 +1,3 @@
-/* eslint-disable import/order */
 import { writeFile } from 'fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, join, resolve } from 'path'
@@ -7,7 +6,6 @@ import stringify from 'fast-json-stable-stringify'
 
 // import title from 'title'
 
-// import config from '../../git-cz/dist/themes/gitmoji.js'
 import { default as getGitmojiConventional } from '../dist/utils/getGitmojiConventional.js'
 import { default as getTypeSpecs } from '../dist/utils/getTypeSpecs.js'
 // import { default as getReleaseRules } from '../dist/utils/getReleaseRules.js'
@@ -117,7 +115,7 @@ const generateCommitType = () => {
 const generateCommit = () => {
   const t = typeSpecs.map((typeSpec) => `'${typeSpec.type}'`).join(', ')
 
-  const data = `import type { ICommit } from './commit.types'
+  const data = `import type { ICommit } from './commit.types.js'
 
 const commit: ICommit[] = [${t}]
 

@@ -2,21 +2,37 @@
 
 ## Overview
 
+<!--
 - ✨️ Conventional Commit CLI ([`@jeromefitz/git-cz`](https://github.com/JeromeFitz/git-cz))
 - 🎋️ Branch Name Generator ([`@jeromefitz/git-cz`](https://github.com/JeromeFitz/git-cz))
+-->
+
 - 🤖️ Semantic Versioning ([`semantic-release`](https://github.com/semantic-release/semantic-release))
 
 ## Installation
 
 ```bash
+# pnpm
+pnpm add @jeromefitz/semantic --save-dev
+
+```
+
+<!--
+```bash
+
+# npm
+npm install @jeromefitz/semantic --save-dev
+
+# yarn
 yarn add @jeromefitz/semantic --dev
 ```
 
 This extends [`@jeromefitz/git-cz`](../git-cz).
+-->
 
 ### Semantic Release
 
-`./release.config.cjs`
+`./release.config.js`
 
 Custom values:
 

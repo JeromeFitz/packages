@@ -46,8 +46,8 @@ const commit = isOverride
       // @question dynamic?
       scopes: [
         '',
+        'cc', // ccommit
         'cs', // codestyle
-        'cz', // git-cz
         'ds', // design-system
         'gitmoji', // conventional-gitmoji
         'notion', // notion

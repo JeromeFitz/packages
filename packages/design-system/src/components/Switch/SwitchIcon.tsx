@@ -163,7 +163,7 @@ const SwitchIcon = forwardRef<ElementRef<typeof StyledSwitch>, SwitchIconProps>(
         </StyledThumb>
       </StyledSwitch>
     )
-  }
+  },
 )
 
 SwitchIcon.displayName = 'SwitchIcon'

@@ -5,9 +5,12 @@ import { createColorize } from 'colorize-template'
 import isCI from 'is-ci'
 import pico from 'picocolors'
 
-import getMilestones from '../data/milestones'
-!isCI && require('dotenv').config({ path: './.env' })
+import getMilestones from '../data/milestones.js'
 
+if (!isCI) {
+  const dotenv = await import('dotenv')
+  dotenv.config({ path: '../../.env' })
+}
 const colorize = createColorize(pico)
 const octokit = new Octokit({ auth: process.env.GH_TOKEN })
 
@@ -24,6 +27,7 @@ const milestones = getMilestones.map((milestone) => ({
 async function createMilestones({ owner, repo }) {
   try {
     // @todo(types)
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     milestones.map(async (milestone: any) => {
       await octokit.rest.issues.createMilestone({
         owner,
@@ -31,7 +35,7 @@ async function createMilestones({ owner, repo }) {
         ...milestone,
       })
       console.log(
-        colorize`{green.bold ✅️  success: ${owner}/${repo} => createMilestone: ${milestone.name}}`
+        colorize`{green.bold ✅️  success: ${owner}/${repo} => createMilestone: ${milestone.name}}`,
       )
     })
   } catch (error) {

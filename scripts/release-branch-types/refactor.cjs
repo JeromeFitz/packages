@@ -1,3 +1,3 @@
-const refactor = ['peer-deps']
+const refactor = ['canary']
 
 module.exports = refactor

@@ -1,8 +1,8 @@
-import conventionalChangelog from './utils/conventionalChangelog'
-import recommendedBumpOpts from './utils/conventionalRecommendedBump'
-import gitRawCommitsOpts from './utils/gitRawCommit'
-import parserOpts from './utils/parserOpts'
-import writerOpts from './utils/writerOpts'
+import conventionalChangelog from './utils/conventionalChangelog.js'
+import recommendedBumpOpts from './utils/conventionalRecommendedBump.js'
+import gitRawCommitsOpts from './utils/gitRawCommit.js'
+import parserOpts from './utils/parserOpts.js'
+import writerOpts from './utils/writerOpts.js'
 
 const changelog = {
   conventionalChangelog,

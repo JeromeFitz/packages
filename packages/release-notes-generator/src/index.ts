@@ -2,13 +2,13 @@ import { format, URL } from 'url'
 
 import conventionalCommitsFilter from 'conventional-commits-filter'
 import { sync as conventionalCommitsParser } from 'conventional-commits-parser'
-import _merge from 'lodash/merge'
-import readPkgUp from 'read-pkg-up'
+import _merge from 'lodash/merge.js'
+import { readPackageUp } from 'read-package-up'
 
-import generate from './utils/generate'
-import { getChangelogConfig } from './utils/getChangelogConfig'
-import { getMarkdown } from './utils/getMarkdown'
-import { processCommit } from './utils/processCommit'
+import generate from './utils/generate.js'
+import { getChangelogConfig } from './utils/getChangelogConfig.js'
+import { getMarkdown } from './utils/getMarkdown.js'
+import { processCommit } from './utils/processCommit.js'
 
 const configGithub = {
   hostname: 'github.com',
@@ -52,7 +52,7 @@ async function generateNotes(pluginConfig, context) {
     []
   // eslint-disable-next-line prefer-const
   let { hostname, port, pathname, protocol } = new URL(
-    match ? `ssh://${auth ? `${auth}@` : ''}${host}/${path}` : repositoryUrl
+    match ? `ssh://${auth ? `${auth}@` : ''}${host}/${path}` : repositoryUrl,
   )
   port = protocol.includes('ssh') ? '' : port
   protocol = protocol && /http[^s]/.test(protocol) ? 'http' : 'https'
@@ -71,7 +71,8 @@ async function generateNotes(pluginConfig, context) {
       linkCompare: currentTag && previousTag,
       issue,
       commit,
-      packageData: ((await readPkgUp({ normalize: false, cwd })) || {}).packageJson,
+      packageData: ((await readPackageUp({ normalize: false, cwd })) || {})
+        .packageJson,
     },
     {
       host: hostConfig,
@@ -79,7 +80,7 @@ async function generateNotes(pluginConfig, context) {
       linkReferences,
       commit: commitConfig,
       issue: issueConfig,
-    }
+    },
   )
 
   const commitsParsed = conventionalCommitsFilter(
@@ -100,7 +101,7 @@ async function generateNotes(pluginConfig, context) {
           }),
         }
         return commitPassed
-      })
+      }),
   )
 
   let commits: any = []
@@ -108,7 +109,7 @@ async function generateNotes(pluginConfig, context) {
     const commitProcessed: any = await processCommit(
       commitParsed,
       writerOpts.transform,
-      context
+      context,
     )
     commits.push(commitProcessed)
   })

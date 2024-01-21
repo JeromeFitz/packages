@@ -1,6 +1,6 @@
 import { Client as _Client } from '@notionhq/client'
 
-import { DATA_TYPES } from './constants'
+import { DATA_TYPES } from './constants/index.js'
 import {
   getBlocksByIdChildren,
   getDatabasesByIdQuery,
@@ -13,7 +13,7 @@ import {
   getPagesById,
   getPathVariables,
   getQuery,
-} from './queries'
+} from './queries/index.js'
 
 type CredentialProps = {
   auth: string

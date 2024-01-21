@@ -1,7 +1,7 @@
 {
   "name": "@jeromefitz/jest-presets",
   "version": "0.0.0",
-  "type": "commonjs",
+  "type": "module",
   "description": "Jest Presets Configuration",
   "repository": "jeromefitz/packages.git",
   "author": {
@@ -12,7 +12,7 @@
   "license": "MIT",
   "private": false,
   "engines": {
-    "node": ">=16"
+    "node": ">=20"
   },
   "main": "./src/jest/node/jest-preset.js",
   "scripts": {

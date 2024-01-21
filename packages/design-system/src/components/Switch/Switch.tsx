@@ -12,7 +12,7 @@ const Switch = forwardRef<ElementRef<typeof StyledSwitch>, SwitchProps>(
     <StyledSwitch {...props} ref={forwardedRef}>
       <StyledThumb />
     </StyledSwitch>
-  )
+  ),
 )
 
 Switch.displayName = 'Switch'

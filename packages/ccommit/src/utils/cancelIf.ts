@@ -17,7 +17,7 @@ const cancelIfRebasing = (): Promise<void> =>
       ) {
         process.exit(0)
       }
-    }
+    },
   )
 
 const COMMIT_MESSAGE_SOURCE = 4

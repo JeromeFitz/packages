@@ -16,7 +16,7 @@ import type { AvatarOwnProps } from './Avatar.types'
 const Avatar = forwardRef<ElementRef<typeof StyledAvatar>, AvatarOwnProps>(
   (
     { alt, src, fallback, size, variant, shape, css, status, ...props },
-    forwardedRef
+    forwardedRef,
   ) => {
     return (
       <Box
@@ -54,7 +54,7 @@ const Avatar = forwardRef<ElementRef<typeof StyledAvatar>, AvatarOwnProps>(
         )}
       </Box>
     )
-  }
+  },
 )
 
 Avatar.displayName = 'Avatar'

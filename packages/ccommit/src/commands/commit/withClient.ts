@@ -26,7 +26,7 @@ const withClient = async (answers, options) => {
     }
   } catch (error: any) {
     console.error(
-      generateLog(LOGS.TYPES.ERROR, LOGS.MESSAGES.COMMIT_FAIL, error.escapedCommand)
+      generateLog(LOGS.TYPES.ERROR, LOGS.MESSAGES.COMMIT_FAIL, error.escapedCommand),
     )
     process.exit(1)
   }

@@ -3,20 +3,30 @@ name: '💽️  '
 description: 'Localized Init'
 author: 'JeromeFitz'
 
+inputs:
+  node-version:
+    default: '20'
+    description: '🔢  Node version'
+    required: true
+  pnpm-version:
+    default: '8'
+    description: '🔢  pnpm version'
+    required: true
+
 runs:
   using: 'composite'
   steps:
     - name: '🔧  pnpm'
       id: pnpm-setup
-      uses: pnpm/action-setup@v2.2.4
+      uses: pnpm/action-setup@v2.4.0
       with:
-        version: 8
+        version: ${{ inputs.pnpm-version }}
 
-    - name: '💽️  Node'
+    - name: '💽️  Node ${{ inputs.node-version }}'
       id: node-setup
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         # architecture: 'x64'
         cache-dependency-path: pnpm-lock.yaml
         cache: 'pnpm'
-        node-version: 16.14.0
+        node-version: ${{ inputs.node-version }}

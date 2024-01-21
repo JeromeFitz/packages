@@ -1,4 +1,4 @@
-import { space } from '../utils/getChars'
+import { space } from '../utils/getChars.js'
 
 const PULL_REQUEST = {
   gitflow: `### 🔀️ ${space} **Gitflow Automation:** \`{version} => {base}\`

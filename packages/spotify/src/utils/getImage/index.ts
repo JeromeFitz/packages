@@ -10,8 +10,13 @@ import fetch from 'isomorphic-unfetch'
 import { getPlaiceholder } from 'plaiceholder'
 
 const _getImage = async (src: string) => {
+  /**
+   * @todo(types)
+   */
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const buffer = await fetch(src).then(async (res: any) =>
-    Buffer.from(await res.arrayBuffer())
+    Buffer.from(await res.arrayBuffer()),
   )
 
   const {
