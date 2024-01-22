@@ -105,7 +105,7 @@
   "prFooter": "<!-- COMMIT_BODY_TEXT_END -->",
   "prHeader": "<!-- COMMIT_BODY_TEXT_BEGIN -->",
   "prHourlyLimit": 2,
-  "prTitle": "{{{commitMessagePrefix}}} {{{commitMessageAction}}} {{{commitMessageTopic}}} {{{commitMessageExtra}}} {{{commitMessageSuffix}}}",
+  "prTitle": "{{{commitMessagePrefix}}} {{{commitMessageAction}}} {{{commitMessageTopic}}} {{{commitMessageExtra}}} {{{commitMessageSuffix}}} [skip ci]",
   "rebaseWhen": "conflicted",
   "semanticCommits": "disabled"
 }
