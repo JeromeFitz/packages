@@ -120,7 +120,7 @@
     "react-dom": "18.2.0",
     "serve": "14.2.1",
     "storybook": "7.6.10",
-    "swr": "2.1.5",
+    "swr": "2.2.4",
     "typescript": "5.3.3"
   },
   "publishConfig": {
