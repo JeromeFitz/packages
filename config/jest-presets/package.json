@@ -23,6 +23,6 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "ts-jest": "29.1.1"
+    "ts-jest": "29.1.2"
   }
 }
