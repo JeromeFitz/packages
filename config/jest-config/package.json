@@ -23,7 +23,7 @@
   },
   "peerDependencies": {
     "@jeromefitz/jest-presets": "^1.0.0",
-    "next": "^13.3.3 || ^14.0.0"
+    "next": "^14.0.0"
   },
   "dependencies": {
     "@testing-library/dom": "9.3.4",
