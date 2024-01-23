@@ -34,9 +34,9 @@
     "semantic-release": "semantic-release"
   },
   "peerDependencies": {
-    "@jeromefitz/utils": "^2.1.0",
+    "@jeromefitz/utils": "^3.0.0",
     "lodash": "^4.17.21",
-    "sharp": "^0.31.1 || ^0.32.0"
+    "sharp": "^0.32.1"
   },
   "dependencies": {
     "github-slugger": "2.0.0",
