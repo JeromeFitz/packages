@@ -1,5 +1,5 @@
 /**
- * https://www.radix-ui.com/docs/primitives/components/label
+ * https://www.radix-ui.com/primitives/docs/components/label
  */
 import * as LabelPrimitive from '@radix-ui/react-label'
 

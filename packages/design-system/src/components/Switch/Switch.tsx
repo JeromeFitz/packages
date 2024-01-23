@@ -1,5 +1,5 @@
 /**
- * https://www.radix-ui.com/docs/primitives/components/switch
+ * https://www.radix-ui.com/primitives/docs/components/switch
  */
 import { forwardRef } from 'react'
 import type { ElementRef } from 'react'

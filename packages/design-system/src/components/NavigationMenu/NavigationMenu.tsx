@@ -1,5 +1,5 @@
 /**
- * https://www.radix-ui.com/docs/primitives/components/navigation-menu
+ * https://www.radix-ui.com/primitives/docs/components/navigation-menu
  */
 import { forwardRef } from 'react'
 import type { ComponentProps, ElementRef } from 'react'
@@ -18,6 +18,7 @@ import {
 /**
  * @core
  */
+// eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
 type StyledTriggerWithCaretProps = ComponentProps<typeof NavigationMenuTrigger> & {
   children?: any
   css?: CSS

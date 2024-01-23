@@ -1,5 +1,5 @@
 /**
- * https://www.radix-ui.com/docs/primitives/components/alert-dialog
+ * https://www.radix-ui.com/primitives/docs/components/alert-dialog
  */
 import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog'
 import { styled, keyframes } from '@stitches/react'

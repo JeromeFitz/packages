@@ -1,5 +1,5 @@
 /**
- * https://www.radix-ui.com/docs/primitives/components/accordion
+ * https://www.radix-ui.com/primitives/docs/components/accordion
  */
 import * as AccordionPrimitive from '@radix-ui/react-accordion'
 import { forwardRef } from 'react'

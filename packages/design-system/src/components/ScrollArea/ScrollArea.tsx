@@ -1,5 +1,5 @@
 /**
- * https://www.radix-ui.com/docs/primitives/components/scroll-area
+ * https://www.radix-ui.com/primitives/docs/components/scroll-area
  */
 import { useEffect, useLayoutEffect, useRef } from 'react'
 

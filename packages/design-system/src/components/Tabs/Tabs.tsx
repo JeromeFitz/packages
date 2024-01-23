@@ -1,5 +1,5 @@
 /**
- * https://www.radix-ui.com/docs/primitives/components/tabs
+ * https://www.radix-ui.com/primitives/docs/components/tabs
  */
 import { forwardRef } from 'react'
 import type { ElementRef } from 'react'

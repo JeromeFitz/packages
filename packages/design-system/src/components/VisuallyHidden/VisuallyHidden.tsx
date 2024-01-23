@@ -1,5 +1,5 @@
 /**
- * https://www.radix-ui.com/docs/primitives/utilities/visually-hidden
+ * https://www.radix-ui.com/primitives/docs/utilities/visually-hidden
  */
 import * as ReactVisuallyHidden from '@radix-ui/react-visually-hidden'
 

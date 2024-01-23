@@ -1,5 +1,5 @@
 /**
- * https://www.radix-ui.com/docs/primitives/components/separator
+ * https://www.radix-ui.com/primitives/docs/components/separator
  */
 import * as SeparatorPrimitive from '@radix-ui/react-separator'
 

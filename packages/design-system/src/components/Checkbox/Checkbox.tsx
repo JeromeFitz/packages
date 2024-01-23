@@ -1,5 +1,5 @@
 /**
- * https://www.radix-ui.com/docs/primitives/components/checkbox
+ * https://www.radix-ui.com/primitives/docs/components/checkbox
  */
 import { forwardRef } from 'react'
 import type { ElementRef } from 'react'

@@ -1,5 +1,5 @@
 /**
- * https://www.radix-ui.com/docs/primitives/components/toggle
+ * https://www.radix-ui.com/primitives/docs/components/toggle
  */
 import * as TogglePrimitive from '@radix-ui/react-toggle'
 

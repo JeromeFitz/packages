@@ -1,5 +1,5 @@
 /**
- * https://www.radix-ui.com/docs/primitives/components/progress
+ * https://www.radix-ui.com/primitives/docs/components/progress
  */
 import * as ProgressPrimitive from '@radix-ui/react-progress'
 import { forwardRef } from 'react'
@@ -84,7 +84,9 @@ const ProgressBarIndicator = styled(ProgressPrimitive.Indicator, {
 
 type ProgressBarVariants = VariantProps<typeof StyledProgressBar>
 type ProgressBarPrimitiveProps = ComponentProps<typeof ProgressPrimitive.Root>
+// eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
 type ProgressBarProps = ProgressBarPrimitiveProps &
+  // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
   ProgressBarVariants & { css?: CSS }
 
 const ProgressBar = forwardRef<

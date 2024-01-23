@@ -1,5 +1,5 @@
 /**
- * https://www.radix-ui.com/docs/primitives/components/toggle-group
+ * https://www.radix-ui.com/primitives/docs/components/toggle-group
  */
 import * as ToggleGroupPrimitive from '@radix-ui/react-toggle-group'
 

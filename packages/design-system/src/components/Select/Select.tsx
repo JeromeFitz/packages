@@ -1,11 +1,11 @@
 /**
- * https://www.radix-ui.com/docs/primitives/components/select
+ * https://www.radix-ui.com/primitives/docs/components/select
  */
 import * as SelectPrimitive from '@radix-ui/react-select'
 
 import { styled } from '../../lib/stitches.config'
 
-const StyledTrigger = styled(SelectPrimitive.SelectTrigger, {
+const StyledTrigger = styled(SelectPrimitive.Trigger, {
   all: 'unset',
   alignItems: 'center',
   backgroundColor: '$colors$brand3',

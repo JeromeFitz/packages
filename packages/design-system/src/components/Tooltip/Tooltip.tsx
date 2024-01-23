@@ -1,5 +1,5 @@
 /**
- * https://www.radix-ui.com/docs/primitives/components/tooltip
+ * https://www.radix-ui.com/primitives/docs/components/tooltip
  */
 import { Box, Text } from '../index'
 

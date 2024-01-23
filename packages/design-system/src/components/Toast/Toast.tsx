@@ -1,5 +1,5 @@
 /**
- * https://www.radix-ui.com/docs/primitives/components/toast
+ * https://www.radix-ui.com/primitives/docs/components/toast
  */
 import * as ToastPrimitive from '@radix-ui/react-toast'
 

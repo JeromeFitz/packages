@@ -1,5 +1,5 @@
 /**
- * https://www.radix-ui.com/docs/primitives/components/context-menu
+ * https://www.radix-ui.com/primitives/docs/components/context-menu
  */
 import * as ContextMenuPrimitive from '@radix-ui/react-context-menu'
 import { forwardRef } from 'react'
