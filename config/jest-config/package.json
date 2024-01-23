@@ -23,7 +23,7 @@
   },
   "peerDependencies": {
     "@jeromefitz/jest-presets": "^1.0.0",
-    "next": "^13.3.3"
+    "next": "^14.0.0"
   },
   "dependencies": {
     "@testing-library/dom": "9.3.4",
@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@jeromefitz/jest-presets": "workspace:*",
-    "next": "13.5.6"
+    "next": "14.1.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
