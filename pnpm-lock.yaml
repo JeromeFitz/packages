@@ -63,8 +63,8 @@ importers:
         specifier: 23.0.0
         version: 23.0.0(typescript@5.3.3)
       semantic-release-monorepo:
-        specifier: 8.0.0
-        version: 8.0.0(semantic-release@23.0.0)
+        specifier: 8.0.1
+        version: 8.0.1(semantic-release@23.0.0)
       syncpack:
         specifier: 12.3.0
         version: 12.3.0(typescript@5.3.3)
@@ -3428,7 +3428,7 @@ packages:
       at-least-node: 1.0.0
       graceful-fs: 4.2.11
       jsonfile: 6.1.0
-      universalify: 2.0.0
+      universalify: 2.0.1
     dev: true
 
   /fs.realpath@1.0.0:
@@ -4221,7 +4221,7 @@ packages:
   /jsonfile@6.1.0:
     resolution: {integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==}
     dependencies:
-      universalify: 2.0.0
+      universalify: 2.0.1
     optionalDependencies:
       graceful-fs: 4.2.11
 
@@ -5409,18 +5409,6 @@ packages:
       strip-bom: 4.0.0
     dev: false
 
-  /readable-stream@2.3.7:
-    resolution: {integrity: sha512-Ebho8K4jIbHAxnuxi7o42OrZgF/ZTNcsZj6nRKyUmkhLFq8CHItp/fy6hQZuZmP/n3yZ9VBUbp4zz/mX8hmYPw==}
-    dependencies:
-      core-util-is: 1.0.3
-      inherits: 2.0.4
-      isarray: 1.0.0
-      process-nextick-args: 2.0.1
-      safe-buffer: 5.1.2
-      string_decoder: 1.1.1
-      util-deprecate: 1.0.2
-    dev: true
-
   /readable-stream@2.3.8:
     resolution: {integrity: sha512-8p0AUk4XODgIewSi0l8Epjs+EVnWiK7NoDIEGU0HhE7+ZyY8D1IMY7odu5lRrFXGg71L15KG8QrPmum45RTtdA==}
     dependencies:
@@ -5623,10 +5611,10 @@ packages:
     resolution: {integrity: sha512-LpIB1UN78oRmJnqgPdvA/qRgVitih5V1Ybyszv8GcOBAJWJBHGWI1PmSrOfdEmbf1ZvGkdK/NNDdBHbuSQqSyQ==}
     dev: false
 
-  /semantic-release-monorepo@8.0.0(semantic-release@23.0.0):
-    resolution: {integrity: sha512-mCJ0W8oUxcaYBKdBwqzcDVjPgVs4+CYVZzRMSg8F9Eo5kelZFF5v/SBpHhpWI/LXXHxmwtwZ5y6Qe+uoJ8A7QQ==}
+  /semantic-release-monorepo@8.0.1(semantic-release@23.0.0):
+    resolution: {integrity: sha512-AF8PYDxQxUo/P/eb0i5HgJ9Dmfb5+CSZmP4fXAZWuH6zw09OzPBXMtwtu5FQ2ol9kDFvrCa55/N8Ef2dU8JmVQ==}
     peerDependencies:
-      semantic-release: '>=20'
+      semantic-release: '>=22.0.7'
     dependencies:
       debug: 4.3.4
       execa: 5.1.1
@@ -5928,7 +5916,7 @@ packages:
   /stream-meter@1.0.4:
     resolution: {integrity: sha512-4sOEtrbgFotXwnEuzzsQBYEV1elAeFSO8rSGeTwabuX1RRn/kEq9JVH7I0MRBhKVRR0sJkr0M0QCH7yOLf9fhQ==}
     dependencies:
-      readable-stream: 2.3.7
+      readable-stream: 2.3.8
     dev: true
 
   /string-argv@0.3.2:
@@ -6552,14 +6540,9 @@ packages:
     resolution: {integrity: sha512-yCzhz6FN2wU1NiiQRogkTQszlQSlpWaw8SvVegAc+bDxbzHgh1vX8uIe8OYyMH6DwH+sdTJsgMl36+mSMdRJIQ==}
     dev: false
 
-  /universalify@2.0.0:
-    resolution: {integrity: sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==}
-    engines: {node: '>= 10.0.0'}
-
   /universalify@2.0.1:
     resolution: {integrity: sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==}
     engines: {node: '>= 10.0.0'}
-    dev: false
 
   /update-browserslist-db@1.0.13(browserslist@4.22.2):
     resolution: {integrity: sha512-xebP81SNcPuNpPP3uzeW1NYXxI3rxyJzF3pD6sH4jE7o/IX+WtSpwnVU+qIsDPyk0d3hmFQ7mjqc6AtV604hbg==}
