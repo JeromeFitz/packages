@@ -1,5 +1,5 @@
 /**
- * https://www.radix-ui.com/docs/primitives/components/slider
+ * https://www.radix-ui.com/primitives/docs/components/slider
  */
 import * as SliderPrimitive from '@radix-ui/react-slider'
 import { forwardRef } from 'react'

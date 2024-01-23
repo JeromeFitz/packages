@@ -1,5 +1,5 @@
 /**
- * https://www.radix-ui.com/docs/primitives/components/radio-group
+ * https://www.radix-ui.com/primitives/docs/components/radio-group
  */
 import { forwardRef } from 'react'
 import type { ElementRef } from 'react'

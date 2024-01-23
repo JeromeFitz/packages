@@ -1,5 +1,5 @@
 /**
- * https://www.radix-ui.com/docs/primitives/components/avatar
+ * https://www.radix-ui.com/primitives/docs/components/avatar
  */
 import { forwardRef } from 'react'
 import type { ElementRef } from 'react'

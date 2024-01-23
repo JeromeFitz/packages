@@ -1,5 +1,5 @@
 /**
- * https://www.radix-ui.com/docs/primitives/components/popover
+ * https://www.radix-ui.com/primitives/docs/components/popover
  */
 import * as PopoverPrimitive from '@radix-ui/react-popover'
 import { forwardRef } from 'react'
@@ -10,6 +10,7 @@ import type { CSS } from '../../lib/stitches.config'
 import { Box } from '../index'
 import { panelStyles } from '../Panel/Panel.styles'
 
+// eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
 type PopoverProps = ComponentProps<typeof PopoverPrimitive.Root> & {
   children: ReactNode
 }
@@ -29,6 +30,7 @@ const StyledContent = styled(PopoverPrimitive.Content, panelStyles, {
 
 type PopoverContentPrimitiveProps = ComponentProps<typeof PopoverPrimitive.Content>
 
+// eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
 type PopoverContentProps = PopoverContentPrimitiveProps & {
   css?: CSS
   hideArrow?: boolean

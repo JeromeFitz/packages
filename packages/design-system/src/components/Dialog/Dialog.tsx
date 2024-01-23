@@ -1,5 +1,5 @@
 /**
- * https://www.radix-ui.com/docs/primitives/components/dialog
+ * https://www.radix-ui.com/primitives/docs/components/dialog
  */
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { forwardRef } from 'react'
@@ -11,6 +11,7 @@ import { Icon, IconButton } from '../index'
 import { overlayStyles } from '../Overlay/Overlay.styles'
 import { panelStyles } from '../Panel/Panel.styles'
 
+// eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
 type DialogProps = ComponentProps<typeof DialogPrimitive.Root> & {
   children: ReactNode
 }
@@ -59,6 +60,7 @@ const StyledCloseButton = styled(DialogPrimitive.Close, {
 })
 
 type DialogContentPrimitiveProps = ComponentProps<typeof DialogPrimitive.Content>
+// eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
 type DialogContentProps = DialogContentPrimitiveProps & { css?: CSS }
 
 export const DialogContent = forwardRef<

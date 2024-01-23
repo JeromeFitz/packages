@@ -1,5 +1,5 @@
 /**
- * https://www.radix-ui.com/docs/primitives/components/dropdown-menu
+ * https://www.radix-ui.com/primitives/docs/components/dropdown-menu
  */
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
 import { forwardRef } from 'react'

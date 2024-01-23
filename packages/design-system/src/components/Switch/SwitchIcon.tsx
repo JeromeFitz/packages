@@ -1,5 +1,5 @@
 /**
- * https://www.radix-ui.com/docs/primitives/components/switch
+ * https://www.radix-ui.com/primitives/docs/components/switch
  */
 import * as SwitchPrimitive from '@radix-ui/react-switch'
 import { forwardRef, useMemo } from 'react'
