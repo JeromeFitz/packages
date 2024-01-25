@@ -12,8 +12,8 @@ importers:
         specifier: 7.23.9
         version: 7.23.9
       '@babel/eslint-parser':
-        specifier: 7.23.3
-        version: 7.23.3(@babel/core@7.23.9)
+        specifier: 7.23.9
+        version: 7.23.9(@babel/core@7.23.9)
       '@jeromefitz/conventional-gitmoji':
         specifier: workspace:*
         version: link:packages/conventional-gitmoji
@@ -81,8 +81,8 @@ importers:
   config/eslint-config:
     dependencies:
       '@babel/eslint-parser':
-        specifier: 7.23.3
-        version: 7.23.3(@babel/core@7.23.9)(eslint@8.56.0)
+        specifier: 7.23.9
+        version: 7.23.9(@babel/core@7.23.9)(eslint@8.56.0)
       '@typescript-eslint/eslint-plugin':
         specifier: 6.19.1
         version: 6.19.1(@typescript-eslint/parser@6.19.1)(eslint@8.56.0)(typescript@5.3.3)
@@ -404,8 +404,8 @@ packages:
       - supports-color
     dev: false
 
-  /@babel/eslint-parser@7.23.3(@babel/core@7.23.9):
-    resolution: {integrity: sha512-9bTuNlyx7oSstodm1cR1bECj4fkiknsDa1YniISkJemMY3DGhJNYBECbe6QD/q54mp2J8VO66jW3/7uP//iFCw==}
+  /@babel/eslint-parser@7.23.9(@babel/core@7.23.9):
+    resolution: {integrity: sha512-xPndlO7qxiJbn0ATvfXQBjCS7qApc9xmKHArgI/FTEFxXas5dnjC/VqM37lfZun9dclRYcn+YQAr6uDFy0bB2g==}
     engines: {node: ^10.13.0 || ^12.13.0 || >=14.0.0}
     peerDependencies:
       '@babel/core': ^7.11.0
@@ -417,8 +417,8 @@ packages:
       semver: 6.3.1
     dev: false
 
-  /@babel/eslint-parser@7.23.3(@babel/core@7.23.9)(eslint@8.56.0):
-    resolution: {integrity: sha512-9bTuNlyx7oSstodm1cR1bECj4fkiknsDa1YniISkJemMY3DGhJNYBECbe6QD/q54mp2J8VO66jW3/7uP//iFCw==}
+  /@babel/eslint-parser@7.23.9(@babel/core@7.23.9)(eslint@8.56.0):
+    resolution: {integrity: sha512-xPndlO7qxiJbn0ATvfXQBjCS7qApc9xmKHArgI/FTEFxXas5dnjC/VqM37lfZun9dclRYcn+YQAr6uDFy0bB2g==}
     engines: {node: ^10.13.0 || ^12.13.0 || >=14.0.0}
     peerDependencies:
       '@babel/core': ^7.11.0
