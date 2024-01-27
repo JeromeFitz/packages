@@ -18,9 +18,11 @@ runs:
   steps:
     - name: '🔧  pnpm'
       id: pnpm-setup
-      uses: pnpm/action-setup@v2.4.0
-      with:
-        version: ${{ inputs.pnpm-version }}
+      shell: bash
+      run: npm install -g pnpm@${{ inputs.pnpm-version }}
+      # uses: pnpm/action-setup@v2.4.0
+      # with:
+      #   version: ${{ inputs.pnpm-version }}
 
     - name: '💽️  Node ${{ inputs.node-version }}'
       id: node-setup
