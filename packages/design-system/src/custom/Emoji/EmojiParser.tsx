@@ -28,11 +28,11 @@ const EmojiParser = ({ id, text }) => {
       emojiLength === 3 ? emojiLength * 1.5 : emojiLength * 2
     if (emojiIndex === 0 && match.index !== 0) {
       emojiMapping[0] = {
+        emoji: false,
         index: 0,
+        text: text.slice(0, match.index),
         to: match.index,
         to2: match.index,
-        emoji: false,
-        text: text.slice(0, match.index),
       }
       emojiIndex++
     }
@@ -40,21 +40,21 @@ const EmojiParser = ({ id, text }) => {
     const prev = emojiMapping[emojiIndex - 1]
     if (!!prev && prev.index !== match.to) {
       emojiMapping[emojiIndex] = {
+        emoji: false,
         index: prev.to,
+        text: text.slice(prev.to, match.index),
         to: match.index,
         to2: match.index,
-        emoji: false,
-        text: text.slice(prev.to, match.index),
       }
       emojiIndex++
     }
 
     emojiMapping[emojiIndex] = {
+      emoji: true,
       index: match.index,
+      text: emoji,
       to: Math.floor(match.index + emojiLengthCodePoint),
       to2: Math.floor(match.index + emojiLength),
-      emoji: true,
-      text: emoji,
     }
 
     emojiIndex++

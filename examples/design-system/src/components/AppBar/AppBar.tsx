@@ -11,11 +11,12 @@ import {
   Text,
 } from '@jeromefitz/design-system/src/components'
 import { darkTheme } from '@jeromefitz/design-system/src/lib/stitches.config'
+
 import { useTheme } from 'next-themes'
 import { useCallback, useState } from 'react'
 
 const _AppBar = ({}) => {
-  const { theme, setTheme } = useTheme()
+  const { setTheme, theme } = useTheme()
 
   const handleThemeToggle = useCallback(() => {
     const newTheme = theme === 'dark' ? 'light' : 'dark'
@@ -32,32 +33,32 @@ const _AppBar = ({}) => {
 
   return (
     <AppBar
+      border
+      color="loContrast"
       css={{
-        height: '$7',
-
         /**
          * @mobile
          */
         '$$offset-bottom': '0px',
+
+        '@bp1': {
+          left: 0,
+          position: 'sticky',
+          top: 0,
+          width: '100%',
+        },
         bottom: 'calc($$offset-bottom)',
+        height: '$7',
         left: 'calc(-50vw + 50%)',
         ml: 'auto',
         mr: 'auto',
         position: 'fixed',
         px: '9',
-        width: '100vw',
 
-        '@bp1': {
-          position: 'sticky',
-          width: '100%',
-          top: 0,
-          left: 0,
-        },
+        width: '100vw',
       }}
-      size="2"
-      color="loContrast"
-      border
       glass
+      size="2"
     >
       <Flex direction="row" justify="between">
         <Flex css={{ ml: '$3' }} direction="row" justify="start">
@@ -65,23 +66,25 @@ const _AppBar = ({}) => {
           <Flex>
             <Button
               css={{
-                py: '$2',
-                mr: '$2',
                 '@hover': {
                   '&:hover, &:hover + &': {
                     cursor: 'pointer',
                   },
                 },
+                mr: '$2',
+                py: '$2',
               }}
-              size="1"
               ghost
+              size="1"
             >
               Menu: Command (Todo)
             </Button>
           </Flex>
           {/* </Box> */}
           <Box css={{ '@bp1': { display: 'none' } }}>
-            <Sheet open={isSheetOpen} onOpenChange={handleIsSheetOpen}>
+            <Sheet onOpenChange={handleIsSheetOpen} open={isSheetOpen}>
+              {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+              {/* @ts-ignore */}
               <SheetTrigger asChild>
                 <Button css={{ '&:hover': { cursor: 'pointer' } }} size="1">
                   Menu: Sheet

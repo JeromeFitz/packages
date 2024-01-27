@@ -1,10 +1,10 @@
 export {
   AlertDialog,
-  AlertDialogTrigger,
-  AlertDialogContent,
-  AlertDialogTitle,
-  AlertDialogDescription,
   AlertDialogAction,
   AlertDialogCancel,
+  AlertDialogContent,
   AlertDialogDemo,
+  AlertDialogDescription,
+  AlertDialogTitle,
+  AlertDialogTrigger,
 } from './AlertDialog'

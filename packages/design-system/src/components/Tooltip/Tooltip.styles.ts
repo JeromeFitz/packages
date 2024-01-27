@@ -23,22 +23,22 @@ const slideLeftAndFade = keyframes({
 })
 
 const TooltipContent = styled(TooltipPrimitive.Content, {
-  backgroundColor: '$transparentPanel',
-  borderRadius: '$1',
-  padding: '$1 $2',
-  userSelect: 'none',
-
   '@media (prefers-reduced-motion: no-preference)': {
+    '&[data-state="delayed-open"]': {
+      '&[data-side="bottom"]': { animationName: slideUpAndFade },
+      '&[data-side="left"]': { animationName: slideRightAndFade },
+      '&[data-side="right"]': { animationName: slideLeftAndFade },
+      '&[data-side="top"]': { animationName: slideDownAndFade },
+    },
     animationDuration: '400ms',
     animationTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
     willChange: 'transform, opacity',
-    '&[data-state="delayed-open"]': {
-      '&[data-side="top"]': { animationName: slideDownAndFade },
-      '&[data-side="right"]': { animationName: slideLeftAndFade },
-      '&[data-side="bottom"]': { animationName: slideUpAndFade },
-      '&[data-side="left"]': { animationName: slideRightAndFade },
-    },
   },
+  backgroundColor: '$transparentPanel',
+  borderRadius: '$1',
+  padding: '$1 $2',
+
+  userSelect: 'none',
 
   variants: {
     multiline: {

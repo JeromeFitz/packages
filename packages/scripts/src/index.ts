@@ -7,11 +7,11 @@ import templatePullRequestRelease from './templates/PULL_REQUEST__RELEASE.js'
 import { space } from './utils/getChars.js'
 
 export {
-  labels,
-  milestones,
   githubLabel,
   githubMilestone,
   githubPullRequest,
-  templatePullRequestRelease,
+  labels,
+  milestones,
   space,
+  templatePullRequestRelease,
 }

@@ -1,21 +1,11 @@
 import { Meta, StoryFn } from '@storybook/react'
 
 import { Text } from '../index'
-
 import { Alert } from './Alert'
 
 const dummyContent = <Text css={{ p: '$3' }}>Dummy Content Here</Text>
 
 export default {
-  title: 'Alert',
-  component: Alert,
-  parameters: {
-    docs: {
-      description: {
-        component: 'MDX Content is TBD',
-      },
-    },
-  },
   argTypes: {
     as: {
       control: false,
@@ -27,14 +17,23 @@ export default {
       control: false,
     },
     size: {
-      options: ['1'],
       control: { type: 'select' },
+      options: ['1'],
     },
     variant: {
-      options: ['loContrast', 'brand', 'error', 'info', 'success', 'warning'],
       control: { type: 'select' },
+      options: ['loContrast', 'brand', 'error', 'info', 'success', 'warning'],
     },
   },
+  component: Alert,
+  parameters: {
+    docs: {
+      description: {
+        component: 'MDX Content is TBD',
+      },
+    },
+  },
+  title: 'Alert',
 } as Meta<typeof Alert>
 
 const Template: StoryFn<typeof Alert> = ({ children, ...args }) => (
@@ -42,9 +41,9 @@ const Template: StoryFn<typeof Alert> = ({ children, ...args }) => (
 )
 
 export const Default = {
-  render: Template,
-
   args: {
     children: dummyContent,
   },
+
+  render: Template,
 }

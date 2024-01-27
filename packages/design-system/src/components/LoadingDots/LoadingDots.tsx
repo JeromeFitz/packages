@@ -14,16 +14,11 @@ const blink = keyframes({
 
 const LoadingDots = styled('span', {
   '$$loading-dots-height': 'auto',
-  // '$$loading-dots-size': '2px',
-  alignItems: 'center',
-  display: 'inline-flex',
-  height: '$$loading-dots-height',
-
   '& span': {
-    animationName: blink,
     animationDuration: '1.4s',
     animationFillMode: 'both',
     animationIterationCount: 'infinite',
+    animationName: blink,
     backgroundColor: '$colors$gray11',
     borderRadius: '50%',
     display: 'inline-block',
@@ -33,8 +28,16 @@ const LoadingDots = styled('span', {
   },
   '& span:nth-of-type(1)': { animationDelay: '0s!important' },
   '& span:nth-of-type(even)': { animationDelay: '0.2s' },
-  '& span:nth-of-type(odd)': { animationDelay: '0.4s' },
 
+  '& span:nth-of-type(odd)': { animationDelay: '0.4s' },
+  // '$$loading-dots-size': '2px',
+  alignItems: 'center',
+  defaultVariants: {
+    size: '2',
+  },
+  display: 'inline-flex',
+
+  height: '$$loading-dots-height',
   variants: {
     size: {
       '2': {
@@ -53,9 +56,6 @@ const LoadingDots = styled('span', {
         '$$loading-dots-size': '6px',
       },
     },
-  },
-  defaultVariants: {
-    size: '2',
   },
 })
 

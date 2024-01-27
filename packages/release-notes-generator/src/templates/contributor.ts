@@ -7,8 +7,8 @@ const gh = new Octokit({ auth: process.env.GH_TOKEN })
 
 interface IAuthor {
   email: string
-  name: string
   login?: string
+  name: string
 }
 
 /**
@@ -22,6 +22,11 @@ interface IAuthor {
  *
  */
 const contributorsProhibitListDefault = {
+  email: [
+    'noreply@github.com',
+    'users.noreply.github.com',
+    'semantic-release-bot@martynus.net',
+  ],
   login: [
     'dependabot',
     'dependabot[bot]',
@@ -30,11 +35,6 @@ const contributorsProhibitListDefault = {
     'renovate',
     'renovate[bot]',
     'semantic-release-bot',
-  ],
-  email: [
-    'noreply@github.com',
-    'users.noreply.github.com',
-    'semantic-release-bot@martynus.net',
   ],
 }
 

@@ -3,7 +3,7 @@
  */
 import { useEffect, useLayoutEffect, useRef } from 'react'
 
-import { Flex, Box } from '../index'
+import { Box, Flex } from '../index'
 
 function canUseDOM() {
   return !!(
@@ -149,23 +149,8 @@ const ScrollArea = (props: ScrollAreaProps) => {
 
   return (
     <Flex
-      ref={wrapperRef}
       css={{
-        display: 'flex',
-        flex: 1,
-        flexDirection: 'column',
-        minHeight: 0,
-        maxHeight: '100%',
-        position: 'relative',
-        // This bit shows the thumb when you hover the wrapper
-        '&:hover': {
-          '& [data-scroll-thumb]': {
-            opacity: 1,
-          },
-        },
         '&.modulz-is-dragging': {
-          // Need to keep pointer events when scrolling so thumb isn't hidden immediately after scroll
-          pointerEvents: 'auto',
           // But still remove pointer events from content
           '& [data-scroll-content]': {
             pointerEvents: 'none',
@@ -174,48 +159,63 @@ const ScrollArea = (props: ScrollAreaProps) => {
           '& [data-scroll-thumb]': {
             opacity: 1,
           },
+          // Need to keep pointer events when scrolling so thumb isn't hidden immediately after scroll
+          pointerEvents: 'auto',
         },
+        // This bit shows the thumb when you hover the wrapper
+        '&:hover': {
+          '& [data-scroll-thumb]': {
+            opacity: 1,
+          },
+        },
+        display: 'flex',
+        flex: 1,
+        flexDirection: 'column',
+        maxHeight: '100%',
+        minHeight: 0,
+        position: 'relative',
       }}
+      ref={wrapperRef}
     >
       {/* Lock the content into its own zIndex */}
       <Box
-        data-scroll-content
-        ref={contentRef}
         css={{
-          position: 'relative',
+          '&::-webkit-scrollbar': { display: 'none' },
+          WebkitOverflowScrolling: 'touch',
           overflow: 'scroll',
+          position: 'relative',
           scrollbarWidth: 'none',
           zIndex: 1,
-          WebkitOverflowScrolling: 'touch',
-          '&::-webkit-scrollbar': { display: 'none' },
         }}
+        data-scroll-content
+        ref={contentRef}
       >
         {props.children}
       </Box>
       {/* Create the thumb on a higher zIndex */}
       <Box
-        ref={thumbRef}
-        data-scroll-thumb
         css={{
-          opacity: 0,
-          zIndex: 2,
-          position: 'absolute',
-          top: 0,
-          right: 0,
-          width: '8px',
           // Fill in the thumb color
           '&::after': {
-            content: '""',
-            position: 'absolute',
-            top: '2px',
-            left: '2px',
-            width: 'calc(100% - 4px)',
-            height: 'calc(100% - 4px)',
             // Match Radix hue on grays
             backgroundColor: 'hsla(212, 5%, 50%, 0.3)',
             borderRadius: '9999px',
+            content: '""',
+            height: 'calc(100% - 4px)',
+            left: '2px',
+            position: 'absolute',
+            top: '2px',
+            width: 'calc(100% - 4px)',
           },
+          opacity: 0,
+          position: 'absolute',
+          right: 0,
+          top: 0,
+          width: '8px',
+          zIndex: 2,
         }}
+        data-scroll-thumb
+        ref={thumbRef}
       />
     </Flex>
   )

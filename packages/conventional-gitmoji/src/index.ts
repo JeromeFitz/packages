@@ -1,5 +1,6 @@
+import type { ICommit, IReleaseRule, IReleaseRuleProps } from './types/index.js'
+
 import conventionalChangelog from './changelog/index.js'
-import type { ICommit, IReleaseRuleProps, IReleaseRule } from './types/index.js'
 import getGitmojiConventional from './utils/getGitmojiConventional.js'
 import getReleaseRules from './utils/getReleaseRules.js'
 import getTypeSpecs from './utils/getTypeSpecs.js'
@@ -9,6 +10,6 @@ const types = getGitmojiConventional()
 const releaseRules = getReleaseRules(types)
 const typeSpecs = getTypeSpecs(types)
 
-export type { ICommit, IReleaseRuleProps, IReleaseRule }
-export { releaseRules, typeSpecs, types, parserOpts, writerOpts }
+export type { ICommit, IReleaseRule, IReleaseRuleProps }
+export { parserOpts, releaseRules, typeSpecs, types, writerOpts }
 export default () => conventionalChangelog

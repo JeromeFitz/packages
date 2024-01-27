@@ -15,13 +15,13 @@ import transformer from './transformer.js'
  */
 
 const writerOpts = {
-  // @todo pass config from changelog here?
-  transform: (commit: any, context: any) => transformer(commit, context),
-  groupBy: 'type',
   commitGroupsSort: ['order', 'title'],
   commitsSort: ['scope', 'subject'],
+  groupBy: 'type',
   noteGroupsSort: ['title'],
   notesSort: ['title'],
+  // @todo pass config from changelog here?
+  transform: (commit: any, context: any) => transformer(commit, context),
 }
 
 export default writerOpts

@@ -1,4 +1,5 @@
 import { sortObject } from '@jeromefitz/utils'
+
 import _omit from 'lodash/omit.js'
 import _size from 'lodash/size.js'
 
@@ -54,11 +55,11 @@ const getNotionSlugByRoute__getDataByParentRouteType = async ({
   const _info = __info?.object === 'list' && __info.results[0]
   // @refactor(404)
   if (!_info) {
-    return { info: {}, content: {}, items: {}, images: {} }
+    return { content: {}, images: {}, info: {}, items: {} }
   }
   const info = _omit(_info, 'properties')
   info['properties'] = sortObject(
-    dataNormalized({ config, data: _info, pathVariables, pageId: info.id }),
+    dataNormalized({ config, data: _info, pageId: info.id, pathVariables }),
   )
   const content = await getBlocksByIdChildren({ block_id: info.id })
   let items = {}
@@ -70,13 +71,13 @@ const getNotionSlugByRoute__getDataByParentRouteType = async ({
     items = await getQuery({
       config,
       reqQuery: {
-        podcasts: info.id,
         databaseType: NOTION[CHILD].routeType.toUpperCase(),
+        podcasts: info.id,
       },
     })
   }
 
-  return { info, content, items, images: {} }
+  return { content, images: {}, info, items }
 }
 
 /**
@@ -121,16 +122,16 @@ const getNotionSlugByRoute__getDataByListingDate = async ({
     filter: {
       and: [
         {
-          property,
           date: {
             on_or_after: addTime(timestampQuery, ''),
           },
+          property,
         },
         {
-          property,
           date: {
             before: addTime(timestampQuery, 'day'),
           },
+          property,
         },
         {
           ...QUERIES.slug,
@@ -143,16 +144,16 @@ const getNotionSlugByRoute__getDataByListingDate = async ({
   const _info = __info?.object === 'list' && __info.results[0]
   // @refactor(404)
   if (!_info) {
-    return { info: {}, content: {}, items: {}, images: {} }
+    return { content: {}, images: {}, info: {}, items: {} }
   }
 
   const info = _omit(_info, 'properties')
   info['properties'] = sortObject(
-    dataNormalized({ config, data: _info, pathVariables, pageId: info.id }),
+    dataNormalized({ config, data: _info, pageId: info.id, pathVariables }),
   )
   const content = await getBlocksByIdChildren({ block_id: info.id })
 
-  return { info, content, items: {}, images: {} }
+  return { content, images: {}, info, items: {} }
 }
 
 const getNotionSlugByRoute = async ({
@@ -205,7 +206,7 @@ const getNotionSlugByRoute = async ({
     })
   }
 
-  return { info: {}, content: {}, items: {}, images: {} }
+  return { content: {}, images: {}, info: {}, items: {} }
 }
 
 export default getNotionSlugByRoute

@@ -4,11 +4,11 @@
 import { Box, PageHeading, Text } from '@jeromefitz/design-system/src/components'
 import {
   Tooltip,
-  TooltipProvider,
-  TooltipPortal,
-  TooltipTrigger,
-  TooltipContent,
   TooltipArrow,
+  TooltipContent,
+  TooltipPortal,
+  TooltipProvider,
+  TooltipTrigger,
 } from '@jeromefitz/design-system/src/custom/Tooltip'
 
 // import { LoadingDots } from '../components/LoadingDots'
@@ -24,8 +24,8 @@ function Home({}) {
   return (
     <>
       <PageHeading
-        title="Design System"
         description="An example of in-progress work."
+        title="Design System"
       />
       <Box css={{ width: '10%' }}>
         <TooltipProvider>
@@ -36,7 +36,7 @@ function Home({}) {
             <TooltipPortal>
               <TooltipContent
                 align="end"
-                css={{ display: 'none', '@bp1': { display: 'inline-flex' } }}
+                css={{ '@bp1': { display: 'inline-flex' }, display: 'none' }}
               >
                 <>Tooltip Content</>
                 <TooltipArrow />

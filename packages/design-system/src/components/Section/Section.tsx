@@ -1,18 +1,21 @@
 import { styled } from '../../lib/stitches.config'
 
 const Section = styled('section', {
-  // @reset
-  boxSizing: 'border-box',
-  flexShrink: 0,
-  '&::before': {
-    boxSizing: 'border-box',
-    content: '""',
-  },
   '&::after': {
     boxSizing: 'border-box',
     content: '""',
   },
+  '&::before': {
+    boxSizing: 'border-box',
+    content: '""',
+  },
+  // @reset
+  boxSizing: 'border-box',
+  defaultVariants: {
+    size: '3',
+  },
 
+  flexShrink: 0,
   variants: {
     size: {
       '1': {
@@ -25,9 +28,6 @@ const Section = styled('section', {
         py: '$9',
       },
     },
-  },
-  defaultVariants: {
-    size: '3',
   },
 })
 

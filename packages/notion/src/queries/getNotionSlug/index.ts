@@ -1,5 +1,6 @@
-import { sortObject } from '@jeromefitz/utils'
 // import _filter from 'lodash/filter.js'
+import { sortObject } from '@jeromefitz/utils'
+
 import _omit from 'lodash/omit.js'
 
 import { QUERIES } from '../../constants/index.js'
@@ -19,7 +20,7 @@ const getNotionSlug = async ({
   const DB_TYPE = routeType?.toUpperCase()
   const isValid = Object.keys(NOTION).includes(DB_TYPE)
 
-  if (!isValid) return { info: {}, content: {}, items: {}, images: {} }
+  if (!isValid) return { content: {}, images: {}, info: {}, items: {} }
 
   const __info: any = await getDatabasesByIdQuery({
     database_id: NOTION[DB_TYPE].database_id,
@@ -41,7 +42,7 @@ const getNotionSlug = async ({
 
   const info = _omit(_info, 'properties')
   info['properties'] = sortObject(
-    dataNormalized({ config, data: _info, pathVariables, pageId: info.id }),
+    dataNormalized({ config, data: _info, pageId: info.id, pathVariables }),
   )
 
   const _content = await getBlocksByIdChildren({ block_id: info.id })
@@ -59,7 +60,7 @@ const getNotionSlug = async ({
    *
    * Pass empty `images` object for SSR/API takeover
    */
-  return { info, content, items: {}, images: {} }
+  return { content, images: {}, info, items: {} }
 }
 
 export default getNotionSlug

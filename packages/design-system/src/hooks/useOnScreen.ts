@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react'
 import type { MutableRefObject } from 'react'
+
+import { useEffect, useState } from 'react'
 
 function useOnScreen(ref: MutableRefObject<undefined>) {
   const [isIntersecting, setIntersecting] = useState(false)

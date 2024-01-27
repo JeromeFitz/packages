@@ -1,4 +1,5 @@
 import { parserOpts, writerOpts } from '@jeromefitz/conventional-gitmoji'
+
 import type { PluginSpec } from 'semantic-release'
 
 import type { PluginOptions } from './pluginOptions.types.js'

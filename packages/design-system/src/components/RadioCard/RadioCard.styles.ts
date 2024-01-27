@@ -7,51 +7,51 @@ const RadioCardGroup = styled(RadioGroupPrimitive.Root, {
 })
 
 const StyledRadioButton = styled('div', {
-  display: 'flex',
   alignItems: 'center',
-  justifyContent: 'center',
   borderRadius: '$round',
-  width: 25,
-  height: 25,
   boxShadow: 'inset 0 0 0 1px $colors$slate7',
+  display: 'flex',
   flexShrink: 0,
+  height: 25,
+  justifyContent: 'center',
   mr: '$3',
+  width: 25,
 })
 
 const StyledRadioIndicator = styled('div', {
-  borderRadius: '$round',
-  width: 15,
-  height: 15,
   backgroundColor: '$gray9',
+  borderRadius: '$round',
+  height: 15,
   transform: 'scale(0)',
+  width: 15,
 })
 
 const StyledRadio = styled(RadioGroupPrimitive.Item, {
-  all: 'unset',
-  boxSizing: 'border-box',
-  userSelect: 'none',
-  '&::before': {
-    boxSizing: 'border-box',
-  },
   '&::after': {
     boxSizing: 'border-box',
   },
-  display: 'flex',
-  alignItems: 'center',
-  borderRadius: '$2',
-  boxShadow: 'inset 0 0 0 1px $colors$slate7',
-  p: '$3',
+  '&::before': {
+    boxSizing: 'border-box',
+  },
+  '&[data-state="checked"]': {
+    [`& ${StyledRadioIndicator}`]: {
+      transform: 'scale(1)',
+    },
+    boxShadow: 'inset 0 0 0 1px $colors$gray8, 0 0 0 1px $colors$gray8 !important',
+  },
   '@hover': {
     '&:hover': {
       boxShadow: 'inset 0 0 0 1px $colors$slate8',
     },
   },
-  '&[data-state="checked"]': {
-    boxShadow: 'inset 0 0 0 1px $colors$gray8, 0 0 0 1px $colors$gray8 !important',
-    [`& ${StyledRadioIndicator}`]: {
-      transform: 'scale(1)',
-    },
-  },
+  alignItems: 'center',
+  all: 'unset',
+  borderRadius: '$2',
+  boxShadow: 'inset 0 0 0 1px $colors$slate7',
+  boxSizing: 'border-box',
+  display: 'flex',
+  p: '$3',
+  userSelect: 'none',
 })
 
 export { RadioCardGroup, StyledRadio, StyledRadioButton, StyledRadioIndicator }

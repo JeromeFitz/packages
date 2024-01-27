@@ -1,9 +1,10 @@
+import type { CalloutProps } from './Callout.types'
+
 import {
   StyledCallout,
   StyledCalloutIconWrapper,
   StyledCalloutLabelWrapper,
 } from './Callout.styles'
-import type { CalloutProps } from './Callout.types'
 import { getVariantIcon } from './Callout.utils'
 
 const Callout = (props: CalloutProps) => {

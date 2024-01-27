@@ -1,11 +1,12 @@
 /**
  * https://www.radix-ui.com/primitives/docs/components/accordion
  */
-import * as AccordionPrimitive from '@radix-ui/react-accordion'
-import { forwardRef } from 'react'
 import type { ForwardedRef, ReactNode } from 'react'
 
-import { styled, keyframes } from '../../lib/stitches.config'
+import * as AccordionPrimitive from '@radix-ui/react-accordion'
+import { forwardRef } from 'react'
+
+import { keyframes, styled } from '../../lib/stitches.config'
 import { Icon } from '../Icon'
 
 type ForwardedRefType = ForwardedRef<any>
@@ -24,20 +25,22 @@ const slideUp = keyframes({
 })
 
 const StyledAccordion = styled(AccordionPrimitive.Root, {
-  borderRadius: 6,
-  width: '100%',
   backgroundColor: '$colors$gray1',
+  borderRadius: 6,
   boxShadow: `0 2px 10px $colors$gray12`,
+  width: '100%',
 })
 
 const StyledItem = styled(AccordionPrimitive.Item, {
-  overflow: 'hidden',
-  marginTop: 1,
-
   '&:first-child': {
-    marginTop: 0,
     borderTopLeftRadius: 4,
     borderTopRightRadius: 4,
+    marginTop: 0,
+  },
+  '&:focus-within': {
+    boxShadow: `0 0 0 2px $colors$gray12`,
+    position: 'relative',
+    zIndex: 1,
   },
 
   '&:last-child': {
@@ -45,11 +48,9 @@ const StyledItem = styled(AccordionPrimitive.Item, {
     borderBottomRightRadius: 4,
   },
 
-  '&:focus-within': {
-    position: 'relative',
-    zIndex: 1,
-    boxShadow: `0 0 0 2px $colors$gray12`,
-  },
+  marginTop: 1,
+
+  overflow: 'hidden',
 })
 
 const StyledHeader = styled(AccordionPrimitive.Header, {
@@ -58,36 +59,36 @@ const StyledHeader = styled(AccordionPrimitive.Header, {
 })
 
 const StyledTrigger = styled(AccordionPrimitive.Trigger, {
-  all: 'unset',
-  fontFamily: 'inherit',
-  backgroundColor: 'transparent',
-  padding: '0 20px',
-  height: 45,
-  flex: 1,
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-between',
-  fontSize: 15,
-  lineHeight: 1,
-  color: '$colors$gray12',
-  boxShadow: `0 1px 0 $colors$gray9`,
+  '&:hover': { backgroundColor: '$colors$gray4', cursor: 'pointer' },
   '&[data-state="closed"]': { backgroundColor: '$colors$gray3' },
   '&[data-state="open"]': { backgroundColor: '$colors$gray5' },
-  '&:hover': { backgroundColor: '$colors$gray4', cursor: 'pointer' },
+  alignItems: 'center',
+  all: 'unset',
+  backgroundColor: 'transparent',
+  boxShadow: `0 1px 0 $colors$gray9`,
+  color: '$colors$gray12',
+  display: 'flex',
+  flex: 1,
+  fontFamily: 'inherit',
+  fontSize: 15,
+  height: 45,
+  justifyContent: 'space-between',
+  lineHeight: 1,
+  padding: '0 20px',
 })
 
 const StyledContent = styled(AccordionPrimitive.Content, {
-  backgroundColor: 'inherit',
-  color: '$colors$gray12',
-  fontSize: 15,
-  overflow: 'hidden',
-
-  '&[data-state="open"]': {
-    animation: `${slideDown} 300ms cubic-bezier(0.87, 0, 0.13, 1)`,
-  },
   '&[data-state="closed"]': {
     animation: `${slideUp} 300ms cubic-bezier(0.87, 0, 0.13, 1)`,
   },
+  '&[data-state="open"]': {
+    animation: `${slideDown} 300ms cubic-bezier(0.87, 0, 0.13, 1)`,
+  },
+  backgroundColor: 'inherit',
+  color: '$colors$gray12',
+
+  fontSize: 15,
+  overflow: 'hidden',
 })
 
 const StyledContentText = styled('div', {
@@ -95,11 +96,11 @@ const StyledContentText = styled('div', {
 })
 
 const StyledChevron = styled(Icon.ChevronDown, {
-  color: '$colors$gray12',
-  '[data-state=open] &': { transform: 'rotate(180deg)' },
   '@media (prefers-reduced-motion: no-preference)': {
     transition: 'transform 300ms cubic-bezier(0.87, 0, 0.13, 1)',
   },
+  '[data-state=open] &': { transform: 'rotate(180deg)' },
+  color: '$colors$gray12',
 })
 
 const AccordionTrigger = forwardRef<ForwardedRefType, PropsChildren>(

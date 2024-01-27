@@ -1,4 +1,4 @@
-const getInfoType = ({ config, item, routeType, meta }) => {
+const getInfoType = ({ config, item, meta, routeType }) => {
   const { NOTION } = config
 
   let date = ''

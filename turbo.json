@@ -30,6 +30,14 @@
       "cache": false,
       "dependsOn": []
     },
+    "semantic-release": {
+      "cache": false,
+      "dependsOn": []
+    },
+    "semantic-release:dry": {
+      "cache": false,
+      "dependsOn": []
+    },
     "test": {
       "dependsOn": ["lint", "build"],
       "outputs": ["coverage/**"]

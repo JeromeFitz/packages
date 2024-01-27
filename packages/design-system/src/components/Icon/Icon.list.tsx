@@ -14,8 +14,8 @@ import {
   ArrowRightIcon as ArrowRightIconRadix,
   ArrowTopRightIcon as ArrowTopRightIconRadix,
   BellIcon as BellIconRadix,
-  BookmarkIcon as BookmarkIconRadix,
   BookmarkFilledIcon as BookmarkFilledIconRadix,
+  BookmarkIcon as BookmarkIconRadix,
   CalendarIcon as CalendarIconRadix,
   CaretDownIcon as CaretDownIconRadix,
   CaretLeftIcon as CaretLeftIconRadix,
@@ -23,8 +23,8 @@ import {
   CaretSortIcon as CaretSortIconRadix,
   CaretUpIcon as CaretUpIconRadix,
   ChatBubbleIcon as ChatBubbleIconRadix,
-  CheckIcon as CheckIconRadix,
   CheckCircledIcon as CheckCircledIconRadix,
+  CheckIcon as CheckIconRadix,
   ChevronDownIcon as ChevronDownIconRadix,
   ChevronLeftIcon as ChevronLeftIconRadix,
   ChevronRightIcon as ChevronRightIconRadix,
@@ -71,7 +71,6 @@ import {
 } from '@radix-ui/react-icons'
 
 import { Box } from '../Box'
-
 import { IconProps } from './Icon.types'
 
 /**
@@ -85,11 +84,11 @@ import { IconProps } from './Icon.types'
  *
  */
 const cssHeroToRadix = {
-  marginTop: '1px',
-  width: '1rem',
   '& > path': {
     strokeWidth: '1.5',
   },
+  marginTop: '1px',
+  width: '1rem',
 }
 
 const ArrowLeftIcon = ({ label, ...props }: IconProps) => (
@@ -852,9 +851,9 @@ export {
   ArrowTopRightIcon,
   ArrowUturnLeftIcon,
   BellIcon,
+  BookOpenIcon,
   BookmarkFilledIcon,
   BookmarkIcon,
-  BookOpenIcon,
   CalendarIcon,
   CaretDownIcon,
   CaretLeftIcon,

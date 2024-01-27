@@ -1,10 +1,11 @@
 import { stringToUUID } from '@jeromefitz/utils'
+
 import Slugger from 'github-slugger'
 import _size from 'lodash/size.js'
 
 const notionImageHosted = `https://www.notion.so/image/{{FILENAME}}?table=block&id={{PAGE_ID}}&cache=v2&w1dth=600`
 
-const getNotionHostedUrl = (url: string | number | boolean, pageId: string) =>
+const getNotionHostedUrl = (url: boolean | number | string, pageId: string) =>
   notionImageHosted
     .replace('{{FILENAME}}', encodeURIComponent(url))
     .replace('{{PAGE_ID}}', stringToUUID(pageId))
@@ -15,7 +16,7 @@ const files = (data: any, pageId: string) => {
 
   if (_size(data.files) <= 0) return _files
   data.files.map(
-    (file: { type: string; file: { url: string }; external: { url: string } }) => {
+    (file: { external: { url: string }; file: { url: string }; type: string }) => {
       if (file?.type === 'file') {
         const internalUrl = file?.file?.url.split('?')[0]
         const internalSlug = slugger.slug(internalUrl)

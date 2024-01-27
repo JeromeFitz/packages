@@ -1,7 +1,7 @@
 import type { ICommit } from './commit.types.js'
 
 type IReleaseRuleProps = {
-  branch: string | null
+  branch: null | string
   code: string
   commit: ICommit
   description: string
@@ -17,4 +17,4 @@ type IReleaseRuleProps = {
 type IReleaseRule = {
   [key in ICommit]?: IReleaseRuleProps
 }
-export type { IReleaseRuleProps, IReleaseRule }
+export type { IReleaseRule, IReleaseRuleProps }

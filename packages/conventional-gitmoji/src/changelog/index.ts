@@ -6,10 +6,10 @@ import writerOpts from './utils/writerOpts.js'
 
 const changelog = {
   conventionalChangelog,
+  gitRawCommitsOpts,
   parserOpts,
   recommendedBumpOpts,
   writerOpts,
-  gitRawCommitsOpts,
 }
 
 export default changelog

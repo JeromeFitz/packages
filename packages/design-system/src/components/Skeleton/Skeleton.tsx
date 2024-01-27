@@ -1,4 +1,4 @@
-import { styled, keyframes } from '../../lib/stitches.config'
+import { keyframes, styled } from '../../lib/stitches.config'
 
 const pulse = keyframes({
   '0%': { opacity: 0 },
@@ -6,15 +6,11 @@ const pulse = keyframes({
 })
 
 const Skeleton = styled('div', {
-  backgroundColor: '$slate4',
-  position: 'relative',
-  overflow: 'hidden',
-
   '&::after': {
-    animationName: `${pulse}`,
-    animationDuration: '750ms',
     animationDirection: 'alternate',
+    animationDuration: '750ms',
     animationIterationCount: 'infinite',
+    animationName: `${pulse}`,
     animationTimingFunction: 'ease-in-out',
     backgroundColor: '$slate6',
     borderRadius: 'inherit',
@@ -25,7 +21,14 @@ const Skeleton = styled('div', {
     right: 0,
     top: 0,
   },
+  backgroundColor: '$slate4',
+  defaultVariants: {
+    variant: 'text',
+  },
 
+  overflow: 'hidden',
+
+  position: 'relative',
   variants: {
     variant: {
       avatar1: {
@@ -58,24 +61,21 @@ const Skeleton = styled('div', {
         height: '$9',
         width: '$9',
       },
+      button: {
+        borderRadius: '$1',
+        height: '$5',
+        width: '$8',
+      },
+      heading: {
+        height: '$3',
+      },
       text: {
         height: '$1',
       },
       title: {
         height: '$5',
       },
-      heading: {
-        height: '$3',
-      },
-      button: {
-        borderRadius: '$1',
-        height: '$5',
-        width: '$8',
-      },
     },
-  },
-  defaultVariants: {
-    variant: 'text',
   },
 })
 

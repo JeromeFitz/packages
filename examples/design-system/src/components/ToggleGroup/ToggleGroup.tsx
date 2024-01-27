@@ -3,17 +3,18 @@ import {
   ToggleGroup,
   ToggleGroupItem,
 } from '@jeromefitz/design-system/src/components'
+
 import React from 'react'
 
 const ToggleGroupDemo = () => (
-  <ToggleGroup type="single" defaultValue="center" aria-label="Text alignment">
-    <ToggleGroupItem value="left" aria-label="Left aligned">
+  <ToggleGroup aria-label="Text alignment" defaultValue="center" type="single">
+    <ToggleGroupItem aria-label="Left aligned" value="left">
       <Icon.TextAlignLeft />
     </ToggleGroupItem>
-    <ToggleGroupItem value="center" aria-label="Center aligned">
+    <ToggleGroupItem aria-label="Center aligned" value="center">
       <Icon.TextAlignCenter />
     </ToggleGroupItem>
-    <ToggleGroupItem value="right" aria-label="Right aligned">
+    <ToggleGroupItem aria-label="Right aligned" value="right">
       <Icon.TextAlignRight />
     </ToggleGroupItem>
   </ToggleGroup>

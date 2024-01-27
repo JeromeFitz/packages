@@ -45,7 +45,8 @@
     "lint": "pnpm run format:prettier --check && pnpm run lint:eslint",
     "lint:eslint": "eslint ./src --ext cjs,js,jsx,mjs,ts,tsx --max-warnings=0",
     "package": "pkg . --output ./.bin/ccommit --targets latest-linux-x64,latest-macos-x64,latest-win-x64",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "semantic-release:dry": "semantic-release --dry-run"
   },
   "dependencies": {
     "ansi-colors": "4.1.3",

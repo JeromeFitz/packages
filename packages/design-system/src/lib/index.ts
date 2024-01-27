@@ -1,3 +1,4 @@
+export { globalStyles } from './globalStyles'
 export {
   config,
   createTheme,
@@ -10,5 +11,4 @@ export {
   styled,
   theme,
 } from './stitches.config'
-export { globalStyles } from './globalStyles'
 export type { CSS, VariantProps } from './stitches.config'

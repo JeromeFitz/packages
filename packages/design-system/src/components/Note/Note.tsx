@@ -7,19 +7,19 @@ const Note = ({ children, label = 'Note:' }) => {
       <Box
         as="div"
         css={{
-          p: '1rem',
-          display: 'flex',
           alignItems: 'center',
-          minHeight: '2rem',
-          borderRadius: '$4',
-          color: '$colors$gray12',
           backgroundColor: '$colors$gray1',
           border: '1px solid $colors$gray12',
+          borderRadius: '$4',
+          boxSizing: 'border-box',
+          color: '$colors$gray12',
+          display: 'flex',
           fontSize: '1rem',
           lineHeight: '1.5',
-          wordBreak: 'break-work',
-          boxSizing: 'border-box',
+          minHeight: '2rem',
           my: '$6',
+          p: '1rem',
+          wordBreak: 'break-work',
         }}
       >
         <span>
@@ -28,8 +28,8 @@ const Note = ({ children, label = 'Note:' }) => {
             <b>
               {/* <Emoji character={`📝️`} margin={true} /> */}
               <Box
-                as="span"
                 aria-label={`emoji memo`}
+                as="span"
                 // @hack(emoji) this breaks the underline on links
                 css={{
                   fontStyle: 'normal',

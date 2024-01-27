@@ -5,15 +5,6 @@ import { Announce } from './Announce'
 const dummyContent = 'Hello'
 
 export default {
-  title: 'Announce',
-  component: Announce,
-  parameters: {
-    docs: {
-      description: {
-        component: 'MDX Content is TBD',
-      },
-    },
-  },
   argTypes: {
     as: {
       control: false,
@@ -25,6 +16,15 @@ export default {
       control: false,
     },
   },
+  component: Announce,
+  parameters: {
+    docs: {
+      description: {
+        component: 'MDX Content is TBD',
+      },
+    },
+  },
+  title: 'Announce',
 } as Meta<typeof Announce>
 
 const Template: StoryFn<typeof Announce> = ({ children, ...args }) => (
@@ -32,9 +32,9 @@ const Template: StoryFn<typeof Announce> = ({ children, ...args }) => (
 )
 
 export const Default = {
-  render: Template,
-
   args: {
     children: dummyContent,
   },
+
+  render: Template,
 }

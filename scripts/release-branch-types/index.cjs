@@ -17,8 +17,8 @@ const releaseBranchTypes = {
   ci,
   feature,
   fix,
-  release,
   refactor,
+  release,
 }
 
 module.exports = releaseBranchTypes

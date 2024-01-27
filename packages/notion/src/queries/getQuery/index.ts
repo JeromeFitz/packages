@@ -1,10 +1,12 @@
 import { avoidRateLimit, isObjectEmpty } from '@jeromefitz/utils'
+
 import _map from 'lodash/map.js'
 import _omit from 'lodash/omit.js'
 import _size from 'lodash/size.js'
 
-import { PROPERTIES } from '../../constants/index.js'
 import type { SortItem } from '../../schema/index.js'
+
+import { PROPERTIES } from '../../constants/index.js'
 import dataNormalizedResults from '../../utils/dataNormalizedResults/index.js'
 
 // const useCache = process.env.NEXT_PUBLIC__NOTION_USE_CACHE
@@ -12,12 +14,12 @@ import dataNormalizedResults from '../../utils/dataNormalizedResults/index.js'
 
 const SORTS: SortItem[] = [
   {
-    property: PROPERTIES.slug.notion,
     direction: 'ascending',
+    property: PROPERTIES.slug.notion,
   },
 ]
 
-const getQuery = async ({ config, reqQuery, notionDatabasesQuery }) => {
+const getQuery = async ({ config, notionDatabasesQuery, reqQuery }) => {
   const { NOTION } = config
   const { databaseType } = reqQuery
   const routeType = databaseType
@@ -83,7 +85,7 @@ const getQuery = async ({ config, reqQuery, notionDatabasesQuery }) => {
   if (!hasError && (!data || isObjectEmpty(data))) {
     await avoidRateLimit(0)
     // @todo(types) any
-    let contentData: Pick<any, string | number | symbol>
+    let contentData: Pick<any, number | string | symbol>
     if (!!filter) {
       // @hack(notion)-do-not-return'
       if (filter?.or.length === 0) {

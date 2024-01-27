@@ -1,18 +1,19 @@
 /**
  * https://www.radix-ui.com/primitives/docs/components/navigation-menu
  */
-import { forwardRef } from 'react'
 import type { ComponentProps, ElementRef } from 'react'
+
+import { forwardRef } from 'react'
 
 import type { CSS } from '../../lib/stitches.config'
 
 import {
-  NavigationMenuTrigger,
+  NavigationMenuArrow,
   NavigationMenuCaret,
+  NavigationMenuIndicator,
   NavigationMenuListItemFocus,
   NavigationMenuListItemSelect,
-  NavigationMenuIndicator,
-  NavigationMenuArrow,
+  NavigationMenuTrigger,
 } from './NavigationMenu.styles'
 
 /**
@@ -68,8 +69,8 @@ const Selected = forwardRef((props: any, forwardedRef) => (
 ))
 
 export {
-  NavigationMenuTriggerWithCaret,
-  NavigationMenuIndicatorWithArrow,
   Focused,
+  NavigationMenuIndicatorWithArrow,
+  NavigationMenuTriggerWithCaret,
   Selected,
 }

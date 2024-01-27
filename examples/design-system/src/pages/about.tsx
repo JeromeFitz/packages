@@ -9,14 +9,15 @@ import {
   Text,
   VisuallyHidden,
 } from '@jeromefitz/design-system/src/components'
+
 import NextLink from 'next/link'
 
 function Home({}) {
   return (
     <>
       <PageHeading
-        title="About"
         description="Sample page for menu routing testing."
+        title="About"
       />
       <VisuallyHidden>
         <Text>Not visible.</Text>
@@ -29,10 +30,10 @@ function Home({}) {
       <Separator decorative my="4" size="full" />
       <Icon.Return
         style={{
-          marginTop: '3px',
-          marginRight: '10px',
-          width: '1rem',
           height: '1rem',
+          marginRight: '10px',
+          marginTop: '3px',
+          width: '1rem',
         }}
       />
       <Icon.Map />
@@ -41,10 +42,10 @@ function Home({}) {
       <Separator decorative my="4" size="full" />
       <Box
         as="section"
-        id="blockquote"
         css={{
           py: '$4',
         }}
+        id="blockquote"
       >
         {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
         {/* @ts-ignore */}

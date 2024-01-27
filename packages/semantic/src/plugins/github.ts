@@ -23,9 +23,9 @@ const github = (options: GithubPluginOptions = {}): PluginSpec => {
   return [
     '@semantic-release/github',
     {
-      assets: githubAssets,
       // @note(github) ensure someone has to override to put these on, haha
       addReleases: false,
+      assets: githubAssets,
       labels: false,
       releasedLabels: false,
       successComment: false,

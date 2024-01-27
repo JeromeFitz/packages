@@ -2,7 +2,6 @@ import Fuse from 'fuse.js'
 // import Fuse from 'fuse.js/dist/fuse.esm.js'
 
 const options = {
-  threshold: 0.4,
   keys: [
     {
       name: 'type',
@@ -13,6 +12,7 @@ const options = {
       weight: 0.56,
     },
   ],
+  threshold: 0.4,
 }
 
 const filterGitmojis = (input: string, gitmojis: any) => {

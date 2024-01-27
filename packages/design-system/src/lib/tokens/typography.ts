@@ -73,4 +73,4 @@ const fontWeights = {
   9: '900',
 }
 
-export { fonts, fontSizes, fontWeights }
+export { fontSizes, fontWeights, fonts }

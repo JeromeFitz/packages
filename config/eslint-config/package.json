@@ -24,7 +24,8 @@
     "format:prettier": "prettier \"./src/**/*.{cjs,js,jsx,mjs,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\" --ignore-unknown --log-level warn",
     "lint": "pnpm run format:prettier --check && pnpm run lint:eslint",
     "lint:eslint": "eslint ./src --ext cjs,js,jsx,mjs,ts,tsx --max-warnings=0",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "semantic-release:dry": "semantic-release --dry-run"
   },
   "dependencies": {
     "@babel/eslint-parser": "7.23.9",
@@ -34,18 +35,17 @@
     "eslint-config-next": "14.1.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-config-turbo": "1.11.3",
-    "eslint-plugin-import": "2.29.1",
     "eslint-plugin-jest": "27.6.3",
     "eslint-plugin-jest-dom": "5.1.0",
     "eslint-plugin-jsx-a11y": "6.8.0",
+    "eslint-plugin-perfectionist": "2.5.0",
     "eslint-plugin-playwright": "0.22.1",
     "eslint-plugin-react": "7.33.2",
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-storybook": "0.6.15",
     "eslint-plugin-tailwindcss": "3.14.1",
     "eslint-plugin-testing-library": "6.2.0",
-    "eslint-plugin-turbo": "1.11.3",
-    "eslint-plugin-typescript-sort-keys": "3.1.0"
+    "eslint-plugin-turbo": "1.11.3"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"

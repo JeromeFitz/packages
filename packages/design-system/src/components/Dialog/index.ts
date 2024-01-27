@@ -1,7 +1,7 @@
 export {
   Dialog,
-  DialogTrigger,
   DialogClose,
-  DialogTitle,
   DialogDescription,
+  DialogTitle,
+  DialogTrigger,
 } from './Dialog'

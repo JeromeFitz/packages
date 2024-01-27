@@ -1,14 +1,14 @@
+export { CommandMenu, CommandMenuItem } from './CommandMenu'
 export {
   Command,
-  CommandInput,
-  CommandTopShine,
   CommandBadge,
-  CommandLoader,
-  CommandList,
-  CommandSeparator,
-  CommandGroup,
   CommandEmpty,
-  CommandShortCuts,
+  CommandGroup,
+  CommandInput,
   CommandItem,
+  CommandList,
+  CommandLoader,
+  CommandSeparator,
+  CommandShortCuts,
+  CommandTopShine,
 } from './CommandMenu.styles'
-export { CommandMenu, CommandMenuItem } from './CommandMenu'

@@ -1,5 +1,6 @@
-import { createStitches } from '@stitches/react'
 import type { CSS as StitchesCSS } from '@stitches/react'
+
+import { createStitches } from '@stitches/react'
 
 import themes from './themes'
 // import { grid } from './tokens/layout'
@@ -9,7 +10,7 @@ import { radii } from './tokens/radii'
 import { shadows } from './tokens/shadows'
 import { sizes } from './tokens/sizes'
 import { spaces as space } from './tokens/spaces'
-import { fonts, fontSizes, fontWeights } from './tokens/typography'
+import { fontSizes, fontWeights, fonts } from './tokens/typography'
 import { utils } from './tokens/utils'
 import { zIndices } from './tokens/z-indices'
 
@@ -29,12 +30,15 @@ const {
 } = createStitches({
   media,
   theme: {
-    borderWidths: {},
     borderStyles: {},
+    borderWidths: {},
     colors,
-    fonts,
     fontSizes,
     fontWeights,
+    fonts,
+    foo: {
+      bar: 'baz',
+    },
     letterSpacings: {},
     lineHeights: {},
     radii,
@@ -43,9 +47,6 @@ const {
     space,
     transitions: {},
     zIndices,
-    foo: {
-      bar: 'baz',
-    },
   },
   utils,
 })

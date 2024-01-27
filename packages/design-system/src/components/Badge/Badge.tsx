@@ -1,106 +1,38 @@
 import { styled } from '../../lib/stitches.config'
 
 const Badge = styled('span', {
-  // @reset
-  alignItems: 'center',
-  appearance: 'none',
-  borderWidth: '0',
-  boxSizing: 'border-box',
-  display: 'inline-flex',
-  flexShrink: 0,
-  fontFamily: 'inherit',
-  justifyContent: 'center',
-  lineHeight: '1',
-  verticalAlign: 'middle',
-  outline: 'none',
-  padding: '0',
-  textDecoration: 'none',
-  userSelect: 'none',
-  WebkitTapHighlightColor: 'rgba(0,0,0,0)',
-  '&:disabled': {
-    backgroundColor: '$slate3',
-    pointerEvents: 'none',
-    color: '$slate8',
+  '&::after': {
+    boxSizing: 'border-box',
+    content: '""',
   },
   '&::before': {
     boxSizing: 'border-box',
     content: '""',
   },
-  '&::after': {
-    boxSizing: 'border-box',
-    content: '""',
+  '&:disabled': {
+    backgroundColor: '$slate3',
+    color: '$slate8',
+    pointerEvents: 'none',
   },
-
-  // @custom
-  backgroundColor: '$colors$brand3',
-  color: '$colors$brand11',
   '&:focus': {
     boxShadow: 'inset 0 0 0 1px $colors$brand8, 0 0 0 1px $colors$brand8',
   },
-  borderRadius: '$pill',
-  whiteSpace: 'nowrap',
-  fontVariantNumeric: 'tabular-nums',
-  fontVariationSettings: '"wght" $fontWeights$6',
-  fontWeight: '$6',
-
   '@media (prefers-reduced-motion: no-preference)': {
     transition: 'background 300ms ease',
   },
-
-  variants: {
-    size: {
-      '1': {
-        height: '$5',
-        px: '$3',
-        fontSize: '$2',
-      },
-      '2': {
-        height: '$6',
-        px: '$3',
-        fontSize: '$3',
-      },
-    },
-    variant: {
-      red: {
-        backgroundColor: '$red4',
-        color: '$red11',
-      },
-      brand: {
-        backgroundColor: '$brand4',
-        color: '$brand11',
-      },
-      blue: {
-        backgroundColor: '$blue4',
-        color: '$blue11',
-      },
-      green: {
-        backgroundColor: '$green4',
-        color: '$green11',
-      },
-      orange: {
-        backgroundColor: '$orange4',
-        color: '$orange11',
-      },
-      gray: {
-        backgroundColor: '$gray4',
-        color: '$gray11',
-      },
-    },
-    interactive: {
-      true: {},
-    },
-  },
-
+  WebkitTapHighlightColor: 'rgba(0,0,0,0)',
+  // @reset
+  alignItems: 'center',
+  appearance: 'none',
+  // @custom
+  backgroundColor: '$colors$brand3',
+  borderRadius: '$pill',
+  borderWidth: '0',
+  boxSizing: 'border-box',
+  color: '$colors$brand11',
   compoundVariants: [
     {
-      interactive: true,
-      variant: 'red',
       css: {
-        '@hover': {
-          '&:hover': {
-            backgroundColor: '$red5',
-          },
-        },
         '&:active': {
           backgroundColor: '$red6',
         },
@@ -108,17 +40,17 @@ const Badge = styled('span', {
           {
             backgroundColor: '$red6',
           },
-      },
-    },
-    {
-      interactive: true,
-      variant: 'brand',
-      css: {
         '@hover': {
           '&:hover': {
-            backgroundColor: '$brand5',
+            backgroundColor: '$red5',
           },
         },
+      },
+      interactive: true,
+      variant: 'red',
+    },
+    {
+      css: {
         '&:active': {
           backgroundColor: '$brand6',
         },
@@ -126,17 +58,17 @@ const Badge = styled('span', {
           {
             backgroundColor: '$brand6',
           },
-      },
-    },
-    {
-      interactive: true,
-      variant: 'blue',
-      css: {
         '@hover': {
           '&:hover': {
-            backgroundColor: '$blue5',
+            backgroundColor: '$brand5',
           },
         },
+      },
+      interactive: true,
+      variant: 'brand',
+    },
+    {
+      css: {
         '&:active': {
           backgroundColor: '$blue6',
         },
@@ -144,17 +76,17 @@ const Badge = styled('span', {
           {
             backgroundColor: '$blue6',
           },
-      },
-    },
-    {
-      interactive: true,
-      variant: 'green',
-      css: {
         '@hover': {
           '&:hover': {
-            backgroundColor: '$green5',
+            backgroundColor: '$blue5',
           },
         },
+      },
+      interactive: true,
+      variant: 'blue',
+    },
+    {
+      css: {
         '&:active': {
           backgroundColor: '$green6',
         },
@@ -162,19 +94,18 @@ const Badge = styled('span', {
           {
             backgroundColor: '$green6',
           },
+        '@hover': {
+          '&:hover': {
+            backgroundColor: '$green5',
+          },
+        },
       },
+      interactive: true,
+      variant: 'green',
     },
 
     {
-      interactive: true,
-      variant: 'orange',
       css: {
-        '@hover': {
-          '&:hover': {
-            backgroundColor: '$orange5',
-            // color: '$orange12',
-          },
-        },
         '&:active': {
           backgroundColor: '$orange6',
           // color: '$orange12',
@@ -184,13 +115,82 @@ const Badge = styled('span', {
             backgroundColor: '$orange6',
             // color: '$orange12',
           },
+        '@hover': {
+          '&:hover': {
+            backgroundColor: '$orange5',
+            // color: '$orange12',
+          },
+        },
       },
+      interactive: true,
+      variant: 'orange',
     },
   ],
   defaultVariants: {
-    size: '1',
     interactive: false,
+    size: '1',
   },
+  display: 'inline-flex',
+  flexShrink: 0,
+  fontFamily: 'inherit',
+
+  fontVariantNumeric: 'tabular-nums',
+  fontVariationSettings: '"wght" $fontWeights$6',
+  fontWeight: '$6',
+  justifyContent: 'center',
+  lineHeight: '1',
+  outline: 'none',
+  padding: '0',
+  textDecoration: 'none',
+
+  userSelect: 'none',
+
+  variants: {
+    interactive: {
+      true: {},
+    },
+    size: {
+      '1': {
+        fontSize: '$2',
+        height: '$5',
+        px: '$3',
+      },
+      '2': {
+        fontSize: '$3',
+        height: '$6',
+        px: '$3',
+      },
+    },
+    variant: {
+      blue: {
+        backgroundColor: '$blue4',
+        color: '$blue11',
+      },
+      brand: {
+        backgroundColor: '$brand4',
+        color: '$brand11',
+      },
+      gray: {
+        backgroundColor: '$gray4',
+        color: '$gray11',
+      },
+      green: {
+        backgroundColor: '$green4',
+        color: '$green11',
+      },
+      orange: {
+        backgroundColor: '$orange4',
+        color: '$orange11',
+      },
+      red: {
+        backgroundColor: '$red4',
+        color: '$red11',
+      },
+    },
+  },
+
+  verticalAlign: 'middle',
+  whiteSpace: 'nowrap',
 })
 
 export { Badge }

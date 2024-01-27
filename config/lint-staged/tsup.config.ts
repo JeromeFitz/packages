@@ -1,6 +1,7 @@
 // import isCI from 'is-ci'
-import { defineConfig } from 'tsup'
 import type { Format, Options } from 'tsup'
+
+import { defineConfig } from 'tsup'
 
 import { config as _config } from '../../tsup.config.js'
 
@@ -10,8 +11,8 @@ const format: Format[] = ['esm']
 const config: Options = {
   ..._config,
   dts: false,
-  format,
   entry,
+  format,
 }
 
 export default defineConfig({

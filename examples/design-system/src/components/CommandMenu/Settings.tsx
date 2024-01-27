@@ -5,6 +5,7 @@ import {
   Toaster,
 } from '@jeromefitz/design-system/src/components'
 import { darkTheme } from '@jeromefitz/design-system/src/lib/stitches.config'
+
 import { useTheme } from 'next-themes'
 import { useCallback, useRef } from 'react'
 
@@ -13,8 +14,8 @@ function Settings() {
   const handleToastInfo = (path) => {
     if (toaster && toaster.current) {
       toaster.current.createToast({
-        duration: 2000,
         description: `${path}`,
+        duration: 2000,
         title: `Route Change:`,
         type: 'info',
       })

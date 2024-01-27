@@ -51,7 +51,7 @@ import { DATA_TYPES } from '../../constants/index.js'
  *     /podcasts/[slug]
  *
  */
-const getDataType = ({ isPage, isIndex, hasMeta }) => {
+const getDataType = ({ hasMeta, isIndex, isPage }) => {
   if (isPage) return DATA_TYPES.SLUG
   if (isIndex && !hasMeta) return DATA_TYPES.LISTING
   if (isIndex && hasMeta) return DATA_TYPES.LISTING_BY_DATE

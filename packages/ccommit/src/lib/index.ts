@@ -38,12 +38,6 @@ const FORMAT = {
 }
 
 const LOGS = {
-  TYPES: {
-    ERROR: 'error',
-    INFO: 'info',
-    SUCCESS: 'success',
-    WARNING: 'warning',
-  },
   MESSAGES: {
     COMMAND_LINE_WITHOUT_REQUIRED:
       '❯ Command line option requires both: --title, --type',
@@ -60,6 +54,12 @@ const LOGS = {
       '❯ There are no staged files for git. Did you mean to do a dry-run (-n)?',
     TYPE_INCORRECT: '❯ There is no gitmoji/type associated with: {REPLACE}',
   },
+  TYPES: {
+    ERROR: 'error',
+    INFO: 'info',
+    SUCCESS: 'success',
+    WARNING: 'warning',
+  },
 }
 
 const OPTIONS = Object.freeze({
@@ -71,22 +71,22 @@ const OPTIONS = Object.freeze({
 })
 
 const SCOPE = {
-  MIN: 3,
   MAX: 12,
+  MIN: 3,
 }
 
 const SEMVER = {
   MAJOR: 'major',
   MINOR: 'minor',
-  PATCH: 'patch',
   NULL: 'null',
+  PATCH: 'patch',
 }
 
 const TITLE = {
-  MIN: 3,
-  MIN_SWAG: 15,
   MAX: 48,
   MAX_SWAG: 40,
+  MIN: 3,
+  MIN_SWAG: 15,
 }
 
 const TYPE = {

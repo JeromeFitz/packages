@@ -2,7 +2,7 @@
  * https://www.radix-ui.com/primitives/docs/components/alert-dialog
  */
 import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog'
-import { styled, keyframes } from '@stitches/react'
+import { keyframes, styled } from '@stitches/react'
 
 const overlayShow = keyframes({
   '0%': { opacity: 0 },
@@ -15,12 +15,12 @@ const contentShow = keyframes({
 })
 
 const StyledOverlay = styled(AlertDialogPrimitive.Overlay, {
-  backgroundColor: '$colors$blackA9',
-  position: 'fixed',
-  inset: 0,
   '@media (prefers-reduced-motion: no-preference)': {
     animation: `${overlayShow} 150ms cubic-bezier(0.16, 1, 0.3, 1)`,
   },
+  backgroundColor: '$colors$blackA9',
+  inset: 0,
+  position: 'fixed',
 })
 
 function Root({ children, ...props }) {
@@ -33,68 +33,68 @@ function Root({ children, ...props }) {
 }
 
 const StyledContent = styled(AlertDialogPrimitive.Content, {
+  '&:focus': { outline: 'none' },
+  '@media (prefers-reduced-motion: no-preference)': {
+    animation: `${contentShow} 150ms cubic-bezier(0.16, 1, 0.3, 1)`,
+  },
   backgroundColor: 'white',
   borderRadius: 6,
   boxShadow:
     'hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px',
+  left: '50%',
+  maxHeight: '85vh',
+  maxWidth: '500px',
+  padding: 25,
   position: 'fixed',
   top: '50%',
-  left: '50%',
   transform: 'translate(-50%, -50%)',
   width: '90vw',
-  maxWidth: '500px',
-  maxHeight: '85vh',
-  padding: 25,
-  '@media (prefers-reduced-motion: no-preference)': {
-    animation: `${contentShow} 150ms cubic-bezier(0.16, 1, 0.3, 1)`,
-  },
-  '&:focus': { outline: 'none' },
 })
 
 const StyledTitle = styled(AlertDialogPrimitive.Title, {
-  margin: 0,
   color: '$colores$slate12',
   fontSize: '$3',
   fontVariationSettings: '"wght" $fontWeights$5',
   fontWeight: '$fontWeights$5',
+  margin: 0,
 })
 
 const StyledDescription = styled(AlertDialogPrimitive.Description, {
-  marginBottom: 20,
   color: '$colores$slate11',
   fontSize: '$3',
   lineHeight: 1.5,
+  marginBottom: 20,
 })
 
 const Flex = styled('div', { display: 'flex' })
 
 const Button = styled('button', {
-  all: 'unset',
-  display: 'inline-flex',
   alignItems: 'center',
-  justifyContent: 'center',
+  all: 'unset',
   borderRadius: 4,
-  padding: '0 15px',
+  defaultVariants: {
+    variant: 'default',
+  },
+  display: 'inline-flex',
   fontSize: '$3',
-  lineHeight: 1,
   fontVariationSettings: '"wght" $fontWeights$5',
   fontWeight: '$fontWeights$5',
   height: 35,
+  justifyContent: 'center',
+  lineHeight: 1,
+
+  padding: '0 15px',
 
   variants: {
     variant: {
       default: {
-        backgroundColor: 'white',
-        color: '$colors$brand11',
-        boxShadow: `0 2px 10px $colors$blackA7`,
-        '&:hover': { backgroundColor: '$colors$slate3' },
         '&:focus': { boxShadow: `0 0 0 2px black` },
+        '&:hover': { backgroundColor: '$colors$slate3' },
+        backgroundColor: 'white',
+        boxShadow: `0 2px 10px $colors$blackA7`,
+        color: '$colors$brand11',
       },
     },
-  },
-
-  defaultVariants: {
-    variant: 'default',
   },
 })
 
@@ -110,7 +110,7 @@ const AlertDialogDemo = ({ dialogText }) => (
       </AlertDialogDescription>
       <Flex css={{ justifyContent: 'flex-end' }}>
         <AlertDialogCancel asChild>
-          <Button variant="default" css={{ marginRight: 25 }}>
+          <Button css={{ marginRight: 25 }} variant="default">
             {dialogText?.dialogCancel}
           </Button>
         </AlertDialogCancel>
@@ -132,11 +132,11 @@ const AlertDialogCancel = AlertDialogPrimitive.Cancel
 
 export {
   AlertDialog,
-  AlertDialogTrigger,
-  AlertDialogContent,
-  AlertDialogTitle,
-  AlertDialogDescription,
   AlertDialogAction,
   AlertDialogCancel,
+  AlertDialogContent,
   AlertDialogDemo,
+  AlertDialogDescription,
+  AlertDialogTitle,
+  AlertDialogTrigger,
 }

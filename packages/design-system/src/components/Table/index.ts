@@ -1,1 +1,1 @@
-export { TableCaption, Tbody, Tfoot, Tr, Th, Td, Thead, Table } from './Table'
+export { Table, TableCaption, Tbody, Td, Tfoot, Th, Thead, Tr } from './Table'

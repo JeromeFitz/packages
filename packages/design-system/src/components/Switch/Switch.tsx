@@ -1,11 +1,13 @@
 /**
  * https://www.radix-ui.com/primitives/docs/components/switch
  */
-import { forwardRef } from 'react'
 import type { ElementRef } from 'react'
 
-import { StyledThumb, StyledSwitch } from './Switch.styles'
+import { forwardRef } from 'react'
+
 import type { SwitchProps } from './Switch.types'
+
+import { StyledSwitch, StyledThumb } from './Switch.styles'
 
 const Switch = forwardRef<ElementRef<typeof StyledSwitch>, SwitchProps>(
   (props, forwardedRef) => (

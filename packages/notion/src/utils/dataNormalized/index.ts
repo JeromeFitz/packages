@@ -8,7 +8,7 @@ import { getTypes } from '../../utils/index.js'
  *
  * Refactor to remove `config` as a parameter, or move this to `queries`
  */
-const dataNormalized = ({ config, data, pathVariables, pageId }) => {
+const dataNormalized = ({ config, data, pageId, pathVariables }) => {
   const { NOTION } = config
   const DATA_NORMALIZED = {}
   if (!data?.properties) return DATA_NORMALIZED

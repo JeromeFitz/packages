@@ -12,7 +12,7 @@ import _isPlainObject from 'lodash/isPlainObject.js'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 const getChangelogConfig = async (pluginConfig, context) => {
-  const { preset, config, parserOpts, writerOpts, presetConfig } = pluginConfig
+  const { config, parserOpts, preset, presetConfig, writerOpts } = pluginConfig
   const { cwd } = context
 
   let loadedConfig

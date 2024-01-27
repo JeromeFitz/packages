@@ -3,13 +3,13 @@
  */
 
 type RewritesProps = {
-  branch?: string | null
+  branch?: null | string
   from: string
   semver?: 'breaking' | 'feature' | 'fix' | 'major' | 'minor' | 'patch' | null
   to: string
 }
 
-/* eslint-disable sort-keys */
+/* eslint-disable perfectionist/sort-objects */
 const rewrites: RewritesProps[] = [
   { from: 'art', to: 'style' },
   { from: 'zap', to: 'perf' },

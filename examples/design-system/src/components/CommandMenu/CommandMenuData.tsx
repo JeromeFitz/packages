@@ -1,28 +1,31 @@
 import {
   Box,
   Command,
-  CommandInput,
-  CommandTopShine,
   CommandBadge,
-  CommandLoader,
-  CommandList,
+  CommandEmpty,
   // CommandSeparator,
   CommandGroup,
-  CommandEmpty,
-  // CommandShortCuts,
+  CommandInput,
+  CommandList,
+  CommandLoader,
   // CommandItem,
   CommandMenuItem,
+  // CommandShortCuts,
+  CommandTopShine,
   Flex,
   Icon,
 } from '@jeromefitz/design-system/src/components'
+
+import type { KeyboardEvent } from 'react'
+
 // import { useCommandState as useCmdk } from 'cmdk'
 import { useCallback, useRef, useState } from 'react'
-import type { KeyboardEvent } from 'react'
 
 import { Settings } from './Settings'
 import { Shows } from './Shows'
 
 function CommandMenuData() {
+  // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
   const ref = useRef<HTMLDivElement | null>(null)
   const [inputValue, setInputValue] = useState('')
 
@@ -54,14 +57,14 @@ function CommandMenuData() {
   return (
     <Box
       css={{
-        margin: '0 auto',
-        width: '100%',
-        maxWidth: '100%',
-        padding: '0',
         '@bp1': {
           maxWidth: '640px',
           // padding: '0 $3',
         },
+        margin: '0 auto',
+        maxWidth: '100%',
+        padding: '0',
+        width: '100%',
       }}
     >
       <Command
@@ -89,17 +92,17 @@ function CommandMenuData() {
         <CommandTopShine cmdk-top-shine="" />
         <div>
           {pages.map((p) => (
-            <CommandBadge key={p} cmdk-badge="">
+            <CommandBadge cmdk-badge="" key={p}>
               {p}
             </CommandBadge>
           ))}
         </div>
         <CommandInput
           autoFocus
-          placeholder="Type a command or search..."
           onValueChange={(value) => {
             setInputValue(value)
           }}
+          placeholder="Type a command or search..."
         />
         <CommandLoader cmdk-loader="" />
         <CommandList>

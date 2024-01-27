@@ -7,6 +7,7 @@ type ButtonMarketingProps = {
   disabled?: boolean
   href?: string
   icon?: ComponentType<any>
+  // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
 } & ComponentProps<typeof StyledButton>
 
 export type { ButtonMarketingProps }

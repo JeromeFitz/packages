@@ -3,20 +3,21 @@ import {
   Flex,
   Icon,
   Select,
+  SelectContent,
+  SelectGroup,
+  SelectIcon,
+  SelectItem,
+  SelectItemIndicator,
+  SelectItemText,
+  SelectLabel,
+  SelectScrollDownButton,
+  SelectScrollUpButton,
+  SelectSeparator,
   SelectTrigger,
   SelectValue,
-  SelectIcon,
-  SelectContent,
   SelectViewport,
-  SelectGroup,
-  SelectItem,
-  SelectItemText,
-  SelectItemIndicator,
-  SelectLabel,
-  SelectSeparator,
-  SelectScrollUpButton,
-  SelectScrollDownButton,
 } from '@jeromefitz/design-system/src/components'
+
 import { useState } from 'react'
 
 const defaultValue = 'blueberry'
@@ -42,7 +43,7 @@ const SelectDemo = () => {
               <SelectLabel>Theme</SelectLabel>
               <SelectItem value="light">
                 <SelectItemText>
-                  <Flex direction="row" align="center" gap="2">
+                  <Flex align="center" direction="row" gap="2">
                     <Icon.Sun />
                     <Box as="span">Light</Box>
                   </Flex>
@@ -53,7 +54,7 @@ const SelectDemo = () => {
               </SelectItem>
               <SelectItem value="dark">
                 <SelectItemText>
-                  <Flex direction="row" align="center" gap="2">
+                  <Flex align="center" direction="row" gap="2">
                     <Icon.Moon />
                     <Box as="span">Dark</Box>
                   </Flex>
@@ -64,7 +65,7 @@ const SelectDemo = () => {
               </SelectItem>
               <SelectItem value="system">
                 <SelectItemText>
-                  <Flex direction="row" align="center" gap="2">
+                  <Flex align="center" direction="row" gap="2">
                     <Icon.Desktop />
                     <Box as="span">System</Box>
                   </Flex>
@@ -124,7 +125,7 @@ const SelectDemo = () => {
                   <Icon.Check />
                 </SelectItemIndicator>
               </SelectItem>
-              <SelectItem value="carrot" disabled>
+              <SelectItem disabled value="carrot">
                 <SelectItemText>Carrot</SelectItemText>
                 <SelectItemIndicator>
                   <Icon.Check />

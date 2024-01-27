@@ -1,23 +1,23 @@
+import type { KeyboardEvent } from 'react'
+
 import { Meta, StoryFn } from '@storybook/react'
 // import { useCommandState as useCmdk } from 'cmdk'
 import { useEffect, useRef, useState } from 'react'
-import type { KeyboardEvent } from 'react'
 
 import shows from '../../../../../examples/design-system/src/components/CommandMenu/data/shows.json'
 import useDelayedRender from '../../hooks/useDelayedRender'
 import { Box, Flex, Icon } from '../index'
-
 import { CommandMenu, CommandMenuItem } from './CommandMenu'
 import {
   Command,
-  CommandInput,
-  CommandTopShine,
   CommandBadge,
-  CommandLoader,
-  CommandList,
+  CommandEmpty,
   // CommandSeparator,
   CommandGroup,
-  CommandEmpty,
+  CommandInput,
+  CommandList,
+  CommandLoader,
+  CommandTopShine,
   // CommandShortCuts,
   // CommandItem,
 } from './CommandMenu.styles'
@@ -25,7 +25,12 @@ import {
 // @ts-ignore
 
 export default {
-  title: 'CommandMenu',
+  argTypes: {
+    // open: {
+    //   options: [true, false],
+    //   control: { type: 'radio' },
+    // },
+  },
   component: CommandMenu,
   parameters: {
     docs: {
@@ -34,12 +39,7 @@ export default {
       },
     },
   },
-  argTypes: {
-    // open: {
-    //   options: [true, false],
-    //   control: { type: 'radio' },
-    // },
-  },
+  title: 'CommandMenu',
 } as Meta<typeof CommandMenu>
 
 function Settings() {
@@ -144,14 +144,14 @@ function CommandMenuData() {
   return (
     <Box
       css={{
-        margin: '0 auto',
-        width: '100%',
-        maxWidth: '100%',
-        padding: '0',
         '@bp1': {
           maxWidth: '640px',
           // padding: '0 $3',
         },
+        margin: '0 auto',
+        maxWidth: '100%',
+        padding: '0',
+        width: '100%',
       }}
     >
       <Command
@@ -186,6 +186,7 @@ function CommandMenuData() {
             return (
               <CommandBadge
                 as={isLink ? 'a' : 'div'}
+                cmdk-badge=""
                 css={{
                   '@hover': {
                     '&:hover': {
@@ -194,7 +195,6 @@ function CommandMenuData() {
                   },
                 }}
                 key={p}
-                cmdk-badge=""
                 onClick={() => {
                   isLink && popPage()
                 }}
@@ -206,10 +206,10 @@ function CommandMenuData() {
         </div>
         <CommandInput
           autoFocus
-          placeholder="Type a command or search..."
           onValueChange={(value) => {
             setInputValue(value)
           }}
+          placeholder="Type a command or search..."
         />
         <CommandLoader cmdk-loader="" />
         <CommandList>
@@ -315,13 +315,13 @@ const Template: StoryFn<typeof CommandMenu> = ({
   })
 
   return (
-    <CommandMenu open={mounted} onOpenChange={setOpen}>
+    <CommandMenu onOpenChange={setOpen} open={mounted}>
       {children()}
     </CommandMenu>
   )
 }
 
 export const Default = {
-  render: Template,
   args: {},
+  render: Template,
 }

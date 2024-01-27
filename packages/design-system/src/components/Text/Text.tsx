@@ -1,15 +1,58 @@
 import { styled } from '../../lib/stitches.config'
 
 const Text = styled('span', {
+  compoundVariants: [
+    {
+      css: {
+        background:
+          'linear-gradient(to right, $typefacePrimary, $typefaceSecondary)',
+      },
+      gradient: 'true',
+      variant: 'primary',
+    },
+    {
+      css: {
+        background:
+          'linear-gradient(to right, $typefaceSecondary, $typefacePrimary)',
+      },
+      gradient: 'true',
+      variant: 'secondary',
+    },
+    {
+      css: {
+        background: 'linear-gradient(to right, $typefaceTertiary, $typefacePrimary)',
+      },
+      gradient: 'true',
+      variant: 'tertiary',
+    },
+    {
+      css: {
+        background: 'linear-gradient(to right, $hiContrast, $typefacePrimary)',
+      },
+      gradient: 'true',
+      variant: 'contrast',
+    },
+  ],
+  defaultVariants: {
+    size: '3',
+    variant: 'primary',
+    weight: '4',
+  },
+  // fontVariantNumeric: 'tabular-nums',
+  display: 'block',
+  fontVariationSettings: '"wght" $fontWeights$4',
+  fontWeight: '$4',
+
   // @reset
   lineHeight: '1.2',
   margin: '0',
-  fontVariationSettings: '"wght" $fontWeights$4',
-  fontWeight: '$4',
-  // fontVariantNumeric: 'tabular-nums',
-  display: 'block',
-
   variants: {
+    gradient: {
+      true: {
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
+      },
+    },
     size: {
       '1': {
         fontSize: '$1',
@@ -48,15 +91,6 @@ const Text = styled('span', {
       },
     },
     variant: {
-      primary: {
-        color: '$typefacePrimary',
-      },
-      secondary: {
-        color: '$typefaceSecondary',
-      },
-      tertiary: {
-        color: '$typefaceTertiary',
-      },
       contrast: {
         color: '$hiContrast',
       },
@@ -69,20 +103,23 @@ const Text = styled('span', {
       note: {
         color: '$typefacePrimary',
       },
+      primary: {
+        color: '$typefacePrimary',
+      },
       quote: {
         color: '$quoteText',
+      },
+      secondary: {
+        color: '$typefaceSecondary',
       },
       success: {
         color: '$successText',
       },
+      tertiary: {
+        color: '$typefaceTertiary',
+      },
       warning: {
         color: '$warningText',
-      },
-    },
-    gradient: {
-      true: {
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
       },
     },
     weight: {
@@ -105,43 +142,6 @@ const Text = styled('span', {
         fontWeight: '$9',
       },
     },
-  },
-  compoundVariants: [
-    {
-      variant: 'primary',
-      gradient: 'true',
-      css: {
-        background:
-          'linear-gradient(to right, $typefacePrimary, $typefaceSecondary)',
-      },
-    },
-    {
-      variant: 'secondary',
-      gradient: 'true',
-      css: {
-        background:
-          'linear-gradient(to right, $typefaceSecondary, $typefacePrimary)',
-      },
-    },
-    {
-      variant: 'tertiary',
-      gradient: 'true',
-      css: {
-        background: 'linear-gradient(to right, $typefaceTertiary, $typefacePrimary)',
-      },
-    },
-    {
-      variant: 'contrast',
-      gradient: 'true',
-      css: {
-        background: 'linear-gradient(to right, $hiContrast, $typefacePrimary)',
-      },
-    },
-  ],
-  defaultVariants: {
-    size: '3',
-    variant: 'primary',
-    weight: '4',
   },
 })
 

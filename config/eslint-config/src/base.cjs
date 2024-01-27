@@ -1,3 +1,7 @@
+// const OFF = 0
+// const WARN = 1
+const ERROR = 2
+
 const baseConfig = {
   env: {
     browser: true,
@@ -6,39 +10,71 @@ const baseConfig = {
     jest: true,
     node: true,
   },
-  extends: ['prettier', 'plugin:import/errors', 'plugin:import/warnings'],
+  extends: ['prettier', 'plugin:perfectionist/recommended-natural'],
   ignorePatterns: ['**/.next/*', '**/dist/*', '**/node_modules/*'],
   parser: '@babel/eslint-parser',
   parserOptions: {
-    ecmaVersion: 2022,
-    sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
     },
+    ecmaVersion: 2022,
     requireConfigFile: false,
+    sourceType: 'module',
   },
-  plugins: ['import', 'typescript-sort-keys'],
+  plugins: ['perfectionist'],
   root: true,
   // http://eslint.org/docs/rules/
   rules: {
-    complexity: [2, 10],
-    'import/default': 0, // @todo
-    'import/named': 0, // @todo
-    'import/namespace': 0, // @todo
-    'import/no-unresolved': 0, // @todo
-    'import/order': [
-      'error',
+    complexity: [ERROR, 10],
+    // 'import/order': [
+    //   'error',
+    //   {
+    //     alphabetize: { order: 'asc', caseInsensitive: true },
+    //     groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+    //     'newlines-between': 'always',
+    //     pathGroups: [
+    //       {
+    //         pattern: '~**/**',
+    //         group: 'sibling',
+    //         position: 'before',
+    //       },
+    //     ],
+    //   },
+    // ],
+    'perfectionist/sort-imports': [
+      ERROR,
       {
-        alphabetize: { order: 'asc', caseInsensitive: true },
-        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
-        'newlines-between': 'always',
-        pathGroups: [
-          {
-            pattern: '~**/**',
-            group: 'sibling',
-            position: 'before',
+        'custom-groups': {
+          type: {},
+          value: {
+            jeromefitz: '@jeromefitz/**',
           },
+        },
+        groups: [
+          'builtin',
+          'jeromefitz-type',
+          'jeromefitz',
+          'type',
+          'external',
+          'internal-type',
+          'internal',
+          ['parent-type', 'sibling-type', 'index-type'],
+          ['parent', 'sibling', 'index'],
+          'side-effect',
+          'style',
+          'object',
+          'unknown',
         ],
+        'internal-pattern': [
+          '~**/**',
+          // '@/components/**',
+          // '@/stores/**',
+          // '@/pages/**',
+          // '@/lib/**',
+        ],
+        'newlines-between': 'always',
+        order: 'asc',
+        type: 'natural',
       },
     ],
   },

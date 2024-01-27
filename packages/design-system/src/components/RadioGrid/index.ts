@@ -1,1 +1,1 @@
-export { RadioGridGroup, RadioGrid } from './RadioGrid'
+export { RadioGrid, RadioGridGroup } from './RadioGrid'

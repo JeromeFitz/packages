@@ -1,8 +1,8 @@
 import { styled } from '../../lib/stitches.config'
 
 const BoxGrab = styled('div', {
-  cursor: 'grab',
   '&:active': { cursor: 'grabbing' },
+  cursor: 'grab',
 
   // Fill in spaces between slides
   mr: '-$$gap',

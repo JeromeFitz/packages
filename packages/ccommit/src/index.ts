@@ -35,25 +35,25 @@ const cli = meow(
       - Branch Name detection is enabled to pre-populate Issue Tracker information in prompt
 `,
   {
-    importMeta: import.meta,
     flags: {
       // Flags
-      [FLAGS.BREAKING]: { type: 'boolean', shortFlag: 'b', default: false },
-      [FLAGS.COMMIT]: { type: 'boolean', shortFlag: 'c' },
-      [FLAGS.DRYRUN]: { type: 'boolean', shortFlag: 'n' },
-      [FLAGS.EMOJI]: { type: 'boolean', shortFlag: 'e', default: true },
-      [FLAGS.HELP]: { type: 'boolean', shortFlag: 'h' },
-      [FLAGS.HOOK]: { type: 'boolean', shortFlag: 'u' },
-      [FLAGS.LIST]: { type: 'boolean', shortFlag: 'l' },
-      [FLAGS.SKIP]: { type: 'boolean', default: false },
-      [FLAGS.VERSION]: { type: 'boolean', shortFlag: 'v' },
+      [FLAGS.BREAKING]: { default: false, shortFlag: 'b', type: 'boolean' },
+      [FLAGS.COMMIT]: { shortFlag: 'c', type: 'boolean' },
+      [FLAGS.DRYRUN]: { shortFlag: 'n', type: 'boolean' },
+      [FLAGS.EMOJI]: { default: true, shortFlag: 'e', type: 'boolean' },
+      [FLAGS.HELP]: { shortFlag: 'h', type: 'boolean' },
+      [FLAGS.HOOK]: { shortFlag: 'u', type: 'boolean' },
+      [FLAGS.LIST]: { shortFlag: 'l', type: 'boolean' },
+      [FLAGS.SKIP]: { default: false, type: 'boolean' },
+      [FLAGS.VERSION]: { shortFlag: 'v', type: 'boolean' },
       // Options
-      [OPTIONS.FORMAT]: { type: 'string', default: COMMIT_FORMATS.GITMOJI },
+      [OPTIONS.FORMAT]: { default: COMMIT_FORMATS.GITMOJI, type: 'string' },
       [OPTIONS.MESSAGE]: { type: 'string' },
       [OPTIONS.SCOPE]: { type: 'string' },
       [OPTIONS.TITLE]: { type: 'string' },
       [OPTIONS.TYPE]: { type: 'string' },
     },
+    importMeta: import.meta,
   },
 )
 

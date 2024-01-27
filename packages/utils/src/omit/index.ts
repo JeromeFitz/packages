@@ -1,6 +1,6 @@
 const omit = (obj: { [x: string]: any }, props: any[]) => {
   obj = { ...obj }
-  props.forEach((prop: string | number) => delete obj[prop])
+  props.forEach((prop: number | string) => delete obj[prop])
   return obj
 }
 

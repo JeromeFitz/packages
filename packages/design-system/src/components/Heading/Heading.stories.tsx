@@ -5,15 +5,6 @@ import { Heading } from './Heading'
 const dummyContent = 'Lorem ipsum dolor sit amet.'
 
 export default {
-  title: 'Heading',
-  component: Heading,
-  parameters: {
-    docs: {
-      description: {
-        component: 'MDX Content is TBD',
-      },
-    },
-  },
   argTypes: {
     as: {
       control: false,
@@ -25,10 +16,19 @@ export default {
       control: false,
     },
     size: {
-      options: ['1', '2', '3', '4'],
       control: { type: 'select' },
+      options: ['1', '2', '3', '4'],
     },
   },
+  component: Heading,
+  parameters: {
+    docs: {
+      description: {
+        component: 'MDX Content is TBD',
+      },
+    },
+  },
+  title: 'Heading',
 } as Meta<typeof Heading>
 
 const Template: StoryFn<typeof Heading> = ({ children, ...args }) => (
@@ -36,10 +36,10 @@ const Template: StoryFn<typeof Heading> = ({ children, ...args }) => (
 )
 
 export const Default = {
-  render: Template,
-
   args: {
     children: dummyContent,
     size: '3',
   },
+
+  render: Template,
 }

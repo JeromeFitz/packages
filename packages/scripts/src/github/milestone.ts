@@ -18,9 +18,9 @@ const octokit = new Octokit({ auth: process.env.GH_TOKEN })
 // const repo = process.env.REPO_REPO
 
 const milestones = getMilestones.map((milestone) => ({
-  title: `${milestone.emoji} ${milestone.name}`,
   description: milestone.description,
   state: milestone.state,
+  title: `${milestone.emoji} ${milestone.name}`,
 }))
 
 // eslint-disable-next-line @typescript-eslint/require-await

@@ -1,4 +1,5 @@
 import { sortObject } from '@jeromefitz/utils'
+
 import _map from 'lodash/map.js'
 import _omit from 'lodash/omit.js'
 
@@ -28,7 +29,7 @@ const getNotionListing = async ({
   if (_info?.object === 'page') {
     info = _omit(_info, 'properties')
     info['properties'] = sortObject(
-      dataNormalized({ config, data: _info, pathVariables, pageId: info.id }),
+      dataNormalized({ config, data: _info, pageId: info.id, pathVariables }),
     )
   }
 
@@ -58,10 +59,10 @@ const getNotionListing = async ({
     filter: {
       and: [
         {
-          property,
           date: {
             on_or_after: timestamp,
           },
+          property,
         },
       ],
     },
@@ -71,7 +72,7 @@ const getNotionListing = async ({
     let itemInit = item
     itemInit = _omit(itemInit, 'properties')
     itemInit['properties'] = sortObject(
-      dataNormalized({ config, data: item, pathVariables, pageId: item.id }),
+      dataNormalized({ config, data: item, pageId: item.id, pathVariables }),
     )
     results.push(itemInit)
     // console.dir(`> last_edited_time`)
@@ -87,7 +88,7 @@ const getNotionListing = async ({
    *
    * Pass empty `images` object for SSR/API takeover
    */
-  return { info, content, items, images: {} }
+  return { content, images: {}, info, items }
 }
 
 export default getNotionListing

@@ -33,9 +33,9 @@ async function setPullRequest({
   head,
   labels,
   owner,
+  q,
   repo,
   version,
-  q,
 }) {
   try {
     const repo_id = `${owner}/${repo}`
@@ -94,18 +94,18 @@ async function setPullRequest({
         console.log(colorize`{orange.bold 🏃️  dryRun]`)
       } else {
         const pull = await octokit.rest.pulls.create({
+          base,
+          body,
+          head,
           owner,
           repo,
-          head,
-          base,
           title,
-          body,
         })
         void octokit.rest.issues.addLabels({
-          owner,
-          repo,
           issue_number: pull.data.number,
           labels,
+          owner,
+          repo,
         })
       }
     }

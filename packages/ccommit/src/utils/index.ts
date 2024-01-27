@@ -1,12 +1,12 @@
 export {
-  cancelIfRebasing,
   COMMIT_MESSAGE_SOURCE,
   cancelIfAmending,
   cancelIfNeeded,
+  cancelIfRebasing,
 } from './cancelIf.js'
 export { filterGitmojis } from './filter.js'
-export { findCommand } from './findCommand.js'
 export { findBy } from './findBy.js'
+export { findCommand } from './findCommand.js'
 export {
   formatCliEmoji,
   formatCliType,

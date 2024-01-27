@@ -1,15 +1,16 @@
 import {
   Icon,
+  Separator,
   Switch,
   SwitchIcon,
-  Separator,
 } from '@jeromefitz/design-system/src/components'
 import { darkTheme } from '@jeromefitz/design-system/src/lib/stitches.config'
+
 import { useTheme } from 'next-themes'
 import { useCallback } from 'react'
 
 const SwitchImpl = () => {
-  const { theme, setTheme } = useTheme()
+  const { setTheme, theme } = useTheme()
   const handleThemeToggle = useCallback(() => {
     const newTheme = theme === 'dark' ? 'light' : 'dark'
     document.documentElement.classList.toggle(darkTheme?.className)
@@ -22,16 +23,16 @@ const SwitchImpl = () => {
     <>
       <SwitchIcon
         checked={theme === 'dark'}
-        onCheckedChange={() => handleThemeToggle()}
-        iconOn={<Icon.Moon />}
         iconOff={<Icon.Sun />}
+        iconOn={<Icon.Moon />}
+        onCheckedChange={() => handleThemeToggle()}
       />
       <Separator decorative my="3" size="full" />
       <SwitchIcon
         checked={theme === 'dark'}
-        onCheckedChange={() => handleThemeToggle()}
-        iconOn={<Icon.SpeakerModerate />}
         iconOff={<Icon.SpeakerOff />}
+        iconOn={<Icon.SpeakerModerate />}
+        onCheckedChange={() => handleThemeToggle()}
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         size="4"

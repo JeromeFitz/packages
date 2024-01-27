@@ -1,32 +1,61 @@
 import { styled } from '../../lib/stitches.config'
 
 const Banner = styled('div', {
-  // @reset
-  boxSizing: 'border-box',
-  '&::before': {
-    boxSizing: 'border-box',
-  },
   '&::after': {
     boxSizing: 'border-box',
   },
-
-  alignItems: 'center',
-  display: 'flex',
-  gap: '$3',
-  justifyContent: 'center',
+  '&::before': {
+    boxSizing: 'border-box',
+  },
+  '&:hover': { backgroundColor: '$colors$brand4' },
 
   '@media (prefers-reduced-motion: no-preference)': {
     transition: 'background-color 0.25s ease-in-out',
   },
-
+  alignItems: 'center',
   backgroundColor: '$colors$brand3',
-  '&:hover': { backgroundColor: '$colors$brand4' },
+  // @reset
+  boxSizing: 'border-box',
 
+  compoundVariants: [
+    {
+      border: 'true',
+      css: {
+        borderColor: '$colors$brand11',
+      },
+      variant: 'brand',
+    },
+    {
+      border: 'true',
+      css: {
+        borderColor: '$slate6',
+      },
+      variant: 'loContrast',
+    },
+  ],
+
+  defaultVariants: {
+    size: '1',
+  },
+  display: 'flex',
+
+  gap: '$3',
+  justifyContent: 'center',
   variants: {
+    border: {
+      true: {
+        borderRadius: '$pill',
+      },
+    },
+    rounded: {
+      true: {
+        borderRadius: '$pill',
+      },
+    },
     size: {
       '1': {
-        py: '$1',
         px: '$4',
+        py: '$1',
       },
     },
     variant: {
@@ -36,35 +65,6 @@ const Banner = styled('div', {
         // '&:hover': { backgroundColor: '$loContrast' },
       },
     },
-    rounded: {
-      true: {
-        borderRadius: '$pill',
-      },
-    },
-    border: {
-      true: {
-        borderRadius: '$pill',
-      },
-    },
-  },
-  compoundVariants: [
-    {
-      border: 'true',
-      variant: 'brand',
-      css: {
-        borderColor: '$colors$brand11',
-      },
-    },
-    {
-      border: 'true',
-      variant: 'loContrast',
-      css: {
-        borderColor: '$slate6',
-      },
-    },
-  ],
-  defaultVariants: {
-    size: '1',
   },
 })
 

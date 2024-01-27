@@ -1,3 +1,5 @@
+import type { Unsubscribe } from './pubsub/index.js'
+
 import assertNever from './assertNever/index.js'
 import asyncForEach from './asyncForEach/index.js'
 import avoidRateLimit from './avoidRateLimit/index.js'
@@ -8,7 +10,6 @@ import lpad from './lpad/index.js'
 import noop from './noop/index.js'
 import omit from './omit/index.js'
 import pick from './pick/index.js'
-import type { Unsubscribe } from './pubsub/index.js'
 import rangeMap from './rangeMap/index.js'
 import setCharAt from './setCharAt/index.js'
 import sortObject from './sortObject/index.js'
@@ -19,7 +20,6 @@ export {
   assertNever,
   asyncForEach,
   avoidRateLimit,
-  sortObject,
   isObject,
   isObjectEmpty,
   isUndefined,
@@ -29,5 +29,6 @@ export {
   pick,
   rangeMap,
   setCharAt,
+  sortObject,
   stringToUUID,
 }

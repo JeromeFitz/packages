@@ -1,10 +1,12 @@
 import { sortObject } from '@jeromefitz/utils'
+
 import _map from 'lodash/map.js'
 import _omit from 'lodash/omit.js'
 import _size from 'lodash/size.js'
 
-import { PROPERTIES, QUERIES } from '../../constants/index.js'
 import type { SortItem } from '../../schema/index.js'
+
+import { PROPERTIES, QUERIES } from '../../constants/index.js'
 import { addTime, dataNormalized } from '../../utils/index.js'
 
 const getNotionListingByDate__getFilter = ({
@@ -45,16 +47,16 @@ const getNotionListingByDate__getFilter = ({
       return {
         and: [
           {
-            property,
             date: {
               on_or_after: addTime(timestampQuery, ''),
             },
+            property,
           },
           {
-            property,
             date: {
               before: addTime(timestampQuery, 'year'),
             },
+            property,
           },
         ],
       }
@@ -66,16 +68,16 @@ const getNotionListingByDate__getFilter = ({
       return {
         and: [
           {
-            property,
             date: {
               on_or_after: addTime(timestampQuery, ''),
             },
+            property,
           },
           {
-            property,
             date: {
               before: addTime(timestampQuery, 'month'),
             },
+            property,
           },
         ],
       }
@@ -87,16 +89,16 @@ const getNotionListingByDate__getFilter = ({
       return {
         and: [
           {
-            property,
             date: {
               on_or_after: addTime(timestampQuery, ''),
             },
+            property,
           },
           {
-            property,
             date: {
               before: addTime(timestampQuery, 'day'),
             },
+            property,
           },
         ],
       }
@@ -110,16 +112,16 @@ const getNotionListingByDate__getFilter = ({
       return {
         and: [
           {
-            property,
             date: {
               on_or_after: addTime(timestampQuery, ''),
             },
+            property,
           },
           {
-            property,
             date: {
               before: addTime(timestampQuery, 'day'),
             },
+            property,
           },
           {
             ...QUERIES.slug,
@@ -151,7 +153,7 @@ const getNotionListingByDate = async ({
   if (_info.object === 'page') {
     info = _omit(_info, 'properties')
     info['properties'] = sortObject(
-      dataNormalized({ config, data: _info, pathVariables, pageId: _info.id }),
+      dataNormalized({ config, data: _info, pageId: _info.id, pathVariables }),
     )
   }
 
@@ -159,8 +161,8 @@ const getNotionListingByDate = async ({
 
   const sorts: SortItem[] = [
     {
-      property: PROPERTIES.datePublished.notion,
       direction: 'descending',
+      property: PROPERTIES.datePublished.notion,
     },
   ]
   const filter = getNotionListingByDate__getFilter({
@@ -181,7 +183,7 @@ const getNotionListingByDate = async ({
   _map(___items.results, (i) => {
     const item = _omit(i, 'properties')
     item['properties'] = sortObject(
-      dataNormalized({ config, data: i, pathVariables, pageId: item.id }),
+      dataNormalized({ config, data: i, pageId: item.id, pathVariables }),
     )
     !!item && __items.push(item)
   })
@@ -194,7 +196,7 @@ const getNotionListingByDate = async ({
    *
    * Pass empty `images` object for SSR/API takeover
    */
-  return { info, content, items, images: {} }
+  return { content, images: {}, info, items }
 }
 
 export default getNotionListingByDate

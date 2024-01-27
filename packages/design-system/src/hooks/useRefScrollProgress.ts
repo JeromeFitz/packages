@@ -25,7 +25,7 @@ function useRefScrollProgress(inputRef: MutableRefObject<undefined>) {
     // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
     setEnd((offsetTop + rect.height) / document.body.clientHeight)
   }, [ref])
-  return { ref, start, end }
+  return { end, ref, start }
 }
 
 export default useRefScrollProgress

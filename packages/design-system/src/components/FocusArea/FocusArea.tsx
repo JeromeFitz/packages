@@ -1,18 +1,19 @@
+import type { ComponentProps } from 'react'
+
 import { useComposedRefs } from '@radix-ui/react-compose-refs'
 import { forwardRef, useRef } from 'react'
-import type { ComponentProps } from 'react'
 
 import { styled } from '../../lib/stitches.config'
 
 const StyledFocusArea = styled('div', {
-  outline: 0,
-  borderRadius: '$3',
   '&:focus': {
     boxShadow: '0 0 0 2px $colors$blue8',
   },
   '&:focus:not(:focus-visible)': {
     boxShadow: 'none',
   },
+  borderRadius: '$3',
+  outline: 0,
 })
 
 const FocusArea = forwardRef<HTMLDivElement, ComponentProps<typeof StyledFocusArea>>(
@@ -43,8 +44,6 @@ const FocusArea = forwardRef<HTMLDivElement, ComponentProps<typeof StyledFocusAr
       <StyledFocusArea
         {...props}
         data-focus-area
-        ref={composedRef}
-        tabIndex={0}
         onKeyDown={(event) => {
           onKeyDown?.(event)
 
@@ -86,6 +85,8 @@ const FocusArea = forwardRef<HTMLDivElement, ComponentProps<typeof StyledFocusAr
             event.currentTarget.focus()
           }
         }}
+        ref={composedRef}
+        tabIndex={0}
       >
         <div data-focus-area-entry {...entryProps} />
         {children}

@@ -18,8 +18,8 @@ const getMarkdown = async (context, commits) => {
     owner,
     previousTag,
     references,
-    repository,
     repoUrl,
+    repository,
     revert,
     version,
   } = context
@@ -41,8 +41,8 @@ const getMarkdown = async (context, commits) => {
     owner,
     previousTag,
     references, // []
-    repository,
     repoUrl,
+    repository,
     revert, // boolean
     version,
   }
