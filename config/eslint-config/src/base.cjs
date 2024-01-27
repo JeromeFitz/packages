@@ -48,9 +48,11 @@ const baseConfig = {
           type: {},
           value: {
             jeromefitz: '@jeromefitz/**',
+            'server-only': 'server-only',
           },
         },
         groups: [
+          'server-only',
           'builtin',
           'jeromefitz-type',
           'jeromefitz',
