@@ -38,4 +38,6 @@ tsconfig.tsbuildinfo
 .turbo
 .tsbuildinfo
 !.github/actions/release
-.vscode/settings.json
+.vscode/**
+!.vscode/extensions.json
+!.vscode/settings.default.json
