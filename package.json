@@ -57,7 +57,6 @@
     "lint-staged": "15.2.0",
     "lodash": "4.17.21",
     "semantic-release": "23.0.0",
-    "semantic-release-monorepo": "8.0.1",
     "syncpack": "12.3.0",
     "tsup": "8.0.1",
     "turbo": "1.11.3",
