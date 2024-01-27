@@ -6,15 +6,6 @@ const dummyTitle = 'Lorem ipsum dolor sit amet.'
 const dummyDescription = 'Lorem ipsum dolor sit amet.'
 
 export default {
-  title: 'PageHeading',
-  component: PageHeading,
-  parameters: {
-    docs: {
-      description: {
-        component: 'MDX Content is TBD',
-      },
-    },
-  },
   argTypes: {
     as: {
       control: false,
@@ -26,10 +17,19 @@ export default {
       control: false,
     },
     size: {
-      options: ['1', '2', '3', '4'],
       control: { type: 'select' },
+      options: ['1', '2', '3', '4'],
     },
   },
+  component: PageHeading,
+  parameters: {
+    docs: {
+      description: {
+        component: 'MDX Content is TBD',
+      },
+    },
+  },
+  title: 'PageHeading',
 } as Meta<typeof PageHeading>
 
 const Template: StoryFn<typeof PageHeading> = ({ ...args }) => (
@@ -37,10 +37,10 @@ const Template: StoryFn<typeof PageHeading> = ({ ...args }) => (
 )
 
 export const Default = {
-  render: Template,
-
   args: {
-    title: dummyTitle,
     description: dummyDescription,
+    title: dummyTitle,
   },
+
+  render: Template,
 }

@@ -1,12 +1,13 @@
-import * as MenuPrimitive from '@radix-ui/react-menu'
-import { forwardRef } from 'react'
 import type { ComponentProps, ElementRef } from 'react'
 
-import { styled } from '../../lib/stitches.config'
-import type { CSS } from '../../lib/stitches.config'
-import { Box, Flex, Icon } from '../index'
-import { panelStyles } from '../Panel/Panel.styles'
+import * as MenuPrimitive from '@radix-ui/react-menu'
+import { forwardRef } from 'react'
 
+import type { CSS } from '../../lib/stitches.config'
+
+import { styled } from '../../lib/stitches.config'
+import { panelStyles } from '../Panel/Panel.styles'
+import { Box, Flex, Icon } from '../index'
 import { itemCss, labelCss, menuCss, separatorCss } from './Menu.styles'
 
 const Menu = styled(MenuPrimitive.Root, menuCss)
@@ -26,22 +27,22 @@ const MenuRadioItem = forwardRef<
   MenuRadioItemProps
 >(({ children, ...props }, forwardedRef) => (
   <StyledMenuRadioItem {...props} ref={forwardedRef}>
-    <Box as="span" css={{ position: 'absolute', left: '$1' }}>
+    <Box as="span" css={{ left: '$1', position: 'absolute' }}>
       <MenuPrimitive.ItemIndicator>
         <Flex
           css={{
-            width: '$3',
-            height: '$3',
             alignItems: 'center',
+            height: '$3',
             justifyContent: 'center',
+            width: '$3',
           }}
         >
           <Box
             css={{
-              width: '$1',
-              height: '$1',
               backgroundColor: 'currentColor',
               borderRadius: '$round',
+              height: '$1',
+              width: '$1',
             }}
           ></Box>
         </Flex>
@@ -63,7 +64,7 @@ const MenuCheckboxItem = forwardRef<
   MenuCheckboxItemProps
 >(({ children, ...props }, forwardedRef) => (
   <StyledMenuCheckboxItem {...props} ref={forwardedRef}>
-    <Box as="span" css={{ position: 'absolute', left: '$1' }}>
+    <Box as="span" css={{ left: '$1', position: 'absolute' }}>
       <MenuPrimitive.ItemIndicator>
         <Icon.Check />
       </MenuPrimitive.ItemIndicator>
@@ -78,12 +79,12 @@ const MenuGroup = styled(MenuPrimitive.Group, {})
 
 export {
   Menu,
-  MenuContent,
-  MenuSeparator,
-  MenuItem,
-  MenuRadioItem,
   MenuCheckboxItem,
+  MenuContent,
+  MenuGroup,
+  MenuItem,
   MenuLabel,
   MenuRadioGroup,
-  MenuGroup,
+  MenuRadioItem,
+  MenuSeparator,
 }

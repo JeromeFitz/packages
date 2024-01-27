@@ -1,28 +1,28 @@
 import { styled } from '../../lib/stitches.config'
 
 const TreeItem = styled('div', {
-  // @reset
-  alignItems: 'center',
-  boxSizing: 'border-box',
-  display: 'flex',
-  lineHeight: '1',
-  userSelect: 'none',
-  WebkitTapHighlightColor: 'transparent',
-  '&:disabled': {
-    pointerEvents: 'none',
+  '&::after': {
+    boxSizing: 'border-box',
   },
   '&::before': {
     boxSizing: 'border-box',
   },
-  '&::after': {
-    boxSizing: 'border-box',
+  '&:disabled': {
+    pointerEvents: 'none',
   },
+  WebkitTapHighlightColor: 'transparent',
+  // @reset
+  alignItems: 'center',
+  boxSizing: 'border-box',
+  color: '$hiContrast',
+  display: 'flex',
+  fontSize: '$1',
 
   // @custom
   height: '29px',
+  lineHeight: '1',
   px: '$2',
-  fontSize: '$1',
-  color: '$hiContrast',
+  userSelect: 'none',
 
   variants: {
     variant: {

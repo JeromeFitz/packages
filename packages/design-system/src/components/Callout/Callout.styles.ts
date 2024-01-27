@@ -1,16 +1,16 @@
 import { styled } from '../../lib/stitches.config'
 
 const StyledCalloutIconWrapper = styled('div', {
-  position: 'absolute',
-  display: 'flex',
-  top: '-$4',
-  left: '-$3',
-  padding: '$2',
-
   background: 'var(--icon-background, $colors$body)',
   border: '1.75px solid var(--icon-border, $colors$typefacePrimary)',
   borderRadius: '$round',
   color: 'var(--icon-text, $colors$typefacePrimary)',
+  display: 'flex',
+
+  left: '-$3',
+  padding: '$2',
+  position: 'absolute',
+  top: '-$4',
 
   variants: {
     variant: {
@@ -46,17 +46,17 @@ const StyledCalloutIconWrapper = styled('div', {
 })
 
 const StyledCalloutLabelWrapper = styled('div', {
-  position: 'absolute',
-  display: 'flex',
-  top: '-$4',
-  left: '-$2',
+  background: 'var(--icon-background, $colors$body)',
   borderRadius: '$radii$1',
-  padding: '$3',
   color: '$colors$body',
+  display: 'flex',
   fontSize: '$fontSizes$1',
   fontWeight: '$fontWeights$3',
+  left: '-$2',
+  padding: '$3',
+  position: 'absolute',
+  top: '-$4',
   userSelect: 'none',
-  background: 'var(--icon-background, $colors$body)',
 
   variants: {
     variant: {
@@ -87,15 +87,6 @@ const StyledCallout = styled('aside', {
     marginBottom: '0px',
   },
 
-  position: 'relative',
-
-  marginBottom: '1.25rem',
-  borderRadius: '$radii$1',
-  color: '$colors$typefacePrimary',
-  border: '1px solid var(--callout-emphasis, $colors$typefacePrimary)',
-  background: 'var(--callout-background, $colors$body)',
-
-  padding: '$5',
   '@bp1': {
     padding: '$7',
   },
@@ -103,6 +94,15 @@ const StyledCallout = styled('aside', {
   '@media (prefers-reduced-motion: no-preference)': {
     transition: 'all 300ms ease',
   },
+  background: 'var(--callout-background, $colors$body)',
+  border: '1px solid var(--callout-emphasis, $colors$typefacePrimary)',
+  borderRadius: '$radii$1',
+  color: '$colors$typefacePrimary',
+
+  marginBottom: '1.25rem',
+  padding: '$5',
+
+  position: 'relative',
 
   variants: {
     variant: {
@@ -116,11 +116,11 @@ const StyledCallout = styled('aside', {
       },
       note: {
         // '--callout-background': '$colors$noteBackground',
-        // '--callout-emphasis': '$colors$noteEmphasis',
-        padding: '$3 $4',
         '@bp1': {
           padding: '$5 $6',
         },
+        // '--callout-emphasis': '$colors$noteEmphasis',
+        padding: '$3 $4',
       },
       quote: {
         '--callout-background': '$colors$quoteBackground',
@@ -138,4 +138,4 @@ const StyledCallout = styled('aside', {
   },
 })
 
-export { StyledCalloutIconWrapper, StyledCalloutLabelWrapper, StyledCallout }
+export { StyledCallout, StyledCalloutIconWrapper, StyledCalloutLabelWrapper }

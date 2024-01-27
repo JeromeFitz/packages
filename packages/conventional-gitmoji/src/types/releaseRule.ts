@@ -131,16 +131,6 @@ const releaseRule: IReleaseRule = {
     name: 'alien',
     semver: 'patch',
   },
-  config: {
-    branch: null,
-    code: ':wrench:',
-    commit: 'config',
-    description: 'Add or update configuration files.',
-    emoji: '🔧',
-    entity: '&#x1f527;',
-    name: 'wrench',
-    semver: 'patch',
-  },
   concurrency: {
     branch: null,
     code: ':thread:',
@@ -149,6 +139,16 @@ const releaseRule: IReleaseRule = {
     emoji: '🧵',
     entity: '&#x1F9F5;',
     name: 'thread',
+    semver: 'patch',
+  },
+  config: {
+    branch: null,
+    code: ':wrench:',
+    commit: 'config',
+    description: 'Add or update configuration files.',
+    emoji: '🔧',
+    entity: '&#x1f527;',
+    name: 'wrench',
     semver: 'patch',
   },
   'contrib-add': {

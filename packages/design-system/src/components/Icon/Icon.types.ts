@@ -12,11 +12,11 @@ type IconVariant = VariantProps<typeof StyledSVG>['variant']
  */
 interface IconProps extends SVGAttributes<SVGElement> {
   children?: never
-  css?: CSS
   color?: string
+  css?: CSS
   label?: string
   size?: IconSize
   variant?: IconVariant
 }
 
-export type { IconSize, IconVariant, IconProps }
+export type { IconProps, IconSize, IconVariant }

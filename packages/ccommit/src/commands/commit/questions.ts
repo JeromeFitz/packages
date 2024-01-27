@@ -12,9 +12,9 @@ import {
 
 const getTypes = () =>
   commitTypes.map(({ description, emoji, emojiLength, type }) => ({
+    description,
     emoji,
     emojiLength,
-    description,
     type,
   }))
 
@@ -38,37 +38,37 @@ const prefixState = (state) => {
  */
 const questions = [
   {
-    type: 'confirm',
-    name: 'breaking',
-    message: 'Is there a breaking change?',
-    initial: false,
     default: '(y/N)',
-    prefix() {
-      // @ts-ignore
-      return prefixState(this.state)
-    },
-    styles: { primary: colors.white },
     format(input) {
       const yn = input ? 'yes' : 'no'
       // @ts-ignore
       return this.state.submitted ? colors.green(yn) : colors.dim(yn)
     },
+    initial: false,
+    message: 'Is there a breaking change?',
+    name: 'breaking',
+    prefix() {
+      // @ts-ignore
+      return prefixState(this.state)
+    },
+    styles: { primary: colors.white },
+    type: 'confirm',
   },
   {
-    name: 'messageBreaking',
-    type: 'input',
-    message: 'Please share breaking change info',
-    skip() {
-      // @ts-ignore
-      return !this.state.answers.breaking
-    },
-    result(value) {
-      return value ? `BREAKING CHANGE: ${value.trim()}` : ''
-    },
     footer() {
       // @ts-ignore
       return characterCount(this.state.input, TITLE.MAX)
     },
+    message: 'Please share breaking change info',
+    name: 'messageBreaking',
+    result(value) {
+      return value ? `BREAKING CHANGE: ${value.trim()}` : ''
+    },
+    skip() {
+      // @ts-ignore
+      return !this.state.answers.breaking
+    },
+    type: 'input',
     validate(input) {
       const chars = input?.length || 0
       // @ts-ignore
@@ -84,9 +84,6 @@ const questions = [
     },
   },
   {
-    type: 'autocomplete',
-    name: 'gitmoji',
-    message: 'Please choose a commit type',
     choices: getTypes().map(({ description, emoji, emojiLength, type }) => {
       const value = emoji
       const name = `  ${formatCliEmoji({
@@ -98,7 +95,6 @@ const questions = [
         value,
       }
     }),
-    limit: 18,
     footer() {
       return `${colors.dim.cyan(`›`)} ${colors.dim.bold(
         `scroll up and down to reveal more ↕`,
@@ -107,19 +103,23 @@ const questions = [
     highlight(str) {
       return colors.cyanBright(str)
     },
+    limit: 18,
+    message: 'Please choose a commit type',
+    name: 'gitmoji',
+    type: 'autocomplete',
   },
   {
-    name: 'scope',
-    type: 'input',
-    message: 'Please share the scope (if any)',
-    format() {
-      // @ts-ignore
-      return this.state.submitted ? colors.green(this.value) : this.value
-    },
     footer() {
       // @ts-ignore
       return characterCount(this.state.input, SCOPE.MAX)
     },
+    format() {
+      // @ts-ignore
+      return this.state.submitted ? colors.green(this.value) : this.value
+    },
+    message: 'Please share the scope (if any)',
+    name: 'scope',
+    type: 'input',
     validate(input) {
       const chars = input.length
       if (chars === 0) {
@@ -134,18 +134,18 @@ const questions = [
     },
   },
   {
-    name: 'title',
-    type: 'input',
-    message: 'Please enter the commit title',
-    initial: !!getIssueTracker() ? `${getIssueTracker()} ` : '',
-    hint() {
-      // @ts-ignore
-      return this.state.initial ? `… tab to use initial value` : ''
-    },
     footer() {
       // @ts-ignore
       return characterCount(this.state.input, TITLE.MAX)
     },
+    hint() {
+      // @ts-ignore
+      return this.state.initial ? `… tab to use initial value` : ''
+    },
+    initial: !!getIssueTracker() ? `${getIssueTracker()} ` : '',
+    message: 'Please enter the commit title',
+    name: 'title',
+    type: 'input',
     validate(input) {
       const chars = input.length
       if (chars < TITLE.MIN) {
@@ -158,18 +158,18 @@ const questions = [
     },
   },
   {
-    name: 'message',
-    type: 'input',
-    message: 'Please share a more detailed commit message (if applicable)',
-    multiline: true,
     footer() {
       return `${colors.dim.cyan(`›`)} ${colors.dim(
         'Return twice to submit/skip: ⮑  ⮑',
       )}`
     },
+    message: 'Please share a more detailed commit message (if applicable)',
+    multiline: true,
+    name: 'message',
     result(input) {
       return input === '\n' ? '' : input
     },
+    type: 'input',
   },
 ]
 

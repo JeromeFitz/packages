@@ -1,7 +1,7 @@
 import _size from 'lodash/size.js'
 
 const commit = (context, commits, meta) => {
-  const { commitGroups, linkReferences, commit } = context
+  const { commit, commitGroups, linkReferences } = context
   const { repositoryUrl } = meta
 
   // @todo(release-notes) make variable
@@ -39,7 +39,7 @@ const commit = (context, commits, meta) => {
     const type = commits[0]?.type
     markdown += `#### ${type}\n`
     commits.map((commit) => {
-      const { scope, subject, header, hash, references } = commit
+      const { hash, header, references, scope, subject } = commit
       const commitMarkdown = commitFormat
         .replace(/\{scope\}/g, scope ? `**${scope}**: ` : '')
         .replace(/\{subject\}/g, subject ? subject : header)

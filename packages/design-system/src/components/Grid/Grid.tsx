@@ -6,8 +6,8 @@ const Grid = styled('div', {
 
   variants: {
     align: {
-      start: {
-        alignItems: 'start',
+      baseline: {
+        alignItems: 'baseline',
       },
       center: {
         alignItems: 'center',
@@ -15,42 +15,11 @@ const Grid = styled('div', {
       end: {
         alignItems: 'end',
       },
+      start: {
+        alignItems: 'start',
+      },
       stretch: {
         alignItems: 'stretch',
-      },
-      baseline: {
-        alignItems: 'baseline',
-      },
-    },
-    justify: {
-      start: {
-        justifyContent: 'start',
-      },
-      center: {
-        justifyContent: 'center',
-      },
-      end: {
-        justifyContent: 'end',
-      },
-      between: {
-        justifyContent: 'space-between',
-      },
-    },
-    flow: {
-      row: {
-        gridAutoFlow: 'row',
-      },
-      column: {
-        gridAutoFlow: 'column',
-      },
-      dense: {
-        gridAutoFlow: 'dense',
-      },
-      rowDense: {
-        gridAutoFlow: 'row dense',
-      },
-      columnDense: {
-        gridAutoFlow: 'column dense',
       },
     },
     columns: {
@@ -71,6 +40,23 @@ const Grid = styled('div', {
       },
       6: {
         gridTemplateColumns: 'repeat(6, 1fr)',
+      },
+    },
+    flow: {
+      column: {
+        gridAutoFlow: 'column',
+      },
+      columnDense: {
+        gridAutoFlow: 'column dense',
+      },
+      dense: {
+        gridAutoFlow: 'dense',
+      },
+      row: {
+        gridAutoFlow: 'row',
+      },
+      rowDense: {
+        gridAutoFlow: 'row dense',
       },
     },
     gap: {
@@ -158,6 +144,20 @@ const Grid = styled('div', {
       },
       9: {
         rowGap: '$9',
+      },
+    },
+    justify: {
+      between: {
+        justifyContent: 'space-between',
+      },
+      center: {
+        justifyContent: 'center',
+      },
+      end: {
+        justifyContent: 'end',
+      },
+      start: {
+        justifyContent: 'start',
       },
     },
   },

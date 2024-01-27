@@ -2,10 +2,11 @@
  * @ref https://gist.github.com/nandorojo/c93f00c2a378264addfea3777174ccfe
  * { @nandorojo } = props
  */
+import type { SWRInfiniteConfiguration } from 'swr/infinite'
+
 import _get from 'lodash/get'
 import _last from 'lodash/last'
-import { useMemo, useCallback, useRef } from 'react'
-import type { SWRInfiniteConfiguration } from 'swr/infinite'
+import { useCallback, useMemo, useRef } from 'react'
 import useSWRInfinite from 'swr/infinite'
 
 type PageKeyMaker<Page, Key extends any[]> = (
@@ -22,8 +23,8 @@ type PageKeyMaker<Page, Key extends any[]> = (
 
 export type UseSWRInfinitePagesConfig<Page extends object> =
   SWRInfiniteConfiguration<Page> & {
-    limit?: number
     dataPath: keyof Page | string[]
+    limit?: number
   }
 
 type PageFetcher<Page, Key extends any[]> = (...params: Key) => Page | Promise<Page>
@@ -38,12 +39,12 @@ const useSWRInfinitePages = <
 >(
   key: PageKeyMaker<Page, Key>,
   fetcher: PageFetcher<Page, Key>,
-  { limit = 20, dataPath: path, ...options }: UseSWRInfinitePagesConfig<Page>,
+  { dataPath: path, limit = 20, ...options }: UseSWRInfinitePagesConfig<Page>,
 ) => {
   const isFetching = useRef(false)
   const dataPath = Array.isArray(path) ? path.join('.') : path
 
-  const { data, error, isValidating, mutate, size, setSize } = useSWRInfinite<Page>(
+  const { data, error, isValidating, mutate, setSize, size } = useSWRInfinite<Page>(
     (index, previousPage) => {
       const previousPageData = _get(previousPage, dataPath)
       // we've reached the last page, no more fetching

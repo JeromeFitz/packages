@@ -6,8 +6,10 @@ import * as SelectPrimitive from '@radix-ui/react-select'
 import { styled } from '../../lib/stitches.config'
 
 const StyledTrigger = styled(SelectPrimitive.Trigger, {
-  all: 'unset',
+  '&:focus': { boxShadow: `0 0 0 2px $colors$brand11` },
+  '&:hover': { backgroundColor: '$colors$brand4' },
   alignItems: 'center',
+  all: 'unset',
   backgroundColor: '$colors$brand3',
   borderRadius: '$1',
   boxShadow: `0 2px 10px $colors$blackA7`,
@@ -19,8 +21,6 @@ const StyledTrigger = styled(SelectPrimitive.Trigger, {
   justifyContent: 'center',
   lineHeight: 1,
   padding: '0 1rem',
-  '&:hover': { backgroundColor: '$colors$brand4' },
-  '&:focus': { boxShadow: `0 0 0 2px $colors$brand11` },
 })
 
 const StyledContent = styled(SelectPrimitive.Content, {
@@ -36,28 +36,28 @@ const StyledViewport = styled(SelectPrimitive.Viewport, {
 })
 
 const StyledItem = styled(SelectPrimitive.Item, {
-  all: 'unset',
+  '&:focus': {
+    backgroundColor: '$colors$brand9',
+    color: '$colors$brand1',
+  },
+  '&[data-disabled]': {
+    color: '$colors$brand8',
+    pointerEvents: 'none',
+  },
   alignItems: 'center',
+  all: 'unset',
   borderRadius: '$0',
   color: '$colors$brand11',
   display: 'flex',
   fontSize: '$2',
   height: '1.5rem',
   lineHeight: 1,
-  padding: '0 $6 0 $6',
   my: '$2',
+  padding: '0 $6 0 $6',
+
   position: 'relative',
+
   userSelect: 'none',
-
-  '&[data-disabled]': {
-    color: '$colors$brand8',
-    pointerEvents: 'none',
-  },
-
-  '&:focus': {
-    backgroundColor: '$colors$brand9',
-    color: '$colors$brand1',
-  },
 })
 
 const StyledLabel = styled(SelectPrimitive.Label, {
@@ -67,8 +67,8 @@ const StyledLabel = styled(SelectPrimitive.Label, {
   fontVariationSettings: '"wght" $fontWeights$7',
   fontWeight: '$fontWeights$7',
   lineHeight: 1.5,
-  padding: '0 $6 0 $6',
   my: '$2',
+  padding: '0 $6 0 $6',
   // textTransform: 'uppercase',
 })
 
@@ -88,13 +88,13 @@ const StyledItemIndicator = styled(SelectPrimitive.ItemIndicator, {
 })
 
 const scrollButtonStyles = {
-  display: 'flex',
   alignItems: 'center',
-  justifyContent: 'center',
-  height: '1.5625rem',
   backgroundColor: '$colors$brand3',
   color: '$colors$brand11',
   cursor: 'default',
+  display: 'flex',
+  height: '1.5625rem',
+  justifyContent: 'center',
 }
 
 const StyledScrollUpButton = styled(
@@ -124,17 +124,17 @@ const SelectScrollDownButton = StyledScrollDownButton
 
 export {
   Select,
+  SelectContent,
+  SelectGroup,
+  SelectIcon,
+  SelectItem,
+  SelectItemIndicator,
+  SelectItemText,
+  SelectLabel,
+  SelectScrollDownButton,
+  SelectScrollUpButton,
+  SelectSeparator,
   SelectTrigger,
   SelectValue,
-  SelectIcon,
-  SelectContent,
   SelectViewport,
-  SelectGroup,
-  SelectItem,
-  SelectItemText,
-  SelectItemIndicator,
-  SelectLabel,
-  SelectSeparator,
-  SelectScrollUpButton,
-  SelectScrollDownButton,
 }

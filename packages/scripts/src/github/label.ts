@@ -18,9 +18,9 @@ const octokit = new Octokit({ auth: process.env.GH_TOKEN })
 // const repo = process.env.REPO_REPO
 
 const labels = getLabels.map((label) => ({
-  name: `${label.emoji} ${label.name}`,
-  description: label.description,
   color: label.color,
+  description: label.description,
+  name: `${label.emoji} ${label.name}`,
 }))
 
 // @note

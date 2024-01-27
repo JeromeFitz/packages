@@ -18,12 +18,12 @@ type DataTypesObject = {
 type DatabaseInfo = {
   [key in DatabaseType]?: {
     active: boolean
-    database_id: string
     dataTypes: DataTypes[]
+    database_id: string
     // @todo(next-notion) move to `isChild`
-    hasChild: string | null
+    hasChild: null | string
     infoType: any
-    isChild: string | null
+    isChild: null | string
     // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
     isChildInfoType: any | null
     name: string
@@ -42,14 +42,14 @@ type Databases = {
 
 interface Relation {
   database_id: string
-  synced_property_name: string
   synced_property_id?: string
+  synced_property_name: string
 }
 
 type Direction = 'ascending' | 'descending'
 interface SortItem {
-  property: string
   direction: Direction
+  property: string
 }
 interface SortMock {
   filter?: any[]
@@ -73,17 +73,14 @@ type RollupFunction =
   | 'sum'
 
 interface Rollup {
+  function?: RollupFunction
   relation_property_id?: string
   relation_property_name?: string
   rollup_property_id?: string
   rollup_property_name?: string
-  function?: RollupFunction
 }
 
 interface Property {
-  init: boolean
-  key: string
-  notion: string
   format?:
     | 'baht'
     | 'canadian_dollar'
@@ -104,8 +101,8 @@ interface Property {
     | 'new_taiwan_dollar'
     | 'new_zealand_dollar'
     | 'norwegian_krone'
-    | 'number_with_commas'
     | 'number'
+    | 'number_with_commas'
     | 'percent'
     | 'philippine_peso'
     | 'pound'
@@ -121,6 +118,9 @@ interface Property {
     | 'yen'
     | 'yuan'
     | 'zloty'
+  init: boolean
+  key: string
+  notion: string
   relation?: Relation
   rollup?: Rollup
   type:
@@ -152,11 +152,11 @@ interface Default {
   datePublished: any
   isIndexed: any
   isPublished: any
-  slug: any
   seoDescription: any
   seoImage: any
   seoImageDescription: any
   seoKeywords: any
+  slug: any
   title: any
 }
 
@@ -168,17 +168,17 @@ interface Episode extends Default {
   duration: any
   episode: any
   mp3: any
-  season: any
   relationEpisodes__People_Guest: any
   relationEpisodes__People_Sound_Engineer: any
   relationEpisodes__People_Thanks: any
   relationEpisodes__Podcasts: any
   relationEpisodes__Venues: any
-  // rollupEpisodes__People_Guest: any
-  // rollupEpisodes__People_Sound_Engineer: any
   // rollupEpisodes__People_Thanks: any
   rollupEpisodes__Podcasts: any
+  // rollupEpisodes__People_Guest: any
+  // rollupEpisodes__People_Sound_Engineer: any
   rollupEpisodes__PodcastsSlugs: any
+  season: any
   // rollupEpisodes__Venues: any
   socialApple: any
   socialSpotify: any
@@ -190,15 +190,15 @@ interface Event extends Default {
   relationEvents__People_Guest: any
   relationEvents__People_Guest_Music: any
   relationEvents__People_Host: any
-  relationEvents__Shows_Lineup: any
   relationEvents__Shows: any
+  relationEvents__Shows_Lineup: any
   relationEvents__Venues: any
   rollupEvents__People_Cast: any
   rollupEvents__People_Guest: any
   rollupEvents__People_Guest_Music: any
   rollupEvents__People_Host: any
-  rollupEvents__Shows_Lineup: any
   rollupEvents__Shows: any
+  rollupEvents__Shows_Lineup: any
   rollupEvents__Venues: any
   rollupLineup: any
   rollupTags: any
@@ -266,8 +266,8 @@ interface Show extends Default {
   relationShows__People_Writer: any
   relationShows__Tags: any
   rollupShows__People_Cast: any
-  rollupShows__People_Cast_Slug: any
   rollupShows__People_Cast_Past: any
+  rollupShows__People_Cast_Slug: any
   rollupShows__People_Crew: any
   rollupShows__People_Director: any
   rollupShows__People_Director_Musical: any
@@ -313,12 +313,12 @@ interface NotionAnnotations {
 
 interface NotionTextContent {
   content: string
-  link: string | null
+  link: null | string
 }
 
 interface NotionText {
   annotations: NotionAnnotations
-  href: string | null
+  href: null | string
   plain_text: string
   text: NotionTextContent
   type: string
@@ -329,19 +329,15 @@ interface NotionUrl {
 }
 
 interface NotionImage {
-  file?: NotionUrl
   caption?: NotionText
   external?: NotionUrl
+  file?: NotionUrl
   type: string
 }
 
 interface NotionBlock {
   created_time: string
   has_children: string
-  id: string
-  last_edited_time: string
-  object: string
-  type: string
   //
   heading_1?: NotionText[]
   heading_2?: NotionText[]
@@ -349,24 +345,27 @@ interface NotionBlock {
   heading_4?: NotionText[]
   heading_5?: NotionText[]
   heading_6?: NotionText[]
+  id: string
   image?: NotionImage
+  last_edited_time: string
+  object: string
   paragraph?: NotionText[]
+  type: string
 }
 
 export type {
   Blog,
   BlogPost,
-  DatabaseInfo,
-  Databases,
-  DatabaseType,
   DataTypes,
   DataTypesObject,
+  DatabaseInfo,
+  DatabaseType,
+  Databases,
   Direction,
   Episode,
   Episodes,
   Event,
   Events,
-  SortMock,
   NotionBlock,
   NotionText,
   Page,
@@ -383,6 +382,7 @@ export type {
   Show,
   Shows,
   SortItem,
+  SortMock,
   Venue,
   Venues,
 }

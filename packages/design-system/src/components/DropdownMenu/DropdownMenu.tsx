@@ -1,15 +1,17 @@
 /**
  * https://www.radix-ui.com/primitives/docs/components/dropdown-menu
  */
-import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
-import { forwardRef } from 'react'
 import type { ComponentProps, ElementRef } from 'react'
 
-import { styled } from '../../lib/stitches.config'
+import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
+import { forwardRef } from 'react'
+
 import type { CSS } from '../../lib/stitches.config'
-import { Box, Icon, Flex } from '../index'
-import { menuCss, separatorCss, itemCss, labelCss } from '../Menu/Menu.styles'
+
+import { styled } from '../../lib/stitches.config'
+import { itemCss, labelCss, menuCss, separatorCss } from '../Menu/Menu.styles'
 import { panelStyles } from '../Panel/Panel.styles'
+import { Box, Flex, Icon } from '../index'
 
 const DropdownMenu = DropdownMenuPrimitive.Root
 const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger
@@ -34,22 +36,22 @@ const DropdownMenuRadioItem = forwardRef<
   DialogMenuRadioItemProps
 >(({ children, ...props }, forwardedRef) => (
   <StyledDropdownMenuRadioItem {...props} ref={forwardedRef}>
-    <Box as="span" css={{ position: 'absolute', left: '$1' }}>
+    <Box as="span" css={{ left: '$1', position: 'absolute' }}>
       <DropdownMenuPrimitive.ItemIndicator>
         <Flex
           css={{
-            width: '$3',
-            height: '$3',
             alignItems: 'center',
+            height: '$3',
             justifyContent: 'center',
+            width: '$3',
           }}
         >
           <Box
             css={{
-              width: '$1',
-              height: '$1',
               backgroundColor: 'currentColor',
               borderRadius: '$round',
+              height: '$1',
+              width: '$1',
             }}
           />
         </Flex>
@@ -77,7 +79,7 @@ const DropdownMenuCheckboxItem = forwardRef<
   DialogMenuCheckboxItemProps
 >(({ children, ...props }, forwardedRef) => (
   <StyledDropdownMenuCheckboxItem {...props} ref={forwardedRef}>
-    <Box as="span" css={{ position: 'absolute', left: '$1' }}>
+    <Box as="span" css={{ left: '$1', position: 'absolute' }}>
       <DropdownMenuPrimitive.ItemIndicator>
         <Icon.Check />
       </DropdownMenuPrimitive.ItemIndicator>
@@ -87,50 +89,50 @@ const DropdownMenuCheckboxItem = forwardRef<
 ))
 
 const DropdownMenuItemIndicator = styled(DropdownMenuPrimitive.ItemIndicator, {
-  position: 'absolute',
-  left: 0,
-  width: 25,
-  display: 'inline-flex',
   alignItems: 'center',
+  display: 'inline-flex',
   justifyContent: 'center',
+  left: 0,
+  position: 'absolute',
+  width: 25,
 })
 
 const DropdownMenuSub = styled(DropdownMenuPrimitive.Sub, {})
 const DropdownMenuSubContent = styled(DropdownMenuPrimitive.SubContent, {})
 const DropdownMenuSubTrigger = styled(DropdownMenuPrimitive.SubTrigger, {
-  all: 'unset',
-  fontSize: 13,
-  lineHeight: 1,
-  color: '$colors$primary',
-  borderRadius: 3,
-  display: 'flex',
-  alignItems: 'center',
-  height: 25,
-  padding: '0 5px',
-  position: 'relative',
-  paddingLeft: 25,
-  userSelect: 'none',
-
+  '&:focus': {
+    backgroundColor: '$colors$focusBackground',
+    color: '$colors$focusColor',
+  },
   '&[data-disabled]': {
     backgroundColor: '$colors$disabledBackground',
     color: '$colores$disabled',
     pointerEvents: 'none',
   },
-
-  '&:focus': {
-    backgroundColor: '$colors$focusBackground',
-    color: '$colors$focusColor',
-  },
-
   '&[data-state="open"]': {
     backgroundColor: '$colors$openBackground',
     color: '$colors$open',
   },
+  alignItems: 'center',
+  all: 'unset',
+  borderRadius: 3,
+  color: '$colors$primary',
+  display: 'flex',
+  fontSize: 13,
+  height: 25,
+  lineHeight: 1,
+  padding: '0 5px',
+
+  paddingLeft: 25,
+
+  position: 'relative',
+
+  userSelect: 'none',
 })
 
 const DropdownMenuArrow = styled(DropdownMenuPrimitive.Arrow, {
-  mx: '$3',
   fill: '$panel',
+  mx: '$3',
 })
 
 const DropdownMenuLabel = styled(DropdownMenuPrimitive.Label, labelCss)
@@ -149,8 +151,8 @@ export {
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuSeparator,
-  DropdownMenuTrigger,
   DropdownMenuSub,
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
 }

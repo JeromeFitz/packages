@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react'
 
-import { Icon } from '../Icon'
-
 import type { CalloutVariant } from './Callout.types'
+
+import { Icon } from '../Icon'
 
 /**
  * @question(icon) should we be able to pass custom labels to Icon?

@@ -52,10 +52,10 @@ const baseConfig = {
         },
         groups: [
           'builtin',
-          'type',
-          'external',
           'jeromefitz-type',
           'jeromefitz',
+          'type',
+          'external',
           'internal-type',
           'internal',
           ['parent-type', 'sibling-type', 'index-type'],

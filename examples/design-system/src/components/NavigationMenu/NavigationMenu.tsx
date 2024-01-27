@@ -1,25 +1,26 @@
 import {
   Box,
+  Focused,
   Icon,
   // @core
   NavigationMenu,
-  NavigationMenuList,
-  NavigationMenuItem,
-  NavigationMenuTriggerWithCaret,
-  NavigationMenuLink,
   NavigationMenuContent,
-  NavigationMenuViewport,
   NavigationMenuIndicatorWithArrow,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuLinkText,
+  NavigationMenuLinkTitle,
+  NavigationMenuList,
   // @custom
   NavigationMenuListContent,
   NavigationMenuListItem,
   NavigationMenuListItemLink,
-  NavigationMenuLinkTitle,
-  NavigationMenuLinkText,
+  NavigationMenuTriggerWithCaret,
+  NavigationMenuViewport,
   NavigationMenuViewportPosition,
-  Focused,
   Selected,
 } from '@jeromefitz/design-system/src/components'
+
 import { LayoutGroup } from 'framer-motion'
 import NextLink from 'next/link'
 import { useState } from 'react'
@@ -27,9 +28,6 @@ import { useState } from 'react'
 const menu = [
   {
     id: 'events',
-    url: '/',
-    layout: 'one',
-    title: 'Upcoming Events',
     items: [
       // {
       //   id: 'title-1',
@@ -38,16 +36,16 @@ const menu = [
       //   description: 'Description of Event Title 1.',
       // },
       {
-        id: 'title-2',
-        url: '/about',
-        title: 'Title 2',
         description: 'Description of Event Title 2.',
+        id: 'title-2',
+        title: 'Title 2',
+        url: '/about',
       },
       {
-        id: 'title-3',
-        url: '/about',
-        title: 'View All',
         description: 'Listing of all Upcoming Events',
+        id: 'title-3',
+        title: 'View All',
+        url: '/about',
       },
       // {
       //   id: 'title-1b',
@@ -68,52 +66,55 @@ const menu = [
       //   description: 'Description of Show Title 3b.',
       // },
     ],
+    layout: 'one',
+    title: 'Upcoming Events',
+    url: '/',
   },
   {
     id: 'shows',
-    url: '/',
-    layout: 'two',
-    title: 'Shows',
     items: [
       {
-        id: 'item-1',
-        url: '/',
-        title: 'Item 1',
         description: 'Description of Item 1. Description of Item 1.',
+        id: 'item-1',
+        title: 'Item 1',
+        url: '/',
       },
       {
-        id: 'item-2',
-        url: '/',
-        title: 'Item 2',
         description: 'Description of Item 2.',
+        id: 'item-2',
+        title: 'Item 2',
+        url: '/',
       },
       {
-        id: 'item-3',
-        url: '/',
-        title: 'Item 3',
         description: 'Description of Item 3.',
+        id: 'item-3',
+        title: 'Item 3',
+        url: '/',
       },
       {
-        id: 'item-1b',
-        url: '/',
-        title: 'Item 1b',
         description: 'Description of Item 1b.',
+        id: 'item-1b',
+        title: 'Item 1b',
+        url: '/',
       },
       {
-        id: 'item-2b',
-        url: '/',
-        title: 'Item 2b',
         description: 'Description of Item 2b.',
+        id: 'item-2b',
+        title: 'Item 2b',
+        url: '/',
       },
       {
-        id: 'item-3b',
-        url: '/',
-        title: 'Item 3b',
         description: 'Description of Item 3b. Description of Item 3b.',
+        id: 'item-3b',
+        title: 'Item 3b',
+        url: '/',
       },
     ],
+    layout: 'two',
+    title: 'Shows',
+    url: '/',
   },
-  { id: 'direct-link', url: '/', layout: null, title: 'Direct Link' },
+  { id: 'direct-link', layout: null, title: 'Direct Link', url: '/' },
 ]
 
 const NavigationMenuContentContainer = ({ id, items, layout }) => {
@@ -125,8 +126,8 @@ const NavigationMenuContentContainer = ({ id, items, layout }) => {
 
   return (
     <NavigationMenuListContent
-      layout={layout}
       css={{ flexDirection: 'column' }}
+      layout={layout}
       onMouseLeave={() => setFocused(null)}
     >
       <LayoutGroup id={`nmlc-${id}`}>
@@ -139,20 +140,20 @@ const NavigationMenuContentContainer = ({ id, items, layout }) => {
           >
             <NextLink href="/" legacyBehavior passHref>
               <NavigationMenuListItemLink
+                focus
                 onClick={() => setSelected(calloutId)}
+                onFocus={() => setFocused(calloutId)}
                 onKeyDown={(event: { key: string }) =>
                   event.key === 'Enter' ? setSelected(calloutId) : null
                 }
-                onFocus={() => setFocused(calloutId)}
                 onMouseEnter={() => setFocused(calloutId)}
-                focus
                 type="callout"
               >
                 <Box as="span" css={{ mx: '$2' }}>
                   <NavigationMenuLinkTitle
                     css={{
-                      fontSize: '1.125rem',
                       color: '$loContrast',
+                      fontSize: '1.125rem',
                       my: '$2',
                     }}
                   >
@@ -163,11 +164,11 @@ const NavigationMenuContentContainer = ({ id, items, layout }) => {
                   </NavigationMenuLinkTitle>
                   <NavigationMenuLinkText
                     css={{
+                      color: '$hiContrast',
+                      fontSize: '0.875rem',
+                      lineHeight: 1.3,
                       m: 0,
                       p: 0,
-                      fontSize: '0.875rem',
-                      color: '$hiContrast',
-                      lineHeight: 1.3,
                     }}
                   >
                     FRI 03/04 08:00PM
@@ -185,13 +186,13 @@ const NavigationMenuContentContainer = ({ id, items, layout }) => {
           <NavigationMenuListItem css={{ mb: '$2' }} key={item.id}>
             <NextLink href={item.url} legacyBehavior passHref>
               <NavigationMenuListItemLink
+                focus
                 onClick={() => setSelected(item.id)}
+                onFocus={() => setFocused(item.id)}
                 onKeyDown={(event: { key: string }) =>
                   event.key === 'Enter' ? setSelected(item.id) : null
                 }
-                onFocus={() => setFocused(item.id)}
                 onMouseEnter={() => setFocused(item.id)}
-                focus
               >
                 <Box as="span">
                   <NavigationMenuLinkTitle>{item.id}</NavigationMenuLinkTitle>
@@ -215,7 +216,7 @@ const NavigationMenuImpl = () => {
     <NavigationMenu>
       <NavigationMenuList>
         {menu.map((menuItem) => {
-          const { id, layout, title, url, items } = menuItem
+          const { id, items, layout, title, url } = menuItem
           const hasChildren = !!items
 
           return hasChildren ? (

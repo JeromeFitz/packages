@@ -5,7 +5,30 @@ import { Button } from './Button'
 const buttonText = 'Default Button Text'
 
 export default {
-  title: 'Button',
+  argTypes: {
+    as: {
+      control: false,
+    },
+    ghost: {
+      control: { type: 'radio' },
+      options: [true, false],
+    },
+    ref: {
+      control: false,
+    },
+    size: {
+      control: { type: 'select' },
+      options: ['1', '2', '3'],
+    },
+    state: {
+      control: { type: 'radio' },
+      options: [null, 'active', 'waiting'],
+    },
+    variant: {
+      control: { type: 'select' },
+      options: ['brand', 'gray', 'transparentBlack', 'transparentWhite'],
+    },
+  },
   component: Button,
   parameters: {
     docs: {
@@ -14,30 +37,7 @@ export default {
       },
     },
   },
-  argTypes: {
-    as: {
-      control: false,
-    },
-    ghost: {
-      options: [true, false],
-      control: { type: 'radio' },
-    },
-    ref: {
-      control: false,
-    },
-    size: {
-      options: ['1', '2', '3'],
-      control: { type: 'select' },
-    },
-    state: {
-      options: [null, 'active', 'waiting'],
-      control: { type: 'radio' },
-    },
-    variant: {
-      options: ['brand', 'gray', 'transparentBlack', 'transparentWhite'],
-      control: { type: 'select' },
-    },
-  },
+  title: 'Button',
 } as Meta<typeof Button>
 
 const Template: StoryFn<typeof Button> = ({ children = buttonText, ...args }) => (
@@ -45,14 +45,12 @@ const Template: StoryFn<typeof Button> = ({ children = buttonText, ...args }) =>
 )
 
 export const Default = {
-  render: Template,
   args: {},
+  render: Template,
 }
 
 export const Brand = {
-  render: Template,
   args: { children: 'Custom Brand Button', variant: 'brand' },
-
   parameters: {
     docs: {
       description: {
@@ -60,19 +58,21 @@ export const Brand = {
       },
     },
   },
+
+  render: Template,
 }
 
 export const Ghost = {
-  render: Template,
   args: { ghost: true },
+  render: Template,
 }
 
 export const Size2 = {
-  render: Template,
   args: { size: '2' },
+  render: Template,
 }
 
 export const Size3 = {
-  render: Template,
   args: { size: '3' },
+  render: Template,
 }

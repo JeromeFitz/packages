@@ -19,7 +19,8 @@
     "clean": "rm -rf .turbo && rm -rf dist",
     "clean:install": "pnpm run clean && rm -rf node_modules",
     "copy": "mkdir -p ./dist && ./scripts/copy.sh",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "semantic-release:dry": "semantic-release --dry-run"
   },
   "peerDependencies": {
     "@jeromefitz/jest-presets": "^1.0.0",

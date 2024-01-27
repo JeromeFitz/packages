@@ -1,8 +1,9 @@
 // import data from 'gitmojis'
 
+import type { IReleaseRule } from '../types/index.js'
+
 import _rewrites from '../config/rewrites.js'
 import _types from '../config/types.js'
-import type { IReleaseRule } from '../types/index.js'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const data = require('gitmojis')

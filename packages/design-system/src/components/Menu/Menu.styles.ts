@@ -1,33 +1,33 @@
 import { css } from '../../lib/stitches.config'
 
 const baseItemCss = css({
-  display: 'flex',
   alignItems: 'center',
-  justifyContent: 'space-between',
+  cursor: 'default',
+  display: 'flex',
   fontFamily: '$sans',
   fontSize: '$1',
   fontVariantNumeric: 'tabular-nums',
+  height: '$5',
+  justifyContent: 'space-between',
   lineHeight: '1',
-  cursor: 'default',
+  px: '$5',
   userSelect: 'none',
   whiteSpace: 'nowrap',
-  height: '$5',
-  px: '$5',
 })
 
 const itemCss = css(baseItemCss, {
-  position: 'relative',
-  color: '$hiContrast',
-
   '&:focus': {
-    outline: 'none',
     backgroundColor: '$blue9',
     color: 'white',
+    outline: 'none',
   },
-
   '&[data-disabled]': {
     color: '$slate9',
   },
+
+  color: '$hiContrast',
+
+  position: 'relative',
 })
 
 const labelCss = css(baseItemCss, {
@@ -41,9 +41,9 @@ const menuCss = css({
 })
 
 const separatorCss = css({
+  backgroundColor: '$slate6',
   height: 1,
   my: '$1',
-  backgroundColor: '$slate6',
 })
 
 export { baseItemCss, itemCss, labelCss, menuCss, separatorCss }

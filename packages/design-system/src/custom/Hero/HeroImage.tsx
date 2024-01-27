@@ -17,10 +17,10 @@ const IMAGE__PLACEHOLDER = {
     base64:
       'data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAEAAQDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAeEAABBAIDAQAAAAAAAAAAAAABAAMEBQIGEyIxYf/EABUBAQEAAAAAAAAAAAAAAAAAAAEF/8QAGREBAQEBAQEAAAAAAAAAAAAAAQIDABGR/9oADAMBAAIRAxEAPwCfGlwqbX9eZZoaWSXq1mQ47LjczmWeYJPYnz4iIquet1ItPDlA+Enzv//Z',
     img: {
-      src: 'https://i.scdn.co/image/ab67616d0000b273a33ac83de4bc24bbf75c8b60',
-      width: 640,
       height: 640,
+      src: 'https://i.scdn.co/image/ab67616d0000b273a33ac83de4bc24bbf75c8b60',
       type: 'jpg',
+      width: 640,
     },
     slug: 'httpsiscdncoimageab67616d0000b273a33ac83de4bc24bbf75c8b60',
     url: 'https://i.scdn.co/image/ab67616d0000b273a33ac83de4bc24bbf75c8b60',
@@ -28,10 +28,12 @@ const IMAGE__PLACEHOLDER = {
 }
 
 const EmptyContent = styled('div', {
-  position: 'absolute',
-  top: '50%',
+  '& ::selection': {
+    backgroundColor: '$blueA5',
+  },
+  height: '100%',
   left: '50%',
-  transform: 'translate(-50%, -50%)',
+  position: 'absolute',
   // width: '80%',
   // bc: '$loContrast',
   // bc: 'transparent',
@@ -39,13 +41,11 @@ const EmptyContent = styled('div', {
   // py: 10,
   // px: 10,
   // marginTop: -15,
+  top: '50%',
+  transform: 'translate(-50%, -50%)',
+
   // boxShadow: '0px 5px 30px -5px rgba(0, 0, 0, 0.1)',
   width: '100%',
-  height: '100%',
-
-  '& ::selection': {
-    backgroundColor: '$blueA5',
-  },
 })
 
 function HeroImage({ alt = '', meta = IMAGE__PLACEHOLDER.meta }) {

@@ -1,15 +1,17 @@
 /**
  * https://www.radix-ui.com/primitives/docs/components/context-menu
  */
-import * as ContextMenuPrimitive from '@radix-ui/react-context-menu'
-import { forwardRef } from 'react'
 import type { ComponentProps, ElementRef } from 'react'
 
-import { styled } from '../../lib/stitches.config'
+import * as ContextMenuPrimitive from '@radix-ui/react-context-menu'
+import { forwardRef } from 'react'
+
 import type { CSS } from '../../lib/stitches.config'
-import { Box, Flex, Icon } from '../index'
-import { menuCss, separatorCss, itemCss, labelCss } from '../Menu/Menu.styles'
+
+import { styled } from '../../lib/stitches.config'
+import { itemCss, labelCss, menuCss, separatorCss } from '../Menu/Menu.styles'
 import { panelStyles } from '../Panel/Panel.styles'
+import { Box, Flex, Icon } from '../index'
 
 const ContextMenu = ContextMenuPrimitive.Root
 const ContextMenuTrigger = ContextMenuPrimitive.Trigger
@@ -33,22 +35,22 @@ const ContextMenuRadioItem = forwardRef<
   ContextMenuRadioItemProps
 >(({ children, ...props }, forwardedRef) => (
   <StyledContextMenuRadioItem {...props} ref={forwardedRef}>
-    <Box as="span" css={{ position: 'absolute', left: '$1' }}>
+    <Box as="span" css={{ left: '$1', position: 'absolute' }}>
       <ContextMenuPrimitive.ItemIndicator>
         <Flex
           css={{
-            width: '$3',
-            height: '$3',
             alignItems: 'center',
+            height: '$3',
             justifyContent: 'center',
+            width: '$3',
           }}
         >
           <Box
             css={{
-              width: '$1',
-              height: '$1',
               backgroundColor: 'currentColor',
               borderRadius: '$round',
+              height: '$1',
+              width: '$1',
             }}
           />
         </Flex>
@@ -76,7 +78,7 @@ const ContextMenuCheckboxItem = forwardRef<
   ContextMenuCheckboxItemProps
 >(({ children, ...props }, forwardedRef) => (
   <StyledContextMenuCheckboxItem {...props} ref={forwardedRef}>
-    <Box as="span" css={{ position: 'absolute', left: '$1' }}>
+    <Box as="span" css={{ left: '$1', position: 'absolute' }}>
       <ContextMenuPrimitive.ItemIndicator>
         <Icon.Check />
       </ContextMenuPrimitive.ItemIndicator>
@@ -91,13 +93,13 @@ const ContextMenuGroup = styled(ContextMenuPrimitive.Group, {})
 
 export {
   ContextMenu,
-  ContextMenuTrigger,
-  ContextMenuContent,
-  ContextMenuSeparator,
-  ContextMenuItem,
-  ContextMenuRadioItem,
   ContextMenuCheckboxItem,
+  ContextMenuContent,
+  ContextMenuGroup,
+  ContextMenuItem,
   ContextMenuLabel,
   ContextMenuRadioGroup,
-  ContextMenuGroup,
+  ContextMenuRadioItem,
+  ContextMenuSeparator,
+  ContextMenuTrigger,
 }

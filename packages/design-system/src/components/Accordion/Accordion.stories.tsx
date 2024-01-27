@@ -1,7 +1,6 @@
 import { Meta, StoryFn } from '@storybook/react'
 
 import { Text } from '../index'
-
 import {
   Accordion,
   AccordionContent,
@@ -12,15 +11,6 @@ import {
 const dummyContent = <Text css={{ p: '$3' }}>Dummy Content Here</Text>
 
 export default {
-  title: 'Accordion',
-  component: Accordion,
-  parameters: {
-    docs: {
-      description: {
-        component: 'MDX Content is TBD',
-      },
-    },
-  },
   argTypes: {
     as: {
       control: false,
@@ -32,11 +22,20 @@ export default {
       control: false,
     },
   },
+  component: Accordion,
+  parameters: {
+    docs: {
+      description: {
+        component: 'MDX Content is TBD',
+      },
+    },
+  },
+  title: 'Accordion',
 } as Meta<typeof Accordion>
 
 const Template: StoryFn<typeof Accordion> = ({ children, ...args }) => (
   // <Alert {...args}>{children}</Alert>
-  <Accordion type="single" collapsible>
+  <Accordion collapsible type="single">
     <AccordionItem value={`toggle`}>
       {/* eslint-disable @typescript-eslint/ban-ts-comment */}
       {/* @ts-ignore */}
@@ -49,10 +48,10 @@ const Template: StoryFn<typeof Accordion> = ({ children, ...args }) => (
 )
 
 export const Default = {
-  render: Template,
-
   args: {
     children: dummyContent,
     title: 'Title of Accordion',
   },
+
+  render: Template,
 }

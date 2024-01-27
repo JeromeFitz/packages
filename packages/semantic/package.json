@@ -28,7 +28,8 @@
     "format:prettier": "prettier \"./src/**/*.{cjs,js,jsx,mjs,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\" --ignore-unknown --log-level warn",
     "lint": "pnpm run format:prettier --check && pnpm run lint:eslint",
     "lint:eslint": "eslint ./src --ext cjs,js,jsx,mjs,ts,tsx --max-warnings=0",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "semantic-release:dry": "semantic-release --dry-run"
   },
   "peerDependencies": {
     "@jeromefitz/conventional-gitmoji": "^4.0.0"

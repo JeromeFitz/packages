@@ -1,21 +1,11 @@
 import { Meta, StoryFn } from '@storybook/react'
 
 import { Flex, Label } from '../index'
-
 import { Checkbox } from './Checkbox'
 
 const dummyContent = 'Hello'
 
 export default {
-  title: 'Checkbox',
-  component: Checkbox,
-  parameters: {
-    docs: {
-      description: {
-        component: 'MDX Content is TBD',
-      },
-    },
-  },
   argTypes: {
     as: {
       control: false,
@@ -27,10 +17,19 @@ export default {
       control: false,
     },
     size: {
-      options: ['1', '2', '3'],
       control: { type: 'select' },
+      options: ['1', '2', '3'],
     },
   },
+  component: Checkbox,
+  parameters: {
+    docs: {
+      description: {
+        component: 'MDX Content is TBD',
+      },
+    },
+  },
+  title: 'Checkbox',
 } as Meta<typeof Checkbox>
 
 const Template: StoryFn<typeof Checkbox> = ({ children, ...args }) => (
@@ -43,11 +42,11 @@ const Template: StoryFn<typeof Checkbox> = ({ children, ...args }) => (
 )
 
 export const Default = {
-  render: Template,
-
   args: {
     children: dummyContent,
     defaultChecked: true,
     id: 'customCheckbox1',
   },
+
+  render: Template,
 }

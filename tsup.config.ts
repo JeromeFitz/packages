@@ -2,8 +2,9 @@
  * @ref(tsup) https://tsup.egoist.dev/
  *
  */
-import { defineConfig } from 'tsup'
 import type { Options } from 'tsup'
+
+import { defineConfig } from 'tsup'
 
 const config: Options = {
   clean: true,
@@ -17,8 +18,8 @@ const config: Options = {
   silent: true,
   sourcemap: false,
   splitting: false,
-  treeshake: false,
   target: ['node20'],
+  treeshake: false,
 }
 
 export { config }

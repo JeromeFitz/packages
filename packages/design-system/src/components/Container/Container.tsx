@@ -3,13 +3,16 @@ import { styled } from '../../lib/stitches.config'
 const Container = styled('div', {
   // @reset
   boxSizing: 'border-box',
-  flexShrink: 0,
+  defaultVariants: {
+    size: '5',
+  },
 
+  flexShrink: 0,
   // @custom
   ml: 'auto',
   mr: 'auto',
-  px: '$5',
 
+  px: '$5',
   variants: {
     breakout: {
       true: {
@@ -36,9 +39,6 @@ const Container = styled('div', {
         maxWidth: 'none',
       },
     },
-  },
-  defaultVariants: {
-    size: '5',
   },
 })
 

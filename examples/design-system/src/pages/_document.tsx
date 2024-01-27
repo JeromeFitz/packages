@@ -1,8 +1,9 @@
 import { getCssText, reset } from '@jeromefitz/design-system/src/lib/stitches.config'
+
 import Document, {
   DocumentContext,
-  Html,
   Head,
+  Html,
   Main,
   NextScript,
 } from 'next/document'
@@ -27,12 +28,12 @@ class MyDocument extends Document<DocumentContext> {
       <Html lang="en">
         <Head>
           <meta charSet="utf-8" />
-          <meta name="msapplication-tap-highlight" content="no" />
-          <meta name="superfish" content="nofish" />
+          <meta content="no" name="msapplication-tap-highlight" />
+          <meta content="nofish" name="superfish" />
           <meta content="origin-when-cross-origin" name="referrer" />
           <style
-            id="stitches"
             dangerouslySetInnerHTML={{ __html: getCssAndReset() }}
+            id="stitches"
           />
         </Head>
         <body>

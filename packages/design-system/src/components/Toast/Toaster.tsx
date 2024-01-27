@@ -1,7 +1,8 @@
 import { forwardRef, useImperativeHandle, useState } from 'react'
 
-import { Button, Icon } from '../index'
+import type { IToast, IToastVariant } from './Toast.types'
 
+import { Button, Icon } from '../index'
 import {
   Toast,
   ToastAction,
@@ -9,7 +10,6 @@ import {
   ToastDescription,
   ToastTitle,
 } from './Toast'
-import type { IToast, IToastVariant } from './Toast.types'
 
 const Toaster = forwardRef((props, forwardedRef) => {
   const [toasts, toastsSet] = useState<IToast[]>([])
@@ -90,8 +90,8 @@ const Toaster = forwardRef((props, forwardedRef) => {
           // @todo(toast) custom component
           // eslint-disable-next-line @typescript-eslint/no-unused-vars
           closeComponent,
-          key,
           description,
+          key,
           title,
           variant,
           ...toastProps
@@ -117,7 +117,7 @@ const Toaster = forwardRef((props, forwardedRef) => {
               <ToastDescription>{description}</ToastDescription>
 
               {actionVisible && (
-                <ToastAction asChild altText={actionAltText || actionText}>
+                <ToastAction altText={actionAltText || actionText} asChild>
                   <Button onClick={action} size="1">
                     {actionText}
                   </Button>
@@ -125,8 +125,8 @@ const Toaster = forwardRef((props, forwardedRef) => {
               )}
 
               {closeVisible && (
-                <ToastClose asChild aria-label="Close">
-                  <Button ghost size="1" onClick={!!close ? close : () => {}}>
+                <ToastClose aria-label="Close" asChild>
+                  <Button ghost onClick={!!close ? close : () => {}} size="1">
                     <Icon.Cross2 />
                   </Button>
                 </ToastClose>

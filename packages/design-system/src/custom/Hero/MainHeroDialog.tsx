@@ -9,21 +9,21 @@ import { Text } from '../../components/Text'
 import { styled } from '../../lib/stitches.config'
 
 const DialogContent = styled(DialogPrimitive.Content, {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: '80%',
-  bc: '$loContrast',
-  br: '$2',
-  py: 10,
-  px: 10,
-  marginTop: -15,
-  boxShadow: '0px 5px 30px -5px rgba(0, 0, 0, 0.1)',
-
   '& ::selection': {
     backgroundColor: '$blueA5',
   },
+  bc: '$loContrast',
+  boxShadow: '0px 5px 30px -5px rgba(0, 0, 0, 0.1)',
+  br: '$2',
+  left: '50%',
+  marginTop: -15,
+  position: 'absolute',
+  px: 10,
+  py: 10,
+  top: '50%',
+  transform: 'translate(-50%, -50%)',
+
+  width: '80%',
 })
 
 function MainHeroDialog() {
@@ -32,7 +32,7 @@ function MainHeroDialog() {
   const initialAutoFocusPrevented = useRef(false)
 
   return (
-    <DialogPrimitive.Root modal={false} defaultOpen>
+    <DialogPrimitive.Root defaultOpen modal={false}>
       <DialogPrimitive.Trigger asChild>
         <ButtonDemo>Open Dialog</ButtonDemo>
       </DialogPrimitive.Trigger>
@@ -51,19 +51,19 @@ function MainHeroDialog() {
         <DialogPrimitive.Title asChild>
           <Text
             as="h2"
+            css={{ fontWeight: '500', lineHeight: 1.2, mb: '$2' }}
             size="4"
-            css={{ fontWeight: '500', mb: '$2', lineHeight: 1.2 }}
           >
             Dialog
           </Text>
         </DialogPrimitive.Title>
 
-        <Text size="2" css={{ lineHeight: 1.5, mb: '$2' }}>
+        <Text css={{ lineHeight: 1.5, mb: '$2' }} size="2">
           Far far away, behind the word mountains, far from the countries Vokalia and
           Consonantia, there live the blind texts.
         </Text>
 
-        <Flex justify="end" gap="2">
+        <Flex gap="2" justify="end">
           <DialogPrimitive.Close asChild>
             <ButtonDemo variant="gray">OK</ButtonDemo>
           </DialogPrimitive.Close>

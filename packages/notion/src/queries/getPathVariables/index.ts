@@ -13,7 +13,7 @@ import _size from 'lodash/size.js'
 // import { DATA_TYPES } from '../../constants/index.js'
 import { getDataType } from '../../utils/index.js'
 
-const getPathVariables = ({ config, catchAll }) => {
+const getPathVariables = ({ catchAll, config }) => {
   const { NOTION, PAGES__HOMEPAGE, ROUTE_META, ROUTE_TYPES } = config
   const size: number = _size(catchAll)
   const first: any = _first(catchAll)
@@ -38,8 +38,8 @@ const getPathVariables = ({ config, catchAll }) => {
 
   const pathVariables = {
     hasMeta,
-    isPage,
     isIndex,
+    isPage,
     meta,
     routeType,
     slug,

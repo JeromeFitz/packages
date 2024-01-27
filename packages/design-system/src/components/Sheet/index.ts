@@ -8,4 +8,4 @@ export {
   SheetTrigger,
 } from './Sheet'
 
-export { StyledOverlay, StyledContent, StyledCloseButton } from './Sheet.styles'
+export { StyledCloseButton, StyledContent, StyledOverlay } from './Sheet.styles'

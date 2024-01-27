@@ -8,4 +8,4 @@ interface CalloutProps {
   variant?: CalloutVariant
 }
 
-export type { CalloutVariant, CalloutProps }
+export type { CalloutProps, CalloutVariant }

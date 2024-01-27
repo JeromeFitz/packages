@@ -1,4 +1,5 @@
 import { releaseRules as releaseRulesDefault } from '@jeromefitz/conventional-gitmoji'
+
 import type { IReleaseRule } from '@jeromefitz/conventional-gitmoji'
 import type { PluginSpec } from 'semantic-release'
 

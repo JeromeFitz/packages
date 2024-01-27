@@ -1,14 +1,16 @@
 /**
  * https://www.radix-ui.com/primitives/docs/components/popover
  */
-import * as PopoverPrimitive from '@radix-ui/react-popover'
-import { forwardRef } from 'react'
 import type { ComponentProps, ElementRef, ReactNode } from 'react'
 
-import { styled } from '../../lib/stitches.config'
+import * as PopoverPrimitive from '@radix-ui/react-popover'
+import { forwardRef } from 'react'
+
 import type { CSS } from '../../lib/stitches.config'
-import { Box } from '../index'
+
+import { styled } from '../../lib/stitches.config'
 import { panelStyles } from '../Panel/Panel.styles'
+import { Box } from '../index'
 
 // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
 type PopoverProps = ComponentProps<typeof PopoverPrimitive.Root> & {
@@ -20,12 +22,12 @@ function Popover({ children, ...props }: PopoverProps) {
 }
 
 const StyledContent = styled(PopoverPrimitive.Content, panelStyles, {
-  minWidth: 200,
-  minHeight: '$6',
-  maxWidth: 265,
   '&:focus': {
     outline: 'none',
   },
+  maxWidth: 265,
+  minHeight: '$6',
+  minWidth: 200,
 })
 
 type PopoverContentPrimitiveProps = ComponentProps<typeof PopoverPrimitive.Content>
@@ -45,10 +47,10 @@ const PopoverContent = forwardRef<
     {!hideArrow && (
       <Box css={{ color: '$panel' }}>
         <PopoverPrimitive.Arrow
-          width={11}
           height={5}
           offset={5}
           style={{ fill: 'currentColor' }}
+          width={11}
         />
       </Box>
     )}
@@ -59,4 +61,4 @@ PopoverContent.displayName = 'PopoverContent'
 const PopoverTrigger = PopoverPrimitive.Trigger
 const PopoverClose = PopoverPrimitive.Close
 
-export { Popover, PopoverContent, PopoverTrigger, PopoverClose }
+export { Popover, PopoverClose, PopoverContent, PopoverTrigger }

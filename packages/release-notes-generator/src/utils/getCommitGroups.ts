@@ -9,7 +9,7 @@ function getCommitGroups(groupBy, commits, commitGroupsSort, commitsSort) {
     return commit[groupBy] || ''
   })
 
-  _forEach(commitGroupsObj, function (commits, title: string | boolean) {
+  _forEach(commitGroupsObj, function (commits, title: boolean | string) {
     if (title === '') {
       title = false
     }
@@ -34,9 +34,9 @@ function getCommitGroups(groupBy, commits, commitGroupsSort, commitsSort) {
     }
 
     commitGroups.push({
-      title: title,
       commits: commitsSorted,
       order,
+      title: title,
     })
   })
 

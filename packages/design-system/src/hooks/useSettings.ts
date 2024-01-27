@@ -9,10 +9,10 @@ function useSettings() {
   })
 
   return {
-    settings: data,
     isError: error,
     isLoading: !error && !data,
     key,
+    settings: data,
   }
 }
 

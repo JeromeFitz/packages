@@ -6,11 +6,11 @@ import getTitle from './getTitle/index.js'
 import getTypes from './getTypes/index.js'
 
 export {
-  getTypes,
   //
   addTime,
   dataNormalized,
   dataNormalizedResults,
   getDataType,
   getTitle,
+  getTypes,
 }

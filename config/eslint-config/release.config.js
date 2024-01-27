@@ -1,6 +1,7 @@
 import { createRequire } from 'node:module'
 
 import { getConfig } from '@jeromefitz/semantic'
+
 import isCI from 'is-ci'
 
 import { config as configDefault } from '../../release.config.js'
@@ -18,6 +19,7 @@ const { name } = pkg
 const branches = [
   ...configDefault.branches,
   { name: 'refactor/NICE-123', prerelease: 'canary' },
+  { name: 'NICE-68', prerelease: 'canary' },
 ]
 
 const configPassed = {

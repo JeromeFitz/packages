@@ -1,12 +1,12 @@
 export {
   ContextMenu,
-  ContextMenuTrigger,
-  ContextMenuContent,
   ContextMenuCheckboxItem,
+  ContextMenuContent,
   ContextMenuGroup,
   ContextMenuItem,
   ContextMenuLabel,
   ContextMenuRadioGroup,
   ContextMenuRadioItem,
   ContextMenuSeparator,
+  ContextMenuTrigger,
 } from './ContextMenu'

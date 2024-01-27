@@ -1,42 +1,42 @@
 import { styled } from '../../lib/stitches.config'
 
 const TabLink = styled('a', {
-  position: 'relative',
-  flexShrink: 0,
-  height: '$6',
-  display: 'inline-flex',
-  lineHeight: 1,
-  fontSize: '$1',
-  px: '$3',
-  userSelect: 'none',
-  outline: 'none',
-  alignItems: 'center',
-  justifyContent: 'center',
-  color: '$slate11',
-  textDecoration: 'none',
+  '&:focus': {
+    boxShadow: 'inset 0 0 0 1px $colors$slate8, 0 0 0 1px $colors$slate8',
+  },
   '@hover': {
     '&:hover': {
       color: '$hiContrast',
     },
   },
-  '&:focus': {
-    boxShadow: 'inset 0 0 0 1px $colors$slate8, 0 0 0 1px $colors$slate8',
-  },
+  alignItems: 'center',
+  color: '$slate11',
+  display: 'inline-flex',
+  flexShrink: 0,
+  fontSize: '$1',
+  height: '$6',
+  justifyContent: 'center',
+  lineHeight: 1,
+  outline: 'none',
+  position: 'relative',
+  px: '$3',
+  textDecoration: 'none',
+  userSelect: 'none',
 
   variants: {
     active: {
       true: {
+        '&::after': {
+          backgroundColor: '$blue9',
+          bottom: 0,
+          content: '""',
+          height: 2,
+          left: 0,
+          position: 'absolute',
+          width: '100%',
+        },
         color: '$hiContrast',
         cursor: 'default',
-        '&::after': {
-          position: 'absolute',
-          content: '""',
-          left: 0,
-          bottom: 0,
-          width: '100%',
-          height: 2,
-          backgroundColor: '$blue9',
-        },
       },
     },
   },

@@ -11,8 +11,8 @@ const Box = styled('div', {
 const EmojiHtml = ({ emoji, label, margin }) => {
   return (
     <Box
-      as="span"
       aria-label={label}
+      as="span"
       // @hack(emoji) this breaks the underline on links
       css={{
         fontStyle: 'normal',

@@ -1,8 +1,8 @@
 export {
   Carousel,
   CarouselArrowButton,
-  CarouselSlideList,
-  CarouselSlide,
   CarouselNext,
   CarouselPrevious,
+  CarouselSlide,
+  CarouselSlideList,
 } from './Carousel'

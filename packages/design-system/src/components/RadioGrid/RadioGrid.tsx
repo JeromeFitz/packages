@@ -9,31 +9,31 @@ const RadioGridGroup = styled(RadioGroupPrimitive.Root, {
 })
 
 const RadioGrid = styled(RadioGroupPrimitive.Item, {
-  all: 'unset',
-  boxSizing: 'border-box',
-  userSelect: 'none',
-  textAlign: 'center',
-  '&::before': {
-    boxSizing: 'border-box',
-  },
   '&::after': {
     boxSizing: 'border-box',
   },
-  borderRadius: '$2',
-  boxShadow: 'inset 0 0 0 1px $colors$slate7',
-  px: '$1',
-  height: '$6',
-  lineHeight: '$sizes$6',
-  fontSize: '$3',
+  '&::before': {
+    boxSizing: 'border-box',
+  },
+  '&[data-state="checked"]': {
+    backgroundColor: '$slate4',
+    boxShadow: 'inset 0 0 0 1px $colors$slate8',
+  },
   '@hover': {
     '&:hover': {
       boxShadow: 'inset 0 0 0 1px $colors$slate8',
     },
   },
-  '&[data-state="checked"]': {
-    boxShadow: 'inset 0 0 0 1px $colors$slate8',
-    backgroundColor: '$slate4',
-  },
+  all: 'unset',
+  borderRadius: '$2',
+  boxShadow: 'inset 0 0 0 1px $colors$slate7',
+  boxSizing: 'border-box',
+  fontSize: '$3',
+  height: '$6',
+  lineHeight: '$sizes$6',
+  px: '$1',
+  textAlign: 'center',
+  userSelect: 'none',
 })
 
-export { RadioGridGroup, RadioGrid }
+export { RadioGrid, RadioGridGroup }

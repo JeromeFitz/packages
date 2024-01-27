@@ -1,131 +1,131 @@
 import type { ScaleValue } from '@stitches/react'
 
 const utils = {
-  p: (value: ScaleValue<'padding'> | string | number) => ({
-    padding: value,
-  }),
-  pt: (value: ScaleValue<'paddingTop'> | string | number) => ({
-    paddingTop: value,
-  }),
-  pr: (value: ScaleValue<'paddingRight'> | string | number) => ({
-    paddingRight: value,
-  }),
-  pb: (value: ScaleValue<'paddingBottom'> | string | number) => ({
-    paddingBottom: value,
-  }),
-  pl: (value: ScaleValue<'paddingLeft'> | string | number) => ({
-    paddingLeft: value,
-  }),
-  px: (value: ScaleValue<'paddingLeft'> | string | number) => ({
-    paddingLeft: value,
-    paddingRight: value,
-  }),
-  py: (value: ScaleValue<'paddingTop'> | string | number) => ({
-    paddingTop: value,
-    paddingBottom: value,
-  }),
-
-  m: (value: ScaleValue<'margin'> | string | number) => ({
-    margin: value,
-  }),
-  mt: (value: ScaleValue<'marginTop'> | string | number) => ({
-    marginTop: value,
-  }),
-  mr: (value: ScaleValue<'marginRight'> | string | number) => ({
-    marginRight: value,
-  }),
-  mb: (value: ScaleValue<'marginBottom'> | string | number) => ({
-    marginBottom: value,
-  }),
-  ml: (value: ScaleValue<'marginLeft'> | string | number) => ({
-    marginLeft: value,
-  }),
-  mx: (value: ScaleValue<'marginLeft'> | string | number) => ({
-    marginLeft: value,
-    marginRight: value,
-  }),
-  my: (value: ScaleValue<'marginTop'> | string | number) => ({
-    marginTop: value,
-    marginBottom: value,
-  }),
-
-  ta: (value: ScaleValue<'textAlign'> | string | number) => ({ textAlign: value }),
-
-  fd: (value: ScaleValue<'flexDirection'> | string | number) => ({
-    flexDirection: value,
-  }),
-  fw: (value: ScaleValue<'flexWrap'> | string | number) => ({ flexWrap: value }),
-
-  ai: (value: ScaleValue<'alignItems'> | string | number) => ({
-    alignItems: value,
-  }),
-  ac: (value: ScaleValue<'alignContent'> | string | number) => ({
+  ac: (value: ScaleValue<'alignContent'> | number | string) => ({
     alignContent: value,
   }),
-  jc: (value: ScaleValue<'justifyContent'> | string | number) => ({
-    justifyContent: value,
+  ai: (value: ScaleValue<'alignItems'> | number | string) => ({
+    alignItems: value,
   }),
-  as: (value: ScaleValue<'alignSelf'> | string | number) => ({ alignSelf: value }),
-  fg: (value: ScaleValue<'flexGrow'> | string | number) => ({ flexGrow: value }),
-  fs: (value: ScaleValue<'flexShrink'> | string | number) => ({
-    flexShrink: value,
-  }),
-  fb: (value: ScaleValue<'flexBasis'> | string | number) => ({ flexBasis: value }),
-
-  bc: (value: ScaleValue<'backgroundColor'> | string | number) => ({
-    backgroundColor: value,
-  }),
-
-  br: (value: ScaleValue<'borderRadius'> | string | number) => ({
-    borderRadius: value,
-  }),
-  btrr: (value: ScaleValue<'borderTopRightRadius'> | string | number) => ({
-    borderTopRightRadius: value,
-  }),
-  bbrr: (value: ScaleValue<'borderBottomRightRadius'> | string | number) => ({
-    borderBottomRightRadius: value,
-  }),
-  bblr: (value: ScaleValue<'borderBottomLeftRadius'> | string | number) => ({
-    borderBottomLeftRadius: value,
-  }),
-  btlr: (value: ScaleValue<'borderTopLeftRadius'> | string | number) => ({
-    borderTopLeftRadius: value,
-  }),
-
-  bs: (value: ScaleValue<'boxShadow'> | string | number) => ({ boxShadow: value }),
-
-  lh: (value: ScaleValue<'lineHeight'> | string | number) => ({
-    lineHeight: value,
-  }),
-
-  ox: (value: ScaleValue<'overflowX'> | string | number) => ({ overflowX: value }),
-  oy: (value: ScaleValue<'overflowY'> | string | number) => ({ overflowY: value }),
-
-  pe: (value: ScaleValue<'pointerEvents'> | string | number) => ({
-    pointerEvents: value,
-  }),
-  us: (value: ScaleValue<'userSelect'> | string | number) => ({
-    WebkitUserSelect: value,
-    userSelect: value,
-  }),
-
-  userSelect: (value: ScaleValue<'userSelect'> | string | number) => ({
-    WebkitUserSelect: value,
-    userSelect: value,
-  }),
-
-  size: (value: ScaleValue<'width'> | string | number) => ({
-    width: value,
-    height: value,
-  }),
-
-  appearance: (value: ScaleValue<'appearance'> | string | number) => ({
+  appearance: (value: ScaleValue<'appearance'> | number | string) => ({
     WebkitAppearance: value,
     appearance: value,
   }),
-  backgroundClip: (value: ScaleValue<'backgroundClip'> | string | number) => ({
+  as: (value: ScaleValue<'alignSelf'> | number | string) => ({ alignSelf: value }),
+  backgroundClip: (value: ScaleValue<'backgroundClip'> | number | string) => ({
     WebkitBackgroundClip: value,
     backgroundClip: value,
+  }),
+  bblr: (value: ScaleValue<'borderBottomLeftRadius'> | number | string) => ({
+    borderBottomLeftRadius: value,
+  }),
+  bbrr: (value: ScaleValue<'borderBottomRightRadius'> | number | string) => ({
+    borderBottomRightRadius: value,
+  }),
+
+  bc: (value: ScaleValue<'backgroundColor'> | number | string) => ({
+    backgroundColor: value,
+  }),
+  br: (value: ScaleValue<'borderRadius'> | number | string) => ({
+    borderRadius: value,
+  }),
+  bs: (value: ScaleValue<'boxShadow'> | number | string) => ({ boxShadow: value }),
+  btlr: (value: ScaleValue<'borderTopLeftRadius'> | number | string) => ({
+    borderTopLeftRadius: value,
+  }),
+  btrr: (value: ScaleValue<'borderTopRightRadius'> | number | string) => ({
+    borderTopRightRadius: value,
+  }),
+  fb: (value: ScaleValue<'flexBasis'> | number | string) => ({ flexBasis: value }),
+  fd: (value: ScaleValue<'flexDirection'> | number | string) => ({
+    flexDirection: value,
+  }),
+
+  fg: (value: ScaleValue<'flexGrow'> | number | string) => ({ flexGrow: value }),
+
+  fs: (value: ScaleValue<'flexShrink'> | number | string) => ({
+    flexShrink: value,
+  }),
+  fw: (value: ScaleValue<'flexWrap'> | number | string) => ({ flexWrap: value }),
+
+  jc: (value: ScaleValue<'justifyContent'> | number | string) => ({
+    justifyContent: value,
+  }),
+  lh: (value: ScaleValue<'lineHeight'> | number | string) => ({
+    lineHeight: value,
+  }),
+  m: (value: ScaleValue<'margin'> | number | string) => ({
+    margin: value,
+  }),
+  mb: (value: ScaleValue<'marginBottom'> | number | string) => ({
+    marginBottom: value,
+  }),
+  ml: (value: ScaleValue<'marginLeft'> | number | string) => ({
+    marginLeft: value,
+  }),
+  mr: (value: ScaleValue<'marginRight'> | number | string) => ({
+    marginRight: value,
+  }),
+  mt: (value: ScaleValue<'marginTop'> | number | string) => ({
+    marginTop: value,
+  }),
+
+  mx: (value: ScaleValue<'marginLeft'> | number | string) => ({
+    marginLeft: value,
+    marginRight: value,
+  }),
+
+  my: (value: ScaleValue<'marginTop'> | number | string) => ({
+    marginBottom: value,
+    marginTop: value,
+  }),
+  ox: (value: ScaleValue<'overflowX'> | number | string) => ({ overflowX: value }),
+  oy: (value: ScaleValue<'overflowY'> | number | string) => ({ overflowY: value }),
+  p: (value: ScaleValue<'padding'> | number | string) => ({
+    padding: value,
+  }),
+  pb: (value: ScaleValue<'paddingBottom'> | number | string) => ({
+    paddingBottom: value,
+  }),
+
+  pe: (value: ScaleValue<'pointerEvents'> | number | string) => ({
+    pointerEvents: value,
+  }),
+
+  pl: (value: ScaleValue<'paddingLeft'> | number | string) => ({
+    paddingLeft: value,
+  }),
+
+  pr: (value: ScaleValue<'paddingRight'> | number | string) => ({
+    paddingRight: value,
+  }),
+  pt: (value: ScaleValue<'paddingTop'> | number | string) => ({
+    paddingTop: value,
+  }),
+
+  px: (value: ScaleValue<'paddingLeft'> | number | string) => ({
+    paddingLeft: value,
+    paddingRight: value,
+  }),
+  py: (value: ScaleValue<'paddingTop'> | number | string) => ({
+    paddingBottom: value,
+    paddingTop: value,
+  }),
+
+  size: (value: ScaleValue<'width'> | number | string) => ({
+    height: value,
+    width: value,
+  }),
+
+  ta: (value: ScaleValue<'textAlign'> | number | string) => ({ textAlign: value }),
+
+  us: (value: ScaleValue<'userSelect'> | number | string) => ({
+    WebkitUserSelect: value,
+    userSelect: value,
+  }),
+  userSelect: (value: ScaleValue<'userSelect'> | number | string) => ({
+    WebkitUserSelect: value,
+    userSelect: value,
   }),
 }
 

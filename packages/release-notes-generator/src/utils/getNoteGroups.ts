@@ -24,8 +24,8 @@ function getNoteGroups(notes, noteGroupsSort, notesSort) {
 
     if (!titleExists) {
       noteGroups.push({
-        title: title,
         notes: [note],
+        title: title,
       })
     }
   })

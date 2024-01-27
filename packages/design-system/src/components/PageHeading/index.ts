@@ -1,6 +1,6 @@
 export {
   PageHeading,
+  SkeletonDescription,
   SkeletonHeading,
   SkeletonTitle,
-  SkeletonDescription,
 } from './PageHeading'

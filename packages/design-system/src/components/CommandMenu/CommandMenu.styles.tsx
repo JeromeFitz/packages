@@ -19,27 +19,8 @@ const showTopShineKeyframe = keyframes({
 })
 
 const StyledCommand = styled(Command, {
-  '--cmdk-shadow': '0 16px 70px rgb(0 0 0 / 20%)',
-  background: '$gray1',
-  border: '0',
-  borderRadius: '$3',
-  boxShadow: 'var(--cmdk-shadow)',
-  display: 'flex',
-  height: '100%',
-  flexDirection: 'column',
-  fontFamily: '$sans',
-  justifyContent: 'flex-start',
-  padding: '$4 $2',
-  position: 'relative',
-  top: 0,
-  transition: 'transform 100ms ease',
-
-  '@bp1': {
-    width: '100%',
-  },
-
   '&:after': {
-    content: '""',
+    animation: `${shineKeyframe} 2s ease forwards 0.1s`,
     background: `
       linear-gradient(
         to right,
@@ -50,51 +31,71 @@ const StyledCommand = styled(Command, {
         $colors$gray6 70%,
         $colors$gray6 100%
       )`,
-    zIndex: '-1',
-    padding: '-$3',
-    position: 'absolute',
-    borderRadius: '$3',
-    top: '-1px',
-    left: '-1px',
-    width: 'calc(100% + 2px)',
-    height: 'calc(100% + 2px)',
-    animation: `${shineKeyframe} 2s ease forwards 0.1s`,
     backgroundSize: '200% auto',
-  },
-
-  '&:before': {
+    borderRadius: '$3',
     content: '""',
-    zIndex: '-1',
+    height: 'calc(100% + 2px)',
+    left: '-1px',
     padding: '-$3',
     position: 'absolute',
-    borderRadius: '$3',
     top: '-1px',
-    left: '0px',
-    width: 'calc(100% + 1px)',
-    height: 'calc(100% + 1px)',
-    boxShadow: '0 0 0 1px transparent',
-    animation: `${borderKeyframe} 1s linear forwards 0.5s`,
+    width: 'calc(100% + 2px)',
+    zIndex: '-1',
   },
+  '&:before': {
+    animation: `${borderKeyframe} 1s linear forwards 0.5s`,
+    borderRadius: '$3',
+    boxShadow: '0 0 0 1px transparent',
+    content: '""',
+    height: 'calc(100% + 1px)',
+    left: '0px',
+    padding: '-$3',
+    position: 'absolute',
+    top: '-1px',
+    width: 'calc(100% + 1px)',
+    zIndex: '-1',
+  },
+  '@bp1': {
+    width: '100%',
+  },
+  '--cmdk-shadow': '0 16px 70px rgb(0 0 0 / 20%)',
+  background: '$gray1',
+  border: '0',
+  borderRadius: '$3',
+  boxShadow: 'var(--cmdk-shadow)',
+  display: 'flex',
+  flexDirection: 'column',
+  fontFamily: '$sans',
+  height: '100%',
+  justifyContent: 'flex-start',
+  padding: '$4 $2',
+
+  position: 'relative',
+
+  top: 0,
+
+  transition: 'transform 100ms ease',
 })
 const StyledCommandInput = styled(Command.Input, {
+  '&::placeholder': {
+    color: '$gray9',
+  },
+  '@bp1': {
+    fontSize: '$4',
+  },
   background: 'transparent',
   border: 'none',
   borderRadius: '$0',
   color: '$gray12',
   fontFamily: '$sans',
+  // ref: https://twitter.com/joshwcomeau/status/1379782931116351490?s=12
+  fontSize: '16px',
   fontWeight: '$7',
   outline: 'none',
   padding: '$4 $4 $2',
-  '&::placeholder': {
-    color: '$gray9',
-  },
-  // ref: https://twitter.com/joshwcomeau/status/1379782931116351490?s=12
-  fontSize: '16px',
-  '@bp1': {
-    fontSize: '$4',
-  },
 })
 const StyledCommandTopShine = styled(Box, {
+  animation: `${showTopShineKeyframe} 0.1s ease forwards 0.2s`,
   background: `
     linear-gradient(
       90deg,
@@ -104,12 +105,11 @@ const StyledCommandTopShine = styled(Box, {
       rgba(236, 72, 153, 0)
     )`,
   height: '1px',
+  opacity: '0',
   position: 'absolute',
   top: '-1px',
   width: '100%',
   zIndex: '-1',
-  opacity: '0',
-  animation: `${showTopShineKeyframe} 0.1s ease forwards 0.2s`,
 })
 const StyledCommandBadge = styled(Box, {
   alignItems: 'center',
@@ -126,23 +126,11 @@ const StyledCommandBadge = styled(Box, {
   userSelect: 'none',
 })
 const StyledCommandLoader = styled('hr', {
-  '--loader-color': '$colors$gray12',
-  border: '0',
-  width: '100%',
-  left: '0',
-  height: '1px',
-  background: '$gray6',
-  position: 'relative',
-  overflow: 'visible',
-  display: 'block',
-  marginTop: '12px',
-  marginBottom: '12px',
-
   '&:after': {
-    content: '""',
-    width: '50%',
-    height: '1px',
-    position: 'absolute',
+    animationDelay: '0.9s',
+    animationDuration: '1.25s',
+    animationName: `${loadingKeyframe}`,
+    animationTimingFunction: 'ease',
     background: `
     linear-gradient(
       90deg,
@@ -150,13 +138,25 @@ const StyledCommandLoader = styled('hr', {
       var(--loader-color) 50%,
       transparent 100%
     )`,
-    top: '0px',
+    content: '""',
+    height: '1px',
     opacity: '0',
-    animationDuration: '1.25s',
-    animationDelay: '0.9s',
-    animationTimingFunction: 'ease',
-    animationName: `${loadingKeyframe}`,
+    position: 'absolute',
+    top: '0px',
+    width: '50%',
   },
+  '--loader-color': '$colors$gray12',
+  background: '$gray6',
+  border: '0',
+  display: 'block',
+  height: '1px',
+  left: '0',
+  marginBottom: '12px',
+  marginTop: '12px',
+  overflow: 'visible',
+  position: 'relative',
+
+  width: '100%',
 })
 const StyledCommandList = styled(Command.List, {
   height: 'min(330px, calc(var(--cmdk-list-height)))',
@@ -167,27 +167,27 @@ const StyledCommandList = styled(Command.List, {
   transitionProperty: 'height',
 })
 const StyledCommandSeparator = styled(Command.Separator, {
-  height: '1px',
-  width: '100%',
   background: '$gray5',
+  height: '1px',
   margin: '4px 0',
+  width: '100%',
 })
 const StyledCommandGroup = styled(Command.Group, {
-  // '*:not([hidden]) + [cmdk-group]': {
-  marginTop: '1px',
   // },
   '[cmdk-group-heading]': {
-    userSelect: 'none',
+    color: '$gray11',
+    display: 'flex',
+    flexDirection: 'column',
     fontSize: '$2',
     fontWeight: '$7',
-    color: '$gray11',
-    padding: '2px 8px',
-    display: 'flex',
-    marginBottom: '8px',
-    flexDirection: 'column',
     justifyItems: 'flex-end',
+    marginBottom: '8px',
+    padding: '2px 8px',
+    userSelect: 'none',
     width: '100%',
   },
+  // '*:not([hidden]) + [cmdk-group]': {
+  marginTop: '1px',
 })
 const StyledCommandEmpty = styled(Command.Empty, {
   alignItems: 'center',
@@ -201,65 +201,65 @@ const StyledCommandEmpty = styled(Command.Empty, {
 })
 
 const StyledCommandItem = styled(Command.Item, {
-  contentVisibility: 'auto',
-
-  cursor: 'pointer',
-  height: '$7',
-  borderRadius: '$2',
-  fontSize: '$3',
-  display: 'flex',
-  alignItems: 'center',
-  gap: '$2',
-  padding: '0 16px',
-  color: '$gray11',
-  userSelect: 'none',
-  willChange: 'background, color',
-  transition: 'all 150ms ease',
-  transitionProperty: 'none',
-
-  '&[aria-selected="true"]': {
-    background: '$grayA3',
-    color: '$gray12',
-  },
-
-  '&[aria-disabled="true"]': {
-    color: '$gray8',
-    cursor: 'not-allowed',
-  },
-
-  '&:active': {
-    transitionProperty: 'background',
-    background: '$gray4',
-  },
-
   '& + [cmdk-item]': {
     marginTop: '4px',
   },
 
-  svg: {
-    width: '18px',
-    height: '18px',
+  '&:active': {
+    background: '$gray4',
+    transitionProperty: 'background',
   },
+  '&[aria-disabled="true"]': {
+    color: '$gray8',
+    cursor: 'not-allowed',
+  },
+  '&[aria-selected="true"]': {
+    background: '$grayA3',
+    color: '$gray12',
+  },
+  alignItems: 'center',
+  borderRadius: '$2',
+  color: '$gray11',
+  contentVisibility: 'auto',
+  cursor: 'pointer',
+  display: 'flex',
+  fontSize: '$3',
+  gap: '$2',
+  height: '$7',
+  padding: '0 16px',
+
+  svg: {
+    height: '18px',
+    width: '18px',
+  },
+
+  transition: 'all 150ms ease',
+
+  transitionProperty: 'none',
+
+  userSelect: 'none',
+
+  willChange: 'background, color',
 })
 const StyledCommandShortCuts = styled(Box, {
   display: 'flex',
-  marginLeft: 'auto',
   gap: '8px',
-
   kbd: {
-    fontFamily: '$sans',
-    fontSize: '12px',
-    minWidth: '20px',
-    padding: '4px',
-    height: '20px',
+    alignItems: 'center',
+    background: '$gray4',
     borderRadius: '4px',
     color: '$gray11',
-    background: '$gray4',
     display: 'inline-flex',
-    alignItems: 'center',
+    fontFamily: '$sans',
+    fontSize: '12px',
+    height: '20px',
     justifyContent: 'center',
+    minWidth: '20px',
+    padding: '4px',
     textTransform: 'uppercase',
   },
+
+  marginLeft: 'auto',
 })
 
 // @note(cmdk) this goes away when radix is upgraded in cmdk
@@ -279,14 +279,14 @@ const CommandItem = StyledCommandItem
 
 export {
   _Command as Command,
-  CommandInput,
-  CommandTopShine,
   CommandBadge,
-  CommandLoader,
-  CommandList,
-  CommandSeparator,
-  CommandGroup,
   CommandEmpty,
-  CommandShortCuts,
+  CommandGroup,
+  CommandInput,
   CommandItem,
+  CommandList,
+  CommandLoader,
+  CommandSeparator,
+  CommandShortCuts,
+  CommandTopShine,
 }

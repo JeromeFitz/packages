@@ -1,6 +1,7 @@
 import type { ComponentProps } from 'react'
 
 import type { CSS, VariantProps } from '../../lib/stitches.config'
+
 import { Text } from '../index'
 
 const DEFAULT_TAG = 'p'
@@ -14,7 +15,7 @@ type ParagraphVariants = {
   weight?: ParagraphWeightVariants
 } & Omit<VariantProps<typeof Text>, 'size'>
 type ParagraphProps = ComponentProps<typeof DEFAULT_TAG> &
-  ParagraphVariants & { css?: CSS; as?: any }
+  ParagraphVariants & { as?: any; css?: CSS }
 
 export type {
   ParagraphProps,

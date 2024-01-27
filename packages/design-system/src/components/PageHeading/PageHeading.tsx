@@ -1,15 +1,16 @@
-import { Heading, Paragraph, Skeleton } from '../index'
 import type { ParagraphWeightVariants } from '../Paragraph/Paragraph.types'
+
+import { Heading, Paragraph, Skeleton } from '../index'
 const SkeletonTitle = () => (
   <Skeleton
     as="span"
-    variant="heading"
     css={{
       fontSize: 'inherit',
       height: '$fontSizes$8',
       mb: '$1',
       pr: 'var(--width-1_4)',
     }}
+    variant="heading"
   >
     &nbsp;
   </Skeleton>
@@ -18,16 +19,16 @@ const SkeletonTitle = () => (
 const SkeletonDescription = () => (
   <Skeleton
     as="span"
-    variant="text"
     css={{
       fontSize: 'inherit',
       height: '$fontSizes$5',
-      pr: 'var(--width-2_4)',
       //
       mb: '$7',
-      mt: '$2',
       ml: '$1',
+      mt: '$2',
+      pr: 'var(--width-2_4)',
     }}
+    variant="text"
   >
     &nbsp;
   </Skeleton>
@@ -39,7 +40,7 @@ const SkeletonHeading = () => {
       <Heading size="4">
         <SkeletonTitle />
       </Heading>
-      <Paragraph size="2" as="p" css={{ mb: '$7', mt: '$2', ml: '$1' }} weight="5">
+      <Paragraph as="p" css={{ mb: '$7', ml: '$1', mt: '$2' }} size="2" weight="5">
         <SkeletonDescription />
       </Paragraph>
     </>
@@ -47,17 +48,17 @@ const SkeletonHeading = () => {
 }
 
 type PageHeadingProps = {
-  title: string
   description: string
+  title: string
   weight?: ParagraphWeightVariants
 }
-const PageHeading = ({ title, description, weight = '5' }: PageHeadingProps) => {
+const PageHeading = ({ description, title, weight = '5' }: PageHeadingProps) => {
   return (
     <>
       <Heading size="4">{title}</Heading>
       <Paragraph
         as="p"
-        css={{ mb: '$7', mt: '$2', ml: '$1' }}
+        css={{ mb: '$7', ml: '$1', mt: '$2' }}
         size="2"
         weight={weight}
       >
@@ -67,4 +68,4 @@ const PageHeading = ({ title, description, weight = '5' }: PageHeadingProps) => 
   )
 }
 
-export { PageHeading, SkeletonHeading, SkeletonTitle, SkeletonDescription }
+export { PageHeading, SkeletonDescription, SkeletonHeading, SkeletonTitle }

@@ -1,8 +1,8 @@
 export {
   Toolbar,
   ToolbarButton,
-  ToolbarSeparator,
   ToolbarLink,
+  ToolbarSeparator,
   ToolbarToggleGroup,
   ToolbarToggleItem,
 } from './Toolbar'

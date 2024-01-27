@@ -1,6 +1,6 @@
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 
-import { styled, keyframes } from '../../lib/stitches.config'
+import { keyframes, styled } from '../../lib/stitches.config'
 // import { overlayStyles } from '../Overlay/Overlay.styles'
 
 const delayIn = '575ms'
@@ -27,17 +27,17 @@ const slideOut = keyframes({
 })
 
 const StyledOverlay = styled(DialogPrimitive.Overlay, {
-  // backgroundColor: '$shadow',
-  backgroundColor: '$blackA9',
-  position: 'fixed',
-  inset: 0,
-  '&[data-state="open"]': {
-    animation: `${fadeIn} ${delayIn} cubic-bezier(0.22, 1, 0.36, 1)`,
-  },
-
   '&[data-state="closed"]': {
     animation: `${fadeOut} ${delayOut} cubic-bezier(0.22, 1, 0.36, 1)`,
   },
+  '&[data-state="open"]': {
+    animation: `${fadeIn} ${delayIn} cubic-bezier(0.22, 1, 0.36, 1)`,
+  },
+  // backgroundColor: '$shadow',
+  backgroundColor: '$blackA9',
+  inset: 0,
+
+  position: 'fixed',
 })
 
 // const StyleContentHack = styled('div', {
@@ -48,12 +48,20 @@ const StyledOverlay = styled(DialogPrimitive.Overlay, {
 // })
 
 const StyledContent = styled(DialogPrimitive.Content, {
-  // background: '$panel',
-  position: 'fixed',
-  top: 0,
+  '&[data-state="closed"]': {
+    animation: `${slideOut} ${delayOut} cubic-bezier(0.22, 1, 0.36, 1), ${fadeOut} ${delayOut} cubic-bezier(0.22, 1, 0.36, 1)`,
+    opacity: 0,
+  },
+  '&[data-state="open"]': {
+    animation: `${slideIn} ${delayIn} cubic-bezier(0.22, 1, 0.36, 1), ${fadeIn} ${delayIn} cubic-bezier(0.22, 1, 0.36, 1)`,
+    opacity: 1,
+  },
   bottom: 0,
-  width: '100%',
-  zIndex: '$toast',
+  defaultVariants: {
+    side: 'bottom',
+  },
+  // },
+  opacity: 0,
 
   // background: '$panel',
   // borderColor: '$panel',
@@ -61,62 +69,54 @@ const StyledContent = styled(DialogPrimitive.Content, {
   // borderStyle: 'solid',
 
   // Among other things, prevents text alignment inconsistencies when dialog can't be centered in the viewport evenly.
-  // Affects animated and non-animated dialogs alike.
-  willChange: 'transform',
+  // background: '$panel',
+  position: 'fixed',
 
   // '&:focus': {
   //   outline: 'none',
-  // },
-  opacity: 0,
-  '&[data-state="open"]': {
-    animation: `${slideIn} ${delayIn} cubic-bezier(0.22, 1, 0.36, 1), ${fadeIn} ${delayIn} cubic-bezier(0.22, 1, 0.36, 1)`,
-    opacity: 1,
-  },
-
-  '&[data-state="closed"]': {
-    animation: `${slideOut} ${delayOut} cubic-bezier(0.22, 1, 0.36, 1), ${fadeOut} ${delayOut} cubic-bezier(0.22, 1, 0.36, 1)`,
-    opacity: 0,
-  },
-
+  top: 0,
   variants: {
     side: {
-      top: {
-        $$transformValue: 'translate3d(0,-100%,0)',
-        bottom: 'auto',
-        borderBottomLeftRadius: '$3',
-        borderBottomRightRadius: '$3',
-      },
-      right: {
-        $$transformValue: 'translate3d(100%,0,0)',
-        right: 0,
-        borderTopLeftRadius: '$3',
-        borderBottomLeftRadius: '$3',
-      },
       bottom: {
         $$transformValue: 'translate3d(0,100%,0)',
-        bottom: 0,
-        top: 'auto',
         borderTopLeftRadius: '$3',
         borderTopRightRadius: '$3',
+        bottom: 0,
+        top: 'auto',
       },
       left: {
         $$transformValue: 'translate3d(-100%,0,0)',
-        left: 0,
-        borderTopRightRadius: '$3',
         borderBottomRightRadius: '$3',
+        borderTopRightRadius: '$3',
+        left: 0,
+      },
+      right: {
+        $$transformValue: 'translate3d(100%,0,0)',
+        borderBottomLeftRadius: '$3',
+        borderTopLeftRadius: '$3',
+        right: 0,
+      },
+      top: {
+        $$transformValue: 'translate3d(0,-100%,0)',
+        borderBottomLeftRadius: '$3',
+        borderBottomRightRadius: '$3',
+        bottom: 'auto',
       },
     },
   },
 
-  defaultVariants: {
-    side: 'bottom',
-  },
+  width: '100%',
+
+  // Affects animated and non-animated dialogs alike.
+  willChange: 'transform',
+
+  zIndex: '$toast',
 })
 
 const StyledCloseButton = styled(DialogPrimitive.Close, {
   position: 'absolute',
-  top: '$2',
   right: '$2',
+  top: '$2',
 })
 
-export { StyledOverlay, StyledContent, StyledCloseButton }
+export { StyledCloseButton, StyledContent, StyledOverlay }

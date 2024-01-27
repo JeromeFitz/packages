@@ -1,6 +1,7 @@
 import type { ComponentProps } from 'react'
 
 import type { CSS, VariantProps } from '../../lib/stitches.config'
+
 import { Text } from '../index'
 
 const DEFAULT_TAG = 'h1'
@@ -12,7 +13,7 @@ type HeadingVariants = { size?: HeadingSizeVariants } & Omit<
   'size'
 >
 type HeadingProps = ComponentProps<typeof DEFAULT_TAG> &
-  HeadingVariants & { css?: CSS; as?: any }
+  HeadingVariants & { as?: any; css?: CSS }
 
-export type { TextSizeVariants, HeadingProps, HeadingSizeVariants }
+export type { HeadingProps, HeadingSizeVariants, TextSizeVariants }
 export { DEFAULT_TAG }

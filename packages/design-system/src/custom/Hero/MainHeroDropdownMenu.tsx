@@ -12,47 +12,47 @@ const DropdownMenuArrow = styled(DropdownMenuPrimitive.Arrow, {
 
 const DropdownMenuContent: any = styled(DropdownMenuPrimitive.Content, {
   bc: '$loContrast',
-  br: '$2',
-  p: '$1',
   boxShadow:
     '0px 5px 30px -5px rgba(0, 0, 0, 0.1), 0 1px 3px -1px rgba(0, 0, 0, 0.2)',
+  br: '$2',
+  p: '$1',
 })
 
 const DropdownMenuSeparator = styled(DropdownMenuPrimitive.Separator, {
   bc: '$slate4',
   height: 1,
-  my: '$1',
   ml: '$5',
   mr: '$1',
+  my: '$1',
 })
 
 const itemCss = {
-  display: 'flex',
-  alignItems: 'center',
-  fontFamily: '$sans',
-  fontSize: '$1',
-  fontVariantNumeric: 'tabular-nums',
-  lineHeight: '1',
-  cursor: 'default',
-  userSelect: 'none',
-  whiteSpace: 'nowrap',
-  height: '$5',
-  color: '$hiContrast',
-  minWidth: 90,
-  pl: '$5',
-  pr: '$4',
-  br: '$1',
-
+  // &:active for touch devices
+  '&:focus, &:active': {
+    backgroundColor: '$indigo9',
+    color: 'white',
+    outline: 0,
+  },
   '&[data-state="open"]': {
     backgroundColor: '$slate3',
   },
+  alignItems: 'center',
+  br: '$1',
+  color: '$hiContrast',
+  cursor: 'default',
+  display: 'flex',
+  fontFamily: '$sans',
+  fontSize: '$1',
+  fontVariantNumeric: 'tabular-nums',
+  height: '$5',
+  lineHeight: '1',
+  minWidth: 90,
+  pl: '$5',
+  pr: '$4',
 
-  // &:active for touch devices
-  '&:focus, &:active': {
-    outline: 0,
-    backgroundColor: '$indigo9',
-    color: 'white',
-  },
+  userSelect: 'none',
+
+  whiteSpace: 'nowrap',
 }
 
 const DropdownMenuItem = styled(DropdownMenuPrimitive.Item, itemCss)
@@ -65,16 +65,16 @@ function MainHeroDropdownMenu() {
   // We prevent the initial auto focus because it's a demo rather than a real UI,
   // so the parent page focus is not stolen.
   const initialAutoFocusPrevented = useRef(false)
-  const [showToolbar, setShowToolbar] = useState<boolean | 'indeterminate'>(true)
-  const [showUrls, setShowUrls] = useState<boolean | 'indeterminate'>(false)
+  const [showToolbar, setShowToolbar] = useState<'indeterminate' | boolean>(true)
+  const [showUrls, setShowUrls] = useState<'indeterminate' | boolean>(false)
   const triggerRef = useRef<HTMLButtonElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
   const [open, setOpen] = useState(true)
 
   return (
-    <DropdownMenuPrimitive.Root modal={false} open={open} onOpenChange={setOpen}>
+    <DropdownMenuPrimitive.Root modal={false} onOpenChange={setOpen} open={open}>
       <DropdownMenuPrimitive.Trigger asChild>
-        <ButtonDemo ref={triggerRef} css={{ marginBottom: 120, gap: 3 }}>
+        <ButtonDemo css={{ gap: 3, marginBottom: 120 }} ref={triggerRef}>
           Options <Icon.CaretDown style={{ marginRight: -5 }} />
         </ButtonDemo>
       </DropdownMenuPrimitive.Trigger>
@@ -90,9 +90,6 @@ function MainHeroDropdownMenu() {
         }}
       >
         <DropdownMenuContent
-          ref={contentRef}
-          sideOffset={5}
-          portalled={false}
           avoidCollisions={false}
           onEscapeKeyDown={(event) => {
             event.preventDefault()
@@ -116,6 +113,9 @@ function MainHeroDropdownMenu() {
               initialAutoFocusPrevented.current = true
             }
           }}
+          portalled={false}
+          ref={contentRef}
+          sideOffset={5}
         >
           <DropdownMenuArrow />
           <DropdownMenuItem>New Tab</DropdownMenuItem>

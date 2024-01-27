@@ -3,7 +3,7 @@
  */
 import * as ToastPrimitive from '@radix-ui/react-toast'
 
-import { styled, keyframes } from '../../lib/stitches.config'
+import { keyframes, styled } from '../../lib/stitches.config'
 
 const VIEWPORT_PADDING = 25
 
@@ -23,86 +23,86 @@ const swipeOut = keyframes({
 })
 
 const StyledToast = styled(ToastPrimitive.Root, {
+  '&:hover': {
+    backgroundColor: '$colors$body',
+    borderColor: '$colors$gray12',
+    // color: '$colors$hiContrast',
+  },
+  '@media (prefers-reduced-motion: no-preference)': {
+    '&[data-state="closed"]': {
+      animation: `${hide} 150ms ease-in forwards`,
+    },
+    '&[data-state="open"]': {
+      animation: `${slideIn} 250ms cubic-bezier(0.16, 1, 0.3, 1)`,
+    },
+    '&[data-swipe="cancel"]': {
+      '@media (prefers-reduced-motion: no-preference)': {
+        transition: 'transform 200ms ease-out',
+      },
+      transform: 'translateX(0)',
+    },
+    '&[data-swipe="end"]': {
+      animation: `${swipeOut} 200ms ease-out forwards`,
+    },
+    '&[data-swipe="move"]': {
+      transform: 'translateX(var(--radix-toast-swipe-move-x))',
+    },
+    transition: 'background-color 250ms ease',
+  },
   alignItems: 'center',
+  backgroundColor: '$colors$body',
+  border: '1px solid $colors$gray11',
   borderRadius: '$2',
+  boxShadow: '$shadows$toast',
+
+  color: '$colors$hiContrast',
+
   columnGap: '$3',
   display: 'grid',
   gridTemplateAreas: '"title action" "description action"',
   gridTemplateColumns: 'auto max-content',
   padding: '$5',
 
-  '@media (prefers-reduced-motion: no-preference)': {
-    transition: 'background-color 250ms ease',
-    '&[data-state="open"]': {
-      animation: `${slideIn} 250ms cubic-bezier(0.16, 1, 0.3, 1)`,
-    },
-    '&[data-state="closed"]': {
-      animation: `${hide} 150ms ease-in forwards`,
-    },
-    '&[data-swipe="move"]': {
-      transform: 'translateX(var(--radix-toast-swipe-move-x))',
-    },
-    '&[data-swipe="cancel"]': {
-      transform: 'translateX(0)',
-      '@media (prefers-reduced-motion: no-preference)': {
-        transition: 'transform 200ms ease-out',
-      },
-    },
-    '&[data-swipe="end"]': {
-      animation: `${swipeOut} 200ms ease-out forwards`,
-    },
-  },
-
-  boxShadow: '$shadows$toast',
-  backgroundColor: '$colors$body',
-  border: '1px solid $colors$gray11',
-  color: '$colors$hiContrast',
-  '&:hover': {
-    backgroundColor: '$colors$body',
-    borderColor: '$colors$gray12',
-    // color: '$colors$hiContrast',
-  },
-
   variants: {
     variant: {
       error: {
-        backgroundColor: '$colors$errorBackground',
-        borderColor: '$colors$errorEmphasis',
-        color: '$colors$errorText',
         '&:hover': {
           backgroundColor: '$colors$errorBackgroundHover',
           borderColor: '$colors$errorEmphasisHover',
           color: '$colors$errorTextHover',
         },
+        backgroundColor: '$colors$errorBackground',
+        borderColor: '$colors$errorEmphasis',
+        color: '$colors$errorText',
       },
       info: {
-        backgroundColor: '$colors$infoBackground',
-        color: '$colors$infoText',
         '&:hover': {
           backgroundColor: '$colors$infoBackgroundHover',
           borderColor: '$colors$infoEmphasisHover',
           color: '$colors$infoTextHover',
         },
+        backgroundColor: '$colors$infoBackground',
+        color: '$colors$infoText',
       },
       success: {
-        backgroundColor: '$colors$successBackground',
-        borderColor: '$colors$successEmphasis',
-        color: '$colors$successText',
         '&:hover': {
           backgroundColor: '$colors$successBackgroundHover',
           borderColor: '$colors$successEmphasisHover',
           color: '$colors$successTextHover',
         },
+        backgroundColor: '$colors$successBackground',
+        borderColor: '$colors$successEmphasis',
+        color: '$colors$successText',
       },
       warning: {
-        backgroundColor: '$colors$warningBackground',
-        borderColor: '$colors$warningEmphasis',
-        color: '$colors$warningText',
         '&:hover': {
           backgroundColor: '$colors$warningBackgroundHover',
           borderColor: '$colors$warningEmphasisHover',
           color: '$colors$warningTextHover',
         },
+        backgroundColor: '$colors$warningBackground',
+        borderColor: '$colors$warningEmphasis',
+        color: '$colors$warningText',
       },
     },
   },

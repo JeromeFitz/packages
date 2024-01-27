@@ -1,84 +1,40 @@
 import { styled } from '../../lib/stitches.config'
 
 const AppBar = styled('div', {
-  boxSizing: 'border-box',
-  zIndex: '1',
   '@media (prefers-reduced-motion: no-preference)': {
     transition: 'opacity 150ms cubic-bezier(0.65, 0, 0.35, 1)',
   },
-
-  variants: {
-    size: {
-      1: {
-        py: '$1',
-      },
-      2: {
-        py: '$2',
-      },
-      3: {
-        py: '$3',
-      },
-    },
-    sticky: {
-      true: {
-        position: 'sticky',
-        width: '100%',
-        top: 0,
-        left: 0,
-      },
-    },
-    glass: {
-      true: {
-        backdropFilter: 'blur(12px) saturate(160%)',
-      },
-    },
-    border: {
-      true: {
-        borderBottom: '1px solid',
-      },
-    },
-    color: {
-      loContrast: {
-        backgroundColor: '$loContrast',
-      },
-      plain: {
-        backgroundColor: '$gray2',
-      },
-      accent: {
-        backgroundColor: '$colors$brand9',
-      },
-    },
-  },
+  boxSizing: 'border-box',
   compoundVariants: [
     {
-      glass: 'true',
       color: 'plain',
       css: {
-        opacity: '.9',
         '&:hover': {
           opacity: '1',
         },
+        opacity: '.9',
       },
+      glass: 'true',
     },
     {
-      glass: 'true',
       color: 'accent',
       css: {
-        opacity: '.9',
         '&:hover': {
           opacity: '1',
         },
+        opacity: '.9',
       },
+      glass: 'true',
     },
     {
-      glass: 'true',
       color: 'loContrast',
       css: {
-        opacity: '.9',
         '&:hover': {
           opacity: '1',
         },
+        opacity: '.9',
       },
+      glass: 'true',
     },
     {
       border: 'true',
@@ -102,10 +58,54 @@ const AppBar = styled('div', {
       },
     },
   ],
+
   defaultVariants: {
-    size: '1',
     color: 'loContrast',
+    size: '1',
   },
+  variants: {
+    border: {
+      true: {
+        borderBottom: '1px solid',
+      },
+    },
+    color: {
+      accent: {
+        backgroundColor: '$colors$brand9',
+      },
+      loContrast: {
+        backgroundColor: '$loContrast',
+      },
+      plain: {
+        backgroundColor: '$gray2',
+      },
+    },
+    glass: {
+      true: {
+        backdropFilter: 'blur(12px) saturate(160%)',
+      },
+    },
+    size: {
+      1: {
+        py: '$1',
+      },
+      2: {
+        py: '$2',
+      },
+      3: {
+        py: '$3',
+      },
+    },
+    sticky: {
+      true: {
+        left: 0,
+        position: 'sticky',
+        top: 0,
+        width: '100%',
+      },
+    },
+  },
+  zIndex: '1',
 })
 
 export { AppBar }

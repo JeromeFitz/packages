@@ -1,11 +1,43 @@
 import { styled } from '../../lib/stitches.config'
 
 const ButtonIcon = styled('button', {
+  '&::after': {
+    boxSizing: 'border-box',
+  },
+  '&::before': {
+    boxSizing: 'border-box',
+  },
+  '&:active': {
+    backgroundColor: '$slate2',
+  },
+  '&:disabled': {
+    backgroundColor: 'transparent',
+    color: '$slate6',
+    pointerEvents: 'none',
+  },
+  '&:focus': {
+    borderColor: '$slate8',
+    boxShadow: '0 0 0 1px $colors$slate8',
+  },
+  '@hover': {
+    '&:hover': {
+      borderColor: '$slate8',
+    },
+  },
+  WebkitTapHighlightColor: 'transparent',
   // @reset
   alignItems: 'center',
   appearance: 'none',
+  backgroundColor: '$loContrast',
+  border: '1px solid $slate7',
   borderWidth: '0',
   boxSizing: 'border-box',
+  color: '$hiContrast',
+  defaultVariants: {
+    cursor: 'arrow',
+    size: '1',
+    variant: 'ghost',
+  },
   display: 'inline-flex',
   flexShrink: 0,
   fontFamily: 'inherit',
@@ -15,35 +47,8 @@ const ButtonIcon = styled('button', {
   outline: 'none',
   padding: '0',
   textDecoration: 'none',
-  userSelect: 'none',
-  WebkitTapHighlightColor: 'transparent',
-  color: '$hiContrast',
-  '&::before': {
-    boxSizing: 'border-box',
-  },
-  '&::after': {
-    boxSizing: 'border-box',
-  },
-  backgroundColor: '$loContrast',
-  border: '1px solid $slate7',
-  '@hover': {
-    '&:hover': {
-      borderColor: '$slate8',
-    },
-  },
-  '&:active': {
-    backgroundColor: '$slate2',
-  },
-  '&:focus': {
-    borderColor: '$slate8',
-    boxShadow: '0 0 0 1px $colors$slate8',
-  },
-  '&:disabled': {
-    pointerEvents: 'none',
-    backgroundColor: 'transparent',
-    color: '$slate6',
-  },
 
+  userSelect: 'none',
   variants: {
     cursor: {
       arrow: { cursor: 'arrow' },
@@ -71,78 +76,73 @@ const ButtonIcon = styled('button', {
         width: '$8',
       },
     },
-    variant: {
-      ghost: {
-        backgroundColor: 'transparent',
-        borderWidth: '0',
+    state: {
+      active: {
+        '&:active': {
+          backgroundColor: '$slate4',
+        },
         '@hover': {
           '&:hover': {
-            backgroundColor: '$slateA3',
+            boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
           },
+        },
+        backgroundColor: '$slate4',
+        boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
+      },
+      waiting: {
+        '&:active': {
+          backgroundColor: '$slate4',
+        },
+        '@hover': {
+          '&:hover': {
+            boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
+          },
+        },
+        backgroundColor: '$slate4',
+        boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
+      },
+    },
+    variant: {
+      ghost: {
+        '&:active': {
+          backgroundColor: '$slateA4',
         },
         '&:focus': {
           // boxShadow: 'inset 0 0 0 1px $colors$slateA8, 0 0 0 1px $colors$slateA8',
           borderRadius: '$1',
           boxShadow: '0 0 0 2px $colors$gray1, 0 0 0 3px $colors$hiContrast',
         },
-        '&:active': {
-          backgroundColor: '$slateA4',
-        },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
           {
             backgroundColor: '$slateA4',
           },
-      },
-      raised: {
-        boxShadow:
-          '0 0 transparent, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
         '@hover': {
           '&:hover': {
-            boxShadow:
-              '0 0 transparent, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
+            backgroundColor: '$slateA3',
           },
+        },
+        backgroundColor: 'transparent',
+        borderWidth: '0',
+      },
+      raised: {
+        '&:active': {
+          backgroundColor: '$slate4',
         },
         '&:focus': {
           borderColor: '$slate8',
           boxShadow:
             '0 0 0 1px $colors$slate8, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
         },
-        '&:active': {
-          backgroundColor: '$slate4',
-        },
-      },
-    },
-    state: {
-      active: {
-        backgroundColor: '$slate4',
-        boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
         '@hover': {
           '&:hover': {
-            boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
+            boxShadow:
+              '0 0 transparent, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
           },
         },
-        '&:active': {
-          backgroundColor: '$slate4',
-        },
-      },
-      waiting: {
-        backgroundColor: '$slate4',
-        boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
-        '@hover': {
-          '&:hover': {
-            boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
-          },
-        },
-        '&:active': {
-          backgroundColor: '$slate4',
-        },
+        boxShadow:
+          '0 0 transparent, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
       },
     },
-  },
-  defaultVariants: {
-    cursor: 'arrow',
-    size: '1',
-    variant: 'ghost',
   },
 })
 

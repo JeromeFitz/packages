@@ -1,4 +1,5 @@
 import { CommandMenu } from '@jeromefitz/design-system/src/components'
+
 import { useEffect, useState } from 'react'
 
 import { CommandMenuData } from './CommandMenuData'
@@ -20,7 +21,7 @@ function CommandMenuWrapper() {
   }, [])
 
   return (
-    <CommandMenu open={open} onOpenChange={setOpen}>
+    <CommandMenu onOpenChange={setOpen} open={open}>
       <CommandMenuData />
     </CommandMenu>
   )

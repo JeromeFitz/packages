@@ -7,9 +7,9 @@ import { styled } from '../../lib/stitches.config'
 import { Text } from '../Text'
 
 const Label = styled(LabelPrimitive.Root, Text, {
+  cursor: 'default',
   display: 'inline-block',
   verticalAlign: 'middle',
-  cursor: 'default',
 })
 
 export { Label }

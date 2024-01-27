@@ -1,28 +1,24 @@
-import * as DialogPrimitive from '@radix-ui/react-dialog'
-import { motion, AnimatePresence } from 'framer-motion'
-import { forwardRef, useId } from 'react'
 import type { ElementRef } from 'react'
+
+import * as DialogPrimitive from '@radix-ui/react-dialog'
+import { AnimatePresence, motion } from 'framer-motion'
+import { forwardRef, useId } from 'react'
+
+import type { SheetContentProps, SheetProps } from './Sheet.types'
 
 import { Box } from '../Box'
 import { Flex } from '../Flex'
-
-import { StyledOverlay, StyledContent } from './Sheet.styles'
-import type { SheetProps, SheetContentProps } from './Sheet.types'
+import { StyledContent, StyledOverlay } from './Sheet.styles'
 
 /**
  * @note This only works for BOTTOM right now :X
  */
 const Notch = () => {
   return (
-    <Flex align="center" justify="center" css={{ mt: '$1', mb: '$4' }}>
+    <Flex align="center" css={{ mb: '$4', mt: '$1' }} justify="center">
       <Box
         as="div"
         css={{
-          background: '$hoverBackground',
-          borderRadius: '$pill',
-          cursor: 'grab',
-          height: '$1',
-          width: '$7',
           '&:active': {
             background: '$focusBackground',
             cursor: 'grabbing',
@@ -30,6 +26,11 @@ const Notch = () => {
           '@media (prefers-reduced-motion: no-preference)': {
             transition: 'background 200ms ease-out',
           },
+          background: '$hoverBackground',
+          borderRadius: '$pill',
+          cursor: 'grab',
+          height: '$1',
+          width: '$7',
         }}
       />
     </Flex>
@@ -63,10 +64,6 @@ const SheetContent = forwardRef<
         <AnimatePresence>
           <Box
             as={motion.div}
-            drag="y"
-            dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
-            dragElastic={0.1}
-            dragMomentum={false}
             css={{
               background: '$panel',
               borderColor: '$panel',
@@ -79,6 +76,10 @@ const SheetContent = forwardRef<
               position: 'relative',
               zIndex: '$toast',
             }}
+            drag="y"
+            dragConstraints={{ bottom: 0, left: 0, right: 0, top: 0 }}
+            dragElastic={0.1}
+            dragMomentum={false}
             key={keyBox1}
             onDragEnd={(event, info) => {
               if (info?.offset?.y > 200 || info?.velocity?.y > 200) {

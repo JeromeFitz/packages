@@ -3,8 +3,8 @@ import process from 'node:process'
 import {
   COMMIT_FORMATS,
   COMMIT_MODES,
-  LOGS,
   FLAGS,
+  LOGS,
   OPTIONS,
 } from '~ccommit/lib/index.js'
 import { generateLog, getStagedFiles } from '~ccommit/utils/index.js'
@@ -16,7 +16,6 @@ const getOptionsForCommand = (command: string, flags: any): any => {
     const options = {
       dryrun: flags[FLAGS.DRYRUN],
       emoji: flags[FLAGS.EMOJI],
-      mode: command === FLAGS.HOOK ? COMMIT_MODES.HOOK : COMMIT_MODES.CLIENT,
       // options
       format:
         flags[OPTIONS.FORMAT] === COMMIT_FORMATS.CONVENTIONAL
@@ -25,6 +24,7 @@ const getOptionsForCommand = (command: string, flags: any): any => {
             : COMMIT_FORMATS.CONVENTIONAL_NO_EMOJI
           : COMMIT_FORMATS.GITMOJI,
       message: flags[OPTIONS.MESSAGE],
+      mode: command === FLAGS.HOOK ? COMMIT_MODES.HOOK : COMMIT_MODES.CLIENT,
       scope: flags[OPTIONS.SCOPE],
       skip: flags[FLAGS.SKIP],
       title: flags[OPTIONS.TITLE],

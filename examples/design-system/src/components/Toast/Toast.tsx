@@ -2,28 +2,30 @@ import {
   Box,
   Button,
   Flex,
-  Icon,
   Heading,
+  Icon,
   Label,
   Select,
+  SelectContent,
+  SelectIcon,
+  SelectItem,
+  SelectItemIndicator,
+  SelectItemText,
   SelectTrigger,
   SelectValue,
-  SelectIcon,
-  SelectContent,
   SelectViewport,
-  SelectItem,
-  SelectItemText,
-  SelectItemIndicator,
   Separator,
   TextField,
   Toaster,
 } from '@jeromefitz/design-system/src/components'
+
 import type {
   IToast,
   IToastVariant,
 } from '@jeromefitz/design-system/src/components/Toast/Toast.types'
+
 import _debounce from 'lodash/debounce'
-import { useEffect, useMemo, useRef, useState, Fragment } from 'react'
+import { Fragment, useEffect, useMemo, useRef, useState } from 'react'
 
 const description = 'EARTHGANG Spillage Village...'
 const descriptionJoiner = ' [JOIN] '
@@ -35,15 +37,15 @@ interface IItems {
 
 // const variants: IToastVariant[] = ['default', 'error', 'info', 'success', 'warning']
 interface IVariant {
-  variant: IToastVariant
   icon: ReactElement
+  variant: IToastVariant
 }
 const variants: IVariant[] = [
-  { variant: 'default', icon: <Icon.Bell /> },
-  { variant: 'error', icon: <Icon.CrossCircled /> },
-  { variant: 'info', icon: <Icon.InfoCircled /> },
-  { variant: 'success', icon: <Icon.CheckCircled /> },
-  { variant: 'warning', icon: <Icon.ExclamationTriangle /> },
+  { icon: <Icon.Bell />, variant: 'default' },
+  { icon: <Icon.CrossCircled />, variant: 'error' },
+  { icon: <Icon.InfoCircled />, variant: 'info' },
+  { icon: <Icon.CheckCircled />, variant: 'success' },
+  { icon: <Icon.ExclamationTriangle />, variant: 'warning' },
 ]
 
 const items: IItems[] = [
@@ -131,7 +133,7 @@ const ToastDemo = () => {
           return (
             <Fragment key={`toast-${itemIdx}`}>
               <Button
-                css={{ mr: '$2', mb: '$2' }}
+                css={{ mb: '$2', mr: '$2' }}
                 onClick={() => {
                   if (toaster && toaster.current) {
                     toaster?.current?.createToast(item.toast)
@@ -150,53 +152,53 @@ const ToastDemo = () => {
         <Flex css={{ flexDirection: 'column', gap: '$4' }}>
           <Flex
             css={{
-              flexWrap: 'wrap',
-              alignItems: 'center',
               '@bp1': { maxWidth: '25%' },
+              alignItems: 'center',
+              flexWrap: 'wrap',
             }}
           >
             <Label
-              htmlFor="title"
               css={{ fontWeight: 'bold', lineHeight: '35px', marginRight: 15 }}
+              htmlFor="title"
             >
               Title
             </Label>
             <TextField
-              css={{ fontFamily: '$mono', padding: '$3 $2', my: '$1' }}
-              type="text"
-              id="title"
+              css={{ fontFamily: '$mono', my: '$1', padding: '$3 $2' }}
               defaultValue={title}
+              id="title"
               onChange={handleTitleChange}
+              type="text"
             />
           </Flex>
           <Flex
             css={{
-              flexWrap: 'wrap',
-              alignItems: 'center',
               '@bp1': { maxWidth: '25%' },
+              alignItems: 'center',
+              flexWrap: 'wrap',
             }}
           >
             <Label
-              htmlFor="description"
               css={{ fontWeight: 'bold', lineHeight: '35px', marginRight: 15 }}
+              htmlFor="description"
             >
               Description
             </Label>
             <TextField
-              css={{ fontFamily: '$mono', padding: '$3 $2', my: '$1' }}
-              type="text"
-              id="description"
+              css={{ fontFamily: '$mono', my: '$1', padding: '$3 $2' }}
               defaultValue={description}
+              id="description"
               onChange={handleDescriptionChange}
+              type="text"
             />
           </Flex>
           <Flex
             css={{
+              '@bp1': { maxWidth: '25%' },
+              alignItems: 'flex-start',
               flexDirection: 'column',
               flexWrap: 'wrap',
-              alignItems: 'flex-start',
               gap: '$3',
-              '@bp1': { maxWidth: '25%' },
             }}
           >
             <Label css={{ fontWeight: 'bold', paddingRight: '$2' }} htmlFor="se1">
@@ -205,7 +207,7 @@ const ToastDemo = () => {
             <Box>
               {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
               {/* @ts-ignore */}
-              <Select id="se1" value={variant} onValueChange={variantSet}>
+              <Select id="se1" onValueChange={variantSet} value={variant}>
                 <SelectTrigger aria-label="Toast Variant">
                   <SelectValue aria-label={variant} />
                   <SelectIcon>
@@ -219,7 +221,7 @@ const ToastDemo = () => {
                       return (
                         <SelectItem key={`variants-${variant}`} value={variant}>
                           <SelectItemText>
-                            <Flex direction="row" align="center" gap="2">
+                            <Flex align="center" direction="row" gap="2">
                               {icon}
                               <Box as="span">{variant}</Box>
                             </Flex>
@@ -236,19 +238,19 @@ const ToastDemo = () => {
             </Box>
           </Flex>
           <Flex
-            css={{ mb: '$2', alignItems: 'center', '@bp1': { maxWidth: '50%' } }}
+            css={{ '@bp1': { maxWidth: '50%' }, alignItems: 'center', mb: '$2' }}
           >
             <Button
               onClick={() => {
                 if (toaster && toaster.current) {
                   toaster?.current?.createToast({
                     action: () => console.dir(`> action`),
-                    actionText: 'Action',
                     actionComponent: (
                       <Button css={{ my: '$1' }} ghost size="1">
                         ActionComp
                       </Button>
                     ),
+                    actionText: 'Action',
                     // close: () => console.dir(`> cancel`),
                     // closeComponent: (
                     //   <Button css={{ my: '$1' }} ghost variant="gray" size="1">

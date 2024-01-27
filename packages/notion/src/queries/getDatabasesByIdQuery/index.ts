@@ -1,11 +1,12 @@
-import { PROPERTIES } from '../../constants/index.js'
 import type { SortMock } from '../../schema/index.js'
+
+import { PROPERTIES } from '../../constants/index.js'
 
 const sortDefault: SortMock = {
   sorts: [
     {
-      property: PROPERTIES.slug.notion,
       direction: 'ascending',
+      property: PROPERTIES.slug.notion,
     },
   ],
 }
@@ -20,8 +21,8 @@ const getDatabasesByIdQuery = async ({
   if (!database_id) return []
   return await getDatabasesQuery({
     database_id,
-    sorts,
     filter,
+    sorts,
   })
 }
 

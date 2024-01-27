@@ -1,4 +1,4 @@
-import { format, URL } from 'url'
+import { URL, format } from 'url'
 
 import conventionalCommitsFilter from 'conventional-commits-filter'
 import { sync as conventionalCommitsParser } from 'conventional-commits-parser'
@@ -11,9 +11,10 @@ import { getMarkdown } from './utils/getMarkdown.js'
 import { processCommit } from './utils/processCommit.js'
 
 const configGithub = {
+  commit: 'commit',
   hostname: 'github.com',
   issue: 'issues',
-  commit: 'commit',
+  issuePrefixes: ['#', 'gh-'],
   referenceActions: [
     'close',
     'closes',
@@ -25,25 +26,24 @@ const configGithub = {
     'resolves',
     'resolved',
   ],
-  issuePrefixes: ['#', 'gh-'],
 }
 
 // eslint-disable-next-line complexity
 async function generateNotes(pluginConfig, context) {
   // const { parserOpts, writerOpts } = pluginConfig
   const { parserOpts, writerOpts } = await getChangelogConfig(pluginConfig, context)
-  const { commits: commitsPassed, lastRelease, nextRelease, options, cwd } = context
+  const { commits: commitsPassed, cwd, lastRelease, nextRelease, options } = context
 
-  const { commit, issue, referenceActions, issuePrefixes } = configGithub
+  const { commit, issue, issuePrefixes, referenceActions } = configGithub
 
   const previousTag = lastRelease.gitTag || lastRelease.gitHead
   const currentTag = nextRelease.gitTag || nextRelease.gitHead
   const {
+    commit: commitConfig,
     host: hostConfig,
+    issue: issueConfig,
     linkCompare,
     linkReferences,
-    commit: commitConfig,
-    issue: issueConfig,
   } = pluginConfig
 
   const repositoryUrl = options.repositoryUrl.replace(/\.git$/i, '')
@@ -51,7 +51,7 @@ async function generateNotes(pluginConfig, context) {
     /^(?!.+:\/\/)(?:(?<auth>.*)@)?(?<host>.*?):(?<path>.*)$/.exec(repositoryUrl) ||
     []
   // eslint-disable-next-line prefer-const
-  let { hostname, port, pathname, protocol } = new URL(
+  let { hostname, pathname, port, protocol } = new URL(
     match ? `ssh://${auth ? `${auth}@` : ''}${host}/${path}` : repositoryUrl,
   )
   port = protocol.includes('ssh') ? '' : port
@@ -62,24 +62,24 @@ async function generateNotes(pluginConfig, context) {
 
   const changelogContext = _merge(
     {
-      version: nextRelease.version,
-      host: format({ protocol, hostname, port }),
-      owner,
-      repository,
-      previousTag,
-      currentTag,
-      linkCompare: currentTag && previousTag,
-      issue,
       commit,
-      packageData: ((await readPackageUp({ normalize: false, cwd })) || {})
+      currentTag,
+      host: format({ hostname, port, protocol }),
+      issue,
+      linkCompare: currentTag && previousTag,
+      owner,
+      packageData: ((await readPackageUp({ cwd, normalize: false })) || {})
         .packageJson,
+      previousTag,
+      repository,
+      version: nextRelease.version,
     },
     {
+      commit: commitConfig,
       host: hostConfig,
+      issue: issueConfig,
       linkCompare,
       linkReferences,
-      commit: commitConfig,
-      issue: issueConfig,
     },
   )
 
@@ -95,8 +95,8 @@ async function generateNotes(pluginConfig, context) {
         const commitPassed = {
           ...commitRaw,
           ...conventionalCommitsParser(commitRaw.message, {
-            referenceActions,
             issuePrefixes,
+            referenceActions,
             ...parserOpts,
           }),
         }

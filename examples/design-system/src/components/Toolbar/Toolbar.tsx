@@ -3,8 +3,8 @@ import {
   Icon,
   Toolbar,
   ToolbarButton,
-  ToolbarSeparator,
   ToolbarLink,
+  ToolbarSeparator,
   ToolbarToggleGroup,
   ToolbarToggleItem,
 } from '@jeromefitz/design-system/src/components'
@@ -13,35 +13,35 @@ import {
 
 const ToolbarDemo = () => (
   <Toolbar aria-label="Formatting options">
-    <ToolbarToggleGroup type="multiple" aria-label="Text formatting">
-      <ToolbarToggleItem value="bold" aria-label="Bold">
+    <ToolbarToggleGroup aria-label="Text formatting" type="multiple">
+      <ToolbarToggleItem aria-label="Bold" value="bold">
         <Icon.FontBold />
       </ToolbarToggleItem>
-      <ToolbarToggleItem value="italic" aria-label="Italic">
+      <ToolbarToggleItem aria-label="Italic" value="italic">
         <Icon.FontItalic />
       </ToolbarToggleItem>
-      <ToolbarToggleItem value="strikethrough" aria-label="Strike through">
+      <ToolbarToggleItem aria-label="Strike through" value="strikethrough">
         <Icon.Strikethrough />
       </ToolbarToggleItem>
     </ToolbarToggleGroup>
     <ToolbarSeparator />
     <ToolbarToggleGroup
-      type="single"
-      defaultValue="center"
       aria-label="Text alignment"
+      defaultValue="center"
+      type="single"
     >
-      <ToolbarToggleItem value="left" aria-label="Left aligned">
+      <ToolbarToggleItem aria-label="Left aligned" value="left">
         <Icon.TextAlignLeft />
       </ToolbarToggleItem>
-      <ToolbarToggleItem value="center" aria-label="Center aligned">
+      <ToolbarToggleItem aria-label="Center aligned" value="center">
         <Icon.TextAlignCenter />
       </ToolbarToggleItem>
-      <ToolbarToggleItem value="right" aria-label="Right aligned">
+      <ToolbarToggleItem aria-label="Right aligned" value="right">
         <Icon.TextAlignRight />
       </ToolbarToggleItem>
     </ToolbarToggleGroup>
     <ToolbarSeparator />
-    <ToolbarLink href="#" target="_blank" css={{ marginRight: 10 }}>
+    <ToolbarLink css={{ marginRight: 10 }} href="#" target="_blank">
       Edited 2 hours ago
     </ToolbarLink>
     <ToolbarButton css={{ marginLeft: 'auto' }}>Share</ToolbarButton>

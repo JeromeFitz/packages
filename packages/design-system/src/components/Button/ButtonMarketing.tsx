@@ -1,7 +1,6 @@
 import { forwardRef } from 'react'
 
 import { Box } from '../index'
-
 import { StyledButton } from './ButtonMarketing.styles'
 import { ButtonMarketingProps } from './ButtonMarketing.types'
 
@@ -13,7 +12,7 @@ const ButtonMarketing = forwardRef<HTMLButtonElement, ButtonMarketingProps>(
         {Icon && (
           <Box
             as="span"
-            css={{ ml: 8, mr: -3, minWidth: '1rem', minHeight: '1rem' }}
+            css={{ minHeight: '1rem', minWidth: '1rem', ml: 8, mr: -3 }}
           >
             <Icon />
           </Box>

@@ -1,8 +1,8 @@
 import { styled } from '../../lib/stitches.config'
 
 const TableCaption = styled('caption', {
-  textAlign: 'start',
   marginBottom: '$5',
+  textAlign: 'start',
 })
 
 const Tbody = styled('tbody', {
@@ -14,84 +14,83 @@ const Tfoot = styled('tfoot', {})
 const Tr = styled('tr', {})
 
 const Th = styled('th', {
-  fontWeight: 'unset',
-  textAlign: 'start',
-  fontSize: '$2',
-  py: '$2',
   borderBottom: '1px solid $gray4',
+  defaultVariants: {
+    align: 'start',
+    border: 'solid',
+  },
+  fontSize: '$2',
+  fontWeight: 'unset',
+  py: '$2',
+  textAlign: 'start',
   variants: {
     align: {
-      start: {
-        textAlign: 'start',
-      },
       center: {
         textAlign: 'center',
       },
       end: {
         textAlign: 'end',
       },
+      start: {
+        textAlign: 'start',
+      },
     },
     border: {
-      solid: {
-        borderBottom: '1px solid $gray4',
-      },
       dashed: {
         borderBottom: '1px dashed $gray8',
       },
+      solid: {
+        borderBottom: '1px solid $gray4',
+      },
     },
-  },
-  defaultVariants: {
-    align: 'start',
-    border: 'solid',
   },
 })
 
 const Td = styled('td', {
-  py: '$2',
   borderBottom: '1px solid $gray4',
+  defaultVariants: {
+    align: 'start',
+    border: 'solid',
+  },
   fontSize: '$2',
+  py: '$2',
   variants: {
     align: {
-      start: {
-        textAlign: 'start',
-      },
       center: {
         textAlign: 'center',
       },
       end: {
         textAlign: 'end',
       },
+      start: {
+        textAlign: 'start',
+      },
     },
     border: {
-      solid: {
-        borderBottom: '1px solid $gray4',
-      },
       dashed: {
         borderBottom: '1px dashed $gray8',
       },
+      solid: {
+        borderBottom: '1px solid $gray4',
+      },
     },
-  },
-  defaultVariants: {
-    align: 'start',
-    border: 'solid',
   },
 })
 
 const Thead = styled('thead', {
-  [`& ${Th}`]: {
-    fontSize: '$1',
-    color: '$gray11',
-  },
   [`& ${Td}`]: {
-    fontSize: '$1',
     color: '$gray11',
+    fontSize: '$1',
+  },
+  [`& ${Th}`]: {
+    color: '$gray11',
+    fontSize: '$1',
   },
 })
 
 const Table = styled('table', {
-  width: '100%',
-  tableLayout: 'fixed',
   borderSpacing: 0,
+  tableLayout: 'fixed',
   variants: {
     striped: {
       true: {
@@ -105,6 +104,7 @@ const Table = styled('table', {
       },
     },
   },
+  width: '100%',
 })
 
-export { TableCaption, Tbody, Tfoot, Tr, Th, Td, Thead, Table }
+export { Table, TableCaption, Tbody, Td, Tfoot, Th, Thead, Tr }

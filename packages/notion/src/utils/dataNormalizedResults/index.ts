@@ -1,4 +1,5 @@
 import { sortObject } from '@jeromefitz/utils'
+
 import _map from 'lodash/map.js'
 import _omit from 'lodash/omit.js'
 
@@ -18,8 +19,8 @@ const dataNormalizedResults = ({ config, results, routeType }) => {
       dataNormalized({
         config,
         data: result,
-        pathVariables: routeType,
         pageId: result?.id,
+        pathVariables: routeType,
       }),
     )
     normalizedResults.push(normalizedResult)

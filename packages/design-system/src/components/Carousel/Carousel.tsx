@@ -3,13 +3,14 @@
  * @ref  https://github.com/radix-ui/website
  *
  */
+import type { ElementRef, RefObject } from 'react'
+
 import { composeEventHandlers } from '@radix-ui/primitive'
 import { useComposedRefs } from '@radix-ui/react-compose-refs'
 import { createContext } from '@radix-ui/react-context'
 import { useCallbackRef } from '@radix-ui/react-use-callback-ref'
 import debounce from 'lodash/debounce'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import type { ElementRef, RefObject } from 'react'
 import smoothscroll from 'smoothscroll-polyfill'
 
 import { styled } from '../../lib/stitches.config'
@@ -17,11 +18,11 @@ import { Box } from '../index'
 
 const [CarouselProvider, useCarouselContext] = createContext<{
   _: any
-  slideListRef: RefObject<HTMLElement>
+  nextDisabled: boolean
   onNextClick(): void
   onPrevClick(): void
-  nextDisabled: boolean
   prevDisabled: boolean
+  slideListRef: RefObject<HTMLElement>
 }>('Carousel')
 
 const Carousel = (props) => {
@@ -35,7 +36,7 @@ const Carousel = (props) => {
   const navigationUpdateDelay = useRef(100)
   useEffect(() => smoothscroll.polyfill(), [])
 
-  const getSlideInDirection = useCallbackRef((direction: 1 | -1) => {
+  const getSlideInDirection = useCallbackRef((direction: -1 | 1) => {
     // @todo(any)
     const slides: any = ref.current?.querySelectorAll<HTMLElement>(
       '[data-slide-intersection-ratio]',
@@ -58,13 +59,13 @@ const Carousel = (props) => {
     // @todo(any)
     const nextSlide: any = getSlideInDirection(1)
     if (nextSlide) {
-      const { scrollLeft, scrollWidth, clientWidth } = slideListRef.current
+      const { clientWidth, scrollLeft, scrollWidth } = slideListRef.current
       const itemWidth = nextSlide.clientWidth
       const itemsToScroll =
         itemWidth * 2.5 < document.documentElement.offsetWidth ? 2 : 1
       const nextPos =
         Math.floor(scrollLeft / itemWidth) * itemWidth + itemWidth * itemsToScroll
-      slideListRef.current.scrollTo({ left: nextPos, behavior: 'smooth' })
+      slideListRef.current.scrollTo({ behavior: 'smooth', left: nextPos })
 
       // Disable previous & next buttons immediately
       setPrevDisabled(nextPos <= 0)
@@ -78,13 +79,13 @@ const Carousel = (props) => {
     // @todo(any)
     const prevSlide: any = getSlideInDirection(-1)
     if (prevSlide) {
-      const { scrollLeft, scrollWidth, clientWidth } = slideListRef.current
+      const { clientWidth, scrollLeft, scrollWidth } = slideListRef.current
       const itemWidth = prevSlide.clientWidth
       const itemsToScroll =
         itemWidth * 2.5 < document.documentElement.offsetWidth ? 2 : 1
       const nextPos =
         Math.ceil(scrollLeft / itemWidth) * itemWidth - itemWidth * itemsToScroll
-      slideListRef.current.scrollTo({ left: nextPos, behavior: 'smooth' })
+      slideListRef.current.scrollTo({ behavior: 'smooth', left: nextPos })
 
       // Disable previous & next buttons immediately
       setPrevDisabled(nextPos <= 0)
@@ -102,7 +103,7 @@ const Carousel = (props) => {
     timeoutRef.current = setTimeout(() => {
       requestAnimationFrame(() => {
         if (slideListRef.current) {
-          const { scrollLeft, scrollWidth, clientWidth } = slideListRef.current
+          const { clientWidth, scrollLeft, scrollWidth } = slideListRef.current
           setPrevDisabled(scrollLeft <= 0)
           setNextDisabled(scrollWidth - scrollLeft - clientWidth <= 0)
           navigationUpdateDelay.current = 100
@@ -133,10 +134,10 @@ const Carousel = (props) => {
     <CarouselProvider
       _={_}
       nextDisabled={nextDisabled}
-      prevDisabled={prevDisabled}
-      slideListRef={slideListRef}
       onNextClick={handleNextClick}
       onPrevClick={handlePrevClick}
+      prevDisabled={prevDisabled}
+      slideListRef={slideListRef}
     >
       <Box {...carouselProps} ref={ref}>
         {children}
@@ -167,7 +168,6 @@ const CarouselSlideList = (props) => {
   return (
     <Box
       {...props}
-      ref={composedRefs}
       data-state={dragStart ? 'dragging' : undefined}
       onMouseDownCapture={composeEventHandlers(
         props.onMouseDownCapture,
@@ -177,8 +177,8 @@ const CarouselSlideList = (props) => {
             document.addEventListener('mousemove', handleMouseMove)
             document.addEventListener('mouseup', handleMouseUp)
             setDragStart({
-              scrollX: (event.currentTarget as HTMLElement).scrollLeft,
               pointerX: event.clientX,
+              scrollX: (event.currentTarget as HTMLElement).scrollLeft,
             })
           }
         },
@@ -196,6 +196,7 @@ const CarouselSlideList = (props) => {
         element.style.userSelect = ''
         element.releasePointerCapture(event.pointerId)
       })}
+      ref={composedRefs}
     />
   )
 }
@@ -219,17 +220,17 @@ const CarouselSlide = (props) => {
   return (
     <Comp
       {...slideProps}
-      ref={ref}
       data-slide-intersection-ratio={intersectionRatio}
-      onDragStart={(event) => {
-        event.preventDefault()
-        isDraggingRef.current = true
-      }}
       onClick={(event) => {
         if (isDraggingRef.current) {
           event.preventDefault()
         }
       }}
+      onDragStart={(event) => {
+        event.preventDefault()
+        isDraggingRef.current = true
+      }}
+      ref={ref}
     />
   )
 }
@@ -240,8 +241,8 @@ const CarouselNext = (props) => {
   return (
     <Comp
       {...nextProps}
-      onClick={() => context.onNextClick()}
       disabled={context.nextDisabled}
+      onClick={() => context.onNextClick()}
     />
   )
 }
@@ -252,50 +253,24 @@ const CarouselPrevious = (props) => {
   return (
     <Comp
       {...prevProps}
-      onClick={() => context.onPrevClick()}
       disabled={context.prevDisabled}
+      onClick={() => context.onPrevClick()}
     />
   )
 }
 
 const CarouselArrowButton = styled('button', {
-  unset: 'all',
-  outline: 0,
-  margin: 0,
-  border: 0,
-  padding: 0,
-
-  display: 'flex',
-  position: 'relative',
-  zIndex: 1,
-  ai: 'center',
-  jc: 'center',
-  bc: '$panel',
-  br: '$round',
-  width: '$7',
-  height: '$7',
-  color: '$hiContrast',
-
-  boxShadow: '$colors$blackA11 0px 2px 12px -5px, $colors$blackA5 0px 1px 3px',
-  willChange: 'transform, box-shadow, opacity',
-
-  '@media (prefers-reduced-motion: no-preference)': {
-    transition: 'all 100ms',
-  },
-
-  '@hover': {
-    '&:hover': {
-      boxShadow: '$colors$blackA10 0px 3px 16px -5px, $colors$blackA5 0px 1px 3px',
-      transform: 'translateY(-1px)',
-
-      // Fix a bug when hovering at button edges would cause the button to jitter because of transform
-      '&::before': {
-        content: '',
-        inset: -2,
-        br: '$round',
-        position: 'absolute',
-      },
+  '&:active': {
+    '@media (prefers-reduced-motion: no-preference)': {
+      transition: 'opacity 100ms',
     },
+    transform: 'none',
+  },
+  '&:active:not(:focus)': {
+    boxShadow: '$colors$blackA11 0px 2px 12px -5px, $colors$blackA5 0px 1px 3px',
+  },
+  '&:disabled': {
+    opacity: 0,
   },
   '&:focus': {
     boxShadow: `
@@ -308,28 +283,54 @@ const CarouselArrowButton = styled('button', {
   '&:focus:not(:focus-visible)': {
     boxShadow: '$colors$blackA11 0px 2px 12px -5px, $colors$blackA5 0px 1px 3px',
   },
-  '&:active:not(:focus)': {
-    boxShadow: '$colors$blackA11 0px 2px 12px -5px, $colors$blackA5 0px 1px 3px',
-  },
-  '&:active': {
-    transform: 'none',
-    '@media (prefers-reduced-motion: no-preference)': {
-      transition: 'opacity 100ms',
+
+  '@hover': {
+    '&:hover': {
+      // Fix a bug when hovering at button edges would cause the button to jitter because of transform
+      '&::before': {
+        br: '$round',
+        content: '',
+        inset: -2,
+        position: 'absolute',
+      },
+      boxShadow: '$colors$blackA10 0px 3px 16px -5px, $colors$blackA5 0px 1px 3px',
+
+      transform: 'translateY(-1px)',
     },
-  },
-  '&:disabled': {
-    opacity: 0,
   },
   '@media (hover: none) and (pointer: coarse)': {
     display: 'none',
   },
+  '@media (prefers-reduced-motion: no-preference)': {
+    transition: 'all 100ms',
+  },
+  ai: 'center',
+  bc: '$panel',
+  border: 0,
+  boxShadow: '$colors$blackA11 0px 2px 12px -5px, $colors$blackA5 0px 1px 3px',
+  br: '$round',
+  color: '$hiContrast',
+  display: 'flex',
+
+  height: '$7',
+  jc: 'center',
+
+  margin: 0,
+
+  outline: 0,
+  padding: 0,
+  position: 'relative',
+  unset: 'all',
+  width: '$7',
+  willChange: 'transform, box-shadow, opacity',
+  zIndex: 1,
 })
 
 export {
   Carousel,
   CarouselArrowButton,
-  CarouselSlideList,
-  CarouselSlide,
   CarouselNext,
   CarouselPrevious,
+  CarouselSlide,
+  CarouselSlideList,
 }

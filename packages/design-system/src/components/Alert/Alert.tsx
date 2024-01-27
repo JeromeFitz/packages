@@ -1,26 +1,25 @@
 import { styled } from '../../lib/stitches.config'
 
 const Alert = styled('div', {
-  // @reset
-  boxSizing: 'border-box',
-  '&::before': {
-    boxSizing: 'border-box',
-  },
   '&::after': {
     boxSizing: 'border-box',
   },
-
+  '&::before': {
+    boxSizing: 'border-box',
+  },
   border: '2px solid',
+
   borderRadius: '$2',
+  // @reset
+  boxSizing: 'border-box',
 
   color: '$hiContrast',
 
+  defaultVariants: {
+    variant: 'loContrast',
+  },
   variants: {
     variant: {
-      loContrast: {
-        // backgroundColor: '$loContrast',
-        borderColor: '$hiContrast',
-      },
       brand: {
         backgroundColor: '$brand3',
         borderColor: '$brand6',
@@ -36,6 +35,10 @@ const Alert = styled('div', {
         borderColor: '$infoBorder',
         color: '$infoText',
       },
+      loContrast: {
+        // backgroundColor: '$loContrast',
+        borderColor: '$hiContrast',
+      },
       success: {
         backgroundColor: '$successBackground',
         borderColor: '$successBorder',
@@ -47,9 +50,6 @@ const Alert = styled('div', {
         color: '$warningText',
       },
     },
-  },
-  defaultVariants: {
-    variant: 'loContrast',
   },
 })
 

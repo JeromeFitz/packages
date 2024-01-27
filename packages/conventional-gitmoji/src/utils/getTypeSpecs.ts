@@ -1,6 +1,6 @@
 import title from 'title'
 
-import type { IReleaseRuleProps, IReleaseRule } from '../index.js'
+import type { IReleaseRule, IReleaseRuleProps } from '../index.js'
 
 const typeSpecs: Omit<IReleaseRuleProps, 'branch' | 'commit' | 'entity' | 'name'>[] =
   []

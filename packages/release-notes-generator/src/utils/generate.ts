@@ -55,11 +55,11 @@ function generate(options, commits, context, keyCommit) {
 
   // @question should this be merge/extend? i.e, `...context` specifically?
   context = {
+    commits,
     context,
-    options,
     filteredCommits,
     keyCommit,
-    commits,
+    options,
   }
 
   return context

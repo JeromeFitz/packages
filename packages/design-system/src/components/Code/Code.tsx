@@ -1,9 +1,11 @@
 import { styled } from '../../lib/stitches.config'
 
 const Code = styled('code', {
+  defaultVariants: {
+    // variant: 'gray',
+  },
   fontFamily: '$mono',
   fontSize: 'max(12px, 85%)',
-  whiteSpace: 'nowrap',
   padding: '0 3px 2px 3px',
 
   variants: {
@@ -14,9 +16,7 @@ const Code = styled('code', {
       // },
     },
   },
-  defaultVariants: {
-    // variant: 'gray',
-  },
+  whiteSpace: 'nowrap',
 })
 
 export { Code }

@@ -1,7 +1,7 @@
 import _filter from 'lodash/filter.js'
 import _map from 'lodash/map.js'
 
-import type { Property, DataTypes, DataTypesObject } from '../schema/index.js'
+import type { DataTypes, DataTypesObject, Property } from '../schema/index.js'
 
 const getLookup = ({ key, notion, type }) => ({
   key,
@@ -30,18 +30,18 @@ const PROPERTIES: Record<string, Property> = {
     type: 'rich_text',
   },
   addressLatitude: {
+    format: 'number',
     init: true,
     key: 'addressLatitude',
     notion: 'Address.Latitude',
     type: 'number',
-    format: 'number',
   },
   addressLongitude: {
+    format: 'number',
     init: true,
     key: 'addressLongitude',
     notion: 'Address.Longitude',
     type: 'number',
-    format: 'number',
   },
   addressNeighborhood: {
     init: true,
@@ -62,11 +62,11 @@ const PROPERTIES: Record<string, Property> = {
     type: 'rich_text',
   },
   addressZipCode: {
+    format: 'number',
     init: true,
     key: 'addressZipCode',
     notion: 'Address.ZipCode',
     type: 'number',
-    format: 'number',
   },
   author: {
     init: true,
@@ -129,11 +129,11 @@ const PROPERTIES: Record<string, Property> = {
     type: 'rich_text',
   },
   episode: {
+    format: 'number',
     init: true,
     key: 'episode',
     notion: 'Episode',
     type: 'number',
-    format: 'number',
   },
   explicit: {
     init: true,
@@ -213,6 +213,36 @@ const PROPERTIES: Record<string, Property> = {
     notion: 'Author.Email',
     type: 'rich_text',
   },
+  relationEpisodes__People_Guest: {
+    init: true,
+    key: 'relationEpisodes__People_Guest',
+    notion: 'Guest',
+    relation: {
+      database_id: 'People',
+      synced_property_name: 'Episodes.Guest',
+    },
+    type: 'relation',
+  },
+  relationEpisodes__People_Sound_Engineer: {
+    init: true,
+    key: 'relationEpisodes__People_Sound_Engineer',
+    notion: 'Sound.Engineer',
+    relation: {
+      database_id: 'People',
+      synced_property_name: 'Episodes.Sound.Engineer',
+    },
+    type: 'relation',
+  },
+  relationEpisodes__People_Thanks: {
+    init: true,
+    key: 'relationEpisodes__People_Thanks',
+    notion: 'Thanks',
+    relation: {
+      database_id: 'People',
+      synced_property_name: 'Episodes.Thanks',
+    },
+    type: 'relation',
+  },
   /**
    * @relation
    */
@@ -220,517 +250,554 @@ const PROPERTIES: Record<string, Property> = {
     init: true,
     key: 'relationEpisodes__Podcasts',
     notion: 'Podcasts',
-    type: 'relation',
     relation: {
       database_id: 'Podcasts',
       synced_property_name: 'Episodes',
     },
-  },
-  relationPodcasts__Episodes: {
-    init: false,
-    key: 'relationPodcasts__Episodes',
-    notion: 'Episodes',
     type: 'relation',
-    relation: {
-      database_id: 'Episodes',
-      synced_property_name: 'Podcasts',
-    },
-  },
-  rollupEpisodes__Podcasts: {
-    init: false,
-    key: 'rollupEpisodes__Podcasts',
-    notion: 'Podcasts.Rollup',
-    type: 'rollup',
-    rollup: {
-      relation_property_name: 'Podcasts',
-      rollup_property_id: 'Title',
-      function: 'show_original',
-    },
-  },
-  rollupEpisodes__PodcastsSlugs: {
-    init: false,
-    key: 'rollupEpisodes__PodcastsSlugs',
-    notion: 'Podcasts.Slug.Rollup',
-    type: 'rollup',
-    rollup: {
-      relation_property_name: 'Podcasts',
-      rollup_property_id: 'Slug',
-      function: 'show_original',
-    },
-  },
-  rollupPodcasts__Episodes: {
-    init: false,
-    key: 'rollupPodcasts__Episodes',
-    notion: 'Episodes.Rollup',
-    type: 'rollup',
-    rollup: {
-      relation_property_name: 'Episodes',
-      rollup_property_id: 'Title',
-      function: 'show_original',
-    },
-  },
-  rollupPodcasts__EpisodesSlugs: {
-    init: false,
-    key: 'rollupPodcasts__EpisodesSlugs',
-    notion: 'Episodes.Slug.Rollup',
-    type: 'rollup',
-    rollup: {
-      relation_property_name: 'Episodes',
-      rollup_property_id: 'Slug',
-      function: 'show_original',
-    },
-  },
-
-  relationEpisodes__People_Guest: {
-    init: true,
-    key: 'relationEpisodes__People_Guest',
-    notion: 'Guest',
-    type: 'relation',
-    relation: {
-      database_id: 'People',
-      synced_property_name: 'Episodes.Guest',
-    },
-  },
-  relationPeople__Episodes_Guest: {
-    init: false,
-    key: 'relationPeople__Episodes_Guest',
-    notion: 'Episodes.Guest',
-    type: 'relation',
-    relation: {
-      database_id: 'Episodes',
-      synced_property_name: 'Guest',
-    },
-  },
-  relationEpisodes__People_Sound_Engineer: {
-    init: true,
-    key: 'relationEpisodes__People_Sound_Engineer',
-    notion: 'Sound.Engineer',
-    type: 'relation',
-    relation: {
-      database_id: 'People',
-      synced_property_name: 'Episodes.Sound.Engineer',
-    },
-  },
-  relationPeople__Episodes_Sound_Engineer: {
-    init: false,
-    key: 'relationPeople__Episodes_Sound_Engineer',
-    notion: 'Episodes.Sound.Engineer',
-    type: 'relation',
-    relation: {
-      database_id: 'Episodes',
-      synced_property_name: 'Sound.Engineer',
-    },
-  },
-  relationEpisodes__People_Thanks: {
-    init: true,
-    key: 'relationEpisodes__People_Thanks',
-    notion: 'Thanks',
-    type: 'relation',
-    relation: {
-      database_id: 'People',
-      synced_property_name: 'Episodes.Thanks',
-    },
-  },
-  relationPeople__Episodes_Thanks: {
-    init: false,
-    key: 'relationPeople__Episodes_Thanks',
-    notion: 'Episodes.Thanks',
-    type: 'relation',
-    relation: {
-      database_id: 'Episodes',
-      synced_property_name: 'Thanks',
-    },
   },
   relationEpisodes__Venues: {
     init: true,
     key: 'relationEpisodes__Venues',
     notion: 'Venues',
-    type: 'relation',
     relation: {
       database_id: 'Venues',
       synced_property_name: 'Episodes',
     },
-  },
-  relationVenues__Episodes: {
-    init: false,
-    key: 'relationVenues__Episodes',
-    notion: 'Episodes',
     type: 'relation',
-    relation: {
-      database_id: 'Episodes',
-      synced_property_name: 'Venues',
-    },
-  },
-  relationEvents__Venues: {
-    init: true,
-    key: 'relationEvents__Venues',
-    notion: 'Venues',
-    type: 'relation',
-    relation: {
-      database_id: 'Venues',
-      synced_property_name: 'Events',
-    },
-  },
-  relationVenues__Events: {
-    init: false,
-    key: 'relationVenues__Events',
-    notion: 'Events',
-    type: 'relation',
-    relation: {
-      database_id: 'Events',
-      synced_property_name: 'Venues',
-    },
-  },
-  relationEvents__Shows: {
-    init: true,
-    key: 'relationEvents__Shows',
-    notion: 'Shows',
-    type: 'relation',
-    relation: {
-      database_id: 'Shows',
-      synced_property_name: 'Events',
-    },
-  },
-  relationShows__Events: {
-    init: false,
-    key: 'relationShows__Events',
-    notion: 'Events',
-    type: 'relation',
-    relation: {
-      database_id: 'Events',
-      synced_property_name: 'Shows',
-    },
-  },
-  relationEvents__Shows_Lineup: {
-    init: true,
-    key: 'relationEvents__Shows_Lineup',
-    notion: 'Shows.Lineup',
-    type: 'relation',
-    relation: {
-      database_id: 'Shows',
-      synced_property_name: 'Events.Lineup',
-    },
-  },
-  relationShows__Events_Lineup: {
-    init: false,
-    key: 'relationShows__Events_Lineup',
-    notion: 'Events.Lineup',
-    type: 'relation',
-    relation: {
-      database_id: 'Events',
-      synced_property_name: 'Shows.Lineup',
-    },
-  },
-  relationShows__People_Cast: {
-    init: true,
-    key: 'relationShows__People_Cast',
-    notion: 'Cast',
-    type: 'relation',
-    relation: {
-      database_id: 'People',
-      synced_property_name: 'Shows.Cast',
-    },
-  },
-  relationPeople__Shows_Cast: {
-    init: false,
-    key: 'relationPeople__Shows_Cast',
-    notion: 'Shows.Cast',
-    type: 'relation',
-    relation: {
-      database_id: 'Shows',
-      synced_property_name: 'Cast',
-    },
-  },
-  relationShows__People_Cast_Past: {
-    init: true,
-    key: 'relationShows__People_Cast_Past',
-    notion: 'Cast.Past',
-    type: 'relation',
-    relation: {
-      database_id: 'People',
-      synced_property_name: 'Shows.Cast.Past',
-    },
-  },
-  relationPeople__Shows_Cast_Past: {
-    init: false,
-    key: 'relationPeople__Shows_Cast_Past',
-    notion: 'Shows.Cast.Past',
-    type: 'relation',
-    relation: {
-      database_id: 'Shows',
-      synced_property_name: 'Cast.Past',
-    },
-  },
-  relationShows_People_Crew: {
-    init: true,
-    key: 'relationShows_People_Crew',
-    notion: 'Crew',
-    type: 'relation',
-    relation: {
-      database_id: 'People',
-      synced_property_name: 'Shows.Crew',
-    },
-  },
-  relationPeople__Shows_Crew: {
-    init: true,
-    key: 'relationPeople__Shows_Crew',
-    notion: 'Shows.Crew',
-    type: 'relation',
-    relation: {
-      database_id: 'Shows',
-      synced_property_name: 'Crew',
-    },
-  },
-  relationShows__People_Director: {
-    init: true,
-    key: 'relationShows__People_Director',
-    notion: 'Director',
-    type: 'relation',
-    relation: {
-      database_id: 'People',
-      synced_property_name: 'Shows.Director',
-    },
-  },
-  relationPeople__Shows_Director: {
-    init: false,
-    key: 'relationPeople__Shows_Director',
-    notion: 'Shows.Director',
-    type: 'relation',
-    relation: {
-      database_id: 'Shows',
-      synced_property_name: 'Director',
-    },
-  },
-  relationShows__People_Director_Musical: {
-    init: true,
-    key: 'relationShows__People_Director_Musical',
-    notion: 'Director.Musical',
-    type: 'relation',
-    relation: {
-      database_id: 'People',
-      synced_property_name: 'Shows.Director.Musical',
-    },
-  },
-  relationPeople__Shows_Director_Musical: {
-    init: false,
-    key: 'relationPeople__Shows_Director_Musical',
-    notion: 'Shows.Director.Musical',
-    type: 'relation',
-    relation: {
-      database_id: 'Shows',
-      synced_property_name: 'Director.Musical',
-    },
-  },
-  relationShows__People_Director_Technical: {
-    init: true,
-    key: 'relationShows__People_Director_Technical',
-    notion: 'Director.Technical',
-    type: 'relation',
-    relation: {
-      database_id: 'People',
-      synced_property_name: 'Shows.Director.Technical',
-    },
-  },
-  relationPeople__Shows_Director_Technical: {
-    init: false,
-    key: 'relationPeople__Shows_Director_Technical',
-    notion: 'Shows.Director.Technical',
-    type: 'relation',
-    relation: {
-      database_id: 'Shows',
-      synced_property_name: 'Director.Technical',
-    },
   },
   relationEvents__People_Guest: {
     init: true,
     key: 'relationEvents__People_Guest',
     notion: 'Guest',
-    type: 'relation',
     relation: {
       database_id: 'People',
       synced_property_name: 'Events.Guest',
     },
-  },
-  relationPeople__Events_Guest: {
-    init: false,
-    key: 'relationEvents__People_Guest',
-    notion: 'Events.Guest',
     type: 'relation',
-    relation: {
-      database_id: 'Events',
-      synced_property_name: 'Guest',
-    },
   },
-  relationPodcasts__People_Host: {
+
+  relationEvents__People_Guest_Music: {
     init: true,
-    key: 'relationPodcasts__People_Host',
-    notion: 'Host',
-    type: 'relation',
+    key: 'relationEvents__People_Guest_Music',
+    notion: 'Guest.Music',
     relation: {
       database_id: 'People',
-      synced_property_name: 'Podcasts.Host',
+      synced_property_name: 'Events.Guest.Music',
     },
-  },
-  relationPeople__Podcasts_Host: {
-    init: false,
-    key: 'relationPeople__Podcasts_Host',
-    notion: 'Podcasts.Host',
     type: 'relation',
-    relation: {
-      database_id: 'Podcasts',
-      synced_property_name: 'Host',
-    },
   },
   relationEvents__People_Host: {
     init: true,
     key: 'relationEvents__People_Host',
     notion: 'Host',
-    type: 'relation',
     relation: {
       database_id: 'People',
       synced_property_name: 'Events.Host',
     },
-  },
-  relationPeople__Events_Host: {
-    init: false,
-    key: 'relationPeople__Events_Host',
-    notion: 'Events.Host',
     type: 'relation',
-    relation: {
-      database_id: 'Events',
-      synced_property_name: 'Host',
-    },
   },
-  relationShows__People_Producer: {
+  relationEvents__Shows: {
     init: true,
-    key: 'relationShows__People_Producer',
-    notion: 'Producer',
-    type: 'relation',
-    relation: {
-      database_id: 'People',
-      synced_property_name: 'Shows.Producer',
-    },
-  },
-  relationPeople__Shows_Producer: {
-    init: false,
-    key: 'relationPeople__Shows_Producer',
-    notion: 'Shows.Producer',
-    type: 'relation',
+    key: 'relationEvents__Shows',
+    notion: 'Shows',
     relation: {
       database_id: 'Shows',
-      synced_property_name: 'Producer',
+      synced_property_name: 'Events',
     },
-  },
-  relationEvents__People_Guest_Music: {
-    init: true,
-    key: 'relationEvents__People_Guest_Music',
-    notion: 'Guest.Music',
     type: 'relation',
+  },
+  relationEvents__Shows_Lineup: {
+    init: true,
+    key: 'relationEvents__Shows_Lineup',
+    notion: 'Shows.Lineup',
     relation: {
-      database_id: 'People',
-      synced_property_name: 'Events.Guest.Music',
+      database_id: 'Shows',
+      synced_property_name: 'Events.Lineup',
     },
+    type: 'relation',
+  },
+  relationEvents__Venues: {
+    init: true,
+    key: 'relationEvents__Venues',
+    notion: 'Venues',
+    relation: {
+      database_id: 'Venues',
+      synced_property_name: 'Events',
+    },
+    type: 'relation',
+  },
+  relationPeople__Episodes_Guest: {
+    init: false,
+    key: 'relationPeople__Episodes_Guest',
+    notion: 'Episodes.Guest',
+    relation: {
+      database_id: 'Episodes',
+      synced_property_name: 'Guest',
+    },
+    type: 'relation',
+  },
+  relationPeople__Episodes_Sound_Engineer: {
+    init: false,
+    key: 'relationPeople__Episodes_Sound_Engineer',
+    notion: 'Episodes.Sound.Engineer',
+    relation: {
+      database_id: 'Episodes',
+      synced_property_name: 'Sound.Engineer',
+    },
+    type: 'relation',
+  },
+  relationPeople__Episodes_Thanks: {
+    init: false,
+    key: 'relationPeople__Episodes_Thanks',
+    notion: 'Episodes.Thanks',
+    relation: {
+      database_id: 'Episodes',
+      synced_property_name: 'Thanks',
+    },
+    type: 'relation',
+  },
+  relationPeople__Events_Guest: {
+    init: false,
+    key: 'relationEvents__People_Guest',
+    notion: 'Events.Guest',
+    relation: {
+      database_id: 'Events',
+      synced_property_name: 'Guest',
+    },
+    type: 'relation',
   },
   relationPeople__Events_Guest_Music: {
     init: false,
     key: 'relationPeople__Events_Guest_Music',
     notion: 'Events.Guest.Music',
-    type: 'relation',
     relation: {
       database_id: 'Events',
       synced_property_name: 'Guest.Music',
     },
-  },
-  relationPodcasts__People_Sound_Engineer: {
-    init: true,
-    key: 'relationPodcasts__People_Sound_Engineer',
-    notion: 'Sound.Engineer',
     type: 'relation',
+  },
+  relationPeople__Events_Host: {
+    init: false,
+    key: 'relationPeople__Events_Host',
+    notion: 'Events.Host',
+    relation: {
+      database_id: 'Events',
+      synced_property_name: 'Host',
+    },
+    type: 'relation',
+  },
+  relationPeople__Podcasts_Host: {
+    init: false,
+    key: 'relationPeople__Podcasts_Host',
+    notion: 'Podcasts.Host',
     relation: {
       database_id: 'Podcasts',
-      synced_property_name: 'Podcasts.Sound.Engineer',
+      synced_property_name: 'Host',
     },
+    type: 'relation',
   },
   relationPeople__Podcasts_Sound_Engineer: {
     init: false,
     key: 'relationPeople__Podcasts_Sound_Engineer',
     notion: 'Podcasts.Sound.Engineer',
-    type: 'relation',
     relation: {
       database_id: 'Podcasts',
       synced_property_name: 'Sound.Engineer',
     },
-  },
-  relationShows__People_Thanks: {
-    init: true,
-    key: 'relationShows__People_Thanks',
-    notion: 'Thanks',
     type: 'relation',
+  },
+  relationPeople__Shows_Cast: {
+    init: false,
+    key: 'relationPeople__Shows_Cast',
+    notion: 'Shows.Cast',
     relation: {
-      database_id: 'People',
-      synced_property_name: 'Shows.Thanks',
+      database_id: 'Shows',
+      synced_property_name: 'Cast',
     },
+    type: 'relation',
+  },
+  relationPeople__Shows_Cast_Past: {
+    init: false,
+    key: 'relationPeople__Shows_Cast_Past',
+    notion: 'Shows.Cast.Past',
+    relation: {
+      database_id: 'Shows',
+      synced_property_name: 'Cast.Past',
+    },
+    type: 'relation',
+  },
+  relationPeople__Shows_Crew: {
+    init: true,
+    key: 'relationPeople__Shows_Crew',
+    notion: 'Shows.Crew',
+    relation: {
+      database_id: 'Shows',
+      synced_property_name: 'Crew',
+    },
+    type: 'relation',
+  },
+  relationPeople__Shows_Director: {
+    init: false,
+    key: 'relationPeople__Shows_Director',
+    notion: 'Shows.Director',
+    relation: {
+      database_id: 'Shows',
+      synced_property_name: 'Director',
+    },
+    type: 'relation',
+  },
+  relationPeople__Shows_Director_Musical: {
+    init: false,
+    key: 'relationPeople__Shows_Director_Musical',
+    notion: 'Shows.Director.Musical',
+    relation: {
+      database_id: 'Shows',
+      synced_property_name: 'Director.Musical',
+    },
+    type: 'relation',
+  },
+  relationPeople__Shows_Director_Technical: {
+    init: false,
+    key: 'relationPeople__Shows_Director_Technical',
+    notion: 'Shows.Director.Technical',
+    relation: {
+      database_id: 'Shows',
+      synced_property_name: 'Director.Technical',
+    },
+    type: 'relation',
+  },
+  relationPeople__Shows_Producer: {
+    init: false,
+    key: 'relationPeople__Shows_Producer',
+    notion: 'Shows.Producer',
+    relation: {
+      database_id: 'Shows',
+      synced_property_name: 'Producer',
+    },
+    type: 'relation',
   },
   relationPeople__Shows_Thanks: {
     init: false,
     key: 'relationPeople__Shows_Thanks',
     notion: 'Shows.Thanks',
-    type: 'relation',
     relation: {
       database_id: 'Shows',
       synced_property_name: 'Thanks',
     },
-  },
-  relationShows__People_Writer: {
-    init: true,
-    key: 'relationShows__People_Writer',
-    notion: 'Writer',
     type: 'relation',
-    relation: {
-      database_id: 'People',
-      synced_property_name: 'Shows.Writer',
-    },
   },
   relationPeople__Shows_Writer: {
     init: false,
     key: 'relationPeople__Shows_Writer',
     notion: 'Shows.Writer',
-    type: 'relation',
     relation: {
       database_id: 'Shows',
       synced_property_name: 'Writer',
     },
+    type: 'relation',
+  },
+  relationPodcasts__Episodes: {
+    init: false,
+    key: 'relationPodcasts__Episodes',
+    notion: 'Episodes',
+    relation: {
+      database_id: 'Episodes',
+      synced_property_name: 'Podcasts',
+    },
+    type: 'relation',
+  },
+  relationPodcasts__People_Host: {
+    init: true,
+    key: 'relationPodcasts__People_Host',
+    notion: 'Host',
+    relation: {
+      database_id: 'People',
+      synced_property_name: 'Podcasts.Host',
+    },
+    type: 'relation',
+  },
+  relationPodcasts__People_Sound_Engineer: {
+    init: true,
+    key: 'relationPodcasts__People_Sound_Engineer',
+    notion: 'Sound.Engineer',
+    relation: {
+      database_id: 'Podcasts',
+      synced_property_name: 'Podcasts.Sound.Engineer',
+    },
+    type: 'relation',
+  },
+  relationShows__Events: {
+    init: false,
+    key: 'relationShows__Events',
+    notion: 'Events',
+    relation: {
+      database_id: 'Events',
+      synced_property_name: 'Shows',
+    },
+    type: 'relation',
+  },
+  relationShows__Events_Lineup: {
+    init: false,
+    key: 'relationShows__Events_Lineup',
+    notion: 'Events.Lineup',
+    relation: {
+      database_id: 'Events',
+      synced_property_name: 'Shows.Lineup',
+    },
+    type: 'relation',
+  },
+  relationShows__People_Cast: {
+    init: true,
+    key: 'relationShows__People_Cast',
+    notion: 'Cast',
+    relation: {
+      database_id: 'People',
+      synced_property_name: 'Shows.Cast',
+    },
+    type: 'relation',
+  },
+  relationShows__People_Cast_Past: {
+    init: true,
+    key: 'relationShows__People_Cast_Past',
+    notion: 'Cast.Past',
+    relation: {
+      database_id: 'People',
+      synced_property_name: 'Shows.Cast.Past',
+    },
+    type: 'relation',
+  },
+  relationShows__People_Director: {
+    init: true,
+    key: 'relationShows__People_Director',
+    notion: 'Director',
+    relation: {
+      database_id: 'People',
+      synced_property_name: 'Shows.Director',
+    },
+    type: 'relation',
+  },
+  relationShows__People_Director_Musical: {
+    init: true,
+    key: 'relationShows__People_Director_Musical',
+    notion: 'Director.Musical',
+    relation: {
+      database_id: 'People',
+      synced_property_name: 'Shows.Director.Musical',
+    },
+    type: 'relation',
+  },
+  relationShows__People_Director_Technical: {
+    init: true,
+    key: 'relationShows__People_Director_Technical',
+    notion: 'Director.Technical',
+    relation: {
+      database_id: 'People',
+      synced_property_name: 'Shows.Director.Technical',
+    },
+    type: 'relation',
+  },
+  relationShows__People_Producer: {
+    init: true,
+    key: 'relationShows__People_Producer',
+    notion: 'Producer',
+    relation: {
+      database_id: 'People',
+      synced_property_name: 'Shows.Producer',
+    },
+    type: 'relation',
+  },
+  relationShows__People_Thanks: {
+    init: true,
+    key: 'relationShows__People_Thanks',
+    notion: 'Thanks',
+    relation: {
+      database_id: 'People',
+      synced_property_name: 'Shows.Thanks',
+    },
+    type: 'relation',
+  },
+  relationShows__People_Writer: {
+    init: true,
+    key: 'relationShows__People_Writer',
+    notion: 'Writer',
+    relation: {
+      database_id: 'People',
+      synced_property_name: 'Shows.Writer',
+    },
+    type: 'relation',
   },
   relationShows__Tags: {
     init: true,
     key: 'relationShows__Tags',
     notion: 'Tags',
-    type: 'relation',
     relation: {
       database_id: 'Tags',
       synced_property_name: 'Shows',
     },
+    type: 'relation',
+  },
+  relationShows_People_Crew: {
+    init: true,
+    key: 'relationShows_People_Crew',
+    notion: 'Crew',
+    relation: {
+      database_id: 'People',
+      synced_property_name: 'Shows.Crew',
+    },
+    type: 'relation',
   },
   relationTags__Shows: {
     init: false,
     key: 'relationTags__Shows',
     notion: 'Shows',
-    type: 'relation',
     relation: {
       database_id: 'Shows',
       synced_property_name: 'Tags',
     },
+    type: 'relation',
   },
-  rollupShows__Tags: {
+  relationVenues__Episodes: {
     init: false,
-    key: 'rollupShows__Tags',
-    notion: 'Tags.Rollup',
-    type: 'rollup',
-    rollup: {
-      relation_property_name: 'Tags',
-      rollup_property_id: 'Title',
-      function: 'show_original',
+    key: 'relationVenues__Episodes',
+    notion: 'Episodes',
+    relation: {
+      database_id: 'Episodes',
+      synced_property_name: 'Venues',
     },
+    type: 'relation',
+  },
+  relationVenues__Events: {
+    init: false,
+    key: 'relationVenues__Events',
+    notion: 'Events',
+    relation: {
+      database_id: 'Events',
+      synced_property_name: 'Venues',
+    },
+    type: 'relation',
+  },
+  rollupEpisodes__Podcasts: {
+    init: false,
+    key: 'rollupEpisodes__Podcasts',
+    notion: 'Podcasts.Rollup',
+    rollup: {
+      function: 'show_original',
+      relation_property_name: 'Podcasts',
+      rollup_property_id: 'Title',
+    },
+    type: 'rollup',
+  },
+  rollupEpisodes__PodcastsSlugs: {
+    init: false,
+    key: 'rollupEpisodes__PodcastsSlugs',
+    notion: 'Podcasts.Slug.Rollup',
+    rollup: {
+      function: 'show_original',
+      relation_property_name: 'Podcasts',
+      rollup_property_id: 'Slug',
+    },
+    type: 'rollup',
+  },
+  //
+  rollupEvents__People_Cast: {
+    init: false,
+    key: 'rollupEvents__People_Cast',
+    notion: 'Cast.Rollup',
+    rollup: {
+      function: 'show_original',
+      relation_property_name: 'Shows',
+      rollup_property_id: 'Cast',
+    },
+    type: 'rollup',
+  },
+  rollupEvents__People_Guest: {
+    init: false,
+    key: 'rollupEvents__People_Guest',
+    notion: 'Guest.Rollup',
+    rollup: {
+      function: 'show_original',
+      relation_property_name: 'Guest',
+      rollup_property_id: 'Title',
+    },
+    type: 'rollup',
+  },
+  rollupEvents__People_Guest_Music: {
+    init: false,
+    key: 'rollupEvents__People_Guest_Music',
+    notion: 'Guest.Music.Rollup',
+    rollup: {
+      function: 'show_original',
+      relation_property_name: 'Guest.Music',
+      rollup_property_id: 'Title',
+    },
+    type: 'rollup',
+  },
+  rollupEvents__People_Host: {
+    init: false,
+    key: 'rollupEvents__People_Host',
+    notion: 'Host.Rollup',
+    rollup: {
+      function: 'show_original',
+      relation_property_name: 'Host',
+      rollup_property_id: 'Title',
+    },
+    type: 'rollup',
+  },
+  rollupEvents__Shows: {
+    init: false,
+    key: 'rollupEvents__Shows',
+    notion: 'Shows.Rollup',
+    rollup: {
+      function: 'show_original',
+      relation_property_name: 'Shows',
+      rollup_property_id: 'Title',
+    },
+    type: 'rollup',
+  },
+  rollupEvents__Shows_Lineup: {
+    init: false,
+    key: 'rollupEvents__Shows_Lineup',
+    notion: 'Shows.Lineup.Rollup',
+    rollup: {
+      function: 'show_original',
+      relation_property_name: 'Shows.Lineup',
+      rollup_property_id: 'Title',
+    },
+    type: 'rollup',
+  },
+  rollupEvents__Venues: {
+    init: false,
+    key: 'rollupEvents__Venues',
+    notion: 'Venues.Rollup',
+    rollup: {
+      function: 'show_original',
+      relation_property_name: 'Venues',
+      rollup_property_id: 'Title',
+    },
+    type: 'rollup',
+  },
+  rollupPodcasts__Episodes: {
+    init: false,
+    key: 'rollupPodcasts__Episodes',
+    notion: 'Episodes.Rollup',
+    rollup: {
+      function: 'show_original',
+      relation_property_name: 'Episodes',
+      rollup_property_id: 'Title',
+    },
+    type: 'rollup',
+  },
+  rollupPodcasts__EpisodesSlugs: {
+    init: false,
+    key: 'rollupPodcasts__EpisodesSlugs',
+    notion: 'Episodes.Slug.Rollup',
+    rollup: {
+      function: 'show_original',
+      relation_property_name: 'Episodes',
+      rollup_property_id: 'Slug',
+    },
+    type: 'rollup',
   },
   /**
    * @rollup
@@ -739,207 +806,140 @@ const PROPERTIES: Record<string, Property> = {
     init: false,
     key: 'rollupShows__People_Cast',
     notion: 'Cast.Rollup',
-    type: 'rollup',
     rollup: {
+      function: 'show_original',
       relation_property_name: 'Cast',
       rollup_property_id: 'Title',
-      function: 'show_original',
     },
-  },
-  rollupShows__People_Cast_Slug: {
-    init: false,
-    key: 'rollupShows__People_Cast_Slug',
-    notion: 'Cast.Rollup.Slug',
     type: 'rollup',
-    rollup: {
-      relation_property_name: 'Cast',
-      rollup_property_name: 'Slug',
-      function: 'show_original',
-    },
   },
   rollupShows__People_Cast_Past: {
     init: false,
     key: 'rollupShows__People_Cast_Past',
     notion: 'Cast.Past.Rollup',
-    type: 'rollup',
     rollup: {
+      function: 'show_original',
       relation_property_name: 'Cast.Past',
       rollup_property_id: 'Title',
-      function: 'show_original',
     },
+    type: 'rollup',
+  },
+  rollupShows__People_Cast_Slug: {
+    init: false,
+    key: 'rollupShows__People_Cast_Slug',
+    notion: 'Cast.Rollup.Slug',
+    rollup: {
+      function: 'show_original',
+      relation_property_name: 'Cast',
+      rollup_property_name: 'Slug',
+    },
+    type: 'rollup',
   },
   rollupShows__People_Crew: {
     init: false,
     key: 'rollupShows__People_Crew',
     notion: 'Crew.Rollup',
-    type: 'rollup',
     rollup: {
+      function: 'show_original',
       relation_property_name: 'Crew',
       rollup_property_name: 'Title',
-      function: 'show_original',
     },
+    type: 'rollup',
   },
   rollupShows__People_Director: {
     init: false,
     key: 'rollupShows__People_Director',
     notion: 'Director.Rollup',
-    type: 'rollup',
     rollup: {
+      function: 'show_original',
       relation_property_name: 'Director',
       rollup_property_name: 'Title',
-      function: 'show_original',
     },
+    type: 'rollup',
   },
   rollupShows__People_Director_Musical: {
     init: false,
     key: 'rollupShows__People_Director_Musical',
     notion: 'Director.Musical.Rollup',
-    type: 'rollup',
     rollup: {
+      function: 'show_original',
       relation_property_name: 'Director.Musical',
       rollup_property_name: 'Title',
-      function: 'show_original',
     },
+    type: 'rollup',
   },
   rollupShows__People_Director_Technical: {
     init: false,
     key: 'rollupShows__People_Director_Technical',
     notion: 'Director.Technical.Rollup',
-    type: 'rollup',
     rollup: {
+      function: 'show_original',
       relation_property_name: 'Director.Technical',
       rollup_property_name: 'Title',
-      function: 'show_original',
     },
+    type: 'rollup',
   },
   rollupShows__People_Music: {
     init: false,
     key: 'rollupShows__People_Music',
     notion: 'Music.Rollup',
-    type: 'rollup',
     rollup: {
+      function: 'show_original',
       relation_property_name: 'Music',
       rollup_property_name: 'Title',
-      function: 'show_original',
     },
+    type: 'rollup',
   },
   rollupShows__People_Producer: {
     init: false,
     key: 'rollupShows__People_Producer',
     notion: 'Producer.Rollup',
-    type: 'rollup',
     rollup: {
+      function: 'show_original',
       relation_property_name: 'Producer',
       rollup_property_name: 'Title',
-      function: 'show_original',
     },
+    type: 'rollup',
   },
   rollupShows__People_Thanks: {
     init: false,
     key: 'rollupShows__People_Thanks',
     notion: 'Thanks.Rollup',
-    type: 'rollup',
     rollup: {
+      function: 'show_original',
       relation_property_name: 'Thanks',
       rollup_property_name: 'Title',
-      function: 'show_original',
     },
+    type: 'rollup',
   },
   rollupShows__People_Writer: {
     init: false,
     key: 'rollupShows__People_Writer',
     notion: 'Writer.Rollup',
-    type: 'rollup',
     rollup: {
+      function: 'show_original',
       relation_property_name: 'Writer',
       rollup_property_name: 'Title',
-      function: 'show_original',
     },
-  },
-  //
-  rollupEvents__People_Cast: {
-    init: false,
-    key: 'rollupEvents__People_Cast',
-    notion: 'Cast.Rollup',
     type: 'rollup',
+  },
+  rollupShows__Tags: {
+    init: false,
+    key: 'rollupShows__Tags',
+    notion: 'Tags.Rollup',
     rollup: {
-      relation_property_name: 'Shows',
-      rollup_property_id: 'Cast',
       function: 'show_original',
-    },
-  },
-  rollupEvents__People_Guest: {
-    init: false,
-    key: 'rollupEvents__People_Guest',
-    notion: 'Guest.Rollup',
-    type: 'rollup',
-    rollup: {
-      relation_property_name: 'Guest',
+      relation_property_name: 'Tags',
       rollup_property_id: 'Title',
-      function: 'show_original',
     },
-  },
-  rollupEvents__People_Guest_Music: {
-    init: false,
-    key: 'rollupEvents__People_Guest_Music',
-    notion: 'Guest.Music.Rollup',
     type: 'rollup',
-    rollup: {
-      relation_property_name: 'Guest.Music',
-      rollup_property_id: 'Title',
-      function: 'show_original',
-    },
-  },
-  rollupEvents__People_Host: {
-    init: false,
-    key: 'rollupEvents__People_Host',
-    notion: 'Host.Rollup',
-    type: 'rollup',
-    rollup: {
-      relation_property_name: 'Host',
-      rollup_property_id: 'Title',
-      function: 'show_original',
-    },
-  },
-  rollupEvents__Shows: {
-    init: false,
-    key: 'rollupEvents__Shows',
-    notion: 'Shows.Rollup',
-    type: 'rollup',
-    rollup: {
-      relation_property_name: 'Shows',
-      rollup_property_id: 'Title',
-      function: 'show_original',
-    },
-  },
-  rollupEvents__Shows_Lineup: {
-    init: false,
-    key: 'rollupEvents__Shows_Lineup',
-    notion: 'Shows.Lineup.Rollup',
-    type: 'rollup',
-    rollup: {
-      relation_property_name: 'Shows.Lineup',
-      rollup_property_id: 'Title',
-      function: 'show_original',
-    },
-  },
-  rollupEvents__Venues: {
-    init: false,
-    key: 'rollupEvents__Venues',
-    notion: 'Venues.Rollup',
-    type: 'rollup',
-    rollup: {
-      relation_property_name: 'Venues',
-      rollup_property_id: 'Title',
-      function: 'show_original',
-    },
   },
   season: {
+    format: 'number',
     init: true,
     key: 'season',
     notion: 'Season',
     type: 'number',
-    format: 'number',
   },
   seoDescription: {
     init: true,
@@ -971,6 +971,12 @@ const PROPERTIES: Record<string, Property> = {
     notion: 'Slug',
     type: 'rich_text',
   },
+  socialApple: {
+    init: true,
+    key: 'socialApple',
+    notion: 'Social.Apple',
+    type: 'url',
+  },
   socialFacebook: {
     init: true,
     key: 'socialFacebook',
@@ -983,6 +989,12 @@ const PROPERTIES: Record<string, Property> = {
     notion: 'Social.Instagram',
     type: 'url',
   },
+  socialSpotify: {
+    init: true,
+    key: 'socialSpotify',
+    notion: 'Social.Spotify',
+    type: 'url',
+  },
   socialTwitter: {
     init: true,
     key: 'socialTwitter',
@@ -993,18 +1005,6 @@ const PROPERTIES: Record<string, Property> = {
     init: true,
     key: 'socialWebsite',
     notion: 'Social.Website',
-    type: 'url',
-  },
-  socialSpotify: {
-    init: true,
-    key: 'socialSpotify',
-    notion: 'Social.Spotify',
-    type: 'url',
-  },
-  socialApple: {
-    init: true,
-    key: 'socialApple',
-    notion: 'Social.Apple',
     type: 'url',
   },
   status: {
@@ -1290,23 +1290,23 @@ const dateTimestamp = new Date().toISOString()
 const QUERIES = {
   // @todo(notion) Published or Event?
   dateBefore: {
-    property: PROPERTIES.datePublished.notion,
     date: {
       before: dateTimestamp,
     },
+    property: PROPERTIES.datePublished.notion,
   },
   // @todo(notion) Published or Event?
   dateOnOrAfter: {
-    property: PROPERTIES.datePublished.notion,
     date: {
       on_or_after: dateTimestamp,
     },
+    property: PROPERTIES.datePublished.notion,
   },
   published: {
-    property: PROPERTIES.isPublished.notion,
     checkbox: {
       equals: false,
     },
+    property: PROPERTIES.isPublished.notion,
   },
   slug: {
     property: PROPERTIES.slug.notion,
@@ -1329,11 +1329,11 @@ const DATA_TYPES: DataTypesObject = Object.assign(
 )
 
 export {
-  getDataTypes,
   DATA_TYPES,
-  QUERIES,
   INIT,
   LOOKUP,
   PROPERTIES,
   PROPERTIES_LOOKUP,
+  QUERIES,
+  getDataTypes,
 }

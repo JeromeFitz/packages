@@ -1,6 +1,7 @@
 // import isCI from 'is-ci'
-import { defineConfig } from 'tsup'
 import type { Options } from 'tsup'
+
+import { defineConfig } from 'tsup'
 
 import { config as _config } from '../../tsup.config.js'
 

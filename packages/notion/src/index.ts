@@ -46,12 +46,6 @@ class Client extends _Client {
   #config?: any
 
   // @todo(notion) throw error if `config` is not passed
-  // public constructor(options?: ClientOptions) {
-  public constructor(options?: any) {
-    super(options)
-    this.#config = options?.config
-  }
-
   public readonly custom = {
     getBlocksByIdChildren: async (props) =>
       await getBlocksByIdChildren({
@@ -153,6 +147,12 @@ class Client extends _Client {
         getQuery: this.custom.getQuery,
       })
     },
+  }
+
+  // public constructor(options?: ClientOptions) {
+  public constructor(options?: any) {
+    super(options)
+    this.#config = options?.config
   }
 }
 

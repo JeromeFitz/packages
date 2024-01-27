@@ -1,8 +1,10 @@
 import { globalStyles as globalStylesDefault } from '@jeromefitz/design-system/src'
 import { Box, Container } from '@jeromefitz/design-system/src/components'
 import { globalCss } from '@jeromefitz/design-system/src/lib/stitches.config'
-import _merge from 'lodash/merge.js'
+
 import type { AppProps } from 'next/app'
+
+import _merge from 'lodash/merge.js'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import * as React from 'react'
@@ -25,8 +27,8 @@ function MyApp({ Component, pageProps, router }: AppProps) {
     <Providers>
       <Head>
         <meta
-          name="viewport"
           content="width=device-width, initial-scale=1.0,viewport-fit=cover"
+          name="viewport"
         />
       </Head>
       <Container as="main" id="main">

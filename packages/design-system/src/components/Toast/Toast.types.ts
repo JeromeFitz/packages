@@ -14,8 +14,8 @@ type IToastVariant =
 interface IToast {
   action?: () => void
   actionAltText?: string
-  actionText?: string
   actionComponent?: ElementType
+  actionText?: string
   close?: () => void
   closeComponent?: ElementType
   description: string
@@ -26,13 +26,13 @@ interface IToast {
 
 interface IToastContext {
   current?: {
-    messages: IToast[]
-    message: (message: Partial<IToast> | string) => void
     error: (message: Partial<IToast> | string) => void
-    success: (message: Partial<IToast> | string) => void
+    message: (message: Partial<IToast> | string) => void
+    messages: IToast[]
     removeToastByKey: (key: string) => void
+    success: (message: Partial<IToast> | string) => void
     warning: (message: Partial<IToast> | string) => void
   }
 }
 
-export type { IToast, IToastVariant, IToastContext }
+export type { IToast, IToastContext, IToastVariant }

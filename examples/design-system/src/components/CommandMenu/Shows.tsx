@@ -4,6 +4,7 @@ import {
   Icon,
   Toaster,
 } from '@jeromefitz/design-system/src/components'
+
 import { Command } from 'cmdk'
 import { useRef } from 'react'
 
@@ -14,8 +15,8 @@ function Shows() {
   const handleToastInfo = (path) => {
     if (toaster && toaster.current) {
       toaster.current.createToast({
-        duration: 2000,
         description: `${path}`,
+        duration: 2000,
         title: `Route Change:`,
         type: 'info',
       })

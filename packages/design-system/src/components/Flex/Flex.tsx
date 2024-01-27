@@ -2,26 +2,18 @@ import { styled } from '../../lib/stitches.config'
 
 const Flex = styled('div', {
   boxSizing: 'border-box',
-  display: 'flex',
+  defaultVariants: {
+    align: 'stretch',
+    direction: 'row',
+    justify: 'start',
+    wrap: 'noWrap',
+  },
 
+  display: 'flex',
   variants: {
-    direction: {
-      row: {
-        flexDirection: 'row',
-      },
-      column: {
-        flexDirection: 'column',
-      },
-      rowReverse: {
-        flexDirection: 'row-reverse',
-      },
-      columnReverse: {
-        flexDirection: 'column-reverse',
-      },
-    },
     align: {
-      start: {
-        alignItems: 'flex-start',
+      baseline: {
+        alignItems: 'baseline',
       },
       center: {
         alignItems: 'center',
@@ -29,36 +21,25 @@ const Flex = styled('div', {
       end: {
         alignItems: 'flex-end',
       },
+      start: {
+        alignItems: 'flex-start',
+      },
       stretch: {
         alignItems: 'stretch',
       },
-      baseline: {
-        alignItems: 'baseline',
-      },
     },
-    justify: {
-      start: {
-        justifyContent: 'flex-start',
+    direction: {
+      column: {
+        flexDirection: 'column',
       },
-      center: {
-        justifyContent: 'center',
+      columnReverse: {
+        flexDirection: 'column-reverse',
       },
-      end: {
-        justifyContent: 'flex-end',
+      row: {
+        flexDirection: 'row',
       },
-      between: {
-        justifyContent: 'space-between',
-      },
-    },
-    wrap: {
-      noWrap: {
-        flexWrap: 'nowrap',
-      },
-      wrap: {
-        flexWrap: 'wrap',
-      },
-      wrapReverse: {
-        flexWrap: 'wrap-reverse',
+      rowReverse: {
+        flexDirection: 'row-reverse',
       },
     },
     gap: {
@@ -90,12 +71,31 @@ const Flex = styled('div', {
         gap: '$9',
       },
     },
-  },
-  defaultVariants: {
-    direction: 'row',
-    align: 'stretch',
-    justify: 'start',
-    wrap: 'noWrap',
+    justify: {
+      between: {
+        justifyContent: 'space-between',
+      },
+      center: {
+        justifyContent: 'center',
+      },
+      end: {
+        justifyContent: 'flex-end',
+      },
+      start: {
+        justifyContent: 'flex-start',
+      },
+    },
+    wrap: {
+      noWrap: {
+        flexWrap: 'nowrap',
+      },
+      wrap: {
+        flexWrap: 'wrap',
+      },
+      wrapReverse: {
+        flexWrap: 'wrap-reverse',
+      },
+    },
   },
 })
 
