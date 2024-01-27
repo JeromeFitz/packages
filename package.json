@@ -31,7 +31,7 @@
     "lint:all": "turbo run lint",
     "lint:packages": "syncpack lint --config .syncpackrc.cjs",
     "preinstall": "npx only-allow pnpm",
-    "prepare": "is-ci || husky install",
+    "prepare": "is-ci || husky",
     "semantic-release": "pnpm semantic-release:mono",
     "semantic-release:dry": "pnpm turbo run build --filter=\"@jeromefitz/semantic\" && pnpm --filter=\"@jeromefitz/*\" --filter=\"ccommit\" -r --workspace-concurrency=1 exec -- npx --no-install semantic-release --dry-run",
     "semantic-release:mono": "pnpm turbo run build --filter=\"@jeromefitz/semantic\" && pnpm --filter=\"@jeromefitz/*\" --filter=\"ccommit\" -r --workspace-concurrency=1 exec -- npx --no-install semantic-release",
