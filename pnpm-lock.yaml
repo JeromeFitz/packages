@@ -39,8 +39,8 @@ importers:
         specifier: 3.0.4
         version: 3.0.4
       '@types/node':
-        specifier: 20.11.9
-        version: 20.11.9
+        specifier: 20.11.10
+        version: 20.11.10
       ccommit:
         specifier: workspace:*
         version: link:packages/ccommit
@@ -1416,8 +1416,14 @@ packages:
   /@types/node-fetch@2.6.11:
     resolution: {integrity: sha512-24xFj9R5+rfQJLRyM56qh+wnVSYhyXC2tkoBndtY0U+vubqNsYXGjufB2nn8Q6gt0LrARwL6UBtMCSVCwl4B1g==}
     dependencies:
-      '@types/node': 20.11.9
+      '@types/node': 20.11.10
       form-data: 4.0.0
+    dev: false
+
+  /@types/node@20.11.10:
+    resolution: {integrity: sha512-rZEfe/hJSGYmdfX9tvcPMYeYPW2sNl50nsw4jZmRcaG0HIAb0WYEpsB05GOb53vjqpyE9GUhlDQ4jLSoB5q9kg==}
+    dependencies:
+      undici-types: 5.26.5
     dev: false
 
   /@types/node@20.11.5:
@@ -1425,12 +1431,6 @@ packages:
     dependencies:
       undici-types: 5.26.5
     dev: true
-
-  /@types/node@20.11.9:
-    resolution: {integrity: sha512-CQXNuMoS/VcoAMISe5pm4JnEd1Br5jildbQEToEMQvutmv+EaQr90ry9raiudgpyDuqFiV9e4rnjSfLNq12M5w==}
-    dependencies:
-      undici-types: 5.26.5
-    dev: false
 
   /@types/normalize-package-data@2.4.4:
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
