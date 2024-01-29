@@ -69,7 +69,7 @@ const rewrites: RewritesProps[] = [
   { from: 'seedling', to: 'seed' },
   { from: 'triangular-flag-on-post', to: 'flags' },
   { from: 'goal-net', to: 'catch' },
-  { from: 'animation', to: 'animation' },
+  { from: 'dizzy', to: 'animation' },
   { from: 'wastebasket', to: 'clean' },
   { from: 'passport-control', to: 'roles' },
   { from: 'adhesive-bandage', to: 'patch' },

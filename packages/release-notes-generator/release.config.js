@@ -16,8 +16,14 @@ const pkg = require('./package.json')
 
 const { name } = pkg
 
+const branches = [
+  ...configDefault.branches,
+  { name: 'NICE-70', prerelease: 'canary' },
+]
+
 const configPassed = {
   ...configDefault,
+  branches,
   tagFormat: `${name}@\${version}`,
 }
 
