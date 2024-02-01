@@ -36,7 +36,7 @@ const config = ({ website }) => ({
       },
       // Don't run certain audits
       skipAudits: ['redirects-http'],
-      startServerCommand: `pnpm turbo run start --filter="${website}"`,
+      startServerCommand: `TURBO_TELEMETRY_DISABLED=1 pnpm turbo run start --filter="${website}"`,
       startServerReadyPattern:
         'ready - started server on 0.0.0.0:3000, url: http://localhost:3000',
       url: ['http://localhost:3000'],
