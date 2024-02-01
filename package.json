@@ -52,7 +52,7 @@
     "@types/node": "20.11.15",
     "ccommit": "workspace:*",
     "dotenv": "16.4.1",
-    "husky": "9.0.7",
+    "husky": "9.0.9",
     "is-ci": "3.0.1",
     "lint-staged": "15.2.1",
     "lodash": "4.17.21",
