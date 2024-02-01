@@ -29,7 +29,7 @@
     "@heroicons/react": "2.1.1",
     "@jeromefitz/date-fns-tz": "3.0.0-canary.8",
     "@jeromefitz/design-system": "workspace:*",
-    "cmdk": "0.2.0",
+    "cmdk": "0.2.1",
     "date-fns": "3.3.1",
     "framer-motion": "11.0.3",
     "next": "14.1.0",
