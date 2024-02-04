@@ -144,14 +144,14 @@ importers:
   config/prettier-config:
     dependencies:
       prettier:
-        specifier: 3.2.4
-        version: 3.2.4
+        specifier: 3.2.5
+        version: 3.2.5
       prettier-plugin-pkg:
         specifier: 0.18.1
-        version: 0.18.1(prettier@3.2.4)
+        version: 0.18.1(prettier@3.2.5)
       prettier-plugin-tailwindcss:
         specifier: 0.5.11
-        version: 0.5.11(prettier@3.2.4)
+        version: 0.5.11(prettier@3.2.5)
 
   config/tsconfig: {}
 
@@ -5107,16 +5107,16 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: false
 
-  /prettier-plugin-pkg@0.18.1(prettier@3.2.4):
+  /prettier-plugin-pkg@0.18.1(prettier@3.2.5):
     resolution: {integrity: sha512-FuUxvsYZR/8rsLH8s/jbPQmgYvv0yxW8LoIHCy6+Q7p4FBjjdP3DNKx8fMTOsc0SlEB1skB4o1LcahRceIh87A==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       prettier: ^3.0.3
     dependencies:
-      prettier: 3.2.4
+      prettier: 3.2.5
     dev: false
 
-  /prettier-plugin-tailwindcss@0.5.11(prettier@3.2.4):
+  /prettier-plugin-tailwindcss@0.5.11(prettier@3.2.5):
     resolution: {integrity: sha512-AvI/DNyMctyyxGOjyePgi/gqj5hJYClZ1avtQvLlqMT3uDZkRbi4HhGUpok3DRzv9z7Lti85Kdj3s3/1CeNI0w==}
     engines: {node: '>=14.21.3'}
     peerDependencies:
@@ -5165,11 +5165,11 @@ packages:
       prettier-plugin-twig-melody:
         optional: true
     dependencies:
-      prettier: 3.2.4
+      prettier: 3.2.5
     dev: false
 
-  /prettier@3.2.4:
-    resolution: {integrity: sha512-FWu1oLHKCrtpO1ypU6J0SbK2d9Ckwysq6bHj/uaCP26DxrPpppCLQRGVuqAxSTvhF00AcvDRyYrLNW7ocBhFFQ==}
+  /prettier@3.2.5:
+    resolution: {integrity: sha512-3/GWa9aOC0YeD7LUfvOG2NiDyhOWRvt1k+rcKhOuYnMY24iiCphgneUfJDyFXd6rZCAnuLBv6UeAULtrhT/F4A==}
     engines: {node: '>=14'}
     hasBin: true
     dev: false
