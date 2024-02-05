@@ -34,7 +34,7 @@
     "is-ci": "^3.0.1"
   },
   "dependencies": {
-    "lint-staged": "15.2.1",
+    "lint-staged": "15.2.2",
     "micromatch": "4.0.5"
   },
   "publishConfig": {
