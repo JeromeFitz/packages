@@ -123,8 +123,8 @@ importers:
         specifier: 0.6.15
         version: 0.6.15(eslint@8.56.0)(typescript@5.3.3)
       eslint-plugin-tailwindcss:
-        specifier: 3.14.1
-        version: 3.14.1
+        specifier: 3.14.2
+        version: 3.14.2
       eslint-plugin-testing-library:
         specifier: 6.2.0
         version: 6.2.0(eslint@8.56.0)(typescript@5.3.3)
@@ -3014,8 +3014,8 @@ packages:
       - typescript
     dev: false
 
-  /eslint-plugin-tailwindcss@3.14.1:
-    resolution: {integrity: sha512-orNkVzJ1fdCkj5d8AHE3tAbixNpMJRoKoHPnxZbZ6iBHTsNvOEmeBz62C3THPhFnXCXaD55SRbNjqGzMEXRoZA==}
+  /eslint-plugin-tailwindcss@3.14.2:
+    resolution: {integrity: sha512-fNzdf4poZP2yQC0xC2prQxMuArMSb5mnellLQvwb9HC3NcLzxs+0IVKWIg1BqUqyui0c+bbjMmhWcKUWK67SLQ==}
     engines: {node: '>=12.13.0'}
     peerDependencies:
       tailwindcss: ^3.4.0
