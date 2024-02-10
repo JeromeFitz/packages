@@ -45,8 +45,8 @@ importers:
         specifier: workspace:*
         version: link:packages/ccommit
       dotenv:
-        specifier: 16.4.1
-        version: 16.4.1
+        specifier: 16.4.2
+        version: 16.4.2
       husky:
         specifier: 9.0.10
         version: 9.0.10
@@ -2505,8 +2505,8 @@ packages:
     engines: {node: '>=12'}
     dev: false
 
-  /dotenv@16.4.1:
-    resolution: {integrity: sha512-CjA3y+Dr3FyFDOAMnxZEGtnW9KBR2M0JvvUtXNW+dYJL5ROWxP9DUHCwgFqpMk0OXCc0ljhaNTr2w/kutYIcHQ==}
+  /dotenv@16.4.2:
+    resolution: {integrity: sha512-rZSSFxke7d9nYQ5NeMIwp5PP+f8wXgKNljpOb7KtH6SKW1cEqcXAz9VSJYVLKe7Jhup/gUYOkaeSVyK8GJ+nBg==}
     engines: {node: '>=12'}
     dev: false
 
