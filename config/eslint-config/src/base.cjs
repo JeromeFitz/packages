@@ -68,6 +68,7 @@ const baseConfig = {
           'unknown',
         ],
         'internal-pattern': [
+          '@/**',
           '~**/**',
           // '@/components/**',
           // '@/stores/**',
