@@ -111,7 +111,7 @@
     "@storybook/react": "7.6.17",
     "@storybook/theming": "7.6.17",
     "@types/lodash": "4.14.202",
-    "@types/react": "18.2.60",
+    "@types/react": "18.2.61",
     "@types/react-dom": "18.2.19",
     "cmdk": "0.2.1",
     "framer-motion": "11.0.6",
