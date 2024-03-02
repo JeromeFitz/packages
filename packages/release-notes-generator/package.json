@@ -44,7 +44,7 @@
     "semver": "7.6.0"
   },
   "devDependencies": {
-    "@types/conventional-commits-parser": "3.0.6",
+    "@types/conventional-commits-parser": "5.0.0",
     "@types/lodash": "4.14.202",
     "lodash": "4.17.21"
   },

@@ -255,8 +255,8 @@ importers:
         version: 7.6.0
     devDependencies:
       '@types/conventional-commits-parser':
-        specifier: 3.0.6
-        version: 3.0.6
+        specifier: 5.0.0
+        version: 5.0.0
       '@types/lodash':
         specifier: 4.14.202
         version: 4.14.202
@@ -1385,10 +1385,10 @@ packages:
       lodash: 4.17.21
     dev: false
 
-  /@types/conventional-commits-parser@3.0.6:
-    resolution: {integrity: sha512-z4crlplLzL9uA5kbE4ZghAf5RbrEr1UL/uNGGgxYbJjI0jRBjuYKuasbo13ANZsSapLTM2DLZk6LDcjemow4qQ==}
+  /@types/conventional-commits-parser@5.0.0:
+    resolution: {integrity: sha512-loB369iXNmAZglwWATL+WRe+CRMmmBPtpolYzIebFaX4YA3x+BEfLqhUAV9WanycKI3TG1IMr5bMJDajDKLlUQ==}
     dependencies:
-      '@types/node': 20.11.5
+      '@types/node': 20.11.24
     dev: true
 
   /@types/estree@1.0.5:
@@ -1424,7 +1424,6 @@ packages:
     resolution: {integrity: sha512-Kza43ewS3xoLgCEpQrsT+xRo/EJej1y0kVYGiLFE1NEODXGzTfwiC6tXTLMQskn1X4/Rjlh0MQUvx9W+L9long==}
     dependencies:
       undici-types: 5.26.5
-    dev: false
 
   /@types/node@20.11.5:
     resolution: {integrity: sha512-g557vgQjUUfN76MZAN/dt1z3dzcUsimuysco0KeluHgrPdJXkP/XdAURgyO2W9fZWHRtRBiVKzKn8vyOAwlG+w==}
