@@ -288,8 +288,8 @@ importers:
         specifier: 10.0.2
         version: 10.0.2(semantic-release@23.0.4)
       '@semantic-release/npm':
-        specifier: 11.0.3
-        version: 11.0.3(semantic-release@23.0.4)
+        specifier: 12.0.0
+        version: 12.0.0(semantic-release@23.0.4)
       '@semantic-release/release-notes-generator':
         specifier: 12.1.0
         version: 12.1.0(semantic-release@23.0.4)
@@ -1396,28 +1396,6 @@ packages:
       url-join: 5.0.0
     transitivePeerDependencies:
       - supports-color
-    dev: false
-
-  /@semantic-release/npm@11.0.3(semantic-release@23.0.4):
-    resolution: {integrity: sha512-KUsozQGhRBAnoVg4UMZj9ep436VEGwT536/jwSqB7vcEfA6oncCUU7UIYTRdLx7GvTtqn0kBjnkfLVkcnBa2YQ==}
-    engines: {node: ^18.17 || >=20}
-    peerDependencies:
-      semantic-release: '>=20.1.0'
-    dependencies:
-      '@semantic-release/error': 4.0.0
-      aggregate-error: 5.0.0
-      execa: 8.0.1
-      fs-extra: 11.2.0
-      lodash-es: 4.17.21
-      nerf-dart: 1.0.0
-      normalize-url: 8.0.0
-      npm: 10.5.0
-      rc: 1.2.8
-      read-pkg: 9.0.1
-      registry-auth-token: 5.0.2
-      semantic-release: 23.0.4(typescript@5.3.3)
-      semver: 7.6.0
-      tempy: 3.1.0
     dev: false
 
   /@semantic-release/npm@12.0.0(semantic-release@23.0.4):
