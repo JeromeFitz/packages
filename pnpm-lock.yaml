@@ -111,8 +111,8 @@ importers:
         specifier: 2.7.0
         version: 2.7.0(eslint@8.57.0)(typescript@5.3.3)
       eslint-plugin-playwright:
-        specifier: 1.5.2
-        version: 1.5.2(eslint-plugin-jest@27.9.0)(eslint@8.57.0)
+        specifier: 1.5.3
+        version: 1.5.3(eslint-plugin-jest@27.9.0)(eslint@8.57.0)
       eslint-plugin-react:
         specifier: 7.34.1
         version: 7.34.1(eslint@8.57.0)
@@ -3251,8 +3251,8 @@ packages:
       - typescript
     dev: false
 
-  /eslint-plugin-playwright@1.5.2(eslint-plugin-jest@27.9.0)(eslint@8.57.0):
-    resolution: {integrity: sha512-TMzLrLGQMccngU8GogtzIc9u5RzXGnfsQEUjLfEfshINuVR2fS4SHfDtU7xYP90Vwm5vflHECf610KTdGvO53w==}
+  /eslint-plugin-playwright@1.5.3(eslint-plugin-jest@27.9.0)(eslint@8.57.0):
+    resolution: {integrity: sha512-13fBElB8BGdnOkK6TJ/7yveuIpfUBIVxTjbHtqTtXLsscQe2pF+0PQJkr4y2Gal7DNtg8uvqxyAQA0i/ccf1Dw==}
     engines: {node: '>=16.6.0'}
     peerDependencies:
       eslint: '>=8.40.0'
