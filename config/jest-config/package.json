@@ -27,7 +27,7 @@
     "next": "^14.0.0"
   },
   "dependencies": {
-    "@testing-library/dom": "9.3.4",
+    "@testing-library/dom": "10.0.0",
     "@testing-library/jest-dom": "6.4.2",
     "@testing-library/react": "14.3.0",
     "@testing-library/user-event": "14.5.2",
