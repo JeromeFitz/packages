@@ -211,8 +211,8 @@ importers:
         specifier: 3.0.0-canary.8
         version: 3.0.0-canary.8(date-fns@3.6.0)
       '@notionhq/client':
-        specifier: 2.2.14
-        version: 2.2.14
+        specifier: 2.2.15
+        version: 2.2.15
       date-fns:
         specifier: 3.6.0
         version: 3.6.0
@@ -968,8 +968,8 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.16.0
 
-  /@notionhq/client@2.2.14:
-    resolution: {integrity: sha512-oqUefZtCiJPCX+74A1Os9OVTef3fSnVWe2eVQtU1HJSD+nsfxfhwvDKnzJTh2Tw1ZHKLxpieHB/nzGdY+Uo12A==}
+  /@notionhq/client@2.2.15:
+    resolution: {integrity: sha512-XhdSY/4B1D34tSco/GION+23GMjaS9S2zszcqYkMHo8RcWInymF6L1x+Gk7EmHdrSxNFva2WM8orhC4BwQCwgw==}
     engines: {node: '>=12'}
     dependencies:
       '@types/node-fetch': 2.6.11
@@ -4930,18 +4930,6 @@ packages:
       skin-tone: 2.0.0
     dev: false
 
-  /node-fetch@2.6.9:
-    resolution: {integrity: sha512-DJm/CJkZkRjKKj4Zi4BsKVZh3ValV5IR5s7LVZnW+6YMh0W1BfNA8XSs6DLMGYlId5F3KnA70uu2qepcR08Qqg==}
-    engines: {node: 4.x || >=6.0.0}
-    peerDependencies:
-      encoding: ^0.1.0
-    peerDependenciesMeta:
-      encoding:
-        optional: true
-    dependencies:
-      whatwg-url: 5.0.0
-    dev: true
-
   /node-fetch@2.7.0:
     resolution: {integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==}
     engines: {node: 4.x || >=6.0.0}
@@ -4952,7 +4940,6 @@ packages:
         optional: true
     dependencies:
       whatwg-url: 5.0.0
-    dev: false
 
   /node-fetch@3.3.0:
     resolution: {integrity: sha512-BKwRP/O0UvoMKp7GNdwPlObhYGB5DQqwhEDQlNKuoqwVYSxkSZCSbHjnFFmUEtwSKRPU4kNK8PbDYYitwaE3QA==}
@@ -5414,7 +5401,7 @@ packages:
       chalk: 4.1.2
       fs-extra: 9.1.0
       https-proxy-agent: 5.0.1
-      node-fetch: 2.6.9
+      node-fetch: 2.7.0
       progress: 2.0.3
       semver: 7.6.0
       tar-fs: 2.1.1
