@@ -49,22 +49,22 @@ jobs:
 
       - name: '💽️  Init'
         id: push-init
-        uses: JeromeFitz/packages/.github/actions/init@main
+        uses: JeromeFitz/packages/.github/actions/init@deps/pnpm-9
 
       - name: '📦  Install'
         id: push-install
-        uses: JeromeFitz/packages/.github/actions/install@main
+        uses: JeromeFitz/packages/.github/actions/install@deps/pnpm-9
 
       - name: '🔺️  Cache (turbo)'
         id: push-cache-turbo
-        uses: JeromeFitz/packages/.github/actions/cache-turbo@main
+        uses: JeromeFitz/packages/.github/actions/cache-turbo@deps/pnpm-9
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
       - name: '🚨️  Lint'
         id: push-lint
-        uses: JeromeFitz/packages/.github/actions/lint@main
+        uses: JeromeFitz/packages/.github/actions/lint@deps/pnpm-9
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
@@ -77,7 +77,7 @@ jobs:
 
       - name: '🏗️  Build'
         id: push-build
-        uses: JeromeFitz/packages/.github/actions/build@main
+        uses: JeromeFitz/packages/.github/actions/build@deps/pnpm-9
         with:
           BUILD_COMMAND: 'build'
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
@@ -86,7 +86,7 @@ jobs:
       - name: '🏗️  Build ALL'
         id: push-build-all
         if: ${{ contains(steps.push-commit-message.outputs.message, '[b]') }}
-        uses: JeromeFitz/packages/.github/actions/build@main
+        uses: JeromeFitz/packages/.github/actions/build@deps/pnpm-9
         with:
           BUILD_COMMAND: 'build:all'
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
@@ -95,7 +95,7 @@ jobs:
       - name: '🏷️  Release'
         id: push-release
         if: ${{ contains(steps.push-commit-message.outputs.message, '[b]') }}
-        uses: JeromeFitz/packages/.github/actions/release@main
+        uses: JeromeFitz/packages/.github/actions/release@deps/pnpm-9
         with:
           GH_TOKEN: ${{ env.GH_BOT_TOKEN }}
           NPM_TOKEN: ${{ env.NPM_TOKEN }}
