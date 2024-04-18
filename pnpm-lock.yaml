@@ -245,8 +245,8 @@ importers:
         specifier: 3.6.0
         version: 3.6.0
       import-from-esm:
-        specifier: 1.3.3
-        version: 1.3.3
+        specifier: 1.3.4
+        version: 1.3.4
       read-package-up:
         specifier: 11.0.0
         version: 11.0.0
@@ -1322,7 +1322,7 @@ packages:
       conventional-commits-filter: 4.0.0
       conventional-commits-parser: 5.0.0
       debug: 4.3.4
-      import-from-esm: 1.3.3
+      import-from-esm: 1.3.4
       lodash-es: 4.17.21
       micromatch: 4.0.5
       semantic-release: 23.0.8(typescript@5.3.3)
@@ -1420,7 +1420,7 @@ packages:
       conventional-commits-parser: 5.0.0
       debug: 4.3.4
       get-stream: 7.0.1
-      import-from-esm: 1.3.3
+      import-from-esm: 1.3.4
       into-stream: 7.0.0
       lodash-es: 4.17.21
       read-pkg-up: 11.0.0
@@ -4085,8 +4085,8 @@ packages:
       resolve-from: 4.0.0
     dev: false
 
-  /import-from-esm@1.3.3:
-    resolution: {integrity: sha512-U3Qt/CyfFpTUv6LOP2jRTLYjphH6zg3okMfHbyqRa/W2w6hr8OsJWVggNlR4jxuojQy81TgTJTxgSkyoteRGMQ==}
+  /import-from-esm@1.3.4:
+    resolution: {integrity: sha512-7EyUlPFC0HOlBDpUFGfYstsU7XHxZJKAAMzCT8wZ0hMW7b+hG51LIKTDcsgtz8Pu6YC0HqRVbX+rVUtsGMUKvg==}
     engines: {node: '>=16.20'}
     dependencies:
       debug: 4.3.4
@@ -5915,7 +5915,7 @@ packages:
       git-log-parser: 1.2.0
       hook-std: 3.0.0
       hosted-git-info: 7.0.1
-      import-from-esm: 1.3.3
+      import-from-esm: 1.3.4
       lodash-es: 4.17.21
       marked: 12.0.0
       marked-terminal: 7.0.0(marked@12.0.0)
