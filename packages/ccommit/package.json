@@ -45,6 +45,7 @@
     "lint": "pnpm run format:prettier --check && pnpm run lint:eslint",
     "lint:eslint": "eslint ./src --ext cjs,js,jsx,mjs,ts,tsx --max-warnings=0",
     "package": "pkg . --output ./.bin/ccommit --targets latest-linux-x64,latest-macos-x64,latest-win-x64",
+    "prepare": "is-ci || pnpm run build",
     "semantic-release": "semantic-release",
     "semantic-release:dry": "semantic-release --dry-run"
   },
@@ -56,6 +57,7 @@
     "meow": "13.2.0"
   },
   "devDependencies": {
+    "is-ci": "3.0.1",
     "pkg": "5.8.1"
   },
   "publishConfig": {
