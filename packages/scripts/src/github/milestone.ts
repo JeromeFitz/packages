@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 // @todo(types)
 import { Octokit } from '@octokit/rest'
 import { createColorize } from 'colorize-template'

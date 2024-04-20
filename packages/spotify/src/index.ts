@@ -160,7 +160,6 @@ class Client {
 
   public constructor(options: ClientOptions) {
     this.#prefixUrl =
-      // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
       (options?.baseUrl ?? URL.BASE) + `/${Client.defaultSpotifyVersion}/`
     this.#spotifyVersion = options?.spotifyVersion ?? Client.defaultSpotifyVersion
     this.#fetch = options?.fetch ?? fetch

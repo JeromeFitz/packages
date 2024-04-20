@@ -8,6 +8,8 @@ import { getTypes } from '../../utils/index.js'
  *
  * Refactor to remove `config` as a parameter, or move this to `queries`
  */
+// @todo(complexity) 11
+// eslint-disable-next-line complexity
 const dataNormalized = ({ config, data, pageId, pathVariables }) => {
   const { NOTION } = config
   const DATA_NORMALIZED = {}

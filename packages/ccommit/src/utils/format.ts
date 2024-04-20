@@ -18,6 +18,8 @@ const formatCliTypes = (commitTypes: any) => {
   })
 }
 
+// @todo(complexity) 13
+// eslint-disable-next-line complexity
 const formatCommitSubject = (options, answers) => {
   const format = FORMAT[options?.format]
 

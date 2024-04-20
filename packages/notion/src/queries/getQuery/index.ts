@@ -19,6 +19,8 @@ const SORTS: SortItem[] = [
   },
 ]
 
+// @todo(complexity) 12
+// eslint-disable-next-line complexity
 const getQuery = async ({ config, notionDatabasesQuery, reqQuery }) => {
   const { NOTION } = config
   const { databaseType } = reqQuery

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/restrict-plus-operands */
 import { format as _format } from 'date-fns'
 
 const header = (context, commits, meta) => {

@@ -52,7 +52,6 @@ const getMarkdown = async (context, commits) => {
   //   console.dir(markdownContext[key])
   // })
 
-  // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
   const repositoryUrl = repository ? host + '/' + owner + '/' + repository : repoUrl
 
   const meta = {
