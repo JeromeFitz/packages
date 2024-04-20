@@ -1,18 +1,22 @@
-import pluginJsxA11y from 'eslint-plugin-jsx-a11y'
-import pluginReactHooks from 'eslint-plugin-react-hooks'
+import path from 'path'
+import { fileURLToPath } from 'url'
 
-import { RULES } from './_lib.js'
+import { getCompat } from './_lib.js'
 import configTypescript from './typescript.js'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+const compat = getCompat(__dirname)
 
 const configReact = [
   {
-    // files: ['**/*.ts?(x)'],
-    name: '@jeromefitz/eslint-config:react',
-    plugins: { 'jsx-a11y': pluginJsxA11y, 'react-hooks': pluginReactHooks },
-    rules: {
-      'react-hooks/exhaustive-deps': RULES.WARN,
-      'react-hooks/rules-of-hooks': RULES.ERROR,
-    },
+    ...compat.extends('plugin:jsx-a11y/recommended')[0],
+    name: '@jeromefitz/eslint-config:react:jsx-a11y',
+  },
+  {
+    ...compat.extends('plugin:react-hooks/recommended')[0],
+    name: '@jeromefitz/eslint-config:react:react-hooks',
     settings: {
       react: {
         version: 'detect',
