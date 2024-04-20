@@ -52,7 +52,7 @@ jobs:
 
       - name: '💽️  Init'
         id: pull-init
-        uses: JeromeFitz/packages/.github/actions/init@deps/corepack-pnpm
+        uses: JeromeFitz/packages/.github/actions/init@main
 
       # - name: '🧪 debug'
       #   id: pull-debug
@@ -72,18 +72,18 @@ jobs:
 
       - name: '📦  Install'
         id: pull-install
-        uses: JeromeFitz/packages/.github/actions/install@deps/corepack-pnpm
+        uses: JeromeFitz/packages/.github/actions/install@main
 
       - name: '🔺️  Cache (turbo)'
         id: pull-cache-turbo
-        uses: JeromeFitz/packages/.github/actions/cache-turbo@deps/corepack-pnpm
+        uses: JeromeFitz/packages/.github/actions/cache-turbo@main
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
       - name: '🚨️  Lint'
         id: pull-lint
-        uses: JeromeFitz/packages/.github/actions/lint@deps/corepack-pnpm
+        uses: JeromeFitz/packages/.github/actions/lint@main
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
@@ -96,7 +96,7 @@ jobs:
 
       - name: '🏗️  Build'
         id: pull-build
-        uses: JeromeFitz/packages/.github/actions/build@deps/corepack-pnpm
+        uses: JeromeFitz/packages/.github/actions/build@main
         with:
           BUILD_COMMAND: 'build'
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
