@@ -7,7 +7,17 @@ const PERFECTIONIST_CONFIG = 'recommended-natural'
 const perfectionistRules = pluginPerfectionist.configs[PERFECTIONIST_CONFIG].rules
 
 const configBase = [
-  { ignores: ['**/.next/*', '**/dist/*', '**/node_modules/*'] },
+  {
+    ignores: [
+      '.next/*',
+      'dist/*',
+      'node_modules/*',
+      '**/.next/*',
+      '**/dist/*',
+      '**/node_modules/*',
+    ],
+    name: '@jeromefitz/eslint-config:ignores',
+  },
   {
     languageOptions: {
       parser: parserBabel,

@@ -41,23 +41,4 @@ ESLINT_HACK__CONFIG[ESLINT_HACK__INDEX] = ESLINT_HACK__OBJECT
 
 // console.dir(ESLINT_HACK__CONFIG)
 
-/**
- * @note(eslint) add ignores
- */
-/*
-
-node_modules
-dist
-release
-*.hbs
-# oh my goodness wwhat is happening
-.next
-.tsbuildinfo
-yarn.lock
-pnpm-lock.yaml
-**/
-ESLINT_HACK__CONFIG.push({
-  ignores: ['node_modules/*', 'dist/*', '**/dist/**', '**/node_modules/**'],
-})
-
 export default ESLINT_HACK__CONFIG
