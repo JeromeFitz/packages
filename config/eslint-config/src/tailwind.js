@@ -20,6 +20,7 @@ const compat = getCompat(__dirname)
 const configTailwind = [
   {
     ...compat.extends('plugin:tailwindcss/recommended')[0],
+    name: '@jeromefitz/eslint-config:tailwind',
     rules: {
       'tailwindcss/classnames-order': RULES.OFF, // conflicts with prettier-plugin-tailwindcss
       'tailwindcss/enforces-negative-arbitrary-values': RULES.ERROR,
