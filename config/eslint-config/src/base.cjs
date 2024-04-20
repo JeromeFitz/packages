@@ -10,7 +10,7 @@ const baseConfig = {
     jest: true,
     node: true,
   },
-  extends: ['prettier', 'plugin:perfectionist/recommended-natural'],
+  extends: ['plugin:perfectionist/recommended-natural'],
   ignorePatterns: ['**/.next/*', '**/dist/*', '**/node_modules/*'],
   parser: '@babel/eslint-parser',
   parserOptions: {
