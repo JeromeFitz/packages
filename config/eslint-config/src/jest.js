@@ -39,4 +39,5 @@ const configJest = [
   },
 ]
 
+export { configJest }
 export default [...ESLINT_HACK__CONFIG, ...configJest]

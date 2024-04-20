@@ -37,4 +37,5 @@ const configNext = [
   },
 ]
 
+export { configNext }
 export default [...configReact, ...configNext]

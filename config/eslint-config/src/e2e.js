@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename)
 
 const compat = getCompat(__dirname)
 
-const configJest = [
+const configE2E = [
   {
     ...compat.extends('plugin:testing-library/react')[0],
     name: '@jeromefitz/eslint-config:e2e:testing-library',
@@ -24,4 +24,5 @@ const configJest = [
   },
 ]
 
-export default [...configReact, ...configJest]
+export { configE2E }
+export default [...configReact, ...configE2E]

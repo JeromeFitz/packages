@@ -30,4 +30,5 @@ const configTailwind = [
   },
 ]
 
+export { configTailwind }
 export default [...configNext, ...configTailwind]

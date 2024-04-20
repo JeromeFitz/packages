@@ -25,4 +25,5 @@ const configReact = [
   },
 ]
 
+export { configReact }
 export default [...configTypescript, ...configReact]

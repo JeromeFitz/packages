@@ -68,4 +68,5 @@ const configTypescript = [
   //   },
 ]
 
+export { configTypescript }
 export default [...configBase, ...configTypescript]
