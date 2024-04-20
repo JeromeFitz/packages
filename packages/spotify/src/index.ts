@@ -59,7 +59,7 @@ type ClientProps = {
 type Method = 'DELETE' | 'GET' | 'PATCH' | 'POST'
 type QueryParams = Record<string, number | string> | URLSearchParams
 
-type WithAccessToken<P> = P & { accessToken?: string }
+type WithAccessToken<P> = { accessToken?: string } & P
 
 export interface RequestParameters {
   accessToken?: string
