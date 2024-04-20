@@ -23,7 +23,14 @@
         "@jeromefitz/eslint-config#build",
         "@jeromefitz/prettier-config#build"
       ],
-      "inputs": ["src/**", "*.cjs", "*.js", "*.mjs", "package.json"]
+      "inputs": [
+        "eslint.config.js",
+        "src/**",
+        "*.cjs",
+        "*.js",
+        "*.mjs",
+        "package.json"
+      ]
     },
     "format:lint": {
       "cache": false,
