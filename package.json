@@ -29,7 +29,7 @@
     "generate:releaseRules": "node ./packages/semantic/scripts/generateReleaseRules.js && pnpm run format:lint",
     "lint": "TURBO_TELEMETRY_DISABLED=1 turbo run lint --filter=[HEAD^1]",
     "lint:all": "TURBO_TELEMETRY_DISABLED=1 turbo run lint",
-    "lint:packages": "syncpack lint --config .syncpackrc.cjs",
+    "lint:packages": "syncpack lint",
     "preinstall": "npx only-allow pnpm",
     "prepare": "is-ci || husky",
     "semantic-release": "pnpm semantic-release:mono",
