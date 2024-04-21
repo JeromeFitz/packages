@@ -18,6 +18,7 @@ const { name } = pkg
 
 const branches = [
   ...configDefault.branches,
+  { name: 'deps/major-eslint-config', prerelease: 'canary' },
   { name: 'refactor/NICE-123', prerelease: 'canary' },
   { name: 'NICE-68', prerelease: 'canary' },
 ]

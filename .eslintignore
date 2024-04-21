@@ -1,9 +1,0 @@
-node_modules
-dist
-release
-*.hbs
-# oh my goodness wwhat is happening
-.next
-.tsbuildinfo
-yarn.lock
-pnpm-lock.yaml

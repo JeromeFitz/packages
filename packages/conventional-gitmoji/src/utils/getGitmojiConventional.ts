@@ -11,6 +11,8 @@ const data = require('gitmojis')
 const { gitmojis } = data
 
 const getGitmoji = (): IReleaseRule => {
+  // @todo(complexity) 16
+  // eslint-disable-next-line complexity
   gitmojis.map((gitmoji: any) => {
     const rewrite = _rewrites.find((r) => r?.from === gitmoji.name)
     if (!!rewrite) {

@@ -48,7 +48,6 @@ const config = (files) => {
         )
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const filesSyncpack = micromatch(
     files,
     micromatch.braces('**/package.json', { expand: true }),
