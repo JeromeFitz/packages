@@ -9,7 +9,7 @@ const config = {
   lintFormatting: false,
   semverGroups: [
     {
-      range: '',
+      dependencies: ['**'],
       dependencyTypes: [
         'prod',
         'resolutions',
@@ -17,8 +17,8 @@ const config = {
         'pnpmOverrides',
         'local',
       ],
-      dependencies: ['**'],
       packages: ['**'],
+      range: '',
     },
     // {
     //   "range": "^",
@@ -38,4 +38,4 @@ const config = {
   versionGroups: [],
 }
 
-module.exports = config
+export default config
