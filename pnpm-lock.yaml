@@ -81,8 +81,8 @@ importers:
         specifier: 3.0.2
         version: 3.0.2
       '@next/eslint-plugin-next':
-        specifier: 14.2.2
-        version: 14.2.2
+        specifier: 14.2.3
+        version: 14.2.3
       '@typescript-eslint/eslint-plugin':
         specifier: 7.7.1
         version: 7.7.1(@typescript-eslint/parser@7.7.1(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3)
@@ -702,6 +702,9 @@ packages:
 
   '@next/eslint-plugin-next@14.2.2':
     resolution: {integrity: sha512-q+Ec2648JtBpKiu/FSJm8HAsFXlNvioHeBCbTP12T1SGcHYwhqHULSfQgFkPgHDu3kzNp2Kem4J54bK4rPQ5SQ==}
+
+  '@next/eslint-plugin-next@14.2.3':
+    resolution: {integrity: sha512-L3oDricIIjgj1AVnRdRor21gI7mShlSwU/1ZGHmqM3LzHhXXhdkrfeNY5zif25Bi5Dd7fiJHsbhoZCHfXYvlAw==}
 
   '@nicolo-ribaudo/eslint-scope-5-internals@5.1.1-v1':
     resolution: {integrity: sha512-54/JRvkLIzzDWshCWfuhadfrfZVPiElY8Fcgmg1HroEly/EDSszzhBAsarCux+D/kOslTRquNzuyGSmUSTTHGg==}
@@ -4361,6 +4364,10 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.4.15
 
   '@next/eslint-plugin-next@14.2.2':
+    dependencies:
+      glob: 10.3.10
+
+  '@next/eslint-plugin-next@14.2.3':
     dependencies:
       glob: 10.3.10
 
