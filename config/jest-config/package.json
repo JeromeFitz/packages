@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@jeromefitz/jest-presets": "workspace:*",
-    "next": "14.2.2"
+    "next": "14.2.3"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
