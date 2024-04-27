@@ -47,7 +47,7 @@
       "excludePackageNames": ["@storybook/nextjs"],
       "groupName": "next 🔺 ",
       "groupSlug": "next",
-      "matchPackageNames": ["eslint-config-next", "next"]
+      "matchPackageNames": ["@next/eslint-plugin-next", "eslint-config-next", "next"]
     },
     {
       "commitMessagePrefix": "📦  (deps-dev)",
