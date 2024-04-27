@@ -102,8 +102,8 @@ importers:
         specifier: 2.29.1
         version: 2.29.1(@typescript-eslint/parser@7.7.1(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)
       eslint-plugin-jest:
-        specifier: 28.2.0
-        version: 28.2.0(@typescript-eslint/eslint-plugin@7.7.1(@typescript-eslint/parser@7.7.1(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3)
+        specifier: 28.3.0
+        version: 28.3.0(@typescript-eslint/eslint-plugin@7.7.1(@typescript-eslint/parser@7.7.1(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3)
       eslint-plugin-jest-dom:
         specifier: 5.4.0
         version: 5.4.0(eslint@9.1.1)
@@ -111,17 +111,17 @@ importers:
         specifier: 6.8.0
         version: 6.8.0(eslint@9.1.1)
       eslint-plugin-perfectionist:
-        specifier: 2.9.0
-        version: 2.9.0(eslint@9.1.1)(typescript@5.3.3)
+        specifier: 2.10.0
+        version: 2.10.0(eslint@9.1.1)(typescript@5.3.3)
       eslint-plugin-playwright:
         specifier: 1.6.0
-        version: 1.6.0(eslint-plugin-jest@28.2.0(@typescript-eslint/eslint-plugin@7.7.1(@typescript-eslint/parser@7.7.1(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)
+        version: 1.6.0(eslint-plugin-jest@28.3.0(@typescript-eslint/eslint-plugin@7.7.1(@typescript-eslint/parser@7.7.1(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)
       eslint-plugin-react:
         specifier: 7.34.1
         version: 7.34.1(eslint@9.1.1)
       eslint-plugin-react-hooks:
-        specifier: 4.6.0
-        version: 4.6.0(eslint@9.1.1)
+        specifier: 4.6.2
+        version: 4.6.2(eslint@9.1.1)
       eslint-plugin-storybook:
         specifier: 0.8.0
         version: 0.8.0(eslint@9.1.1)(typescript@5.3.3)
@@ -1816,8 +1816,8 @@ packages:
       '@testing-library/dom':
         optional: true
 
-  eslint-plugin-jest@28.2.0:
-    resolution: {integrity: sha512-yRDti/a+f+SMSmNTiT9/M/MzXGkitl8CfzUxnpoQcTyfq8gUrXMriVcWU36W1X6BZSUoyUCJrDAWWUA2N4hE5g==}
+  eslint-plugin-jest@28.3.0:
+    resolution: {integrity: sha512-5LjCSSno8E+IUCOX4hJiIb/upPIgpkaDEcaN/40gOcw26t/5UTLHFc4JdxKjOOvGTh0XdCu+fNr0fpOVNvcxMA==}
     engines: {node: ^16.10.0 || ^18.12.0 || >=20.0.0}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': ^6.0.0 || ^7.0.0
@@ -1835,8 +1835,8 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
 
-  eslint-plugin-perfectionist@2.9.0:
-    resolution: {integrity: sha512-ipFtDrqtF99qVVo+FE1fo6aHyLLp7hg6PNGfzY5KxQjcl0XCbyEFvjtR1NfkHDTN9rdFeEDxg59LLOv3VOAHAw==}
+  eslint-plugin-perfectionist@2.10.0:
+    resolution: {integrity: sha512-P+tdrkHeMWBc55+DZsoDOAftV1WCsEoHaKm6JC7zajFus/syfT4vUPBFb3atGFSuyaVnGQGHlcKpP9X3Q0gH/w==}
     peerDependencies:
       astro-eslint-parser: ^0.16.0
       eslint: '>=8.0.0'
@@ -1863,8 +1863,8 @@ packages:
       eslint-plugin-jest:
         optional: true
 
-  eslint-plugin-react-hooks@4.6.0:
-    resolution: {integrity: sha512-oFc7Itz9Qxh2x4gNHStv3BqJq54ExXmfC+a1NjAta66IAN87Wu0R/QArgIS9qKzX3dXKPI9H5crl9QchNMY9+g==}
+  eslint-plugin-react-hooks@4.6.2:
+    resolution: {integrity: sha512-QzliNJq4GinDBcD8gPB5v0wh6g8q3SUi6EFF0x8N/BL9PoVs0atuGc47ozMRyOWAKdwaZ5OnbOEa3WR+dSGKuQ==}
     engines: {node: '>=10'}
     peerDependencies:
       eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
@@ -5636,7 +5636,7 @@ snapshots:
       eslint-plugin-import: 2.29.1(@typescript-eslint/parser@6.21.0(eslint@9.1.1)(typescript@5.3.3))(eslint-import-resolver-typescript@3.6.1)(eslint@9.1.1)
       eslint-plugin-jsx-a11y: 6.8.0(eslint@9.1.1)
       eslint-plugin-react: 7.34.1(eslint@9.1.1)
-      eslint-plugin-react-hooks: 4.6.0(eslint@9.1.1)
+      eslint-plugin-react-hooks: 4.6.2(eslint@9.1.1)
     optionalDependencies:
       typescript: 5.3.3
     transitivePeerDependencies:
@@ -5754,7 +5754,7 @@ snapshots:
       eslint: 9.1.1
       requireindex: 1.2.0
 
-  eslint-plugin-jest@28.2.0(@typescript-eslint/eslint-plugin@7.7.1(@typescript-eslint/parser@7.7.1(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3):
+  eslint-plugin-jest@28.3.0(@typescript-eslint/eslint-plugin@7.7.1(@typescript-eslint/parser@7.7.1(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3):
     dependencies:
       '@typescript-eslint/utils': 6.19.1(eslint@9.1.1)(typescript@5.3.3)
       eslint: 9.1.1
@@ -5784,9 +5784,9 @@ snapshots:
       object.entries: 1.1.7
       object.fromentries: 2.0.7
 
-  eslint-plugin-perfectionist@2.9.0(eslint@9.1.1)(typescript@5.3.3):
+  eslint-plugin-perfectionist@2.10.0(eslint@9.1.1)(typescript@5.3.3):
     dependencies:
-      '@typescript-eslint/utils': 6.19.1(eslint@9.1.1)(typescript@5.3.3)
+      '@typescript-eslint/utils': 7.7.1(eslint@9.1.1)(typescript@5.3.3)
       eslint: 9.1.1
       minimatch: 9.0.4
       natural-compare-lite: 1.4.0
@@ -5794,14 +5794,14 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-plugin-playwright@1.6.0(eslint-plugin-jest@28.2.0(@typescript-eslint/eslint-plugin@7.7.1(@typescript-eslint/parser@7.7.1(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1):
+  eslint-plugin-playwright@1.6.0(eslint-plugin-jest@28.3.0(@typescript-eslint/eslint-plugin@7.7.1(@typescript-eslint/parser@7.7.1(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1):
     dependencies:
       eslint: 9.1.1
       globals: 13.24.0
     optionalDependencies:
-      eslint-plugin-jest: 28.2.0(@typescript-eslint/eslint-plugin@7.7.1(@typescript-eslint/parser@7.7.1(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3)
+      eslint-plugin-jest: 28.3.0(@typescript-eslint/eslint-plugin@7.7.1(@typescript-eslint/parser@7.7.1(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3)
 
-  eslint-plugin-react-hooks@4.6.0(eslint@9.1.1):
+  eslint-plugin-react-hooks@4.6.2(eslint@9.1.1):
     dependencies:
       eslint: 9.1.1
 
