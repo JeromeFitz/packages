@@ -76,7 +76,7 @@
       "commitMessagePrefix": "⬆️  (deps)",
       "groupName": "react ⚛️ ",
       "groupSlug": "react",
-      "matchPackageNames": ["@types/react", "react", "react-dom"]
+      "matchPackageNames": ["@types/react", "@types/react-dom", "react", "react-dom"]
     },
     {
       "commitMessagePrefix": "⬆️  (deps)",
