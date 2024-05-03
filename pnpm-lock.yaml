@@ -253,8 +253,8 @@ importers:
   packages/release-notes-generator:
     dependencies:
       '@octokit/rest':
-        specifier: 20.1.0
-        version: 20.1.0
+        specifier: 20.1.1
+        version: 20.1.1
       conventional-commits-filter:
         specifier: 4.0.0
         version: 4.0.0
@@ -287,8 +287,8 @@ importers:
   packages/scripts:
     dependencies:
       '@octokit/rest':
-        specifier: 20.1.0
-        version: 20.1.0
+        specifier: 20.1.1
+        version: 20.1.1
       colorize-template:
         specifier: 1.0.0
         version: 1.0.0
@@ -768,17 +768,20 @@ packages:
   '@octokit/openapi-types@21.2.0':
     resolution: {integrity: sha512-xx+Xd6I7rYvul/hgUDqv6TeGX0IOGnhSg9IOeYgd/uI7IAqUy6DE2B6Ipv2M4mWoxaMcWjIzgTIcv8pMO3F3vw==}
 
+  '@octokit/openapi-types@22.2.0':
+    resolution: {integrity: sha512-QBhVjcUa9W7Wwhm6DBFu6ZZ+1/t/oYxqc2tp81Pi41YNuJinbFRx8B133qVOrAaBbF7D/m0Et6f9/pZt9Rc+tg==}
+
   '@octokit/plugin-paginate-rest@11.0.0':
     resolution: {integrity: sha512-HLz6T9HWeNkX3SVqc7FUYlh+TAg3G7gCc1MGuNcov8mSrFU9dc4ABmRmgqR9TsY1doUx42vLN5UxxWlnqBX8xw==}
     engines: {node: '>= 18'}
     peerDependencies:
       '@octokit/core': '>=6'
 
-  '@octokit/plugin-paginate-rest@9.1.5':
-    resolution: {integrity: sha512-WKTQXxK+bu49qzwv4qKbMMRXej1DU2gq017euWyKVudA6MldaSSQuxtz+vGbhxV4CjxpUxjZu6rM2wfc1FiWVg==}
+  '@octokit/plugin-paginate-rest@11.3.1':
+    resolution: {integrity: sha512-ryqobs26cLtM1kQxqeZui4v8FeznirUsksiA+RYemMPJ7Micju0WSkv50dBksTuZks9O5cg4wp+t8fZ/cLY56g==}
     engines: {node: '>= 18'}
     peerDependencies:
-      '@octokit/core': '>=5'
+      '@octokit/core': '5'
 
   '@octokit/plugin-request-log@4.0.0':
     resolution: {integrity: sha512-2uJI1COtYCq8Z4yNSnM231TgH50bRkheQ9+aH8TnZanB6QilOnx8RMD2qsnamSOXtDj0ilxvevf5fGsBhBBzKA==}
@@ -786,11 +789,11 @@ packages:
     peerDependencies:
       '@octokit/core': '>=5'
 
-  '@octokit/plugin-rest-endpoint-methods@10.2.0':
-    resolution: {integrity: sha512-ePbgBMYtGoRNXDyKGvr9cyHjQ163PbwD0y1MkDJCpkO2YH4OeXX40c4wYHKikHGZcpGPbcRLuy0unPUuafco8Q==}
+  '@octokit/plugin-rest-endpoint-methods@13.2.2':
+    resolution: {integrity: sha512-EI7kXWidkt3Xlok5uN43suK99VWqc8OaIMktY9d9+RNKl69juoTyxmLoWPIZgJYzi41qj/9zU7G/ljnNOJ5AFA==}
     engines: {node: '>= 18'}
     peerDependencies:
-      '@octokit/core': '>=5'
+      '@octokit/core': ^5
 
   '@octokit/plugin-retry@7.0.3':
     resolution: {integrity: sha512-T9l5Z7XnDZ7dkyNmhJPSUq0YjbqUT/xn4yQbhcSuv4WGC/LqM73/mKwkl68VDPoLw20e8oz4L7qQopWt9v6sow==}
@@ -820,8 +823,8 @@ packages:
     resolution: {integrity: sha512-pyAguc0p+f+GbQho0uNetNQMmLG1e80WjkIaqqgUkihqUp0boRU6nKItXO4VWnr+nbZiLGEyy4TeKRwqaLvYgw==}
     engines: {node: '>= 18'}
 
-  '@octokit/rest@20.1.0':
-    resolution: {integrity: sha512-STVO3itHQLrp80lvcYB2UIKoeil5Ctsgd2s1AM+du3HqZIR35ZH7WE9HLwUOLXH0myA0y3AGNPo8gZtcgIbw0g==}
+  '@octokit/rest@20.1.1':
+    resolution: {integrity: sha512-MB4AYDsM5jhIHro/dq4ix1iWTLGToIGk6cWF5L6vanFaMble5jTX/UBQyiv05HsWnwUtY8JrfHy2LWfKwihqMw==}
     engines: {node: '>= 18'}
 
   '@octokit/types@12.6.0':
@@ -829,6 +832,9 @@ packages:
 
   '@octokit/types@13.1.0':
     resolution: {integrity: sha512-nBwAFOYqVUUJ2AZFK4ZzESQptaAVqdTDKk8gE0Xr0o99WuPDSrhUC38x0F40xD9OUxXhOOuZKWNNVVLPSHQDvQ==}
+
+  '@octokit/types@13.5.0':
+    resolution: {integrity: sha512-HdqWTf5Z3qwDVlzCrP8UJquMwunpDiMPt5er+QjGzL4hqr/vBVY/MauQgS1xWxCDT1oMx1EULyqxncdCY/NVSQ==}
 
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
@@ -4483,24 +4489,26 @@ snapshots:
 
   '@octokit/openapi-types@21.2.0': {}
 
+  '@octokit/openapi-types@22.2.0': {}
+
   '@octokit/plugin-paginate-rest@11.0.0(@octokit/core@6.0.1)':
     dependencies:
       '@octokit/core': 6.0.1
       '@octokit/types': 13.1.0
 
-  '@octokit/plugin-paginate-rest@9.1.5(@octokit/core@5.0.2)':
+  '@octokit/plugin-paginate-rest@11.3.1(@octokit/core@5.0.2)':
     dependencies:
       '@octokit/core': 5.0.2
-      '@octokit/types': 12.6.0
+      '@octokit/types': 13.5.0
 
   '@octokit/plugin-request-log@4.0.0(@octokit/core@5.0.2)':
     dependencies:
       '@octokit/core': 5.0.2
 
-  '@octokit/plugin-rest-endpoint-methods@10.2.0(@octokit/core@5.0.2)':
+  '@octokit/plugin-rest-endpoint-methods@13.2.2(@octokit/core@5.0.2)':
     dependencies:
       '@octokit/core': 5.0.2
-      '@octokit/types': 12.6.0
+      '@octokit/types': 13.5.0
 
   '@octokit/plugin-retry@7.0.3(@octokit/core@6.0.1)':
     dependencies:
@@ -4539,12 +4547,12 @@ snapshots:
       '@octokit/types': 13.1.0
       universal-user-agent: 7.0.2
 
-  '@octokit/rest@20.1.0':
+  '@octokit/rest@20.1.1':
     dependencies:
       '@octokit/core': 5.0.2
-      '@octokit/plugin-paginate-rest': 9.1.5(@octokit/core@5.0.2)
+      '@octokit/plugin-paginate-rest': 11.3.1(@octokit/core@5.0.2)
       '@octokit/plugin-request-log': 4.0.0(@octokit/core@5.0.2)
-      '@octokit/plugin-rest-endpoint-methods': 10.2.0(@octokit/core@5.0.2)
+      '@octokit/plugin-rest-endpoint-methods': 13.2.2(@octokit/core@5.0.2)
 
   '@octokit/types@12.6.0':
     dependencies:
@@ -4553,6 +4561,10 @@ snapshots:
   '@octokit/types@13.1.0':
     dependencies:
       '@octokit/openapi-types': 21.2.0
+
+  '@octokit/types@13.5.0':
+    dependencies:
+      '@octokit/openapi-types': 22.2.0
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
