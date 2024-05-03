@@ -102,8 +102,8 @@ importers:
         specifier: 2.29.1
         version: 2.29.1(@typescript-eslint/parser@7.8.0(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)
       eslint-plugin-jest:
-        specifier: 28.3.0
-        version: 28.3.0(@typescript-eslint/eslint-plugin@7.8.0(@typescript-eslint/parser@7.8.0(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3)
+        specifier: 28.4.0
+        version: 28.4.0(@typescript-eslint/eslint-plugin@7.8.0(@typescript-eslint/parser@7.8.0(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3)
       eslint-plugin-jest-dom:
         specifier: 5.4.0
         version: 5.4.0(eslint@9.1.1)
@@ -115,7 +115,7 @@ importers:
         version: 2.10.0(eslint@9.1.1)(typescript@5.3.3)
       eslint-plugin-playwright:
         specifier: 1.6.0
-        version: 1.6.0(eslint-plugin-jest@28.3.0(@typescript-eslint/eslint-plugin@7.8.0(@typescript-eslint/parser@7.8.0(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)
+        version: 1.6.0(eslint-plugin-jest@28.4.0(@typescript-eslint/eslint-plugin@7.8.0(@typescript-eslint/parser@7.8.0(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)
       eslint-plugin-react:
         specifier: 7.34.1
         version: 7.34.1(eslint@9.1.1)
@@ -1854,8 +1854,8 @@ packages:
       '@testing-library/dom':
         optional: true
 
-  eslint-plugin-jest@28.3.0:
-    resolution: {integrity: sha512-5LjCSSno8E+IUCOX4hJiIb/upPIgpkaDEcaN/40gOcw26t/5UTLHFc4JdxKjOOvGTh0XdCu+fNr0fpOVNvcxMA==}
+  eslint-plugin-jest@28.4.0:
+    resolution: {integrity: sha512-ORVHiFPC8RQxHLyQJ37MxNilK9k+cPzjHz65T8gAbpYZunGutXvKqwfM3WXBCvFDF1QBeYJJu9LB/i5cuXBs+g==}
     engines: {node: ^16.10.0 || ^18.12.0 || >=20.0.0}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': ^6.0.0 || ^7.0.0
@@ -5845,7 +5845,7 @@ snapshots:
       eslint: 9.1.1
       requireindex: 1.2.0
 
-  eslint-plugin-jest@28.3.0(@typescript-eslint/eslint-plugin@7.8.0(@typescript-eslint/parser@7.8.0(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3):
+  eslint-plugin-jest@28.4.0(@typescript-eslint/eslint-plugin@7.8.0(@typescript-eslint/parser@7.8.0(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3):
     dependencies:
       '@typescript-eslint/utils': 6.19.1(eslint@9.1.1)(typescript@5.3.3)
       eslint: 9.1.1
@@ -5885,12 +5885,12 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-plugin-playwright@1.6.0(eslint-plugin-jest@28.3.0(@typescript-eslint/eslint-plugin@7.8.0(@typescript-eslint/parser@7.8.0(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1):
+  eslint-plugin-playwright@1.6.0(eslint-plugin-jest@28.4.0(@typescript-eslint/eslint-plugin@7.8.0(@typescript-eslint/parser@7.8.0(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1):
     dependencies:
       eslint: 9.1.1
       globals: 13.24.0
     optionalDependencies:
-      eslint-plugin-jest: 28.3.0(@typescript-eslint/eslint-plugin@7.8.0(@typescript-eslint/parser@7.8.0(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3)
+      eslint-plugin-jest: 28.4.0(@typescript-eslint/eslint-plugin@7.8.0(@typescript-eslint/parser@7.8.0(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3))(eslint@9.1.1)(typescript@5.3.3)
 
   eslint-plugin-react-hooks@4.6.2(eslint@9.1.1):
     dependencies:
