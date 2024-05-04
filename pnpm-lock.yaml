@@ -259,8 +259,8 @@ importers:
         specifier: 4.0.0
         version: 4.0.0
       conventional-commits-parser:
-        specifier: 5.0.0
-        version: 5.0.0
+        specifier: 6.0.0
+        version: 6.0.0
       date-fns:
         specifier: 3.6.0
         version: 3.6.0
@@ -1558,6 +1558,11 @@ packages:
   conventional-commits-parser@5.0.0:
     resolution: {integrity: sha512-ZPMl0ZJbw74iS9LuX9YIAiW8pfM5p3yh2o/NbXHbkFuZzY5jvdi5jFycEOkmBW5H5I7nA+D6f3UcsCLP2vvSEA==}
     engines: {node: '>=16'}
+    hasBin: true
+
+  conventional-commits-parser@6.0.0:
+    resolution: {integrity: sha512-TbsINLp48XeMXR8EvGjTnKGsZqBemisPoyWESlpRyR8lif0lcwzqz+NMtYSj1ooF/WYjSuu7wX0CtdeeMEQAmA==}
+    engines: {node: '>=18'}
     hasBin: true
 
   convert-hrtime@5.0.0:
@@ -5427,6 +5432,10 @@ snapshots:
       is-text-path: 2.0.0
       meow: 12.1.1
       split2: 4.2.0
+
+  conventional-commits-parser@6.0.0:
+    dependencies:
+      meow: 13.2.0
 
   convert-hrtime@5.0.0: {}
 
