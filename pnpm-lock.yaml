@@ -151,8 +151,8 @@ importers:
         specifier: 15.2.5
         version: 15.2.5
       micromatch:
-        specifier: 4.0.5
-        version: 4.0.5
+        specifier: 4.0.7
+        version: 4.0.7
     devDependencies:
       is-ci:
         specifier: 3.0.1
@@ -4688,7 +4688,7 @@ snapshots:
       debug: 4.3.4
       import-from-esm: 1.3.4
       lodash-es: 4.17.21
-      micromatch: 4.0.5
+      micromatch: 4.0.7
       semantic-release: 23.0.8(typescript@5.3.3)
     transitivePeerDependencies:
       - supports-color
@@ -4705,7 +4705,7 @@ snapshots:
       dir-glob: 3.0.1
       execa: 5.1.1
       lodash: 4.17.21
-      micromatch: 4.0.5
+      micromatch: 4.0.7
       p-reduce: 2.1.0
       semantic-release: 23.0.8(typescript@5.3.3)
     transitivePeerDependencies:
@@ -6144,7 +6144,7 @@ snapshots:
       '@nodelib/fs.walk': 1.2.8
       glob-parent: 5.1.2
       merge2: 1.4.1
-      micromatch: 4.0.5
+      micromatch: 4.0.7
 
   fast-json-stable-stringify@2.1.0: {}
 
@@ -7493,7 +7493,7 @@ snapshots:
       lodash-es: 4.17.21
       marked: 12.0.0
       marked-terminal: 7.0.0(marked@12.0.0)
-      micromatch: 4.0.5
+      micromatch: 4.0.7
       p-each-series: 3.0.0
       p-reduce: 3.0.0
       read-package-up: 11.0.0
