@@ -75,8 +75,8 @@ importers:
         specifier: 7.24.6
         version: 7.24.6
       '@babel/eslint-parser':
-        specifier: 7.24.5
-        version: 7.24.5(@babel/core@7.24.6)(eslint@9.3.0)
+        specifier: 7.24.6
+        version: 7.24.6(@babel/core@7.24.6)(eslint@9.3.0)
       '@eslint/eslintrc':
         specifier: 3.1.0
         version: 3.1.0
@@ -114,8 +114,8 @@ importers:
         specifier: 2.10.0
         version: 2.10.0(eslint@9.3.0)(typescript@5.3.3)
       eslint-plugin-playwright:
-        specifier: 1.6.1
-        version: 1.6.1(eslint-plugin-jest@28.5.0(@typescript-eslint/eslint-plugin@7.10.0(@typescript-eslint/parser@7.10.0(eslint@9.3.0)(typescript@5.3.3))(eslint@9.3.0)(typescript@5.3.3))(eslint@9.3.0)(typescript@5.3.3))(eslint@9.3.0)
+        specifier: 1.6.2
+        version: 1.6.2(eslint-plugin-jest@28.5.0(@typescript-eslint/eslint-plugin@7.10.0(@typescript-eslint/parser@7.10.0(eslint@9.3.0)(typescript@5.3.3))(eslint@9.3.0)(typescript@5.3.3))(eslint@9.3.0)(typescript@5.3.3))(eslint@9.3.0)
       eslint-plugin-react:
         specifier: 7.34.1
         version: 7.34.1(eslint@9.3.0)
@@ -126,8 +126,8 @@ importers:
         specifier: 0.8.0
         version: 0.8.0(eslint@9.3.0)(typescript@5.3.3)
       eslint-plugin-tailwindcss:
-        specifier: 3.15.2
-        version: 3.15.2(tailwindcss@3.4.3)
+        specifier: 3.17.0
+        version: 3.17.0(tailwindcss@3.4.3)
       eslint-plugin-testing-library:
         specifier: 6.2.2
         version: 6.2.2(eslint@9.3.0)(typescript@5.3.3)
@@ -397,8 +397,8 @@ packages:
     resolution: {integrity: sha512-qAHSfAdVyFmIvl0VHELib8xar7ONuSHrE2hLnsaWkYNTI68dmi1x8GYDhJjMI/e7XWal9QBlZkwbOnkcw7Z8gQ==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/eslint-parser@7.24.5':
-    resolution: {integrity: sha512-gsUcqS/fPlgAw1kOtpss7uhY6E9SFFANQ6EFX5GTvzUwaV0+sGaZWk6xq22MOdeT9wfxyokW3ceCUvOiRtZciQ==}
+  '@babel/eslint-parser@7.24.6':
+    resolution: {integrity: sha512-Q1BfQX42zXHx732PLW0w4+Y3wJjoZKEMaatFUEAmQ7Z+jCXxinzeqX9bvv2Q8xNPes/H6F0I23oGkcgjaItmLw==}
     engines: {node: ^10.13.0 || ^12.13.0 || >=14.0.0}
     peerDependencies:
       '@babel/core': ^7.11.0
@@ -1913,8 +1913,8 @@ packages:
       vue-eslint-parser:
         optional: true
 
-  eslint-plugin-playwright@1.6.1:
-    resolution: {integrity: sha512-pfcaeAENH0jZEuUxynfVgMlLY9CSp68D9Ja2z32Xq5zhWCN1HoixSHOzhYVuh/N6fYwtBp4kLu/+IIUTXBTGZg==}
+  eslint-plugin-playwright@1.6.2:
+    resolution: {integrity: sha512-mraN4Em3b5jLt01q7qWPyLg0Q5v3KAWfJSlEWwldyUXoa7DSPrBR4k6B6LROLqipsG8ndkwWMdjl1Ffdh15tag==}
     engines: {node: '>=16.6.0'}
     peerDependencies:
       eslint: '>=8.40.0'
@@ -1941,9 +1941,9 @@ packages:
     peerDependencies:
       eslint: '>=6'
 
-  eslint-plugin-tailwindcss@3.15.2:
-    resolution: {integrity: sha512-+HJfWcyP5B/e8r8qVSaTbf2i4+HsESJJsue66qFHRstV11CNTfdaDD9zkCVA1pm2EplBZ/BSJ3Htfzvb4YTVKw==}
-    engines: {node: '>=12.13.0'}
+  eslint-plugin-tailwindcss@3.17.0:
+    resolution: {integrity: sha512-Ofl7tNh57a3W8BKHstKZSkD2gSCEkw54ycwZ958IK9zUR8TiNYdp8b0WGoLWLeyOAbeF1VPVJFBnlkJeIM2kVg==}
+    engines: {node: '>=14.0.0'}
     peerDependencies:
       tailwindcss: ^3.4.0
 
@@ -4161,7 +4161,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/eslint-parser@7.24.5(@babel/core@7.24.6)(eslint@9.3.0)':
+  '@babel/eslint-parser@7.24.6(@babel/core@7.24.6)(eslint@9.3.0)':
     dependencies:
       '@babel/core': 7.24.6
       '@nicolo-ribaudo/eslint-scope-5-internals': 5.1.1-v1
@@ -5929,7 +5929,7 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-plugin-playwright@1.6.1(eslint-plugin-jest@28.5.0(@typescript-eslint/eslint-plugin@7.10.0(@typescript-eslint/parser@7.10.0(eslint@9.3.0)(typescript@5.3.3))(eslint@9.3.0)(typescript@5.3.3))(eslint@9.3.0)(typescript@5.3.3))(eslint@9.3.0):
+  eslint-plugin-playwright@1.6.2(eslint-plugin-jest@28.5.0(@typescript-eslint/eslint-plugin@7.10.0(@typescript-eslint/parser@7.10.0(eslint@9.3.0)(typescript@5.3.3))(eslint@9.3.0)(typescript@5.3.3))(eslint@9.3.0)(typescript@5.3.3))(eslint@9.3.0):
     dependencies:
       eslint: 9.3.0
       globals: 13.24.0
@@ -5973,7 +5973,7 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-plugin-tailwindcss@3.15.2(tailwindcss@3.4.3):
+  eslint-plugin-tailwindcss@3.17.0(tailwindcss@3.4.3):
     dependencies:
       fast-glob: 3.3.2
       postcss: 8.4.33
