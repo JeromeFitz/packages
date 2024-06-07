@@ -18,7 +18,7 @@ const { name } = pkg
 
 const branches = [
   ...configDefault.branches,
-  { name: 'deps/turbo-2--migration', prerelease: 'canary' },
+  { name: 'refactor/turbo-2--migration', prerelease: 'canary' },
   { name: 'NICE-68', prerelease: 'canary' },
 ]
 
