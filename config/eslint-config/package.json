@@ -53,7 +53,7 @@
   "devDependencies": {
     "@types/lodash": "4.17.4",
     "lodash": "4.17.21",
-    "tailwindcss": "3.4.3"
+    "tailwindcss": "3.4.4"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
