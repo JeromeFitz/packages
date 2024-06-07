@@ -62,5 +62,10 @@
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
+  },
+  "pnpm": {
+    "overrides": {
+      "micromatch": "4.0.5"
+    }
   }
 }
