@@ -48,7 +48,7 @@
     "eslint-plugin-storybook": "0.8.0",
     "eslint-plugin-tailwindcss": "3.17.0",
     "eslint-plugin-testing-library": "6.2.2",
-    "eslint-plugin-turbo": "1.13.3"
+    "eslint-plugin-turbo": "2.0.3"
   },
   "devDependencies": {
     "@types/lodash": "4.17.4",

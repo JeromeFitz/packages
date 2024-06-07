@@ -132,8 +132,8 @@ importers:
         specifier: 6.2.2
         version: 6.2.2(eslint@9.4.0)(typescript@5.3.3)
       eslint-plugin-turbo:
-        specifier: 1.13.3
-        version: 1.13.3(eslint@9.4.0)
+        specifier: 2.0.3
+        version: 2.0.3(eslint@9.4.0)
     devDependencies:
       '@types/lodash':
         specifier: 4.17.4
@@ -1961,11 +1961,6 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0, npm: '>=6'}
     peerDependencies:
       eslint: ^7.5.0 || ^8.0.0
-
-  eslint-plugin-turbo@1.13.3:
-    resolution: {integrity: sha512-RjmlnqYsEqnJ+U3M3IS5jLJDjWv5NsvReCpsC61n5pJ4JMHTZ/lU0EIoL1ccuL1L5wP0APzdXdByBxERcPQ+Nw==}
-    peerDependencies:
-      eslint: '>6.6.0'
 
   eslint-plugin-turbo@2.0.3:
     resolution: {integrity: sha512-mplP4nYaRvtTNuwF5QTLYKLu0/8LTRsHPgX4ARhaof+QZI2ttglONe1/iJpKB4pg0KqFp7WHziKoJL+s0+CJ1w==}
@@ -6044,11 +6039,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
       - typescript
-
-  eslint-plugin-turbo@1.13.3(eslint@9.4.0):
-    dependencies:
-      dotenv: 16.0.3
-      eslint: 9.4.0
 
   eslint-plugin-turbo@2.0.3(eslint@9.4.0):
     dependencies:
