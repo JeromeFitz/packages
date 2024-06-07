@@ -1,5 +1,5 @@
 {
-  "pipeline": {
+  "tasks": {
     "build": {
       "dependsOn": ["^build"],
       "inputs": [
@@ -63,5 +63,6 @@
       "dependsOn": ["@jeromefitz/utils#build"],
       "inputs": ["src/**", "*.cjs", "*.js", "*.mjs", "package.json"]
     }
-  }
+  },
+  "ui": "stream"
 }
