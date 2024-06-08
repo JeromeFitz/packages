@@ -301,21 +301,9 @@ importers:
 
   packages/semantic:
     dependencies:
-      '@semantic-release/commit-analyzer':
-        specifier: 13.0.0
-        version: 13.0.0(semantic-release@24.0.0(typescript@5.5.2))
       '@semantic-release/git':
         specifier: 10.0.1
         version: 10.0.1(semantic-release@24.0.0(typescript@5.5.2))
-      '@semantic-release/github':
-        specifier: 10.0.6
-        version: 10.0.6(semantic-release@24.0.0(typescript@5.5.2))
-      '@semantic-release/npm':
-        specifier: 12.0.1
-        version: 12.0.1(semantic-release@24.0.0(typescript@5.5.2))
-      '@semantic-release/release-notes-generator':
-        specifier: 14.0.0
-        version: 14.0.0(semantic-release@24.0.0(typescript@5.5.2))
       semantic-release:
         specifier: 24.0.0
         version: 24.0.0(typescript@5.5.2)
@@ -4713,7 +4701,7 @@ snapshots:
     dependencies:
       '@semantic-release/error': 3.0.0
       aggregate-error: 3.1.0
-      debug: 4.3.4
+      debug: 4.3.5
       dir-glob: 3.0.1
       execa: 5.1.1
       lodash: 4.17.21
