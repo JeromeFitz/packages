@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "@types/conventional-commits-parser": "5.0.0",
-    "@types/lodash": "4.17.4",
+    "@types/lodash": "4.17.5",
     "lodash": "4.17.21"
   },
   "publishConfig": {
