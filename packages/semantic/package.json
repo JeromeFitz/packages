@@ -37,7 +37,6 @@
   "dependencies": {
     "@semantic-release/git": "10.0.1",
     "semantic-release": "24.0.0",
-    "semantic-release-commit-filter": "1.0.2",
     "title": "3.5.3"
   },
   "devDependencies": {

@@ -1,7 +1,7 @@
-import { URL, format } from 'url'
+import { URL, format } from 'node:url'
 
-import conventionalCommitsFilter from 'conventional-commits-filter'
-import { sync as conventionalCommitsParser } from 'conventional-commits-parser'
+import { filterRevertedCommitsSync } from 'conventional-commits-filter'
+import { CommitParser } from 'conventional-commits-parser'
 import _merge from 'lodash/merge.js'
 import { readPackageUp } from 'read-package-up'
 
@@ -28,9 +28,9 @@ const configGithub = {
   ],
 }
 
+// @todo(complexity) 17
 // eslint-disable-next-line complexity
 async function generateNotes(pluginConfig, context) {
-  // const { parserOpts, writerOpts } = pluginConfig
   const { parserOpts, writerOpts } = await getChangelogConfig(pluginConfig, context)
   const { commits: commitsPassed, cwd, lastRelease, nextRelease, options } = context
 
@@ -83,27 +83,24 @@ async function generateNotes(pluginConfig, context) {
     },
   )
 
-  const commitsParsed = conventionalCommitsFilter(
-    commitsPassed
-      .filter(({ message }) => {
-        if (!message.trim()) {
-          return false
-        }
-        return true
-      })
-      .map((commitRaw) => {
-        const commitPassed = {
-          ...commitRaw,
-          ...conventionalCommitsParser(commitRaw.message, {
-            issuePrefixes,
-            referenceActions,
-            ...parserOpts,
-          }),
-        }
-        return commitPassed
-      }),
-  )
+  const commitsParsed: any = []
+  const parser = new CommitParser({
+    issuePrefixes,
+    referenceActions,
+    ...parserOpts,
+  })
 
+  for (const _commit of filterRevertedCommitsSync(commitsPassed)) {
+    const commit: any = _commit
+    if (!commit?.message.trim()) {
+      return false
+    }
+    const commitPassed = {
+      ...commit,
+      ...parser.parse(commit?.message),
+    }
+    commitsParsed.push(commitPassed)
+  }
   let commits: any = []
   await commitsParsed.map(async (commitParsed) => {
     const commitProcessed: any = await processCommit(

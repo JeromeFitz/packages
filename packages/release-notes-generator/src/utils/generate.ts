@@ -1,4 +1,4 @@
-import conventionalCommitsFilter from 'conventional-commits-filter'
+import { filterRevertedCommitsSync } from 'conventional-commits-filter'
 import _clone from 'lodash/clone.js'
 import _forEach from 'lodash/forEach.js'
 import _map from 'lodash/map.js'
@@ -12,7 +12,11 @@ function generate(options, commits, context, keyCommit) {
   let filteredCommits
 
   if (options.ignoreReverted) {
-    filteredCommits = conventionalCommitsFilter(commits)
+    for (const commit of filterRevertedCommitsSync(commits)) {
+      // console.dir(`>> generate :: filterRevertedCommitsSync`)
+      // console.log(commit)
+      filteredCommits.push(commit)
+    }
   } else {
     filteredCommits = _clone(commits)
   }

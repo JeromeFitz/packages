@@ -37,6 +37,13 @@ const commit = (context, commits, meta) => {
   commitGroups.map((commitGroup) => {
     const { commits } = commitGroup
     const type = commits[0]?.type
+    // // @todo(#744) analytics -vs- deps-dev
+    // console.dir(`> commit :: commitGroup`)
+    // console.dir(commits)
+    // console.dir(`-`)
+    // console.dir(type)
+    // console.dir(`---`)
+
     markdown += `#### ${type}\n`
     commits.map((commit) => {
       const { hash, header, references, scope, subject } = commit
