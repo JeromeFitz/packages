@@ -14,6 +14,7 @@ const getConfig = (configPassed = {}): SemanticReleaseOptions => {
   // const configInit: SemanticReleaseOptions = {
   const configInit: any = {
     branches: [{ name: 'main' }, { name: 'canary', prerelease: 'canary' }],
+    extends: ['semantic-release-commit-filter'],
     plugins,
     tagFormat: `v\${version}`,
   }
