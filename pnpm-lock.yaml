@@ -311,8 +311,8 @@ importers:
         specifier: 10.0.3
         version: 10.0.3(semantic-release@23.0.8(typescript@5.5.2))
       '@semantic-release/npm':
-        specifier: 12.0.0
-        version: 12.0.0(semantic-release@23.0.8(typescript@5.5.2))
+        specifier: 12.0.1
+        version: 12.0.1(semantic-release@23.0.8(typescript@5.5.2))
       '@semantic-release/release-notes-generator':
         specifier: 13.0.0
         version: 13.0.0(semantic-release@23.0.8(typescript@5.5.2))
@@ -969,8 +969,8 @@ packages:
     peerDependencies:
       semantic-release: '>=20.1.0'
 
-  '@semantic-release/npm@12.0.0':
-    resolution: {integrity: sha512-72TVYQCH9NvVsO/y13eF8vE4bNnfls518+4KcFwJUKi7AtA/ZXoNgSg9gTTfw5eMZMkiH0izUrpGXgZE/cSQhA==}
+  '@semantic-release/npm@12.0.1':
+    resolution: {integrity: sha512-/6nntGSUGK2aTOI0rHPwY3ZjgY9FkXmEHbW9Kr+62NVOsyqpKKeP0lrCH+tphv+EsNdJNmqqwijTEnVWUMQ2Nw==}
     engines: {node: '>=20.8.1'}
     peerDependencies:
       semantic-release: '>=20.1.0'
@@ -4853,11 +4853,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@semantic-release/npm@12.0.0(semantic-release@23.0.8(typescript@5.5.2))':
+  '@semantic-release/npm@12.0.1(semantic-release@23.0.8(typescript@5.5.2))':
     dependencies:
       '@semantic-release/error': 4.0.0
       aggregate-error: 5.0.0
-      execa: 8.0.1
+      execa: 9.3.0
       fs-extra: 11.2.0
       lodash-es: 4.17.21
       nerf-dart: 1.0.0
@@ -7672,7 +7672,7 @@ snapshots:
       '@semantic-release/commit-analyzer': 12.0.0(semantic-release@23.0.8(typescript@5.5.2))
       '@semantic-release/error': 4.0.0
       '@semantic-release/github': 10.0.3(semantic-release@23.0.8(typescript@5.5.2))
-      '@semantic-release/npm': 12.0.0(semantic-release@23.0.8(typescript@5.5.2))
+      '@semantic-release/npm': 12.0.1(semantic-release@23.0.8(typescript@5.5.2))
       '@semantic-release/release-notes-generator': 13.0.0(semantic-release@23.0.8(typescript@5.5.2))
       aggregate-error: 5.0.0
       cosmiconfig: 9.0.0(typescript@5.5.2)
