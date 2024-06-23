@@ -18,7 +18,7 @@ const { name } = pkg
 
 const branches = [
   ...configDefault.branches,
-  { name: 'feat/semantic-esm', prerelease: 'canary' },
+  { name: 'fix/semantic-workspace-check', prerelease: 'canary' },
 ]
 
 const configPassed = {
