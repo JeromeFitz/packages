@@ -65,6 +65,9 @@
     "registry": "https://registry.npmjs.org/"
   },
   "pnpm": {
+    "patchedDependencies": {
+      "@semantic-release/commit-analyzer@13.0.0": "patches/@semantic-release__commit-analyzer@13.0.0.patch"
+    },
     "overrides": {
       "micromatch": "4.0.5"
     }
