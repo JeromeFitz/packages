@@ -20,5 +20,5 @@ May move to `remark` once `semantic-release` is ESM.
 Also add the `changelog-config` customization:
 
 ```sh
-yarn add @jeromefitz/release-notes-generator @jeromefitz/conventional-gitmoji
+pnpm add @jeromefitz/release-notes-generator @jeromefitz/conventional-gitmoji --save-dev
 ```

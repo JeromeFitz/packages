@@ -13,8 +13,6 @@ function generate(options, commits, context, keyCommit) {
 
   if (options.ignoreReverted) {
     for (const commit of filterRevertedCommitsSync(commits)) {
-      // console.dir(`>> generate :: filterRevertedCommitsSync`)
-      // console.log(commit)
       filteredCommits.push(commit)
     }
   } else {
