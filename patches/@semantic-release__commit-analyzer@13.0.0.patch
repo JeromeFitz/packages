@@ -1,0 +1,41 @@
+diff --git a/lib/analyze-commit.js b/lib/analyze-commit.js
+index 35a4e7d1aa4acc25a5dbeb36d7d58db23b50b7e7..90c8663686db553974e8fca342d73a4a59d8639f 100644
+--- a/lib/analyze-commit.js
++++ b/lib/analyze-commit.js
+@@ -18,14 +18,28 @@ export default (releaseRules, commit) => {
+   releaseRules
+     .filter(
+       ({ breaking, revert, release, ...rule }) =>
+-        // If the rule is not `breaking` or the commit doesn't have a breaking change note
+-        (!breaking || (commit.notes && commit.notes.length > 0)) &&
+-        // If the rule is not `revert` or the commit is not a revert
+-        (!revert || commit.revert) &&
+-        // Otherwise match the regular rules
+-        isMatchWith(commit, rule, (object, src) =>
+-          isString(src) && isString(object) ? micromatch.isMatch(object, src) : undefined
+-        )
++        // // If the rule is not `breaking` or the commit doesn't have a breaking change note
++        // (!breaking || (commit.notes && commit.notes.length > 0)) &&
++        // // If the rule is not `revert` or the commit is not a revert
++        // (!revert || commit.revert) &&
++        // // Otherwise match the regular rules
++        // isMatchWith(commit, rule, (object, src) =>
++        //   isString(src) && isString(object) ? micromatch.isMatch(object, src) : undefined
++        // )
++
++        {
++          if (
++            (!breaking || (commit.notes && commit.notes.length > 0)) &&
++            (!revert || commit.revert) &&
++            isString(commit.subject) && isString(rule.type) &&
++            micromatch.contains(commit.subject, rule.type)
++          ) {
++            return {
++              ...commit,
++              ...rule
++            }
++          }
++        }
+     )
+     .every((match) => {
+       if (compareReleaseTypes(releaseType, match.release)) {

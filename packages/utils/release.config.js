@@ -18,7 +18,7 @@ const { name } = pkg
 
 const branches = [
   ...configDefault.branches,
-  { name: 'fix/semantic-workspace-check', prerelease: 'canary' },
+  { name: 'NICE-126', prerelease: 'canary' },
 ]
 
 const configPassed = {
