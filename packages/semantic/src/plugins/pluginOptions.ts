@@ -78,7 +78,7 @@ const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec[] => {
   const gitConfig = git(options)
 
   const _plugins: any = [
-    commitAnalyzer(options),
+    commitAnalyzer(options.releaseRules),
     options.enableReleaseNotes ? releaseNotesConfig : '',
     options.enableReleaseNotesCustom ? releaseNotesCustomConfig : '',
     options.enableNpm ? npmConfig : '',

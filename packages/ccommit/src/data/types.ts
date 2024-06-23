@@ -165,7 +165,7 @@ const types = [
   },
   {
     code: ':package:',
-    description: 'Add or update compiled files or packages',
+    description: 'Add or Update Compiled Files or Packages',
     emoji: '📦️',
     emojiLength: 1,
     semver: SEMVER.PATCH,
