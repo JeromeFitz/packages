@@ -1,5 +1,5 @@
-import getCommitGroups from './getCommitGroups'
-import getNoteGroups from './getNoteGroups'
+import getCommitGroups from './getCommitGroups.js'
+import getNoteGroups from './getNoteGroups.js'
 
 function getExtraContext(commits, notes, options) {
   const context: any = {}

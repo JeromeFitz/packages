@@ -19,6 +19,7 @@ const { name } = pkg
 const branches = [
   ...configDefault.branches,
   { name: 'NICE-70', prerelease: 'canary' },
+  { name: 'feat/semantic-esm', prerelease: 'canary' },
 ]
 
 const configPassed = {

@@ -42,6 +42,9 @@ function getCommitGroups(groupBy, commits, commitGroupsSort, commitsSort) {
 
   if (commitGroupsSort) {
     commitGroups = _orderBy(commitGroups, commitGroupsSort)
+    // // @todo(#744) analytics -vs- deps-dev
+    // console.dir(`>> commitGroupsSort`)
+    // console.dir(commitGroups)
   }
 
   return commitGroups
