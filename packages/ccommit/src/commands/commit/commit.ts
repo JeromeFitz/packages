@@ -17,6 +17,8 @@ import withHook from './withHook.js'
 
 const { prompt } = enquirer
 
+// @todo(NICE-129) eslint
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 export type CommitOptions = {
   message?: string
   // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents, @typescript-eslint/no-duplicate-type-constituents
@@ -43,6 +45,9 @@ const promptAndCommit = async (options: CommitOptions) => {
       process.exit(2)
     }
   } else {
+    // @todo(NICE-129) eslint
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     await prompt(questions)
       .then((answers: any) => {
         answers.type = findBy(answers.gitmoji, FIND_BY.EMOJI, FIND_BY.TYPE)
@@ -54,6 +59,8 @@ const promptAndCommit = async (options: CommitOptions) => {
       .catch(console.error)
   }
 
+  // @todo(NICE-129) eslint
+  // eslint-disable-next-line no-extra-boolean-cast
   data.subject = !!data ? formatCommitSubject(options, data) : ''
 
   if (options.mode === COMMIT_MODES.HOOK) {

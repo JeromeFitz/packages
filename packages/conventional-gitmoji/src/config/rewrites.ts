@@ -2,6 +2,8 @@
  * @note pseudo-map to conventional-commits
  */
 
+// @todo(NICE-129) eslint
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 type RewritesProps = {
   branch?: null | string
   from: string

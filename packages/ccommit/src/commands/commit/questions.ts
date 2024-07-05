@@ -142,6 +142,8 @@ const questions = [
       // @ts-ignore
       return this.state.initial ? `… tab to use initial value` : ''
     },
+    // @todo(NICE-129) eslint
+    // eslint-disable-next-line no-extra-boolean-cast
     initial: !!getIssueTracker() ? `${getIssueTracker()} ` : '',
     message: 'Please enter the commit title',
     name: 'title',

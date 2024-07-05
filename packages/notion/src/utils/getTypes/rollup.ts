@@ -8,6 +8,8 @@ import getTypes from '../../utils/getTypes/index.js'
 /**
  * @note(notion) https://github.com/JeromeFitz/packages/issues/631
  */
+// @todo(NICE-129) eslint
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 type Rollup = {
   array: any
   function: RollupFunction

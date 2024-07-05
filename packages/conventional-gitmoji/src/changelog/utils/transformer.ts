@@ -21,6 +21,8 @@ const transformer = (commit: any, context: any) => {
       if (type === null) return
       return (
         // @hack(semantic) strip colon from :type: for stricter comparison
+        // @todo(NICE-129) eslint
+        // eslint-disable-next-line no-useless-escape
         type.replace(/\:/g, '') === c.replace(/\:/g, '') ||
         type === t ||
         type === v ||

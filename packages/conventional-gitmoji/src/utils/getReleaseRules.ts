@@ -5,6 +5,8 @@ import type { IReleaseRule, IReleaseRuleProps } from '../index.js'
 // const splitter = new GraphemeSplitter()
 
 // @note(semantic-release) can we re-use types here?
+// @todo(NICE-129) eslint
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 type CustomReleaseRulesProps = {
   message?: null | string
   release?: null | string

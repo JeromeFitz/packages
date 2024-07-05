@@ -1,3 +1,5 @@
+// @todo(NICE-129) eslint
+/* eslint-disable no-extra-boolean-cast */
 import _map from 'lodash/map.js'
 
 import { LOOKUP, PROPERTIES_LOOKUP } from '../../constants/index.js'

@@ -1,5 +1,7 @@
 import type { ICommit } from './commit.types.js'
 
+// @todo(NICE-129) eslint
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 type IReleaseRuleProps = {
   branch: null | string
   code: string

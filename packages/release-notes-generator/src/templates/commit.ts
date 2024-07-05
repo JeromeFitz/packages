@@ -26,6 +26,8 @@ const commit = (context, commits, meta) => {
       // markdownReferenceArray.push(
       //   `[ ${reference.issue} ](${repositoryUrl}/${reference.issue})`
       // )
+      // @todo(NICE-129) eslint
+      // eslint-disable-next-line no-extra-boolean-cast
       if (!!reference.issue) {
         markdownReferenceArray.push(`[ #${reference.issue} ]`)
       }
