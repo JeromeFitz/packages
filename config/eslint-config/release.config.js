@@ -18,8 +18,7 @@ const { name } = pkg
 
 const branches = [
   ...configDefault.branches,
-  { name: 'refactor/turbo-2--migration', prerelease: 'canary' },
-  { name: 'NICE-68', prerelease: 'canary' },
+  { name: 'NICE-129', prerelease: 'canary' },
 ]
 
 const configPassed = {
