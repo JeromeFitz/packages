@@ -26,5 +26,4 @@ runs:
         TURBO_TEAM: ${{ inputs.TURBO_TEAM }}
       run: |
         pnpm run ${{ inputs.BUILD_COMMAND }} \
-          --cache-dir=".cache-turbo" \
-          --output-logs="errors-only"
+          --cache-dir=".cache-turbo"

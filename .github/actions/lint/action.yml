@@ -22,8 +22,7 @@ runs:
         TURBO_TOKEN: ${{ inputs.TURBO_TOKEN }}
       run: |
         pnpm run lint \
-          --cache-dir=".cache-turbo" \
-          --output-logs="errors-only"
+          --cache-dir=".cache-turbo"
 
     # - name: '🧪️  Test'
     #   id: test
