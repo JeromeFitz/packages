@@ -1,28 +1,56 @@
-/**
- * @todo(eslint) I think I should just getCompat and do multiple
- */
-import path from 'path'
-import { fileURLToPath } from 'url'
-
-import pluginTypescript from '@typescript-eslint/eslint-plugin'
 import parserTypescript from '@typescript-eslint/parser'
-import pluginImport from 'eslint-plugin-import'
+import pluginImportX from 'eslint-plugin-import-x'
+import tseslint from 'typescript-eslint'
 
-import { RULES, getCompat } from './_lib.js'
+import { RULES } from './_lib.js'
 import configBase from './base.js'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-
-const compat = getCompat(__dirname)
-
-const typescriptRules = {
-  ...pluginTypescript.configs['eslint-recommended'].overrides[0].rules,
-  ...pluginTypescript.configs['recommended'].rules,
-  ...pluginTypescript.configs['recommended-requiring-type-checking'].rules,
-}
+/**
+ * @hack(typescript-eslint) w/o run into following error
+ *  b/c parser is passed as meta instead of explicit (?):
+ *
+ * Error while loading rule '@typescript-eslint/await-thenable':
+ * You have used a rule which requires parserServices to be generated.
+ * You must therefore provide a value for the "parserOptions.project"
+ *  property for @typescript-eslint/parser.
+ */
+let recommendedTypeChecked = []
+tseslint.configs.recommendedTypeChecked.map((obj) => {
+  if (obj.name === 'typescript-eslint/base') {
+    return {
+      ...obj,
+      languageOptions: {
+        ...obj.languageOptions,
+        parser: parserTypescript,
+      },
+    }
+  }
+  return obj
+})
+let stylisticTypeChecked = []
+tseslint.configs.stylisticTypeChecked.map((obj) => {
+  if (obj.name === 'typescript-eslint/base') {
+    return {
+      ...obj,
+      languageOptions: {
+        ...obj.languageOptions,
+        parser: parserTypescript,
+      },
+    }
+  }
+  return obj
+})
 
 const configTypescript = [
+  tseslint.configs.eslintRecommended,
+  ...tseslint.configs.recommended,
+  ...tseslint.configs.stylistic,
+  ...recommendedTypeChecked,
+  ...stylisticTypeChecked,
+  pluginImportX.configs.typescript,
+  /**
+   * @note(eslint) Custom Settings for @jeromefitz/eslint-config
+   */
   {
     files: ['**/*.ts?(x)'],
     languageOptions: {
@@ -39,33 +67,25 @@ const configTypescript = [
       },
     },
     name: '@jeromefitz/eslint-config:typescript',
-    plugins: { '@typescript-eslint': pluginTypescript, import: pluginImport },
     rules: {
-      ...typescriptRules,
-      ...compat.extends('plugin:import/typescript')[0]?.rules,
       '@typescript-eslint/explicit-module-boundary-types': RULES.OFF,
+      '@typescript-eslint/no-duplicate-type-constituents': RULES.ERROR,
       '@typescript-eslint/no-empty-function': RULES.OFF,
       '@typescript-eslint/no-explicit-any': RULES.OFF,
+      '@typescript-eslint/no-floating-promises': RULES.ERROR,
       '@typescript-eslint/no-non-null-assertion': RULES.OFF,
-      '@typescript-eslint/no-unsafe-argument': RULES.OFF, // @todo(lint) move to error
+      '@typescript-eslint/no-redundant-type-constituents': RULES.ERROR,
+      // @todo(lint) ⬇️ move to error
+      '@typescript-eslint/no-unsafe-argument': RULES.OFF,
       '@typescript-eslint/no-unsafe-assignment': RULES.OFF,
       '@typescript-eslint/no-unsafe-call': RULES.OFF,
       '@typescript-eslint/no-unsafe-member-access': RULES.OFF,
       '@typescript-eslint/no-unsafe-return': RULES.OFF,
       '@typescript-eslint/no-var-requires': RULES.WARN,
+      '@typescript-eslint/require-await': RULES.ERROR,
       '@typescript-eslint/restrict-template-expressions': RULES.OFF,
     },
   },
-  // overrides: [
-  //   {
-  //     extends: [
-  //       'plugin:@typescript-eslint/eslint-recommended',
-  //       'plugin:@typescript-eslint/recommended',
-  //       'plugin:@typescript-eslint/recommended-requiring-type-checking',
-  //       'plugin:import/typescript',
-  //     ],
-  //     plugins: ['@typescript-eslint', 'import'],
-  //   },
 ]
 
 export { configTypescript }

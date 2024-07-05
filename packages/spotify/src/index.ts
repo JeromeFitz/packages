@@ -46,12 +46,16 @@ interface NowPlayingProps {
   withImages?: boolean
 }
 
+// @todo(NICE-129) eslint
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 type GetProps = {
   nowPlaying({ withImages }: NowPlayingProps): any
   topArtists({ limit, offset, time_range, withImages }: QueryProps): any
   topTracks({ limit, offset, time_range, withImages }: QueryProps): any
 }
 
+// @todo(NICE-129) eslint
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 type ClientProps = {
   get: GetProps
 }
@@ -93,6 +97,8 @@ class Client {
   #fetch: any
   #prefixUrl: string
   #refreshToken: string
+  // @todo(NICE-129) eslint
+  // eslint-disable-next-line no-unused-private-class-members
   #spotifyVersion: string
 
   #userAgent: string
@@ -356,6 +362,8 @@ class Client {
       headers['content-type'] = 'application/json'
     }
 
+    // @todo(NICE-129) eslint
+    // eslint-disable-next-line no-useless-catch
     try {
       // @todo(timeout)
       const response = await this.#fetch(url.toString(), {

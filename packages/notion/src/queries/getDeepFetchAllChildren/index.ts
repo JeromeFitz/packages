@@ -1,7 +1,8 @@
 const getDeepFetchAllChildren = async ({
   blocks,
   getBlocksChildrenList,
-  // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
+  // @todo(NICE-129) eslint
+  // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents, @typescript-eslint/array-type
 }): Promise<Array<any | any[]>> => {
   if (blocks === null || blocks === undefined) return blocks
   const fetchChildrenMap = blocks

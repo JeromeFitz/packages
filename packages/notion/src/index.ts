@@ -15,11 +15,15 @@ import {
   getQuery,
 } from './queries/index.js'
 
+// @todo(NICE-129) eslint
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 type CredentialProps = {
   auth: string
   config: any
 }
 
+// @todo(NICE-129) eslint
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 type CustomProps = {
   getBlocksByIdChildren: any
   getDatabasesByIdQuery: any
@@ -30,6 +34,8 @@ type CustomProps = {
   getQuery: any
 }
 
+// @todo(NICE-129) eslint
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 type DataTypesProps = {
   LISTING: any
   LISTING_BY_DATE: any
@@ -37,6 +43,8 @@ type DataTypesProps = {
   SLUG_BY_ROUTE: any
 }
 
+// @todo(NICE-129) eslint
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 type ClientProps = {
   custom: CustomProps
   dataTypes: DataTypesProps

@@ -72,6 +72,8 @@ const contributor = async (context, commits, meta) => {
         })
         .then(({ data }) => {
           const login = data.items[0]?.login
+          // @todo(NICE-129) eslint
+          // eslint-disable-next-line no-extra-boolean-cast
           if (!!login) {
             authors[authorIdx]['login'] = login
             return login

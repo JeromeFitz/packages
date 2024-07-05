@@ -17,6 +17,8 @@ const git = (options: GitPluginOptions): PluginSpec => {
         typeof options.gitAssets === 'boolean'
           ? false
           : ['package.json']
+              // @todo(NICE-129) eslint
+              // eslint-disable-next-line no-extra-boolean-cast
               .concat(!!options.gitAssets ? options.gitAssets : [])
               .filter((a) => a),
       message: options.message

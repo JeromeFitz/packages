@@ -1,4 +1,5 @@
 import parserBabel from '@babel/eslint-parser'
+import eslint from '@eslint/js'
 import pluginPerfectionist from 'eslint-plugin-perfectionist'
 
 import { RULES } from './_lib.js'
@@ -7,6 +8,7 @@ const PERFECTIONIST_CONFIG = 'recommended-natural'
 const perfectionistRules = pluginPerfectionist.configs[PERFECTIONIST_CONFIG].rules
 
 const configBase = [
+  eslint.configs.recommended,
   {
     ignores: [
       '.next/*',

@@ -13,6 +13,8 @@ const getInfoType = ({ config, item, meta, routeType }) => {
       date = item.properties[
         NOTION[routeType.toUpperCase()].infoType.key
       ]?.start.slice(0, 10)
+      // @todo(NICE-129) eslint
+      // eslint-disable-next-line no-case-declarations, no-unsafe-optional-chaining
       const [year, month, day] = date?.split('-')
       as = `/${routeType}/${year}/${month}/${day}/${slug}`
       break

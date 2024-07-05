@@ -15,6 +15,8 @@ const getGitmoji = (): IReleaseRule => {
   // eslint-disable-next-line complexity
   gitmojis.map((gitmoji: any) => {
     const rewrite = _rewrites.find((r) => r?.from === gitmoji.name)
+    // @todo(NICE-129) eslint
+    // eslint-disable-next-line no-extra-boolean-cast
     if (!!rewrite) {
       const semver =
         rewrite.semver === undefined
@@ -22,6 +24,8 @@ const getGitmoji = (): IReleaseRule => {
           : rewrite.semver || gitmoji?.semver || null
 
       _types[rewrite.to] = {
+        // @todo(NICE-129) eslint
+        // eslint-disable-next-line no-extra-boolean-cast
         branch: Boolean(rewrite?.branch) ? rewrite.branch : null,
         code: gitmoji?.code,
         commit: rewrite.to,
@@ -37,6 +41,8 @@ const getGitmoji = (): IReleaseRule => {
          *
          * ["major","premajor","minor","preminor","patch","prepatch","prerelease"]
          **/
+        // @todo(NICE-129) eslint
+        // eslint-disable-next-line no-extra-boolean-cast
         semver: !!semver
           ? semver
               .replace('fix', 'patch')

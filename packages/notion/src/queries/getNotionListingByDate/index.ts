@@ -1,3 +1,5 @@
+// @todo(NICE-129) eslint
+/* eslint-disable no-extra-boolean-cast */
 import { sortObject } from '@jeromefitz/utils'
 
 import _map from 'lodash/map.js'

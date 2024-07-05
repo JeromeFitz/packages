@@ -57,6 +57,8 @@ const getQuery = async ({ config, notionDatabasesQuery, reqQuery }) => {
     // @todo(types)
     const filterTagEpisodesByPodcasts: any = []
     const podcastIds: any = []
+    // @todo(NICE-129) eslint
+    // eslint-disable-next-line no-unsafe-optional-chaining
     !!podcasts && podcastIds.push(...podcasts?.split(','))
     _size(podcastIds) > 0 &&
       _map(podcastIds, (id) =>
@@ -88,6 +90,8 @@ const getQuery = async ({ config, notionDatabasesQuery, reqQuery }) => {
     await avoidRateLimit(0)
     // @todo(types) any
     let contentData: Pick<any, number | string | symbol>
+    // @todo(NICE-129) eslint
+    // eslint-disable-next-line no-extra-boolean-cast
     if (!!filter) {
       // @hack(notion)-do-not-return'
       if (filter?.or.length === 0) {

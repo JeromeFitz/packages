@@ -12,6 +12,8 @@ function processCommit(chunk, transform, context) {
 
   try {
     chunk = JSON.parse(chunk)
+    // @todo(NICE-129) eslint
+    // eslint-disable-next-line no-empty
   } catch (e) {}
 
   commit = _cloneDeep(chunk)

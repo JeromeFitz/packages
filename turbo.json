@@ -1,4 +1,5 @@
 {
+  "$schema": "https://turbo.build/schema.json",
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
@@ -10,6 +11,7 @@
         "*.mjs",
         "package.json"
       ],
+      "outputLogs": "new-only",
       "outputs": ["dist/**", ".next/**"]
     },
     "clean": {
@@ -30,7 +32,8 @@
         "*.js",
         "*.mjs",
         "package.json"
-      ]
+      ],
+      "outputLogs": "new-only"
     },
     "format:lint": {
       "cache": false,
@@ -46,22 +49,26 @@
     },
     "test": {
       "dependsOn": ["lint", "build"],
+      "outputLogs": "new-only",
       "outputs": ["coverage/**"]
     },
     "@jeromefitz/notion#build": {
       "dependsOn": ["@jeromefitz/utils#build"],
-      "inputs": ["src/**", "*.cjs", "*.js", "*.mjs", "package.json"]
+      "inputs": ["src/**", "*.cjs", "*.js", "*.mjs", "package.json"],
+      "outputLogs": "new-only"
     },
     "@jeromefitz/semantic#build": {
       "dependsOn": [
         "@jeromefitz/conventional-gitmoji#build",
         "@jeromefitz/release-notes-generator#build"
       ],
-      "inputs": ["src/**", "*.cjs", "*.js", "*.mjs", "package.json"]
+      "inputs": ["src/**", "*.cjs", "*.js", "*.mjs", "package.json"],
+      "outputLogs": "new-only"
     },
     "@jeromefitz/spotify#build": {
       "dependsOn": ["@jeromefitz/utils#build"],
-      "inputs": ["src/**", "*.cjs", "*.js", "*.mjs", "package.json"]
+      "inputs": ["src/**", "*.cjs", "*.js", "*.mjs", "package.json"],
+      "outputLogs": "new-only"
     }
   },
   "ui": "stream"

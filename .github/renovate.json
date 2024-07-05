@@ -31,15 +31,14 @@
         "eslint-config-turbo",
         "eslint-plugin-turbo"
       ],
-      "groupName": "eslint-config 📏 ",
-      "groupSlug": "eslint-config",
+      "groupName": "lint 📏 ",
+      "groupSlug": "lint",
       "matchPackageNames": [
         "@babel/eslint-parser",
-        "@typescript-eslint/eslint-plugin",
         "@typescript-eslint/parser",
         "prettier"
       ],
-      "matchPackagePatterns": ["^eslint"]
+      "matchPackagePatterns": ["^@eslint", "^eslint"]
     },
     {
       "commitMessagePrefix": "⬆️  (deps)",
