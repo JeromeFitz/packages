@@ -17,11 +17,7 @@ const branchTypes = _map(
   },
 ).filter((branchType) => !!branchType)
 
-const branches = [
-  { name: 'main' },
-  { name: 'canary', prerelease: 'canary' },
-  ...branchTypes,
-]
+const branches = [{ name: 'main' }, ...branchTypes]
 
 const config = {
   branches,

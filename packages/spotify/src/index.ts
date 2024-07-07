@@ -201,6 +201,7 @@ class Client {
         grant_type: 'refresh_token',
         refresh_token: this.#refreshToken,
       }),
+      cache: 'no-cache',
       headers: {
         Authorization: `Basic ${basic}`,
         'Content-Type': 'application/x-www-form-urlencoded',
