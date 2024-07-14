@@ -182,7 +182,7 @@ class Client {
   private async accessTokenAsHeaders(accessToken?: string) {
     const headers: Record<string, string> = {}
     const accessTokenValue =
-      accessToken ?? this.#accessToken.length > 1
+      (accessToken ?? this.#accessToken.length > 1)
         ? this.#accessToken
         : await this.getAccessToken()
     if (accessTokenValue !== undefined) {
