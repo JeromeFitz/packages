@@ -154,8 +154,8 @@ importers:
         specifier: 8.42.3
         version: 8.42.3
       '@types/lodash':
-        specifier: 4.17.6
-        version: 4.17.6
+        specifier: 4.17.7
+        version: 4.17.7
       lodash:
         specifier: 4.17.21
         version: 4.17.21
@@ -231,8 +231,8 @@ importers:
         version: 3.5.3
     devDependencies:
       '@types/lodash':
-        specifier: 4.17.6
-        version: 4.17.6
+        specifier: 4.17.7
+        version: 4.17.7
       '@types/title':
         specifier: 3.4.3
         version: 3.4.3
@@ -262,8 +262,8 @@ importers:
         specifier: workspace:*
         version: link:../utils
       '@types/lodash':
-        specifier: 4.17.6
-        version: 4.17.6
+        specifier: 4.17.7
+        version: 4.17.7
       lodash:
         specifier: 4.17.21
         version: 4.17.21
@@ -293,8 +293,8 @@ importers:
         version: 7.6.2
     devDependencies:
       '@types/lodash':
-        specifier: 4.17.6
-        version: 4.17.6
+        specifier: 4.17.7
+        version: 4.17.7
       lodash:
         specifier: 4.17.21
         version: 4.17.21
@@ -352,8 +352,8 @@ importers:
         specifier: workspace:*
         version: link:../utils
       '@types/lodash':
-        specifier: 4.17.6
-        version: 4.17.6
+        specifier: 4.17.7
+        version: 4.17.7
       lodash:
         specifier: 4.17.21
         version: 4.17.21
@@ -364,8 +364,8 @@ importers:
   packages/utils:
     devDependencies:
       '@types/lodash':
-        specifier: 4.17.6
-        version: 4.17.6
+        specifier: 4.17.7
+        version: 4.17.7
       lodash:
         specifier: 4.17.21
         version: 4.17.21
@@ -983,8 +983,8 @@ packages:
   '@types/json5@0.0.29':
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
 
-  '@types/lodash@4.17.6':
-    resolution: {integrity: sha512-OpXEVoCKSS3lQqjx9GGGOapBeuW5eUboYHRlHP9urXPX25IKZ6AnP5ZRxtVf63iieUbsHxLn8NQ5Nlftc6yzAA==}
+  '@types/lodash@4.17.7':
+    resolution: {integrity: sha512-8wTvZawATi/lsmNu10/j2hk1KEP0IvjubqPE3cu1Xz7xfXXt5oCq3SNUz4fMIP4XGF9Ky+Ue2tBA3hcS7LSBlA==}
 
   '@types/node-fetch@2.6.11':
     resolution: {integrity: sha512-24xFj9R5+rfQJLRyM56qh+wnVSYhyXC2tkoBndtY0U+vubqNsYXGjufB2nn8Q6gt0LrARwL6UBtMCSVCwl4B1g==}
@@ -4761,7 +4761,7 @@ snapshots:
 
   '@types/json5@0.0.29': {}
 
-  '@types/lodash@4.17.6': {}
+  '@types/lodash@4.17.7': {}
 
   '@types/node-fetch@2.6.11':
     dependencies:
