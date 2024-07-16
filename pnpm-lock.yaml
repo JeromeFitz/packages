@@ -139,7 +139,7 @@ importers:
         version: 0.8.0(eslint@9.7.0)(typescript@5.5.2)
       eslint-plugin-tailwindcss:
         specifier: 3.17.4
-        version: 3.17.4(tailwindcss@3.4.5)
+        version: 3.17.4(tailwindcss@3.4.6)
       eslint-plugin-testing-library:
         specifier: 6.2.2
         version: 6.2.2(eslint@9.7.0)(typescript@5.5.2)
@@ -160,8 +160,8 @@ importers:
         specifier: 4.17.21
         version: 4.17.21
       tailwindcss:
-        specifier: 3.4.5
-        version: 3.4.5
+        specifier: 3.4.6
+        version: 3.4.6
       typescript:
         specifier: 5.5.2
         version: 5.5.2
@@ -3745,8 +3745,8 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
-  tailwindcss@3.4.5:
-    resolution: {integrity: sha512-DlTxttYcogpDfx3tf/8jfnma1nfAYi2cBUYV2YNoPPecwmO3YGiFlOX9D8tGAu+EDF38ryBzvrDKU/BLMsUwbw==}
+  tailwindcss@3.4.6:
+    resolution: {integrity: sha512-1uRHzPB+Vzu57ocybfZ4jh5Q3SdlH7XW23J5sQoM9LhE9eIOlzxer/3XPSsycvih3rboRsvt0QCmzSrqyOYUIA==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -5939,11 +5939,11 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-plugin-tailwindcss@3.17.4(tailwindcss@3.4.5):
+  eslint-plugin-tailwindcss@3.17.4(tailwindcss@3.4.6):
     dependencies:
       fast-glob: 3.3.2
       postcss: 8.4.38
-      tailwindcss: 3.4.5
+      tailwindcss: 3.4.6
 
   eslint-plugin-testing-library@6.2.2(eslint@9.7.0)(typescript@5.5.2):
     dependencies:
@@ -7760,7 +7760,7 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  tailwindcss@3.4.5:
+  tailwindcss@3.4.6:
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
