@@ -1,7 +1,5 @@
 #!/bin/sh
 [ -n "$CI" ] && exit 0
-# shellcheck source=/dev/null
-. "$(dirname "$0")/_/husky.sh"
 
 FILE_ENV=.env
 if [ -f "$FILE_ENV" ]; then
