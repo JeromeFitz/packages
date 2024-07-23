@@ -1,4 +1,4 @@
-import { URL, format } from 'node:url'
+import { format, URL } from 'node:url'
 
 import { filterRevertedCommitsSync } from 'conventional-commits-filter'
 import { CommitParser } from 'conventional-commits-parser'

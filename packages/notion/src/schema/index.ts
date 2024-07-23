@@ -18,8 +18,8 @@ type DataTypesObject = {
 type DatabaseInfo = {
   [key in DatabaseType]?: {
     active: boolean
-    dataTypes: DataTypes[]
     database_id: string
+    dataTypes: DataTypes[]
     // @todo(next-notion) move to `isChild`
     hasChild: null | string
     infoType: any
@@ -356,11 +356,11 @@ interface NotionBlock {
 export type {
   Blog,
   BlogPost,
+  DatabaseInfo,
+  Databases,
+  DatabaseType,
   DataTypes,
   DataTypesObject,
-  DatabaseInfo,
-  DatabaseType,
-  Databases,
   Direction,
   Episode,
   Episodes,

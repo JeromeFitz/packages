@@ -1,6 +1,6 @@
 import type {
-  GitPluginOptions,
   GithubPluginOptions,
+  GitPluginOptions,
   NPMPluginOptions,
   // ReleaseRule,
 } from './index.js'

@@ -1,3 +1,4 @@
+/* eslint-disable perfectionist/sort-switch-case */
 import {
   addDays as _addDays,
   addMonths as _addMonths,

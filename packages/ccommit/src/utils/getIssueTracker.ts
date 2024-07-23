@@ -1,8 +1,8 @@
 import { execSync } from 'node:child_process'
 
 const getIssueTracker = () => {
-  let init = '',
-    branch: any
+  let branch: any,
+    init = ''
 
   //  branch = 'ABC-123'
   branch = execSync('git rev-parse --abbrev-ref HEAD')

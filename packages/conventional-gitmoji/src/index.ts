@@ -11,5 +11,5 @@ const releaseRules = getReleaseRules(types)
 const typeSpecs = getTypeSpecs(types)
 
 export type { ICommit, IReleaseRule, IReleaseRuleProps }
-export { parserOpts, releaseRules, typeSpecs, types, writerOpts }
+export { parserOpts, releaseRules, types, typeSpecs, writerOpts }
 export default () => conventionalChangelog

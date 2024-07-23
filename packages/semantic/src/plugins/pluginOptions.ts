@@ -27,7 +27,7 @@ const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec[] => {
    * @todo(types) any
    */
   // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
-  const options: PluginOptions | any = {
+  const options: any | PluginOptions = {
     ...optionsDefault,
     ...optionsPassed,
   }

@@ -1,3 +1,4 @@
+/* eslint-disable perfectionist/sort-switch-case */
 const getInfoType = ({ config, item, meta, routeType }) => {
   const { NOTION } = config
 
