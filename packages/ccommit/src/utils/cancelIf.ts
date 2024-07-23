@@ -43,4 +43,4 @@ const cancelIfAmending = (): Promise<void> =>
 // I avoid Promise.all to avoid race condition in future cancel callbacks
 const cancelIfNeeded = (): Promise<void> => cancelIfAmending().then(cancelIfRebasing)
 
-export { COMMIT_MESSAGE_SOURCE, cancelIfAmending, cancelIfNeeded, cancelIfRebasing }
+export { cancelIfAmending, cancelIfNeeded, cancelIfRebasing, COMMIT_MESSAGE_SOURCE }

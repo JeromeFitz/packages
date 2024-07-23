@@ -1330,10 +1330,10 @@ const DATA_TYPES: DataTypesObject = Object.assign(
 
 export {
   DATA_TYPES,
+  getDataTypes,
   INIT,
   LOOKUP,
   PROPERTIES,
   PROPERTIES_LOOKUP,
   QUERIES,
-  getDataTypes,
 }

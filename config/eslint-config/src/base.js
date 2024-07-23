@@ -40,7 +40,7 @@ const configBase = [
       'perfectionist/sort-imports': [
         RULES.ERROR,
         {
-          'custom-groups': {
+          customGroups: {
             type: {},
             value: {
               jeromefitz: '@jeromefitz/**',
@@ -63,8 +63,8 @@ const configBase = [
             'object',
             'unknown',
           ],
-          'internal-pattern': ['@/**', '~**/**'],
-          'newlines-between': 'always',
+          internalPattern: ['@/**', '~**/**'],
+          newlinesBetween: 'always',
           order: 'asc',
           type: 'natural',
         },
