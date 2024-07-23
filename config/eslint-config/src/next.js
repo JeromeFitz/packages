@@ -1,7 +1,7 @@
 import path from 'path'
 import { fileURLToPath } from 'url'
 
-import { RULES, getCompat } from './_lib.js'
+import { getCompat, RULES } from './_lib.js'
 import configReact from './react.js'
 
 const __filename = fileURLToPath(import.meta.url)

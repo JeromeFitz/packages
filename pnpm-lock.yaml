@@ -5862,8 +5862,8 @@ snapshots:
 
   eslint-plugin-perfectionist@3.0.0(eslint@9.7.0)(typescript@5.5.2):
     dependencies:
-      '@typescript-eslint/types': 7.16.1
-      '@typescript-eslint/utils': 7.16.1(eslint@9.7.0)(typescript@5.5.2)
+      '@typescript-eslint/types': 7.17.0
+      '@typescript-eslint/utils': 7.17.0(eslint@9.7.0)(typescript@5.5.2)
       eslint: 9.7.0
       minimatch: 10.0.1
       natural-compare-lite: 1.4.0

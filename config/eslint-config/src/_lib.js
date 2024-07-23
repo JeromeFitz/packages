@@ -11,4 +11,4 @@ const RULES = {
   WARN: 'warn', // 1
 }
 
-export { RULES, getCompat }
+export { getCompat, RULES }
