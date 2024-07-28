@@ -48,7 +48,7 @@
     "@jeromefitz/semantic": "workspace:*",
     "@jeromefitz/tsconfig": "workspace:*",
     "@types/is-ci": "3.0.4",
-    "@types/node": "20.14.12",
+    "@types/node": "20.14.13",
     "ccommit": "workspace:*",
     "dotenv": "16.4.5",
     "husky": "9.1.3",
