@@ -51,7 +51,7 @@
     "@types/node": "20.14.13",
     "ccommit": "workspace:*",
     "dotenv": "16.4.5",
-    "husky": "9.1.3",
+    "husky": "9.1.4",
     "is-ci": "3.0.1",
     "lint-staged": "15.2.7",
     "lodash": "4.17.21",
