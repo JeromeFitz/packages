@@ -21,7 +21,7 @@ const { prompt } = enquirer
 // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 export type CommitOptions = {
   message?: string
-  // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents, @typescript-eslint/no-duplicate-type-constituents
+  // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
   mode: typeof COMMIT_MODES.CLIENT | typeof COMMIT_MODES.HOOK
   scope?: string
   skip: boolean
