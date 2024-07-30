@@ -8,7 +8,7 @@
   "commitMessageExtra": "",
   "commitMessagePrefix": "⬆️  (deps)",
   "commitMessageSuffix": "",
-  "commitMessageTopic": " {{depName}}{{#if isPinDigest}}{{{newDigest}}}{{else}}{{#if isMajor}}@{{{newVersion}}} 🧨 {{else}}{{#if isSingleVersion}}@{{{newVersion}}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}@{{{newDigest}}}{{/if}}{{/if}}{{/if}}{{/if}}",
+  "commitMessageTopic": " {{depName}}@{{#if isPinDigest}}{{{newDigest}}}{{else}}{{#if isMajor}}{{{newVersion}}} 🧨 {{else}}{{#if isSingleVersion}}{{{newVersion}}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigest}}}{{/if}}{{/if}}{{/if}}{{/if}}",
   "dependencyDashboard": false,
   "ignoreDeps": ["micromatch", "sharp", "typescript"],
   "labels": ["📦️ Dependencies"],
@@ -18,7 +18,7 @@
   "packageRules": [
     {
       "commitMessagePrefix": "👷  (actions)",
-      "commitMessageExtra": "@{{depName}}{{#if isPinDigest}}{{{newDigest}}}{{else}}{{#if isMajor}}v{{{newVersion}}} 🧨 {{else}}{{#if isSingleVersion}}v{{{newVersion}}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}v{{{newDigest}}}{{/if}}{{/if}}{{/if}}{{/if}}",
+      "commitMessageExtra": "{{depName}}@{{#if isPinDigest}}{{{newDigest}}}{{else}}{{#if isMajor}}{{{newVersion}}} 🧨 {{else}}{{#if isSingleVersion}}{{{newVersion}}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigest}}}{{/if}}{{/if}}{{/if}}{{/if}}",
       "commitMessageTopic": " {{depName}}",
       "groupName": "github actions :octocat: ...",
       "groupSlug": "github-actions",
@@ -76,6 +76,12 @@
       "groupName": "react ⚛️ ",
       "groupSlug": "react",
       "matchPackageNames": ["@types/react", "@types/react-dom", "react", "react-dom"]
+    },
+    {
+      "allowedVersions": "<21",
+      "commitMessagePrefix": "📦  (deps-dev)",
+      "matchDepTypes": ["devDependencies", "dependencies"],
+      "matchPackageNames": ["@types/node"]
     },
     {
       "commitMessagePrefix": "⬆️  (deps)",
