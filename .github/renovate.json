@@ -8,9 +8,9 @@
   "commitMessageExtra": "",
   "commitMessagePrefix": "⬆️  (deps)",
   "commitMessageSuffix": "",
-  "commitMessageTopic": " {{depName}}{{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}@{{{newMajor}}} 🧨 {{else}}{{#if isSingleVersion}}@{{{newVersion}}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}@{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}}",
+  "commitMessageTopic": " {{depName}}{{#if isPinDigest}}{{{newDigest}}}{{else}}{{#if isMajor}}@{{{newVersion}}} 🧨 {{else}}{{#if isSingleVersion}}@{{{newVersion}}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}@{{{newDigest}}}{{/if}}{{/if}}{{/if}}{{/if}}",
   "dependencyDashboard": false,
-  "ignoreDeps": ["pnpm", "micromatch", "sharp", "typescript"],
+  "ignoreDeps": ["micromatch", "sharp", "typescript"],
   "labels": ["📦️ Dependencies"],
   "node": {
     "enabled": false
@@ -18,7 +18,7 @@
   "packageRules": [
     {
       "commitMessagePrefix": "👷  (actions)",
-      "commitMessageExtra": "@{{depName}}{{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}v{{{newMajor}}} 🧨 {{else}}{{#if isSingleVersion}}v{{{newVersion}}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}v{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}}",
+      "commitMessageExtra": "@{{depName}}{{#if isPinDigest}}{{{newDigest}}}{{else}}{{#if isMajor}}v{{{newVersion}}} 🧨 {{else}}{{#if isSingleVersion}}v{{{newVersion}}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}v{{{newDigest}}}{{/if}}{{/if}}{{/if}}{{/if}}",
       "commitMessageTopic": " {{depName}}",
       "groupName": "github actions :octocat: ...",
       "groupSlug": "github-actions",
