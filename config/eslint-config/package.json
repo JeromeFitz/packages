@@ -50,7 +50,7 @@
     "eslint-plugin-tailwindcss": "3.17.4",
     "eslint-plugin-testing-library": "6.2.2",
     "eslint-plugin-turbo": "2.0.11",
-    "typescript-eslint": "7.18.0"
+    "typescript-eslint": "8.0.0"
   },
   "devDependencies": {
     "@types/eslint__js": "8.42.3",
