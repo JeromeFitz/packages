@@ -26,6 +26,7 @@ const config = (files) => {
   )
   if (filesPrettier.length) {
     const filenames = escapedFileNames(filesPrettier)
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     isCI
       ? lintStaged.push(`prettier --ignore-unknown --check ${filenames}`)
       : lintStaged.push(
@@ -40,6 +41,7 @@ const config = (files) => {
   )
   if (filesEslint.length) {
     const filenames = escapedFileNames(filesEslint)
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     isCI
       ? lintStaged.push()
       : lintStaged.push(
@@ -53,6 +55,7 @@ const config = (files) => {
     micromatch.braces('**/package.json', { expand: true }),
   )
   if (filesSyncpack.length) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     isCI ? lintStaged.push() : lintStaged.push(`pnpm run lint:packages`)
   }
 

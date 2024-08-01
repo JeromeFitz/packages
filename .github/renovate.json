@@ -33,11 +33,7 @@
       ],
       "groupName": "lint 📏 ",
       "groupSlug": "lint",
-      "matchPackageNames": [
-        "@babel/eslint-parser",
-        "@typescript-eslint/parser",
-        "prettier"
-      ],
+      "matchPackageNames": ["@babel/eslint-parser", "prettier"],
       "matchPackagePatterns": ["^@eslint", "^eslint"]
     },
     {

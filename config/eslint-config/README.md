@@ -4,7 +4,6 @@ Custom `eslint-config` setup that can be extended and incorporates:
 
 - `@babel/eslint-parser`
 - `@eslint/*`
-- `@typescript-eslint/parser`
 - `eslint`
 - `eslint-config-next`
 - `eslint-config-prettier`
