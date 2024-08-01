@@ -58,8 +58,9 @@ const getQuery = async ({ config, notionDatabasesQuery, reqQuery }) => {
     const filterTagEpisodesByPodcasts: any = []
     const podcastIds: any = []
     // @todo(NICE-129) eslint
-    // eslint-disable-next-line no-unsafe-optional-chaining
+    // eslint-disable-next-line no-unsafe-optional-chaining, @typescript-eslint/no-unused-expressions
     !!podcasts && podcastIds.push(...podcasts?.split(','))
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     _size(podcastIds) > 0 &&
       _map(podcastIds, (id) =>
         filterTagEpisodesByPodcasts.push({

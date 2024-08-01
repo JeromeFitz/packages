@@ -1,19 +1,9 @@
-import parserTypescript from '@typescript-eslint/parser'
 import pluginImportX from 'eslint-plugin-import-x'
 import tseslint from 'typescript-eslint'
 
 import { RULES } from './_lib.js'
 import configBase from './base.js'
 
-/**
- * @hack(typescript-eslint) w/o run into following error
- *  b/c parser is passed as meta instead of explicit (?):
- *
- * Error while loading rule '@typescript-eslint/await-thenable':
- * You have used a rule which requires parserServices to be generated.
- * You must therefore provide a value for the "parserOptions.project"
- *  property for @typescript-eslint/parser.
- */
 let recommendedTypeChecked = []
 tseslint.configs.recommendedTypeChecked.map((obj) => {
   if (obj.name === 'typescript-eslint/base') {
@@ -21,7 +11,7 @@ tseslint.configs.recommendedTypeChecked.map((obj) => {
       ...obj,
       languageOptions: {
         ...obj.languageOptions,
-        parser: parserTypescript,
+        parser: tseslint.parser,
       },
     }
   }
@@ -34,7 +24,7 @@ tseslint.configs.stylisticTypeChecked.map((obj) => {
       ...obj,
       languageOptions: {
         ...obj.languageOptions,
-        parser: parserTypescript,
+        parser: tseslint.parser,
       },
     }
   }
@@ -54,7 +44,7 @@ const configTypescript = [
   {
     files: ['**/*.ts?(x)'],
     languageOptions: {
-      parser: parserTypescript,
+      parser: tseslint.parser,
       parserOptions: {
         allowAutomaticSingleRunInference: true,
         ecmaFeatures: {

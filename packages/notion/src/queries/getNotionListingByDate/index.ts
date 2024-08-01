@@ -187,6 +187,7 @@ const getNotionListingByDate = async ({
     item['properties'] = sortObject(
       dataNormalized({ config, data: i, pageId: item.id, pathVariables }),
     )
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     !!item && __items.push(item)
   })
   const _items = _omit(___items, 'results')

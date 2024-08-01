@@ -37,6 +37,7 @@ async function createMilestones({ owner, repo }) {
         colorize`{green.bold ✅️  success: ${owner}/${repo} => createMilestone: ${milestone.name}}`,
       )
     })
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     console.log(colorize`{red.bold ❎️  error: ${owner}/${repo} => createMilestone`)
     // console.log(colorize`{white.italic ${error}}`)

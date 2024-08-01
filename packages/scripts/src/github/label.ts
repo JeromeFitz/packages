@@ -39,6 +39,7 @@ async function createLabels({ owner, repo }) {
         colorize`{green.bold ✅️  success: ${owner}/${repo} => createLabel: ${label.name}}`,
       )
     })
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     console.log(colorize`{red.bold ❎️  error: ${owner}/${repo} => createLabel`)
     // console.log(colorize`{white.italic ${error}}`)
