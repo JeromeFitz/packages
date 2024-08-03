@@ -54,7 +54,7 @@
     "dotenv": "16.4.5",
     "husky": "9.1.4",
     "is-ci": "3.0.1",
-    "lint-staged": "15.2.7",
+    "lint-staged": "15.2.8",
     "lodash": "4.17.21",
     "semantic-release": "24.0.0",
     "syncpack": "12.4.0",
