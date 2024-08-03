@@ -119,8 +119,8 @@ importers:
         specifier: 6.9.0
         version: 6.9.0(eslint@9.8.0)
       eslint-plugin-perfectionist:
-        specifier: 3.0.0
-        version: 3.0.0(eslint@9.8.0)(typescript@5.5.2)
+        specifier: 3.1.0
+        version: 3.1.0(eslint@9.8.0)(typescript@5.5.2)
       eslint-plugin-playwright:
         specifier: 1.6.2
         version: 1.6.2(eslint-plugin-jest@28.6.0(eslint@9.8.0)(typescript@5.5.2))(eslint@9.8.0)
@@ -1859,8 +1859,8 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
 
-  eslint-plugin-perfectionist@3.0.0:
-    resolution: {integrity: sha512-B+leJTo1YjxiNIm8Yv0rCHp4eWh9RaJHO6T1ifxd26wg8NCbEiWSdqZVeYLWPCI+zS1dlf89WpOkUzG7cE4vtQ==}
+  eslint-plugin-perfectionist@3.1.0:
+    resolution: {integrity: sha512-QNL1L0CMo8FoKM3VkNdR8HUq8Nrl0nGZFF9jzjU8PYvDtds2bvNOm9RwpQC4Gf3M27F6CBp5JsA3jBYT4TBiHA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
       astro-eslint-parser: ^1.0.2
@@ -5850,10 +5850,10 @@ snapshots:
       safe-regex-test: 1.0.3
       string.prototype.includes: 2.0.0
 
-  eslint-plugin-perfectionist@3.0.0(eslint@9.8.0)(typescript@5.5.2):
+  eslint-plugin-perfectionist@3.1.0(eslint@9.8.0)(typescript@5.5.2):
     dependencies:
-      '@typescript-eslint/types': 7.17.0
-      '@typescript-eslint/utils': 7.17.0(eslint@9.8.0)(typescript@5.5.2)
+      '@typescript-eslint/types': 8.0.0
+      '@typescript-eslint/utils': 8.0.0(eslint@9.8.0)(typescript@5.5.2)
       eslint: 9.8.0
       minimatch: 10.0.1
       natural-compare-lite: 1.4.0
