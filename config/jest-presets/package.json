@@ -24,6 +24,6 @@
     "semantic-release:dry": "semantic-release --dry-run"
   },
   "dependencies": {
-    "ts-jest": "29.2.4"
+    "ts-jest": "29.2.5"
   }
 }
