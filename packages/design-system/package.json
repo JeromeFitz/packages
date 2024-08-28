@@ -90,7 +90,7 @@
     "@radix-ui/react-use-callback-ref": "1.1.0",
     "@radix-ui/react-visually-hidden": "1.1.0",
     "@stitches/react": "1.3.1-1",
-    "emoji-regex": "10.3.0",
+    "emoji-regex": "10.4.0",
     "node-emoji": "2.1.3",
     "smoothscroll-polyfill": "0.4.4"
   },
