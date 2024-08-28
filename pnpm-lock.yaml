@@ -95,14 +95,14 @@ importers:
         specifier: 9.9.1
         version: 9.9.1
       '@next/eslint-plugin-next':
-        specifier: 14.2.6
-        version: 14.2.6
+        specifier: 14.2.7
+        version: 14.2.7
       eslint:
         specifier: 9.9.1
         version: 9.9.1
       eslint-config-next:
-        specifier: 14.2.6
-        version: 14.2.6(eslint@9.9.1)(typescript@5.5.2)
+        specifier: 14.2.7
+        version: 14.2.7(eslint@9.9.1)(typescript@5.5.2)
       eslint-config-turbo:
         specifier: 2.0.14
         version: 2.0.14(eslint@9.9.1)
@@ -701,8 +701,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@next/eslint-plugin-next@14.2.6':
-    resolution: {integrity: sha512-d3+p4AjIYmhqzYHhhmkRYYN6ZU35TwZAKX08xKRfnHkz72KhWL2kxMFsDptpZs5e8bBGdepn7vn1+9DaF8iX+A==}
+  '@next/eslint-plugin-next@14.2.7':
+    resolution: {integrity: sha512-+7xh142AdhZGjY9/L0iFo7mqRBMJHe+q+uOL+hto1Lfo9DeWCGcR6no4StlFbVSVcA6fQLKEX6y6qhMsSKbgNQ==}
 
   '@nicolo-ribaudo/eslint-scope-5-internals@5.1.1-v1':
     resolution: {integrity: sha512-54/JRvkLIzzDWshCWfuhadfrfZVPiElY8Fcgmg1HroEly/EDSszzhBAsarCux+D/kOslTRquNzuyGSmUSTTHGg==}
@@ -1817,8 +1817,8 @@ packages:
     resolution: {integrity: sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==}
     engines: {node: '>=12'}
 
-  eslint-config-next@14.2.6:
-    resolution: {integrity: sha512-z0URA5LO6y8lS/YLN0EDW/C4LEkDODjJzA37dvLVdzCPzuewjzTe1os5g3XclZAZrQ8X8hPaSMQ2JuVWwMmrTA==}
+  eslint-config-next@14.2.7:
+    resolution: {integrity: sha512-ppmy+QdQ7qkuCHGDlPjWaoSbJvjGpWSBD4zEW8f1eWlxYXYpZK7QzBOer1EcHKT3uKhlY1JjUus9g7Kvv712rw==}
     peerDependencies:
       eslint: ^7.23.0 || ^8.0.0
       typescript: '>=3.3.1'
@@ -4502,7 +4502,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  '@next/eslint-plugin-next@14.2.6':
+  '@next/eslint-plugin-next@14.2.7':
     dependencies:
       glob: 10.3.10
 
@@ -5825,9 +5825,9 @@ snapshots:
 
   escape-string-regexp@5.0.0: {}
 
-  eslint-config-next@14.2.6(eslint@9.9.1)(typescript@5.5.2):
+  eslint-config-next@14.2.7(eslint@9.9.1)(typescript@5.5.2):
     dependencies:
-      '@next/eslint-plugin-next': 14.2.6
+      '@next/eslint-plugin-next': 14.2.7
       '@rushstack/eslint-patch': 1.10.3
       '@typescript-eslint/parser': 7.2.0(eslint@9.9.1)(typescript@5.5.2)
       eslint: 9.9.1
