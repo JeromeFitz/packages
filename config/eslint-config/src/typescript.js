@@ -1,30 +1,30 @@
-import pluginImportX from 'eslint-plugin-import-x'
-import tseslint from 'typescript-eslint'
+import { flatConfigs } from 'eslint-plugin-import-x'
+import { configs, parser } from 'typescript-eslint'
 
 import { RULES } from './_lib.js'
-import configBase from './base.js'
+import { configBase } from './base.js'
 
 let recommendedTypeChecked = []
-tseslint.configs.recommendedTypeChecked.map((obj) => {
+configs.recommendedTypeChecked.map((obj) => {
   if (obj.name === 'typescript-eslint/base') {
     return {
       ...obj,
       languageOptions: {
         ...obj.languageOptions,
-        parser: tseslint.parser,
+        parser,
       },
     }
   }
   return obj
 })
 let stylisticTypeChecked = []
-tseslint.configs.stylisticTypeChecked.map((obj) => {
+configs.stylisticTypeChecked.map((obj) => {
   if (obj.name === 'typescript-eslint/base') {
     return {
       ...obj,
       languageOptions: {
         ...obj.languageOptions,
-        parser: tseslint.parser,
+        parser,
       },
     }
   }
@@ -32,25 +32,26 @@ tseslint.configs.stylisticTypeChecked.map((obj) => {
 })
 
 const configTypescript = [
-  tseslint.configs.eslintRecommended,
-  ...tseslint.configs.recommended,
-  ...tseslint.configs.stylistic,
+  configs.eslintRecommended,
+  ...configs.recommended,
+  ...configs.stylistic,
   ...recommendedTypeChecked,
   ...stylisticTypeChecked,
-  pluginImportX.configs.typescript,
+  flatConfigs.recommended,
+  flatConfigs.typescript,
   /**
    * @note(eslint) Custom Settings for @jeromefitz/eslint-config
    */
   {
     files: ['**/*.ts?(x)'],
     languageOptions: {
-      parser: tseslint.parser,
+      parser,
       parserOptions: {
         allowAutomaticSingleRunInference: true,
         ecmaFeatures: {
           jsx: true,
         },
-        ecmaVersion: 2022,
+        ecmaVersion: 'latest',
         project: ['./tsconfig.json'],
         sourceType: 'module',
         warnOnUnsupportedTypeScriptVersion: true,
@@ -76,7 +77,20 @@ const configTypescript = [
       '@typescript-eslint/restrict-template-expressions': RULES.OFF,
     },
   },
+  {
+    name: '@jeromefitz/eslint-config:import-x',
+    rules: {
+      'import-x/no-deprecated': RULES.ERROR,
+      'import-x/no-unresolved': RULES.OFF,
+    },
+    settings: {
+      'import-x/resolver': {
+        typescript: true,
+      },
+    },
+  },
 ]
 
-export { configTypescript }
-export default [...configBase, ...configTypescript]
+const configTypescriptDefault = [...configBase, ...configTypescript]
+
+export { configTypescript, configTypescriptDefault }

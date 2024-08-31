@@ -6,6 +6,7 @@
  *
  */
 import { slug as _slug } from 'github-slugger'
+// eslint-disable-next-line import-x/default
 import fetch from 'isomorphic-unfetch'
 import { getPlaiceholder } from 'plaiceholder'
 

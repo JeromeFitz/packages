@@ -74,4 +74,3 @@ const configBase = [
 ]
 
 export { configBase }
-export default configBase

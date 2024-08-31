@@ -10,7 +10,7 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 
 import { getCompat, RULES } from './_lib.js'
-import configNext from './next.js'
+import { configNextDefault } from './next.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -31,5 +31,6 @@ const configTailwind = [
   },
 ]
 
-export { configTailwind }
-export default [...configNext, ...configTailwind]
+const configTailwindDefault = [...configNextDefault, ...configTailwind]
+
+export { configTailwind, configTailwindDefault }
