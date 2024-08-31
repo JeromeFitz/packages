@@ -9,6 +9,10 @@ const config = {
   lintFormatting: false,
   semverGroups: [
     {
+      dependencies: ['@typescript-eslint/typescript-estree'],
+      isIgnored: true,
+    },
+    {
       dependencies: ['**'],
       dependencyTypes: [
         'prod',

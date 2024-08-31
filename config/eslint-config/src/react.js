@@ -2,7 +2,7 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 
 import { getCompat } from './_lib.js'
-import configTypescript from './typescript.js'
+import { configTypescriptDefault } from './typescript.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -25,5 +25,6 @@ const configReact = [
   },
 ]
 
-export { configReact }
-export default [...configTypescript, ...configReact]
+const configReactDefault = [...configTypescriptDefault, ...configReact]
+
+export { configReact, configReactDefault }

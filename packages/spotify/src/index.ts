@@ -5,6 +5,7 @@ import { noop as _noop, asyncForEach } from '@jeromefitz/utils'
 
 import type { Agent } from 'http'
 
+// eslint-disable-next-line import-x/default
 import fetch from 'isomorphic-unfetch'
 import _omit from 'lodash/omit.js'
 
