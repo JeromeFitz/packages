@@ -59,7 +59,7 @@
     "semantic-release": "24.1.0",
     "syncpack": "13.0.0",
     "tsup": "8.2.4",
-    "turbo": "2.1.0",
+    "turbo": "2.1.1",
     "typescript": "5.5.2"
   },
   "publishConfig": {
