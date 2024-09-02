@@ -111,8 +111,8 @@ importers:
         specifier: 4.1.1
         version: 4.1.1(eslint@9.9.1)(typescript@5.5.2)
       eslint-plugin-jest:
-        specifier: 28.8.1
-        version: 28.8.1(eslint@9.9.1)(typescript@5.5.2)
+        specifier: 28.8.2
+        version: 28.8.2(eslint@9.9.1)(typescript@5.5.2)
       eslint-plugin-jest-dom:
         specifier: 5.4.0
         version: 5.4.0(eslint@9.9.1)
@@ -124,7 +124,7 @@ importers:
         version: 3.3.0(eslint@9.9.1)(typescript@5.5.2)
       eslint-plugin-playwright:
         specifier: 1.6.2
-        version: 1.6.2(eslint-plugin-jest@28.8.1(eslint@9.9.1)(typescript@5.5.2))(eslint@9.9.1)
+        version: 1.6.2(eslint-plugin-jest@28.8.2(eslint@9.9.1)(typescript@5.5.2))(eslint@9.9.1)
       eslint-plugin-react:
         specifier: 7.35.0
         version: 7.35.0(eslint@9.9.1)
@@ -1790,8 +1790,8 @@ packages:
       '@testing-library/dom':
         optional: true
 
-  eslint-plugin-jest@28.8.1:
-    resolution: {integrity: sha512-G46XMyYu6PtSNJUkQ0hsPjzXYpzq/O4vpCciMizTKRJG8kNsRreGoMRDG6H9FIB/xVgfFuclVnuX4XRvFUzrZQ==}
+  eslint-plugin-jest@28.8.2:
+    resolution: {integrity: sha512-mC3OyklHmS5i7wYU1rGId9EnxRI8TVlnFG56AE+8U9iRy6zwaNygZR+DsdZuCL0gRG0wVeyzq+uWcPt6yJrrMA==}
     engines: {node: ^16.10.0 || ^18.12.0 || >=20.0.0}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': ^6.0.0 || ^7.0.0 || ^8.0.0
@@ -5688,7 +5688,7 @@ snapshots:
       eslint: 9.9.1
       requireindex: 1.2.0
 
-  eslint-plugin-jest@28.8.1(eslint@9.9.1)(typescript@5.5.2):
+  eslint-plugin-jest@28.8.2(eslint@9.9.1)(typescript@5.5.2):
     dependencies:
       '@typescript-eslint/utils': 8.3.0(eslint@9.9.1)(typescript@5.5.2)
       eslint: 9.9.1
@@ -5727,12 +5727,12 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-plugin-playwright@1.6.2(eslint-plugin-jest@28.8.1(eslint@9.9.1)(typescript@5.5.2))(eslint@9.9.1):
+  eslint-plugin-playwright@1.6.2(eslint-plugin-jest@28.8.2(eslint@9.9.1)(typescript@5.5.2))(eslint@9.9.1):
     dependencies:
       eslint: 9.9.1
       globals: 13.24.0
     optionalDependencies:
-      eslint-plugin-jest: 28.8.1(eslint@9.9.1)(typescript@5.5.2)
+      eslint-plugin-jest: 28.8.2(eslint@9.9.1)(typescript@5.5.2)
 
   eslint-plugin-react-hooks@4.6.2(eslint@9.9.1):
     dependencies:
