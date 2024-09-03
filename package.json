@@ -60,7 +60,7 @@
     "syncpack": "13.0.0",
     "tsup": "8.2.4",
     "turbo": "2.1.1",
-    "typescript": "5.5.2"
+    "typescript": "5.5.4"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
