@@ -24,19 +24,6 @@ const config = {
       packages: ['**'],
       range: '',
     },
-    // {
-    //   "range": "^",
-    //   "dependencyTypes": [
-    //     "dev",
-    //     "peer"
-    //   ],
-    //   "dependencies": [
-    //     "**"
-    //   ],
-    //   "packages": [
-    //     "**"
-    //   ]
-    // }
   ],
   source: [],
   versionGroups: [],

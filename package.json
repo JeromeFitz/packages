@@ -71,7 +71,7 @@
     },
     "overrides": {
       "@typescript-eslint/typescript-estree": "^8.3.0",
-      "micromatch": "4.0.5"
+      "micromatch": "4.0.8"
     }
   }
 }

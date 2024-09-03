@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "lint-staged": "15.2.10",
-    "micromatch": "4.0.5"
+    "micromatch": "4.0.8"
   },
   "devDependencies": {
     "is-ci": "3.0.1"
