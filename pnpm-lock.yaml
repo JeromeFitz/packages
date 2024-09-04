@@ -108,8 +108,8 @@ importers:
         specifier: 2.1.1
         version: 2.1.1(eslint@9.9.1)
       eslint-plugin-import-x:
-        specifier: 4.2.0
-        version: 4.2.0(eslint@9.9.1)(typescript@5.5.4)
+        specifier: 4.2.1
+        version: 4.2.1(eslint@9.9.1)(typescript@5.5.4)
       eslint-plugin-jest:
         specifier: 28.8.2
         version: 28.8.2(eslint@9.9.1)(typescript@5.5.4)
@@ -1783,8 +1783,8 @@ packages:
       eslint-import-resolver-webpack:
         optional: true
 
-  eslint-plugin-import-x@4.2.0:
-    resolution: {integrity: sha512-kEPB9oeuKSZ8U2LfH6DDoov5V4gTid5JHny9P0JyvKmB4LZNG8kGdqJyCq46QRimbp8FKTlOtsSIO5hdhoZS8A==}
+  eslint-plugin-import-x@4.2.1:
+    resolution: {integrity: sha512-WWi2GedccIJa0zXxx3WDnTgouGQTtdYK1nhXMwywbqqAgB0Ov+p1pYBsWh3VaB0bvBOwLse6OfVII7jZD9xo5Q==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0
@@ -5680,7 +5680,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import-x@4.2.0(eslint@9.9.1)(typescript@5.5.4):
+  eslint-plugin-import-x@4.2.1(eslint@9.9.1)(typescript@5.5.4):
     dependencies:
       '@typescript-eslint/utils': 8.4.0(eslint@9.9.1)(typescript@5.5.4)
       debug: 4.3.6
