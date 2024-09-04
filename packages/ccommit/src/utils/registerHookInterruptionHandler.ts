@@ -1,3 +1,4 @@
+/* eslint-disable import-x/no-named-as-default-member */
 /*!
  * reference: https://github.com/carloscuesta/gitmoji-cli
  */
