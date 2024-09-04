@@ -3,7 +3,7 @@ import _clone from 'lodash/clone.js'
 import _forEach from 'lodash/forEach.js'
 import _map from 'lodash/map.js'
 import _merge from 'lodash/merge.js'
-import semver from 'semver'
+import { patch as semverPatch, valid as semverValid } from 'semver'
 
 import getExtraContext from './getExtraContent.js'
 
@@ -42,8 +42,8 @@ function generate(options, commits, context, keyCommit) {
     context.date = keyCommit.committerDate
   }
 
-  if (context.version && semver.valid(context.version)) {
-    context.isPatch = context.isPatch || semver.patch(context.version) !== 0
+  if (context.version && semverValid(context.version)) {
+    context.isPatch = context.isPatch || semverPatch(context.version) !== 0
   }
 
   // @note this is/was a pass-through function, okay with "skipping"

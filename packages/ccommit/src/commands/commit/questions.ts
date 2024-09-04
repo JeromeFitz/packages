@@ -1,3 +1,4 @@
+/* eslint-disable import-x/no-named-as-default-member */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import colors from 'ansi-colors'
 
