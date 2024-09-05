@@ -44,6 +44,7 @@ const configBase = [
             type: {},
             value: {
               jeromefitz: '@jeromefitz/**',
+              'jeromefitz-type': '@jeromefitz/**',
               'server-only': 'server-only',
             },
           },
