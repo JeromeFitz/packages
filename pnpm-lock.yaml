@@ -111,8 +111,8 @@ importers:
         specifier: 4.2.1
         version: 4.2.1(eslint@9.9.1)(typescript@5.5.4)
       eslint-plugin-jest:
-        specifier: 28.8.2
-        version: 28.8.2(eslint@9.9.1)(typescript@5.5.4)
+        specifier: 28.8.3
+        version: 28.8.3(eslint@9.9.1)(typescript@5.5.4)
       eslint-plugin-jest-dom:
         specifier: 5.4.0
         version: 5.4.0(eslint@9.9.1)
@@ -120,11 +120,11 @@ importers:
         specifier: 6.10.0
         version: 6.10.0(eslint@9.9.1)
       eslint-plugin-perfectionist:
-        specifier: 3.3.0
-        version: 3.3.0(eslint@9.9.1)(typescript@5.5.4)
+        specifier: 3.4.0
+        version: 3.4.0(eslint@9.9.1)(typescript@5.5.4)
       eslint-plugin-playwright:
         specifier: 1.6.2
-        version: 1.6.2(eslint-plugin-jest@28.8.2(eslint@9.9.1)(typescript@5.5.4))(eslint@9.9.1)
+        version: 1.6.2(eslint-plugin-jest@28.8.3(eslint@9.9.1)(typescript@5.5.4))(eslint@9.9.1)
       eslint-plugin-react:
         specifier: 7.35.2
         version: 7.35.2(eslint@9.9.1)
@@ -1035,10 +1035,6 @@ packages:
     resolution: {integrity: sha512-Qh976RbQM/fYtjx9hs4XkayYujB/aPwglw2choHmf3zBjB4qOywWSdt9+KLRdHubGcoSwBnXUH2sR3hkyaERRg==}
     engines: {node: ^16.0.0 || >=18.0.0}
 
-  '@typescript-eslint/scope-manager@8.3.0':
-    resolution: {integrity: sha512-mz2X8WcN2nVu5Hodku+IR8GgCOl4C0G/Z1ruaWN4dgec64kDBabuXyPAr+/RgJtumv8EEkqIzf3X2U5DUKB2eg==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-
   '@typescript-eslint/scope-manager@8.4.0':
     resolution: {integrity: sha512-n2jFxLeY0JmKfUqy3P70rs6vdoPjHK8P/w+zJcV3fk0b0BwRXC/zxRTEnAsgYT7MwdQDt/ZEbtdzdVC+hcpF0A==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
@@ -1098,12 +1094,6 @@ packages:
     engines: {node: ^16.0.0 || >=18.0.0}
     peerDependencies:
       eslint: ^8.56.0
-
-  '@typescript-eslint/utils@8.3.0':
-    resolution: {integrity: sha512-F77WwqxIi/qGkIGOGXNBLV7nykwfjLsdauRB/DOFPdv6LTF3BHHkBpq81/b5iMPSF055oO2BiivDJV4ChvNtXA==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-    peerDependencies:
-      eslint: ^8.57.0 || ^9.0.0
 
   '@typescript-eslint/utils@8.4.0':
     resolution: {integrity: sha512-swULW8n1IKLjRAgciCkTCafyTHHfwVQFt8DovmaF69sKbOxTSFMmIZaSHjqO9i/RV0wIblaawhzvtva8Nmm7lQ==}
@@ -1836,8 +1826,8 @@ packages:
       '@testing-library/dom':
         optional: true
 
-  eslint-plugin-jest@28.8.2:
-    resolution: {integrity: sha512-mC3OyklHmS5i7wYU1rGId9EnxRI8TVlnFG56AE+8U9iRy6zwaNygZR+DsdZuCL0gRG0wVeyzq+uWcPt6yJrrMA==}
+  eslint-plugin-jest@28.8.3:
+    resolution: {integrity: sha512-HIQ3t9hASLKm2IhIOqnu+ifw7uLZkIlR7RYNv7fMcEi/p0CIiJmfriStQS2LDkgtY4nyLbIZAD+JL347Yc2ETQ==}
     engines: {node: ^16.10.0 || ^18.12.0 || >=20.0.0}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': ^6.0.0 || ^7.0.0 || ^8.0.0
@@ -1855,8 +1845,8 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9
 
-  eslint-plugin-perfectionist@3.3.0:
-    resolution: {integrity: sha512-sGgShkEqDBqIZ3WlenGHwLe1cl3vHKTfeh9b1XXAamaxSC7AY4Os0jdNCXnGJW4l0TlpismT5t2r7CXY7sfKlw==}
+  eslint-plugin-perfectionist@3.4.0:
+    resolution: {integrity: sha512-vXyd1sFg3H/7aKgBUie62bA6E0EN3Dh0LCD5r4vR/IYtTljxOnyckI1AV0Arw4eYjC/W9T1X04Pl2mdLsdWtMA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
       astro-eslint-parser: ^1.0.2
@@ -2779,10 +2769,6 @@ packages:
   mimic-response@3.1.0:
     resolution: {integrity: sha512-z0yWI+4FDrrweS8Zmt4Ej5HdJmky15+L2e6Wgn3+iK5fWzb6T3fhNFq2+MeTRb064c6Wr4N/wv0DzQTjNzHNGQ==}
     engines: {node: '>=10'}
-
-  minimatch@10.0.1:
-    resolution: {integrity: sha512-ethXTt3SGGR+95gudmqJ1eNhRO7eGEGIgYA9vnPatK4/etz2MEVDno5GMCibdMTuBMyElzIlgxMna3K94XDIDQ==}
-    engines: {node: 20 || >=22}
 
   minimatch@3.1.2:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
@@ -4824,11 +4810,6 @@ snapshots:
       '@typescript-eslint/types': 7.2.0
       '@typescript-eslint/visitor-keys': 7.2.0
 
-  '@typescript-eslint/scope-manager@8.3.0':
-    dependencies:
-      '@typescript-eslint/types': 8.3.0
-      '@typescript-eslint/visitor-keys': 8.3.0
-
   '@typescript-eslint/scope-manager@8.4.0':
     dependencies:
       '@typescript-eslint/types': 8.4.0
@@ -4906,17 +4887,6 @@ snapshots:
       '@typescript-eslint/typescript-estree': 8.3.0(typescript@5.5.4)
       eslint: 9.9.1
       semver: 7.6.3
-    transitivePeerDependencies:
-      - supports-color
-      - typescript
-
-  '@typescript-eslint/utils@8.3.0(eslint@9.9.1)(typescript@5.5.4)':
-    dependencies:
-      '@eslint-community/eslint-utils': 4.4.0(eslint@9.9.1)
-      '@typescript-eslint/scope-manager': 8.3.0
-      '@typescript-eslint/types': 8.3.0
-      '@typescript-eslint/typescript-estree': 8.3.0(typescript@5.5.4)
-      eslint: 9.9.1
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -5800,9 +5770,9 @@ snapshots:
       eslint: 9.9.1
       requireindex: 1.2.0
 
-  eslint-plugin-jest@28.8.2(eslint@9.9.1)(typescript@5.5.4):
+  eslint-plugin-jest@28.8.3(eslint@9.9.1)(typescript@5.5.4):
     dependencies:
-      '@typescript-eslint/utils': 8.3.0(eslint@9.9.1)(typescript@5.5.4)
+      '@typescript-eslint/utils': 8.4.0(eslint@9.9.1)(typescript@5.5.4)
       eslint: 9.9.1
     transitivePeerDependencies:
       - supports-color
@@ -5828,23 +5798,23 @@ snapshots:
       safe-regex-test: 1.0.3
       string.prototype.includes: 2.0.0
 
-  eslint-plugin-perfectionist@3.3.0(eslint@9.9.1)(typescript@5.5.4):
+  eslint-plugin-perfectionist@3.4.0(eslint@9.9.1)(typescript@5.5.4):
     dependencies:
-      '@typescript-eslint/types': 8.3.0
-      '@typescript-eslint/utils': 8.3.0(eslint@9.9.1)(typescript@5.5.4)
+      '@typescript-eslint/types': 8.4.0
+      '@typescript-eslint/utils': 8.4.0(eslint@9.9.1)(typescript@5.5.4)
       eslint: 9.9.1
-      minimatch: 10.0.1
+      minimatch: 9.0.5
       natural-compare-lite: 1.4.0
     transitivePeerDependencies:
       - supports-color
       - typescript
 
-  eslint-plugin-playwright@1.6.2(eslint-plugin-jest@28.8.2(eslint@9.9.1)(typescript@5.5.4))(eslint@9.9.1):
+  eslint-plugin-playwright@1.6.2(eslint-plugin-jest@28.8.3(eslint@9.9.1)(typescript@5.5.4))(eslint@9.9.1):
     dependencies:
       eslint: 9.9.1
       globals: 13.24.0
     optionalDependencies:
-      eslint-plugin-jest: 28.8.2(eslint@9.9.1)(typescript@5.5.4)
+      eslint-plugin-jest: 28.8.3(eslint@9.9.1)(typescript@5.5.4)
 
   eslint-plugin-react-hooks@4.6.2(eslint@9.9.1):
     dependencies:
@@ -6770,10 +6740,6 @@ snapshots:
   mimic-function@5.0.1: {}
 
   mimic-response@3.1.0: {}
-
-  minimatch@10.0.1:
-    dependencies:
-      brace-expansion: 2.0.1
 
   minimatch@3.1.2:
     dependencies:
