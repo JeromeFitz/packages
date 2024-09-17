@@ -58,7 +58,7 @@
     "lodash": "4.17.21",
     "semantic-release": "24.1.1",
     "syncpack": "13.0.0",
-    "tsup": "8.2.4",
+    "tsup": "8.3.0",
     "turbo": "2.1.2",
     "typescript": "5.6.2"
   },
