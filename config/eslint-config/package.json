@@ -55,7 +55,7 @@
     "@types/eslint__js": "8.42.3",
     "@types/lodash": "4.17.7",
     "lodash": "4.17.21",
-    "tailwindcss": "3.4.11",
+    "tailwindcss": "3.4.12",
     "typescript": "5.6.2"
   },
   "publishConfig": {
