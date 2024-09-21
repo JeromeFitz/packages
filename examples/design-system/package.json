@@ -30,7 +30,7 @@
     "@jeromefitz/date-fns-tz": "3.0.0-canary.8",
     "@jeromefitz/design-system": "workspace:*",
     "cmdk": "1.0.0",
-    "date-fns": "3.6.0",
+    "date-fns": "4.1.0",
     "framer-motion": "11.5.6",
     "next": "14.2.13",
     "next-themes": "0.3.0",

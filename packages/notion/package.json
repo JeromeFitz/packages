@@ -43,7 +43,7 @@
   "dependencies": {
     "@jeromefitz/date-fns-tz": "3.0.0-canary.8",
     "@notionhq/client": "2.2.15",
-    "date-fns": "3.6.0",
+    "date-fns": "4.1.0",
     "github-slugger": "2.0.0"
   },
   "devDependencies": {
