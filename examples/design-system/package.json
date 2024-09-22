@@ -27,7 +27,6 @@
   },
   "dependencies": {
     "@heroicons/react": "2.1.5",
-    "@jeromefitz/date-fns-tz": "3.0.0-canary.8",
     "@jeromefitz/design-system": "workspace:*",
     "cmdk": "1.0.0",
     "date-fns": "4.1.0",
