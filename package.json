@@ -56,7 +56,7 @@
     "is-ci": "3.0.1",
     "lint-staged": "15.2.10",
     "lodash": "4.17.21",
-    "semantic-release": "24.1.1",
+    "semantic-release": "24.1.2",
     "syncpack": "13.0.0",
     "tsup": "8.3.0",
     "turbo": "2.1.2",
