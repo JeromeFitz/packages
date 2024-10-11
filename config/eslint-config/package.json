@@ -44,7 +44,7 @@
     "eslint-plugin-perfectionist": "3.8.0",
     "eslint-plugin-playwright": "1.6.2",
     "eslint-plugin-react": "7.37.1",
-    "eslint-plugin-react-hooks": "4.6.2",
+    "eslint-plugin-react-hooks": "5.0.0",
     "eslint-plugin-storybook": "0.9.0",
     "eslint-plugin-tailwindcss": "3.17.5",
     "eslint-plugin-testing-library": "6.3.0",
