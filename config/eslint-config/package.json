@@ -30,11 +30,11 @@
   "dependencies": {
     "@babel/core": "7.25.8",
     "@babel/eslint-parser": "7.25.8",
-    "@eslint/compat": "1.2.0",
+    "@eslint/compat": "1.2.1",
     "@eslint/eslintrc": "3.1.0",
-    "@eslint/js": "9.12.0",
+    "@eslint/js": "9.13.0",
     "@next/eslint-plugin-next": "14.2.15",
-    "eslint": "9.12.0",
+    "eslint": "9.13.0",
     "eslint-config-next": "14.2.15",
     "eslint-config-turbo": "2.2.0",
     "eslint-plugin-import-x": "4.3.1",
@@ -47,7 +47,7 @@
     "eslint-plugin-react-hooks": "5.0.0",
     "eslint-plugin-storybook": "0.9.0",
     "eslint-plugin-tailwindcss": "3.17.5",
-    "eslint-plugin-testing-library": "6.3.2",
+    "eslint-plugin-testing-library": "6.4.0",
     "eslint-plugin-turbo": "2.2.0",
     "typescript-eslint": "8.10.0"
   },
