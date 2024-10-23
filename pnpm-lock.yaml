@@ -123,8 +123,8 @@ importers:
         specifier: 3.9.1
         version: 3.9.1(eslint@9.13.0)(typescript@5.6.3)
       eslint-plugin-playwright:
-        specifier: 1.8.1
-        version: 1.8.1(eslint-plugin-jest@28.8.3(eslint@9.13.0)(typescript@5.6.3))(eslint@9.13.0)
+        specifier: 2.0.0
+        version: 2.0.0(eslint@9.13.0)
       eslint-plugin-react:
         specifier: 7.37.1
         version: 7.37.1(eslint@9.13.0)
@@ -1965,15 +1965,11 @@ packages:
       vue-eslint-parser:
         optional: true
 
-  eslint-plugin-playwright@1.8.1:
-    resolution: {integrity: sha512-wzT8rUFOXN6ztRVHSAZI0QpQnxY7bbvcu2z+C/giy3zrkL8WlsFQCv7NillgLBhWnr7oZjC5Pax/GMAJmZlWHA==}
+  eslint-plugin-playwright@2.0.0:
+    resolution: {integrity: sha512-nPa44nSp48mp/U+GSneabrhlyIyGvrcv+Z14u6sgno+jX8N0bH+ooSLEC1L6dvMDSHs7tj+kMIbls3l8gCJJSg==}
     engines: {node: '>=16.6.0'}
     peerDependencies:
       eslint: '>=8.40.0'
-      eslint-plugin-jest: '>=25'
-    peerDependenciesMeta:
-      eslint-plugin-jest:
-        optional: true
 
   eslint-plugin-react-hooks@4.6.2:
     resolution: {integrity: sha512-QzliNJq4GinDBcD8gPB5v0wh6g8q3SUi6EFF0x8N/BL9PoVs0atuGc47ozMRyOWAKdwaZ5OnbOEa3WR+dSGKuQ==}
@@ -6031,12 +6027,10 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-plugin-playwright@1.8.1(eslint-plugin-jest@28.8.3(eslint@9.13.0)(typescript@5.6.3))(eslint@9.13.0):
+  eslint-plugin-playwright@2.0.0(eslint@9.13.0):
     dependencies:
       eslint: 9.13.0
       globals: 13.24.0
-    optionalDependencies:
-      eslint-plugin-jest: 28.8.3(eslint@9.13.0)(typescript@5.6.3)
 
   eslint-plugin-react-hooks@4.6.2(eslint@9.13.0):
     dependencies:
