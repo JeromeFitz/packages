@@ -24,7 +24,7 @@
   },
   "peerDependencies": {
     "@jeromefitz/jest-presets": "^1.0.0",
-    "next": "^14.0.0"
+    "next": "^15.0.0"
   },
   "dependencies": {
     "@testing-library/dom": "10.4.0",
@@ -37,10 +37,8 @@
   "devDependencies": {
     "@jeromefitz/jest-presets": "workspace:*",
     "@types/jest": "29.5.14",
-    "@types/react": "18.3.12",
-    "@types/react-dom": "18.3.1",
-    "next": "14.2.15",
-    "react": "18.3.1"
+    "next": "15.0.1",
+    "react": "19.0.0-rc-69d4b800-20241021"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
