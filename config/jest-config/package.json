@@ -24,7 +24,7 @@
   },
   "peerDependencies": {
     "@jeromefitz/jest-presets": "^1.0.0",
-    "next": "^14.0.0 || ^15.0.0"
+    "next": "^15.0.0"
   },
   "dependencies": {
     "@testing-library/dom": "10.4.0",
