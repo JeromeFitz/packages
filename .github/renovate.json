@@ -69,9 +69,10 @@
     },
     {
       "commitMessagePrefix": "⬆️  (deps)",
+      "enabled": false,
       "groupName": "react ⚛️ ",
       "groupSlug": "react",
-      "matchPackageNames": ["@types/react", "@types/react-dom", "react", "react-dom"]
+      "matchPackageNames": ["react", "react-dom"]
     },
     {
       "allowedVersions": "<21",
