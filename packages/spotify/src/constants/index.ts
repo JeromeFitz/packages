@@ -1,9 +1,7 @@
 const API_VERSION = 'v1'
 
 type Endpoint = 'ARTISTS' | 'NOW_PLAYING' | 'TOP_ARTISTS' | 'TOP_TRACKS'
-type EndPoints = {
-  [x in Endpoint]: string
-}
+type EndPoints = Record<Endpoint, string>
 
 const ENDPOINTS: EndPoints = {
   ARTISTS: `artists`,
@@ -13,9 +11,7 @@ const ENDPOINTS: EndPoints = {
 }
 
 type Url = 'BASE' | 'TOKEN'
-type Urls = {
-  [x in Url]: string
-}
+type Urls = Record<Url, string>
 const URL: Urls = {
   BASE: 'https://api.spotify.com',
   TOKEN: 'https://accounts.spotify.com/api/token',
@@ -28,7 +24,7 @@ const OMIT_FIELDS = ['album', 'artists', 'available_markets']
 
 // @todo(package.json) dynamic please
 const PACKAGE_NAME = '@jeromefitz/spotify'
-const PACKAGE_VERSION = '2.1.0'
+const PACKAGE_VERSION = '4.0.14'
 
 export {
   API_VERSION,
