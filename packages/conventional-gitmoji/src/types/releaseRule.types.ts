@@ -16,7 +16,5 @@ type IReleaseRuleProps = {
   value?: ICommit
 }
 
-type IReleaseRule = {
-  [key in ICommit]?: IReleaseRuleProps
-}
+type IReleaseRule = Partial<Record<ICommit, IReleaseRuleProps>>
 export type { IReleaseRule, IReleaseRuleProps }

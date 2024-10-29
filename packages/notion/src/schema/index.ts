@@ -11,34 +11,33 @@ type DatabaseType =
   | 'VENUES'
 
 type DataTypes = 'LISTING' | 'LISTING_BY_DATE' | 'SLUG' | 'SLUG_BY_ROUTE'
-type DataTypesObject = {
-  [id in DataTypes]: DataTypes
-}
+type DataTypesObject = Record<DataTypes, DataTypes>
 
-type DatabaseInfo = {
-  [key in DatabaseType]?: {
-    active: boolean
-    database_id: string
-    dataTypes: DataTypes[]
-    // @todo(next-notion) move to `isChild`
-    hasChild: null | string
-    infoType: any
-    isChild: null | string
-    // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
-    isChildInfoType: any | null
-    name: string
-    page_id__seo: string
-    routeMeta: boolean
-    routeType: string
-    skipStaticPaths: boolean
-    slug: string
-    ttl: number
-  }
-}
+type DatabaseInfo = Partial<
+  Record<
+    DatabaseType,
+    {
+      active: boolean
+      database_id: string
+      dataTypes: DataTypes[]
+      // @todo(next-notion) move to `isChild`
+      hasChild: null | string
+      infoType: any
+      isChild: null | string
+      // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
+      isChildInfoType: any | null
+      name: string
+      page_id__seo: string
+      routeMeta: boolean
+      routeType: string
+      skipStaticPaths: boolean
+      slug: string
+      ttl: number
+    }
+  >
+>
 
-type Databases = {
-  [key in DatabaseType]: DatabaseType
-}
+type Databases = Record<DatabaseType, DatabaseType>
 
 interface Relation {
   database_id: string
