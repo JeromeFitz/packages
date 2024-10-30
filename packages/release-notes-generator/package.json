@@ -44,7 +44,7 @@
     "semver": "7.6.3"
   },
   "devDependencies": {
-    "@types/lodash": "4.17.12",
+    "@types/lodash": "4.17.13",
     "lodash": "4.17.21"
   },
   "publishConfig": {
