@@ -37,7 +37,7 @@
   "devDependencies": {
     "@jeromefitz/jest-presets": "workspace:*",
     "@types/jest": "29.5.14",
-    "next": "15.0.1",
+    "next": "15.0.2",
     "react": "19.0.0-rc-69d4b800-20241021"
   },
   "publishConfig": {
