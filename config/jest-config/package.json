@@ -38,7 +38,7 @@
     "@jeromefitz/jest-presets": "workspace:*",
     "@types/jest": "29.5.14",
     "next": "15.0.3",
-    "react": "19.0.0-rc-45804af1-20241021"
+    "react": "19.0.0-rc-02c0e824-20241028"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
