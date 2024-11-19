@@ -39,11 +39,10 @@
     "@semantic-release/git": "10.0.1",
     "semantic-release": "24.2.0",
     "semantic-release-commit-filter": "1.0.2",
-    "title": "3.5.3"
+    "title": "4.0.0"
   },
   "devDependencies": {
-    "@jeromefitz/conventional-gitmoji": "workspace:*",
-    "@types/title": "3.4.3"
+    "@jeromefitz/conventional-gitmoji": "workspace:*"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
