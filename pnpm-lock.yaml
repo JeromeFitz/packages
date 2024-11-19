@@ -230,9 +230,6 @@ importers:
       '@types/lodash':
         specifier: 4.17.13
         version: 4.17.13
-      '@types/title':
-        specifier: 3.4.3
-        version: 3.4.3
       gitmojis:
         specifier: 3.14.0
         version: 3.14.0
@@ -326,9 +323,6 @@ importers:
       '@jeromefitz/conventional-gitmoji':
         specifier: workspace:*
         version: link:../conventional-gitmoji
-      '@types/title':
-        specifier: 3.4.3
-        version: 3.4.3
 
   packages/spotify:
     dependencies:
@@ -1004,9 +998,6 @@ packages:
 
   '@types/semver@7.5.8':
     resolution: {integrity: sha512-I8EUhyrgfLrcTkzV3TSsGyl1tSuPrEDzr0yd5m90UgNxQkyDXULk3b6MlQqTCpZpNtWe1K0hzclnZkTcLBe2UQ==}
-
-  '@types/title@3.4.3':
-    resolution: {integrity: sha512-mjupLOb4kwUuoUFokkacy/VMRVBH2qtqZ5AX7K7iha6+iKIkX80n/Y4EoNVEVRmer8dYJU/ry+fppUaDFVQh7Q==}
 
   '@typescript-eslint/eslint-plugin@8.14.0':
     resolution: {integrity: sha512-tqp8H7UWFaZj0yNO6bycd5YjMwxa6wIHOLZvWPkidwbgLCsBMetQoGj7DPuAlWa2yGO3H48xmPwjhsSPPCGU5w==}
@@ -4767,8 +4758,6 @@ snapshots:
   '@types/normalize-package-data@2.4.4': {}
 
   '@types/semver@7.5.8': {}
-
-  '@types/title@3.4.3': {}
 
   '@typescript-eslint/eslint-plugin@8.14.0(@typescript-eslint/parser@8.14.0(eslint@9.15.0)(typescript@5.6.3))(eslint@9.15.0)(typescript@5.6.3)':
     dependencies:
