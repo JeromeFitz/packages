@@ -1,18 +1,6 @@
-type DatabaseType =
-  | 'BLOG'
-  | 'BOOKS'
-  | 'EPISODES'
-  | 'EVENTS'
-  | 'PAGES'
-  | 'PEOPLE'
-  | 'PODCASTS'
-  | 'SEO'
-  | 'SHOWS'
-  | 'VENUES'
+type Blog = Record<string, BlogPost>
 
-type DataTypes = 'LISTING' | 'LISTING_BY_DATE' | 'SLUG' | 'SLUG_BY_ROUTE'
-type DataTypesObject = Record<DataTypes, DataTypes>
-
+type BlogPost = Default
 type DatabaseInfo = Partial<
   Record<
     DatabaseType,
@@ -39,45 +27,173 @@ type DatabaseInfo = Partial<
 
 type Databases = Record<DatabaseType, DatabaseType>
 
-interface Relation {
-  database_id: string
-  synced_property_id?: string
-  synced_property_name: string
-}
+type DatabaseType =
+  | 'BLOG'
+  | 'BOOKS'
+  | 'EPISODES'
+  | 'EVENTS'
+  | 'PAGES'
+  | 'PEOPLE'
+  | 'PODCASTS'
+  | 'SEO'
+  | 'SHOWS'
+  | 'VENUES'
 
+type DataTypes = 'LISTING' | 'LISTING_BY_DATE' | 'SLUG' | 'SLUG_BY_ROUTE'
+
+type DataTypesObject = Record<DataTypes, DataTypes>
+interface Default {
+  // authors: any
+  dateCreated?: any
+  dateEdited?: any
+  datePublished: any
+  isIndexed: any
+  isPublished: any
+  seoDescription: any
+  seoImage: any
+  seoImageDescription: any
+  seoKeywords: any
+  slug: any
+  title: any
+}
 type Direction = 'ascending' | 'descending'
-interface SortItem {
-  direction: Direction
-  property: string
-}
-interface SortMock {
-  filter?: any[]
-  sorts: SortItem[]
+
+interface Episode extends Default {
+  dateRecorded: any
+  duration: any
+  episode: any
+  mp3: any
+  relationEpisodes__People_Guest: any
+  relationEpisodes__People_Sound_Engineer: any
+  relationEpisodes__People_Thanks: any
+  relationEpisodes__Podcasts: any
+  relationEpisodes__Venues: any
+  // rollupEpisodes__People_Thanks: any
+  rollupEpisodes__Podcasts: any
+  // rollupEpisodes__People_Guest: any
+  // rollupEpisodes__People_Sound_Engineer: any
+  rollupEpisodes__PodcastsSlugs: any
+  season: any
+  // rollupEpisodes__Venues: any
+  socialApple: any
+  socialSpotify: any
+  type: any
 }
 
-type RollupFunction =
-  | 'average'
-  | 'count_all'
-  | 'count_empty'
-  | 'count_not_empty'
-  | 'count_unique_values'
-  | 'count_values'
-  | 'max'
-  | 'median'
-  | 'min'
-  | 'percent_empty'
-  | 'percent_not_empty'
-  | 'range'
-  | 'show_original'
-  | 'sum'
+type Episodes = Record<string, Episode>
 
-interface Rollup {
-  function?: RollupFunction
-  relation_property_id?: string
-  relation_property_name?: string
-  rollup_property_id?: string
-  rollup_property_name?: string
+interface Event extends Default {
+  dateEvent: any
+  relationEvents__People_Guest: any
+  relationEvents__People_Guest_Music: any
+  relationEvents__People_Host: any
+  relationEvents__Shows: any
+  relationEvents__Shows_Lineup: any
+  relationEvents__Venues: any
+  rollupEvents__People_Cast: any
+  rollupEvents__People_Guest: any
+  rollupEvents__People_Guest_Music: any
+  rollupEvents__People_Host: any
+  rollupEvents__Shows: any
+  rollupEvents__Shows_Lineup: any
+  rollupEvents__Venues: any
+  rollupLineup: any
+  rollupTags: any
+  rollupTagsSecondary: any
+  socialFacebook: any
+  socialWebsite: any
+  ticketUrl: any
 }
+
+type Events = Record<string, Event>
+
+interface NotionAnnotations {
+  bold: boolean
+  code: boolean
+  color: string
+  italic: boolean
+  strikethrough: boolean
+  underline: boolean
+}
+interface NotionBlock {
+  created_time: string
+  has_children: string
+  //
+  heading_1?: NotionText[]
+  heading_2?: NotionText[]
+  heading_3?: NotionText[]
+  heading_4?: NotionText[]
+  heading_5?: NotionText[]
+  heading_6?: NotionText[]
+  id: string
+  image?: NotionImage
+  last_edited_time: string
+  object: string
+  paragraph?: NotionText[]
+  type: string
+}
+
+interface NotionImage {
+  caption?: NotionText
+  external?: NotionUrl
+  file?: NotionUrl
+  type: string
+}
+interface NotionText {
+  annotations: NotionAnnotations
+  href: null | string
+  plain_text: string
+  text: NotionTextContent
+  type: string
+}
+interface NotionTextContent {
+  content: string
+  link: null | string
+}
+interface NotionUrl {
+  url: string
+}
+
+type Page = Default
+type Pages = Record<string, Page>
+type People = Record<string, Person>
+interface Person extends Default {
+  email: any
+  nameFirst: any
+  nameLast: any
+  namePreferred: any
+  relationPeople__Episodes_Guest: any
+  relationPeople__Episodes_Sound_Engineer: any
+  relationPeople__Episodes_Thanks: any
+  relationPeople__Events_Guest: any
+  relationPeople__Events_Guest_Music: any
+  relationPeople__Events_Host: any
+  relationPeople__Podcasts_Host: any
+  relationPeople__Podcasts_Sound_Engineer: any
+  relationPeople__Shows_Cast: any
+  relationPeople__Shows_Cast_Past: any
+  relationPeople__Shows_Director: any
+  relationPeople__Shows_Director_Musical: any
+  relationPeople__Shows_Director_Technical: any
+  relationPeople__Shows_Producer: any
+  relationPeople__Shows_Thanks: any
+  relationPeople__Shows_Writer: any
+}
+interface Podcast extends Default {
+  categories: any
+  explicit: any
+  podcastAuthor: any
+  podcastAuthorEmail: any
+  relationPodcasts__Episodes: any
+  relationPodcasts__People_Host: any
+  relationPodcasts__People_Sound_Engineer: any
+  rollupPodcasts__Episodes: any
+  rollupPodcasts__EpisodesSlugs: any
+  socialApple: any
+  socialSpotify: any
+  type: any
+}
+type Podcasts = Record<string, Podcast>
 
 interface Property {
   format?:
@@ -143,114 +259,37 @@ interface Property {
     | 'title'
     | 'url'
 }
-
-interface Default {
-  // authors: any
-  dateCreated?: any
-  dateEdited?: any
-  datePublished: any
-  isIndexed: any
-  isPublished: any
-  seoDescription: any
-  seoImage: any
-  seoImageDescription: any
-  seoKeywords: any
-  slug: any
-  title: any
+interface Relation {
+  database_id: string
+  synced_property_id?: string
+  synced_property_name: string
 }
-
-type BlogPost = Default
-type Blog = Record<string, BlogPost>
-
-interface Episode extends Default {
-  dateRecorded: any
-  duration: any
-  episode: any
-  mp3: any
-  relationEpisodes__People_Guest: any
-  relationEpisodes__People_Sound_Engineer: any
-  relationEpisodes__People_Thanks: any
-  relationEpisodes__Podcasts: any
-  relationEpisodes__Venues: any
-  // rollupEpisodes__People_Thanks: any
-  rollupEpisodes__Podcasts: any
-  // rollupEpisodes__People_Guest: any
-  // rollupEpisodes__People_Sound_Engineer: any
-  rollupEpisodes__PodcastsSlugs: any
-  season: any
-  // rollupEpisodes__Venues: any
-  socialApple: any
-  socialSpotify: any
-  type: any
+interface Rollup {
+  function?: RollupFunction
+  relation_property_id?: string
+  relation_property_name?: string
+  rollup_property_id?: string
+  rollup_property_name?: string
 }
-type Episodes = Record<string, Episode>
-interface Event extends Default {
-  dateEvent: any
-  relationEvents__People_Guest: any
-  relationEvents__People_Guest_Music: any
-  relationEvents__People_Host: any
-  relationEvents__Shows: any
-  relationEvents__Shows_Lineup: any
-  relationEvents__Venues: any
-  rollupEvents__People_Cast: any
-  rollupEvents__People_Guest: any
-  rollupEvents__People_Guest_Music: any
-  rollupEvents__People_Host: any
-  rollupEvents__Shows: any
-  rollupEvents__Shows_Lineup: any
-  rollupEvents__Venues: any
-  rollupLineup: any
-  rollupTags: any
-  rollupTagsSecondary: any
-  socialFacebook: any
-  socialWebsite: any
-  ticketUrl: any
-}
-type Events = Record<string, Event>
+type RollupFunction =
+  | 'average'
+  | 'count_all'
+  | 'count_empty'
+  | 'count_not_empty'
+  | 'count_unique_values'
+  | 'count_values'
+  | 'max'
+  | 'median'
+  | 'min'
+  | 'percent_empty'
+  | 'percent_not_empty'
+  | 'range'
+  | 'show_original'
+  | 'sum'
 
-type Page = Default
-type Pages = Record<string, Page>
-interface Person extends Default {
-  email: any
-  nameFirst: any
-  nameLast: any
-  namePreferred: any
-  relationPeople__Episodes_Guest: any
-  relationPeople__Episodes_Sound_Engineer: any
-  relationPeople__Episodes_Thanks: any
-  relationPeople__Events_Guest: any
-  relationPeople__Events_Guest_Music: any
-  relationPeople__Events_Host: any
-  relationPeople__Podcasts_Host: any
-  relationPeople__Podcasts_Sound_Engineer: any
-  relationPeople__Shows_Cast: any
-  relationPeople__Shows_Cast_Past: any
-  relationPeople__Shows_Director: any
-  relationPeople__Shows_Director_Musical: any
-  relationPeople__Shows_Director_Technical: any
-  relationPeople__Shows_Producer: any
-  relationPeople__Shows_Thanks: any
-  relationPeople__Shows_Writer: any
-}
-type People = Record<string, Person>
-interface Podcast extends Default {
-  categories: any
-  explicit: any
-  podcastAuthor: any
-  podcastAuthorEmail: any
-  relationPodcasts__Episodes: any
-  relationPodcasts__People_Host: any
-  relationPodcasts__People_Sound_Engineer: any
-  rollupPodcasts__Episodes: any
-  rollupPodcasts__EpisodesSlugs: any
-  socialApple: any
-  socialSpotify: any
-  type: any
-}
-type Podcasts = Record<string, Podcast>
-
-type SeoPost = Default
 type Seo = Record<string, SeoPost>
+type SeoPost = Default
+
 interface Show extends Default {
   relationShows__Events: any
   relationShows__Events_Lineup: any
@@ -281,7 +320,18 @@ interface Show extends Default {
   socialTwitter: string
   socialWebsite: string
 }
+
 type Shows = Record<string, Show>
+
+interface SortItem {
+  direction: Direction
+  property: string
+}
+
+interface SortMock {
+  filter?: any[]
+  sorts: SortItem[]
+}
 
 interface Venue extends Default {
   addressCity: any
@@ -299,58 +349,8 @@ interface Venue extends Default {
   socialTwitter: any
   socialWebsite: any
 }
+
 type Venues = Record<string, Venue>
-
-interface NotionAnnotations {
-  bold: boolean
-  code: boolean
-  color: string
-  italic: boolean
-  strikethrough: boolean
-  underline: boolean
-}
-
-interface NotionTextContent {
-  content: string
-  link: null | string
-}
-
-interface NotionText {
-  annotations: NotionAnnotations
-  href: null | string
-  plain_text: string
-  text: NotionTextContent
-  type: string
-}
-
-interface NotionUrl {
-  url: string
-}
-
-interface NotionImage {
-  caption?: NotionText
-  external?: NotionUrl
-  file?: NotionUrl
-  type: string
-}
-
-interface NotionBlock {
-  created_time: string
-  has_children: string
-  //
-  heading_1?: NotionText[]
-  heading_2?: NotionText[]
-  heading_3?: NotionText[]
-  heading_4?: NotionText[]
-  heading_5?: NotionText[]
-  heading_6?: NotionText[]
-  id: string
-  image?: NotionImage
-  last_edited_time: string
-  object: string
-  paragraph?: NotionText[]
-  type: string
-}
 
 export type {
   Blog,

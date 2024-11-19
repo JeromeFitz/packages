@@ -6,8 +6,8 @@ import type {
 } from './index.js'
 
 interface PluginOptions
-  extends GitPluginOptions,
-    GithubPluginOptions,
+  extends GithubPluginOptions,
+    GitPluginOptions,
     NPMPluginOptions {
   enableGit?: boolean
   enableGithub?: boolean
