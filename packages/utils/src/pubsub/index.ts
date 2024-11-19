@@ -1,11 +1,11 @@
 // swr-esque
 import _isArray from 'lodash/isArray.js'
 
+type Callback = (data?: any) => void
+
 interface Unsubscribe {
   unsubscribe(): void
 }
-
-type Callback = (data?: any) => void
 
 const pubsub = () => {
   const subscribers: Record<string, Callback[]> = {}

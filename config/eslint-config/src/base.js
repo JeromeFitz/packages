@@ -43,8 +43,8 @@ const configBase = [
           customGroups: {
             type: {},
             value: {
-              jeromefitz: '@jeromefitz/**',
-              'jeromefitz-type': '@jeromefitz/**',
+              jeromefitz: '^@jeromefitz/.*$',
+              'jeromefitz-type': '^@jeromefitz/.*$',
               'server-only': 'server-only',
             },
           },
@@ -64,7 +64,7 @@ const configBase = [
             'object',
             'unknown',
           ],
-          internalPattern: ['@/**', '~**/**'],
+          internalPattern: ['^@/.*$', '^~.*/.*$'],
           newlinesBetween: 'always',
           order: 'asc',
           type: 'natural',

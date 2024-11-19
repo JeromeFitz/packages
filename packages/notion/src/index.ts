@@ -17,6 +17,13 @@ import {
 
 // @todo(NICE-129) eslint
 // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+type ClientProps = {
+  custom: CustomProps
+  dataTypes: DataTypesProps
+}
+
+// @todo(NICE-129) eslint
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 type CredentialProps = {
   auth: string
   config: any
@@ -41,13 +48,6 @@ type DataTypesProps = {
   LISTING_BY_DATE: any
   SLUG: any
   SLUG_BY_ROUTE: any
-}
-
-// @todo(NICE-129) eslint
-// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
-type ClientProps = {
-  custom: CustomProps
-  dataTypes: DataTypesProps
 }
 
 class Client extends _Client {

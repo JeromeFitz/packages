@@ -19,60 +19,6 @@ import {
   URL,
 } from './constants/index.js'
 
-type TimeRangeProps = 'long_term' | 'medium_term' | 'short_term'
-
-// type PlaiceholderImage = {
-//   base64: string
-//   img: { src: string; height: number; width: number; type?: string | undefined }
-//   slug: string
-//   url: string
-// }
-
-interface QueryProps {
-  ids?: string
-  limit?: number
-  offset?: number
-  time_range?: TimeRangeProps
-  withImages?: boolean
-}
-
-interface CredentialProps {
-  clientId: string
-  clientSecret: string
-  refreshToken: string
-}
-
-interface NowPlayingProps {
-  withImages?: boolean
-}
-
-// @todo(NICE-129) eslint
-// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
-type GetProps = {
-  nowPlaying({ withImages }: NowPlayingProps): any
-  topArtists({ limit, offset, time_range, withImages }: QueryProps): any
-  topTracks({ limit, offset, time_range, withImages }: QueryProps): any
-}
-
-// @todo(NICE-129) eslint
-// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
-type ClientProps = {
-  get: GetProps
-}
-
-type Method = 'DELETE' | 'GET' | 'PATCH' | 'POST'
-type QueryParams = Record<string, number | string> | URLSearchParams
-
-type WithAccessToken<P> = { accessToken?: string } & P
-
-export interface RequestParameters {
-  accessToken?: string
-  body?: Record<string, unknown>
-  method: Method
-  path: string
-  query?: QueryParams
-}
-
 // @todo(types)
 export interface ClientOptions {
   accessToken: string
@@ -86,23 +32,63 @@ export interface ClientOptions {
   spotifyVersion?: string
   timeoutMs?: number
 }
+
+// type PlaiceholderImage = {
+//   base64: string
+//   img: { src: string; height: number; width: number; type?: string | undefined }
+//   slug: string
+//   url: string
+// }
+
+export interface RequestParameters {
+  accessToken?: string
+  body?: Record<string, unknown>
+  method: Method
+  path: string
+  query?: QueryParams
+}
+
+// @todo(NICE-129) eslint
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+type ClientProps = {
+  get: GetProps
+}
+
+interface CredentialProps {
+  clientId: string
+  clientSecret: string
+  refreshToken: string
+}
+
+// @todo(NICE-129) eslint
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+type GetProps = {
+  nowPlaying({ withImages }: NowPlayingProps): any
+  topArtists({ limit, offset, time_range, withImages }: QueryProps): any
+  topTracks({ limit, offset, time_range, withImages }: QueryProps): any
+}
+
+type Method = 'DELETE' | 'GET' | 'PATCH' | 'POST'
+
+interface NowPlayingProps {
+  withImages?: boolean
+}
+type QueryParams = Record<string, number | string> | URLSearchParams
+
+interface QueryProps {
+  ids?: string
+  limit?: number
+  offset?: number
+  time_range?: TimeRangeProps
+  withImages?: boolean
+}
+
+type TimeRangeProps = 'long_term' | 'medium_term' | 'short_term'
+
+type WithAccessToken<P> = P & { accessToken?: string }
 // @todo(types)
 class Client {
   static readonly defaultSpotifyVersion = API_VERSION
-  #accessToken: string
-  #agent: Agent | undefined
-  //
-  #clientId: string
-  #clientSecret: string
-  #fetch: any
-  #prefixUrl: string
-  #refreshToken: string
-  // @todo(NICE-129) eslint
-  // eslint-disable-next-line no-unused-private-class-members
-  #spotifyVersion: string
-
-  #userAgent: string
-
   // @todo(types)
   public readonly get: GetProps = {
     // @todo(types)
@@ -163,6 +149,20 @@ class Client {
       })
     },
   }
+  #accessToken: string
+  #agent: Agent | undefined
+  //
+  #clientId: string
+  #clientSecret: string
+  #fetch: any
+  #prefixUrl: string
+  #refreshToken: string
+
+  // @todo(NICE-129) eslint
+  // eslint-disable-next-line no-unused-private-class-members
+  #spotifyVersion: string
+
+  #userAgent: string
 
   public constructor(options: ClientOptions) {
     this.#prefixUrl =
@@ -176,6 +176,75 @@ class Client {
     this.#clientSecret = options?.clientSecret
     this.#refreshToken = options?.refreshToken
     this.#accessToken = options?.accessToken ?? ''
+  }
+
+  // @todo(types)
+  public async request({
+    accessToken,
+    body,
+    method,
+    path,
+    query,
+  }: any): Promise<any> {
+    // @todo(logging) INFO => request start
+    const bodyAsJsonString =
+      !body || Object.entries(body).length === 0 ? undefined : JSON.stringify(body)
+
+    const url = new _URL(`${this.#prefixUrl}${path}`)
+    if (query) {
+      for (const [key, value] of Object.entries(query)) {
+        if (value !== undefined) {
+          url.searchParams.append(key, String(value))
+        }
+      }
+    }
+
+    const accessTokenHeader = await this.accessTokenAsHeaders(accessToken)
+    const headers: any = {
+      ...accessTokenHeader,
+      // 'Spotify-Version': this.#spotifyVersion,
+      'user-agent': this.#userAgent,
+    }
+
+    if (bodyAsJsonString !== undefined) {
+      headers['content-type'] = 'application/json'
+    }
+
+    // @todo(NICE-129) eslint
+    // eslint-disable-next-line no-useless-catch
+    try {
+      // @todo(timeout)
+      const response = await this.#fetch(url.toString(), {
+        agent: this.#agent,
+        body: bodyAsJsonString,
+        headers,
+        method,
+      })
+
+      /**
+       * @todo(error-handling)
+       * 204  = No Content
+       * 400+ = Server Issue, Gracefull Fallback w/in Application
+       */
+      if (response?.status === 204 || response?.status > 400) {
+        // @todo(logging) buildRequestError(response, responseText)
+        return { status: response?.status }
+      }
+
+      // @todo(logging) INFO => request success
+      return await response.json()
+    } catch (error: unknown) {
+      // if (!isSpotifyClientError(error)) {
+      //   throw error
+      // }
+
+      // @todo(logging) WARN => request fail
+      // if (isHTTPResponseError(error)) {
+      //   // @todo(logging) DEBUG => response fail
+      // }
+
+      throw error
+    }
   }
 
   // @todo(types)
@@ -328,75 +397,6 @@ class Client {
     return {
       ...data,
       items,
-    }
-  }
-
-  // @todo(types)
-  public async request({
-    accessToken,
-    body,
-    method,
-    path,
-    query,
-  }: any): Promise<any> {
-    // @todo(logging) INFO => request start
-    const bodyAsJsonString =
-      !body || Object.entries(body).length === 0 ? undefined : JSON.stringify(body)
-
-    const url = new _URL(`${this.#prefixUrl}${path}`)
-    if (query) {
-      for (const [key, value] of Object.entries(query)) {
-        if (value !== undefined) {
-          url.searchParams.append(key, String(value))
-        }
-      }
-    }
-
-    const accessTokenHeader = await this.accessTokenAsHeaders(accessToken)
-    const headers: any = {
-      ...accessTokenHeader,
-      // 'Spotify-Version': this.#spotifyVersion,
-      'user-agent': this.#userAgent,
-    }
-
-    if (bodyAsJsonString !== undefined) {
-      headers['content-type'] = 'application/json'
-    }
-
-    // @todo(NICE-129) eslint
-    // eslint-disable-next-line no-useless-catch
-    try {
-      // @todo(timeout)
-      const response = await this.#fetch(url.toString(), {
-        agent: this.#agent,
-        body: bodyAsJsonString,
-        headers,
-        method,
-      })
-
-      /**
-       * @todo(error-handling)
-       * 204  = No Content
-       * 400+ = Server Issue, Gracefull Fallback w/in Application
-       */
-      if (response?.status === 204 || response?.status > 400) {
-        // @todo(logging) buildRequestError(response, responseText)
-        return { status: response?.status }
-      }
-
-      // @todo(logging) INFO => request success
-      return await response.json()
-    } catch (error: unknown) {
-      // if (!isSpotifyClientError(error)) {
-      //   throw error
-      // }
-
-      // @todo(logging) WARN => request fail
-      // if (isHTTPResponseError(error)) {
-      //   // @todo(logging) DEBUG => response fail
-      // }
-
-      throw error
     }
   }
 }
