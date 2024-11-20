@@ -38,7 +38,7 @@
   "dependencies": {
     "fast-json-stable-stringify": "2.1.0",
     "grapheme-splitter": "1.0.4",
-    "title": "4.0.0"
+    "title": "4.0.1"
   },
   "devDependencies": {
     "@types/lodash": "4.17.13",
