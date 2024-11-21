@@ -108,8 +108,8 @@ importers:
         specifier: 2.3.0
         version: 2.3.0(eslint@9.15.0)
       eslint-plugin-import-x:
-        specifier: 4.4.2
-        version: 4.4.2(eslint@9.15.0)(typescript@5.6.3)
+        specifier: 4.4.3
+        version: 4.4.3(eslint@9.15.0)(typescript@5.6.3)
       eslint-plugin-jest:
         specifier: 28.9.0
         version: 28.9.0(eslint@9.15.0)(typescript@5.6.3)
@@ -138,8 +138,8 @@ importers:
         specifier: 3.17.5
         version: 3.17.5(tailwindcss@3.4.15)
       eslint-plugin-testing-library:
-        specifier: 6.4.0
-        version: 6.4.0(eslint@9.15.0)(typescript@5.6.3)
+        specifier: 6.5.0
+        version: 6.5.0(eslint@9.15.0)(typescript@5.6.3)
       eslint-plugin-turbo:
         specifier: 2.3.0
         version: 2.3.0(eslint@9.15.0)
@@ -1803,8 +1803,8 @@ packages:
       eslint-import-resolver-webpack:
         optional: true
 
-  eslint-plugin-import-x@4.4.2:
-    resolution: {integrity: sha512-mDRXPSLQ0UQZQw91QdG4/qZT6hgeW2MJTczAbgPseUZuPEtIjjdPOolXroRkulnOn3fzj6gNgvk+wchMJiHElg==}
+  eslint-plugin-import-x@4.4.3:
+    resolution: {integrity: sha512-QBprHvhLsfDhP++2T1NnjsOUt6bLDX3NMHaYwAB1FD3xmYTkdFH+HS1OamGhz28jLkRyIZa6UNAzTxbHnJwz5w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0
@@ -1884,8 +1884,8 @@ packages:
     peerDependencies:
       tailwindcss: ^3.4.0
 
-  eslint-plugin-testing-library@6.4.0:
-    resolution: {integrity: sha512-yeWF+YgCgvNyPNI9UKnG0FjeE2sk93N/3lsKqcmR8dSfeXJwFT5irnWo7NjLf152HkRzfoFjh3LsBUrhvFz4eA==}
+  eslint-plugin-testing-library@6.5.0:
+    resolution: {integrity: sha512-Ls5TUfLm5/snocMAOlofSOJxNN0aKqwTlco7CrNtMjkTdQlkpSMaeTCDHCuXfzrI97xcx2rSCNeKeJjtpkNC1w==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0, npm: '>=6'}
     peerDependencies:
       eslint: ^7.5.0 || ^8.0.0 || ^9.0.0
@@ -5653,7 +5653,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import-x@4.4.2(eslint@9.15.0)(typescript@5.6.3):
+  eslint-plugin-import-x@4.4.3(eslint@9.15.0)(typescript@5.6.3):
     dependencies:
       '@typescript-eslint/utils': 8.15.0(eslint@9.15.0)(typescript@5.6.3)
       debug: 4.3.7
@@ -5789,7 +5789,7 @@ snapshots:
       postcss: 8.4.38
       tailwindcss: 3.4.15
 
-  eslint-plugin-testing-library@6.4.0(eslint@9.15.0)(typescript@5.6.3):
+  eslint-plugin-testing-library@6.5.0(eslint@9.15.0)(typescript@5.6.3):
     dependencies:
       '@typescript-eslint/utils': 5.62.0(eslint@9.15.0)(typescript@5.6.3)
       eslint: 9.15.0
