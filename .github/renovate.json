@@ -1,6 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [":semanticCommitsDisabled"],
+  "automerge": false,
   "baseBranches": ["main"],
   "branchPrefix": "deps/",
   "commitMessage": "{{{commitMessagePrefix}}} {{{commitMessageAction}}} {{{commitMessageTopic}}} {{{commitMessageExtra}}} {{{commitMessageSuffix}}}",
@@ -101,6 +102,12 @@
         "🛑️ Do Not Merge"
       ],
       "reviewers": ["JeromeFitz"]
+    },
+    {
+      "automerge": true,
+      "automergeStrategy": "squash",
+      "automergeType": "pr",
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"]
     }
   ],
   "prBodyColumns": ["Package", "Update", "Type", "Change"],
