@@ -5,7 +5,6 @@ import { fileURLToPath } from 'url'
  * @todo(eslint) cycle through each one until we are good to go back to: react
  */
 import { configReactDefault } from '@jeromefitz/eslint-config/src/react.js'
-
 // import { configE2EDefault } from '@jeromefitz/eslint-config/src/e2e.js'
 // import { configJestDefault } from '@jeromefitz/eslint-config/src/jest.js'
 // import { configNextDefault } from '@jeromefitz/eslint-config/src/next.js'
