@@ -48,8 +48,8 @@ importers:
         specifier: workspace:*
         version: link:packages/ccommit
       dotenv:
-        specifier: 16.4.6
-        version: 16.4.6
+        specifier: 16.4.7
+        version: 16.4.7
       husky:
         specifier: 9.1.7
         version: 9.1.7
@@ -1678,8 +1678,8 @@ packages:
     resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
     engines: {node: '>=12'}
 
-  dotenv@16.4.6:
-    resolution: {integrity: sha512-JhcR/+KIjkkjiU8yEpaB/USlzVi3i5whwOjpIRNGi9svKEXZSe+Qp6IWAjFjv+2GViAoDRCUv/QLNziQxsLqDg==}
+  dotenv@16.4.7:
+    resolution: {integrity: sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ==}
     engines: {node: '>=12'}
 
   duplexer2@0.1.4:
@@ -5466,7 +5466,7 @@ snapshots:
 
   dotenv@16.0.3: {}
 
-  dotenv@16.4.6: {}
+  dotenv@16.4.7: {}
 
   duplexer2@0.1.4:
     dependencies:
