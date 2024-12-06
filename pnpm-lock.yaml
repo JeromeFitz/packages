@@ -129,8 +129,8 @@ importers:
         specifier: 7.37.2
         version: 7.37.2(eslint@9.16.0)
       eslint-plugin-react-hooks:
-        specifier: 5.0.0
-        version: 5.0.0(eslint@9.16.0)
+        specifier: 5.1.0
+        version: 5.1.0(eslint@9.16.0)
       eslint-plugin-storybook:
         specifier: 0.11.1
         version: 0.11.1(eslint@9.16.0)(typescript@5.7.2)
@@ -1872,8 +1872,8 @@ packages:
     peerDependencies:
       eslint: '>=8.40.0'
 
-  eslint-plugin-react-hooks@5.0.0:
-    resolution: {integrity: sha512-hIOwI+5hYGpJEc4uPRmz2ulCjAGD/N13Lukkh8cLV0i2IRk/bdZDYjgLVHj+U9Z704kLIdIO6iueGvxNur0sgw==}
+  eslint-plugin-react-hooks@5.1.0:
+    resolution: {integrity: sha512-mpJRtPgHN2tNAvZ35AMfqeB3Xqeo273QxrHJsbBEPWODRM4r0yB6jfoROqKEYrOn27UtRPpcpHc2UqyBSuUNTw==}
     engines: {node: '>=10'}
     peerDependencies:
       eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || ^9.0.0
@@ -5621,7 +5621,7 @@ snapshots:
       eslint-plugin-import: 2.31.0(@typescript-eslint/parser@8.14.0(eslint@9.16.0)(typescript@5.7.2))(eslint-import-resolver-typescript@3.6.1)(eslint@9.16.0)
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.16.0)
       eslint-plugin-react: 7.37.2(eslint@9.16.0)
-      eslint-plugin-react-hooks: 5.0.0(eslint@9.16.0)
+      eslint-plugin-react-hooks: 5.1.0(eslint@9.16.0)
     optionalDependencies:
       typescript: 5.7.2
     transitivePeerDependencies:
@@ -5764,7 +5764,7 @@ snapshots:
       eslint: 9.16.0
       globals: 13.24.0
 
-  eslint-plugin-react-hooks@5.0.0(eslint@9.16.0):
+  eslint-plugin-react-hooks@5.1.0(eslint@9.16.0):
     dependencies:
       eslint: 9.16.0
 
