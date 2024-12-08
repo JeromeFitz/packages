@@ -32,14 +32,14 @@
     "semantic-release:dry": "semantic-release --dry-run"
   },
   "peerDependencies": {
-    "is-ci": "^3.0.1"
+    "is-ci": "^3.0.1 || ^4.0.0"
   },
   "dependencies": {
     "lint-staged": "15.2.10",
     "micromatch": "4.0.8"
   },
   "devDependencies": {
-    "is-ci": "3.0.1"
+    "is-ci": "4.1.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"

@@ -57,7 +57,7 @@
     "meow": "13.2.0"
   },
   "devDependencies": {
-    "is-ci": "3.0.1",
+    "is-ci": "4.1.0",
     "pkg": "5.8.1"
   },
   "publishConfig": {
