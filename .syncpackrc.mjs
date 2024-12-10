@@ -9,7 +9,7 @@ const config = {
   lintFormatting: false,
   semverGroups: [
     {
-      dependencies: ['@typescript-eslint/typescript-estree'],
+      dependencies: ['@typescript-eslint/typescript-estree', 'nanoid*'],
       isIgnored: true,
     },
     {
