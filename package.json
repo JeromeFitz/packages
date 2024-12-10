@@ -48,7 +48,6 @@
     "@jeromefitz/release-notes-generator": "workspace:*",
     "@jeromefitz/semantic": "workspace:*",
     "@jeromefitz/tsconfig": "workspace:*",
-    "@types/is-ci": "3.0.4",
     "@types/node": "20.17.9",
     "ccommit": "workspace:*",
     "dotenv": "16.4.7",
