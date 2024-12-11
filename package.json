@@ -48,7 +48,7 @@
     "@jeromefitz/release-notes-generator": "workspace:*",
     "@jeromefitz/semantic": "workspace:*",
     "@jeromefitz/tsconfig": "workspace:*",
-    "@types/node": "20.17.9",
+    "@types/node": "20.17.10",
     "ccommit": "workspace:*",
     "dotenv": "16.4.7",
     "husky": "9.1.7",
