@@ -5,7 +5,7 @@ author: 'JeromeFitz'
 
 inputs:
   node-version:
-    default: '20'
+    default: '22'
     description: '🔢  Node version'
     required: true
 
