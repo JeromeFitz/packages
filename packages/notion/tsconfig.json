@@ -8,9 +8,9 @@
     "strict": true,
     "target": "ESNext",
     "outDir": "./dist",
-    "rootDir": "./src",
+    "rootDir": "./src"
   },
-  "extends": "@jeromefitz/tsconfig/src/node20.json",
+  "extends": "@jeromefitz/tsconfig/src/node22.json",
   "include": ["src"],
-  "exclude": ["node_modules", "release.config.js"],
+  "exclude": ["node_modules", "release.config.js"]
 }
