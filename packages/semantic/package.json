@@ -35,7 +35,7 @@
     "@jeromefitz/conventional-gitmoji": "^4.0.0"
   },
   "dependencies": {
-    "@semantic-release/commit-analyzer": "13.0.0",
+    "@semantic-release/commit-analyzer": "13.0.1",
     "@semantic-release/git": "10.0.1",
     "semantic-release": "24.2.1",
     "semantic-release-commit-filter": "1.0.2",
