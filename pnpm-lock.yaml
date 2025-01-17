@@ -11,7 +11,7 @@ overrides:
 
 patchedDependencies:
   '@semantic-release/commit-analyzer@13.0.1':
-    hash: 4ldj247mh3etpypyayklcqtkvm
+    hash: 12f29c0334ee55892c4c4d3dc4d9e1f0f18476656fb8c3c462a6203bc740493b
     path: patches/@semantic-release__commit-analyzer@13.0.0.patch
 
 importers:
@@ -304,7 +304,7 @@ importers:
     dependencies:
       '@semantic-release/commit-analyzer':
         specifier: 13.0.1
-        version: 13.0.1(patch_hash=4ldj247mh3etpypyayklcqtkvm)(semantic-release@24.2.1(typescript@5.7.3))
+        version: 13.0.1(patch_hash=12f29c0334ee55892c4c4d3dc4d9e1f0f18476656fb8c3c462a6203bc740493b)(semantic-release@24.2.1(typescript@5.7.3))
       '@semantic-release/git':
         specifier: 10.0.1
         version: 10.0.1(semantic-release@24.2.1(typescript@5.7.3))
@@ -4841,7 +4841,7 @@ snapshots:
 
   '@sec-ant/readable-stream@0.4.1': {}
 
-  '@semantic-release/commit-analyzer@13.0.1(patch_hash=4ldj247mh3etpypyayklcqtkvm)(semantic-release@24.2.1(typescript@5.7.3))':
+  '@semantic-release/commit-analyzer@13.0.1(patch_hash=12f29c0334ee55892c4c4d3dc4d9e1f0f18476656fb8c3c462a6203bc740493b)(semantic-release@24.2.1(typescript@5.7.3))':
     dependencies:
       conventional-changelog-angular: 8.0.0
       conventional-changelog-writer: 8.0.0
@@ -7756,7 +7756,7 @@ snapshots:
 
   semantic-release@24.2.1(typescript@5.7.3):
     dependencies:
-      '@semantic-release/commit-analyzer': 13.0.1(patch_hash=4ldj247mh3etpypyayklcqtkvm)(semantic-release@24.2.1(typescript@5.7.3))
+      '@semantic-release/commit-analyzer': 13.0.1(patch_hash=12f29c0334ee55892c4c4d3dc4d9e1f0f18476656fb8c3c462a6203bc740493b)(semantic-release@24.2.1(typescript@5.7.3))
       '@semantic-release/error': 4.0.0
       '@semantic-release/github': 11.0.0(semantic-release@24.2.1(typescript@5.7.3))
       '@semantic-release/npm': 12.0.1(semantic-release@24.2.1(typescript@5.7.3))
