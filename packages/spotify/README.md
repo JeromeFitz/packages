@@ -3,6 +3,7 @@
 Custom API for [`jeromefitzgerald.com/music`](https://jeromefitzgerald.com/music).
 
 - `nowPlaying`: Current Track
+- `recentlyPlayed`: Recently Played
 - `topArtists`: Top Artists
 - `topTracks`: Top Tracks
 
@@ -33,6 +34,7 @@ This will get the Authorization Token for the Bearer and consistently apply for 
 Following functions are exposed via `spotify.get.*`:
 
 - `nowPlaying`: Current Track
+- `recentlyPlayed`: Recently Played
 - `topArtists`: Top Artists
 - `topTracks`: Top Tracks
 
@@ -58,6 +60,7 @@ For a `track` we create an `artist` key that maps across all available `artists[
 If this is passed we dynamically use `plaiceholder` to add an `image` key to:
 
 - `nowPlaying`: `album`
+- `recentlyPlayed`: `album`
 - `topArtists`: `artist`
 - `topTracks`: `album`
 
