@@ -64,7 +64,7 @@ interface CredentialProps {
 // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 type GetProps = {
   nowPlaying({ withImages }: NowPlayingProps): any
-  recentlyPlayed({ after, before, limit, withImages }: RecentlyPlayedProps): any
+  recentlyPlayed({ limit, withImages }: RecentlyPlayedProps): any
   topArtists({ limit, offset, time_range, withImages }: QueryProps): any
   topTracks({ limit, offset, time_range, withImages }: QueryProps): any
 }
@@ -371,34 +371,40 @@ class Client {
     if (!data) return { status: 404 }
     const items: any[] = []
     await asyncForEach(data.items, async (item: any) => {
-      const { album: _album, artists } = item
-      const track = _omit(item, OMIT_FIELDS)
-      const album = _omit(_album, OMIT_FIELDS)
+      const track = _omit(item.track, OMIT_FIELDS)
+      const { played_at } = item
+      const { album: _album, artists } = item.track
+      const album: any = _omit(_album, OMIT_FIELDS)
       const artist = artists.map(({ name }) => name).join(', ')
       const genres = await this.getArtistsGenres({
         ids: artists.map(({ id }) => id).join(','),
       })
+      items.push({
+        // ...item,
+        album,
+        artist,
+        artists,
+        genres,
+        played_at,
+        ...track,
+      })
+    }).catch(_noop)
 
-      let image = {}
-      if (withImages) {
-        const url = item?.album?.images[0].url
+    if (withImages) {
+      await asyncForEach(items, async (item: any, itemIndex: number) => {
+        const album: any = item?.album
+        const url = album?.images[0].url
         const { getImage } = await import('./utils/index.js')
-        image = await getImage(url)
-      }
-
-      return {
-        ...data,
-        item: {
-          ...track,
+        const image = await getImage(url)
+        items[itemIndex] = {
+          ...item,
           album: {
             ...album,
             image,
           },
-          artist,
-          genres,
-        },
-      }
-    }).catch(_noop)
+        }
+      }).catch(_noop)
+    }
 
     return {
       ...data,
