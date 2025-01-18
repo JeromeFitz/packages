@@ -64,6 +64,7 @@ interface CredentialProps {
 // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 type GetProps = {
   nowPlaying({ withImages }: NowPlayingProps): any
+  recentlyPlayed({ limit, withImages }: RecentlyPlayedProps): any
   topArtists({ limit, offset, time_range, withImages }: QueryProps): any
   topTracks({ limit, offset, time_range, withImages }: QueryProps): any
 }
@@ -73,6 +74,7 @@ type Method = 'DELETE' | 'GET' | 'PATCH' | 'POST'
 interface NowPlayingProps {
   withImages?: boolean
 }
+
 type QueryParams = Record<string, number | string> | URLSearchParams
 
 interface QueryProps {
@@ -80,6 +82,14 @@ interface QueryProps {
   limit?: number
   offset?: number
   time_range?: TimeRangeProps
+  withImages?: boolean
+}
+
+interface RecentlyPlayedProps {
+  after?: number
+  before?: number
+  ids?: string
+  limit?: number
   withImages?: boolean
 }
 
@@ -106,6 +116,25 @@ class Client {
       }
 
       return await this.getNowPlaying({
+        data: res,
+        withImages: args?.withImages ?? true,
+      })
+    },
+    // @todo(types)
+    recentlyPlayed: async (args: WithAccessToken<QueryProps>): Promise<any> => {
+      const res: any = await this.request({
+        accessToken: args?.accessToken,
+        body: '',
+        method: 'GET',
+        path: ENDPOINTS.RECENTLY_PLAYED,
+        query: _omit(args, ['accessToken', 'withImages']),
+      })
+      // @hack(spotify) lol, error handling, wut
+      if (res?.status === 204 || res?.status > 400) {
+        return { status: res?.status }
+      }
+
+      return await this.getRecentlyPlayed({
         data: res,
         withImages: args?.withImages ?? true,
       })
@@ -334,6 +363,52 @@ class Client {
         artist,
         genres,
       },
+    }
+  }
+
+  // @todo(types)
+  private async getRecentlyPlayed({ data, withImages }) {
+    if (!data) return { status: 404 }
+    const items: any[] = []
+    await asyncForEach(data.items, async (item: any) => {
+      const track = _omit(item.track, OMIT_FIELDS)
+      const { played_at } = item
+      const { album: _album, artists } = item.track
+      const album: any = _omit(_album, OMIT_FIELDS)
+      const artist = artists.map(({ name }) => name).join(', ')
+      const genres = await this.getArtistsGenres({
+        ids: artists.map(({ id }) => id).join(','),
+      })
+      items.push({
+        // ...item,
+        album,
+        artist,
+        artists,
+        genres,
+        played_at,
+        ...track,
+      })
+    }).catch(_noop)
+
+    if (withImages) {
+      await asyncForEach(items, async (item: any, itemIndex: number) => {
+        const album: any = item?.album
+        const url = album?.images[0].url
+        const { getImage } = await import('./utils/index.js')
+        const image = await getImage(url)
+        items[itemIndex] = {
+          ...item,
+          album: {
+            ...album,
+            image,
+          },
+        }
+      }).catch(_noop)
+    }
+
+    return {
+      ...data,
+      items,
     }
   }
 

@@ -1,11 +1,17 @@
 const API_VERSION = 'v1'
 
-type Endpoint = 'ARTISTS' | 'NOW_PLAYING' | 'TOP_ARTISTS' | 'TOP_TRACKS'
+type Endpoint =
+  | 'ARTISTS'
+  | 'NOW_PLAYING'
+  | 'RECENTLY_PLAYED'
+  | 'TOP_ARTISTS'
+  | 'TOP_TRACKS'
 type EndPoints = Record<Endpoint, string>
 
 const ENDPOINTS: EndPoints = {
   ARTISTS: `artists`,
   NOW_PLAYING: `me/player/currently-playing`,
+  RECENTLY_PLAYED: 'me/player/recently-played',
   TOP_ARTISTS: `me/top/artists`,
   TOP_TRACKS: `me/top/tracks`,
 }
@@ -24,7 +30,7 @@ const OMIT_FIELDS = ['album', 'artists', 'available_markets']
 
 // @todo(package.json) dynamic please
 const PACKAGE_NAME = '@jeromefitz/spotify'
-const PACKAGE_VERSION = '4.0.14'
+const PACKAGE_VERSION = '4.2.0-canary.1'
 
 export {
   API_VERSION,
