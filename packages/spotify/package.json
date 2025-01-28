@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@jeromefitz/utils": "workspace:*",
-    "@types/lodash": "4.17.14",
+    "@types/lodash": "4.17.15",
     "lodash": "4.17.21",
     "sharp": "0.32.6"
   },
