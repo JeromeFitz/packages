@@ -47,7 +47,7 @@
   },
   "devDependencies": {
     "@jeromefitz/utils": "workspace:*",
-    "@types/lodash": "4.17.15",
+    "@types/lodash": "4.17.16",
     "lodash": "4.17.21"
   },
   "publishConfig": {
