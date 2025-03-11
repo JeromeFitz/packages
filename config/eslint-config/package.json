@@ -28,7 +28,7 @@
     "semantic-release:dry": "semantic-release --dry-run"
   },
   "dependencies": {
-    "@babel/core": "7.26.9",
+    "@babel/core": "7.26.10",
     "@babel/eslint-parser": "7.26.8",
     "@eslint/compat": "1.2.7",
     "@eslint/eslintrc": "3.3.0",
