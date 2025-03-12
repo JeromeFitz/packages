@@ -226,8 +226,8 @@ importers:
         specifier: 4.17.16
         version: 4.17.16
       gitmojis:
-        specifier: 3.14.0
-        version: 3.14.0
+        specifier: 3.15.0
+        version: 3.15.0
       lodash:
         specifier: 4.17.21
         version: 4.17.21
@@ -2233,8 +2233,8 @@ packages:
   github-slugger@2.0.0:
     resolution: {integrity: sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw==}
 
-  gitmojis@3.14.0:
-    resolution: {integrity: sha512-wPdXxKWfp2dJE6/ch8TDJjYdXvr+4uV67AEcbImj5QC4DmP6Byje1goJL8WgMPFnLY63eadK6oxtnSjdRFzS6g==}
+  gitmojis@3.15.0:
+    resolution: {integrity: sha512-28sothO0+6UuXx0fnJXi4kqy2/dKeFN3xL2Ss5k5K5ECBJMi5T2kZLY92xys3/+YD+AgKHgeiw7YQpYKnkCLMg==}
 
   glob-parent@5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
@@ -6532,7 +6532,7 @@ snapshots:
 
   github-slugger@2.0.0: {}
 
-  gitmojis@3.14.0: {}
+  gitmojis@3.15.0: {}
 
   glob-parent@5.1.2:
     dependencies:
