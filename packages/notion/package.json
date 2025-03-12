@@ -41,7 +41,7 @@
     "lodash": "^4.17.21"
   },
   "dependencies": {
-    "@notionhq/client": "2.2.16",
+    "@notionhq/client": "2.2.17",
     "date-fns": "4.1.0",
     "github-slugger": "2.0.0"
   },
