@@ -35,7 +35,7 @@
     "is-ci": "^3.0.1 || ^4.0.0"
   },
   "dependencies": {
-    "lint-staged": "15.4.3",
+    "lint-staged": "15.5.0",
     "micromatch": "4.0.8"
   },
   "devDependencies": {
