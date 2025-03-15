@@ -2,7 +2,6 @@ import { flatConfigs } from 'eslint-plugin-import-x'
 import { configs, parser } from 'typescript-eslint'
 
 import { RULES } from './_lib.js'
-import { configBase } from './base.js'
 
 let recommendedTypeChecked = []
 configs.recommendedTypeChecked.map((obj) => {
@@ -91,6 +90,4 @@ const configTypescript = [
   },
 ]
 
-const configTypescriptDefault = [...configBase, ...configTypescript]
-
-export { configTypescript, configTypescriptDefault }
+export { configTypescript }
