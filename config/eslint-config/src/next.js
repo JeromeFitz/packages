@@ -2,7 +2,6 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 
 import { getCompat, RULES } from './_lib.js'
-import { configReactDefault } from './react.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -37,6 +36,4 @@ const configNext = [
   },
 ]
 
-const configNextDefault = [...configReactDefault, ...configNext]
-
-export { configNext, configNextDefault }
+export { configNext }

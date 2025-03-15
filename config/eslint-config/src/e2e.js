@@ -2,7 +2,6 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 
 import { getCompat } from './_lib.js'
-import { configReactDefault } from './react.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -24,6 +23,4 @@ const configE2E = [
   },
 ]
 
-const configE2EDefault = [...configReactDefault, ...configE2E]
-
-export { configE2E, configE2EDefault }
+export { configE2E }
