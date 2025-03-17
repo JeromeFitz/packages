@@ -7,7 +7,6 @@ settings:
 overrides:
   '@typescript-eslint/typescript-estree': ^8.26.1
   micromatch: 4.0.8
-  nanoid@^3.0.0: ^5.0.0
 
 patchedDependencies:
   '@semantic-release/commit-analyzer@13.0.1':
