@@ -48,7 +48,7 @@
     "eslint-plugin-storybook": "0.11.6",
     "eslint-plugin-testing-library": "7.1.1",
     "eslint-plugin-turbo": "2.4.5-canary.4",
-    "typescript-eslint": "8.26.1"
+    "typescript-eslint": "8.27.0"
   },
   "devDependencies": {
     "@types/lodash": "4.17.16",
