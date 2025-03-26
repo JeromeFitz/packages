@@ -14,7 +14,7 @@ runs:
   steps:
     - name: '🔧  pnpm: Install'
       id: pnpm-setup
-      uses: pnpm/action-setup@v3
+      uses: pnpm/action-setup@v4
       with:
         run_install: false
 
