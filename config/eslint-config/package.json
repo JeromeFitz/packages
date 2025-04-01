@@ -30,7 +30,7 @@
   "dependencies": {
     "@babel/core": "7.26.10",
     "@babel/eslint-parser": "7.27.0",
-    "@eslint/compat": "1.2.7",
+    "@eslint/compat": "1.2.8",
     "@eslint/eslintrc": "3.3.1",
     "@eslint/js": "9.23.0",
     "@next/eslint-plugin-next": "15.2.4",
