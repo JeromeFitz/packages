@@ -58,7 +58,7 @@
     "semantic-release": "24.2.3",
     "syncpack": "13.0.3",
     "tsup": "8.4.0",
-    "turbo": "2.4.5-canary.6",
+    "turbo": "2.4.5-canary.7",
     "typescript": "5.8.2"
   },
   "publishConfig": {
