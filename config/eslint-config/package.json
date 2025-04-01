@@ -37,7 +37,7 @@
     "eslint": "9.23.0",
     "eslint-config-next": "15.2.4",
     "eslint-config-turbo": "2.4.5-canary.7",
-    "eslint-plugin-import-x": "4.9.4",
+    "eslint-plugin-import-x": "4.10.0",
     "eslint-plugin-jest": "28.11.0",
     "eslint-plugin-jest-dom": "5.5.0",
     "eslint-plugin-jsx-a11y": "6.10.2",
