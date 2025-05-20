@@ -51,7 +51,7 @@
     "typescript-eslint": "8.32.1"
   },
   "devDependencies": {
-    "@types/lodash": "4.17.16",
+    "@types/lodash": "4.17.17",
     "lodash": "4.17.21",
     "tailwindcss": "4.1.7",
     "typescript": "5.8.3"
