@@ -231,8 +231,8 @@ importers:
   packages/notion:
     dependencies:
       '@notionhq/client':
-        specifier: 3.1.1
-        version: 3.1.1
+        specifier: 3.1.2
+        version: 3.1.2
       date-fns:
         specifier: 4.1.0
         version: 4.1.0
@@ -742,8 +742,8 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@notionhq/client@3.1.1':
-    resolution: {integrity: sha512-sAFNjrW5IVX1jgVRxn83mtLNphWsp4qj1koW5YKx9w0qH1pJLfJyAjedwvIFjWG2VNzPuXxVrXpQaRnxSUt5aQ==}
+  '@notionhq/client@3.1.2':
+    resolution: {integrity: sha512-EqJhtx5ekKW3wieENnDHPl5ZSgDxGyRP5r2664rPH39toW899sL000TSE7WHxenHb+kSIckVQ5OsT9tzPqbENg==}
     engines: {node: '>=18'}
 
   '@octokit/auth-token@5.1.1':
@@ -4626,7 +4626,7 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
 
-  '@notionhq/client@3.1.1': {}
+  '@notionhq/client@3.1.2': {}
 
   '@octokit/auth-token@5.1.1': {}
 
