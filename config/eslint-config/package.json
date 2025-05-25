@@ -37,7 +37,7 @@
     "eslint": "9.27.0",
     "eslint-config-next": "15.3.2",
     "eslint-config-turbo": "2.5.3",
-    "eslint-plugin-import-x": "4.12.2",
+    "eslint-plugin-import-x": "4.13.0",
     "eslint-plugin-jest": "28.11.0",
     "eslint-plugin-jest-dom": "5.5.0",
     "eslint-plugin-jsx-a11y": "6.10.2",
