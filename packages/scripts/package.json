@@ -32,7 +32,7 @@
     "semantic-release:dry": "semantic-release --dry-run"
   },
   "dependencies": {
-    "@octokit/rest": "21.1.1",
+    "@octokit/rest": "22.0.0",
     "colorize-template": "1.0.0",
     "picocolors": "1.1.1"
   },
