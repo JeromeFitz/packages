@@ -1,3 +1,5 @@
+enable-pre-post-scripts: true
+nodeOptions: '--experimental-strip-types --disable-warning=ExperimentalWarning'
 packages:
   - 'config/*'
   - 'examples/*'
@@ -7,4 +9,3 @@ packages:
   - '!config/lighthouse-config'
   - '!examples/design-system'
   - '!packages/design-system'
-enable-pre-post-scripts: true
