@@ -37,7 +37,7 @@
   "dependencies": {
     "@octokit/rest": "22.0.0",
     "conventional-commits-filter": "5.0.0",
-    "conventional-commits-parser": "6.1.0",
+    "conventional-commits-parser": "6.2.0",
     "date-fns": "4.1.0",
     "import-from-esm": "2.0.0",
     "read-package-up": "11.0.0",
