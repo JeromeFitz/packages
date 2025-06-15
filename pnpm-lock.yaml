@@ -108,8 +108,8 @@ importers:
         specifier: 4.15.2
         version: 4.15.2(eslint@9.29.0)
       eslint-plugin-jest:
-        specifier: 28.13.5
-        version: 28.13.5(eslint@9.29.0)(typescript@5.8.3)
+        specifier: 28.14.0
+        version: 28.14.0(eslint@9.29.0)(typescript@5.8.3)
       eslint-plugin-jest-dom:
         specifier: 5.5.0
         version: 5.5.0(eslint@9.29.0)
@@ -2006,8 +2006,8 @@ packages:
       '@testing-library/dom':
         optional: true
 
-  eslint-plugin-jest@28.13.5:
-    resolution: {integrity: sha512-ThdhaLPqK78iVjWY1zIfe4WdcVB0NgxZzsOE38SRCc/i3lPIcdfkOuWMC6m96LAg9zAbPPY7LSTXXT0Pf8J7pQ==}
+  eslint-plugin-jest@28.14.0:
+    resolution: {integrity: sha512-P9s/qXSMTpRTerE2FQ0qJet2gKbcGyFTPAJipoKxmWqR6uuFqIqk8FuEfg5yBieOezVrEfAMZrEwJ6yEp+1MFQ==}
     engines: {node: ^16.10.0 || ^18.12.0 || >=20.0.0}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': ^6.0.0 || ^7.0.0 || ^8.0.0
@@ -5203,7 +5203,7 @@ snapshots:
   '@typescript-eslint/visitor-keys@8.26.1':
     dependencies:
       '@typescript-eslint/types': 8.26.1
-      eslint-visitor-keys: 4.2.0
+      eslint-visitor-keys: 4.2.1
 
   '@typescript-eslint/visitor-keys@8.28.0':
     dependencies:
@@ -6199,7 +6199,7 @@ snapshots:
       eslint: 9.29.0
       requireindex: 1.2.0
 
-  eslint-plugin-jest@28.13.5(eslint@9.29.0)(typescript@5.8.3):
+  eslint-plugin-jest@28.14.0(eslint@9.29.0)(typescript@5.8.3):
     dependencies:
       '@typescript-eslint/utils': 8.34.0(eslint@9.29.0)(typescript@5.8.3)
       eslint: 9.29.0
