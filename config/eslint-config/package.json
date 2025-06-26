@@ -53,7 +53,7 @@
   "devDependencies": {
     "@types/lodash": "4.17.19",
     "lodash": "4.17.21",
-    "tailwindcss": "4.1.10",
+    "tailwindcss": "4.1.11",
     "typescript": "5.8.3"
   },
   "publishConfig": {
