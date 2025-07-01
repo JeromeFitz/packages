@@ -110,7 +110,7 @@
     "@storybook/nextjs": "7.6.17",
     "@storybook/react": "7.6.17",
     "@storybook/theming": "7.6.17",
-    "@types/lodash": "4.17.19",
+    "@types/lodash": "4.17.20",
     "cmdk": "1.1.1",
     "framer-motion": "12.20.1",
     "lodash": "4.17.21",
