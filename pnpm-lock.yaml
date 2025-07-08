@@ -45,8 +45,8 @@ importers:
         specifier: workspace:*
         version: link:packages/ccommit
       dotenv:
-        specifier: 17.0.1
-        version: 17.0.1
+        specifier: 17.1.0
+        version: 17.1.0
       husky:
         specifier: 9.1.7
         version: 9.1.7
@@ -1825,8 +1825,8 @@ packages:
     resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
     engines: {node: '>=12'}
 
-  dotenv@17.0.1:
-    resolution: {integrity: sha512-GLjkduuAL7IMJg/ZnOPm9AnWKJ82mSE2tzXLaJ/6hD6DhwGfZaXG77oB8qbReyiczNxnbxQKyh0OE5mXq0bAHA==}
+  dotenv@17.1.0:
+    resolution: {integrity: sha512-tG9VUTJTuju6GcXgbdsOuRhupE8cb4mRgY5JLRCh4MtGoVo3/gfGUtOMwmProM6d0ba2mCFvv+WrpYJV6qgJXQ==}
     engines: {node: '>=12'}
 
   dunder-proto@1.0.1:
@@ -5880,7 +5880,7 @@ snapshots:
 
   dotenv@16.0.3: {}
 
-  dotenv@17.0.1: {}
+  dotenv@17.1.0: {}
 
   dunder-proto@1.0.1:
     dependencies:
