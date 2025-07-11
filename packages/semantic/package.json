@@ -37,7 +37,7 @@
   "dependencies": {
     "@semantic-release/commit-analyzer": "13.0.1",
     "@semantic-release/git": "10.0.1",
-    "semantic-release": "24.2.6",
+    "semantic-release": "24.2.7",
     "semantic-release-commit-filter": "1.0.2",
     "title": "4.0.1"
   },
