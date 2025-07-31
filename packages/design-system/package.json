@@ -120,7 +120,7 @@
     "serve": "14.2.4",
     "storybook": "7.6.17",
     "swr": "2.3.4",
-    "typescript": "5.8.3"
+    "typescript": "5.9.2"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
