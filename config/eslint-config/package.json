@@ -54,7 +54,7 @@
     "@types/lodash": "4.17.20",
     "lodash": "4.17.21",
     "tailwindcss": "4.1.11",
-    "typescript": "5.8.3"
+    "typescript": "5.9.2"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
