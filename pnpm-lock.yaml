@@ -120,8 +120,8 @@ importers:
         specifier: 4.15.0
         version: 4.15.0(eslint@9.32.0)(typescript@5.9.2)
       eslint-plugin-playwright:
-        specifier: 2.2.0
-        version: 2.2.0(eslint@9.32.0)
+        specifier: 2.2.2
+        version: 2.2.2(eslint@9.32.0)
       eslint-plugin-react:
         specifier: 7.37.5
         version: 7.37.5(eslint@9.32.0)
@@ -132,8 +132,8 @@ importers:
         specifier: 0.12.0
         version: 0.12.0(eslint@9.32.0)(typescript@5.9.2)
       eslint-plugin-testing-library:
-        specifier: 7.6.1
-        version: 7.6.1(eslint@9.32.0)(typescript@5.9.2)
+        specifier: 7.6.3
+        version: 7.6.3(eslint@9.32.0)(typescript@5.9.2)
       eslint-plugin-turbo:
         specifier: 2.5.5
         version: 2.5.5(eslint@9.32.0)(turbo@2.5.5)
@@ -2023,8 +2023,8 @@ packages:
     peerDependencies:
       eslint: '>=8.45.0'
 
-  eslint-plugin-playwright@2.2.0:
-    resolution: {integrity: sha512-qSQpAw7RcSzE3zPp8FMGkthaCWovHZ/BsXtpmnGax9vQLIovlh1bsZHEa2+j2lv9DWhnyeLM/qZmp7ffQZfQvg==}
+  eslint-plugin-playwright@2.2.2:
+    resolution: {integrity: sha512-j0jKpndIPOXRRP9uMkwb9l/nSmModOU3452nrFdgFJoEv/435J1onk8+aITzjDW8DfypxgmVaDMdmVIa6F7I0w==}
     engines: {node: '>=16.6.0'}
     peerDependencies:
       eslint: '>=8.40.0'
@@ -2047,8 +2047,8 @@ packages:
     peerDependencies:
       eslint: '>=8'
 
-  eslint-plugin-testing-library@7.6.1:
-    resolution: {integrity: sha512-mqgZ2PKoYa2naC/fIqhidKvY5m8IA+Tiyvui+doQD2GiPW1PkK1WWQZZGnupuvAf9sPqcz623unY+RE2IBvYDw==}
+  eslint-plugin-testing-library@7.6.3:
+    resolution: {integrity: sha512-tI/epV/DD4+nJ51VGg7MWfqajMAW0+U+9dTLFrnqrJHoPO2TyGRU8ASrPNFPe2zzDT1qwznkCeeqMzViALgiig==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0, pnpm: ^9.14.0}
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0
@@ -6187,7 +6187,7 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-plugin-playwright@2.2.0(eslint@9.32.0):
+  eslint-plugin-playwright@2.2.2(eslint@9.32.0):
     dependencies:
       eslint: 9.32.0
       globals: 13.24.0
@@ -6228,7 +6228,7 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-plugin-testing-library@7.6.1(eslint@9.32.0)(typescript@5.9.2):
+  eslint-plugin-testing-library@7.6.3(eslint@9.32.0)(typescript@5.9.2):
     dependencies:
       '@typescript-eslint/scope-manager': 8.38.0
       '@typescript-eslint/utils': 8.38.0(eslint@9.32.0)(typescript@5.9.2)
