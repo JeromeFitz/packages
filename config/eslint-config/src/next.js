@@ -1,5 +1,7 @@
-import path from 'path'
-import { fileURLToPath } from 'url'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+import storybook from 'eslint-plugin-storybook'
 
 import { getCompat, RULES } from './_lib.js'
 
@@ -9,10 +11,7 @@ const __dirname = path.dirname(__filename)
 const compat = getCompat(__dirname)
 
 const configNext = [
-  {
-    ...compat.extends('plugin:storybook/recommended')[0],
-    name: '@jeromefitz/eslint-config:next:storybook',
-  },
+  ...storybook.configs['flat/recommended'],
   {
     ...compat.extends('plugin:@next/next/core-web-vitals')[0],
     name: '@jeromefitz/eslint-config:next:core-web-vitals',
