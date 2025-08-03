@@ -17,9 +17,8 @@ const pkg = require('./package.json')
 const { name } = pkg
 
 const branches = [
-  { name: 'main', prerelease: 'canary' },
-  { name: 'canary' },
-  { name: 'NICE-130', prerelease: 'next' },
+  ...configDefault.branches,
+  { name: 'NICE-XYZ', prerelease: 'canary' },
 ]
 
 const configPassed = {

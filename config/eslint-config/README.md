@@ -12,6 +12,7 @@ Custom `eslint-config` setup that can be extended and incorporates:
 - `eslint-plugin-jsx-a11y`
 - `eslint-plugin-react`
 - `eslint-plugin-react-hooks`
+- `eslint-plugin-storybook`
 - `prettier`
 - `typescript-eslint`
 
@@ -87,13 +88,3 @@ import { configTypescript } from '@jeromefitz/eslint-config/typescript.js'
 
 const config = [...configTypescript]
 ```
-
-## Please Note
-
-The eslint ecosystem will slowly (but surely) move from `eslint@8` to `eslint@9`.
-
-`@jeromefitz/eslint-config@4` will be a holding pattern and may from time-to-time introduce potential **breaking** changes in linting. This is done so we do not have to bump a major _every_ single time we upgrade package(s) from `eslint@8` => `eslint@9`.
-
-In some regards this should be permanent `canary` until then, but will try to call out any breaking in PRs as we move forward.
-
-> **📝 Note:** See #1511 for more information.
