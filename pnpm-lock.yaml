@@ -129,8 +129,8 @@ importers:
         specifier: 5.2.0
         version: 5.2.0(eslint@9.32.0)
       eslint-plugin-storybook:
-        specifier: 9.1.0
-        version: 9.1.0(eslint@9.32.0)(storybook@9.1.0)(typescript@5.9.2)
+        specifier: 9.1.1
+        version: 9.1.1(eslint@9.32.0)(storybook@9.1.0)(typescript@5.9.2)
       eslint-plugin-testing-library:
         specifier: 7.6.3
         version: 7.6.3(eslint@9.32.0)(typescript@5.9.2)
@@ -2087,12 +2087,12 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
 
-  eslint-plugin-storybook@9.1.0:
-    resolution: {integrity: sha512-65JgC6HLhHfvq5ip3CcZ8rP9xytxphIsTaeuGwHZVDDJdJ+k3XJ87Cj1yjUirnhG5am+ma4eZBPVwFWdaYC1PA==}
+  eslint-plugin-storybook@9.1.1:
+    resolution: {integrity: sha512-g4/i9yW6cl4TCEMzYyALNvO3d/jB6TDvSs/Pmye7dHDrra2B7dgZJGzmEWILD62brVrLVHNoXgy2dNPtx80kmw==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       eslint: '>=8'
-      storybook: ^9.1.0
+      storybook: ^9.1.1
 
   eslint-plugin-testing-library@7.6.3:
     resolution: {integrity: sha512-tI/epV/DD4+nJ51VGg7MWfqajMAW0+U+9dTLFrnqrJHoPO2TyGRU8ASrPNFPe2zzDT1qwznkCeeqMzViALgiig==}
@@ -6372,7 +6372,7 @@ snapshots:
       string.prototype.matchall: 4.0.12
       string.prototype.repeat: 1.0.0
 
-  eslint-plugin-storybook@9.1.0(eslint@9.32.0)(storybook@9.1.0)(typescript@5.9.2):
+  eslint-plugin-storybook@9.1.1(eslint@9.32.0)(storybook@9.1.0)(typescript@5.9.2):
     dependencies:
       '@typescript-eslint/utils': 8.38.0(eslint@9.32.0)(typescript@5.9.2)
       eslint: 9.32.0
