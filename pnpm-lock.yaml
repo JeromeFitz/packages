@@ -153,16 +153,15 @@ importers:
 
   config/lint-staged:
     dependencies:
+      is-ci:
+        specifier: 4.1.0
+        version: 4.1.0
       lint-staged:
         specifier: 16.1.5
         version: 16.1.5
       micromatch:
         specifier: 4.0.8
         version: 4.0.8
-    devDependencies:
-      is-ci:
-        specifier: 4.1.0
-        version: 4.1.0
 
   config/prettier-config:
     dependencies:
