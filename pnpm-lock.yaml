@@ -47,12 +47,6 @@ importers:
       dotenv:
         specifier: 17.2.1
         version: 17.2.1
-      husky:
-        specifier: 9.1.7
-        version: 9.1.7
-      is-ci:
-        specifier: 4.1.0
-        version: 4.1.0
       lint-staged:
         specifier: 16.1.5
         version: 16.1.5
@@ -159,16 +153,15 @@ importers:
 
   config/lint-staged:
     dependencies:
+      is-ci:
+        specifier: 4.1.0
+        version: 4.1.0
       lint-staged:
         specifier: 16.1.5
         version: 16.1.5
       micromatch:
         specifier: 4.0.8
         version: 4.0.8
-    devDependencies:
-      is-ci:
-        specifier: 4.1.0
-        version: 4.1.0
 
   config/prettier-config:
     dependencies:
@@ -292,6 +285,9 @@ importers:
       colorize-template:
         specifier: 1.0.0
         version: 1.0.0
+      is-ci:
+        specifier: 4.1.0
+        version: 4.1.0
       picocolors:
         specifier: 1.1.1
         version: 1.1.1
@@ -2546,11 +2542,6 @@ packages:
   human-signals@8.0.1:
     resolution: {integrity: sha512-eKCa6bwnJhvxj14kZk5NCPc6Hb6BdsU9DZcOnmQKSnO1VKrfV0zCvtttPZUsBvjmNDn8rpcJfpwSYnHBjc95MQ==}
     engines: {node: '>=18.18.0'}
-
-  husky@9.1.7:
-    resolution: {integrity: sha512-5gs5ytaNjBrh5Ow3zrvdUUY+0VxIuWVL4i9irt6friV+BqdCfmV11CQTWMiBYWHbXhco+J1kHfTOUkePhCDvMA==}
-    engines: {node: '>=18'}
-    hasBin: true
 
   ieee754@1.2.1:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
@@ -6940,8 +6931,6 @@ snapshots:
   human-signals@5.0.0: {}
 
   human-signals@8.0.1: {}
-
-  husky@9.1.7: {}
 
   ieee754@1.2.1: {}
 
