@@ -49,7 +49,7 @@
     "eslint-plugin-testing-library": "7.6.4",
     "eslint-plugin-turbo": "2.5.5",
     "is-ci": "4.1.0",
-    "typescript-eslint": "8.39.0"
+    "typescript-eslint": "8.39.1"
   },
   "devDependencies": {
     "@types/lodash": "4.17.20",
