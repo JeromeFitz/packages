@@ -36,7 +36,7 @@
     "@next/eslint-plugin-next": "15.4.6",
     "eslint": "9.33.0",
     "eslint-config-next": "15.4.6",
-    "eslint-config-turbo": "2.5.5",
+    "eslint-config-turbo": "2.5.6",
     "eslint-plugin-import-x": "4.16.1",
     "eslint-plugin-jest": "29.0.1",
     "eslint-plugin-jest-dom": "5.5.0",
@@ -47,7 +47,7 @@
     "eslint-plugin-react-hooks": "5.2.0",
     "eslint-plugin-storybook": "9.1.2",
     "eslint-plugin-testing-library": "7.6.6",
-    "eslint-plugin-turbo": "2.5.5",
+    "eslint-plugin-turbo": "2.5.6",
     "is-ci": "4.1.0",
     "typescript-eslint": "8.39.1"
   },
