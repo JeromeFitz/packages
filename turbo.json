@@ -73,6 +73,19 @@
         "coverage/**"
       ]
     },
+    "@jeromefitz/notion#lint": {
+      "dependsOn": [
+        "@jeromefitz/utils#build"
+      ],
+      "inputs": [
+        "src/**",
+        "*.cjs",
+        "*.js",
+        "*.mjs",
+        "package.json"
+      ],
+      "outputLogs": "new-only"
+    },
     "@jeromefitz/notion#build": {
       "dependsOn": [
         "@jeromefitz/utils#build"
@@ -87,6 +100,20 @@
       "outputLogs": "new-only"
     },
     "@jeromefitz/semantic#build": {
+      "dependsOn": [
+        "@jeromefitz/conventional-gitmoji#build",
+        "@jeromefitz/release-notes-generator#build"
+      ],
+      "inputs": [
+        "src/**",
+        "*.cjs",
+        "*.js",
+        "*.mjs",
+        "package.json"
+      ],
+      "outputLogs": "new-only"
+    },
+    "@jeromefitz/semantic#lint": {
       "dependsOn": [
         "@jeromefitz/conventional-gitmoji#build",
         "@jeromefitz/release-notes-generator#build"
