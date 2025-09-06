@@ -17,13 +17,13 @@ const git = (options: GitPluginOptions): PluginSpec => {
         typeof options.gitAssets === 'boolean'
           ? false
           : ['package.json']
-              // @todo(NICE-129) eslint
-              // eslint-disable-next-line no-extra-boolean-cast
+              // biome-ignore lint/complexity/noExtraBooleanCast: migrate
               .concat(!!options.gitAssets ? options.gitAssets : [])
               .filter((a) => a),
       message: options.message
         ? options.message
-        : '🔖️ `${nextRelease.gitTag}` [skip ci] \n\n${nextRelease.notes}',
+        : // biome-ignore lint/suspicious/noTemplateCurlyInString: migrate
+          '🔖️ `${nextRelease.gitTag}` [skip ci] \n\n${nextRelease.notes}',
     },
   ]
 }

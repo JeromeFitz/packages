@@ -13,7 +13,6 @@ const Button = styled('button', {
     color: '$slate8',
     pointerEvents: 'none',
   },
-  WebkitTapHighlightColor: 'rgba(0,0,0,0)',
   alignItems: 'center',
   // @reset
   all: 'unset',
@@ -22,6 +21,12 @@ const Button = styled('button', {
   compoundVariants: [
     {
       css: {
+        '@hover': {
+          '&:hover': {
+            backgroundColor: '$slateA3',
+            boxShadow: 'none',
+          },
+        },
         '&:active': {
           backgroundColor: '$slateA4',
         },
@@ -33,12 +38,6 @@ const Button = styled('button', {
             backgroundColor: '$slateA4',
             boxShadow: 'none',
           },
-        '@hover': {
-          '&:hover': {
-            backgroundColor: '$slateA3',
-            boxShadow: 'none',
-          },
-        },
         backgroundColor: 'transparent',
         color: '$hiContrast',
       },
@@ -47,6 +46,12 @@ const Button = styled('button', {
     },
     {
       css: {
+        '@hover': {
+          '&:hover': {
+            backgroundColor: '$brandA3',
+            boxShadow: 'none',
+          },
+        },
         '&:active': {
           backgroundColor: '$brandA4',
         },
@@ -58,12 +63,6 @@ const Button = styled('button', {
             backgroundColor: '$brandA4',
             boxShadow: 'none',
           },
-        '@hover': {
-          '&:hover': {
-            backgroundColor: '$brandA3',
-            boxShadow: 'none',
-          },
-        },
         backgroundColor: 'transparent',
       },
       ghost: 'true',
@@ -123,34 +122,34 @@ const Button = styled('button', {
     },
     state: {
       active: {
+        '@hover': {
+          '&:hover': {
+            backgroundColor: '$slate5',
+            boxShadow: 'inset 0 0 0 1px $colors$slate8',
+          },
+        },
         '&:active': {
           backgroundColor: '$slate5',
         },
         '&:focus': {
           boxShadow: 'inset 0 0 0 1px $colors$slate8, 0 0 0 1px $colors$slate8',
         },
-        '@hover': {
-          '&:hover': {
-            backgroundColor: '$slate5',
-            boxShadow: 'inset 0 0 0 1px $colors$slate8',
-          },
-        },
         backgroundColor: '$slate4',
         boxShadow: 'inset 0 0 0 1px $colors$slate8',
         color: '$slate11',
       },
       waiting: {
-        '&:active': {
-          backgroundColor: '$slate5',
-        },
-        '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$slate8',
-        },
         '@hover': {
           '&:hover': {
             backgroundColor: '$slate5',
             boxShadow: 'inset 0 0 0 1px $colors$slate8',
           },
+        },
+        '&:active': {
+          backgroundColor: '$slate5',
+        },
+        '&:focus': {
+          boxShadow: 'inset 0 0 0 1px $colors$slate8',
         },
         backgroundColor: '$slate4',
         boxShadow: 'inset 0 0 0 1px $colors$slate8',
@@ -160,6 +159,11 @@ const Button = styled('button', {
     },
     variant: {
       brand: {
+        '@hover': {
+          '&:hover': {
+            boxShadow: 'inset 0 0 0 1px $colors$slate8',
+          },
+        },
         '&:active': {
           backgroundColor: '$brand3',
           boxShadow: 'inset 0 0 0 1px $colors$brand8',
@@ -172,16 +176,16 @@ const Button = styled('button', {
             backgroundColor: '$brand4',
             boxShadow: 'inset 0 0 0 1px $colors$brand8',
           },
-        '@hover': {
-          '&:hover': {
-            boxShadow: 'inset 0 0 0 1px $colors$slate8',
-          },
-        },
         backgroundColor: '$loContrast',
         boxShadow: 'inset 0 0 0 1px $colors$slate7',
         color: '$brand11',
       },
       gray: {
+        '@hover': {
+          '&:hover': {
+            boxShadow: 'inset 0 0 0 1px $colors$slate8',
+          },
+        },
         '&:active': {
           backgroundColor: '$slate2',
           boxShadow: 'inset 0 0 0 1px $colors$slate8',
@@ -194,16 +198,16 @@ const Button = styled('button', {
             backgroundColor: '$slate4',
             boxShadow: 'inset 0 0 0 1px $colors$slate8',
           },
-        '@hover': {
-          '&:hover': {
-            boxShadow: 'inset 0 0 0 1px $colors$slate8',
-          },
-        },
         backgroundColor: '$loContrast',
         boxShadow: 'inset 0 0 0 1px $colors$slate7',
         color: '$hiContrast',
       },
       transparentBlack: {
+        '@hover': {
+          '&:hover': {
+            backgroundColor: 'hsla(0,0%,0%,.25)',
+          },
+        },
         '&:active': {
           backgroundColor: 'hsla(0,0%,0%,.3)',
         },
@@ -211,15 +215,15 @@ const Button = styled('button', {
           boxShadow:
             'inset 0 0 0 1px hsla(0,0%,0%,.35), 0 0 0 1px hsla(0,0%,0%,.35)',
         },
-        '@hover': {
-          '&:hover': {
-            backgroundColor: 'hsla(0,0%,0%,.25)',
-          },
-        },
         backgroundColor: 'hsla(0,0%,0%,.2)',
         color: 'black',
       },
       transparentWhite: {
+        '@hover': {
+          '&:hover': {
+            backgroundColor: 'hsla(0,100%,100%,.25)',
+          },
+        },
         '&:active': {
           backgroundColor: 'hsla(0,100%,100%,.3)',
         },
@@ -227,16 +231,12 @@ const Button = styled('button', {
           boxShadow:
             'inset 0 0 0 1px hsla(0,100%,100%,.35), 0 0 0 1px hsla(0,100%,100%,.35)',
         },
-        '@hover': {
-          '&:hover': {
-            backgroundColor: 'hsla(0,100%,100%,.25)',
-          },
-        },
         backgroundColor: 'hsla(0,100%,100%,.2)',
         color: 'white',
       },
     },
   },
+  WebkitTapHighlightColor: 'rgba(0,0,0,0)',
 })
 
 Button.toString = () => `.${Button.className}`

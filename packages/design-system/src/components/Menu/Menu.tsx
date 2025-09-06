@@ -1,13 +1,13 @@
 import type { ComponentProps, ElementRef } from 'react'
 
+import type { CSS } from '../../lib/stitches.config'
+
 import * as MenuPrimitive from '@radix-ui/react-menu'
 import { forwardRef } from 'react'
 
-import type { CSS } from '../../lib/stitches.config'
-
 import { styled } from '../../lib/stitches.config'
-import { panelStyles } from '../Panel/Panel.styles'
 import { Box, Flex, Icon } from '../index'
+import { panelStyles } from '../Panel/Panel.styles'
 import { itemCss, labelCss, menuCss, separatorCss } from './Menu.styles'
 
 const Menu = styled(MenuPrimitive.Root, menuCss)

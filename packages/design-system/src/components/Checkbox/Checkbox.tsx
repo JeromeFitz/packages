@@ -3,9 +3,9 @@
  */
 import type { ElementRef } from 'react'
 
-import { forwardRef } from 'react'
-
 import type { CheckboxProps } from './Checkbox.types'
+
+import { forwardRef } from 'react'
 
 import { Icon } from '../Icon'
 import { StyledCheckbox, StyledIndicator } from './Checkbox.styles'

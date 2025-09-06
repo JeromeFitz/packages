@@ -1,10 +1,10 @@
 import type { ElementRef } from 'react'
 
+import type { SheetContentProps, SheetProps } from './Sheet.types'
+
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { AnimatePresence, motion } from 'framer-motion'
 import { forwardRef, useId } from 'react'
-
-import type { SheetContentProps, SheetProps } from './Sheet.types'
 
 import { Box } from '../Box'
 import { Flex } from '../Flex'
@@ -19,12 +19,12 @@ const Notch = () => {
       <Box
         as="div"
         css={{
+          '@media (prefers-reduced-motion: no-preference)': {
+            transition: 'background 200ms ease-out',
+          },
           '&:active': {
             background: '$focusBackground',
             cursor: 'grabbing',
-          },
-          '@media (prefers-reduced-motion: no-preference)': {
-            transition: 'background 200ms ease-out',
           },
           background: '$hoverBackground',
           borderRadius: '$pill',

@@ -1,19 +1,17 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import _forEach from 'lodash/forEach.js'
-import _orderBy from 'lodash/orderBy.js'
 
-function getNoteGroups(notes, noteGroupsSort, notesSort) {
+function getNoteGroups(notes, _noteGroupsSort, _notesSort) {
   const noteGroups: any = []
 
   // console.dir(`> getNoteGroups`)
   // console.dir(notes)
-  _forEach(notes, function (note) {
+  _forEach(notes, (note) => {
     // console.dir(`> _forEach`)
     // console.dir(note)
     const title = note.title
     let titleExists = false
 
-    _forEach(noteGroups, function (group) {
+    _forEach(noteGroups, (group) => {
       if (group.title === title) {
         titleExists = true
         group.notes.push(note)
@@ -29,23 +27,6 @@ function getNoteGroups(notes, noteGroupsSort, notesSort) {
       })
     }
   })
-
-  // // noteGroupsSort: 'title'
-  // if (noteGroupsSort) {
-  //   console.dir(`>>> noteGroupsSort`)
-  //   console.dir(noteGroupsSort)
-  //   noteGroups = _orderBy(noteGroups, noteGroupsSort)
-  //   // noteGroups.sort(noteGroupsSort)
-  // }
-
-  // if (notesSort) {
-  //   console.dir(`>>> notesSort`)
-  //   console.dir(notesSort)
-  //   _forEach(noteGroups, function (group) {
-  //     noteGroups[group] = _orderBy(group, notesSort)
-  //     // group.notes.sort(notesSort)
-  //   })
-  // }
 
   return noteGroups
 }

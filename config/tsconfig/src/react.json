@@ -1,14 +1,14 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "@jeromefitz/eslint-config/react",
-  "extends": "./base.json",
   "compilerOptions": {
+    "jsx": "react",
     "lib": ["ES2015"],
     "module": "ESNext",
-    "rootDir": "src",
     "outDir": "dist",
-    "jsx": "react"
+    "rootDir": "src"
   },
-  "include": ["src"],
-  "exclude": ["node_modules"]
+  "display": "@jeromefitz/tsconfig/react",
+  "exclude": ["node_modules"],
+  "extends": "./base.json",
+  "include": ["src"]
 }

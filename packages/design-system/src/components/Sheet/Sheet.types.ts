@@ -1,10 +1,8 @@
+import type * as DialogPrimitive from '@radix-ui/react-dialog'
 import type { ComponentProps } from 'react'
 
-import * as DialogPrimitive from '@radix-ui/react-dialog'
-
 import type { CSS, VariantProps } from '../../lib/stitches.config'
-
-import { StyledContent } from './Sheet.styles'
+import type { StyledContent } from './Sheet.styles'
 
 type SheetProps = ComponentProps<typeof DialogPrimitive.Root>
 

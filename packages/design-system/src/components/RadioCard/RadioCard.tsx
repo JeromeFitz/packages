@@ -1,8 +1,8 @@
 import type { ElementRef } from 'react'
 
-import { forwardRef } from 'react'
-
 import type { RadioCardProps } from './RadioCard.types'
+
+import { forwardRef } from 'react'
 
 import {
   RadioCardGroup,

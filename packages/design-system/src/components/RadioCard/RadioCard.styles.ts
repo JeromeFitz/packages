@@ -27,6 +27,11 @@ const StyledRadioIndicator = styled('div', {
 })
 
 const StyledRadio = styled(RadioGroupPrimitive.Item, {
+  '@hover': {
+    '&:hover': {
+      boxShadow: 'inset 0 0 0 1px $colors$slate8',
+    },
+  },
   '&::after': {
     boxSizing: 'border-box',
   },
@@ -38,11 +43,6 @@ const StyledRadio = styled(RadioGroupPrimitive.Item, {
       transform: 'scale(1)',
     },
     boxShadow: 'inset 0 0 0 1px $colors$gray8, 0 0 0 1px $colors$gray8 !important',
-  },
-  '@hover': {
-    '&:hover': {
-      boxShadow: 'inset 0 0 0 1px $colors$slate8',
-    },
   },
   alignItems: 'center',
   all: 'unset',

@@ -3,7 +3,7 @@
  */
 import { dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { promisify } from 'util'
+import { promisify } from 'node:util'
 
 // import conventionalChangelogAngular from 'conventional-changelog-angular'
 import importFrom from 'import-from-esm'
@@ -15,7 +15,7 @@ const getChangelogConfig = async (pluginConfig, context) => {
   const { config, parserOpts, preset, presetConfig, writerOpts } = pluginConfig
   const { cwd } = context
 
-  let loadedConfig
+  let loadedConfig: any
 
   if (preset) {
     const presetPackage = `conventional-changelog-${preset.toLowerCase()}`
@@ -24,14 +24,12 @@ const getChangelogConfig = async (pluginConfig, context) => {
      * UNKNOWN
      * https://github.com/semantic-release/commit-analyzer/commit/f3b88d3e7409b0bac38cb58bd04f19506f2f6159
      */
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     loadedConfig = await (
       (await importFrom.silent(__dirname, presetPackage)) ||
       (await importFrom(cwd, presetPackage))
     )(presetConfig)
   } else if (config) {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     loadedConfig = await (
       (await importFrom.silent(__dirname, config)) || (await importFrom(cwd, config))

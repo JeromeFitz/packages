@@ -1,8 +1,7 @@
 import type { ComponentProps } from 'react'
 
 import type { CSS, VariantProps } from '../../lib/stitches.config'
-
-import { Text } from '../index'
+import type { Text } from '../index'
 
 const DEFAULT_TAG = 'h1'
 

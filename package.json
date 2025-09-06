@@ -15,6 +15,8 @@
     "pnpm": ">=10 <11"
   },
   "scripts": {
+    "biome:check": "biome check",
+    "biome:write": "biome check --write",
     "build": "turbo run build --filter=[HEAD^1]",
     "build:all": "turbo run build",
     "clean": "turbo run clean --filter=[HEAD^1]",
@@ -22,14 +24,16 @@
     "clean:install": "turbo run clean && ./scripts/clean.sh",
     "commit": "ALLOW_EMPTY=--allow-empty git commit --allow-empty",
     "dev": "turbo run dev --no-cache --parallel --continue",
-    "format": "pnpm run format:prettier:write",
-    "format:lint": "turbo run format:lint",
-    "format:prettier:base": "prettier . --ignore-unknown",
+    "format": "pnpm format:biome:write && pnpm format:prettier:write",
+    "format:biome:base": "biome format",
+    "format:biome:check": "pnpm format:biome:base",
+    "format:biome:write": "pnpm format:biome:base --write",
+    "format:prettier:base": "prettier \"./**/package.json\" --ignore-unknown --ignore-path",
     "format:prettier:check": "pnpm format:prettier:base --check",
     "format:prettier:write": "pnpm format:prettier:base --write",
     "generate:releaseRules": "node ./packages/semantic/scripts/generateReleaseRules.js && pnpm run format:lint",
-    "lint": "turbo run lint --filter=[HEAD^1]",
-    "lint:all": "turbo run lint",
+    "lint": "pnpm run lint:biome && pnpm run format:prettier:check && pnpm run lint:packages",
+    "lint:biome": "biome lint",
     "lint:packages": "syncpack lint",
     "preinstall": "npx only-allow pnpm",
     "prepare": "pnpm is-ci || pnpm dlx husky@9.1.7",
@@ -41,8 +45,8 @@
     "turbo": "TURBO_TELEMETRY_DISABLED=1 turbo"
   },
   "dependencies": {
+    "@biomejs/biome": "2.2.3",
     "@jeromefitz/conventional-gitmoji": "workspace:*",
-    "@jeromefitz/eslint-config": "workspace:*",
     "@jeromefitz/lint-staged": "workspace:*",
     "@jeromefitz/prettier-config": "workspace:*",
     "@jeromefitz/release-notes-generator": "workspace:*",
@@ -69,7 +73,6 @@
     },
     "overrides": {
       "@babel/runtime": "^7.26.10",
-      "@typescript-eslint/typescript-estree": "^8.26.1",
       "micromatch": "4.0.8",
       "tar-fs": "^3.0.9"
     }

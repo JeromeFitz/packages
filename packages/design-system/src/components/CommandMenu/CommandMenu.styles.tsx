@@ -19,6 +19,10 @@ const showTopShineKeyframe = keyframes({
 })
 
 const StyledCommand = styled(Command, {
+  '--cmdk-shadow': '0 16px 70px rgb(0 0 0 / 20%)',
+  '@bp1': {
+    width: '100%',
+  },
   '&:after': {
     animation: `${shineKeyframe} 2s ease forwards 0.1s`,
     background: `
@@ -55,10 +59,6 @@ const StyledCommand = styled(Command, {
     width: 'calc(100% + 1px)',
     zIndex: '-1',
   },
-  '@bp1': {
-    width: '100%',
-  },
-  '--cmdk-shadow': '0 16px 70px rgb(0 0 0 / 20%)',
   background: '$gray1',
   border: '0',
   borderRadius: '$3',
@@ -77,11 +77,11 @@ const StyledCommand = styled(Command, {
   transition: 'transform 100ms ease',
 })
 const StyledCommandInput = styled(Command.Input, {
-  '&::placeholder': {
-    color: '$gray9',
-  },
   '@bp1': {
     fontSize: '$4',
+  },
+  '&::placeholder': {
+    color: '$gray9',
   },
   background: 'transparent',
   border: 'none',
@@ -126,6 +126,7 @@ const StyledCommandBadge = styled(Box, {
   userSelect: 'none',
 })
 const StyledCommandLoader = styled('hr', {
+  '--loader-color': '$colors$gray12',
   '&:after': {
     animationDelay: '0.9s',
     animationDuration: '1.25s',
@@ -145,7 +146,6 @@ const StyledCommandLoader = styled('hr', {
     top: '0px',
     width: '50%',
   },
-  '--loader-color': '$colors$gray12',
   background: '$gray6',
   border: '0',
   display: 'block',

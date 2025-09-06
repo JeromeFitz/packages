@@ -1,7 +1,5 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "@jeromefitz/tsconfig-node-16",
-  "extends": "./base.json",
   "compilerOptions": {
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -11,5 +9,7 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "ES2022"
-  }
+  },
+  "display": "@jeromefitz/tsconfig-node-16",
+  "extends": "./base.json"
 }

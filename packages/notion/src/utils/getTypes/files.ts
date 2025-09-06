@@ -16,8 +16,6 @@ const files = (data: any, pageId: string) => {
 
   if (_size(data.files) <= 0) return _files
   data.files.map(
-    // @todo(complexity) 11
-    // eslint-disable-next-line complexity
     (file: { external: { url: string }; file: { url: string }; type: string }) => {
       if (file?.type === 'file') {
         const internalUrl = file?.file?.url.split('?')[0]

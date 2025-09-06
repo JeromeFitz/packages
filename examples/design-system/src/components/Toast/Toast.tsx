@@ -1,3 +1,8 @@
+import type {
+  IToast,
+  IToastVariant,
+} from '@jeromefitz/design-system/src/components/Toast/Toast.types'
+
 import {
   Box,
   Button,
@@ -18,11 +23,6 @@ import {
   TextField,
   Toaster,
 } from '@jeromefitz/design-system/src/components'
-
-import type {
-  IToast,
-  IToastVariant,
-} from '@jeromefitz/design-system/src/components/Toast/Toast.types'
 
 import _debounce from 'lodash/debounce'
 import { Fragment, useEffect, useMemo, useRef, useState } from 'react'
@@ -135,7 +135,7 @@ const ToastDemo = () => {
               <Button
                 css={{ mb: '$2', mr: '$2' }}
                 onClick={() => {
-                  if (toaster && toaster.current) {
+                  if (toaster?.current) {
                     toaster?.current?.createToast(item.toast)
                   }
                 }}
@@ -242,7 +242,7 @@ const ToastDemo = () => {
           >
             <Button
               onClick={() => {
-                if (toaster && toaster.current) {
+                if (toaster?.current) {
                   toaster?.current?.createToast({
                     action: () => console.dir(`> action`),
                     actionComponent: (

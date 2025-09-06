@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/suspicious/noConsole: migrate */
 import process from 'node:process'
 
 import {
@@ -12,6 +13,7 @@ import { generateLog, getStagedFiles } from '~ccommit/utils/index.js'
 const getOptionsForCommand = (command: string, flags: any): any => {
   const commandsWithOptions = [FLAGS.COMMIT, FLAGS.HOOK]
 
+  // @ts-ignore
   if (commandsWithOptions.includes(command)) {
     const options = {
       dryrun: flags[FLAGS.DRYRUN],
@@ -38,7 +40,7 @@ const getOptionsForCommand = (command: string, flags: any): any => {
 }
 
 // @todo(lint) complexity: 11
-// eslint-disable-next-line complexity
+// biome-ignore lint/complexity/noExcessiveCognitiveComplexity: migrate
 const findCommand = (cli: any, options: any): void => {
   const flags = cli.flags
   const commandFlag = Object.keys(flags)
@@ -81,6 +83,7 @@ const findCommand = (cli: any, options: any): void => {
 
   const commandOptions = getOptionsForCommand(commandFlag, flags)
 
+  // biome-ignore lint/correctness/noVoidTypeReturn: migrate
   return options[commandFlag] ? options[commandFlag](commandOptions) : cli.showHelp()
 }
 

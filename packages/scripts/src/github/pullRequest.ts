@@ -1,9 +1,4 @@
-// @todo(types)
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { execSync } from 'child_process'
-
+/** biome-ignore-all lint/suspicious/noConsole: migrate */
 import { Octokit } from '@octokit/rest'
 import { createColorize } from 'colorize-template'
 import isCI from 'is-ci'
@@ -18,11 +13,9 @@ if (!isCI) {
 
 const colorize = createColorize(pico)
 const octokit = new Octokit({ auth: process.env.GH_TOKEN })
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const getVersion = (version) => {
+const _getVersion = (version) => {
   const [major, minor, patch] = version.split('-')[0].split('.')
+  // biome-ignore lint/correctness/useParseIntRadix: migrate
   return [parseInt(major), parseInt(minor), parseInt(patch)].join('.')
 }
 
@@ -59,8 +52,7 @@ async function setPullRequest({
     if (doesGitflowPrExists) {
       const pr = response.data.items[0]
       const pull_number = pr.number
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const issue_number = pull_number
+      const _issue_number = pull_number
       console.log(
         colorize`{orange.bold 🤔️  ${pull_number} => Exists, should we update PR ?}`,
       )

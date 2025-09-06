@@ -1,5 +1,3 @@
-// @todo(NICE-129) eslint
-/* eslint-disable no-extra-boolean-cast */
 import { sortObject } from '@jeromefitz/utils'
 
 import _omit from 'lodash/omit.js'
@@ -60,7 +58,7 @@ const getNotionSlugByRoute__getDataByParentRouteType = async ({
     return { content: {}, images: {}, info: {}, items: {} }
   }
   const info = _omit(_info, 'properties')
-  info['properties'] = sortObject(
+  info.properties = sortObject(
     dataNormalized({ config, data: _info, pageId: info.id, pathVariables }),
   )
   const content = await getBlocksByIdChildren({ block_id: info.id })
@@ -111,8 +109,8 @@ const getNotionSlugByRoute__getDataByListingDate = async ({
    * @hack uh... nothing to see here, haha
    */
   const timestampQuery = new Date(
-    `${!!year ? year : dateTimestamp.slice(0, 4)}-${!!month ? month : '01'}-${
-      !!day ? day : '01'
+    `${year ? year : dateTimestamp.slice(0, 4)}-${month ? month : '01'}-${
+      day ? day : '01'
     }`,
   )
   const property =
@@ -150,7 +148,7 @@ const getNotionSlugByRoute__getDataByListingDate = async ({
   }
 
   const info = _omit(_info, 'properties')
-  info['properties'] = sortObject(
+  info.properties = sortObject(
     dataNormalized({ config, data: _info, pageId: info.id, pathVariables }),
   )
   const content = await getBlocksByIdChildren({ block_id: info.id })
@@ -176,7 +174,7 @@ const getNotionSlugByRoute = async ({
    * // @todo(next-notion) move to `isChild`
    *
    */
-  if (!!NOTION[routeType?.toUpperCase()]?.hasChild) {
+  if (NOTION[routeType?.toUpperCase()]?.hasChild) {
     return await getNotionSlugByRoute__getDataByParentRouteType({
       config,
       getBlocksByIdChildren,

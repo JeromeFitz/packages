@@ -36,17 +36,16 @@ const _AppBar = ({}) => {
       border
       color="loContrast"
       css={{
-        /**
-         * @mobile
-         */
-        '$$offset-bottom': '0px',
-
         '@bp1': {
           left: 0,
           position: 'sticky',
           top: 0,
           width: '100%',
         },
+        /**
+         * @mobile
+         */
+        '$$offset-bottom': '0px',
         bottom: 'calc($$offset-bottom)',
         height: '$7',
         left: 'calc(-50vw + 50%)',

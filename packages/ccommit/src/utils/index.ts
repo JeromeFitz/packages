@@ -1,8 +1,8 @@
 export {
+  COMMIT_MESSAGE_SOURCE,
   cancelIfAmending,
   cancelIfNeeded,
   cancelIfRebasing,
-  COMMIT_MESSAGE_SOURCE,
 } from './cancelIf.js'
 export { filterGitmojis } from './filter.js'
 export { findBy } from './findBy.js'

@@ -1,6 +1,9 @@
 import { styled } from '../../lib/stitches.config'
 
 const Banner = styled('div', {
+  '@media (prefers-reduced-motion: no-preference)': {
+    transition: 'background-color 0.25s ease-in-out',
+  },
   '&::after': {
     boxSizing: 'border-box',
   },
@@ -8,10 +11,6 @@ const Banner = styled('div', {
     boxSizing: 'border-box',
   },
   '&:hover': { backgroundColor: '$colors$brand4' },
-
-  '@media (prefers-reduced-motion: no-preference)': {
-    transition: 'background-color 0.25s ease-in-out',
-  },
   alignItems: 'center',
   backgroundColor: '$colors$brand3',
   // @reset

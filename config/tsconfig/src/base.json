@@ -1,6 +1,5 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "@jeromefitz/tsconfig",
   "compilerOptions": {
     "allowJs": true,
     "composite": false,
@@ -20,5 +19,6 @@
     "skipLibCheck": true,
     "strict": true
   },
+  "display": "@jeromefitz/tsconfig",
   "exclude": ["node_modules"]
 }

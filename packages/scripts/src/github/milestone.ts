@@ -1,4 +1,4 @@
-// @todo(types)
+/** biome-ignore-all lint/suspicious/noConsole: migrate */
 import { Octokit } from '@octokit/rest'
 import { createColorize } from 'colorize-template'
 import isCI from 'is-ci'
@@ -22,11 +22,9 @@ const milestones = getMilestones.map((milestone) => ({
   title: `${milestone.emoji} ${milestone.name}`,
 }))
 
-// eslint-disable-next-line @typescript-eslint/require-await
 async function createMilestones({ owner, repo }) {
   try {
     // @todo(types)
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     milestones.map(async (milestone: any) => {
       await octokit.rest.issues.createMilestone({
         owner,
@@ -37,8 +35,7 @@ async function createMilestones({ owner, repo }) {
         colorize`{green.bold ✅️  success: ${owner}/${repo} => createMilestone: ${milestone.name}}`,
       )
     })
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  } catch (error) {
+  } catch (_error) {
     console.log(colorize`{red.bold ❎️  error: ${owner}/${repo} => createMilestone`)
     // console.log(colorize`{white.italic ${error}}`)
   }

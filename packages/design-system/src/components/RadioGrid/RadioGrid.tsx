@@ -9,6 +9,11 @@ const RadioGridGroup = styled(RadioGroupPrimitive.Root, {
 })
 
 const RadioGrid = styled(RadioGroupPrimitive.Item, {
+  '@hover': {
+    '&:hover': {
+      boxShadow: 'inset 0 0 0 1px $colors$slate8',
+    },
+  },
   '&::after': {
     boxSizing: 'border-box',
   },
@@ -18,11 +23,6 @@ const RadioGrid = styled(RadioGroupPrimitive.Item, {
   '&[data-state="checked"]': {
     backgroundColor: '$slate4',
     boxShadow: 'inset 0 0 0 1px $colors$slate8',
-  },
-  '@hover': {
-    '&:hover': {
-      boxShadow: 'inset 0 0 0 1px $colors$slate8',
-    },
   },
   all: 'unset',
   borderRadius: '$2',

@@ -11,7 +11,6 @@ const StyledButton = styled('button', {
   '&[href]': {
     cursor: 'pointer',
   },
-  WebkitTapHighlightColor: 'rgba(0,0,0,0)',
   alignItems: 'center',
   all: 'unset',
   borderRadius: '$2',
@@ -36,12 +35,11 @@ const StyledButton = styled('button', {
   variants: {
     variant: {
       contrast: {
-        $$backlight: `
-            0 0 0 2px $colors$brandA8,
-            -15px 0 30px -15px $colors$orangeA8,
-            0 0 30px -15px $colors$orangeA8,
-            15px 0 30px -15px $colors$brandA8
-          `,
+        '@hover': {
+          '&:hover': {
+            opacity: 0.9,
+          },
+        },
         '&:active': {
           opacity: 0.8,
         },
@@ -51,11 +49,12 @@ const StyledButton = styled('button', {
         '&:focus:not(:focus-visible)': {
           boxShadow: 'none',
         },
-        '@hover': {
-          '&:hover': {
-            opacity: 0.9,
-          },
-        },
+        $$backlight: `
+            0 0 0 2px $colors$brandA8,
+            -15px 0 30px -15px $colors$orangeA8,
+            0 0 30px -15px $colors$orangeA8,
+            15px 0 30px -15px $colors$brandA8
+          `,
         [`.${darkTheme} &`]: {
           '&:focus': {
             boxShadow: '$$backlight, 0 0 0 2px $colors$blueA8',
@@ -72,6 +71,7 @@ const StyledButton = styled('button', {
       },
     },
   },
+  WebkitTapHighlightColor: 'rgba(0,0,0,0)',
 })
 
 export { StyledButton }

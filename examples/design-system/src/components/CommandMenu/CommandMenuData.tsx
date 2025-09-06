@@ -1,3 +1,5 @@
+import type { KeyboardEvent } from 'react'
+
 import {
   Box,
   Command,
@@ -15,8 +17,6 @@ import {
   Flex,
   Icon,
 } from '@jeromefitz/design-system/src/components'
-
-import type { KeyboardEvent } from 'react'
 
 // import { useCommandState as useCmdk } from 'cmdk'
 import { useCallback, useRef, useState } from 'react'

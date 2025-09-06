@@ -1,8 +1,9 @@
+import type { ButtonMarketingProps } from './ButtonMarketing.types'
+
 import { forwardRef } from 'react'
 
 import { Box } from '../index'
 import { StyledButton } from './ButtonMarketing.styles'
-import { ButtonMarketingProps } from './ButtonMarketing.types'
 
 const ButtonMarketing = forwardRef<HTMLButtonElement, ButtonMarketingProps>(
   ({ children, icon: Icon, ...props }, forwardedRef) => {

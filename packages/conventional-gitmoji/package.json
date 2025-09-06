@@ -24,11 +24,7 @@
     "clean:install": "pnpm run clean && rm -rf node_modules",
     "copy": "mkdir -p ./dist && ./scripts/copy.sh",
     "dev": "tsdown --watch",
-    "format:lint": "pnpm run lint:eslint --fix && pnpm run format:prettier --write",
-    "format:prettier": "prettier \"./src/**/*.{cjs,js,jsx,mjs,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\" --ignore-unknown --log-level warn",
-    "generate:types": "node ./scripts/generateTypes.js && pnpm run format:lint",
-    "lint": "pnpm run format:prettier --check && pnpm run lint:eslint",
-    "lint:eslint": "eslint ./src --max-warnings=0",
+    "generate:types": "node ./scripts/generateTypes.js && pnpm exec biome format --write --no-errors-on-unmatched",
     "semantic-release": "semantic-release",
     "semantic-release:dry": "semantic-release --dry-run"
   },

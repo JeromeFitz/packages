@@ -29,7 +29,7 @@ export default config
 
 Pre-commit check against files for:
 
-- `eslint`
+- `biome`
 - `prettier`
 
 And re-add if any updates were applied on auto-fix.

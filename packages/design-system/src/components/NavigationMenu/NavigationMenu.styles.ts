@@ -111,10 +111,10 @@ const StyledTrigger = styled(NavigationMenuPrimitive.Trigger, {
 })
 
 const StyledCaret = styled(Icon.CaretDown, {
+  '[data-state=open] &': { transform: 'rotate(-180deg)' },
   '@media (prefers-reduced-motion: no-preference)': {
     transition: 'transform 250ms ease',
   },
-  '[data-state=open] &': { transform: 'rotate(-180deg)' },
   color: '$colors$primary',
   position: 'relative',
   top: 1,

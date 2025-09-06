@@ -1,4 +1,3 @@
-/* eslint-disable import-x/no-named-as-default-member */
 import colors from 'ansi-colors'
 
 import { LOGS } from '~ccommit/lib/index.js'

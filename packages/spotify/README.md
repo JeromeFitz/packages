@@ -1,5 +1,9 @@
 # `@jeromefitz/spotify`
 
+> [!IMPORTANT]
+>
+> There will be no further development and will eventually be removed from codebase.
+
 Custom API for [`jeromefitzgerald.com/music`](https://jeromefitzgerald.com/music).
 
 - `nowPlaying`: Current Track

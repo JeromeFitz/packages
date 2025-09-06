@@ -6,8 +6,8 @@ import _last from 'lodash/last.js'
  */
 const getTitle = (title: string) => {
   const _title: string = _last(title.split('_')) ?? ''
-  // @todo(NICE-129) eslint
-  // eslint-disable-next-line no-extra-boolean-cast
+
+  // biome-ignore lint/complexity/noExtraBooleanCast: migrate
   if (!!_title) {
     return _title
       .replace('Past', 'Cast Emeritus')

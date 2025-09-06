@@ -1,5 +1,4 @@
 import Fuse from 'fuse.js'
-// import Fuse from 'fuse.js/dist/fuse.esm.js'
 
 const options = {
   keys: [

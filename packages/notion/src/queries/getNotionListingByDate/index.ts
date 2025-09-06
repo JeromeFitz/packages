@@ -1,12 +1,10 @@
-// @todo(NICE-129) eslint
-/* eslint-disable no-extra-boolean-cast */
+import type { SortItem } from '../../schema/index.js'
+
 import { sortObject } from '@jeromefitz/utils'
 
 import _map from 'lodash/map.js'
 import _omit from 'lodash/omit.js'
 import _size from 'lodash/size.js'
-
-import type { SortItem } from '../../schema/index.js'
 
 import { PROPERTIES, QUERIES } from '../../constants/index.js'
 import { addTime, dataNormalized } from '../../utils/index.js'
@@ -24,8 +22,8 @@ const getNotionListingByDate__getFilter = ({
   // @hack nothing to see here, haha
   const dateTimestamp = new Date().toISOString()
   const timestampQuery = new Date(
-    `${!!year ? year : dateTimestamp.slice(0, 4)}-${!!month ? month : '01'}-${
-      !!day ? day : '01'
+    `${year ? year : dateTimestamp.slice(0, 4)}-${month ? month : '01'}-${
+      day ? day : '01'
     }`,
   )
 
@@ -154,7 +152,7 @@ const getNotionListingByDate = async ({
   })
   if (_info.object === 'page') {
     info = _omit(_info, 'properties')
-    info['properties'] = sortObject(
+    info.properties = sortObject(
       dataNormalized({ config, data: _info, pageId: _info.id, pathVariables }),
     )
   }
@@ -184,10 +182,9 @@ const getNotionListingByDate = async ({
   const __items: any[] = []
   _map(___items.results, (i) => {
     const item = _omit(i, 'properties')
-    item['properties'] = sortObject(
+    item.properties = sortObject(
       dataNormalized({ config, data: i, pageId: item.id, pathVariables }),
     )
-    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     !!item && __items.push(item)
   })
   const _items = _omit(___items, 'results')

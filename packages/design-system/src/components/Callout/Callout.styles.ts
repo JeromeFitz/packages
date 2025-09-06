@@ -83,16 +83,15 @@ const StyledCalloutLabelWrapper = styled('div', {
 })
 
 const StyledCallout = styled('aside', {
-  '*:last-child': {
-    marginBottom: '0px',
-  },
-
   '@bp1': {
     padding: '$7',
   },
 
   '@media (prefers-reduced-motion: no-preference)': {
     transition: 'all 300ms ease',
+  },
+  '*:last-child': {
+    marginBottom: '0px',
   },
   background: 'var(--callout-background, $colors$body)',
   border: '1px solid var(--callout-emphasis, $colors$typefacePrimary)',

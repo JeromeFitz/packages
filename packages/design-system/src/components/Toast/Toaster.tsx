@@ -1,15 +1,15 @@
+import type { IToast, IToastVariant } from './Toast.types.ts'
+
 import { forwardRef, useImperativeHandle, useState } from 'react'
 
-import type { IToast, IToastVariant } from './Toast.types'
-
-import { Button, Icon } from '../index'
+import { Button, Icon } from '../index.ts'
 import {
   Toast,
   ToastAction,
   ToastClose,
   ToastDescription,
   ToastTitle,
-} from './Toast'
+} from './Toast.tsx'
 
 const Toaster = forwardRef((props, forwardedRef) => {
   const [toasts, toastsSet] = useState<IToast[]>([])
@@ -55,7 +55,7 @@ const Toaster = forwardRef((props, forwardedRef) => {
         close,
         closeComponent,
         description,
-        key: (+new Date()).toString(),
+        key: Date.now().toString(),
         title,
         variant,
       },
@@ -126,7 +126,7 @@ const Toaster = forwardRef((props, forwardedRef) => {
 
               {closeVisible && (
                 <ToastClose aria-label="Close" asChild>
-                  <Button ghost onClick={!!close ? close : () => {}} size="1">
+                  <Button ghost onClick={close ? close : () => {}} size="1">
                     <Icon.Cross2 />
                   </Button>
                 </ToastClose>

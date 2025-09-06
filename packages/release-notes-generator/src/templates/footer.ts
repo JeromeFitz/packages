@@ -1,5 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const footer = (context, commits, meta) => {
+const footer = (context, _commits, _meta) => {
   const { noteGroups } = context
 
   // @todo(release-notes) make variable

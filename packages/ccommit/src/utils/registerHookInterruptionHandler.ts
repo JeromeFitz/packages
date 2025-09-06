@@ -1,7 +1,7 @@
-/* eslint-disable import-x/no-named-as-default-member */
 /*!
  * reference: https://github.com/carloscuesta/gitmoji-cli
  */
+/** biome-ignore-all lint/suspicious/noConsole: migrate */
 import process from 'node:process'
 
 import colors from 'ansi-colors'

@@ -260,6 +260,26 @@ const CarouselPrevious = (props) => {
 }
 
 const CarouselArrowButton = styled('button', {
+  '@hover': {
+    '&:hover': {
+      // Fix a bug when hovering at button edges would cause the button to jitter because of transform
+      '&::before': {
+        br: '$round',
+        content: '',
+        inset: -2,
+        position: 'absolute',
+      },
+      boxShadow: '$colors$blackA10 0px 3px 16px -5px, $colors$blackA5 0px 1px 3px',
+
+      transform: 'translateY(-1px)',
+    },
+  },
+  '@media (hover: none) and (pointer: coarse)': {
+    display: 'none',
+  },
+  '@media (prefers-reduced-motion: no-preference)': {
+    transition: 'all 100ms',
+  },
   '&:active': {
     '@media (prefers-reduced-motion: no-preference)': {
       transition: 'opacity 100ms',
@@ -282,27 +302,6 @@ const CarouselArrowButton = styled('button', {
   },
   '&:focus:not(:focus-visible)': {
     boxShadow: '$colors$blackA11 0px 2px 12px -5px, $colors$blackA5 0px 1px 3px',
-  },
-
-  '@hover': {
-    '&:hover': {
-      // Fix a bug when hovering at button edges would cause the button to jitter because of transform
-      '&::before': {
-        br: '$round',
-        content: '',
-        inset: -2,
-        position: 'absolute',
-      },
-      boxShadow: '$colors$blackA10 0px 3px 16px -5px, $colors$blackA5 0px 1px 3px',
-
-      transform: 'translateY(-1px)',
-    },
-  },
-  '@media (hover: none) and (pointer: coarse)': {
-    display: 'none',
-  },
-  '@media (prefers-reduced-motion: no-preference)': {
-    transition: 'all 100ms',
   },
   ai: 'center',
   bc: '$panel',

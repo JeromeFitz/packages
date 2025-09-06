@@ -1,10 +1,8 @@
+import type * as RadioGroupPrimitive from '@radix-ui/react-radio-group'
 import type { ComponentProps } from 'react'
 
-import * as RadioGroupPrimitive from '@radix-ui/react-radio-group'
-
 import type { CSS, VariantProps } from '../../lib/stitches.config'
-
-import { StyledRadio } from './Radio.styles'
+import type { StyledRadio } from './Radio.styles'
 
 type RadioVariants = VariantProps<typeof StyledRadio>
 type RadioGroupItemPrimitiveProps = ComponentProps<typeof RadioGroupPrimitive.Item>

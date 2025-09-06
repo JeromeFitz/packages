@@ -3,15 +3,15 @@
  */
 import type { ComponentProps, ElementRef, ReactNode } from 'react'
 
+import type { CSS } from '../../lib/stitches.config'
+
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { forwardRef } from 'react'
 
-import type { CSS } from '../../lib/stitches.config'
-
 import { styled } from '../../lib/stitches.config'
+import { Icon, IconButton } from '../index'
 import { overlayStyles } from '../Overlay/Overlay.styles'
 import { panelStyles } from '../Panel/Panel.styles'
-import { Icon, IconButton } from '../index'
 
 // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
 type DialogProps = ComponentProps<typeof DialogPrimitive.Root> & {

@@ -1,6 +1,5 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [":semanticCommitsDisabled"],
   "automerge": false,
   "baseBranches": ["main"],
   "branchPrefix": "deps/",
@@ -11,39 +10,20 @@
   "commitMessageSuffix": "",
   "commitMessageTopic": " {{depName}}@{{#if isPinDigest}}{{{newDigest}}}{{else}}{{#if isMajor}}{{{newVersion}}} 🧨 {{else}}{{#if isSingleVersion}}{{{newVersion}}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigest}}}{{/if}}{{/if}}{{/if}}{{/if}}",
   "dependencyDashboard": false,
-  "ignoreDeps": ["nanoid", "sharp"],
+  "extends": [":semanticCommitsDisabled"],
+  "ignoreDeps": ["sharp"],
   "labels": ["📦️ Dependencies"],
   "node": {
     "enabled": false
   },
   "packageRules": [
     {
-      "commitMessagePrefix": "👷  (actions)",
       "commitMessageExtra": "{{depName}}@{{#if isPinDigest}}{{{newDigest}}}{{else}}{{#if isMajor}}{{{newVersion}}} 🧨 {{else}}{{#if isSingleVersion}}{{{newVersion}}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigest}}}{{/if}}{{/if}}{{/if}}{{/if}}",
+      "commitMessagePrefix": "👷  (actions)",
       "commitMessageTopic": " {{depName}}",
       "groupName": "github actions :octocat: ...",
       "groupSlug": "github-actions",
       "matchPackagePatterns": ["^actions"]
-    },
-    {
-      "commitMessagePrefix": "⬆️  (deps)",
-      "excludePackageNames": [
-        "eslint-config-next",
-        "eslint-config-turbo",
-        "eslint-plugin-turbo"
-      ],
-      "groupName": "lint 📏 ",
-      "groupSlug": "lint",
-      "matchPackageNames": ["@babel/eslint-parser", "prettier"],
-      "matchPackagePatterns": ["^@eslint", "^eslint"]
-    },
-    {
-      "commitMessagePrefix": "⬆️  (deps)",
-      "commitMessageSuffix": "",
-      "excludePackageNames": ["@storybook/nextjs"],
-      "groupName": "next 🔺 ",
-      "groupSlug": "next",
-      "matchPackageNames": ["@next/eslint-plugin-next", "eslint-config-next", "next"]
     },
     {
       "commitMessagePrefix": "📦  (deps-dev)",
@@ -52,13 +32,6 @@
       "groupSlug": "storybook",
       "matchPackageNames": ["storybook"],
       "matchPackagePatterns": ["^@storybook/"]
-    },
-    {
-      "commitMessagePrefix": "⬆️  (deps)",
-      "commitMessageSuffix": "",
-      "groupName": "turbo 🔺 ",
-      "groupSlug": "turbo",
-      "matchPackageNames": ["eslint-config-turbo", "eslint-plugin-turbo", "turbo"]
     },
     {
       "assignees": ["JeromeFitz"],
@@ -95,12 +68,12 @@
     },
     {
       "assignees": ["JeromeFitz"],
-      "matchUpdateTypes": ["major"],
       "labels": [
         "📦 Dependencies",
         "📦 Dependencies 💥 Breaking 💥",
         "🛑️ Do Not Merge"
       ],
+      "matchUpdateTypes": ["major"],
       "reviewers": ["JeromeFitz"]
     },
     {

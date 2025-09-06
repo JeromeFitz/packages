@@ -169,7 +169,6 @@ export {
   SelectValue,
   SelectViewport,
 } from './Select'
-
 export { Separator } from './Separator'
 export {
   Sheet,
@@ -201,10 +200,10 @@ export {
   ToastAction,
   ToastClose,
   ToastDescription,
+  Toaster,
   ToastProvider,
   ToastTitle,
   ToastViewport,
-  Toaster,
 } from './Toast'
 export { Toggle } from './Toggle'
 export { ToggleGroup, ToggleGroupItem } from './ToggleGroup'

@@ -2,8 +2,7 @@ import type { ICommit } from './commit.types.js'
 
 type IReleaseRule = Partial<Record<ICommit, IReleaseRuleProps>>
 
-// @todo(NICE-129) eslint
-// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+// biome-ignore lint/nursery/useConsistentTypeDefinitions: migrate
 type IReleaseRuleProps = {
   branch: null | string
   code: string

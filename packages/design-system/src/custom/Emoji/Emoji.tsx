@@ -1,6 +1,7 @@
 import { find as findEmoji } from 'node-emoji'
 
 import { styled } from '../../lib/stitches.config'
+
 // import { Box } from '../../components'
 
 const Box = styled('div', {

@@ -1,10 +1,9 @@
 {
   "compilerOptions": {
-    "allowImportingTsExtensions": true,
     "baseUrl": ".",
-    "noImplicitAny": false,
-    "noEmit": true
+    "noEmit": true,
+    "noImplicitAny": false
   },
-  "extends": "@jeromefitz/tsconfig/src/node22.json",
-  "exclude": []
+  "exclude": [],
+  "extends": "@jeromefitz/tsconfig/src/node22.json"
 }

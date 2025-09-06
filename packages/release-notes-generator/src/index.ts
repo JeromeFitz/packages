@@ -29,7 +29,7 @@ const configGithub = {
 }
 
 // @todo(complexity) 17
-// eslint-disable-next-line complexity
+// biome-ignore lint/complexity/noExcessiveCognitiveComplexity: migrate
 async function generateNotes(pluginConfig, context) {
   const { parserOpts, writerOpts } = await getChangelogConfig(pluginConfig, context)
   const { commits: commitsPassed, cwd, lastRelease, nextRelease, options } = context
@@ -50,7 +50,6 @@ async function generateNotes(pluginConfig, context) {
   const [match, auth, host, path] =
     /^(?!.+:\/\/)(?:(?<auth>.*)@)?(?<host>.*?):(?<path>.*)$/.exec(repositoryUrl) ||
     []
-  // eslint-disable-next-line prefer-const
   let { hostname, pathname, port, protocol } = new URL(
     match ? `ssh://${auth ? `${auth}@` : ''}${host}/${path}` : repositoryUrl,
   )
@@ -68,8 +67,7 @@ async function generateNotes(pluginConfig, context) {
       issue,
       linkCompare: currentTag && previousTag,
       owner,
-      packageData: ((await readPackageUp({ cwd, normalize: false })) || {})
-        .packageJson,
+      packageData: (await readPackageUp({ cwd, normalize: false }))?.packageJson,
       previousTag,
       repository,
       version: nextRelease.version,

@@ -33,10 +33,10 @@ function Root({ children, ...props }) {
 }
 
 const StyledContent = styled(AlertDialogPrimitive.Content, {
-  '&:focus': { outline: 'none' },
   '@media (prefers-reduced-motion: no-preference)': {
     animation: `${contentShow} 150ms cubic-bezier(0.16, 1, 0.3, 1)`,
   },
+  '&:focus': { outline: 'none' },
   backgroundColor: 'white',
   borderRadius: 6,
   boxShadow:

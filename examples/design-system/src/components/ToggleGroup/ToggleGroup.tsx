@@ -4,8 +4,6 @@ import {
   ToggleGroupItem,
 } from '@jeromefitz/design-system/src/components'
 
-import React from 'react'
-
 const ToggleGroupDemo = () => (
   <ToggleGroup aria-label="Text alignment" defaultValue="center" type="single">
     <ToggleGroupItem aria-label="Left aligned" value="left">

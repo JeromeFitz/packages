@@ -4,13 +4,13 @@
     "forceConsistentCasingInFileNames": true,
     "lib": ["ESNext"],
     "module": "NodeNext",
+    "outDir": "./dist",
+    "rootDir": "./src",
     "skipLibCheck": true,
     "strict": true,
-    "target": "ESNext",
-    "outDir": "./dist",
-    "rootDir": "./src"
+    "target": "ESNext"
   },
+  "exclude": ["node_modules", "release.config.js"],
   "extends": "@jeromefitz/tsconfig/src/node22.json",
-  "include": ["src"],
-  "exclude": ["node_modules", "release.config.js"]
+  "include": ["src"]
 }

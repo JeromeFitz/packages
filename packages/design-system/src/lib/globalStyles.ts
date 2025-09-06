@@ -9,9 +9,8 @@
 // import { fonts, fontSizes, fontWeights } from './tokens/typography'
 
 const globalCss = {
-  '#__next': {
-    position: 'relative',
-    zIndex: 0,
+  ".light-theme [data-hide='dark'], .dark-theme [data-hide='light']": {
+    display: 'none',
   },
   '*': {
     'box-sizing': 'border-box',
@@ -23,20 +22,19 @@ const globalCss = {
   '*:before': {
     'box-sizing': 'border-box',
   },
-
-  ".light-theme [data-hide='dark'], .dark-theme [data-hide='light']": {
-    display: 'none',
+  '#__next': {
+    position: 'relative',
+    zIndex: 0,
   },
 
   body: {
-    MozOsxFontSmoothing: 'grayscale',
-    WebkitFontSmoothing: 'antialiased',
-    WebkitTextSizeAdjust: '100%',
-
     backgroundColor: '$colors$body',
     // color: '$colors$foreground',
     fontFamily: '$fonts$sans',
+    MozOsxFontSmoothing: 'grayscale',
     margin: 0,
+    WebkitFontSmoothing: 'antialiased',
+    WebkitTextSizeAdjust: '100%',
   },
 
   'body.loading *': {

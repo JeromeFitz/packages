@@ -12,7 +12,6 @@ type DatabaseInfo = Partial<
       hasChild: null | string
       infoType: any
       isChild: null | string
-      // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
       isChildInfoType: any | null
       name: string
       page_id__seo: string

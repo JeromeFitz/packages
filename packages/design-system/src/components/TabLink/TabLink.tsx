@@ -1,13 +1,13 @@
 import { styled } from '../../lib/stitches.config'
 
 const TabLink = styled('a', {
-  '&:focus': {
-    boxShadow: 'inset 0 0 0 1px $colors$slate8, 0 0 0 1px $colors$slate8',
-  },
   '@hover': {
     '&:hover': {
       color: '$hiContrast',
     },
+  },
+  '&:focus': {
+    boxShadow: 'inset 0 0 0 1px $colors$slate8, 0 0 0 1px $colors$slate8',
   },
   alignItems: 'center',
   color: '$slate11',

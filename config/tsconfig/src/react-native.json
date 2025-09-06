@@ -1,6 +1,5 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "@jeromefitz/tsconfig-react-native",
   "compilerOptions": {
     "allowJs": true,
     "esModuleInterop": true,
@@ -17,5 +16,6 @@
     "strict": false,
     "target": "es5"
   },
+  "display": "@jeromefitz/tsconfig-react-native",
   "exclude": ["node_modules", "babel.config.js", "metro.config.js", "jest.config.js"]
 }

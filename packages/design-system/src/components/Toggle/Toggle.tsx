@@ -6,6 +6,11 @@ import * as TogglePrimitive from '@radix-ui/react-toggle'
 import { styled } from '../../lib/stitches.config'
 
 const Toggle = styled(TogglePrimitive.Root, {
+  '@hover': {
+    '&:hover': {
+      backgroundColor: '$slateA3',
+    },
+  },
   '&::after': {
     boxSizing: 'border-box',
   },
@@ -20,22 +25,16 @@ const Toggle = styled(TogglePrimitive.Root, {
     zIndex: 1,
   },
   '&[data-state="on"]': {
-    '&:active': {
-      backgroundColor: '$slateA7',
-    },
     '@hover': {
       '&:hover': {
         backgroundColor: '$slateA5',
       },
     },
+    '&:active': {
+      backgroundColor: '$slateA7',
+    },
     backgroundColor: '$slateA5',
   },
-  '@hover': {
-    '&:hover': {
-      backgroundColor: '$slateA3',
-    },
-  },
-  WebkitTapHighlightColor: 'transparent',
   // @reset
   alignItems: 'center',
   appearance: 'none',
@@ -65,6 +64,7 @@ const Toggle = styled(TogglePrimitive.Root, {
       },
     },
   },
+  WebkitTapHighlightColor: 'transparent',
 
   width: '$5',
 })

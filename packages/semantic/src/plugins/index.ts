@@ -1,11 +1,11 @@
-export { commitAnalyzer } from './commitAnalyzer.js'
 export type { ReleaseRule } from './commitAnalyzer.types.js'
-export { git } from './git.js'
 export type { GitPluginOptions } from './git.types.js'
-export { github } from './github.js'
-
 export type { GithubPluginOptions } from './github.types.js'
-export { npm } from './npm.js'
 export type { NPMPluginOptions } from './npm.types.js'
-export { getPluginOptions } from './pluginOptions.js'
 export type { PluginOptions } from './pluginOptions.types.js'
+
+export { commitAnalyzer } from './commitAnalyzer.js'
+export { git } from './git.js'
+export { github } from './github.js'
+export { npm } from './npm.js'
+export { getPluginOptions } from './pluginOptions.js'

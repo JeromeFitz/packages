@@ -24,7 +24,6 @@ const TextArea = styled('textarea', {
     },
     backgroundColor: '$slate2',
   },
-  WebkitTapHighlightColor: 'rgba(0,0,0,0)',
   // @reset
   appearance: 'none',
   backgroundColor: '$loContrast',
@@ -100,6 +99,7 @@ const TextArea = styled('textarea', {
       },
     },
   },
+  WebkitTapHighlightColor: 'rgba(0,0,0,0)',
   width: '100%',
 })
 

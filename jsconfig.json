@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "~ccommit/*": ["packages/ccommit/src/*"],
-    },
-  },
+      "~ccommit/*": ["packages/ccommit/src/*"]
+    }
+  }
 }

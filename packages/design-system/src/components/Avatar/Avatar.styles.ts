@@ -50,6 +50,13 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
     },
     interactive: {
       true: {
+        '@hover': {
+          '&:hover': {
+            '&::after': {
+              opacity: '1',
+            },
+          },
+        },
         '&::after': {
           '@media (prefers-reduced-motion: no-preference)': {
             transition: 'opacity 25ms linear',
@@ -68,13 +75,6 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
           '&::after': {
             backgroundColor: 'rgba(0,0,0,.12)',
             opacity: '1',
-          },
-        },
-        '@hover': {
-          '&:hover': {
-            '&::after': {
-              opacity: '1',
-            },
           },
         },
       },

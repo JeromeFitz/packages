@@ -1,8 +1,8 @@
-import { parserOpts, writerOpts } from '@jeromefitz/conventional-gitmoji'
-
 import type { PluginSpec } from 'semantic-release'
 
 import type { PluginOptions } from './pluginOptions.types.js'
+
+import { parserOpts, writerOpts } from '@jeromefitz/conventional-gitmoji'
 
 import { commitAnalyzer, git, github, npm } from './index.js'
 
@@ -26,7 +26,6 @@ const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec[] => {
   /**
    * @todo(types) any
    */
-  // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
   const options: any | PluginOptions = {
     ...optionsDefault,
     ...optionsPassed,

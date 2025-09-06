@@ -1,8 +1,7 @@
-import { SVGAttributes } from 'react'
+import type { SVGAttributes } from 'react'
 
 import type { CSS, VariantProps } from '../../lib/stitches.config'
-
-import { StyledSVG } from './Icon.styles'
+import type { StyledSVG } from './Icon.styles'
 
 type IconSize = VariantProps<typeof StyledSVG>['size']
 type IconVariant = VariantProps<typeof StyledSVG>['variant']

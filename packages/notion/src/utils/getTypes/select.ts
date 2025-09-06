@@ -6,8 +6,8 @@ const select = (data: any) => {
   const s: any = data.select
   // console.dir(`getTypeSelectNormalized`)
   // console.dir(data)
-  // @todo(NICE-129) eslint
-  // eslint-disable-next-line no-extra-boolean-cast
+
+  // biome-ignore lint/complexity/noExtraBooleanCast: migrate
   if (!!s) {
     s.slug = slugger.slug(data.select.name)
     return { [s.id]: s }

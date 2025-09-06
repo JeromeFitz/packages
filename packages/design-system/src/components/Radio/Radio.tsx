@@ -3,9 +3,9 @@
  */
 import type { ElementRef } from 'react'
 
-import { forwardRef } from 'react'
-
 import type { RadioProps } from './Radio.types'
+
+import { forwardRef } from 'react'
 
 import { RadioGroup, StyledIndicator, StyledRadio } from './Radio.styles'
 

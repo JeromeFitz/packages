@@ -150,6 +150,12 @@ const ScrollArea = (props: ScrollAreaProps) => {
   return (
     <Flex
       css={{
+        // This bit shows the thumb when you hover the wrapper
+        '&:hover': {
+          '& [data-scroll-thumb]': {
+            opacity: 1,
+          },
+        },
         '&.modulz-is-dragging': {
           // But still remove pointer events from content
           '& [data-scroll-content]': {
@@ -161,12 +167,6 @@ const ScrollArea = (props: ScrollAreaProps) => {
           },
           // Need to keep pointer events when scrolling so thumb isn't hidden immediately after scroll
           pointerEvents: 'auto',
-        },
-        // This bit shows the thumb when you hover the wrapper
-        '&:hover': {
-          '& [data-scroll-thumb]': {
-            opacity: 1,
-          },
         },
         display: 'flex',
         flex: 1,
@@ -181,10 +181,10 @@ const ScrollArea = (props: ScrollAreaProps) => {
       <Box
         css={{
           '&::-webkit-scrollbar': { display: 'none' },
-          WebkitOverflowScrolling: 'touch',
           overflow: 'scroll',
           position: 'relative',
           scrollbarWidth: 'none',
+          WebkitOverflowScrolling: 'touch',
           zIndex: 1,
         }}
         data-scroll-content

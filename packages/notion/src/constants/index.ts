@@ -1,7 +1,7 @@
+import type { DataTypes, DataTypesObject, Property } from '../schema/index.js'
+
 import _filter from 'lodash/filter.js'
 import _map from 'lodash/map.js'
-
-import type { DataTypes, DataTypesObject, Property } from '../schema/index.js'
 
 const getLookup = ({ key, notion, type }) => ({
   key,
@@ -1325,7 +1325,7 @@ const getDataTypes: DataTypes[] = [LISTING, LISTING_BY_DATE, SLUG, SLUG_BY_ROUTE
 
 const DATA_TYPES: DataTypesObject = Object.assign(
   {},
-  ...getDataTypes.map((d) => ({ [d]: d })).flat(1),
+  ...getDataTypes.flatMap((d) => ({ [d]: d })),
 )
 
 export {
