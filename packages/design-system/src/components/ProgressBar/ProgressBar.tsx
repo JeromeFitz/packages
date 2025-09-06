@@ -3,10 +3,10 @@
  */
 import type { ComponentProps, ElementRef } from 'react'
 
+import type { CSS, VariantProps } from '../../lib/stitches.config'
+
 import * as ProgressPrimitive from '@radix-ui/react-progress'
 import { forwardRef } from 'react'
-
-import type { CSS, VariantProps } from '../../lib/stitches.config'
 
 import { keyframes, styled } from '../../lib/stitches.config'
 

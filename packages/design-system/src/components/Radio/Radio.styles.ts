@@ -24,6 +24,11 @@ const StyledIndicator = styled(RadioGroupPrimitive.Indicator, {
 })
 
 const StyledRadio = styled(RadioGroupPrimitive.Item, {
+  '@hover': {
+    '&:hover': {
+      boxShadow: 'inset 0 0 0 1px $colors$slate8',
+    },
+  },
   '&::after': {
     boxSizing: 'border-box',
   },
@@ -35,12 +40,6 @@ const StyledRadio = styled(RadioGroupPrimitive.Item, {
     boxShadow: 'inset 0 0 0 1px $colors$blue9, 0 0 0 1px $colors$blue9',
     outline: 'none',
   },
-  '@hover': {
-    '&:hover': {
-      boxShadow: 'inset 0 0 0 1px $colors$slate8',
-    },
-  },
-  WebkitTapHighlightColor: 'rgba(0,0,0,0)',
   alignItems: 'center',
   all: 'unset',
   appearance: 'none',
@@ -81,6 +80,7 @@ const StyledRadio = styled(RadioGroupPrimitive.Item, {
       },
     },
   },
+  WebkitTapHighlightColor: 'rgba(0,0,0,0)',
 })
 
 export { RadioGroup, StyledIndicator, StyledRadio }

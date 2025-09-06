@@ -1,3 +1,5 @@
+import type { IconProps } from './Icon.types'
+
 import {
   ArrowUturnLeftIcon as ArrowUturnLeftHero,
   BookOpenIcon as BookOpenIconHero,
@@ -71,7 +73,6 @@ import {
 } from '@radix-ui/react-icons'
 
 import { Box } from '../Box'
-import { IconProps } from './Icon.types'
 
 /**
  * @hack(icon)

@@ -12,9 +12,8 @@ function processCommit(chunk, transform, context) {
 
   try {
     chunk = JSON.parse(chunk)
-    // @todo(NICE-129) eslint
-    // eslint-disable-next-line no-empty, @typescript-eslint/no-unused-vars
-  } catch (e) {}
+    // biome-ignore lint/suspicious/noEmptyBlockStatements: migrate
+  } catch (_error) {}
 
   commit = _cloneDeep(chunk)
 
@@ -28,7 +27,7 @@ function processCommit(chunk, transform, context) {
     return commit
   }
 
-  _forEach(transform, function (el, path) {
+  _forEach(transform, (el, path) => {
     let value = _get(commit, path)
 
     if (_isFunction(el)) {

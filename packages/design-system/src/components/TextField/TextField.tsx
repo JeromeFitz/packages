@@ -1,6 +1,14 @@
 import { styled } from '../../lib/stitches.config'
 
 const TextField = styled('input', {
+  '&:-webkit-autofill': {
+    boxShadow: 'inset 0 0 0 1px $colors$blue6, inset 0 0 0 100px $colors$blue3',
+  },
+  '&:-webkit-autofill::first-line': {
+    color: '$hiContrast',
+    fontFamily: '$sans',
+    fontSize: '1rem',
+  },
   '&::after': {
     boxSizing: 'border-box',
   },
@@ -9,14 +17,6 @@ const TextField = styled('input', {
   },
   '&::placeholder': {
     color: '$slate9',
-  },
-  '&:-webkit-autofill': {
-    boxShadow: 'inset 0 0 0 1px $colors$blue6, inset 0 0 0 100px $colors$blue3',
-  },
-  '&:-webkit-autofill::first-line': {
-    color: '$hiContrast',
-    fontFamily: '$sans',
-    fontSize: '1rem',
   },
   '&:disabled': {
     '&::placeholder': {
@@ -40,7 +40,6 @@ const TextField = styled('input', {
     },
     backgroundColor: '$slate2',
   },
-  WebkitTapHighlightColor: 'rgba(0,0,0,0)',
   // @reset
   appearance: 'none',
   // @custom
@@ -119,6 +118,11 @@ const TextField = styled('input', {
     },
     variant: {
       ghost: {
+        '@hover': {
+          '&:hover': {
+            boxShadow: 'inset 0 0 0 1px $colors$slateA7',
+          },
+        },
         '&:disabled': {
           backgroundColor: 'transparent',
         },
@@ -130,16 +134,12 @@ const TextField = styled('input', {
         '&:read-only': {
           backgroundColor: 'transparent',
         },
-        '@hover': {
-          '&:hover': {
-            boxShadow: 'inset 0 0 0 1px $colors$slateA7',
-          },
-        },
         backgroundColor: 'transparent',
         boxShadow: 'none',
       },
     },
   },
+  WebkitTapHighlightColor: 'rgba(0,0,0,0)',
   width: '100%',
 })
 

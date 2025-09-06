@@ -1,21 +1,20 @@
+import type { AppProps } from 'next/app'
+
 import { globalStyles as globalStylesDefault } from '@jeromefitz/design-system/src'
 import { Box, Container } from '@jeromefitz/design-system/src/components'
 import { globalCss } from '@jeromefitz/design-system/src/lib/stitches.config'
 
-import type { AppProps } from 'next/app'
-
 import _merge from 'lodash/merge.js'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
-import * as React from 'react'
 
-import { Providers } from '../context/Providers'
-import { globalStyles as globalStylesLocal } from '../styles/globalStyles'
+import { Providers } from '../context/Providers.tsx'
+import { globalStyles as globalStylesLocal } from '../styles/globalStyles.ts'
 
-const CommandMenu = dynamic(() => import('../components/CommandMenu'), {
+const CommandMenu = dynamic(() => import('../components/CommandMenu/index.ts'), {
   ssr: true,
 })
-const Header = dynamic(() => import('../components/Header'), {
+const Header = dynamic(() => import('../components/Header/index.tsx'), {
   ssr: true,
 })
 

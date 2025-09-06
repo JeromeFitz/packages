@@ -12,7 +12,9 @@ const cancelIfRebasing = (): Promise<void> =>
       // see https://stackoverflow.com/questions/3921409/how-to-know-if-there-is-a-git-rebase-in-progress
       // to understand how a rebase is detected
       if (
+        // biome-ignore lint/style/useTemplate: migrate
         fs.existsSync(gitDirectory + '/rebase-merge') ||
+        // biome-ignore lint/style/useTemplate: migrate
         fs.existsSync(gitDirectory + '/rebase-apply')
       ) {
         process.exit(0)

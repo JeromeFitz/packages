@@ -1,4 +1,5 @@
 import type { StorybookConfig } from '@storybook/nextjs'
+
 const config: StorybookConfig = {
   addons: [
     '@storybook/addon-links',
@@ -19,24 +20,24 @@ const config: StorybookConfig = {
   core: {
     disableTelemetry: true,
   },
+  docs: {
+    autodocs: true,
+  },
   features: {},
   framework: {
     name: '@storybook/nextjs',
     options: {},
   },
   staticDirs: ['../public'],
+  stories: ['../src/**.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   typescript: {
     check: false,
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
-      shouldExtractLiteralValuesFromEnum: true,
       propFilter: (prop) =>
         prop.parent ? !/node_modules/.test(prop.parent.fileName) : true,
+      shouldExtractLiteralValuesFromEnum: true,
     },
-  },
-  stories: ['../src/**.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
-  docs: {
-    autodocs: true,
   },
 }
 export default config

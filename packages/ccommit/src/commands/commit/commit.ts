@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/suspicious/noConsole: migrate */
 import process from 'node:process'
 
 import enquirer from 'enquirer'
@@ -17,8 +18,7 @@ import withHook from './withHook.js'
 
 const { prompt } = enquirer
 
-// @todo(NICE-129) eslint
-// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+// biome-ignore lint/nursery/useConsistentTypeDefinitions: migrate
 export type CommitOptions = {
   message?: string
   mode: typeof COMMIT_MODES.CLIENT
@@ -45,8 +45,6 @@ const promptAndCommit = async (options: CommitOptions) => {
       process.exit(2)
     }
   } else {
-    // @todo(NICE-129) eslint
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     await prompt(questions)
       .then((answers: any) => {
@@ -59,8 +57,7 @@ const promptAndCommit = async (options: CommitOptions) => {
       .catch(console.error)
   }
 
-  // @todo(NICE-129) eslint
-  // eslint-disable-next-line no-extra-boolean-cast
+  // biome-ignore lint/complexity/noExtraBooleanCast: migrate
   data.subject = !!data ? formatCommitSubject(options, data) : ''
 
   if (options.mode === COMMIT_MODES.HOOK) {

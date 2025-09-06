@@ -1,6 +1,6 @@
 import type { ComponentProps, ComponentType } from 'react'
 
-import { StyledButton } from './ButtonMarketing.styles'
+import type { StyledButton } from './ButtonMarketing.styles'
 
 type ButtonMarketingProps = {
   as: any

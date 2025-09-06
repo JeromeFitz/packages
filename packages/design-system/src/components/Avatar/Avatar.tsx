@@ -3,9 +3,9 @@
  */
 import type { ElementRef } from 'react'
 
-import { forwardRef } from 'react'
-
 import type { AvatarOwnProps } from './Avatar.types'
+
+import { forwardRef } from 'react'
 
 import { Box, Status } from '../index'
 import {

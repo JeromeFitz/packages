@@ -45,8 +45,7 @@ const contributorsSubtitle = [
   'Brought to you by',
 ]
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const contributor = async (context, commits, meta) => {
+const contributor = async (context, commits, _meta) => {
   const authors = _uniqBy(
     commits.map(
       (commit): IAuthor => ({
@@ -72,9 +71,9 @@ const contributor = async (context, commits, meta) => {
         })
         .then(({ data }) => {
           const login = data.items[0]?.login
-          // @todo(NICE-129) eslint
-          // eslint-disable-next-line no-extra-boolean-cast
+          // biome-ignore lint/complexity/noExtraBooleanCast: migrate
           if (!!login) {
+            // biome-ignore lint/complexity/useLiteralKeys: migrate
             authors[authorIdx]['login'] = login
             return login
           }

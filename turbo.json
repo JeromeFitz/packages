@@ -1,9 +1,13 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalEnv": ["GH_TOKEN"],
+  "globalEnv": [
+    "GH_TOKEN"
+  ],
   "tasks": {
     "build": {
-      "dependsOn": ["^build"],
+      "dependsOn": [
+        "^build"
+      ],
       "inputs": [
         "scripts/copy.sh",
         "src/**",
@@ -13,32 +17,16 @@
         "package.json"
       ],
       "outputLogs": "new-only",
-      "outputs": ["dist/**", ".next/**"]
+      "outputs": [
+        "dist/**",
+        ".next/**"
+      ]
     },
     "clean": {
       "cache": false
     },
     "dev": {
       "cache": false
-    },
-    "lint": {
-      "dependsOn": [
-        "@jeromefitz/eslint-config#build",
-        "@jeromefitz/prettier-config#build"
-      ],
-      "inputs": [
-        "eslint.config.js",
-        "src/**",
-        "*.cjs",
-        "*.js",
-        "*.mjs",
-        "package.json"
-      ],
-      "outputLogs": "new-only"
-    },
-    "format:lint": {
-      "cache": false,
-      "dependsOn": []
     },
     "semantic-release": {
       "cache": false,
@@ -49,13 +37,26 @@
       "dependsOn": []
     },
     "test": {
-      "dependsOn": ["lint", "build"],
+      "dependsOn": [
+        "lint",
+        "build"
+      ],
       "outputLogs": "new-only",
-      "outputs": ["coverage/**"]
+      "outputs": [
+        "coverage/**"
+      ]
     },
     "@jeromefitz/notion#build": {
-      "dependsOn": ["@jeromefitz/utils#build"],
-      "inputs": ["src/**", "*.cjs", "*.js", "*.mjs", "package.json"],
+      "dependsOn": [
+        "@jeromefitz/utils#build"
+      ],
+      "inputs": [
+        "src/**",
+        "*.cjs",
+        "*.js",
+        "*.mjs",
+        "package.json"
+      ],
       "outputLogs": "new-only"
     },
     "@jeromefitz/semantic#build": {
@@ -63,12 +64,13 @@
         "@jeromefitz/conventional-gitmoji#build",
         "@jeromefitz/release-notes-generator#build"
       ],
-      "inputs": ["src/**", "*.cjs", "*.js", "*.mjs", "package.json"],
-      "outputLogs": "new-only"
-    },
-    "@jeromefitz/spotify#build": {
-      "dependsOn": ["@jeromefitz/utils#build"],
-      "inputs": ["src/**", "*.cjs", "*.js", "*.mjs", "package.json"],
+      "inputs": [
+        "src/**",
+        "*.cjs",
+        "*.js",
+        "*.mjs",
+        "package.json"
+      ],
       "outputLogs": "new-only"
     }
   },

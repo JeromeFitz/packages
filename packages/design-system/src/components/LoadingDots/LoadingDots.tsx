@@ -13,7 +13,6 @@ const blink = keyframes({
 })
 
 const LoadingDots = styled('span', {
-  '$$loading-dots-height': 'auto',
   '& span': {
     animationDuration: '1.4s',
     animationFillMode: 'both',
@@ -30,6 +29,7 @@ const LoadingDots = styled('span', {
   '& span:nth-of-type(even)': { animationDelay: '0.2s' },
 
   '& span:nth-of-type(odd)': { animationDelay: '0.4s' },
+  '$$loading-dots-height': 'auto',
   // '$$loading-dots-size': '2px',
   alignItems: 'center',
   defaultVariants: {

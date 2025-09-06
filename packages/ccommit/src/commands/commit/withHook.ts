@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/suspicious/noConsole: migrate */
 import fs from 'node:fs'
 import { join } from 'node:path'
 import process from 'node:process'
@@ -6,8 +7,6 @@ import { getGitRootDir, printDryRun } from '~ccommit/utils/index.js'
 
 const commitMsgFile = join(getGitRootDir(), '.git', 'COMMIT_EDITMSG')
 
-// @todo(complexity) 9
-// eslint-disable-next-line complexity
 const withHook = (answers, options) => {
   try {
     let commitMessage = answers?.subject

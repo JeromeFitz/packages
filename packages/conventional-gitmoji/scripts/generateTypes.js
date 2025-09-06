@@ -1,13 +1,15 @@
-import { writeFile } from 'fs'
+/** biome-ignore-all lint/suspicious/noConsole: migrate */
+import { writeFile } from 'node:fs'
+import { dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { dirname, join, resolve } from 'path'
 
-import stringify from 'fast-json-stable-stringify'
+// import stringify from 'fast-json-stable-stringify'
 
 // import title from 'title'
 
 import { default as getGitmojiConventional } from '../dist/utils/getGitmojiConventional.js'
 import { default as getTypeSpecs } from '../dist/utils/getTypeSpecs.js'
+
 // import { default as getReleaseRules } from '../dist/utils/getReleaseRules.js'
 
 // const { types } = config
@@ -76,7 +78,7 @@ const typeSpecs = getTypeSpecs(types)
 //     if (err) {
 //       throw err
 //     }
-//     // eslint-disable-next-line no-console
+//
 //     console.log('❤️  1. generateReleaseRules > ./src/releaseRules.ts')
 //   })
 // }
@@ -90,7 +92,7 @@ const typeSpecs = getTypeSpecs(types)
 //     if (err) {
 //       throw err
 //     }
-//     // eslint-disable-next-line no-console
+//
 //     console.log('❤️  2. generateTypeSpecs > ./src/typeSpecs.ts')
 //   })
 // }
@@ -107,7 +109,6 @@ const generateCommitType = () => {
     if (err) {
       throw err
     }
-    // eslint-disable-next-line no-console
     console.log('❤️  2. generateCommitType > ./src/types/commit.types.ts')
   })
 }
@@ -126,7 +127,6 @@ export { commit }
     if (err) {
       throw err
     }
-    // eslint-disable-next-line no-console
     console.log('❤️  2. generateCommit > ./src/types/commit.ts')
   })
 }

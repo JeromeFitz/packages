@@ -1,6 +1,9 @@
 import { styled } from '../../lib/stitches.config'
 
 const Badge = styled('span', {
+  '@media (prefers-reduced-motion: no-preference)': {
+    transition: 'background 300ms ease',
+  },
   '&::after': {
     boxSizing: 'border-box',
     content: '""',
@@ -17,10 +20,6 @@ const Badge = styled('span', {
   '&:focus': {
     boxShadow: 'inset 0 0 0 1px $colors$brand8, 0 0 0 1px $colors$brand8',
   },
-  '@media (prefers-reduced-motion: no-preference)': {
-    transition: 'background 300ms ease',
-  },
-  WebkitTapHighlightColor: 'rgba(0,0,0,0)',
   // @reset
   alignItems: 'center',
   appearance: 'none',
@@ -33,6 +32,11 @@ const Badge = styled('span', {
   compoundVariants: [
     {
       css: {
+        '@hover': {
+          '&:hover': {
+            backgroundColor: '$red5',
+          },
+        },
         '&:active': {
           backgroundColor: '$red6',
         },
@@ -40,17 +44,17 @@ const Badge = styled('span', {
           {
             backgroundColor: '$red6',
           },
-        '@hover': {
-          '&:hover': {
-            backgroundColor: '$red5',
-          },
-        },
       },
       interactive: true,
       variant: 'red',
     },
     {
       css: {
+        '@hover': {
+          '&:hover': {
+            backgroundColor: '$brand5',
+          },
+        },
         '&:active': {
           backgroundColor: '$brand6',
         },
@@ -58,17 +62,17 @@ const Badge = styled('span', {
           {
             backgroundColor: '$brand6',
           },
-        '@hover': {
-          '&:hover': {
-            backgroundColor: '$brand5',
-          },
-        },
       },
       interactive: true,
       variant: 'brand',
     },
     {
       css: {
+        '@hover': {
+          '&:hover': {
+            backgroundColor: '$blue5',
+          },
+        },
         '&:active': {
           backgroundColor: '$blue6',
         },
@@ -76,17 +80,17 @@ const Badge = styled('span', {
           {
             backgroundColor: '$blue6',
           },
-        '@hover': {
-          '&:hover': {
-            backgroundColor: '$blue5',
-          },
-        },
       },
       interactive: true,
       variant: 'blue',
     },
     {
       css: {
+        '@hover': {
+          '&:hover': {
+            backgroundColor: '$green5',
+          },
+        },
         '&:active': {
           backgroundColor: '$green6',
         },
@@ -94,11 +98,6 @@ const Badge = styled('span', {
           {
             backgroundColor: '$green6',
           },
-        '@hover': {
-          '&:hover': {
-            backgroundColor: '$green5',
-          },
-        },
       },
       interactive: true,
       variant: 'green',
@@ -106,6 +105,12 @@ const Badge = styled('span', {
 
     {
       css: {
+        '@hover': {
+          '&:hover': {
+            backgroundColor: '$orange5',
+            // color: '$orange12',
+          },
+        },
         '&:active': {
           backgroundColor: '$orange6',
           // color: '$orange12',
@@ -115,12 +120,6 @@ const Badge = styled('span', {
             backgroundColor: '$orange6',
             // color: '$orange12',
           },
-        '@hover': {
-          '&:hover': {
-            backgroundColor: '$orange5',
-            // color: '$orange12',
-          },
-        },
       },
       interactive: true,
       variant: 'orange',
@@ -190,6 +189,7 @@ const Badge = styled('span', {
   },
 
   verticalAlign: 'middle',
+  WebkitTapHighlightColor: 'rgba(0,0,0,0)',
   whiteSpace: 'nowrap',
 })
 

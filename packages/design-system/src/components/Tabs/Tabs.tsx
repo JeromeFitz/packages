@@ -3,9 +3,9 @@
  */
 import type { ElementRef } from 'react'
 
-import { forwardRef } from 'react'
-
 import type { TabsListProps } from './Tabs.types'
+
+import { forwardRef } from 'react'
 
 import { Separator } from '../index'
 import { StyledTabsList } from './Tabs.styles'

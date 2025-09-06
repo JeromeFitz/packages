@@ -3,10 +3,10 @@
  */
 import type { ComponentProps, ElementRef } from 'react'
 
+import type { CSS } from '../../lib/stitches.config'
+
 import * as SliderPrimitive from '@radix-ui/react-slider'
 import { forwardRef } from 'react'
-
-import type { CSS } from '../../lib/stitches.config'
 
 import { styled } from '../../lib/stitches.config'
 
@@ -71,10 +71,6 @@ const SliderThumb = styled(SliderPrimitive.Thumb, {
 })
 
 const StyledSlider = styled(SliderPrimitive.Root, {
-  '&[data-orientation="vertical"]': {
-    flexDirection: 'column',
-    width: 15,
-  },
   '@hover': {
     '&:hover': {
       [`& ${SliderThumb}`]: {
@@ -84,6 +80,10 @@ const StyledSlider = styled(SliderPrimitive.Root, {
         backgroundColor: '$slate8',
       },
     },
+  },
+  '&[data-orientation="vertical"]': {
+    flexDirection: 'column',
+    width: 15,
   },
   alignItems: 'center',
   display: 'flex',

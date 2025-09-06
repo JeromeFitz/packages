@@ -14,20 +14,9 @@ Originally was all-in-one as `@jeromefitz/codestyle`, these have been broken out
 
 **Spoiler:** They are opinionated, but can be overriden, extended, or ignored. 🙈
 
-- [`@jeromefitz/eslint-config`](https://github.com/JeromeFitz/packages/tree/main/config/eslint-config)
 - [`@jeromefitz/lint-staged`](https://github.com/JeromeFitz/packages/tree/main/config/lint-staged)
 - [`@jeromefitz/prettier-config`](https://github.com/JeromeFitz/packages/tree/main/config/prettier-config)
 - [`@jeromefitz/tsconfig`](https://github.com/JeromeFitz/packages/tree/main/config/tsconfig)
-
-### 🖼️ Design System
-
-Built with [`radix-ui`](https://www.radix-ui.com) and [`stitches`](https://stitches.dev). A tree-shakeable design system that you can use as much of, or as little of, as you would like.
-
-- [`@jeromefitz/design-system`](https://github.com/JeromeFitz/packages/tree/main/packages/design-system)
-  - 🏆 Major props to the [`@radix-ui`](https://github.com/radix-ui) team as this is 🍽️ of sorts.
-  - 📘 [`Storybook`](https://storybook.js.org) is included but not all the way there. May
-  - 🚀 Code Example: [`@jeromefitz/websites`](https://github.com/JeromeFitz/websites)
-  - 🚀️ Live Example: [`jeromefitzgerald.com`](https://jeromefitzgerald.com)
 
 ### ⚡ Release Management Tools
 
@@ -55,11 +44,6 @@ Built with [`radix-ui`](https://www.radix-ui.com) and [`stitches`](https://stitc
   - 🚀️ Live Example: [`jeromefitzgerald.com`](https://jeromefitzgerald.com)
 - :octocat: [`@jeromefitz/scripts`](https://github.com/JeromeFitz/packages/tree/main/packages/scripts)
   - :octocat: scripts that are used to set up repos and for CI/CD
-- [`@jeromefitz/spotify`](https://github.com/JeromeFitz/packages/tree/main/packages/spotify)
-  - 🧑‍🎤️ API to gather data on:
-    - `now-playing|top-artists|top-tracks`
-  - 🖼️ Plus imagery customizations via [plaiceholder](https://plaiceholder.co)
-  - 🚀️ Live Example: [`jeromefitzgerald.com/music`](https://jeromefitzgerald.com/music)
 - 🧰️ [`@jeromefitz/utils`](https://github.com/JeromeFitz/packages/tree/main/packages/utils)
   - Scripts that are generically re-used throughout
 
@@ -75,11 +59,13 @@ Built with [`radix-ui`](https://www.radix-ui.com) and [`stitches`](https://stitc
 
 ### 🪦 Deprecated
 
-- [`@jeromefitz/git-cz`](https://github.com/JeromeFitz/packages/tree/main/packages/git-cz)
-  - cli prompt for (expanded) [**conventional commits**](https://www.conventionalcommits.org) and **conventional branches** as no one needs to remember all the different types
-    - 📝 Formats your commit message for you
-    - 🖲️ Integrate with your Issue Tracking System
-    - 🔢 Customize which commit types get which semver
+- `@jeromefitz/eslint-config`
+- `@jeromefitz/jest-config`
+- `@jeromefitz/jest-presets`
+- `@jeromefitz/lighthouse-config`
+- `@jeromefitz/git-cz`
+- `@jeromefitz/design-system`
+- `@jeromefitz/spotify`
 
 ## 👷️ CI/CD Overview
 

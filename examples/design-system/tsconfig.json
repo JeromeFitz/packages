@@ -1,12 +1,5 @@
 {
-  "extends": "@jeromefitz/tsconfig/next.json",
   "compilerOptions": {
-    // // w/ extends
-    // "baseUrl": ".",
-    "incremental": true,
-    // "noUnusedParameters": false, // @todo(lint)
-    "rootDir": "src",
-    "outDir": "dist",
     // "strict": false,
     // //
     // // w/ next-unused
@@ -16,6 +9,9 @@
     "baseUrl": ".",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    // // w/ extends
+    // "baseUrl": ".",
+    "incremental": true,
     "isolatedModules": true,
     "jsx": "preserve",
     "lib": ["dom", "ES2020"],
@@ -27,15 +23,7 @@
     "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": false, // @todo(lint)
-    "preserveSymlinks": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "strictBindCallApply": true,
-    "strictFunctionTypes": false, // @todo(lint)
-    "strictNullChecks": false, // @todo(lint)
-    "strictPropertyInitialization": false, // @todo(lint)
-    "target": "esnext",
+    "outDir": "dist",
     "paths": {
       // "@jeromefitz/design-system/*": ["../../packages/design-system/dist/*"],
       // "@jeromefitz/design-system/*": ["../../packages/design-system/src/*"],
@@ -52,14 +40,26 @@
       "~styles/*": ["src/styles/*"],
       "~svg/*": ["src/svg/*"],
       "~theme/*": ["src/theme/*"],
-      "~utils/*": ["src/utils/*"],
+      "~utils/*": ["src/utils/*"]
     },
     "plugins": [
       {
-        "name": "next",
-      },
+        "name": "next"
+      }
     ],
+    "preserveSymlinks": true,
+    "resolveJsonModule": true,
+    // "noUnusedParameters": false, // @todo(lint)
+    "rootDir": "src",
+    "skipLibCheck": true,
+    "strict": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": false, // @todo(lint)
+    "strictNullChecks": false, // @todo(lint)
+    "strictPropertyInitialization": false, // @todo(lint)
+    "target": "esnext"
   },
-  "include": ["src", "index.d.ts", "next-env.d.ts", ".next/types/**/*.ts"],
   "exclude": ["node_modules", "tests/*.test.ts"],
+  "extends": "@jeromefitz/tsconfig/next.json",
+  "include": ["src", "index.d.ts", "next-env.d.ts", ".next/types/**/*.ts"]
 }

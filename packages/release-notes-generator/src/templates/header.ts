@@ -1,6 +1,6 @@
 import { format as _format } from 'date-fns'
 
-const header = (context, commits, meta) => {
+const header = (context, _commits, meta) => {
   // @todo(release-notes) pass as option
   const { currentTag, date, linkCompare, previousTag, title } = context
   const { repositoryUrl } = meta
@@ -12,6 +12,7 @@ const header = (context, commits, meta) => {
 
   if (linkCompare) {
     const linkCompareUrl =
+      // biome-ignore lint/style/useTemplate: migrate
       repositoryUrl + '/compare/' + previousTag + '...' + currentTag
     markdown += `| Previous    | **[\`${previousTag}\`](${linkCompareUrl})** |\n`
   }

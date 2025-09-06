@@ -52,6 +52,7 @@ const getMarkdown = async (context, commits) => {
   //   console.dir(markdownContext[key])
   // })
 
+  // biome-ignore lint/style/useTemplate: migrate
   const repositoryUrl = repository ? host + '/' + owner + '/' + repository : repoUrl
 
   const meta = {

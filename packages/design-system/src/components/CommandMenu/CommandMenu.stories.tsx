@@ -1,13 +1,12 @@
+import type { Meta, StoryFn } from '@storybook/react'
 import type { KeyboardEvent } from 'react'
 
-import { Meta, StoryFn } from '@storybook/react'
 // import { useCommandState as useCmdk } from 'cmdk'
 import { useEffect, useRef, useState } from 'react'
 
 import shows from '../../../../../examples/design-system/src/components/CommandMenu/data/shows.json'
-import useDelayedRender from '../../hooks/useDelayedRender'
-import { Box, Flex, Icon } from '../index'
-import { CommandMenu, CommandMenuItem } from './CommandMenu'
+import useDelayedRender from '../../hooks/useDelayedRender.ts'
+import { Box, Flex, Icon } from '../index.ts'
 import {
   Command,
   CommandBadge,
@@ -20,7 +19,8 @@ import {
   CommandTopShine,
   // CommandShortCuts,
   // CommandItem,
-} from './CommandMenu.styles'
+} from './CommandMenu.styles.tsx'
+import { CommandMenu, CommandMenuItem } from './CommandMenu.tsx'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 
@@ -120,6 +120,8 @@ function CommandMenuData() {
   const activePage = pages[pages.length - 1]
   const isHome = activePage === 'home'
 
+  // @ts-ignore
+  // biome-ignore lint/correctness/noUndeclaredVariables: migrate
   const popPage = useCallback(() => {
     setPages((pages) => {
       const x = [...pages]

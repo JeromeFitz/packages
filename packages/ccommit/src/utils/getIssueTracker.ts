@@ -15,6 +15,8 @@ const getIssueTracker = () => {
   const itNumber = !it[1] ? itProject : it[1]
   const itTicket = `${itProject}-${itNumber}`
 
+  // biome-ignore lint/suspicious/noGlobalIsFinite: migrate
+  // biome-ignore lint/suspicious/noGlobalIsNan: migrate
   if (!isNaN(parseFloat(itNumber)) && isFinite(parseFloat(itNumber))) {
     init = itTicket
   }

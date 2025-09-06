@@ -15,7 +15,7 @@ const dataNormalizedResults = ({ config, results, routeType }) => {
   const normalizedResults: any[] = []
   _map(results, (result) => {
     const normalizedResult = _omit(result, 'properties')
-    normalizedResult['properties'] = sortObject(
+    normalizedResult.properties = sortObject(
       dataNormalized({
         config,
         data: result,

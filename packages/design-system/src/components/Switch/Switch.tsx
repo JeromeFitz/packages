@@ -3,9 +3,9 @@
  */
 import type { ElementRef } from 'react'
 
-import { forwardRef } from 'react'
-
 import type { SwitchProps } from './Switch.types'
+
+import { forwardRef } from 'react'
 
 import { StyledSwitch, StyledThumb } from './Switch.styles'
 

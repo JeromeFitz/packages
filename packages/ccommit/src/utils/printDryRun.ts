@@ -1,4 +1,4 @@
-/* eslint-disable import-x/no-named-as-default-member */
+/** biome-ignore-all lint/suspicious/noConsole: migrate */
 import colors from 'ansi-colors'
 
 const printDryRun = (v) => {

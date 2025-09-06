@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/suspicious/noConsole: migrate */
 import process from 'node:process'
 
 import { execa } from 'execa'

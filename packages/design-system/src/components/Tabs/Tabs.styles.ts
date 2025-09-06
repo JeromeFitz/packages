@@ -10,6 +10,11 @@ const Tabs = styled(TabsPrimitive.Root, {
 })
 
 const TabsTrigger = styled(TabsPrimitive.Trigger, {
+  '@hover': {
+    '&:hover': {
+      color: '$hiContrast',
+    },
+  },
   '&[data-orientation="vertical"]': {
     '&[data-state="active"]': {
       borderBottomColor: '$slate6',
@@ -25,11 +30,6 @@ const TabsTrigger = styled(TabsPrimitive.Trigger, {
     borderBottomColor: 'transparent',
     borderColor: '$slate6',
     color: '$hiContrast',
-  },
-  '@hover': {
-    '&:hover': {
-      color: '$hiContrast',
-    },
   },
   alignItems: 'center',
   border: '1px solid transparent',

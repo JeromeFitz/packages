@@ -26,8 +26,8 @@ const commit = (context, commits, meta) => {
       // markdownReferenceArray.push(
       //   `[ ${reference.issue} ](${repositoryUrl}/${reference.issue})`
       // )
-      // @todo(NICE-129) eslint
-      // eslint-disable-next-line no-extra-boolean-cast
+
+      // biome-ignore lint/complexity/noExtraBooleanCast: migrate
       if (!!reference.issue) {
         markdownReferenceArray.push(`[ #${reference.issue} ]`)
       }
@@ -37,11 +37,11 @@ const commit = (context, commits, meta) => {
   }
 
   commitGroups.map((commitGroup) => {
-    const { commits } = commitGroup
-    const type = commits[0]?.type
+    const { _ } = commitGroup
+    const type = _[0]?.type
     // // @todo(#744) analytics -vs- deps-dev
     // console.dir(`> commit :: commitGroup`)
-    // console.dir(commits)
+    // console.dir(_)
     // console.dir(`-`)
     // console.dir(type)
     // console.dir(`---`)

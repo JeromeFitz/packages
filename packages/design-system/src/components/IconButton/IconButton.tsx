@@ -1,6 +1,11 @@
 import { styled } from '../../lib/stitches.config'
 
 const IconButton = styled('button', {
+  '@hover': {
+    '&:hover': {
+      borderColor: '$slate8',
+    },
+  },
   '&::after': {
     boxSizing: 'border-box',
   },
@@ -19,12 +24,6 @@ const IconButton = styled('button', {
     borderColor: '$slate8',
     boxShadow: '0 0 0 1px $colors$slate8',
   },
-  '@hover': {
-    '&:hover': {
-      borderColor: '$slate8',
-    },
-  },
-  WebkitTapHighlightColor: 'transparent',
   // @reset
   alignItems: 'center',
   appearance: 'none',
@@ -73,25 +72,25 @@ const IconButton = styled('button', {
     },
     state: {
       active: {
-        '&:active': {
-          backgroundColor: '$slate4',
-        },
         '@hover': {
           '&:hover': {
             boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
           },
+        },
+        '&:active': {
+          backgroundColor: '$slate4',
         },
         backgroundColor: '$slate4',
         boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
       },
       waiting: {
-        '&:active': {
-          backgroundColor: '$slate4',
-        },
         '@hover': {
           '&:hover': {
             boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
           },
+        },
+        '&:active': {
+          backgroundColor: '$slate4',
         },
         backgroundColor: '$slate4',
         boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
@@ -99,6 +98,11 @@ const IconButton = styled('button', {
     },
     variant: {
       ghost: {
+        '@hover': {
+          '&:hover': {
+            backgroundColor: '$slateA3',
+          },
+        },
         '&:active': {
           backgroundColor: '$slateA4',
         },
@@ -109,15 +113,16 @@ const IconButton = styled('button', {
           {
             backgroundColor: '$slateA4',
           },
-        '@hover': {
-          '&:hover': {
-            backgroundColor: '$slateA3',
-          },
-        },
         backgroundColor: 'transparent',
         borderWidth: '0',
       },
       raised: {
+        '@hover': {
+          '&:hover': {
+            boxShadow:
+              '0 0 transparent, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
+          },
+        },
         '&:active': {
           backgroundColor: '$slate4',
         },
@@ -126,17 +131,12 @@ const IconButton = styled('button', {
           boxShadow:
             '0 0 0 1px $colors$slate8, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
         },
-        '@hover': {
-          '&:hover': {
-            boxShadow:
-              '0 0 transparent, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
-          },
-        },
         boxShadow:
           '0 0 transparent, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
       },
     },
   },
+  WebkitTapHighlightColor: 'transparent',
 })
 
 export { IconButton }

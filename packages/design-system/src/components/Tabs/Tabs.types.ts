@@ -1,6 +1,5 @@
+import type * as TabsPrimitive from '@radix-ui/react-tabs'
 import type { ComponentProps } from 'react'
-
-import * as TabsPrimitive from '@radix-ui/react-tabs'
 
 import type { CSS } from '../../lib/stitches.config'
 

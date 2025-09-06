@@ -49,22 +49,25 @@ jobs:
 
       - name: '💽️  Init'
         id: push-init
-        uses: JeromeFitz/packages/.github/actions/init@main
+        uses: JeromeFitz/packages/.github/actions/init@feat/biome
 
       - name: '📦  Install'
         id: push-install
-        uses: JeromeFitz/packages/.github/actions/install@main
+        uses: JeromeFitz/packages/.github/actions/install@feat/biome
 
       - name: '🔺️  Cache (turbo)'
         id: push-cache-turbo
-        uses: JeromeFitz/packages/.github/actions/cache-turbo@main
+        uses: JeromeFitz/packages/.github/actions/cache-turbo@feat/biome
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
+      - name: '☣️ Biome CI'
+        run: pnpm exec biome ci .
+
       - name: '🚨️  Lint'
         id: push-lint
-        uses: JeromeFitz/packages/.github/actions/lint@main
+        uses: JeromeFitz/packages/.github/actions/lint@feat/biome
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
@@ -77,7 +80,7 @@ jobs:
 
       - name: '🏗️  Build'
         id: push-build
-        uses: JeromeFitz/packages/.github/actions/build@main
+        uses: JeromeFitz/packages/.github/actions/build@feat/biome
         with:
           BUILD_COMMAND: 'build'
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
@@ -86,7 +89,7 @@ jobs:
       - name: '🏗️  Build ALL'
         id: push-build-all
         if: ${{ contains(steps.push-commit-message.outputs.message, '[b]') }}
-        uses: JeromeFitz/packages/.github/actions/build@main
+        uses: JeromeFitz/packages/.github/actions/build@feat/biome
         with:
           BUILD_COMMAND: 'build:all'
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
@@ -95,7 +98,7 @@ jobs:
       - name: '🏷️  Release'
         id: push-release
         if: ${{ contains(steps.push-commit-message.outputs.message, '[b]') }}
-        uses: JeromeFitz/packages/.github/actions/release@main
+        uses: JeromeFitz/packages/.github/actions/release@feat/biome
         with:
           GH_TOKEN: ${{ env.GH_BOT_TOKEN }}
           NPM_TOKEN: ${{ env.NPM_TOKEN }}

@@ -1,4 +1,8 @@
-# @jeromefitz/eslint-config
+# Deprecated: @jeromefitz/eslint-config
+
+> [!IMPORTANT]
+>
+> There will be no further development and will eventually be removed from codebase.
 
 Custom `eslint-config` setup that can be extended and incorporates:
 

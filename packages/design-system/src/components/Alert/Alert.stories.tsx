@@ -1,4 +1,4 @@
-import { Meta, StoryFn } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 
 import { Text } from '../index'
 import { Alert } from './Alert'

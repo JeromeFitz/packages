@@ -52,7 +52,7 @@ jobs:
 
       - name: '💽️  Init'
         id: pull-init
-        uses: JeromeFitz/packages/.github/actions/init@main
+        uses: JeromeFitz/packages/.github/actions/init@feat/biome
 
       # - name: '🧪 debug'
       #   id: pull-debug
@@ -72,18 +72,21 @@ jobs:
 
       - name: '📦  Install'
         id: pull-install
-        uses: JeromeFitz/packages/.github/actions/install@main
+        uses: JeromeFitz/packages/.github/actions/install@feat/biome
 
       - name: '🔺️  Cache (turbo)'
         id: pull-cache-turbo
-        uses: JeromeFitz/packages/.github/actions/cache-turbo@main
+        uses: JeromeFitz/packages/.github/actions/cache-turbo@feat/biome
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
+      - name: '☣️ Biome CI'
+        run: pnpm exec biome ci .
+
       - name: '🚨️  Lint'
         id: pull-lint
-        uses: JeromeFitz/packages/.github/actions/lint@main
+        uses: JeromeFitz/packages/.github/actions/lint@feat/biome
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
@@ -96,7 +99,7 @@ jobs:
 
       - name: '🏗️  Build'
         id: pull-build
-        uses: JeromeFitz/packages/.github/actions/build@main
+        uses: JeromeFitz/packages/.github/actions/build@feat/biome
         with:
           BUILD_COMMAND: 'build'
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}

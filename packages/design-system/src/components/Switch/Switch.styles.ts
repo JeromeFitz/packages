@@ -3,11 +3,11 @@ import * as SwitchPrimitive from '@radix-ui/react-switch'
 import { styled } from '../../lib/stitches.config'
 
 const StyledThumb = styled(SwitchPrimitive.Thumb, {
-  '&[data-state="checked"]': {
-    transform: 'translateX(11px)',
-  },
   '@media (prefers-reduced-motion: no-preference)': {
     transition: 'transform 100ms cubic-bezier(0.22, 1, 0.36, 1)',
+  },
+  '&[data-state="checked"]': {
+    transform: 'translateX(11px)',
   },
   backgroundColor: 'white',
   borderRadius: '$round',
@@ -37,7 +37,6 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
     },
     backgroundColor: '$colors$brand11',
   },
-  WebkitTapHighlightColor: 'rgba(0,0,0,0)',
 
   // @reset
   alignItems: 'center',
@@ -79,6 +78,7 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
       },
     },
   },
+  WebkitTapHighlightColor: 'rgba(0,0,0,0)',
 })
 
 export { StyledSwitch, StyledThumb }

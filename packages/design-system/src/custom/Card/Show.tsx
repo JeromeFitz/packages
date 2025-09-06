@@ -3,15 +3,15 @@ import { Flex } from '../../components/Flex'
 import { styled } from '../../lib/stitches.config'
 
 const css_card = {
-  '&:focus': {
-    backgroundColor: '$colors$gray5',
-    transform: 'scale(0.99)',
-  },
   '@hover': {
     '&:hover': {
       backgroundColor: '$colors$gray5',
       transform: 'scale(0.99)',
     },
+  },
+  '&:focus': {
+    backgroundColor: '$colors$gray5',
+    transform: 'scale(0.99)',
   },
   backgroundColor: '$colors$gray4',
   border: '1px solid $colors$brand7',

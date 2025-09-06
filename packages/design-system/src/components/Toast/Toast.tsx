@@ -23,11 +23,6 @@ const swipeOut = keyframes({
 })
 
 const StyledToast = styled(ToastPrimitive.Root, {
-  '&:hover': {
-    backgroundColor: '$colors$body',
-    borderColor: '$colors$gray12',
-    // color: '$colors$hiContrast',
-  },
   '@media (prefers-reduced-motion: no-preference)': {
     '&[data-state="closed"]': {
       animation: `${hide} 150ms ease-in forwards`,
@@ -48,6 +43,11 @@ const StyledToast = styled(ToastPrimitive.Root, {
       transform: 'translateX(var(--radix-toast-swipe-move-x))',
     },
     transition: 'background-color 250ms ease',
+  },
+  '&:hover': {
+    backgroundColor: '$colors$body',
+    borderColor: '$colors$gray12',
+    // color: '$colors$hiContrast',
   },
   alignItems: 'center',
   backgroundColor: '$colors$body',

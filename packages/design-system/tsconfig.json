@@ -1,12 +1,5 @@
 {
-  "extends": "@jeromefitz/tsconfig/src/next.json",
   "compilerOptions": {
-    // // w/ extends
-    // "baseUrl": ".",
-    "incremental": true,
-    // "noUnusedParameters": false, // @todo(lint)
-    "rootDir": "./src",
-    "outDir": "./dist",
     // "strict": false,
     // //
     // // w/ next-unused
@@ -17,6 +10,9 @@
     "declaration": false,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    // // w/ extends
+    // "baseUrl": ".",
+    "incremental": true,
     "isolatedModules": true,
     // "jsx": "preserve",
     "jsx": "react-jsx",
@@ -29,7 +25,10 @@
     "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": false, // @todo(lint)
+    "outDir": "./dist",
     "resolveJsonModule": true,
+    // "noUnusedParameters": false, // @todo(lint)
+    "rootDir": "./src",
     "skipLibCheck": true,
     "strict": true,
     "strictBindCallApply": true,
@@ -37,14 +36,15 @@
     "strictNullChecks": false, // @todo(lint)
     "strictPropertyInitialization": false, // @todo(lint)
     "target": "esnext",
-    "tsBuildInfoFile": ".tsbuildinfo",
+    "tsBuildInfoFile": ".tsbuildinfo"
   },
+  "exclude": ["node_modules", "tests/*.test.ts"],
+  "extends": "@jeromefitz/tsconfig/src/next.json",
   "include": [
     ".storybook/*.ts",
     ".storybook/*.tsx",
     "src",
     "index.d.ts",
-    "next-env.d.ts",
-  ],
-  "exclude": ["node_modules", "tests/*.test.ts"],
+    "next-env.d.ts"
+  ]
 }

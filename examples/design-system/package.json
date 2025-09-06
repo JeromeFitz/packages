@@ -19,10 +19,6 @@
   ],
   "scripts": {
     "dev:web": "next dev -p 3001",
-    "format:lint": "pnpm run lint:eslint --fix && pnpm run format:prettier --write",
-    "format:prettier": "prettier \"./src/**/*.{cjs,js,jsx,mjs,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\" --ignore-unknown --log-level warn",
-    "lint": "pnpm run format:prettier --check && pnpm run lint:eslint",
-    "lint:eslint": "eslint ./src --max-warnings=0",
     "semantic-release": "echo SKIP semantic-release"
   },
   "dependencies": {

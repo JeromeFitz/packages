@@ -1,9 +1,8 @@
 /* eslint-disable complexity */
-import { URL as _URL, URLSearchParams } from 'url'
+import type { Agent } from 'node:http'
+import { URL as _URL, URLSearchParams } from 'node:url'
 
 import { noop as _noop, asyncForEach } from '@jeromefitz/utils'
-
-import type { Agent } from 'http'
 
 import fetch from 'isomorphic-unfetch'
 import _omit from 'lodash/omit.js'
@@ -284,7 +283,7 @@ class Client {
         ? this.#accessToken
         : await this.getAccessToken()
     if (accessTokenValue !== undefined) {
-      headers['authorization'] = `Bearer ${accessTokenValue}`
+      headers.authorization = `Bearer ${accessTokenValue}`
     }
     return headers
   }
@@ -330,7 +329,7 @@ class Client {
       return { status: res?.status }
     }
 
-    return [...new Set(res?.artists.map(({ genres }) => genres).flat())]
+    return [...new Set(res?.artists.flatMap(({ genres }) => genres))]
   }
 
   // @todo(types)

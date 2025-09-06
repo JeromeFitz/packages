@@ -1,8 +1,5 @@
 import type { ElementRef } from 'react'
 
-import merge from 'lodash/merge'
-import { forwardRef } from 'react'
-
 import type { CSS } from '../../lib/stitches.config'
 import type {
   ParagraphProps,
@@ -11,6 +8,9 @@ import type {
   TextSizeVariants,
   // TextWeightVariants,
 } from './Paragraph.types'
+
+import merge from 'lodash/merge'
+import { forwardRef } from 'react'
 
 import { Text } from '../index'
 import { DEFAULT_TAG } from './Paragraph.types'

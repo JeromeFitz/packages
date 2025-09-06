@@ -1,6 +1,11 @@
 import { styled } from '../../lib/stitches.config'
 
 const ButtonDemoIcon = styled('button', {
+  '@hover': {
+    '&:hover': {
+      bc: '$grayA4',
+    },
+  },
   '&:active': {
     bc: '$grayA5',
   },
@@ -9,11 +14,6 @@ const ButtonDemoIcon = styled('button', {
   },
   '&:focus:not(:focus-visible)': {
     borderColor: 'transparent',
-  },
-  '@hover': {
-    '&:hover': {
-      bc: '$grayA4',
-    },
   },
   ai: 'center',
   background: 'none',

@@ -102,10 +102,7 @@ const useSWRInfinitePages = <
   }, [isLoadingMore, setSize])
 
   const flat = useMemo(() => {
-    return data
-      ?.map((page) => _get(page, dataPath) as Data)
-      ?.flat(1)
-      .filter(Boolean) as
+    return data?.flatMap((page) => _get(page, dataPath) as Data).filter(Boolean) as
       | (Data extends readonly (infer InnerArr)[] ? InnerArr : Data)[]
       | undefined
   }, [data, dataPath])

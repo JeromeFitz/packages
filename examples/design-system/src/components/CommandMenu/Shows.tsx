@@ -13,7 +13,7 @@ import shows from './data/shows.json'
 function Shows() {
   const toaster = useRef<any>()
   const handleToastInfo = (path) => {
-    if (toaster && toaster.current) {
+    if (toaster?.current) {
       toaster.current.createToast({
         description: `${path}`,
         duration: 2000,

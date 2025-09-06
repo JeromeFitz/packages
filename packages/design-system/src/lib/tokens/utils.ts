@@ -8,13 +8,13 @@ const utils = {
     alignItems: value,
   }),
   appearance: (value: ScaleValue<'appearance'> | number | string) => ({
-    WebkitAppearance: value,
     appearance: value,
+    WebkitAppearance: value,
   }),
   as: (value: ScaleValue<'alignSelf'> | number | string) => ({ alignSelf: value }),
   backgroundClip: (value: ScaleValue<'backgroundClip'> | number | string) => ({
-    WebkitBackgroundClip: value,
     backgroundClip: value,
+    WebkitBackgroundClip: value,
   }),
   bblr: (value: ScaleValue<'borderBottomLeftRadius'> | number | string) => ({
     borderBottomLeftRadius: value,
@@ -120,12 +120,12 @@ const utils = {
   ta: (value: ScaleValue<'textAlign'> | number | string) => ({ textAlign: value }),
 
   us: (value: ScaleValue<'userSelect'> | number | string) => ({
-    WebkitUserSelect: value,
     userSelect: value,
+    WebkitUserSelect: value,
   }),
   userSelect: (value: ScaleValue<'userSelect'> | number | string) => ({
-    WebkitUserSelect: value,
     userSelect: value,
+    WebkitUserSelect: value,
   }),
 }
 

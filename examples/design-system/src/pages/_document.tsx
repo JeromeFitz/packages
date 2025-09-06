@@ -1,12 +1,8 @@
+import type { DocumentContext } from 'next/document'
+
 import { getCssText, reset } from '@jeromefitz/design-system/src/lib/stitches.config'
 
-import Document, {
-  DocumentContext,
-  Head,
-  Html,
-  Main,
-  NextScript,
-} from 'next/document'
+import Document, { Head, Html, Main, NextScript } from 'next/document'
 
 /**
  * @note
@@ -32,6 +28,7 @@ class MyDocument extends Document<DocumentContext> {
           <meta content="nofish" name="superfish" />
           <meta content="origin-when-cross-origin" name="referrer" />
           <style
+            // biome-ignore lint/security/noDangerouslySetInnerHtml: migrate
             dangerouslySetInnerHTML={{ __html: getCssAndReset() }}
             id="stitches"
           />

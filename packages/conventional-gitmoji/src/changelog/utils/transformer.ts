@@ -5,10 +5,7 @@ import { typeSpecs } from '../../index.js'
 
 const splitter = new GraphemeSplitter()
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const transformer = (commit: any, context: any) => {
+const transformer = (commit: any, _context: any) => {
   // console.dir(`~~> transformer`)
   // console.dir(commit)
   const { type: _type } = commit
@@ -21,8 +18,7 @@ const transformer = (commit: any, context: any) => {
       if (type === null) return
       return (
         // @hack(semantic) strip colon from :type: for stricter comparison
-        // @todo(NICE-129) eslint
-        // eslint-disable-next-line no-useless-escape
+        // biome-ignore lint/complexity/noUselessEscapeInRegex: migrate
         type.replace(/\:/g, '') === c.replace(/\:/g, '') ||
         type === t ||
         type === v ||

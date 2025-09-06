@@ -31,8 +31,8 @@ const _LoadingDots = () => {
       <Separator decorative my="3" size="full" />
       <LoadingDots
         css={{
-          '$$loading-dots-size': '16px',
           '& span': { backgroundColor: '$colors$green11' },
+          '$$loading-dots-size': '16px',
         }}
       >
         <span />

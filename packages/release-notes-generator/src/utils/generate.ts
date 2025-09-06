@@ -9,7 +9,7 @@ import getExtraContext from './getExtraContent.js'
 
 function generate(options, commits, context, keyCommit) {
   let notes = []
-  let filteredCommits
+  let filteredCommits: any
 
   if (options.ignoreReverted) {
     for (const commit of filterRevertedCommitsSync(commits)) {
@@ -19,8 +19,8 @@ function generate(options, commits, context, keyCommit) {
     filteredCommits = _clone(commits)
   }
 
-  _forEach(filteredCommits, function (commit) {
-    _map(commit.notes, function (note) {
+  _forEach(filteredCommits, (commit) => {
+    _map(commit.notes, (note) => {
       note.commit = commit
 
       return note
@@ -38,7 +38,7 @@ function generate(options, commits, context, keyCommit) {
     getExtraContext(filteredCommits, notes, options),
   )
 
-  if (keyCommit && keyCommit.committerDate) {
+  if (keyCommit?.committerDate) {
     context.date = keyCommit.committerDate
   }
 

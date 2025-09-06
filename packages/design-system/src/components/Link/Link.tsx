@@ -19,6 +19,11 @@ const Link = styled('a', {
   variants: {
     type: {
       icon: {
+        '@hover': {
+          '&:hover': {
+            textDecorationLine: 'underline',
+          },
+        },
         '& + &': {
           marginTop: '$3',
         },
@@ -30,11 +35,6 @@ const Link = styled('a', {
           boxShadow: 'none',
           textDecorationLine: 'underline',
         },
-        '@hover': {
-          '&:hover': {
-            textDecorationLine: 'underline',
-          },
-        },
         borderRadius: '$1',
         color: 'inherit',
         display: 'flex',
@@ -43,6 +43,11 @@ const Link = styled('a', {
         padding: '0 $2',
       },
       text: {
+        '@hover': {
+          '&:hover': {
+            textDecorationLine: 'underline',
+          },
+        },
         '& > strong': {
           '@media (prefers-reduced-motion: no-preference)': {
             transition: 'all 0.25s ease-in-out',
@@ -57,17 +62,12 @@ const Link = styled('a', {
           boxShadow: 'none',
           textDecorationLine: 'underline',
         },
-        '@hover': {
-          '&:hover': {
-            textDecorationLine: 'underline',
-          },
-        },
-        WebkitTapHighlightColor: 'rgba(0,0,0,0)',
         border: 'none',
         flexShrink: 0,
         gap: '$2',
         lineHeight: 'inherit',
         outline: 'none',
+        WebkitTapHighlightColor: 'rgba(0,0,0,0)',
       },
     },
     variant: {
@@ -80,23 +80,19 @@ const Link = styled('a', {
         textDecorationColor: '$blue4',
       },
       contrast: {
-        '&:focus': {
-          outlineColor: '$slate8',
-        },
         '@hover': {
           '&:hover': {
             textDecorationColor: '$slate8',
           },
+        },
+        '&:focus': {
+          outlineColor: '$slate8',
         },
         color: '$hiContrast',
         textDecoration: 'underline',
         textDecorationColor: '$slate7',
       },
       spotify: {
-        '&:focus': {
-          boxShadow: '0 0 0 2px $colors$gray1, 0 0 0 3px $colors$spotify-green',
-          outlineColor: '$spotify-green',
-        },
         '.dark-theme &': {
           color: '$spotify-white',
           textDecorationColor: '$spotify-white',
@@ -107,6 +103,10 @@ const Link = styled('a', {
             color: '$slate12',
             textDecorationColor: '$spotify-green',
           },
+        },
+        '&:focus': {
+          boxShadow: '0 0 0 2px $colors$gray1, 0 0 0 3px $colors$spotify-green',
+          outlineColor: '$spotify-green',
         },
         color: '$spotify-black',
         textDecoration: 'underline',

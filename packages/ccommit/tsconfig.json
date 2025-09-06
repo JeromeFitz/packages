@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "outDir": "./dist",
     "paths": {
       "~ccommit*": ["../../packages/ccommit/src/*"]
     },
-    "outDir": "./dist",
     "rootDir": "./src"
   },
+  "exclude": ["node_modules", "release.config.js"],
   "extends": "@jeromefitz/tsconfig/src/node22.json",
-  "include": ["src"],
-  "exclude": ["node_modules", "release.config.js"]
+  "include": ["src"]
 }

@@ -41,7 +41,7 @@ const getNotionSlug = async ({
   }
 
   const info = _omit(_info, 'properties')
-  info['properties'] = sortObject(
+  info.properties = sortObject(
     dataNormalized({ config, data: _info, pageId: info.id, pathVariables }),
   )
 

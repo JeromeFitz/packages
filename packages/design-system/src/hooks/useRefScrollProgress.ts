@@ -6,7 +6,9 @@
  * that are relative to the total document progress.
  */
 
-import { MutableRefObject, useLayoutEffect, useRef, useState } from 'react'
+import type { MutableRefObject } from 'react'
+
+import { useLayoutEffect, useRef, useState } from 'react'
 
 function useRefScrollProgress(inputRef: MutableRefObject<undefined>) {
   const _ref = useRef<HTMLInputElement>(null)

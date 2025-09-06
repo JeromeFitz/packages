@@ -1,10 +1,10 @@
+import type { SortItem } from '../../schema/index.js'
+
 import { avoidRateLimit, isObjectEmpty } from '@jeromefitz/utils'
 
 import _map from 'lodash/map.js'
 import _omit from 'lodash/omit.js'
 import _size from 'lodash/size.js'
-
-import type { SortItem } from '../../schema/index.js'
 
 import { PROPERTIES } from '../../constants/index.js'
 import dataNormalizedResults from '../../utils/dataNormalizedResults/index.js'
@@ -20,7 +20,7 @@ const SORTS: SortItem[] = [
 ]
 
 // @todo(complexity) 12
-// eslint-disable-next-line complexity
+// biome-ignore lint/complexity/noExcessiveCognitiveComplexity: migrate
 const getQuery = async ({ config, notionDatabasesQuery, reqQuery }) => {
   const { NOTION } = config
   const { databaseType } = reqQuery
@@ -57,10 +57,9 @@ const getQuery = async ({ config, notionDatabasesQuery, reqQuery }) => {
     // @todo(types)
     const filterTagEpisodesByPodcasts: any = []
     const podcastIds: any = []
-    // @todo(NICE-129) eslint
-    // eslint-disable-next-line no-unsafe-optional-chaining, @typescript-eslint/no-unused-expressions
+
+    // biome-ignore lint/correctness/noUnsafeOptionalChaining: migrate
     !!podcasts && podcastIds.push(...podcasts?.split(','))
-    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     _size(podcastIds) > 0 &&
       _map(podcastIds, (id) =>
         filterTagEpisodesByPodcasts.push({
@@ -91,8 +90,8 @@ const getQuery = async ({ config, notionDatabasesQuery, reqQuery }) => {
     await avoidRateLimit(0)
     // @todo(types) any
     let contentData: Pick<any, number | string | symbol>
-    // @todo(NICE-129) eslint
-    // eslint-disable-next-line no-extra-boolean-cast
+
+    // biome-ignore lint/complexity/noExtraBooleanCast: migrate
     if (!!filter) {
       // @hack(notion)-do-not-return'
       if (filter?.or.length === 0) {
@@ -118,7 +117,7 @@ const getQuery = async ({ config, notionDatabasesQuery, reqQuery }) => {
         routeType,
       })
       data = _omit(data, 'results')
-      data['results'] = items
+      data.results = items
     } else {
       // console.dir(`no filter`)
       hasError = true

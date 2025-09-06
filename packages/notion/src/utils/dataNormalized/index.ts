@@ -1,5 +1,3 @@
-// @todo(NICE-129) eslint
-/* eslint-disable no-extra-boolean-cast */
 import _map from 'lodash/map.js'
 
 import { LOOKUP, PROPERTIES_LOOKUP } from '../../constants/index.js'
@@ -10,8 +8,6 @@ import { getTypes } from '../../utils/index.js'
  *
  * Refactor to remove `config` as a parameter, or move this to `queries`
  */
-// @todo(complexity) 11
-// eslint-disable-next-line complexity
 const dataNormalized = ({ config, data, pageId, pathVariables }) => {
   const { NOTION } = config
   const DATA_NORMALIZED = {}
@@ -20,7 +16,7 @@ const dataNormalized = ({ config, data, pageId, pathVariables }) => {
 
   // @hack(notion) not great
   let routeType = ''
-  if (!!pathVariables) {
+  if (pathVariables) {
     const { meta, routeType: _routeType } = pathVariables
     routeType =
       _routeType === NOTION?.PODCASTS?.routeType && meta.length > 1
@@ -28,7 +24,7 @@ const dataNormalized = ({ config, data, pageId, pathVariables }) => {
         : _routeType
   }
 
-  const items = !!routeType ? LOOKUP[routeType.toUpperCase()] : PROPERTIES_LOOKUP
+  const items = routeType ? LOOKUP[routeType.toUpperCase()] : PROPERTIES_LOOKUP
 
   _map(items, (item) => {
     let dataToNormalize: any
@@ -40,9 +36,9 @@ const dataNormalized = ({ config, data, pageId, pathVariables }) => {
      * only populate w/ data if exists in notion
      */
     DATA_NORMALIZED[item.key] = null
-    if (!!dataFromNotion) {
+    if (dataFromNotion) {
       dataToNormalize = getTypes[item.type](dataFromNotion, pageId)
-      DATA_NORMALIZED[item.key] = !!dataToNormalize ? dataToNormalize : null
+      DATA_NORMALIZED[item.key] = dataToNormalize ? dataToNormalize : null
     }
   })
 

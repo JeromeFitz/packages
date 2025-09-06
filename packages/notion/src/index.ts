@@ -15,22 +15,19 @@ import {
   getQuery,
 } from './queries/index.js'
 
-// @todo(NICE-129) eslint
-// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+// biome-ignore lint/nursery/useConsistentTypeDefinitions: migrate
 type ClientProps = {
   custom: CustomProps
   dataTypes: DataTypesProps
 }
 
-// @todo(NICE-129) eslint
-// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+// biome-ignore lint/nursery/useConsistentTypeDefinitions: migrate
 type CredentialProps = {
   auth: string
   config: any
 }
 
-// @todo(NICE-129) eslint
-// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+// biome-ignore lint/nursery/useConsistentTypeDefinitions: migrate
 type CustomProps = {
   getBlocksByIdChildren: any
   getDatabasesByIdQuery: any
@@ -41,8 +38,7 @@ type CustomProps = {
   getQuery: any
 }
 
-// @todo(NICE-129) eslint
-// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+// biome-ignore lint/nursery/useConsistentTypeDefinitions: migrate
 type DataTypesProps = {
   LISTING: any
   LISTING_BY_DATE: any

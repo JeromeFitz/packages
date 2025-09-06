@@ -1,5 +1,5 @@
-import path from 'path'
-import { fileURLToPath } from 'url'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 
 import { getCompat } from './_lib.js'
 
@@ -16,10 +16,6 @@ const configE2E = [
   {
     ...compat.extends('plugin:jest-dom/recommended')[0],
     name: '@jeromefitz/eslint-config:e2e:jest-dom',
-  },
-  {
-    ...compat.extends('turbo')[0],
-    name: '@jeromefitz/eslint-config:e2e:turbo',
   },
 ]
 

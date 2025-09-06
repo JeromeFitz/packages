@@ -1,4 +1,5 @@
-/* eslint-disable perfectionist/sort-switch-case */
+/** biome-ignore-all lint/correctness/noSwitchDeclarations: migrate */
+/** biome-ignore-all lint/correctness/noUnsafeOptionalChaining: migrate */
 const getInfoType = ({ config, item, meta, routeType }) => {
   const { NOTION } = config
 
@@ -14,15 +15,13 @@ const getInfoType = ({ config, item, meta, routeType }) => {
       date = item.properties[
         NOTION[routeType.toUpperCase()].infoType.key
       ]?.start.slice(0, 10)
-      // @todo(NICE-129) eslint
-      // eslint-disable-next-line no-case-declarations, no-unsafe-optional-chaining
       const [year, month, day] = date?.split('-')
       as = `/${routeType}/${year}/${month}/${day}/${slug}`
       break
-    case NOTION.PODCASTS.routeType:
     case NOTION.EPISODES.routeType:
       as = `/${meta?.join('/')}/${slug}`
       break
+    // case NOTION.PODCASTS.routeType:
     // case NOTION.PEOPLE.routeType:
     // case NOTION.SHOWS.routeType:
     // case NOTION.VENUES.routeType:

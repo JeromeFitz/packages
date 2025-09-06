@@ -3,15 +3,15 @@
  */
 import type { ComponentProps, ElementRef } from 'react'
 
+import type { CSS } from '../../lib/stitches.config'
+
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
 import { forwardRef } from 'react'
 
-import type { CSS } from '../../lib/stitches.config'
-
 import { styled } from '../../lib/stitches.config'
+import { Box, Flex, Icon } from '../index'
 import { itemCss, labelCss, menuCss, separatorCss } from '../Menu/Menu.styles'
 import { panelStyles } from '../Panel/Panel.styles'
-import { Box, Flex, Icon } from '../index'
 
 const DropdownMenu = DropdownMenuPrimitive.Root
 const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger

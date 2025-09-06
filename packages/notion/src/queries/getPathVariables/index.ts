@@ -28,6 +28,7 @@ const getPathVariables = ({ catchAll, config }) => {
 
   const routeType =
     first === last && !_includes(ROUTE_TYPES, FIRST) ? NOTION.PAGES.routeType : first
+  // biome-ignore lint/correctness/useParseIntRadix: migrate
   const slug = first !== last && !_isInteger(parseInt(last)) ? last : first
 
   const isPage = routeType === NOTION.PAGES.routeType.toLowerCase()

@@ -10,7 +10,7 @@ import { radii } from './tokens/radii'
 import { shadows } from './tokens/shadows'
 import { sizes } from './tokens/sizes'
 import { spaces as space } from './tokens/spaces'
-import { fontSizes, fontWeights, fonts } from './tokens/typography'
+import { fontSizes, fonts, fontWeights } from './tokens/typography'
 import { utils } from './tokens/utils'
 import { zIndices } from './tokens/z-indices'
 
@@ -34,8 +34,8 @@ const {
     borderWidths: {},
     colors,
     fontSizes,
-    fontWeights,
     fonts,
+    fontWeights,
     foo: {
       bar: 'baz',
     },
@@ -54,6 +54,7 @@ const {
 const darkTheme = createTheme('dark-theme', themes.dark)
 
 export type CSS = StitchesCSS<typeof config>
+
 export type { VariantProps } from '@stitches/react'
 
 export {

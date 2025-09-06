@@ -1,6 +1,7 @@
 import type { ParagraphWeightVariants } from '../Paragraph/Paragraph.types'
 
 import { Heading, Paragraph, Skeleton } from '../index'
+
 const SkeletonTitle = () => (
   <Skeleton
     as="span"

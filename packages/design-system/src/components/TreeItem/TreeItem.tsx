@@ -10,7 +10,6 @@ const TreeItem = styled('div', {
   '&:disabled': {
     pointerEvents: 'none',
   },
-  WebkitTapHighlightColor: 'transparent',
   // @reset
   alignItems: 'center',
   boxSizing: 'border-box',
@@ -37,6 +36,7 @@ const TreeItem = styled('div', {
       // },
     },
   },
+  WebkitTapHighlightColor: 'transparent',
 })
 
 export { TreeItem }

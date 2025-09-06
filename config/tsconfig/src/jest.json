@@ -1,9 +1,9 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "@jeromefitz/tsconfig-jest",
   "compilerOptions": {
     "baseUrl": "./",
     "rootDir": "./"
   },
+  "display": "@jeromefitz/tsconfig-jest",
   "include": ["**/*.test.*", "__tests__/*"]
 }

@@ -7,16 +7,17 @@ import * as SwitchPrimitive from '@radix-ui/react-switch'
 import { forwardRef, useMemo } from 'react'
 
 import { darkTheme, styled } from '../../lib/stitches.config'
+
 // import { styled } from '../../lib/stitches.config'
 
 import type { SwitchProps } from './Switch.types'
 
 const StyledThumb = styled(SwitchPrimitive.Thumb, {
-  '&[data-state="checked"]': {
-    transform: 'translateX(11px)',
-  },
   '@media (prefers-reduced-motion: no-preference)': {
     transition: 'transform 100ms cubic-bezier(0.22, 1, 0.36, 1)',
+  },
+  '&[data-state="checked"]': {
+    transform: 'translateX(11px)',
   },
   [`.${darkTheme} &`]: {
     boxShadow: `0 2px 10px $colors$shadowLight`,
@@ -35,12 +36,12 @@ const StyledThumb = styled(SwitchPrimitive.Thumb, {
 })
 
 const StyledSwitchIcon = styled('span', {
+  '@motion': {
+    transition: 'none',
+  },
   '& svg': {
     background: 'transparent',
     color: '$hiContrast',
-  },
-  '@motion': {
-    transition: 'none',
   },
 
   alignContent: 'center',
@@ -69,7 +70,6 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
       boxShadow: '0 2px 10px $colors$shadow',
     },
   },
-  WebkitTapHighlightColor: 'rgba(0,0,0,0)',
   all: 'unset',
   backgroundColor: '$hiContrast',
   borderRadius: '$pill',
@@ -136,6 +136,7 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
       },
     },
   },
+  WebkitTapHighlightColor: 'rgba(0,0,0,0)',
 })
 
 interface SwitchIconProps extends SwitchProps {

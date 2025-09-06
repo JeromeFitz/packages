@@ -1,14 +1,14 @@
 import type { ElementRef } from 'react'
 
-import merge from 'lodash/merge'
-import { forwardRef } from 'react'
-
 import type { CSS } from '../../lib/stitches.config'
 import type {
   HeadingProps,
   HeadingSizeVariants,
   TextSizeVariants,
 } from './Heading.types'
+
+import merge from 'lodash/merge'
+import { forwardRef } from 'react'
 
 import { Text } from '../Text'
 import { DEFAULT_TAG } from './Heading.types'

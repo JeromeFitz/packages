@@ -3,9 +3,9 @@
  */
 import type { ComponentProps, ElementRef } from 'react'
 
-import { forwardRef } from 'react'
-
 import type { CSS } from '../../lib/stitches.config'
+
+import { forwardRef } from 'react'
 
 import {
   NavigationMenuArrow,

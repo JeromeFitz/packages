@@ -4,8 +4,12 @@ packages:
   - 'config/*'
   - 'examples/*'
   - 'packages/*'
+  - '!config/eslint-config'
   - '!config/jest-config'
   - '!config/jest-presets'
   - '!config/lighthouse-config'
   - '!examples/design-system'
   - '!packages/design-system'
+  - '!packages/spotify'
+onlyBuiltDependencies:
+  - '@biomejs/biome'

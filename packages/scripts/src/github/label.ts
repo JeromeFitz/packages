@@ -1,4 +1,4 @@
-// @todo(types)
+/** biome-ignore-all lint/suspicious/noConsole: migrate */
 import { Octokit } from '@octokit/rest'
 import { createColorize } from 'colorize-template'
 import isCI from 'is-ci'
@@ -25,10 +25,8 @@ const labels = getLabels.map((label) => ({
 // @note
 // - Potentialy may be to do a`listLabelsForRepo` then `deleteLabel` and just`createLabel` fresh
 // - Or `listLabelsForRepo` then create a migration script instead.
-// eslint-disable-next-line @typescript-eslint/require-await
 async function createLabels({ owner, repo }) {
   try {
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     labels.map(async (label) => {
       await octokit.rest.issues.createLabel({
         owner,
@@ -39,8 +37,7 @@ async function createLabels({ owner, repo }) {
         colorize`{green.bold ✅️  success: ${owner}/${repo} => createLabel: ${label.name}}`,
       )
     })
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  } catch (error) {
+  } catch (_error) {
     console.log(colorize`{red.bold ❎️  error: ${owner}/${repo} => createLabel`)
     // console.log(colorize`{white.italic ${error}}`)
   }

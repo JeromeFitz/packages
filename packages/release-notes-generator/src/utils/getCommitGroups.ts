@@ -5,11 +5,9 @@ import _orderBy from 'lodash/orderBy.js'
 function getCommitGroups(groupBy, commits, commitGroupsSort, commitsSort) {
   let commitGroups: any = []
 
-  const commitGroupsObj = _groupBy(commits, function (commit) {
-    return commit[groupBy] || ''
-  })
+  const commitGroupsObj = _groupBy(commits, (commit) => commit[groupBy] || '')
 
-  _forEach(commitGroupsObj, function (commits, title: boolean | string) {
+  _forEach(commitGroupsObj, (commits, title: boolean | string) => {
     if (title === '') {
       title = false
     }

@@ -1,7 +1,4 @@
-// import data from 'gitmojis'
-
-// @todo(eslint) back to import
-// eslint-disable-next-line @typescript-eslint/no-var-requires, @typescript-eslint/no-require-imports
+/** biome-ignore-all lint/suspicious/noConsole: migrate */
 const data = require('gitmojis')
 
 import type { IReleaseRule } from '../types/index.js'
@@ -13,11 +10,11 @@ const { gitmojis } = data
 
 const getGitmoji = (): IReleaseRule => {
   // @todo(complexity) 16
-  // eslint-disable-next-line complexity
+  // biome-ignore lint/complexity/noExcessiveCognitiveComplexity: migrate
   gitmojis.map((gitmoji: any) => {
     const rewrite = _rewrites.find((r) => r?.from === gitmoji.name)
-    // @todo(NICE-129) eslint
-    // eslint-disable-next-line no-extra-boolean-cast
+
+    // biome-ignore lint/complexity/noExtraBooleanCast: migrate
     if (!!rewrite) {
       const semver =
         rewrite.semver === undefined
@@ -25,8 +22,7 @@ const getGitmoji = (): IReleaseRule => {
           : rewrite.semver || gitmoji?.semver || null
 
       _types[rewrite.to] = {
-        // @todo(NICE-129) eslint
-        // eslint-disable-next-line no-extra-boolean-cast
+        // biome-ignore lint/complexity/noExtraBooleanCast: migrate
         branch: Boolean(rewrite?.branch) ? rewrite.branch : null,
         code: gitmoji?.code,
         commit: rewrite.to,
@@ -42,8 +38,8 @@ const getGitmoji = (): IReleaseRule => {
          *
          * ["major","premajor","minor","preminor","patch","prepatch","prerelease"]
          **/
-        // @todo(NICE-129) eslint
-        // eslint-disable-next-line no-extra-boolean-cast
+
+        // biome-ignore lint/complexity/noExtraBooleanCast: migrate
         semver: !!semver
           ? semver
               .replace('fix', 'patch')

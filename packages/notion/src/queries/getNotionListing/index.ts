@@ -28,7 +28,7 @@ const getNotionListing = async ({
   }
   if (_info?.object === 'page') {
     info = _omit(_info, 'properties')
-    info['properties'] = sortObject(
+    info.properties = sortObject(
       dataNormalized({ config, data: _info, pageId: info.id, pathVariables }),
     )
   }
@@ -71,7 +71,7 @@ const getNotionListing = async ({
   _map(_items.results, (item) => {
     let itemInit = item
     itemInit = _omit(itemInit, 'properties')
-    itemInit['properties'] = sortObject(
+    itemInit.properties = sortObject(
       dataNormalized({ config, data: item, pageId: item.id, pathVariables }),
     )
     results.push(itemInit)

@@ -1,8 +1,4 @@
-**/.cache/**
-**/.husky/**
-**/.next/**
-**/.turbo/**
-**/dist/**
-**/node_modules/**
-**/storybook-static/**
-pnpm-lock.yaml
+**
+
+!package.json
+!**/package.json

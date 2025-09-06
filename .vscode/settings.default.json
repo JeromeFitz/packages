@@ -1,4 +1,7 @@
 {
-  "editor.formatOnSave": true,
-  "eslint.experimental.useFlatConfig": true
+  "editor.codeActionsOnSave": {
+    "source.fixAll.biome": "explicit",
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.formatOnSave": true
 }
