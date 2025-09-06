@@ -4,6 +4,19 @@
     "GH_TOKEN"
   ],
   "tasks": {
+    "//#biome:check": {
+      "outputLogs": "new-only"
+    },
+    "//#biome:write": {
+      "cache": false,
+      "outputLogs": "new-only"
+    },
+    "//#lint": {
+      "dependsOn": [
+        "@jeromefitz/prettier-config#build"
+      ],
+      "outputLogs": "new-only"
+    },
     "build": {
       "dependsOn": [
         "^build"
@@ -27,6 +40,20 @@
     },
     "dev": {
       "cache": false
+    },
+    "lint": {
+      "dependsOn": [
+        "@jeromefitz/prettier-config#build"
+      ],
+      "inputs": [
+        "biome.json",
+        "src/**",
+        "*.cjs",
+        "*.js",
+        "*.mjs",
+        "package.json"
+      ],
+      "outputLogs": "new-only"
     },
     "semantic-release": {
       "cache": false,

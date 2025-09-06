@@ -40,6 +40,8 @@
     "copy": "mkdir -p ./dist && ./scripts/copy.sh",
     "dev": "tsdown --watch",
     "dry:run": "pnpm run build && node ./dist/index.js -c -n",
+    "lint": "pnpm run lint:typescript",
+    "lint:typescript": "tsc --noEmit --declaration",
     "package": "pkg . --output ./.bin/ccommit --targets latest-linux-x64,latest-macos-x64,latest-win-x64",
     "prepare": "is-ci || pnpm run build",
     "semantic-release": "semantic-release",
