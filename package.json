@@ -50,7 +50,7 @@
     "@jeromefitz/tsconfig": "workspace:*",
     "@types/node": "22.10.2",
     "ccommit": "workspace:*",
-    "dotenv": "17.2.1",
+    "dotenv": "17.2.2",
     "is-ci": "4.1.0",
     "lint-staged": "16.1.5",
     "lodash": "4.17.21",
