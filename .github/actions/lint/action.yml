@@ -21,7 +21,7 @@ runs:
         TURBO_TEAM: ${{ inputs.TURBO_TEAM }}
         TURBO_TOKEN: ${{ inputs.TURBO_TOKEN }}
       run: |
-        pnpm run lint \
+        pnpm turbo run lint \
           --cache-dir=".cache-turbo"
 
     # - name: '🧪️  Test'
