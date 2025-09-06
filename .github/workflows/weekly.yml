@@ -45,15 +45,15 @@ jobs:
 
       - name: '💽️  Init'
         id: weekly-init
-        uses: JeromeFitz/packages/.github/actions/init@main
+        uses: JeromeFitz/packages/.github/actions/init@lint/ts
 
       - name: '📦  Install'
         id: weekly-install
-        uses: JeromeFitz/packages/.github/actions/install@main
+        uses: JeromeFitz/packages/.github/actions/install@lint/ts
 
       - name: '🔺️  Cache (turbo)'
         id: pull-cache-turbo
-        uses: JeromeFitz/packages/.github/actions/cache-turbo@main
+        uses: JeromeFitz/packages/.github/actions/cache-turbo@lint/ts
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
@@ -63,14 +63,14 @@ jobs:
 
       - name: '🚨️  Lint'
         id: weekly-lint
-        uses: JeromeFitz/packages/.github/actions/lint@main
+        uses: JeromeFitz/packages/.github/actions/lint@lint/ts
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
       - name: '🏗️  Build'
         id: weekly-build
-        uses: JeromeFitz/packages/.github/actions/build@main
+        uses: JeromeFitz/packages/.github/actions/build@lint/ts
         with:
           BUILD_COMMAND: 'build:all'
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
@@ -78,7 +78,7 @@ jobs:
 
       - name: '🏷️  Release'
         id: weekly-release
-        uses: JeromeFitz/packages/.github/actions/release@main
+        uses: JeromeFitz/packages/.github/actions/release@lint/ts
         with:
           GH_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
