@@ -34,11 +34,11 @@
     "semver"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "tsdown",
     "clean": "rm -rf .turbo && rm -rf dist",
     "clean:install": "pnpm run clean && rm -rf node_modules",
     "copy": "mkdir -p ./dist && ./scripts/copy.sh",
-    "dev": "tsup --watch",
+    "dev": "tsdown --watch",
     "dry:run": "pnpm run build && node ./dist/index.js -c -n",
     "format:lint": "pnpm run lint:eslint --fix && pnpm run format:prettier --write",
     "format:prettier": "prettier \"./src/**/*.{cjs,js,jsx,mjs,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\" --ignore-unknown --log-level warn",

@@ -89,7 +89,7 @@ Built with [`radix-ui`](https://www.radix-ui.com) and [`stitches`](https://stitc
 - 🔺️ [`turbo`](https://github.com/vercel/turborepo) for monorepo management
   - [x] cache: local / remote & team development
   - [x] cache: github actions
-- 👷️ [`tsup`](https://github.com/egoist/tsup) for typescript builds (w/ _some_ config)
+- 👷️ [`tsdown`](https://github.com/rolldown/tsdown) for typescript builds (w/ _some_ config)
 - 🤖️ [`Renovate`](https://github.com/renovatebot/renovate) for Patch + Minor Package Management
 - 🤖️ [`Kodiak`](https://kodiakhq.com) to “Automate (our) GitHub Pull Requests’
 - 🤖️ Automatic [`Semantic Versioning`](https://semver.org) w/ [`Conventional Commits`](https://www.conventionalcommits.org)
