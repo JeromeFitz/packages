@@ -72,7 +72,6 @@
       "@semantic-release/commit-analyzer@13.0.1": "patches/@semantic-release__commit-analyzer@13.0.0.patch"
     },
     "overrides": {
-      "@babel/runtime": "^7.26.10",
       "micromatch": "4.0.8",
       "tar-fs": "^3.0.9"
     }
