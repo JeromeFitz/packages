@@ -25,6 +25,8 @@
     "copy": "mkdir -p ./dist && ./scripts/copy.sh",
     "dev": "tsdown --watch",
     "generate:types": "node ./scripts/generateTypes.js && pnpm exec biome format --write --no-errors-on-unmatched",
+    "lint": "pnpm run lint:typescript",
+    "lint:typescript": "tsc --noEmit --declaration",
     "semantic-release": "semantic-release",
     "semantic-release:dry": "semantic-release --dry-run"
   },

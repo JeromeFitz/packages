@@ -29,6 +29,8 @@
     "clean:install": "pnpm run clean && rm -rf node_modules",
     "copy": "mkdir -p ./dist && ./scripts/copy.sh",
     "dev": "tsdown --watch",
+    "lint": "pnpm run lint:typescript",
+    "lint:typescript": "tsc --noEmit --declaration",
     "semantic-release": "semantic-release",
     "semantic-release:dry": "semantic-release --dry-run"
   },

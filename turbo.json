@@ -4,6 +4,19 @@
     "GH_TOKEN"
   ],
   "tasks": {
+    "//#biome:check": {
+      "outputLogs": "new-only"
+    },
+    "//#biome:write": {
+      "cache": false,
+      "outputLogs": "new-only"
+    },
+    "//#lint": {
+      "dependsOn": [
+        "@jeromefitz/prettier-config#build"
+      ],
+      "outputLogs": "new-only"
+    },
     "build": {
       "dependsOn": [
         "^build"
@@ -28,6 +41,20 @@
     "dev": {
       "cache": false
     },
+    "lint": {
+      "dependsOn": [
+        "@jeromefitz/prettier-config#build"
+      ],
+      "inputs": [
+        "biome.json",
+        "src/**",
+        "*.cjs",
+        "*.js",
+        "*.mjs",
+        "package.json"
+      ],
+      "outputLogs": "new-only"
+    },
     "semantic-release": {
       "cache": false,
       "dependsOn": []
@@ -46,6 +73,19 @@
         "coverage/**"
       ]
     },
+    "@jeromefitz/notion#lint": {
+      "dependsOn": [
+        "@jeromefitz/utils#build"
+      ],
+      "inputs": [
+        "src/**",
+        "*.cjs",
+        "*.js",
+        "*.mjs",
+        "package.json"
+      ],
+      "outputLogs": "new-only"
+    },
     "@jeromefitz/notion#build": {
       "dependsOn": [
         "@jeromefitz/utils#build"
@@ -60,6 +100,20 @@
       "outputLogs": "new-only"
     },
     "@jeromefitz/semantic#build": {
+      "dependsOn": [
+        "@jeromefitz/conventional-gitmoji#build",
+        "@jeromefitz/release-notes-generator#build"
+      ],
+      "inputs": [
+        "src/**",
+        "*.cjs",
+        "*.js",
+        "*.mjs",
+        "package.json"
+      ],
+      "outputLogs": "new-only"
+    },
+    "@jeromefitz/semantic#lint": {
       "dependsOn": [
         "@jeromefitz/conventional-gitmoji#build",
         "@jeromefitz/release-notes-generator#build"
