@@ -25,4 +25,5 @@ if [ ! "$HUSKY__PRE_COMMIT__LINT_STAGED" = "0" ]; then
     fi
     pnpm exec biome check --write --staged --no-errors-on-unmatched --files-ignore-unknown=true
     git update-index --again
+    pnpm lint:packages
 fi
