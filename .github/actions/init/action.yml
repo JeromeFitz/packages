@@ -20,7 +20,7 @@ runs:
 
     - name: '💽️  Node ${{ inputs.node-version }}'
       id: node-setup
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v5
       with:
         cache-dependency-path: pnpm-lock.yaml
         cache: 'pnpm'
