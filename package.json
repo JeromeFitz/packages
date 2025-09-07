@@ -28,7 +28,7 @@
     "format:biome:base": "biome format",
     "format:biome:check": "pnpm format:biome:base",
     "format:biome:write": "pnpm format:biome:base --write",
-    "format:prettier:base": "prettier \"./**/package.json\" --ignore-unknown --ignore-path",
+    "format:prettier:base": "prettier \"./**/package.json\" \"**.{html,md,mdx,yml,yaml}\" \"!pnpm-lock.yaml\" --ignore-unknown",
     "format:prettier:check": "pnpm format:prettier:base --check",
     "format:prettier:write": "pnpm format:prettier:base --write",
     "generate:releaseRules": "node ./packages/semantic/scripts/generateReleaseRules.js && pnpm run format:lint",
@@ -47,7 +47,6 @@
   "dependencies": {
     "@biomejs/biome": "2.2.3",
     "@jeromefitz/conventional-gitmoji": "workspace:*",
-    "@jeromefitz/lint-staged": "workspace:*",
     "@jeromefitz/prettier-config": "workspace:*",
     "@jeromefitz/release-notes-generator": "workspace:*",
     "@jeromefitz/semantic": "workspace:*",

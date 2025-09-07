@@ -1,21 +1,11 @@
-import isCI from 'is-ci'
 import micromatch from 'micromatch'
-
-const FILE_MAX = 9
 
 const escapedFileNames = (filenames) =>
   // @note(windows) 🪟 need to escape filenames with `shell-quote`
-  filenames
-    .map((filename) => `"${filename}"`)
-    .join(' ')
+  filenames.map((filename) => `"${filename}"`).join(' ')
 
 const config = (files) => {
-  if (isCI && files.length > FILE_MAX) {
-    return [`pnpm run format:prettier:check`]
-  }
-
-  // @todo(types)
-  const lintStaged: any[] = []
+  const lintStaged: string[] = []
 
   lintStaged.push(
     `pnpm exec biome format --write --no-errors-on-unmatched`,
@@ -30,12 +20,10 @@ const config = (files) => {
   )
   if (filesPrettier.length) {
     const filenames = escapedFileNames(filesPrettier)
-    isCI
-      ? lintStaged.push(`prettier --ignore-unknown --check ${filenames}`)
-      : lintStaged.push(
-          `prettier --ignore-unknown --write ${filenames}`,
-          `git add ${filenames} -u`,
-        )
+    lintStaged.push(
+      `prettier --ignore-unknown --write ${filenames}`,
+      `git add ${filenames} -u`,
+    )
   }
 
   const filesSyncpack = micromatch(
@@ -43,11 +31,10 @@ const config = (files) => {
     micromatch.braces('**/package.json', { expand: true }),
   )
   if (filesSyncpack.length) {
-    isCI ? lintStaged.push() : lintStaged.push(`pnpm run lint:packages`)
+    lintStaged.push(`pnpm run lint:packages`)
   }
 
   return lintStaged
 }
 
-export type Foo = any
 export default config

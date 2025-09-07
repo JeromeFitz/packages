@@ -23,9 +23,6 @@ importers:
       '@jeromefitz/conventional-gitmoji':
         specifier: workspace:*
         version: link:packages/conventional-gitmoji
-      '@jeromefitz/lint-staged':
-        specifier: workspace:*
-        version: link:config/lint-staged
       '@jeromefitz/prettier-config':
         specifier: workspace:*
         version: link:config/prettier-config
@@ -71,18 +68,6 @@ importers:
       typescript:
         specifier: 5.9.2
         version: 5.9.2
-
-  config/lint-staged:
-    dependencies:
-      is-ci:
-        specifier: 4.1.0
-        version: 4.1.0
-      lint-staged:
-        specifier: 16.1.6
-        version: 16.1.6
-      micromatch:
-        specifier: 4.0.8
-        version: 4.0.8
 
   config/prettier-config:
     dependencies:

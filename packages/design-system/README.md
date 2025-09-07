@@ -4,7 +4,6 @@
 >
 > There will be no further development and will eventually be removed from codebase.
 
-
 ## ⚠️ ⚠️ ⚠️ ⚠️ ⚠️
 
 This is in the process of being deprecated and currently decoupled from the build system and `pnpm`.

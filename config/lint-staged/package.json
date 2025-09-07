@@ -30,7 +30,6 @@
     "semantic-release:dry": "semantic-release --dry-run"
   },
   "dependencies": {
-    "is-ci": "4.1.0",
     "lint-staged": "16.1.6",
     "micromatch": "4.0.8"
   },
