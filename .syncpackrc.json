@@ -1,0 +1,45 @@
+{
+  "$schema": "./node_modules/syncpack/schema.json",
+  "formatRepository": false,
+  "indent": "  ",
+  "semverGroups": [
+    {
+      "dependencies": ["micromatch"],
+      "isIgnored": true
+    },
+    {
+      "dependencies": ["**"],
+      "dependencyTypes": ["dev", "local", "overrides", "prod"],
+      "label": "types:  !peer",
+      "packages": ["**"],
+      "range": ""
+    },
+    {
+      "dependencies": ["**"],
+      "dependencyTypes": ["peer", "pnpmOverrides"],
+      "label": "types:  peer",
+      "packages": ["**"],
+      "range": "^"
+    }
+  ],
+  "versionGroups": [
+    {
+      "dependencies": ["**"],
+      "dependencyTypes": ["peer"],
+      "label": "peer:  ^range",
+      "packages": ["**"]
+    },
+    {
+      "dependencies": ["storybook"],
+      "dependencyTypes": ["dev"],
+      "isIgnored": true,
+      "packages": ["**"]
+    },
+    {
+      "dependencies": ["$LOCAL"],
+      "dependencyTypes": ["dev", "prod"],
+      "label": "local: workspace protocol when local",
+      "pinVersion": "workspace:*"
+    }
+  ]
+}
