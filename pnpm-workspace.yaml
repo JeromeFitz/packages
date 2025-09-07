@@ -1,5 +1,7 @@
 enable-pre-post-scripts: true
 nodeOptions: '--experimental-strip-types --disable-warning=ExperimentalWarning'
+onlyBuiltDependencies:
+  - '@biomejs/biome'
 packages:
   - 'config/*'
   - 'examples/*'
@@ -7,9 +9,8 @@ packages:
   - '!config/eslint-config'
   - '!config/jest-config'
   - '!config/jest-presets'
+  - '!config/lint-staged'
   - '!config/lighthouse-config'
   - '!examples/design-system'
   - '!packages/design-system'
   - '!packages/spotify'
-onlyBuiltDependencies:
-  - '@biomejs/biome'

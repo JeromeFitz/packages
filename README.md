@@ -14,7 +14,6 @@ Originally was all-in-one as `@jeromefitz/codestyle`, these have been broken out
 
 **Spoiler:** They are opinionated, but can be overriden, extended, or ignored. 🙈
 
-- [`@jeromefitz/lint-staged`](https://github.com/JeromeFitz/packages/tree/main/config/lint-staged)
 - [`@jeromefitz/prettier-config`](https://github.com/JeromeFitz/packages/tree/main/config/prettier-config)
 - [`@jeromefitz/tsconfig`](https://github.com/JeromeFitz/packages/tree/main/config/tsconfig)
 
@@ -63,6 +62,7 @@ Originally was all-in-one as `@jeromefitz/codestyle`, these have been broken out
 - `@jeromefitz/jest-config`
 - `@jeromefitz/jest-presets`
 - `@jeromefitz/lighthouse-config`
+- `@jeromefitz/lint-staged`
 - `@jeromefitz/git-cz`
 - `@jeromefitz/design-system`
 - `@jeromefitz/spotify`
