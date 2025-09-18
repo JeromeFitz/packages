@@ -52,7 +52,7 @@
     "enquirer": "2.4.1",
     "execa": "9.6.0",
     "fuse.js": "7.1.0",
-    "meow": "13.2.0"
+    "meow": "14.0.0"
   },
   "devDependencies": {
     "is-ci": "4.1.0",
