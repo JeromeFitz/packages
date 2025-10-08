@@ -39,7 +39,7 @@
     "date-fns": "4.1.0",
     "import-from-esm": "2.0.0",
     "read-package-up": "11.0.0",
-    "semver": "7.7.2"
+    "semver": "7.7.3"
   },
   "devDependencies": {
     "@types/lodash": "4.17.20",
