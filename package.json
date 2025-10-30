@@ -59,7 +59,7 @@
     "lodash": "4.17.21",
     "semantic-release": "25.0.1",
     "syncpack": "14.0.0-alpha.23",
-    "tsdown": "0.15.11",
+    "tsdown": "0.15.12",
     "turbo": "2.5.8",
     "typescript": "5.9.3"
   },
