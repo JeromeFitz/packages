@@ -115,7 +115,7 @@
     "react-dom": "19.0.0-rc-66855b96-20241106",
     "serve": "14.2.5",
     "storybook": "7.6.17",
-    "swr": "2.3.6",
+    "swr": "2.3.7",
     "typescript": "5.9.3"
   },
   "publishConfig": {
