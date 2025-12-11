@@ -42,7 +42,7 @@
     "@types/lodash": "4.17.21",
     "lodash": "4.17.21",
     "storybook": "9.1.0",
-    "tailwindcss": "4.1.17",
+    "tailwindcss": "4.1.18",
     "typescript": "5.9.3"
   },
   "publishConfig": {
