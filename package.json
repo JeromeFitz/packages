@@ -56,7 +56,7 @@
     "dotenv": "17.2.3",
     "is-ci": "4.1.0",
     "lint-staged": "16.2.7",
-    "lodash": "4.17.21",
+    "lodash": "4.17.23",
     "semantic-release": "25.0.2",
     "syncpack": "14.0.0-alpha.34",
     "tsdown": "0.15.12",
