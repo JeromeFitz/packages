@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "@types/lodash": "4.17.23",
-    "lodash": "4.17.21"
+    "lodash": "4.17.23"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
