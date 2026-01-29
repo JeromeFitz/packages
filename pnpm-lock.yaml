@@ -167,8 +167,8 @@ importers:
         specifier: 2.0.0
         version: 2.0.0
       read-package-up:
-        specifier: 11.0.0
-        version: 11.0.0
+        specifier: 12.0.0
+        version: 12.0.0
       semver:
         specifier: 7.7.3
         version: 7.7.3
@@ -4427,7 +4427,7 @@ snapshots:
     dependencies:
       '@babel/code-frame': 7.27.1
       index-to-position: 0.1.2
-      type-fest: 4.15.0
+      type-fest: 4.41.0
 
   parse-json@8.3.0:
     dependencies:
