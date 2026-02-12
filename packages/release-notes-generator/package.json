@@ -38,7 +38,7 @@
     "conventional-commits-parser": "6.2.1",
     "date-fns": "4.1.0",
     "import-from-esm": "2.0.0",
-    "read-package-up": "11.0.0",
+    "read-package-up": "12.0.0",
     "semver": "7.7.4"
   },
   "devDependencies": {
