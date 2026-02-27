@@ -16,7 +16,7 @@ runs:
   steps:
     - name: '🔺️  Cache (turbo)'
       id: cache-turbo
-      uses: actions/cache@v4
+      uses: actions/cache@v5
       env:
         TURBO_TEAM: ${{ inputs.TURBO_TEAM }}
         TURBO_TOKEN: ${{ inputs.TURBO_TOKEN }}
