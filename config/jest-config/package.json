@@ -24,7 +24,7 @@
   },
   "peerDependencies": {
     "@jeromefitz/jest-presets": "^1.0.0",
-    "next": "^15.0.0"
+    "next": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
     "@testing-library/dom": "10.4.1",
@@ -37,7 +37,7 @@
   "devDependencies": {
     "@jeromefitz/jest-presets": "workspace:*",
     "@types/jest": "30.0.0",
-    "next": "15.5.12",
+    "next": "16.1.6",
     "react": "19.0.0-rc-66855b96-20241106"
   },
   "publishConfig": {
