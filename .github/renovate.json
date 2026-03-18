@@ -49,7 +49,7 @@
       "matchPackageNames": ["react", "react-dom"]
     },
     {
-      "allowedVersions": "<21",
+      "allowedVersions": "<25",
       "commitMessagePrefix": "📦  (deps-dev)",
       "matchDepTypes": ["devDependencies", "dependencies"],
       "matchPackageNames": ["@types/node"]
