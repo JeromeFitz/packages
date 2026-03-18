@@ -12,6 +12,13 @@
   "dependencyDashboard": false,
   "extends": [":semanticCommitsDisabled"],
   "ignoreDeps": ["sharp"],
+  "includePaths": [
+    "config/**",
+    "packages/**",
+    "!config/eslint-config/*",
+    "!packages/design-system/*",
+    "!packages/spotify/*"
+  ],
   "labels": ["📦️ Dependencies"],
   "node": {
     "enabled": false
