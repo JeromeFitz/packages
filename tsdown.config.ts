@@ -1,8 +1,8 @@
-import type { Options } from 'tsdown'
+import type { UserConfig } from 'tsdown'
 
 import { defineConfig } from 'tsdown'
 
-const config: Options = {
+const config: UserConfig = {
   dts: true,
   external: [],
   minify: true,
@@ -11,7 +11,7 @@ const config: Options = {
   outDir: 'dist',
   silent: true,
   sourcemap: false,
-  target: ['node22'],
+  target: ['node24'],
   treeshake: false,
 }
 

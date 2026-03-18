@@ -32,5 +32,4 @@ const config = {
 const _config = config
 const _getConfig = getConfig
 
-export { _config as config }
-export { _getConfig as getConfig }
+export { _config as config, _getConfig as getConfig }

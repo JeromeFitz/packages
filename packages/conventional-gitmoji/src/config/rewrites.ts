@@ -4,7 +4,7 @@
  * @note pseudo-map to conventional-commits
  */
 
-// biome-ignore lint/nursery/useConsistentTypeDefinitions: migrate
+// biome-ignore lint/style/useConsistentTypeDefinitions: migrate
 type RewritesProps = {
   branch?: null | string
   from: string

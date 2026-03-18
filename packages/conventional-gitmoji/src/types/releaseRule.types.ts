@@ -2,7 +2,7 @@ import type { ICommit } from './commit.types.js'
 
 type IReleaseRule = Partial<Record<ICommit, IReleaseRuleProps>>
 
-// biome-ignore lint/nursery/useConsistentTypeDefinitions: migrate
+// biome-ignore lint/style/useConsistentTypeDefinitions: migrate
 type IReleaseRuleProps = {
   branch: null | string
   code: string
@@ -16,4 +16,5 @@ type IReleaseRuleProps = {
   type?: ICommit
   value?: ICommit
 }
+
 export type { IReleaseRule, IReleaseRuleProps }

@@ -9,9 +9,9 @@
   },
   "license": "MIT",
   "private": true,
-  "packageManager": "pnpm@10.27.0+sha512.72d699da16b1179c14ba9e64dc71c9a40988cbdc65c264cb0e489db7de917f20dcf4d64d8723625f2969ba52d4b7e2a1170682d9ac2a5dcaeaab732b7e16f04a",
+  "packageManager": "pnpm@10.32.1+sha512.a706938f0e89ac1456b6563eab4edf1d1faf3368d1191fc5c59790e96dc918e4456ab2e67d613de1043d2e8c81f87303e6b40d4ffeca9df15ef1ad567348f2be",
   "engines": {
-    "node": ">=20.10.0",
+    "node": ">=24.14.0 <25",
     "pnpm": ">=10 <11"
   },
   "scripts": {
@@ -45,22 +45,22 @@
     "turbo": "TURBO_TELEMETRY_DISABLED=1 turbo"
   },
   "dependencies": {
-    "@biomejs/biome": "2.2.7",
+    "@biomejs/biome": "2.4.8",
     "@jeromefitz/conventional-gitmoji": "workspace:*",
     "@jeromefitz/prettier-config": "workspace:*",
     "@jeromefitz/release-notes-generator": "workspace:*",
     "@jeromefitz/semantic": "workspace:*",
     "@jeromefitz/tsconfig": "workspace:*",
-    "@types/node": "22.10.2",
+    "@types/node": "24.12.0",
     "ccommit": "workspace:*",
-    "dotenv": "17.2.4",
+    "dotenv": "17.3.1",
     "is-ci": "4.1.0",
-    "lint-staged": "16.2.7",
+    "lint-staged": "16.4.0",
     "lodash": "4.17.23",
     "semantic-release": "25.0.3",
-    "syncpack": "14.0.0-alpha.40",
+    "syncpack": "14.2.0",
     "tsdown": "0.15.12",
-    "turbo": "2.8.3",
+    "turbo": "2.8.18",
     "typescript": "5.9.3"
   },
   "publishConfig": {
