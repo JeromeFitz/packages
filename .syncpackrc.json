@@ -22,6 +22,14 @@
       "range": "^"
     }
   ],
+  "source": [
+    "config/*/package.json",
+    "packages/*/package.json",
+    "!config/eslint-config/package.json",
+    "!packages/design-system/package.json",
+    "!packages/spotify/package.json",
+    "!**/dist/**/package.json"
+  ],
   "versionGroups": [
     {
       "dependencies": ["**"],

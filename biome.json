@@ -231,9 +231,7 @@
             "useJsxKeyInIterable": "error",
             "useUniqueElementIds": "error"
           },
-          "nursery": {
-            "useConsistentTypeDefinitions": "error"
-          },
+          "nursery": {},
           "security": {
             "noBlankTarget": "error",
             "noDangerouslySetInnerHtmlWithChildren": "error"
@@ -241,6 +239,7 @@
           "style": {
             "noRestrictedGlobals": { "level": "error", "options": {} },
             "noRestrictedImports": "error",
+            "useConsistentTypeDefinitions": "error",
             "useConst": "error",
             "useImportType": {
               "level": "error",

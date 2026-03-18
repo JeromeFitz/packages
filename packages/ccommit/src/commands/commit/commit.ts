@@ -18,7 +18,7 @@ import withHook from './withHook.js'
 
 const { prompt } = enquirer
 
-// biome-ignore lint/nursery/useConsistentTypeDefinitions: migrate
+// biome-ignore lint/style/useConsistentTypeDefinitions: migrate
 export type CommitOptions = {
   message?: string
   mode: typeof COMMIT_MODES.CLIENT

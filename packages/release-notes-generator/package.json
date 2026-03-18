@@ -35,14 +35,14 @@
   "dependencies": {
     "@octokit/rest": "22.0.1",
     "conventional-commits-filter": "5.0.0",
-    "conventional-commits-parser": "6.2.1",
+    "conventional-commits-parser": "6.3.0",
     "date-fns": "4.1.0",
     "import-from-esm": "2.0.0",
-    "read-package-up": "11.0.0",
+    "read-package-up": "12.0.0",
     "semver": "7.7.4"
   },
   "devDependencies": {
-    "@types/lodash": "4.17.23",
+    "@types/lodash": "4.17.24",
     "lodash": "4.17.23"
   },
   "publishConfig": {

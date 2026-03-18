@@ -6,7 +6,7 @@ import type { IReleaseRule, IReleaseRuleProps } from '../index.js'
 
 // @note(semantic-release) can we re-use types here?
 
-// biome-ignore lint/nursery/useConsistentTypeDefinitions: migrate
+// biome-ignore lint/style/useConsistentTypeDefinitions: migrate
 type CustomReleaseRulesProps = {
   message?: null | string
   release?: null | string

@@ -8,8 +8,7 @@ import getTypes from '../../utils/getTypes/index.js'
 /**
  * @note(notion) https://github.com/JeromeFitz/packages/issues/631
  */
-
-// biome-ignore lint/nursery/useConsistentTypeDefinitions: migrate
+// biome-ignore lint/style/useConsistentTypeDefinitions: migrate
 type Rollup = {
   array: any
   function: RollupFunction

@@ -15,19 +15,19 @@ import {
   getQuery,
 } from './queries/index.js'
 
-// biome-ignore lint/nursery/useConsistentTypeDefinitions: migrate
+// biome-ignore lint/style/useConsistentTypeDefinitions: migrate
 type ClientProps = {
   custom: CustomProps
   dataTypes: DataTypesProps
 }
 
-// biome-ignore lint/nursery/useConsistentTypeDefinitions: migrate
+// biome-ignore lint/style/useConsistentTypeDefinitions: migrate
 type CredentialProps = {
   auth: string
   config: any
 }
 
-// biome-ignore lint/nursery/useConsistentTypeDefinitions: migrate
+// biome-ignore lint/style/useConsistentTypeDefinitions: migrate
 type CustomProps = {
   getBlocksByIdChildren: any
   getDatabasesByIdQuery: any
@@ -38,7 +38,7 @@ type CustomProps = {
   getQuery: any
 }
 
-// biome-ignore lint/nursery/useConsistentTypeDefinitions: migrate
+// biome-ignore lint/style/useConsistentTypeDefinitions: migrate
 type DataTypesProps = {
   LISTING: any
   LISTING_BY_DATE: any
@@ -160,5 +160,5 @@ class Client extends _Client {
   }
 }
 
-export { Client }
 export type { ClientProps, CredentialProps }
+export { Client }
