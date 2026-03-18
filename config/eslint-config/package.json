@@ -27,7 +27,7 @@
     "@babel/core": "7.29.0",
     "@babel/eslint-parser": "7.28.6",
     "@eslint/compat": "1.4.1",
-    "@eslint/eslintrc": "3.3.3",
+    "@eslint/eslintrc": "3.3.5",
     "@eslint/js": "9.39.2",
     "eslint": "9.39.2",
     "eslint-plugin-jest": "29.12.2",
