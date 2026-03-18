@@ -1,6 +1,6 @@
 import type { Options } from 'prettier'
 
-const config: Options = {
+const config: UserConfig = {
   arrowParens: 'always',
   endOfLine: 'auto',
   plugins: ['prettier-plugin-pkg'],
