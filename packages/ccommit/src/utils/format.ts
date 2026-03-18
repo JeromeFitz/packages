@@ -51,4 +51,5 @@ const formatCommitSubject = (options, answers) => {
     .replace(/\{title\}/g, answers?.title)
     .replace(/\{type\}/g, answers?.type)
 }
+
 export { formatCliEmoji, formatCliType, formatCliTypes, formatCommitSubject }
