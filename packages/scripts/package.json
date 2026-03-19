@@ -18,8 +18,16 @@
     "node": ">=20"
   },
   "exports": {
-    "types": "./dist/index.d.ts",
-    "default": "./dist/index.js"
+    ".": "./dist/index.mjs",
+    "./data/labels": "./dist/data/labels.mjs",
+    "./data/milestones": "./dist/data/milestones.mjs",
+    "./github/label": "./dist/github/label.mjs",
+    "./github/milestone": "./dist/github/milestone.mjs",
+    "./github/pullRequest": "./dist/github/pullRequest.mjs",
+    "./templates/PULL_REQUEST__RELEASE": "./dist/templates/PULL_REQUEST__RELEASE.mjs",
+    "./utils/getChars": "./dist/utils/getChars.mjs",
+    "./utils/getPackageJson": "./dist/utils/getPackageJson.mjs",
+    "./package.json": "./package.json"
   },
   "scripts": {
     "build": "tsdown",
@@ -42,5 +50,8 @@
     "registry": "https://registry.npmjs.org/",
     "provenance": true
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "inlinedDependencies": {
+    "dotenv": "17.3.1"
+  }
 }

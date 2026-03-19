@@ -18,8 +18,26 @@
     "node": ">=20"
   },
   "exports": {
-    "types": "./dist/index.d.ts",
-    "default": "./dist/index.js"
+    ".": "./dist/index.mjs",
+    "./changelog": "./dist/changelog/index.mjs",
+    "./changelog/config": "./dist/changelog/config.mjs",
+    "./changelog/utils/conventionalChangelog": "./dist/changelog/utils/conventionalChangelog.mjs",
+    "./changelog/utils/conventionalRecommendedBump": "./dist/changelog/utils/conventionalRecommendedBump.mjs",
+    "./changelog/utils/gitRawCommit": "./dist/changelog/utils/gitRawCommit.mjs",
+    "./changelog/utils/parserOpts": "./dist/changelog/utils/parserOpts.mjs",
+    "./changelog/utils/transformer": "./dist/changelog/utils/transformer.mjs",
+    "./changelog/utils/writerOpts": "./dist/changelog/utils/writerOpts.mjs",
+    "./config/rewrites": "./dist/config/rewrites.mjs",
+    "./config/types": "./dist/config/types.mjs",
+    "./types": "./dist/types/index.mjs",
+    "./types/commit": "./dist/types/commit.mjs",
+    "./types/commit.types": "./dist/types/commit.types.mjs",
+    "./types/releaseRule": "./dist/types/releaseRule.mjs",
+    "./types/releaseRule.types": "./dist/types/releaseRule.types.mjs",
+    "./utils/getGitmojiConventional": "./dist/utils/getGitmojiConventional.mjs",
+    "./utils/getReleaseRules": "./dist/utils/getReleaseRules.mjs",
+    "./utils/getTypeSpecs": "./dist/utils/getTypeSpecs.mjs",
+    "./package.json": "./package.json"
   },
   "scripts": {
     "build": "tsdown",
@@ -50,5 +68,8 @@
     "registry": "https://registry.npmjs.org/",
     "provenance": true
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "inlinedDependencies": {
+    "gitmojis": "3.15.0"
+  }
 }

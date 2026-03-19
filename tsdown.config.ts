@@ -4,6 +4,7 @@ import { defineConfig } from 'tsdown'
 
 const config: UserConfig = {
   dts: true,
+  exports: true,
   external: [],
   minify: true,
   noExternal: [],
