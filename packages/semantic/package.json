@@ -3,14 +3,10 @@
   "version": "0.0.0",
   "type": "module",
   "description": "Semantic Versioning, Conventional Commits with CI/CD for GitHub Actions.",
-<<<<<<< HEAD
   "repository": {
     "type": "git",
     "url": "https://github.com/jeromefitz/packages"
   },
-=======
-  "repository": "https://github.com/jeromefitz/packages",
->>>>>>> 5fe33b1c (🩹  ๏̯̃๏ [b])
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",

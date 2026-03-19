@@ -1,14 +1,10 @@
 {
   "name": "@jeromefitz/packages",
   "type": "module",
-<<<<<<< HEAD
   "repository": {
     "type": "git",
     "url": "https://github.com/jeromefitz/packages"
   },
-=======
-  "repository": "https://github.com/jeromefitz/packages",
->>>>>>> 5fe33b1c (🩹  ๏̯̃๏ [b])
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",

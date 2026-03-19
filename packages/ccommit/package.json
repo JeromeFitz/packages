@@ -3,14 +3,10 @@
   "version": "0.0.0",
   "type": "module",
   "description": "😜 ➕ 👔 🟰  ccommit \n  Conventional Commit Generator that interprets commit types from gitmoji and conventional",
-<<<<<<< HEAD
   "repository": {
     "type": "git",
     "url": "https://github.com/jeromefitz/packages"
   },
-=======
-  "repository": "https://github.com/jeromefitz/packages",
->>>>>>> 5fe33b1c (🩹  ๏̯̃๏ [b])
   "homepage": "https://github.com/JeromeFitz/packages/tree/main/packages/ccommit#readme",
   "author": {
     "name": "Jerome Fitzgerald",
