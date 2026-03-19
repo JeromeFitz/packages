@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "type": "module",
   "description": "Semantic Versioning, Conventional Commits with CI/CD for GitHub Actions.",
-  "repository": "jeromefitz/packages.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeromefitz/packages"
+  },
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
@@ -43,7 +46,8 @@
     "@jeromefitz/conventional-gitmoji": "workspace:*"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "provenance": true
   },
   "sideEffects": false
 }

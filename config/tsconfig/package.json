@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "type": "module",
   "description": "TypeScript Configuration",
-  "repository": "jeromefitz/packages.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeromefitz/packages"
+  },
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
@@ -24,7 +27,8 @@
     "semantic-release:dry": "semantic-release --dry-run"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "provenance": true
   },
   "sideEffects": false
 }
