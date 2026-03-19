@@ -22,6 +22,7 @@ env:
   GH_BOT_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
   GH_DEPLOY_TOKEN: ${{ secrets.GH_DEPLOY_TOKEN }}
   GH_TOKEN: ${{ secrets.GH_TOKEN }}
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
   TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
@@ -42,6 +43,7 @@ jobs:
     env:
       GH_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
       GITHUB_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
     steps:
@@ -105,3 +107,4 @@ jobs:
         uses: JeromeFitz/packages/.github/actions/release@NICE-175
         with:
           GH_TOKEN: ${{ env.GH_BOT_TOKEN }}
+          NPM_TOKEN: ${{ env.NPM_TOKEN }}
