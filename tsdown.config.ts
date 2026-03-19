@@ -3,16 +3,16 @@ import type { UserConfig } from 'tsdown'
 import { defineConfig } from 'tsdown'
 
 const config: UserConfig = {
-  attw: 'ci-only',
+  attw: false,
   deps: { alwaysBundle: [], neverBundle: [] },
   dts: true,
   exports: true,
-  failOnWarn: 'ci-only',
+  failOnWarn: true,
   logLevel: 'error',
   minify: true,
   onSuccess: 'pnpm run copy',
   outDir: 'dist',
-  publint: 'ci-only',
+  publint: true,
   sourcemap: false,
   target: ['node24'],
   treeshake: false,
