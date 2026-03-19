@@ -1,7 +1,10 @@
 {
   "name": "@jeromefitz/packages",
   "type": "module",
-  "repository": "jeromefitz/packages.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeromefitz/packages"
+  },
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
@@ -64,7 +67,8 @@
     "typescript": "5.9.3"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "provenance": true
   },
   "pnpm": {
     "patchedDependencies": {
