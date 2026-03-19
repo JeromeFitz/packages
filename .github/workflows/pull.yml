@@ -50,6 +50,7 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 10
+          persist-credentials: false
 
       - name: '💽️  Init'
         id: pull-init
