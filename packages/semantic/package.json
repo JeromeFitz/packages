@@ -15,8 +15,10 @@
     "node": ">=20"
   },
   "exports": {
-    "types": "./dist/index.d.ts",
-    "default": "./dist/index.js"
+    ".": "./dist/index.mjs",
+    "./getConfig": "./dist/getConfig.mjs",
+    "./release.config": "./dist/release.config.mjs",
+    "./package.json": "./package.json"
   },
   "scripts": {
     "build": "tsdown",

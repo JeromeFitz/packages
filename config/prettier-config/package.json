@@ -15,18 +15,9 @@
     "node": ">=20"
   },
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
-    },
-    "./base": {
-      "types": "./dist/base.d.ts",
-      "default": "./dist/base.js"
-    },
-    "./tailwind": {
-      "types": "./dist/tailwind.d.ts",
-      "default": "./dist/tailwind.js"
-    }
+    ".": "./dist/index.mjs",
+    "./base": "./dist/base.mjs",
+    "./package.json": "./package.json"
   },
   "scripts": {
     "build": "tsdown",

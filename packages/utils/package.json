@@ -15,8 +15,23 @@
     "node": ">=20"
   },
   "exports": {
-    "types": "./dist/index.d.ts",
-    "default": "./dist/index.js"
+    ".": "./dist/index.mjs",
+    "./assertNever": "./dist/assertNever/index.mjs",
+    "./asyncForEach": "./dist/asyncForEach/index.mjs",
+    "./avoidRateLimit": "./dist/avoidRateLimit/index.mjs",
+    "./isObject": "./dist/isObject/index.mjs",
+    "./isObjectEmpty": "./dist/isObjectEmpty/index.mjs",
+    "./isUndefined": "./dist/isUndefined/index.mjs",
+    "./lpad": "./dist/lpad/index.mjs",
+    "./noop": "./dist/noop/index.mjs",
+    "./omit": "./dist/omit/index.mjs",
+    "./pick": "./dist/pick/index.mjs",
+    "./pubsub": "./dist/pubsub/index.mjs",
+    "./rangeMap": "./dist/rangeMap/index.mjs",
+    "./setCharAt": "./dist/setCharAt/index.mjs",
+    "./sortObject": "./dist/sortObject/index.mjs",
+    "./stringToUUID": "./dist/stringToUUID/index.mjs",
+    "./package.json": "./package.json"
   },
   "keywords": [
     "utilities",
