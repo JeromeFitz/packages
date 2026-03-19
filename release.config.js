@@ -1,6 +1,6 @@
 import _map from 'lodash/map.js'
 
-import { getConfig } from './packages/semantic/dist/index.js'
+import { getConfig } from './packages/semantic/dist/index.mjs'
 import releaseBranchTypes from './scripts/release-branch-types/index.cjs'
 
 const branchTypes = _map(
