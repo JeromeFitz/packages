@@ -16,7 +16,7 @@
   "license": "MIT",
   "private": false,
   "engines": {
-    "node": ">=20"
+    "node": ">=24"
   },
   "bin": {
     "ccommit": "./dist/index.mjs"
