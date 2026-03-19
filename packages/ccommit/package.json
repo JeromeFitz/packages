@@ -5,7 +5,7 @@
   "description": "😜 ➕ 👔 🟰  ccommit \n  Conventional Commit Generator that interprets commit types from gitmoji and conventional",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jeromefitz/packages"
+    "url": "git+https://github.com/jeromefitz/packages.git"
   },
   "homepage": "https://github.com/JeromeFitz/packages/tree/main/packages/ccommit#readme",
   "author": {

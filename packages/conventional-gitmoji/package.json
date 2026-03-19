@@ -5,7 +5,7 @@
   "description": "Helper package for dual gitmoji / conventional commits",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jeromefitz/packages"
+    "url": "git+https://github.com/jeromefitz/packages.git"
   },
   "author": {
     "name": "Jerome Fitzgerald",

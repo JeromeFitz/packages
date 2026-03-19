@@ -5,7 +5,7 @@
   "description": "Custom Release Note Generator for Semantic Release.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jeromefitz/packages"
+    "url": "git+https://github.com/jeromefitz/packages.git"
   },
   "author": {
     "name": "Jerome Fitzgerald",
