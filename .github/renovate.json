@@ -12,13 +12,14 @@
   "dependencyDashboard": false,
   "extends": [":semanticCommitsDisabled"],
   "ignoreDeps": ["sharp"],
-  "includePaths": [
-    "config/**",
-    "packages/**",
-    "!config/eslint-config/*",
-    "!packages/design-system/*",
-    "!packages/spotify/*"
+  "ignorePaths": [
+    "**/node_modules/**",
+    "**/bower_components/**",
+    "config/eslint-config/**",
+    "packages/design-system/**",
+    "packages/spotify/**"
   ],
+  "includePaths": ["config/**", "packages/**"],
   "labels": ["📦️ Dependencies"],
   "node": {
     "enabled": false
