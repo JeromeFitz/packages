@@ -45,7 +45,7 @@ const types = [
   },
   {
     code: ':t-rex:',
-    description: 'Write Code Drunkenly',
+    description: 'Backwards Compatibility',
     emoji: '🦖',
     emojiLength: 1,
     semver: SEMVER.NULL,
