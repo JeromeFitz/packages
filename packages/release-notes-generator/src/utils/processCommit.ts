@@ -4,7 +4,7 @@ import {
   get as _get,
   isFunction as _isFunction,
   set as _set,
-} from 'lodash'
+} from 'lodash-es'
 
 /**
  * @ref lifted from release-notes-generator
