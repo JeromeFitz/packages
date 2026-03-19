@@ -36,7 +36,7 @@
     "semantic-release:dry": "semantic-release --dry-run"
   },
   "peerDependencies": {
-    "@jeromefitz/conventional-gitmoji": "^4.0.0"
+    "@jeromefitz/conventional-gitmoji": "^5.0.0"
   },
   "dependencies": {
     "@semantic-release/commit-analyzer": "13.0.1",
