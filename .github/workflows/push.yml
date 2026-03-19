@@ -27,7 +27,7 @@ env:
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
 permissions:
-  contents: read
+  contents: write
   id-token: write
 
 jobs:
