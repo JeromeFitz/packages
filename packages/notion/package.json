@@ -75,7 +75,7 @@
     "semantic-release:dry": "semantic-release --dry-run"
   },
   "peerDependencies": {
-    "@jeromefitz/utils": "^3.0.0",
+    "@jeromefitz/utils": "^3.0.0 || ^4.0.0",
     "lodash-es": "^4.17.21"
   },
   "dependencies": {
