@@ -5,7 +5,7 @@ import _map from 'lodash/map.js'
 import _merge from 'lodash/merge.js'
 import { patch as semverPatch, valid as semverValid } from 'semver'
 
-import getExtraContext from './getExtraContent.js'
+import getExtraContext from './getExtraContent'
 
 function generate(options, commits, context, keyCommit) {
   let notes = []
