@@ -5,7 +5,7 @@
   "description": "Semantic Versioning, Conventional Commits with CI/CD for GitHub Actions.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jeromefitz/packages.git"
+    "url": "https://github.com/JeromeFitz/packages"
   },
   "author": {
     "name": "Jerome Fitzgerald",

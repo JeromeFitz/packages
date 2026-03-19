@@ -5,7 +5,7 @@
   "description": "TypeScript Configuration",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jeromefitz/packages.git"
+    "url": "https://github.com/JeromeFitz/packages"
   },
   "author": {
     "name": "Jerome Fitzgerald",

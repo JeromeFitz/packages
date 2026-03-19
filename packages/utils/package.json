@@ -5,7 +5,7 @@
   "description": "Utilities used by @JeromeFitz that may be helpful",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jeromefitz/packages.git"
+    "url": "https://github.com/JeromeFitz/packages"
   },
   "author": {
     "name": "Jerome Fitzgerald",
