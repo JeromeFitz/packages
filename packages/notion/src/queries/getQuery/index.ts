@@ -1,13 +1,13 @@
-import type { SortItem } from '../../schema/index.js'
+import type { SortItem } from '../../schema/index'
 
 import { avoidRateLimit, isObjectEmpty } from '@jeromefitz/utils'
 
-import _map from 'lodash/map.js'
-import _omit from 'lodash/omit.js'
-import _size from 'lodash/size.js'
+import _map from 'lodash/map'
+import _omit from 'lodash/omit'
+import _size from 'lodash/size'
 
-import { PROPERTIES } from '../../constants/index.js'
-import dataNormalizedResults from '../../utils/dataNormalizedResults/index.js'
+import { PROPERTIES } from '../../constants/index'
+import dataNormalizedResults from '../../utils/dataNormalizedResults/index'
 
 // const useCache = process.env.NEXT_PUBLIC__NOTION_USE_CACHE
 // const useCache = false

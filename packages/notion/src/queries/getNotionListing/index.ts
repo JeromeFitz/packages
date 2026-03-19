@@ -1,10 +1,10 @@
 import { sortObject } from '@jeromefitz/utils'
 
-import _map from 'lodash/map.js'
-import _omit from 'lodash/omit.js'
+import _map from 'lodash/map'
+import _omit from 'lodash/omit'
 
-import { PROPERTIES } from '../../constants/index.js'
-import { dataNormalized } from '../../utils/index.js'
+import { PROPERTIES } from '../../constants/index'
+import { dataNormalized } from '../../utils/index'
 
 const getNotionListing = async ({
   config,

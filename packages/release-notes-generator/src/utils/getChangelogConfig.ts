@@ -7,7 +7,7 @@ import { promisify } from 'node:util'
 
 // import conventionalChangelogAngular from 'conventional-changelog-angular'
 import importFrom from 'import-from-esm'
-import _isPlainObject from 'lodash/isPlainObject.js'
+import _isPlainObject from 'lodash/isPlainObject'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 

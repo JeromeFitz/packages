@@ -1,7 +1,7 @@
-import _map from 'lodash/map.js'
+import _map from 'lodash/map'
 
-import { LOOKUP, PROPERTIES_LOOKUP } from '../../constants/index.js'
-import { getTypes } from '../../utils/index.js'
+import { LOOKUP, PROPERTIES_LOOKUP } from '../../constants/index'
+import { getTypes } from '../../utils/index'
 
 /**
  * @todo(notion)

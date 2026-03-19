@@ -4,7 +4,7 @@ import { createColorize } from 'colorize-template'
 import isCI from 'is-ci'
 import pico from 'picocolors'
 
-import getLabels from '../data/labels.js'
+import getLabels from '../data/labels'
 
 if (!isCI) {
   const dotenv = await import('dotenv')

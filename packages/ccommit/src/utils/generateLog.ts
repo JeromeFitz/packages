@@ -1,6 +1,6 @@
 import colors from 'ansi-colors'
 
-import { LOGS } from '~ccommit/lib/index.js'
+import { LOGS } from '~ccommit/lib/index'
 
 type GenerateLog = (type: string, message: string, replace?: string) => void
 /**

@@ -4,6 +4,7 @@
   "type": "module",
   "description": "Notion: Custom Client for jeromefitzgerald.com",
   "repository": {
+    "directory": "packages/notion",
     "type": "git",
     "url": "git+https://github.com/JeromeFitz/packages.git"
   },

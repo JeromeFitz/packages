@@ -7,8 +7,8 @@ import {
   FLAGS,
   LOGS,
   OPTIONS,
-} from '~ccommit/lib/index.js'
-import { generateLog, getStagedFiles } from '~ccommit/utils/index.js'
+} from '~ccommit/lib/index'
+import { generateLog, getStagedFiles } from '~ccommit/utils/index'
 
 const getOptionsForCommand = (command: string, flags: any): any => {
   const commandsWithOptions = [FLAGS.COMMIT, FLAGS.HOOK]

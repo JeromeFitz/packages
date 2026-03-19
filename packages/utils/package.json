@@ -4,6 +4,7 @@
   "type": "module",
   "description": "Utilities used by @JeromeFitz that may be helpful",
   "repository": {
+    "directory": "packages/utils",
     "type": "git",
     "url": "git+https://github.com/JeromeFitz/packages.git"
   },

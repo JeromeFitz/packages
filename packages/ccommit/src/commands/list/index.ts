@@ -1,3 +1,3 @@
-import list from './list.js'
+import list from './list'
 
 export default list

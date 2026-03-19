@@ -4,6 +4,7 @@
   "type": "module",
   "description": "Prettier Configuration",
   "repository": {
+    "directory": "config/prettier-config",
     "type": "git",
     "url": "git+https://github.com/JeromeFitz/packages.git"
   },

@@ -4,6 +4,7 @@
   "type": "module",
   "description": "Semantic Versioning, Conventional Commits with CI/CD for GitHub Actions.",
   "repository": {
+    "directory": "packages/semantic",
     "type": "git",
     "url": "git+https://github.com/JeromeFitz/packages.git"
   },

@@ -4,6 +4,7 @@
   "type": "module",
   "description": "Custom Release Note Generator for Semantic Release.",
   "repository": {
+    "directory": "packages/release-notes-generator",
     "type": "git",
     "url": "git+https://github.com/JeromeFitz/packages.git"
   },

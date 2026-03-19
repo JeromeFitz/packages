@@ -1,13 +1,13 @@
 import colors from 'ansi-colors'
 
-import commitTypes from '~ccommit/data/types.js'
-import { SCOPE, TITLE } from '~ccommit/lib/index.js'
+import commitTypes from '~ccommit/data/types'
+import { SCOPE, TITLE } from '~ccommit/lib/index'
 import {
   formatCliEmoji,
   formatCliType,
   getCharsLeft,
   getIssueTracker,
-} from '~ccommit/utils/index.js'
+} from '~ccommit/utils/index'
 
 const getTypes = () =>
   commitTypes.map(({ description, emoji, emojiLength, type }) => ({

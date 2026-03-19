@@ -6,7 +6,8 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "lib": ["ESNext"],
-    "module": "NodeNext",
+    "module": "preserve",
+    "moduleResolution": "bundler",
     "skipLibCheck": true,
     "strict": true,
     "target": "ESNext"

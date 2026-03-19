@@ -1,10 +1,10 @@
 import type { PluginSpec } from 'semantic-release'
 
-import type { PluginOptions } from './pluginOptions.types.js'
+import type { PluginOptions } from './pluginOptions.types'
 
 import { parserOpts, writerOpts } from '@jeromefitz/conventional-gitmoji'
 
-import { commitAnalyzer, git, github, npm } from './index.js'
+import { commitAnalyzer, git, github, npm } from './index'
 
 const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec[] => {
   const optionsDefault = {

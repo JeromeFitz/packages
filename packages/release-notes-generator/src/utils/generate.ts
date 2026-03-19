@@ -1,8 +1,8 @@
 import { filterRevertedCommitsSync } from 'conventional-commits-filter'
-import _clone from 'lodash/clone.js'
-import _forEach from 'lodash/forEach.js'
-import _map from 'lodash/map.js'
-import _merge from 'lodash/merge.js'
+import _clone from 'lodash/clone'
+import _forEach from 'lodash/forEach'
+import _map from 'lodash/map'
+import _merge from 'lodash/merge'
 import { patch as semverPatch, valid as semverValid } from 'semver'
 
 import getExtraContext from './getExtraContent'

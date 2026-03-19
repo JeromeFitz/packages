@@ -1,5 +1,5 @@
 // swr-esque
-import _isArray from 'lodash/isArray.js'
+import _isArray from 'lodash/isArray'
 
 type Callback = (data?: any) => void
 

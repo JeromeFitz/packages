@@ -1,7 +1,7 @@
 import GraphemeSplitter from 'grapheme-splitter'
-import _pullAt from 'lodash/pullAt.js'
+import _pullAt from 'lodash/pullAt'
 
-import { typeSpecs } from '../../index.js'
+import { typeSpecs } from '../../index'
 
 const splitter = new GraphemeSplitter()
 

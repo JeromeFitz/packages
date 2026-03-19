@@ -1,4 +1,4 @@
-import type { ICommit } from './commit.types.js'
+import type { ICommit } from './commit.types'
 
 const commit: ICommit[] = [
   'access',

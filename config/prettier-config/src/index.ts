@@ -1,4 +1,4 @@
-import config from './base.js'
+import config from './base'
 
 export default {
   ...config,

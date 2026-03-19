@@ -1,4 +1,4 @@
-import type { IReleaseRule, IReleaseRuleProps } from '../index.js'
+import type { IReleaseRule, IReleaseRuleProps } from '../index'
 
 import title from 'title'
 

@@ -1,5 +1,5 @@
 /** biome-ignore-all lint/suspicious/noConsole: migrate */
-import { COMMIT_FORMATS, FORMAT, TYPE } from '~ccommit/lib/index.js'
+import { COMMIT_FORMATS, FORMAT, TYPE } from '~ccommit/lib/index'
 
 const formatCliEmoji = ({ emoji, emojiLength }) =>
   emojiLength === 0 ? `${emoji}     ` : `${emoji}    `

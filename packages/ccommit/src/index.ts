@@ -5,9 +5,9 @@
  */
 import meow from 'meow'
 
-import { commit, list } from '~ccommit/commands/index.js'
-import { COMMANDS, COMMIT_FORMATS, FLAGS, OPTIONS } from '~ccommit/lib/index.js'
-import { findCommand } from '~ccommit/utils/index.js'
+import { commit, list } from '~ccommit/commands/index'
+import { COMMANDS, COMMIT_FORMATS, FLAGS, OPTIONS } from '~ccommit/lib/index'
+import { findCommand } from '~ccommit/utils/index'
 
 const cli = meow(
   `

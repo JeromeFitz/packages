@@ -4,6 +4,7 @@
   "type": "module",
   "description": "😜 ➕ 👔 🟰  ccommit \n  Conventional Commit Generator that interprets commit types from gitmoji and conventional",
   "repository": {
+    "directory": "packages/ccommit",
     "type": "git",
     "url": "git+https://github.com/JeromeFitz/packages.git"
   },

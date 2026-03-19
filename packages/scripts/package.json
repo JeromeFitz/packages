@@ -4,6 +4,7 @@
   "type": "module",
   "description": "Scripts",
   "repository": {
+    "directory": "packages/scripts",
     "type": "git",
     "url": "git+https://github.com/JeromeFitz/packages.git"
   },

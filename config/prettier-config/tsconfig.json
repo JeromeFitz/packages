@@ -3,12 +3,12 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "lib": ["ESNext"],
-    "module": "NodeNext",
+    "module": "preserve",
+    "moduleResolution": "bundler",
     "outDir": "./dist",
     "rootDir": "./src",
     "skipLibCheck": true,
-    "strict": true,
-    "target": "ESNext"
+    "strict": true
   },
   "exclude": ["node_modules", "release.config.js"],
   "extends": "@jeromefitz/tsconfig/src/node24.json",

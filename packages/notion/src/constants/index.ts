@@ -1,7 +1,7 @@
-import type { DataTypes, DataTypesObject, Property } from '../schema/index.js'
+import type { DataTypes, DataTypesObject, Property } from '../schema/index'
 
-import _filter from 'lodash/filter.js'
-import _map from 'lodash/map.js'
+import _filter from 'lodash/filter'
+import _map from 'lodash/map'
 
 const getLookup = ({ key, notion, type }) => ({
   key,

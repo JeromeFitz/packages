@@ -3,20 +3,20 @@ export {
   cancelIfAmending,
   cancelIfNeeded,
   cancelIfRebasing,
-} from './cancelIf.js'
-export { filterGitmojis } from './filter.js'
-export { findBy } from './findBy.js'
-export { findCommand } from './findCommand.js'
+} from './cancelIf'
+export { filterGitmojis } from './filter'
+export { findBy } from './findBy'
+export { findCommand } from './findCommand'
 export {
   formatCliEmoji,
   formatCliType,
   formatCliTypes,
   formatCommitSubject,
-} from './format.js'
-export { generateCount, generateLog } from './generateLog.js'
-export { getCharsLeft } from './getCharsLeft.js'
-export { getGitRootDir } from './getGitRootDir.js'
-export { getIssueTracker } from './getIssueTracker.js'
-export { getStagedFiles } from './getStagedFiles.js'
-export { printDryRun } from './printDryRun.js'
-export { registerHookInterruptionHandler } from './registerHookInterruptionHandler.js'
+} from './format'
+export { generateCount, generateLog } from './generateLog'
+export { getCharsLeft } from './getCharsLeft'
+export { getGitRootDir } from './getGitRootDir'
+export { getIssueTracker } from './getIssueTracker'
+export { getStagedFiles } from './getStagedFiles'
+export { printDryRun } from './printDryRun'
+export { registerHookInterruptionHandler } from './registerHookInterruptionHandler'

@@ -1,6 +1,6 @@
 import { Client as _Client } from '@notionhq/client'
 
-import { DATA_TYPES } from './constants/index.js'
+import { DATA_TYPES } from './constants/index'
 import {
   getBlocksByIdChildren,
   getDatabasesByIdQuery,
@@ -13,7 +13,7 @@ import {
   getPagesById,
   getPathVariables,
   getQuery,
-} from './queries/index.js'
+} from './queries/index'
 
 // biome-ignore lint/style/useConsistentTypeDefinitions: migrate
 type ClientProps = {

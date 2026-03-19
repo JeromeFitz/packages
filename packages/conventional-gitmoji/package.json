@@ -4,6 +4,7 @@
   "type": "module",
   "description": "Helper package for dual gitmoji / conventional commits",
   "repository": {
+    "directory": "packages/conventional-gitmoji",
     "type": "git",
     "url": "git+https://github.com/JeromeFitz/packages.git"
   },
