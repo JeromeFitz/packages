@@ -1,3 +1,8 @@
 config/eslint-config/package.json
+config/jest-config/package.json
+config/jest-presets/package.json
+config/lint-staged/package.json
+config/lighthouse-config/package.json
+examples/design-system/package.json
 packages/design-system/package.json
 packages/spotify/package.json
