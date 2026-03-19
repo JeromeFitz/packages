@@ -18,7 +18,7 @@ const { name } = pkg
 
 const branches = [
   ...configDefault.branches,
-  { name: 'NICE-126', prerelease: 'canary' },
+  { name: 'NICE-175', prerelease: 'canary' },
 ]
 
 const configPassed = {
