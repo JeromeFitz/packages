@@ -3,7 +3,9 @@ import type { UserConfig } from 'tsdown'
 import { defineConfig } from 'tsdown'
 
 const config: UserConfig = {
-  attw: false,
+  attw: {
+    profile: 'esm-only',
+  },
   deps: { alwaysBundle: [], neverBundle: [] },
   dts: true,
   exports: true,

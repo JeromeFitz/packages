@@ -7,7 +7,6 @@ import { config as _config } from '../../tsdown.config.ts'
 const entry = ['src/index.ts']
 const config: UserConfig = {
   ..._config,
-  dts: false,
   entry,
   treeshake: true,
 }

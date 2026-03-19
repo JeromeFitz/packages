@@ -63,8 +63,5 @@
     "registry": "https://registry.npmjs.org/",
     "provenance": true
   },
-  "sideEffects": false,
-  "inlinedDependencies": {
-    "@types/lodash": "4.17.24"
-  }
+  "sideEffects": false
 }
