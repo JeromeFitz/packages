@@ -2,7 +2,7 @@ import { format, URL } from 'node:url'
 
 import { filterRevertedCommitsSync } from 'conventional-commits-filter'
 import { CommitParser } from 'conventional-commits-parser'
-import _merge from 'lodash-es/merge'
+import { merge as _merge } from 'lodash-es'
 import { readPackageUp } from 'read-package-up'
 
 import generate from './utils/generate'

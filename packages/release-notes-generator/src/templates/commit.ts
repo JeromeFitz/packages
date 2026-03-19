@@ -1,4 +1,4 @@
-import _size from 'lodash-es/size'
+import { size as _size } from 'lodash-es'
 
 const commit = (context, commits, meta) => {
   const { commit, commitGroups, linkReferences } = context

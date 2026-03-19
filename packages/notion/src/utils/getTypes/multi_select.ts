@@ -1,5 +1,5 @@
 import Slugger from 'github-slugger'
-import _map from 'lodash-es/map'
+import { map as _map } from 'lodash-es'
 
 const multi_select = (data: any) => {
   const slugger = new Slugger()

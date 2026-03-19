@@ -34,7 +34,7 @@
     "semantic-release:dry": "semantic-release --dry-run"
   },
   "peerDependencies": {
-    "lodash": "^4.17.21"
+    "lodash-es": "^4.17.21"
   },
   "dependencies": {
     "@octokit/rest": "22.0.1",

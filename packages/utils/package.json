@@ -53,7 +53,7 @@
     "semantic-release:dry": "semantic-release --dry-run"
   },
   "peerDependencies": {
-    "lodash": "^4.17.21"
+    "lodash-es": "^4.17.21"
   },
   "devDependencies": {
     "@types/lodash-es": "4.17.12",
@@ -63,5 +63,8 @@
     "registry": "https://registry.npmjs.org/",
     "provenance": true
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "inlinedDependencies": {
+    "@types/lodash": "4.17.24"
+  }
 }

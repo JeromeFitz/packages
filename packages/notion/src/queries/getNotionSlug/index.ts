@@ -1,7 +1,6 @@
-// import _filter from 'lodash-es/filter'
 import { sortObject } from '@jeromefitz/utils'
 
-import _omit from 'lodash-es/omit'
+import { omit as _omit } from 'lodash-es'
 
 import { QUERIES } from '../../constants/index'
 import { dataNormalized } from '../../utils/index'

@@ -2,9 +2,7 @@ import type { SortItem } from '../../schema/index'
 
 import { avoidRateLimit, isObjectEmpty } from '@jeromefitz/utils'
 
-import _map from 'lodash-es/map'
-import _omit from 'lodash-es/omit'
-import _size from 'lodash-es/size'
+import { map as _map, omit as _omit, size as _size } from 'lodash-es'
 
 import { PROPERTIES } from '../../constants/index'
 import dataNormalizedResults from '../../utils/dataNormalizedResults/index'

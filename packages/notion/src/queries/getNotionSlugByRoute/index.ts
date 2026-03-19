@@ -1,7 +1,6 @@
 import { sortObject } from '@jeromefitz/utils'
 
-import _omit from 'lodash-es/omit'
-import _size from 'lodash-es/size'
+import { omit as _omit, size as _size } from 'lodash-es'
 
 import { DATA_TYPES, PROPERTIES, QUERIES } from '../../constants/index'
 import { addTime, dataNormalized } from '../../utils/index'

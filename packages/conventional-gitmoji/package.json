@@ -53,7 +53,7 @@
     "semantic-release:dry": "semantic-release --dry-run"
   },
   "peerDependencies": {
-    "lodash": "^4.17.21"
+    "lodash-es": "^4.17.21"
   },
   "dependencies": {
     "fast-json-stable-stringify": "2.1.0",
