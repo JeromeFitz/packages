@@ -16,6 +16,11 @@
     "**/node_modules/**",
     "**/bower_components/**",
     "config/eslint-config/**",
+    "config/jest-config/**",
+    "config/jest-presets/**",
+    "config/lint-staged/**",
+    "config/lighthouse-config/**",
+    "examples/design-system/**",
     "packages/design-system/**",
     "packages/spotify/**"
   ],
