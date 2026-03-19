@@ -4,6 +4,5 @@
     "noEmit": true,
     "noImplicitAny": false
   },
-  "exclude": [],
-  "extends": "@jeromefitz/tsconfig/src/node22.json"
+  "extends": "@jeromefitz/tsconfig/src/node24.json"
 }

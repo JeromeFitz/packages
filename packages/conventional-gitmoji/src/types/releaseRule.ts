@@ -1,4 +1,4 @@
-import type { IReleaseRule } from './releaseRule.types.js'
+import type { IReleaseRule } from './releaseRule.types'
 
 const releaseRule: IReleaseRule = {
   access: {
@@ -49,6 +49,16 @@ const releaseRule: IReleaseRule = {
     emoji: '🍱',
     entity: '&#1F371',
     name: 'bento',
+    semver: 'patch',
+  },
+  backwards: {
+    branch: null,
+    code: ':t-rex:',
+    commit: 'backwards',
+    description: 'Backwards Compatibility.',
+    emoji: '🦖',
+    entity: '&#x1F996;',
+    name: 't-rex',
     semver: 'patch',
   },
   beer: {
@@ -470,6 +480,16 @@ const releaseRule: IReleaseRule = {
     entity: '&#1F69A;',
     name: 'truck',
     semver: null,
+  },
+  offline: {
+    branch: null,
+    code: ':airplane:',
+    commit: 'backwards',
+    description: 'Provide Offline Support.',
+    emoji: '✈️',
+    entity: '&#x2708;',
+    name: 'airplane',
+    semver: 'patch',
   },
   patch: {
     branch: null,

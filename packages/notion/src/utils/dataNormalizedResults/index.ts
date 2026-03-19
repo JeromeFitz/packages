@@ -1,9 +1,8 @@
 import { sortObject } from '@jeromefitz/utils'
 
-import _map from 'lodash/map.js'
-import _omit from 'lodash/omit.js'
+import { map as _map, omit as _omit } from 'lodash-es'
 
-import { dataNormalized } from '../../utils/index.js'
+import { dataNormalized } from '../../utils/index'
 
 /**
  * @todo(notion)

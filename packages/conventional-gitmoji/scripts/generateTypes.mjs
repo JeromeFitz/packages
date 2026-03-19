@@ -7,8 +7,8 @@ import { fileURLToPath } from 'node:url'
 
 // import title from 'title'
 
-import { default as getGitmojiConventional } from '../dist/utils/getGitmojiConventional.js'
-import { default as getTypeSpecs } from '../dist/utils/getTypeSpecs.js'
+import { default as getGitmojiConventional } from '../dist/utils/getGitmojiConventional.mjs'
+import { default as getTypeSpecs } from '../dist/utils/getTypeSpecs.mjs'
 
 // import { default as getReleaseRules } from '../dist/utils/getReleaseRules.js'
 

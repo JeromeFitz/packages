@@ -4,8 +4,9 @@
   "type": "module",
   "description": "😜 ➕ 👔 🟰  ccommit \n  Conventional Commit Generator that interprets commit types from gitmoji and conventional",
   "repository": {
+    "directory": "packages/ccommit",
     "type": "git",
-    "url": "https://github.com/jeromefitz/packages"
+    "url": "git+https://github.com/JeromeFitz/packages.git"
   },
   "homepage": "https://github.com/JeromeFitz/packages/tree/main/packages/ccommit#readme",
   "author": {
@@ -16,14 +17,14 @@
   "license": "MIT",
   "private": false,
   "engines": {
-    "node": ">=20"
+    "node": ">=24"
   },
   "bin": {
-    "ccommit": "./dist/index.js"
+    "ccommit": "./dist/index.mjs"
   },
   "exports": {
-    "types": "./dist/index.d.ts",
-    "default": "./dist/index.js"
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
   },
   "keywords": [
     "commit",

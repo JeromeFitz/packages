@@ -4,8 +4,9 @@
   "type": "module",
   "description": "Semantic Versioning, Conventional Commits with CI/CD for GitHub Actions.",
   "repository": {
+    "directory": "packages/semantic",
     "type": "git",
-    "url": "https://github.com/jeromefitz/packages"
+    "url": "git+https://github.com/JeromeFitz/packages.git"
   },
   "author": {
     "name": "Jerome Fitzgerald",
@@ -15,11 +16,13 @@
   "license": "MIT",
   "private": false,
   "engines": {
-    "node": ">=20"
+    "node": ">=24"
   },
   "exports": {
-    "types": "./dist/index.d.ts",
-    "default": "./dist/index.js"
+    ".": "./dist/index.mjs",
+    "./getConfig": "./dist/getConfig.mjs",
+    "./release.config": "./dist/release.config.mjs",
+    "./package.json": "./package.json"
   },
   "scripts": {
     "build": "tsdown",

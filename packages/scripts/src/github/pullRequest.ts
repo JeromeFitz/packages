@@ -4,7 +4,7 @@ import { createColorize } from 'colorize-template'
 import isCI from 'is-ci'
 import pico from 'picocolors'
 
-import PULL_REQUEST from '../templates/PULL_REQUEST__RELEASE.js'
+import PULL_REQUEST from '../templates/PULL_REQUEST__RELEASE'
 
 if (!isCI) {
   const dotenv = await import('dotenv')

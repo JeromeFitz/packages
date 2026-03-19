@@ -1,6 +1,6 @@
 import type { PluginSpec } from 'semantic-release'
 
-import type { NPMPluginOptions } from './npm.types.js'
+import type { NPMPluginOptions } from './npm.types'
 
 const npm = (options?: NPMPluginOptions): PluginSpec => {
   if (

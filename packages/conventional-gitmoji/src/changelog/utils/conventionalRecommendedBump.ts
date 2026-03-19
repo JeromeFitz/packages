@@ -1,7 +1,7 @@
 /**
  * @ref https://github.com/conventional-changelog/conventional-changelog/blob/master/packages/conventional-changelog-angular/conventional-recommended-bump.js
  */
-import parserOpts from './parserOpts.js'
+import parserOpts from './parserOpts'
 
 const conventionalRecommendedBump = {
   parserOpts,

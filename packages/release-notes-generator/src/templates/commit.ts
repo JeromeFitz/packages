@@ -1,4 +1,4 @@
-import _size from 'lodash/size.js'
+import { size as _size } from 'lodash-es'
 
 const commit = (context, commits, meta) => {
   const { commit, commitGroups, linkReferences } = context
@@ -37,25 +37,21 @@ const commit = (context, commits, meta) => {
   }
 
   commitGroups.map((commitGroup) => {
-    const { _ } = commitGroup
-    const type = _[0]?.type
-    // // @todo(#744) analytics -vs- deps-dev
-    // console.dir(`> commit :: commitGroup`)
-    // console.dir(_)
-    // console.dir(`-`)
-    // console.dir(type)
-    // console.dir(`---`)
+    const type = commitGroup?.commits[0]?.typeSpec?.type
 
-    markdown += `#### ${type}\n`
+    markdown += `#### ${commitGroup?.commits[0]?.type}\n`
+    // biome-ignore lint/complexity/noExcessiveCognitiveComplexity: 11
     commits.map((commit) => {
       const { hash, header, references, scope, subject } = commit
-      const commitMarkdown = commitFormat
-        .replace(/\{scope\}/g, scope ? `**${scope}**: ` : '')
-        .replace(/\{subject\}/g, subject ? subject : header)
-        .replace(/\{hash\}/g, getHash(hash))
-        .replace(/\{references\}/g, getReferences(references))
+      if (type === commit.typeSpec.type) {
+        const commitMarkdown = commitFormat
+          .replace(/\{scope\}/g, scope ? `**${scope}**: ` : '')
+          .replace(/\{subject\}/g, subject ? subject : header)
+          .replace(/\{hash\}/g, getHash(hash))
+          .replace(/\{references\}/g, getReferences(references))
 
-      markdown += commitMarkdown
+        markdown += commitMarkdown
+      }
     })
     markdown += `\n`
   })

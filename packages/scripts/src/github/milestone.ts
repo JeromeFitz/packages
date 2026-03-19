@@ -4,7 +4,7 @@ import { createColorize } from 'colorize-template'
 import isCI from 'is-ci'
 import pico from 'picocolors'
 
-import getMilestones from '../data/milestones.js'
+import getMilestones from '../data/milestones'
 
 if (!isCI) {
   const dotenv = await import('dotenv')

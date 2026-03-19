@@ -1,9 +1,9 @@
-import addTime from './addTime/index.js'
-import dataNormalized from './dataNormalized/index.js'
-import dataNormalizedResults from './dataNormalizedResults/index.js'
-import getDataType from './getDataType/index.js'
-import getTitle from './getTitle/index.js'
-import getTypes from './getTypes/index.js'
+import addTime from './addTime/index'
+import dataNormalized from './dataNormalized/index'
+import dataNormalizedResults from './dataNormalizedResults/index'
+import getDataType from './getDataType/index'
+import getTitle from './getTitle/index'
+import getTypes from './getTypes/index'
 
 export {
   //

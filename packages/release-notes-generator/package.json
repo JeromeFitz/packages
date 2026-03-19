@@ -4,8 +4,9 @@
   "type": "module",
   "description": "Custom Release Note Generator for Semantic Release.",
   "repository": {
+    "directory": "packages/release-notes-generator",
     "type": "git",
-    "url": "https://github.com/jeromefitz/packages"
+    "url": "git+https://github.com/JeromeFitz/packages.git"
   },
   "author": {
     "name": "Jerome Fitzgerald",
@@ -15,11 +16,11 @@
   "license": "MIT",
   "private": false,
   "engines": {
-    "node": ">=20"
+    "node": ">=24"
   },
   "exports": {
-    "types": "./dist/index.d.ts",
-    "default": "./dist/index.js"
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
   },
   "scripts": {
     "build": "tsdown",
@@ -33,7 +34,7 @@
     "semantic-release:dry": "semantic-release --dry-run"
   },
   "peerDependencies": {
-    "lodash": "^4.17.21"
+    "lodash-es": "^4.17.21"
   },
   "dependencies": {
     "@octokit/rest": "22.0.1",
@@ -45,8 +46,8 @@
     "semver": "7.7.4"
   },
   "devDependencies": {
-    "@types/lodash": "4.17.24",
-    "lodash": "4.17.23"
+    "@types/lodash-es": "4.17.12",
+    "lodash-es": "4.17.23"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",

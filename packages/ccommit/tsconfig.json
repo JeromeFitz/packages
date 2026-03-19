@@ -8,6 +8,6 @@
     "rootDir": "./src"
   },
   "exclude": ["node_modules", "release.config.js"],
-  "extends": "@jeromefitz/tsconfig/src/node22.json",
+  "extends": "@jeromefitz/tsconfig/src/node24.json",
   "include": ["src"]
 }

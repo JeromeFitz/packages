@@ -1,13 +1,11 @@
-import type { SortItem } from '../../schema/index.js'
+import type { SortItem } from '../../schema/index'
 
 import { sortObject } from '@jeromefitz/utils'
 
-import _map from 'lodash/map.js'
-import _omit from 'lodash/omit.js'
-import _size from 'lodash/size.js'
+import { map as _map, omit as _omit, size as _size } from 'lodash-es'
 
-import { PROPERTIES, QUERIES } from '../../constants/index.js'
-import { addTime, dataNormalized } from '../../utils/index.js'
+import { PROPERTIES, QUERIES } from '../../constants/index'
+import { addTime, dataNormalized } from '../../utils/index'
 
 const getNotionListingByDate__getFilter = ({
   config,

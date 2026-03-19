@@ -4,8 +4,9 @@
   "type": "module",
   "description": "Utilities used by @JeromeFitz that may be helpful",
   "repository": {
+    "directory": "packages/utils",
     "type": "git",
-    "url": "https://github.com/jeromefitz/packages"
+    "url": "git+https://github.com/JeromeFitz/packages.git"
   },
   "author": {
     "name": "Jerome Fitzgerald",
@@ -15,11 +16,26 @@
   "license": "MIT",
   "private": false,
   "engines": {
-    "node": ">=20"
+    "node": ">=24"
   },
   "exports": {
-    "types": "./dist/index.d.ts",
-    "default": "./dist/index.js"
+    ".": "./dist/index.mjs",
+    "./assertNever": "./dist/assertNever/index.mjs",
+    "./asyncForEach": "./dist/asyncForEach/index.mjs",
+    "./avoidRateLimit": "./dist/avoidRateLimit/index.mjs",
+    "./isObject": "./dist/isObject/index.mjs",
+    "./isObjectEmpty": "./dist/isObjectEmpty/index.mjs",
+    "./isUndefined": "./dist/isUndefined/index.mjs",
+    "./lpad": "./dist/lpad/index.mjs",
+    "./noop": "./dist/noop/index.mjs",
+    "./omit": "./dist/omit/index.mjs",
+    "./pick": "./dist/pick/index.mjs",
+    "./pubsub": "./dist/pubsub/index.mjs",
+    "./rangeMap": "./dist/rangeMap/index.mjs",
+    "./setCharAt": "./dist/setCharAt/index.mjs",
+    "./sortObject": "./dist/sortObject/index.mjs",
+    "./stringToUUID": "./dist/stringToUUID/index.mjs",
+    "./package.json": "./package.json"
   },
   "keywords": [
     "utilities",
@@ -37,11 +53,11 @@
     "semantic-release:dry": "semantic-release --dry-run"
   },
   "peerDependencies": {
-    "lodash": "^4.17.21"
+    "lodash-es": "^4.17.21"
   },
   "devDependencies": {
-    "@types/lodash": "4.17.24",
-    "lodash": "4.17.23"
+    "@types/lodash-es": "4.17.12",
+    "lodash-es": "4.17.23"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",

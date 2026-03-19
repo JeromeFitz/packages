@@ -3,7 +3,7 @@ import fs from 'node:fs'
 import { join } from 'node:path'
 import process from 'node:process'
 
-import { getGitRootDir, printDryRun } from '~ccommit/utils/index.js'
+import { getGitRootDir, printDryRun } from '~ccommit/utils/index'
 
 const commitMsgFile = join(getGitRootDir(), '.git', 'COMMIT_EDITMSG')
 

@@ -1,10 +1,10 @@
 /** biome-ignore-all lint/suspicious/noConsole: migrate */
 const data = require('gitmojis')
 
-import type { IReleaseRule } from '../types/index.js'
+import type { IReleaseRule } from '../types/index'
 
-import _rewrites from '../config/rewrites.js'
-import _types from '../config/types.js'
+import _rewrites from '../config/rewrites'
+import _types from '../config/types'
 
 const { gitmojis } = data
 

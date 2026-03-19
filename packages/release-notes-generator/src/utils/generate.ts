@@ -1,11 +1,13 @@
 import { filterRevertedCommitsSync } from 'conventional-commits-filter'
-import _clone from 'lodash/clone.js'
-import _forEach from 'lodash/forEach.js'
-import _map from 'lodash/map.js'
-import _merge from 'lodash/merge.js'
+import {
+  clone as _clone,
+  forEach as _forEach,
+  map as _map,
+  merge as _merge,
+} from 'lodash-es'
 import { patch as semverPatch, valid as semverValid } from 'semver'
 
-import getExtraContext from './getExtraContent.js'
+import getExtraContext from './getExtraContent'
 
 function generate(options, commits, context, keyCommit) {
   let notes = []

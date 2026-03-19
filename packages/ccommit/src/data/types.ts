@@ -1,5 +1,5 @@
 // @todo(ccommit) cache + generation from: @jeromefitz/conventional-gitmoji
-import { SEMVER } from '~ccommit/lib/index.js'
+import { SEMVER } from '~ccommit/lib/index'
 
 // @hack(ccommit) emojiLength is to help with formatting until can do it programmatically
 const types = [
@@ -42,6 +42,14 @@ const types = [
     emojiLength: 1,
     semver: SEMVER.PATCH,
     type: 'assets',
+  },
+  {
+    code: ':t-rex:',
+    description: 'Backwards Compatibility',
+    emoji: '🦖',
+    emojiLength: 1,
+    semver: SEMVER.NULL,
+    type: 'backwards',
   },
   {
     code: ':beers:',
@@ -378,6 +386,14 @@ const types = [
     emojiLength: 1,
     semver: SEMVER.NULL,
     type: 'mv',
+  },
+  {
+    code: ':airplane:',
+    description: 'Provide offline support',
+    emoji: '✈️',
+    emojiLength: 1,
+    semver: SEMVER.PATCH,
+    type: 'offline',
   },
   {
     code: ':adhesive_bandage:',

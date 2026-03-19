@@ -1,5 +1,5 @@
-import parserOpts from './parserOpts.js'
-import writerOpts from './writerOpts.js'
+import parserOpts from './parserOpts'
+import writerOpts from './writerOpts'
 
 const conventionalChangelog = { parserOpts, writerOpts }
 

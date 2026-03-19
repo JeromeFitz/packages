@@ -21,6 +21,7 @@ env:
   GH_BOT_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
   GH_DEPLOY_TOKEN: ${{ secrets.GH_DEPLOY_TOKEN }}
   GH_TOKEN: ${{ secrets.GH_DEPLOY_TOKEN }}
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
   TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
@@ -49,10 +50,11 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 10
+          persist-credentials: false
 
       - name: '💽️  Init'
         id: pull-init
-        uses: JeromeFitz/packages/.github/actions/init@main
+        uses: JeromeFitz/packages/.github/actions/init@NICE-175
 
       # - name: '🧪 debug'
       #   id: pull-debug
@@ -72,11 +74,11 @@ jobs:
 
       - name: '📦  Install'
         id: pull-install
-        uses: JeromeFitz/packages/.github/actions/install@main
+        uses: JeromeFitz/packages/.github/actions/install@NICE-175
 
       - name: '🔺️  Cache (turbo)'
         id: pull-cache-turbo
-        uses: JeromeFitz/packages/.github/actions/cache-turbo@main
+        uses: JeromeFitz/packages/.github/actions/cache-turbo@NICE-175
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
@@ -86,7 +88,7 @@ jobs:
 
       - name: '🚨️  Lint'
         id: pull-lint
-        uses: JeromeFitz/packages/.github/actions/lint@main
+        uses: JeromeFitz/packages/.github/actions/lint@NICE-175
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
@@ -99,7 +101,7 @@ jobs:
 
       - name: '🏗️  Build'
         id: pull-build
-        uses: JeromeFitz/packages/.github/actions/build@main
+        uses: JeromeFitz/packages/.github/actions/build@NICE-175
         with:
           BUILD_COMMAND: 'build'
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}

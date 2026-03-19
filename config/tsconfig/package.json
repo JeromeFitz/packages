@@ -4,8 +4,9 @@
   "type": "module",
   "description": "TypeScript Configuration",
   "repository": {
+    "directory": "config/tsconfig",
     "type": "git",
-    "url": "https://github.com/jeromefitz/packages"
+    "url": "git+https://github.com/JeromeFitz/packages.git"
   },
   "author": {
     "name": "Jerome Fitzgerald",
@@ -15,7 +16,7 @@
   "license": "MIT",
   "private": false,
   "engines": {
-    "node": ">=20"
+    "node": ">=24"
   },
   "scripts": {
     "build": "pnpm run clean && pnpm run copy",

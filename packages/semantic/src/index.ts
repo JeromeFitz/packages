@@ -1,7 +1,7 @@
 import type { Options } from 'semantic-release'
 
-import { getConfig } from './getConfig.js'
-import { getPluginOptions } from './plugins/index.js'
+import { getConfig } from './getConfig'
+import { getPluginOptions } from './plugins/index'
 
 const plugins: Options = getPluginOptions()
 const config = getConfig()

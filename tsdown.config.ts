@@ -3,13 +3,18 @@ import type { UserConfig } from 'tsdown'
 import { defineConfig } from 'tsdown'
 
 const config: UserConfig = {
+  attw: {
+    profile: 'esm-only',
+  },
+  deps: { alwaysBundle: [], neverBundle: [] },
   dts: true,
-  external: [],
+  exports: true,
+  failOnWarn: true,
+  logLevel: 'error',
   minify: true,
-  noExternal: [],
   onSuccess: 'pnpm run copy',
   outDir: 'dist',
-  silent: true,
+  publint: true,
   sourcemap: false,
   target: ['node24'],
   treeshake: false,

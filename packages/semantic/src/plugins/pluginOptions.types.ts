@@ -3,7 +3,7 @@ import type {
   GitPluginOptions,
   NPMPluginOptions,
   // ReleaseRule,
-} from './index.js'
+} from './index'
 
 interface PluginOptions
   extends GithubPluginOptions,

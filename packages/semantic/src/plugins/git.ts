@@ -1,6 +1,6 @@
 import type { PluginSpec } from 'semantic-release'
 
-import type { GitPluginOptions } from './git.types.js'
+import type { GitPluginOptions } from './git.types'
 
 /**
  * @note

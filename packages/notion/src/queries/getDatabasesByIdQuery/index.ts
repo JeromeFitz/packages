@@ -1,6 +1,6 @@
-import type { SortMock } from '../../schema/index.js'
+import type { SortMock } from '../../schema/index'
 
-import { PROPERTIES } from '../../constants/index.js'
+import { PROPERTIES } from '../../constants/index'
 
 const sortDefault: SortMock = {
   sorts: [

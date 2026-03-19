@@ -3,8 +3,8 @@ import process from 'node:process'
 
 import { execa } from 'execa'
 
-import { LOGS } from '~ccommit/lib/index.js'
-import { generateLog, printDryRun } from '~ccommit/utils/index.js'
+import { LOGS } from '~ccommit/lib/index'
+import { generateLog, printDryRun } from '~ccommit/utils/index'
 
 const withClient = async (answers, options) => {
   try {

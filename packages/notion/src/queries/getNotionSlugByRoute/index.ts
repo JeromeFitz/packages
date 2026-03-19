@@ -1,10 +1,9 @@
 import { sortObject } from '@jeromefitz/utils'
 
-import _omit from 'lodash/omit.js'
-import _size from 'lodash/size.js'
+import { omit as _omit, size as _size } from 'lodash-es'
 
-import { DATA_TYPES, PROPERTIES, QUERIES } from '../../constants/index.js'
-import { addTime, dataNormalized } from '../../utils/index.js'
+import { DATA_TYPES, PROPERTIES, QUERIES } from '../../constants/index'
+import { addTime, dataNormalized } from '../../utils/index'
 
 /**
  * @note Determine if PARENT|CHILD should be returned:

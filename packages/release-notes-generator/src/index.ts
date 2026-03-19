@@ -2,13 +2,13 @@ import { format, URL } from 'node:url'
 
 import { filterRevertedCommitsSync } from 'conventional-commits-filter'
 import { CommitParser } from 'conventional-commits-parser'
-import _merge from 'lodash/merge.js'
+import { merge as _merge } from 'lodash-es'
 import { readPackageUp } from 'read-package-up'
 
-import generate from './utils/generate.js'
-import { getChangelogConfig } from './utils/getChangelogConfig.js'
-import { getMarkdown } from './utils/getMarkdown.js'
-import { processCommit } from './utils/processCommit.js'
+import generate from './utils/generate'
+import { getChangelogConfig } from './utils/getChangelogConfig'
+import { getMarkdown } from './utils/getMarkdown'
+import { processCommit } from './utils/processCommit'
 
 const configGithub = {
   commit: 'commit',

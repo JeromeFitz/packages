@@ -1,4 +1,4 @@
-import { DATA_TYPES } from '../../constants/index.js'
+import { DATA_TYPES } from '../../constants/index'
 
 /**
  * @info dataType

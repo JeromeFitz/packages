@@ -1,17 +1,19 @@
 /**
  * @refactor(lodash)
  */
-import _drop from 'lodash/drop.js'
-import _dropRight from 'lodash/dropRight.js'
-import _first from 'lodash/first.js'
-import _includes from 'lodash/includes.js'
-import _isInteger from 'lodash/isInteger.js'
-import _join from 'lodash/join.js'
-import _last from 'lodash/last.js'
-import _size from 'lodash/size.js'
+import {
+  drop as _drop,
+  dropRight as _dropRight,
+  first as _first,
+  includes as _includes,
+  isInteger as _isInteger,
+  join as _join,
+  last as _last,
+  size as _size,
+} from 'lodash-es'
 
-// import { DATA_TYPES } from '../../constants/index.js'
-import { getDataType } from '../../utils/index.js'
+// import { DATA_TYPES } from '../../constants/index'
+import { getDataType } from '../../utils/index'
 
 const getPathVariables = ({ catchAll, config }) => {
   const { NOTION, PAGES__HOMEPAGE, ROUTE_META, ROUTE_TYPES } = config

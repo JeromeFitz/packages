@@ -1,4 +1,4 @@
-import type { ICommit } from './commit.types.js'
+import type { ICommit } from './commit.types'
 
 const commit: ICommit[] = [
   'access',
@@ -6,6 +6,7 @@ const commit: ICommit[] = [
   'animation',
   'arch',
   'assets',
+  'backwards',
   'beer',
   'breaking',
   'build',
@@ -48,6 +49,7 @@ const commit: ICommit[] = [
   'merge',
   'mock',
   'mv',
+  'offline',
   'patch',
   'perf',
   'poo',

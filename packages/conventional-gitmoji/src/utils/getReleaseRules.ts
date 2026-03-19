@@ -1,6 +1,6 @@
 // import GraphemeSplitter from 'grapheme-splitter'
 
-import type { IReleaseRule, IReleaseRuleProps } from '../index.js'
+import type { IReleaseRule, IReleaseRuleProps } from '../index'
 
 // const splitter = new GraphemeSplitter()
 

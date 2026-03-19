@@ -4,8 +4,9 @@
   "type": "module",
   "description": "Notion: Custom Client for jeromefitzgerald.com",
   "repository": {
+    "directory": "packages/notion",
     "type": "git",
-    "url": "https://github.com/jeromefitz/packages"
+    "url": "git+https://github.com/JeromeFitz/packages.git"
   },
   "author": {
     "name": "Jerome Fitzgerald",
@@ -15,11 +16,47 @@
   "license": "MIT",
   "private": false,
   "engines": {
-    "node": ">=20"
+    "node": ">=24"
   },
   "exports": {
-    "types": "./dist/index.d.ts",
-    "default": "./dist/index.js"
+    ".": "./dist/index.mjs",
+    "./constants": "./dist/constants/index.mjs",
+    "./queries": "./dist/queries/index.mjs",
+    "./queries/getBlocksByIdChildren": "./dist/queries/getBlocksByIdChildren/index.mjs",
+    "./queries/getDatabasesByIdQuery": "./dist/queries/getDatabasesByIdQuery/index.mjs",
+    "./queries/getDeepFetchAllChildren": "./dist/queries/getDeepFetchAllChildren/index.mjs",
+    "./queries/getInfoType": "./dist/queries/getInfoType/index.mjs",
+    "./queries/getNotionListing": "./dist/queries/getNotionListing/index.mjs",
+    "./queries/getNotionListingByDate": "./dist/queries/getNotionListingByDate/index.mjs",
+    "./queries/getNotionSlug": "./dist/queries/getNotionSlug/index.mjs",
+    "./queries/getNotionSlugByRoute": "./dist/queries/getNotionSlugByRoute/index.mjs",
+    "./queries/getPagesById": "./dist/queries/getPagesById/index.mjs",
+    "./queries/getPathVariables": "./dist/queries/getPathVariables/index.mjs",
+    "./queries/getQuery": "./dist/queries/getQuery/index.mjs",
+    "./schema": "./dist/schema/index.mjs",
+    "./utils": "./dist/utils/index.mjs",
+    "./utils/addTime": "./dist/utils/addTime/index.mjs",
+    "./utils/dataNormalized": "./dist/utils/dataNormalized/index.mjs",
+    "./utils/dataNormalizedResults": "./dist/utils/dataNormalizedResults/index.mjs",
+    "./utils/getDataType": "./dist/utils/getDataType/index.mjs",
+    "./utils/getTitle": "./dist/utils/getTitle/index.mjs",
+    "./utils/getTypes": "./dist/utils/getTypes/index.mjs",
+    "./utils/getTypes/_unsupported": "./dist/utils/getTypes/_unsupported.mjs",
+    "./utils/getTypes/checkbox": "./dist/utils/getTypes/checkbox.mjs",
+    "./utils/getTypes/date": "./dist/utils/getTypes/date.mjs",
+    "./utils/getTypes/email": "./dist/utils/getTypes/email.mjs",
+    "./utils/getTypes/files": "./dist/utils/getTypes/files.mjs",
+    "./utils/getTypes/multi_select": "./dist/utils/getTypes/multi_select.mjs",
+    "./utils/getTypes/number": "./dist/utils/getTypes/number.mjs",
+    "./utils/getTypes/people": "./dist/utils/getTypes/people.mjs",
+    "./utils/getTypes/phone_number": "./dist/utils/getTypes/phone_number.mjs",
+    "./utils/getTypes/relation": "./dist/utils/getTypes/relation.mjs",
+    "./utils/getTypes/rich_text": "./dist/utils/getTypes/rich_text.mjs",
+    "./utils/getTypes/rollup": "./dist/utils/getTypes/rollup.mjs",
+    "./utils/getTypes/select": "./dist/utils/getTypes/select.mjs",
+    "./utils/getTypes/title": "./dist/utils/getTypes/title.mjs",
+    "./utils/getTypes/url": "./dist/utils/getTypes/url.mjs",
+    "./package.json": "./package.json"
   },
   "keywords": [
     "next",
@@ -39,7 +76,7 @@
   },
   "peerDependencies": {
     "@jeromefitz/utils": "^3.0.0",
-    "lodash": "^4.17.21"
+    "lodash-es": "^4.17.21"
   },
   "dependencies": {
     "@notionhq/client": "4.0.2",
@@ -48,8 +85,8 @@
   },
   "devDependencies": {
     "@jeromefitz/utils": "workspace:*",
-    "@types/lodash": "4.17.24",
-    "lodash": "4.17.23"
+    "@types/lodash-es": "4.17.12",
+    "lodash-es": "4.17.23"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",

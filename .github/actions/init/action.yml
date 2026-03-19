@@ -3,12 +3,6 @@ name: '💽️  '
 description: 'Localized Init'
 author: 'JeromeFitz'
 
-inputs:
-  node-version:
-    default: '24'
-    description: '🔢  Node version'
-    required: true
-
 runs:
   using: 'composite'
   steps:
@@ -24,4 +18,4 @@ runs:
       with:
         cache-dependency-path: pnpm-lock.yaml
         cache: 'pnpm'
-        node-version: ${{ inputs.node-version }}
+        node-version-file: .nvmrc

@@ -1,4 +1,4 @@
-import _last from 'lodash/last.js'
+import { last as _last } from 'lodash-es'
 
 /**
  * @note this should be in the website repo as it’s custom
