@@ -4,13 +4,12 @@ import { defineConfig } from 'tsdown'
 
 const config: UserConfig = {
   attw: 'ci-only',
+  deps: { alwaysBundle: [], neverBundle: [] },
   dts: true,
   exports: true,
-  external: [],
   failOnWarn: 'ci-only',
   logLevel: 'error',
   minify: true,
-  noExternal: [],
   onSuccess: 'pnpm run copy',
   outDir: 'dist',
   publint: 'ci-only',
