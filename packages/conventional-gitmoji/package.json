@@ -45,7 +45,7 @@
     "clean:install": "pnpm run clean && rm -rf node_modules",
     "copy": "mkdir -p ./dist && ./scripts/copy.sh",
     "dev": "tsdown --watch",
-    "generate:types": "node ./scripts/generateTypes.js && pnpm exec biome format --write --no-errors-on-unmatched",
+    "generate:types": "node ./scripts/generateTypes.mjs && pnpm exec biome format --write --no-errors-on-unmatched",
     "lint": "pnpm run lint:typescript",
     "lint:typescript": "tsc --noEmit --declaration",
     "semantic-release": "semantic-release",

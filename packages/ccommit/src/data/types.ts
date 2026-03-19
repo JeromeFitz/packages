@@ -44,6 +44,14 @@ const types = [
     type: 'assets',
   },
   {
+    code: ':t-rex:',
+    description: 'Write Code Drunkenly',
+    emoji: '🦖',
+    emojiLength: 1,
+    semver: SEMVER.NULL,
+    type: 'backwards',
+  },
+  {
     code: ':beers:',
     description: 'Write Code Drunkenly',
     emoji: '🍻',
@@ -378,6 +386,14 @@ const types = [
     emojiLength: 1,
     semver: SEMVER.NULL,
     type: 'mv',
+  },
+  {
+    code: ':airplane:',
+    description: 'Provide offline support',
+    emoji: '✈️',
+    emojiLength: 1,
+    semver: SEMVER.PATCH,
+    type: 'offline',
   },
   {
     code: ':adhesive_bandage:',
