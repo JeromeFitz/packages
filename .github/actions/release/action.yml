@@ -7,9 +7,9 @@ inputs:
   GH_TOKEN:
     description: 'Github Token'
     required: true
-  NPM_TOKEN:
-    description: 'NPM Token'
-    required: true
+  # NPM_TOKEN:
+  #   description: 'NPM Token'
+  #   required: true
 
 runs:
   using: 'composite'
@@ -19,6 +19,6 @@ runs:
       shell: bash
       env:
         GH_TOKEN: ${{ inputs.GH_TOKEN }}
-        NPM_TOKEN: ${{ inputs.NPM_TOKEN }}
+        # NPM_TOKEN: ${{ inputs.NPM_TOKEN }}
       run: |
         pnpm run semantic-release
