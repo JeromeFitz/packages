@@ -1,6 +1,6 @@
-import _forEach from 'lodash/forEach'
-import _groupBy from 'lodash/groupBy'
-import _orderBy from 'lodash/orderBy'
+import _forEach from 'lodash-es/forEach'
+import _groupBy from 'lodash-es/groupBy'
+import _orderBy from 'lodash-es/orderBy'
 
 function getCommitGroups(groupBy, commits, commitGroupsSort, commitsSort) {
   let commitGroups: any = []

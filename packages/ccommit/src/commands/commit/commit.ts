@@ -3,18 +3,18 @@ import process from 'node:process'
 
 import enquirer from 'enquirer'
 
-import { COMMIT_MODES, FIND_BY, LOGS } from '~ccommit/lib/index.js'
+import { COMMIT_MODES, FIND_BY, LOGS } from '~ccommit/lib/index'
 import {
   cancelIfNeeded,
   findBy,
   formatCommitSubject,
   generateLog,
   registerHookInterruptionHandler,
-} from '~ccommit/utils/index.js'
+} from '~ccommit/utils/index'
 
-import questions from './questions.js'
-import withClient from './withClient.js'
-import withHook from './withHook.js'
+import questions from './questions'
+import withClient from './withClient'
+import withHook from './withHook'
 
 const { prompt } = enquirer
 

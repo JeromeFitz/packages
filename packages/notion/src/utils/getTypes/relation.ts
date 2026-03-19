@@ -1,4 +1,4 @@
-import _map from 'lodash/map'
+import _map from 'lodash-es/map'
 
 import getTypes from '../../utils/getTypes/index'
 

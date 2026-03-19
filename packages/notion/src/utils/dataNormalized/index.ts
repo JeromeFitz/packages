@@ -1,4 +1,4 @@
-import _map from 'lodash/map'
+import _map from 'lodash-es/map'
 
 import { LOOKUP, PROPERTIES_LOOKUP } from '../../constants/index'
 import { getTypes } from '../../utils/index'

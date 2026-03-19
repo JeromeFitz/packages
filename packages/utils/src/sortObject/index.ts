@@ -1,6 +1,6 @@
-import _fromPairs from 'lodash/fromPairs'
-import _sortBy from 'lodash/sortBy'
-import _toPairs from 'lodash/toPairs'
+import _fromPairs from 'lodash-es/fromPairs'
+import _sortBy from 'lodash-es/sortBy'
+import _toPairs from 'lodash-es/toPairs'
 
 const sortObject = (data: any) => _fromPairs(_sortBy(_toPairs(data)))
 

@@ -1,7 +1,7 @@
 import { sortObject } from '@jeromefitz/utils'
 
-import _map from 'lodash/map'
-import _omit from 'lodash/omit'
+import _map from 'lodash-es/map'
+import _omit from 'lodash-es/omit'
 
 import { dataNormalized } from '../../utils/index'
 

@@ -1,14 +1,14 @@
 /**
  * @refactor(lodash)
  */
-import _drop from 'lodash/drop'
-import _dropRight from 'lodash/dropRight'
-import _first from 'lodash/first'
-import _includes from 'lodash/includes'
-import _isInteger from 'lodash/isInteger'
-import _join from 'lodash/join'
-import _last from 'lodash/last'
-import _size from 'lodash/size'
+import _drop from 'lodash-es/drop'
+import _dropRight from 'lodash-es/dropRight'
+import _first from 'lodash-es/first'
+import _includes from 'lodash-es/includes'
+import _isInteger from 'lodash-es/isInteger'
+import _join from 'lodash-es/join'
+import _last from 'lodash-es/last'
+import _size from 'lodash-es/size'
 
 // import { DATA_TYPES } from '../../constants/index'
 import { getDataType } from '../../utils/index'

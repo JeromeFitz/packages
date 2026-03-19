@@ -1,8 +1,8 @@
-import _cloneDeep from 'lodash/cloneDeep'
-import _forEach from 'lodash/forEach'
-import _get from 'lodash/get'
-import _isFunction from 'lodash/isFunction'
-import _set from 'lodash/set'
+import _cloneDeep from 'lodash-es/cloneDeep'
+import _forEach from 'lodash-es/forEach'
+import _get from 'lodash-es/get'
+import _isFunction from 'lodash-es/isFunction'
+import _set from 'lodash-es/set'
 
 /**
  * @ref lifted from release-notes-generator

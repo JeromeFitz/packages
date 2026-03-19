@@ -61,9 +61,9 @@
     "title": "4.0.1"
   },
   "devDependencies": {
-    "@types/lodash": "4.17.24",
+    "@types/lodash-es": "4.17.12",
     "gitmojis": "3.15.0",
-    "lodash": "4.17.23"
+    "lodash-es": "4.17.23"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",

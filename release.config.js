@@ -1,4 +1,4 @@
-import _map from 'lodash/map.js'
+import _map from 'lodash-es/map'
 
 import { getConfig } from './packages/semantic/dist/index.mjs'
 import releaseBranchTypes from './scripts/release-branch-types/index.cjs'

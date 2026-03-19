@@ -1,7 +1,7 @@
 import type { RollupFunction } from '../../schema/index'
 
-import _map from 'lodash/map'
-import _sortBy from 'lodash/sortBy'
+import _map from 'lodash-es/map'
+import _sortBy from 'lodash-es/sortBy'
 
 import getTypes from '../../utils/getTypes/index'
 

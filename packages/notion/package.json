@@ -85,8 +85,8 @@
   },
   "devDependencies": {
     "@jeromefitz/utils": "workspace:*",
-    "@types/lodash": "4.17.24",
-    "lodash": "4.17.23"
+    "@types/lodash-es": "4.17.12",
+    "lodash-es": "4.17.23"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",

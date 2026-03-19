@@ -1,7 +1,7 @@
 import { Octokit } from '@octokit/rest'
-import _findIndex from 'lodash/findIndex'
-import _sample from 'lodash/sample'
-import _uniqBy from 'lodash/uniqBy'
+import _findIndex from 'lodash-es/findIndex'
+import _sample from 'lodash-es/sample'
+import _uniqBy from 'lodash-es/uniqBy'
 
 const gh = new Octokit({ auth: process.env.GH_TOKEN })
 

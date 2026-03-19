@@ -1,4 +1,4 @@
-import _forEach from 'lodash/forEach'
+import _forEach from 'lodash-es/forEach'
 
 function getNoteGroups(notes, _noteGroupsSort, _notesSort) {
   const noteGroups: any = []

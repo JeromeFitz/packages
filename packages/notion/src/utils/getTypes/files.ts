@@ -1,7 +1,7 @@
 import { stringToUUID } from '@jeromefitz/utils'
 
 import Slugger from 'github-slugger'
-import _size from 'lodash/size'
+import _size from 'lodash-es/size'
 
 const notionImageHosted = `https://www.notion.so/image/{{FILENAME}}?table=block&id={{PAGE_ID}}&cache=v2&w1dth=600`
 
