@@ -77,9 +77,11 @@
       "@semantic-release/commit-analyzer@13.0.1": "patches/@semantic-release__commit-analyzer@13.0.0.patch"
     },
     "overrides": {
+      "@semantic-release/npm": "^13.1.5",
       "conventional-changelog-writer": "8.4.0",
+      "js-yaml": "^4.1.1",
       "micromatch": "4.0.8",
-      "tar-fs": "^3.0.9"
+      "tar-fs": "^3.1.1"
     }
   }
 }
