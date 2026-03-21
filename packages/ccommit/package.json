@@ -46,7 +46,6 @@
     "dry:run": "pnpm run build && node ./dist/index.js -c -n",
     "lint": "pnpm run lint:typescript",
     "lint:typescript": "tsc --noEmit --declaration",
-    "package": "pkg . --output ./.bin/ccommit --targets latest-linux-x64,latest-macos-x64,latest-win-x64",
     "prepare": "is-ci || pnpm run build",
     "semantic-release": "semantic-release",
     "semantic-release:dry": "semantic-release --dry-run"
@@ -59,8 +58,7 @@
     "meow": "14.1.0"
   },
   "devDependencies": {
-    "is-ci": "4.1.0",
-    "pkg": "5.8.1"
+    "is-ci": "4.1.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
