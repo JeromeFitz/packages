@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "prettier": "3.8.1",
-    "prettier-plugin-pkg": "0.22.0"
+    "prettier-plugin-pkg": "0.22.1"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
