@@ -81,11 +81,11 @@ importers:
   config/prettier-config:
     dependencies:
       prettier:
-        specifier: 3.8.2
-        version: 3.8.2
+        specifier: 3.8.3
+        version: 3.8.3
       prettier-plugin-pkg:
         specifier: 0.22.0
-        version: 0.22.0(prettier@3.8.2)
+        version: 0.22.0(prettier@3.8.3)
 
   config/tsconfig: {}
 
@@ -1932,8 +1932,8 @@ packages:
     peerDependencies:
       prettier: ^3.0.3
 
-  prettier@3.8.2:
-    resolution: {integrity: sha512-8c3mgTe0ASwWAJK+78dpviD+A8EqhndQPUBpNUIPt6+xWlIigCwfN01lWr9MAede4uqXGTEKeQWTvzb3vjia0Q==}
+  prettier@3.8.3:
+    resolution: {integrity: sha512-7igPTM53cGHMW8xWuVTydi2KO233VFiTNyF5hLJqpilHfmn8C8gPf+PS7dUT64YcXFbiMGZxS9pCSxL/Dxm/Jw==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -4144,11 +4144,11 @@ snapshots:
 
   possible-typed-array-names@1.0.0: {}
 
-  prettier-plugin-pkg@0.22.0(prettier@3.8.2):
+  prettier-plugin-pkg@0.22.0(prettier@3.8.3):
     dependencies:
-      prettier: 3.8.2
+      prettier: 3.8.3
 
-  prettier@3.8.2: {}
+  prettier@3.8.3: {}
 
   pretty-ms@9.2.0:
     dependencies:
