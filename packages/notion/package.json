@@ -79,7 +79,7 @@
     "lodash-es": "^4.17.21"
   },
   "dependencies": {
-    "@notionhq/client": "4.0.2",
+    "@notionhq/client": "5.19.0",
     "date-fns": "4.1.0",
     "github-slugger": "2.0.0"
   },
