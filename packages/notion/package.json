@@ -80,7 +80,7 @@
   },
   "dependencies": {
     "@notionhq/client": "4.0.2",
-    "date-fns": "4.1.0",
+    "date-fns": "4.2.1",
     "github-slugger": "2.0.0"
   },
   "devDependencies": {
