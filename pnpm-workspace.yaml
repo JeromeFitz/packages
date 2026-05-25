@@ -1,7 +1,24 @@
-enable-pre-post-scripts: true
+allowBuilds:
+  '@biomejs/biome': true
+autoInstallPeers: false
+dedupePeerDependents: false
+enablePrePostScripts: true
+lockfile: true
 nodeOptions: '--experimental-strip-types --disable-warning=ExperimentalWarning'
-onlyBuiltDependencies:
-  - '@biomejs/biome'
+overrides:
+  '@semantic-release/npm': ^13.1.5
+  conventional-changelog-writer: 8.4.0
+  handlebars@^4.0.0: ^4.7.9
+  js-yaml@^3.0.0: ^3.14.2
+  js-yaml@^4.0.0: ^4.1.1
+  micromatch@^4.0.0: 4.0.8
+  lodash@^4.0.0: ^4.18.0
+  lodash-es@^4.0.0: ^4.18.0
+  picomatch@^2.0.0: ^2.3.2
+  picomatch@^3.0.0: ^3.0.2
+  picomatch@^4.0.0: ^4.0.4
+  tar-fs@^2.0.0: ^2.1.4
+  tar-fs@^3.0.0: ^3.1.1
 packages:
   - 'config/*'
   - 'examples/*'
@@ -14,3 +31,18 @@ packages:
   - '!examples/design-system'
   - '!packages/design-system'
   - '!packages/spotify'
+patchedDependencies:
+  '@semantic-release/commit-analyzer@13.0.1': patches/@semantic-release__commit-analyzer@13.0.0.patch
+provenance: true
+publicHoistPattern:
+  - '*biome*'
+  - '*ccommit*'
+  - '*lint-staged*'
+  - '*prettier*'
+  - '*types*'
+  - '@storybook*'
+  - '@mdx-js/react'
+saveExact: true
+strictPeerDependencies: false
+registry: https://registry.npmjs.org/
+tagVersionPrefix: ''
