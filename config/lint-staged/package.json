@@ -15,7 +15,8 @@
     "node": ">=22.6.0"
   },
   "exports": {
-    "default": "./dist/lint-staged.config.js"
+    ".": "./dist/lint-staged.config.mjs",
+    "./package.json": "./package.json"
   },
   "scripts": {
     "build": "tsdown",
@@ -30,7 +31,7 @@
     "semantic-release:dry": "semantic-release --dry-run"
   },
   "dependencies": {
-    "lint-staged": "16.2.7",
+    "lint-staged": "17.0.5",
     "micromatch": "4.0.8"
   },
   "publishConfig": {
