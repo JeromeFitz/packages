@@ -29,7 +29,7 @@ const getReleaseRules = (types: IReleaseRule) => {
      * - - emoji
      *
      */
-    if (!!releaseRule && !!releaseRule.semver) {
+    if (releaseRule?.semver) {
       releaseRules.push({
         release: releaseRule.semver,
         /**

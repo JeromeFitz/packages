@@ -37,8 +37,8 @@
   "devDependencies": {
     "@jeromefitz/jest-presets": "workspace:*",
     "@types/jest": "30.0.0",
-    "next": "15.5.14",
-    "react": "19.0.0-rc-66855b96-20241106"
+    "next": "15.5.18",
+    "react": "19.2.6"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"

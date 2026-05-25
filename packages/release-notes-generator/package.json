@@ -34,7 +34,7 @@
     "semantic-release:dry": "semantic-release --dry-run"
   },
   "peerDependencies": {
-    "lodash-es": "^4.17.21"
+    "lodash-es": "^4.18.0"
   },
   "dependencies": {
     "@octokit/rest": "22.0.1",
@@ -47,7 +47,7 @@
   },
   "devDependencies": {
     "@types/lodash-es": "4.17.12",
-    "lodash-es": "4.18.1"
+    "lodash-es": "4.18.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
