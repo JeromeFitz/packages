@@ -76,7 +76,7 @@
   },
   "peerDependencies": {
     "@jeromefitz/utils": "^4.0.0",
-    "lodash-es": "^4.17.21"
+    "lodash-es": "^4.18.0"
   },
   "dependencies": {
     "@notionhq/client": "4.0.2",
@@ -86,7 +86,7 @@
   "devDependencies": {
     "@jeromefitz/utils": "workspace:*",
     "@types/lodash-es": "4.17.12",
-    "lodash-es": "4.18.1"
+    "lodash-es": "4.18.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
