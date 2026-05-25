@@ -63,7 +63,7 @@
     "lodash-es": "4.18.0",
     "publint": "0.3.21",
     "semantic-release": "25.0.3",
-    "syncpack": "14.2.0",
+    "syncpack": "15.3.1",
     "tsdown": "0.22.0",
     "turbo": "2.9.14",
     "typescript": "5.9.3"

@@ -6,12 +6,12 @@ enablePrePostScripts: true
 lockfile: true
 nodeOptions: '--experimental-strip-types --disable-warning=ExperimentalWarning'
 overrides:
-  '@semantic-release/npm': ^13.1.5
-  conventional-changelog-writer: 8.4.0
+  '@semantic-release/npm@^13.0.0': ^13.1.5
+  conventional-changelog-writer@^8.0.0: ^8.4.0
   handlebars@^4.0.0: ^4.7.9
   js-yaml@^3.0.0: ^3.14.2
   js-yaml@^4.0.0: ^4.1.1
-  micromatch@^4.0.0: 4.0.8
+  micromatch@^4.0.0: ^4.0.8
   lodash@^4.0.0: ^4.18.0
   lodash-es@^4.0.0: ^4.18.0
   picomatch@^2.0.0: ^2.3.2
