@@ -35,7 +35,7 @@
     "semantic-release:dry": "semantic-release --dry-run"
   },
   "dependencies": {
-    "prettier": "3.8.3",
+    "prettier": "3.8.4",
     "prettier-plugin-pkg": "0.22.1"
   },
   "publishConfig": {
