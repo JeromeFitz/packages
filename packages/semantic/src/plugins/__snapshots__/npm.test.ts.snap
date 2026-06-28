@@ -1,0 +1,21 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`npm > returns tuple when any option is set > all options set 1`] = `
+[
+  "@semantic-release/npm",
+  {
+    "npmPublish": true,
+    "pkgRoot": "./dist",
+    "tarballDir": "release",
+  },
+]
+`;
+
+exports[`npm > returns tuple when any option is set > pkgRoot string 1`] = `
+[
+  "@semantic-release/npm",
+  {
+    "pkgRoot": "./dist",
+  },
+]
+`;

@@ -2,7 +2,7 @@ import type {
   GithubPluginOptions,
   GitPluginOptions,
   NPMPluginOptions,
-  // ReleaseRule,
+  ReleaseRule,
 } from './index'
 
 interface PluginOptions
@@ -14,8 +14,7 @@ interface PluginOptions
   enableNpm?: boolean
   enableReleaseNotes?: boolean
   enableReleaseNotesCustom?: boolean
-  // releaseRules?: ReleaseRule[]
-  releaseRules?: any
+  releaseRules?: ReleaseRule[]
 }
 
 export type { PluginOptions }

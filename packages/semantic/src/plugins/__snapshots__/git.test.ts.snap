@@ -1,0 +1,15 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`git > default: assets is [package.json] and message is the sr template 1`] = `
+[
+  "@semantic-release/git",
+  {
+    "assets": [
+      "package.json",
+    ],
+    "message": "🔖️ \`\${nextRelease.gitTag}\` [skip ci] 
+
+\${nextRelease.notes}",
+  },
+]
+`;

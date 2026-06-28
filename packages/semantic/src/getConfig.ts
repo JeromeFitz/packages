@@ -1,30 +1,23 @@
 import type { Options as SemanticReleaseOptions } from 'semantic-release'
 
+import type { PluginOptions } from './plugins/index'
+
 import { getPluginOptions } from './plugins/index'
 
-/**
- * @todo
- * - config type
- * - - merge = with defaults
- * - - override = takeover completely
- *
- */
-const getConfig = (configPassed = {}): SemanticReleaseOptions => {
+type GetConfigOptions = Partial<Omit<SemanticReleaseOptions, 'plugins'>> &
+  PluginOptions
+
+const getConfig = (configPassed: GetConfigOptions = {}): SemanticReleaseOptions => {
   const plugins = getPluginOptions(configPassed)
-  // const configInit: SemanticReleaseOptions = {
-  const configInit: any = {
+
+  return {
     branches: [{ name: 'main' }, { name: 'canary', prerelease: 'canary' }],
     extends: ['semantic-release-commit-filter'],
-    plugins,
     tagFormat: `v\${version}`,
+    ...(configPassed as Partial<SemanticReleaseOptions>),
+    plugins,
   }
-
-  const config: SemanticReleaseOptions = {
-    ...configInit,
-    ...configPassed,
-  }
-
-  return config
 }
 
+export type { GetConfigOptions }
 export { getConfig }
