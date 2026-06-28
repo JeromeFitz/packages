@@ -57,11 +57,15 @@
     },
     "semantic-release": {
       "cache": false,
-      "dependsOn": []
+      "dependsOn": [
+        "@jeromefitz/semantic#build"
+      ]
     },
     "semantic-release:dry": {
       "cache": false,
-      "dependsOn": []
+      "dependsOn": [
+        "@jeromefitz/semantic#build"
+      ]
     },
     "test": {
       "dependsOn": [

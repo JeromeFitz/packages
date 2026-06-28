@@ -327,12 +327,7 @@ exports[`getConfig > default config snapshot 1`] = `
         ],
       },
     ],
-    [
-      "@jeromefitz/release-notes-generator",
-      {
-        "config": "@jeromefitz/conventional-gitmoji",
-      },
-    ],
+    "@jeromefitz/release-notes-generator",
     [
       "@semantic-release/npm",
       {

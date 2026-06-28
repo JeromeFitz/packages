@@ -25,12 +25,7 @@ const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec[] => {
       writerOpts,
     },
   ]
-  const releaseNotesCustomConfig: PluginSpec = [
-    '@jeromefitz/release-notes-generator',
-    {
-      config: '@jeromefitz/conventional-gitmoji',
-    },
-  ]
+  const releaseNotesCustomConfig: PluginSpec = '@jeromefitz/release-notes-generator'
 
   const { npmPublish, pkgRoot, tarballDir } = options
   const npmConfig = npm({ npmPublish, pkgRoot, tarballDir })
