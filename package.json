@@ -43,8 +43,7 @@
     "semantic-release:dry": "pnpm semantic-release:mono:dry",
     "semantic-release:mono": "turbo run semantic-release --concurrency=1",
     "semantic-release:mono:dry": "turbo run semantic-release:dry --concurrency=1",
-    "test": "turbo run test --filter=[HEAD^1]",
-    "test:all": "turbo run test",
+    "test": "turbo run test",
     "turbo": "TURBO_TELEMETRY_DISABLED=1 turbo"
   },
   "dependencies": {
