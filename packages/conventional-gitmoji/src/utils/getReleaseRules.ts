@@ -1,10 +1,4 @@
-// import GraphemeSplitter from 'grapheme-splitter'
-
 import type { IReleaseRule, IReleaseRuleProps } from '../index'
-
-// const splitter = new GraphemeSplitter()
-
-// @note(semantic-release) can we re-use types here?
 
 // biome-ignore lint/style/useConsistentTypeDefinitions: migrate
 type CustomReleaseRulesProps = {
@@ -14,48 +8,19 @@ type CustomReleaseRulesProps = {
   type?: null | string
 }
 
-const releaseRules: CustomReleaseRulesProps[] = []
-const getReleaseRules = (types: IReleaseRule) => {
-  Object.keys(types).map((type) => {
+const getReleaseRules = (types: IReleaseRule): CustomReleaseRulesProps[] =>
+  Object.keys(types).flatMap((type) => {
     const releaseRule: IReleaseRuleProps = types[type]
-    /**
-     * @note
-     * - Only run this if the releaseRule has a valid semver
-     *
-     * @hack
-     * - Need to create rules for whichever type of commits team is using
-     * - - code
-     * - - commit
-     * - - emoji
-     *
-     */
-    if (releaseRule?.semver) {
-      releaseRules.push({
-        release: releaseRule.semver,
-        /**
-         * @hack (semantic-release)
-         * :arrow_up: => :arrow_up
-         * accounting for that here "fixes"
-         */
-        type: releaseRule?.code.replace(/(:[^:]*):/g, '$1'),
-      })
-      releaseRules.push({
-        release: releaseRule.semver,
-        type: releaseRule?.code,
-      })
-      releaseRules.push({
-        release: releaseRule.semver,
-        type: releaseRule.commit,
-      })
-      releaseRules.push({
-        release: releaseRule.semver,
-        type: releaseRule.emoji,
-        // type: splitter.splitGraphemes(releaseRule.emoji)[0],
-      })
-    }
-  })
+    if (!releaseRule?.semver) return []
 
-  return releaseRules
-}
+    const { semver: release } = releaseRule
+
+    // Two input forms per type — the conventional word and the gitmoji — both
+    // mapping to the same bump, so a commit written either way is matched.
+    return [
+      { release, type: releaseRule.commit },
+      { release, type: releaseRule.emoji },
+    ]
+  })
 
 export default getReleaseRules

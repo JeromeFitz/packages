@@ -1,0 +1,145 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`changelog: headerPattern parsing > parses: :sparkles: shortcode subject 1`] = `
+[
+  ":sparkles",
+  undefined,
+  "shortcode subject",
+]
+`;
+
+exports[`changelog: headerPattern parsing > parses: feat: add a feature 1`] = `
+[
+  "feat",
+  undefined,
+  "add a feature",
+]
+`;
+
+exports[`changelog: headerPattern parsing > parses: ✨ (scope) add a feature 1`] = `
+[
+  "✨",
+  undefined,
+  "(scope) add a feature",
+]
+`;
+
+exports[`changelog: headerPattern parsing > parses: 🐛 fix a bug 1`] = `
+[
+  "🐛",
+  undefined,
+  "fix a bug",
+]
+`;
+
+exports[`changelog: recommendedBump.whatBump > major on breaking note 1`] = `
+{
+  "level": 0,
+  "reason": "There is 1 BREAKING CHANGE and 0 features",
+}
+`;
+
+exports[`changelog: recommendedBump.whatBump > minor on feat (word) 1`] = `
+{
+  "level": 1,
+  "reason": "There are 0 BREAKING CHANGES and 1 features",
+}
+`;
+
+exports[`changelog: recommendedBump.whatBump > patch when no feat / breaking 1`] = `
+{
+  "level": 2,
+  "reason": "There are 0 BREAKING CHANGES and 0 features",
+}
+`;
+
+exports[`changelog: static opts > assembled changelog keys 1`] = `
+[
+  "conventionalChangelog",
+  "gitRawCommitsOpts",
+  "parserOpts",
+  "recommendedBumpOpts",
+  "writerOpts",
+]
+`;
+
+exports[`changelog: static opts > parserOpts 1`] = `
+{
+  "headerCorrespondence": [
+    "type",
+    "scope",
+    "subject",
+    "ticket",
+  ],
+  "headerPattern": /\\^\\(\\.\\*\\?\\)\\(\\?:\\\\\\(\\(\\.\\*\\)\\\\\\)\\)\\?:\\?\\\\s\\(\\.\\*\\)\\$/,
+  "issuePrefixes": [
+    "1b9fe48b-292c-46e7-bfde-0599639d0ec0",
+  ],
+  "noteKeywords": [
+    "BREAKING CHANGE",
+    "BREAKING CHANGES",
+  ],
+  "referenceActions": [
+    "b6db85c1-4860-4275-88e3-bd9917a0b29f",
+  ],
+  "revertPattern": /\\^Revert\\\\s"\\(\\[\\\\s\\\\S\\]\\*\\)"\\\\s\\*This reverts commit \\(\\\\w\\*\\)\\\\\\./,
+}
+`;
+
+exports[`changelog: static opts > writerOpts (sans transform fn) 1`] = `
+{
+  "commitGroupsSort": [
+    "order",
+    "title",
+  ],
+  "commitsSort": [
+    "scope",
+    "subject",
+  ],
+  "groupBy": "type",
+  "noteGroupsSort": [
+    "title",
+  ],
+  "notesSort": [
+    "title",
+  ],
+}
+`;
+
+exports[`changelog: transformer > emoji-typed commit 1`] = `
+{
+  "hash": "1234567",
+  "notes": [],
+  "scope": null,
+  "subject": "add new feature",
+  "type": "✨  Introduce New Features",
+  "typeSpec": {
+    "code": ":sparkles:",
+    "description": "Introduce New Features",
+    "emoji": "✨",
+    "semver": "minor",
+    "type": "feat",
+    "value": "feat",
+  },
+  "typeSpecIndex": 28,
+}
+`;
+
+exports[`changelog: transformer > word-typed commit 1`] = `
+{
+  "hash": "1234567",
+  "notes": [],
+  "scope": null,
+  "subject": "resolve the issue",
+  "type": "🐛  Fix a Bug",
+  "typeSpec": {
+    "code": ":bug:",
+    "description": "Fix a Bug",
+    "emoji": "🐛",
+    "semver": "patch",
+    "type": "fix",
+    "value": "fix",
+  },
+  "typeSpecIndex": 29,
+}
+`;
