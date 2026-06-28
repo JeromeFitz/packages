@@ -1,53 +1,61 @@
-import {
-  forEach as _forEach,
-  groupBy as _groupBy,
-  orderBy as _orderBy,
-} from 'lodash-es'
+import type { CommitGroup, TransformedCommit } from '../types'
 
-function getCommitGroups(groupBy, commits, commitGroupsSort, commitsSort) {
-  let commitGroups: any = []
-
-  const commitGroupsObj = _groupBy(commits, (commit) => commit[groupBy] || '')
-
-  _forEach(commitGroupsObj, (commits, title: boolean | string) => {
-    if (title === '') {
-      title = false
+function multiKeySort<T>(keys: string[]): (a: T, b: T) => number {
+  return (a, b) => {
+    const ar = a as Record<string, unknown>
+    const br = b as Record<string, unknown>
+    for (const key of keys) {
+      const av = ar[key] ?? 0
+      const bv = br[key] ?? 0
+      if (av < bv) return -1
+      if (av > bv) return 1
     }
-
-    let commitsSorted: any = commits
-
-    if (commitsSort) {
-      commitsSorted = _orderBy(commitsSorted, commitsSort)
-    }
-
-    const semver = commitsSorted[0].typeSpec.semver
-
-    let order = 99
-    if (['fix', 'patch'].includes(semver)) {
-      order = 20
-    }
-    if (['feature', 'minor'].includes(semver)) {
-      order = 10
-    }
-    if (['breaking', 'major'].includes(semver)) {
-      order = 0
-    }
-
-    commitGroups.push({
-      commits: commitsSorted,
-      order,
-      title: title,
-    })
-  })
-
-  if (commitGroupsSort) {
-    commitGroups = _orderBy(commitGroups, commitGroupsSort)
-    // // @todo(#744) analytics -vs- deps-dev
-    // console.dir(`>> commitGroupsSort`)
-    // console.dir(commitGroups)
+    return 0
   }
-
-  return commitGroups
 }
 
-export default getCommitGroups
+function semverToOrder(semver: string | null | undefined): number {
+  if (semver && ['breaking', 'major'].includes(semver)) return 0
+  if (semver && ['feature', 'minor'].includes(semver)) return 10
+  if (semver && ['fix', 'patch'].includes(semver)) return 20
+  return 99
+}
+
+function toCommitGroup(
+  title: string,
+  groupCommits: TransformedCommit[] | undefined,
+  commitsSort: string[],
+): CommitGroup {
+  const sorted =
+    commitsSort.length > 0
+      ? [...(groupCommits ?? [])].sort(multiKeySort<TransformedCommit>(commitsSort))
+      : [...(groupCommits ?? [])]
+
+  return {
+    commits: sorted,
+    order: semverToOrder(sorted[0]?.typeSpec?.semver),
+    title: title === '' ? false : title,
+  }
+}
+
+function getCommitGroups(
+  groupBy: string,
+  commits: TransformedCommit[],
+  commitGroupsSort: string[],
+  commitsSort: string[],
+): CommitGroup[] {
+  const grouped = Object.groupBy(
+    commits,
+    (commit) => (commit[groupBy] as string | undefined) ?? '',
+  )
+
+  const commitGroups = Object.entries(grouped).map(([title, group]) =>
+    toCommitGroup(title, group, commitsSort),
+  )
+
+  return commitGroupsSort.length > 0
+    ? commitGroups.sort(multiKeySort<CommitGroup>(commitGroupsSort))
+    : commitGroups
+}
+
+export { getCommitGroups }

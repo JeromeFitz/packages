@@ -1,25 +1,26 @@
-const footer = (context, _commits, _meta) => {
-  const { noteGroups } = context
+import type { MarkdownContext, RenderMeta, TransformedCommit } from '../types'
 
-  // @todo(release-notes) make variable
+const footer = (
+  context: MarkdownContext,
+  _commits: TransformedCommit[],
+  _meta: RenderMeta,
+): string => {
+  const { noteGroups } = context
   const noteFormat = `- {scope}{text}\n`
 
-  let markdown = ``
+  let markdown = ''
 
-  noteGroups.map((noteGroup) => {
+  for (const noteGroup of noteGroups) {
     const { notes } = noteGroup
-    const title = notes[0].title
-    markdown += `#### ${title}\n`
-    notes.map((note) => {
+    markdown += `#### ${notes[0].title}\n`
+    for (const note of notes) {
       const { scope, text } = note
-      const noteMarkdown = noteFormat
+      markdown += noteFormat
         .replace(/\{scope\}/g, scope ? `**${scope}**: ` : '')
-        .replace(/\{text\}/g, text ? text : '')
-
-      markdown += noteMarkdown
-    })
-    markdown += `\n`
-  })
+        .replace(/\{text\}/g, text ?? '')
+    }
+    markdown += '\n'
+  }
 
   return markdown
 }

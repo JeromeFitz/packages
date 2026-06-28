@@ -1,60 +1,51 @@
-import { size as _size } from 'lodash-es'
+import type { CommitReference } from 'conventional-commits-parser'
 
-const commit = (context, commits, meta) => {
-  const { commit, commitGroups, linkReferences } = context
+import type { MarkdownContext, RenderMeta, TransformedCommit } from '../types'
+
+const commit = (
+  context: MarkdownContext,
+  commits: TransformedCommit[],
+  meta: RenderMeta,
+): string => {
+  const { commit: commitPath, commitGroups, linkReferences } = context
   const { repositoryUrl } = meta
 
-  // @todo(release-notes) make variable
   const commitFormat = `- {scope}{subject}{hash}{references}\n`
 
-  let markdown = ``
-
-  const getHash = (hash) => {
+  const getHash = (hash: string | undefined): string => {
     if (!hash) return ''
     if (linkReferences) {
-      const url = ` ${repositoryUrl}/${commit}/${hash}`
-      return ` [ \`${hash}\` ](${url})`
+      return ` [ \`${hash}\` ](${repositoryUrl}/${commitPath}/${hash})`
     }
     return ` ${hash}`
   }
 
-  const getReferences = (references) => {
-    if (!references || _size(references) === 0) return ''
-    let markdownReference = `, closes `
-    const markdownReferenceArray: any = []
-    references.map((reference: any) => {
-      // markdownReferenceArray.push(
-      //   `[ ${reference.issue} ](${repositoryUrl}/${reference.issue})`
-      // )
-
-      // biome-ignore lint/complexity/noExtraBooleanCast: migrate
-      if (!!reference.issue) {
-        markdownReferenceArray.push(`[ #${reference.issue} ]`)
-      }
-    })
-    markdownReference += markdownReferenceArray.join(' ')
-    return markdownReference
+  const getReferences = (references: CommitReference[]): string => {
+    if (references.length === 0) return ''
+    const items = references
+      .filter((ref) => ref.issue)
+      .map((ref) => `[ #${ref.issue} ]`)
+    return items.length > 0 ? `, closes ${items.join(' ')}` : ''
   }
 
-  commitGroups.map((commitGroup) => {
-    const type = commitGroup?.commits[0]?.typeSpec?.type
+  let markdown = ''
 
-    markdown += `#### ${commitGroup?.commits[0]?.type}\n`
-    // biome-ignore lint/complexity/noExcessiveCognitiveComplexity: 11
-    commits.map((commit) => {
-      const { hash, header, references, scope, subject } = commit
-      if (type === commit.typeSpec.type) {
-        const commitMarkdown = commitFormat
-          .replace(/\{scope\}/g, scope ? `**${scope}**: ` : '')
-          .replace(/\{subject\}/g, subject ? subject : header)
-          .replace(/\{hash\}/g, getHash(hash))
-          .replace(/\{references\}/g, getReferences(references))
+  for (const commitGroup of commitGroups) {
+    const groupType = commitGroup.commits[0]?.typeSpec?.type
+    markdown += `#### ${commitGroup.commits[0]?.type}\n`
 
-        markdown += commitMarkdown
-      }
-    })
-    markdown += `\n`
-  })
+    for (const c of commits) {
+      if (groupType !== c.typeSpec?.type) continue
+      const { hash, header, references = [], scope, subject } = c
+      markdown += commitFormat
+        .replace(/\{scope\}/g, scope ? `**${scope}**: ` : '')
+        .replace(/\{subject\}/g, subject ?? header ?? '')
+        .replace(/\{hash\}/g, getHash(hash))
+        .replace(/\{references\}/g, getReferences(references as CommitReference[]))
+    }
+
+    markdown += '\n'
+  }
 
   return markdown
 }

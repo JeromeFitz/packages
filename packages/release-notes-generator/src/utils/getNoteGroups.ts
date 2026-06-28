@@ -1,34 +1,18 @@
-import { forEach as _forEach } from 'lodash-es'
+import type { Note, NoteGroup } from '../types'
 
-function getNoteGroups(notes, _noteGroupsSort, _notesSort) {
-  const noteGroups: any = []
+function getNoteGroups(notes: Note[]): NoteGroup[] {
+  const groups = new Map<string, NoteGroup>()
 
-  // console.dir(`> getNoteGroups`)
-  // console.dir(notes)
-  _forEach(notes, (note) => {
-    // console.dir(`> _forEach`)
-    // console.dir(note)
-    const title = note.title
-    let titleExists = false
-
-    _forEach(noteGroups, (group) => {
-      if (group.title === title) {
-        titleExists = true
-        group.notes.push(note)
-        return false
-      }
-      return
-    })
-
-    if (!titleExists) {
-      noteGroups.push({
-        notes: [note],
-        title: title,
-      })
+  for (const note of notes) {
+    const existing = groups.get(note.title)
+    if (existing) {
+      existing.notes.push(note)
+    } else {
+      groups.set(note.title, { notes: [note], title: note.title })
     }
-  })
+  }
 
-  return noteGroups
+  return [...groups.values()]
 }
 
-export default getNoteGroups
+export { getNoteGroups }

@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`commit template > matches snapshot 1`] = `
+"#### ✨  Add New Feature
+- **auth**: add login [ \`abc1234\` ](https://github.com/owner/repo/commit/abc1234)
+
+"
+`;

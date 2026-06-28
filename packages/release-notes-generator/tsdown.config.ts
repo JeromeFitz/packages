@@ -4,7 +4,7 @@ import { defineConfig } from 'tsdown'
 
 import { config as _config } from '../../tsdown.config.ts'
 
-const entry = ['src/*']
+const entry = ['src/index.ts']
 const config: UserConfig = {
   ..._config,
   entry,

@@ -178,9 +178,6 @@ importers:
       date-fns:
         specifier: 4.4.0
         version: 4.4.0
-      import-from-esm:
-        specifier: 2.0.0
-        version: 2.0.0
       read-package-up:
         specifier: 12.0.0
         version: 12.0.0

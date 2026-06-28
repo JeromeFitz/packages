@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`footer template > matches snapshot 1`] = `
+"#### BREAKING CHANGE
+- **api**: old endpoint removed
+- another break
+
+"
+`;

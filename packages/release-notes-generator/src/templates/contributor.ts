@@ -1,28 +1,15 @@
+import type { MarkdownContext, RenderMeta, TransformedCommit } from '../types'
+
 import { Octokit } from '@octokit/rest'
-import {
-  findIndex as _findIndex,
-  sample as _sample,
-  uniqBy as _uniqBy,
-} from 'lodash-es'
 
 const gh = new Octokit({ auth: process.env.GH_TOKEN })
 
-interface IAuthor {
+interface Author {
   email: string
   login?: string
   name: string
 }
 
-/**
- * @hack
- * remove these logins from contributors
- *
- * reason JeromeFitz is here is because most of the time
- *  they are the only one making them in this repo ,haha
- *
- * maybe these should be a configuration setting?
- *
- */
 const contributorsProhibitListDefault = {
   email: [
     'noreply@github.com',
@@ -47,75 +34,66 @@ const contributorsSubtitle = [
   'Brought to you by',
 ]
 
-const contributor = async (context, commits, _meta) => {
-  const authors = _uniqBy(
-    commits.map(
-      (commit): IAuthor => ({
-        email: commit.author.email,
-        name: commit.author.name,
-      }),
-    ),
-    'name',
+const sample = <T>(arr: T[]): T => arr[Math.floor(Math.random() * arr.length)]
+
+const uniqByName = (authors: Author[]): Author[] => {
+  const seen = new Map<string, Author>()
+  for (const a of authors) {
+    if (!seen.has(a.name)) seen.set(a.name, a)
+  }
+  return [...seen.values()]
+}
+
+const contributor = async (
+  context: MarkdownContext,
+  commits: TransformedCommit[],
+  _meta: RenderMeta,
+): Promise<string> => {
+  const authors = uniqByName(
+    commits.map((c) => ({
+      email: c.author?.email ?? '',
+      name: c.author?.name ?? '',
+    })),
   )
-
-  const {
-    options: { contributorsProhibitList },
-  } = context
-
-  // console.dir(`> context`)
-  // console.dir(context)
 
   await Promise.all(
-    authors.map((author: any, authorIdx) =>
-      gh
-        .request('GET /search/users', {
-          q: author.email,
-        })
-        .then(({ data }) => {
-          const login = data.items[0]?.login
-          // biome-ignore lint/complexity/noExtraBooleanCast: migrate
-          if (!!login) {
-            // biome-ignore lint/complexity/useLiteralKeys: migrate
-            authors[authorIdx]['login'] = login
-            return login
-          }
-          return ''
-        }),
+    authors.map((author, idx) =>
+      gh.request('GET /search/users', { q: author.email }).then(({ data }) => {
+        const login = data.items[0]?.login
+        if (login) authors[idx].login = login
+      }),
     ),
   )
 
-  // @note could we lift this better somehow and reduce API calls?
-  const contributorsProhibitListLogin = [
-    ...contributorsProhibitListDefault.login,
-    ...contributorsProhibitList.login,
-  ]
-  contributorsProhibitListLogin.map((eject) => {
-    const ejectIndex = _findIndex(authors, ['login', eject])
-    if (ejectIndex !== -1) authors.splice(ejectIndex)
-  })
-  const contributorsProhibitListEmail = [
-    ...contributorsProhibitListDefault.email,
-    ...contributorsProhibitList.email,
-  ]
-  contributorsProhibitListEmail.map((eject) => {
-    const ejectIndex = _findIndex(authors, (author: any) =>
-      author.email.includes(eject),
-    )
-    if (ejectIndex !== -1) authors.splice(ejectIndex)
-  })
-
-  let markdown = ``
-  if (authors.length > 0) {
-    // @todo(release-notes) pass title as configuration option
-    markdown += `#### 🥳️  Contributors\n`
-    const authorsString = authors.map((author: any) => `@${author.login}`).join(', ')
-    markdown += `- ${_sample(contributorsSubtitle)} ${authorsString}\n`
-    // markdown += `\n---\n`
-    // markdown += _sample(contributorKudos)!(
-    //   authors.map((author: any) => author.login).join(',')
-    // )
-    markdown += `\n`
+  const prohibitList = context.options?.contributorsProhibitList ?? {
+    email: [],
+    login: [],
   }
+
+  const prohibitLogins = [
+    ...contributorsProhibitListDefault.login,
+    ...prohibitList.login,
+  ]
+  for (const ejectLogin of prohibitLogins) {
+    const idx = authors.findIndex((a) => a.login === ejectLogin)
+    if (idx !== -1) authors.splice(idx, 1)
+  }
+
+  const prohibitEmails = [
+    ...contributorsProhibitListDefault.email,
+    ...prohibitList.email,
+  ]
+  for (const ejectEmail of prohibitEmails) {
+    const idx = authors.findIndex((a) => a.email.includes(ejectEmail))
+    if (idx !== -1) authors.splice(idx, 1)
+  }
+
+  if (authors.length === 0) return ''
+
+  const authorsString = authors.map((a) => `@${a.login}`).join(', ')
+  let markdown = `#### 🥳️  Contributors\n`
+  markdown += `- ${sample(contributorsSubtitle)} ${authorsString}\n`
+  markdown += '\n'
 
   return markdown
 }
