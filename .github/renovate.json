@@ -1,17 +1,15 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "automerge": false,
-  "baseBranches": ["main"],
+  "baseBranchPatterns": ["main"],
   "branchPrefix": "deps/",
-  "commitMessage": "{{{commitMessagePrefix}}} {{{commitMessageAction}}} {{{commitMessageTopic}}} {{{commitMessageExtra}}} {{{commitMessageSuffix}}}",
-  "commitMessageAction": "",
+  "commitMessageAction": "(deps)",
   "commitMessageExtra": "",
-  "commitMessagePrefix": "⬆️  (deps)",
+  "commitMessagePrefix": "⬆️",
   "commitMessageSuffix": "",
-  "commitMessageTopic": " {{depName}}@{{#if isPinDigest}}{{{newDigest}}}{{else}}{{#if isMajor}}{{{newVersion}}} 🧨 {{else}}{{#if isSingleVersion}}{{{newVersion}}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigest}}}{{/if}}{{/if}}{{/if}}{{/if}}",
-  "dependencyDashboard": false,
+  "commitMessageTopic": " {{depName}}@{{#if isPinDigest}}{{{newDigest}}}{{else}}{{#if isMajor}}{{{newVersion}}}{{else}}{{#if isSingleVersion}}{{{newVersion}}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigest}}}{{/if}}{{/if}}{{/if}}{{/if}}",
+  "dependencyDashboard": true,
   "extends": [":semanticCommitsDisabled"],
-  "ignoreDeps": ["sharp"],
   "ignorePaths": [
     "**/node_modules/**",
     "**/bower_components/**",
@@ -31,53 +29,52 @@
   },
   "packageRules": [
     {
-      "commitMessageExtra": "{{depName}}@{{#if isPinDigest}}{{{newDigest}}}{{else}}{{#if isMajor}}{{{newVersion}}} 🧨 {{else}}{{#if isSingleVersion}}{{{newVersion}}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigest}}}{{/if}}{{/if}}{{/if}}{{/if}}",
-      "commitMessagePrefix": "👷  (actions)",
-      "commitMessageTopic": " {{depName}}",
-      "groupName": "github actions :octocat: ...",
-      "groupSlug": "github-actions",
-      "matchPackagePatterns": ["^actions"]
-    },
-    {
-      "commitMessagePrefix": "📦  (deps-dev)",
-      "excludePackageNames": [],
-      "groupName": "storybook 📙 ",
-      "groupSlug": "storybook",
-      "matchPackageNames": ["storybook"],
-      "matchPackagePatterns": ["^@storybook/"]
-    },
-    {
-      "assignees": ["JeromeFitz"],
-      "commitMessagePrefix": "⬆️  (deps)",
-      "groupName": "radix-ui 🌐 ",
-      "groupSlug": "radix-ui",
-      "matchPackagePatterns": ["^@radix-ui/"],
-      "reviewers": ["JeromeFitz"]
-    },
-    {
-      "commitMessagePrefix": "⬆️  (deps)",
       "enabled": false,
-      "groupName": "react ⚛️ ",
-      "groupSlug": "react",
-      "matchPackageNames": ["react", "react-dom"]
+      "matchCategories": ["node"]
+    },
+    {
+      "enabled": false,
+      "matchFileNames": ["pnpm-workspace.yaml"],
+      "matchUpdateTypes": ["major"]
+    },
+    {
+      "matchDatasources": ["npm"],
+      "minimumReleaseAge": "1 day"
+    },
+    {
+      "commitMessageAction": "(actions)",
+      "commitMessagePrefix": "👷",
+      "groupName": "github actions :octocat:",
+      "groupSlug": "github-actions",
+      "matchPackageNames": ["/^actions/"]
     },
     {
       "allowedVersions": "<25",
-      "commitMessagePrefix": "📦  (deps-dev)",
+      "commitMessageAction": "(deps-dev)",
+      "commitMessagePrefix": "📦",
       "matchDepTypes": ["devDependencies", "dependencies"],
       "matchPackageNames": ["@types/node"]
     },
     {
-      "commitMessagePrefix": "⬆️  (deps)",
+      "commitMessageAction": "(deps)",
+      "commitMessagePrefix": "⬆️",
       "matchDepTypes": ["dependencies"]
     },
     {
-      "commitMessagePrefix": "📦  (deps-peer)",
+      "commitMessageAction": "(deps-peer)",
+      "commitMessagePrefix": "📦",
       "matchDepTypes": ["peerDependencies"]
     },
     {
-      "commitMessagePrefix": "📦  (deps-dev)",
+      "commitMessageAction": "(deps-dev)",
+      "commitMessagePrefix": "📦",
       "matchDepTypes": ["devDependencies"]
+    },
+    {
+      "automerge": true,
+      "automergeStrategy": "squash",
+      "automergeType": "pr",
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"]
     },
     {
       "assignees": ["JeromeFitz"],
@@ -90,17 +87,36 @@
       "reviewers": ["JeromeFitz"]
     },
     {
-      "automerge": true,
-      "automergeStrategy": "squash",
-      "automergeType": "pr",
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"]
+      "commitMessageAction": "(deps-dev)",
+      "commitMessagePrefix": "📦",
+      "excludePackageNames": [],
+      "groupName": "storybook 📙 ",
+      "groupSlug": "storybook",
+      "matchPackageNames": ["storybook"],
+      "matchPackagePatterns": ["^@storybook/"]
+    },
+    {
+      "assignees": ["JeromeFitz"],
+      "commitMessageAction": "(deps)",
+      "commitMessagePrefix": "⬆️",
+      "groupName": "radix-ui 🌐 ",
+      "groupSlug": "radix-ui",
+      "matchPackagePatterns": ["^@radix-ui/"],
+      "reviewers": ["JeromeFitz"]
+    },
+    {
+      "commitMessageAction": "(deps)",
+      "commitMessagePrefix": "⬆️",
+      "enabled": false,
+      "groupName": "react ⚛️ ",
+      "groupSlug": "react",
+      "matchPackageNames": ["react", "react-dom"]
     }
   ],
   "prBodyColumns": ["Package", "Update", "Type", "Change"],
   "prFooter": "<!-- COMMIT_BODY_TEXT_END -->",
   "prHeader": "<!-- COMMIT_BODY_TEXT_BEGIN -->",
   "prHourlyLimit": 2,
-  "prTitle": "{{{commitMessagePrefix}}} {{{commitMessageAction}}} {{{commitMessageTopic}}} {{{commitMessageExtra}}} {{{commitMessageSuffix}}} [skip ci]",
   "rebaseWhen": "conflicted",
   "semanticCommits": "disabled"
 }
