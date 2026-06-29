@@ -31,5 +31,8 @@
     "registry": "https://registry.npmjs.org/",
     "provenance": true
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "devDependencies": {
+    "@jeromefitz/semantic": "workspace:*"
+  }
 }

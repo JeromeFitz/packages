@@ -58,6 +58,7 @@
     "meow": "14.1.0"
   },
   "devDependencies": {
+    "@jeromefitz/semantic": "workspace:*",
     "is-ci": "4.1.0"
   },
   "publishConfig": {

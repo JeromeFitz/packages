@@ -54,5 +54,8 @@
   "sideEffects": false,
   "inlinedDependencies": {
     "dotenv": "17.4.2"
+  },
+  "devDependencies": {
+    "@jeromefitz/semantic": "workspace:*"
   }
 }
