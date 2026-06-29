@@ -31,10 +31,6 @@
     },
     {
       "enabled": false,
-      "matchCategories": ["node"]
-    },
-    {
-      "enabled": false,
       "matchFileNames": ["pnpm-workspace.yaml"],
       "matchUpdateTypes": ["major"]
     },
@@ -100,8 +96,8 @@
       "commitMessagePrefix": "⬆️",
       "groupName": "radix-ui 🌐 ",
       "groupSlug": "radix-ui",
-      "reviewers": ["JeromeFitz"],
-      "matchPackageNames": ["/^@radix-ui//"]
+      "matchPackageNames": ["/^@radix-ui//"],
+      "reviewers": ["JeromeFitz"]
     },
     {
       "commitMessageAction": "(deps)",
