@@ -32,7 +32,7 @@ permissions:
 jobs:
   pull:
     name: '👷️  CI'
-    if: (contains(github.event.head_commit.message, '[b]') || github.ref == 'refs/heads/main') && !contains(github.event.head_commit.message, '[skip ci]')
+    if: (contains(github.event.head_commit.message, '[b]') || (github.ref == 'refs/heads/main' && github.actor != 'renovate[bot]')) && !contains(github.event.head_commit.message, '[skip ci]')
     permissions:
       contents: write
       issues: write
