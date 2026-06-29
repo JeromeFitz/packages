@@ -7,31 +7,17 @@ import { parserOpts, writerOpts } from '@jeromefitz/conventional-gitmoji'
 import { commitAnalyzer, git, github, npm } from './index'
 
 const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec[] => {
-  const optionsDefault = {
-    /**
-     * @note Will only load the plugin if set to true
-     */
+  const options: PluginOptions = {
     enableGit: false,
     enableGithub: true,
     enableNpm: true,
     enableReleaseNotes: false,
     enableReleaseNotesCustom: true,
-    /**
-     * @note Customized defaults
-     */
     pkgRoot: './dist',
-    // tarballDir: 'release',
-  }
-
-  /**
-   * @todo(types) any
-   */
-  const options: any | PluginOptions = {
-    ...optionsDefault,
     ...optionsPassed,
   }
 
-  const releaseNotesConfig = [
+  const releaseNotesConfig: PluginSpec = [
     '@semantic-release/release-notes-generator',
     {
       config: '@jeromefitz/conventional-gitmoji',
@@ -39,12 +25,7 @@ const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec[] => {
       writerOpts,
     },
   ]
-  const releaseNotesCustomConfig = [
-    '@jeromefitz/release-notes-generator',
-    {
-      config: '@jeromefitz/conventional-gitmoji',
-    },
-  ]
+  const releaseNotesCustomConfig: PluginSpec = '@jeromefitz/release-notes-generator'
 
   const { npmPublish, pkgRoot, tarballDir } = options
   const npmConfig = npm({ npmPublish, pkgRoot, tarballDir })
@@ -76,18 +57,14 @@ const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec[] => {
 
   const gitConfig = git(options)
 
-  const _plugins: any = [
+  return [
     commitAnalyzer(options.releaseRules),
-    options.enableReleaseNotes ? releaseNotesConfig : '',
-    options.enableReleaseNotesCustom ? releaseNotesCustomConfig : '',
-    options.enableNpm ? npmConfig : '',
-    options.enableGithub ? githubConfig : '',
-    options.enableGit ? gitConfig : '',
+    ...(options.enableReleaseNotes ? [releaseNotesConfig] : []),
+    ...(options.enableReleaseNotesCustom ? [releaseNotesCustomConfig] : []),
+    ...(options.enableNpm ? [npmConfig] : []),
+    ...(options.enableGithub ? [githubConfig] : []),
+    ...(options.enableGit ? [gitConfig] : []),
   ]
-
-  const plugins: PluginSpec[] = _plugins.filter((plugin) => !!plugin)
-
-  return plugins
 }
 
 export { getPluginOptions }

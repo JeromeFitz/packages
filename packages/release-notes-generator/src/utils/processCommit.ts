@@ -1,49 +1,43 @@
-import {
-  cloneDeep as _cloneDeep,
-  forEach as _forEach,
-  get as _get,
-  isFunction as _isFunction,
-  set as _set,
-} from 'lodash-es'
+import type { ParsedCommit, TransformedCommit } from '../types'
 
-/**
- * @ref lifted from release-notes-generator
- */
-function processCommit(chunk, transform, context) {
-  let commit: any
+import { get as _get, set as _set } from 'lodash-es'
 
-  try {
-    chunk = JSON.parse(chunk)
-    // biome-ignore lint/suspicious/noEmptyBlockStatements: migrate
-  } catch (_error) {}
+type TransformFn = (
+  commit: ParsedCommit,
+  context: unknown,
+) => Record<string, unknown> | undefined
 
-  commit = _cloneDeep(chunk)
+type TransformMap = Record<
+  string,
+  ((value: unknown, path: string) => unknown) | unknown
+>
 
-  if (_isFunction(transform)) {
-    commit = transform(commit, context)
+type Transform = TransformFn | TransformMap
 
-    if (commit) {
-      commit.raw = chunk
-    }
+function processCommit(
+  chunk: ParsedCommit,
+  transform: Transform,
+  context: unknown,
+): TransformedCommit | undefined {
+  const commit: ParsedCommit | TransformedCommit = structuredClone(chunk)
 
-    return commit
+  if (typeof transform === 'function') {
+    const result = transform(commit as ParsedCommit, context) as
+      | TransformedCommit
+      | undefined
+    if (result) result.raw = chunk
+    return result
   }
 
-  _forEach(transform, (el, path) => {
+  for (const [path, el] of Object.entries(transform)) {
     let value = _get(commit, path)
-
-    if (_isFunction(el)) {
-      value = el(value, path)
-    } else {
-      value = el
-    }
-
+    value = typeof el === 'function' ? el(value, path) : el
     _set(commit, path, value)
-  })
+  }
 
-  commit.raw = chunk
-
-  return commit
+  ;(commit as TransformedCommit).raw = chunk
+  return commit as TransformedCommit
 }
 
+export type { Transform, TransformFn, TransformMap }
 export { processCommit }

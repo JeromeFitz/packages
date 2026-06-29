@@ -1,131 +1,120 @@
 import { format, URL } from 'node:url'
 
+import type {
+  MarkdownContext,
+  Note,
+  ParsedCommit,
+  PluginConfig,
+  SRContext,
+  TransformedCommit,
+} from './types'
+
+import { parserOpts, writerOpts } from '@jeromefitz/conventional-gitmoji'
+
 import { filterRevertedCommitsSync } from 'conventional-commits-filter'
 import { CommitParser } from 'conventional-commits-parser'
-import { merge as _merge } from 'lodash-es'
 import { readPackageUp } from 'read-package-up'
+import { patch as semverPatch, valid as semverValid } from 'semver'
 
-import generate from './utils/generate'
-import { getChangelogConfig } from './utils/getChangelogConfig'
+import { getCommitGroups } from './utils/getCommitGroups'
 import { getMarkdown } from './utils/getMarkdown'
+import { getNoteGroups } from './utils/getNoteGroups'
 import { processCommit } from './utils/processCommit'
 
-const configGithub = {
-  commit: 'commit',
-  hostname: 'github.com',
-  issue: 'issues',
-  issuePrefixes: ['#', 'gh-'],
-  referenceActions: [
-    'close',
-    'closes',
-    'closed',
-    'fix',
-    'fixes',
-    'fixed',
-    'resolve',
-    'resolves',
-    'resolved',
-  ],
+const commitLinkDefault = 'commit'
+const issueLinkDefault = 'issues'
+
+function parseRepositoryUrl(rawUrl: string): {
+  hostname: string
+  owner: string
+  port: string
+  protocol: string
+  repository: string
+} {
+  const url = rawUrl.replace(/\.git$/i, '')
+  const [match, auth, host, path] =
+    /^(?!.+:\/\/)(?:(?<auth>.*)@)?(?<host>.*?):(?<path>.*)$/.exec(url) ?? []
+  let { hostname, pathname, port, protocol } = new URL(
+    match ? `ssh://${auth ? `${auth}@` : ''}${host}/${path}` : url,
+  )
+  port = protocol.includes('ssh') ? '' : port
+  protocol = /http[^s]/.test(protocol) ? 'http' : 'https'
+  const [, owner = '', repository = ''] =
+    /^\/(?<owner>[^/]+)?\/?(?<repository>.+)?$/.exec(pathname) ?? []
+  return { hostname, owner, port, protocol, repository }
 }
 
-// @todo(complexity) 17
-// biome-ignore lint/complexity/noExcessiveCognitiveComplexity: migrate
-async function generateNotes(pluginConfig, context) {
-  const { parserOpts, writerOpts } = await getChangelogConfig(pluginConfig, context)
-  const { commits: commitsPassed, cwd, lastRelease, nextRelease, options } = context
+function transformCommits(
+  rawCommits: SRContext['commits'],
+  parser: CommitParser,
+  context: SRContext,
+): TransformedCommit[] {
+  const commits: TransformedCommit[] = []
+  for (const raw of filterRevertedCommitsSync(rawCommits)) {
+    if (!raw.message?.trim()) continue
+    const parsed = {
+      ...raw,
+      ...parser.parse(raw.message),
+      message: raw.message,
+    } as ParsedCommit
+    const transformed = processCommit(parsed, writerOpts.transform, context)
+    if (transformed) commits.push(transformed)
+  }
+  return commits
+}
 
-  const { commit, issue, issuePrefixes, referenceActions } = configGithub
+function collectNotes(commits: TransformedCommit[]): Note[] {
+  const notes: Note[] = []
+  for (const c of commits) {
+    for (const note of c.notes) {
+      notes.push({ ...note, commit: c })
+    }
+  }
+  return notes
+}
+
+async function generateNotes(
+  pluginConfig: PluginConfig,
+  context: SRContext,
+): Promise<string> {
+  const { commits: rawCommits, cwd, lastRelease, nextRelease, options } = context
 
   const previousTag = lastRelease.gitTag || lastRelease.gitHead
   const currentTag = nextRelease.gitTag || nextRelease.gitHead
-  const {
-    commit: commitConfig,
-    host: hostConfig,
-    issue: issueConfig,
-    linkCompare,
-    linkReferences,
-  } = pluginConfig
-
-  const repositoryUrl = options.repositoryUrl.replace(/\.git$/i, '')
-  const [match, auth, host, path] =
-    /^(?!.+:\/\/)(?:(?<auth>.*)@)?(?<host>.*?):(?<path>.*)$/.exec(repositoryUrl) ||
-    []
-  let { hostname, pathname, port, protocol } = new URL(
-    match ? `ssh://${auth ? `${auth}@` : ''}${host}/${path}` : repositoryUrl,
-  )
-  port = protocol.includes('ssh') ? '' : port
-  protocol = protocol && /http[^s]/.test(protocol) ? 'http' : 'https'
-
-  const [, owner, repository] =
-    /^\/(?<owner>[^/]+)?\/?(?<repository>.+)?$/.exec(pathname) ?? []
-
-  const changelogContext = _merge(
-    {
-      commit,
-      currentTag,
-      host: format({ hostname, port, protocol }),
-      issue,
-      linkCompare: currentTag && previousTag,
-      owner,
-      packageData: (await readPackageUp({ cwd, normalize: false }))?.packageJson,
-      previousTag,
-      repository,
-      version: nextRelease.version,
-    },
-    {
-      commit: commitConfig,
-      host: hostConfig,
-      issue: issueConfig,
-      linkCompare,
-      linkReferences,
-    },
+  const { hostname, owner, port, protocol, repository } = parseRepositoryUrl(
+    options.repositoryUrl,
   )
 
-  const commitsParsed: any = []
-  const parser = new CommitParser({
-    issuePrefixes,
-    referenceActions,
-    ...parserOpts,
-  })
+  const parser = new CommitParser(parserOpts)
+  const commits = transformCommits(rawCommits, parser, context)
+  const notes = collectNotes(commits)
 
-  for (const _commit of filterRevertedCommitsSync(commitsPassed)) {
-    const commit: any = _commit
-    if (!commit?.message.trim()) {
-      return false
-    }
-    const commitPassed = {
-      ...commit,
-      ...parser.parse(commit?.message),
-    }
-    commitsParsed.push(commitPassed)
+  const version = nextRelease.version
+  const packageData = (await readPackageUp({ cwd, normalize: false }))?.packageJson
+
+  const markdownContext: MarkdownContext = {
+    commit: pluginConfig.commit ?? commitLinkDefault,
+    commitGroups: getCommitGroups(
+      writerOpts.groupBy,
+      commits,
+      writerOpts.commitGroupsSort,
+      writerOpts.commitsSort,
+    ),
+    currentTag,
+    date: commits[0]?.committerDate,
+    host: format({ hostname, port, protocol }),
+    isPatch: semverValid(version) ? (semverPatch(version) ?? 0) !== 0 : undefined,
+    issue: pluginConfig.issue ?? issueLinkDefault,
+    linkCompare: pluginConfig.linkCompare ?? !!(currentTag && previousTag),
+    linkReferences: pluginConfig.linkReferences,
+    noteGroups: getNoteGroups(notes),
+    options,
+    owner,
+    packageData,
+    previousTag,
+    repository,
+    version,
   }
-  let commits: any = []
-  await commitsParsed.map(async (commitParsed) => {
-    const commitProcessed: any = await processCommit(
-      commitParsed,
-      writerOpts.transform,
-      context,
-    )
-    commits.push(commitProcessed)
-  })
-
-  /**
-   * @hack why is something being brought back as undefined?
-   */
-  commits = await commits.filter((commit) => commit !== undefined)
-
-  const _options = _merge({}, changelogContext, options, writerOpts)
-
-  /**
-   * @note(release-notes-generator) oddly, `date` is pulled from here
-   *  could we do this differently? what other fields
-   *  are pulled for info purposes?
-   */
-  const _chunk = commits[0]
-  const keyCommit = processCommit(_chunk, writerOpts.transform, context) || _chunk
-  const { context: _context } = await generate(_options, commits, context, keyCommit)
-
-  const markdownContext = _merge({}, changelogContext, _context)
 
   return getMarkdown(markdownContext, commits)
 }

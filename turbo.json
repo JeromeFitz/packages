@@ -3,6 +3,11 @@
   "globalEnv": [
     "GH_TOKEN"
   ],
+  "globalPassThroughEnv": [
+    "ACTIONS_ID_TOKEN_REQUEST_TOKEN",
+    "ACTIONS_ID_TOKEN_REQUEST_URL",
+    "NPM_TOKEN"
+  ],
   "tasks": {
     "//#biome:check": {
       "outputLogs": "new-only"
@@ -56,12 +61,10 @@
       "outputLogs": "new-only"
     },
     "semantic-release": {
-      "cache": false,
-      "dependsOn": []
+      "cache": false
     },
     "semantic-release:dry": {
-      "cache": false,
-      "dependsOn": []
+      "cache": false
     },
     "test": {
       "dependsOn": [
@@ -97,6 +100,9 @@
         "*.mjs",
         "package.json"
       ],
+      "outputs": [
+        "dist/**"
+      ],
       "outputLogs": "new-only"
     },
     "@jeromefitz/semantic#build": {
@@ -110,6 +116,9 @@
         "*.js",
         "*.mjs",
         "package.json"
+      ],
+      "outputs": [
+        "dist/**"
       ],
       "outputLogs": "new-only"
     },

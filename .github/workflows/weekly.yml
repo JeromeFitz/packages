@@ -6,9 +6,9 @@ on:
     #        ┌───────────── minute (0 - 59)
     #        │ ┌───────────── hour (0 - 23)
     #        │ │ ┌───────────── day of the month (1 - 31)
-    #        │ │ │ ┌───────────── month (1 - 12 or JAN-DEC)
-    #        │ │ │ │ ┌───────────── day of the week (0 - 6 or SUN-SAT)
-    #        │ │ │ │ │
+    #        │ │ ┌───────────── month (1 - 12 or JAN-DEC)
+    #        │ │ │ ┌───────────── day of the week (0 - 6 or SUN-SAT)
+    #        │ │ │ │
     #        │ │ │ │ │
     #        │ │ │ │ │
     #        * * * * *
@@ -26,6 +26,11 @@ jobs:
   pull:
     name: '👷️  CI'
     if: github.ref == 'refs/heads/main'
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write
     timeout-minutes: 20
     runs-on: ubuntu-latest
     strategy:
@@ -46,15 +51,15 @@ jobs:
 
       - name: '💽️  Init'
         id: weekly-init
-        uses: JeromeFitz/packages/.github/actions/init@main
+        uses: ./.github/actions/init
 
       - name: '📦  Install'
         id: weekly-install
-        uses: JeromeFitz/packages/.github/actions/install@main
+        uses: ./.github/actions/install
 
       - name: '🔺️  Cache (turbo)'
         id: pull-cache-turbo
-        uses: JeromeFitz/packages/.github/actions/cache-turbo@main
+        uses: ./.github/actions/cache-turbo
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
@@ -64,22 +69,23 @@ jobs:
 
       - name: '🚨️  Lint'
         id: weekly-lint
-        uses: JeromeFitz/packages/.github/actions/lint@main
+        uses: ./.github/actions/lint
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
-      - name: '🏗️  Build'
-        id: weekly-build
-        uses: JeromeFitz/packages/.github/actions/build@main
+      - name: '🧪  Test'
+        id: weekly-test
+        uses: ./.github/actions/test
         with:
-          BUILD_COMMAND: 'build:all'
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
       - name: '🏷️  Release'
         id: weekly-release
-        uses: JeromeFitz/packages/.github/actions/release@main
+        uses: ./.github/actions/release
         with:
-          GH_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GH_TOKEN: ${{ env.GH_BOT_TOKEN }}
+          NPM_TOKEN: ${{ env.NPM_TOKEN }}
+          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}

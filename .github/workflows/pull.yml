@@ -54,7 +54,7 @@ jobs:
 
       - name: '💽️  Init'
         id: pull-init
-        uses: JeromeFitz/packages/.github/actions/init@main
+        uses: ./.github/actions/init
 
       # - name: '🧪 debug'
       #   id: pull-debug
@@ -74,11 +74,11 @@ jobs:
 
       - name: '📦  Install'
         id: pull-install
-        uses: JeromeFitz/packages/.github/actions/install@main
+        uses: ./.github/actions/install
 
       - name: '🔺️  Cache (turbo)'
         id: pull-cache-turbo
-        uses: JeromeFitz/packages/.github/actions/cache-turbo@main
+        uses: ./.github/actions/cache-turbo
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
@@ -88,7 +88,14 @@ jobs:
 
       - name: '🚨️  Lint'
         id: pull-lint
-        uses: JeromeFitz/packages/.github/actions/lint@main
+        uses: ./.github/actions/lint
+        with:
+          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+
+      - name: '🧪  Test'
+        id: pull-test
+        uses: ./.github/actions/test
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
@@ -101,7 +108,7 @@ jobs:
 
       - name: '🏗️  Build'
         id: pull-build
-        uses: JeromeFitz/packages/.github/actions/build@main
+        uses: ./.github/actions/build
         with:
           BUILD_COMMAND: 'build'
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}

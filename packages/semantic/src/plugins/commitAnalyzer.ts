@@ -1,10 +1,10 @@
-import type { IReleaseRule } from '@jeromefitz/conventional-gitmoji'
-
 import type { PluginSpec } from 'semantic-release'
+
+import type { ReleaseRule } from './commitAnalyzer.types'
 
 import { releaseRules as releaseRulesDefault } from '@jeromefitz/conventional-gitmoji'
 
-const commitAnalyzer = (releaseRulesPassed: IReleaseRule[] = []): PluginSpec => {
+const commitAnalyzer = (releaseRulesPassed: ReleaseRule[] = []): PluginSpec => {
   const releaseRules = [...releaseRulesDefault, ...releaseRulesPassed]
 
   return [

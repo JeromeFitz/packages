@@ -23,10 +23,3 @@ runs:
       run: |
         pnpm turbo run lint \
           --cache-dir=".cache-turbo"
-
-    # - name: '🧪️  Test'
-    #   id: test
-    #   shell: bash
-    #   # @note(ci) comment out right now as this requires `build`
-    #   run: |
-    #     echo # pnpm run test

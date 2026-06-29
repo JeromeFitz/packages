@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`header template > matches snapshot 1`] = `
+"
+| 🔖️ | Release Information      |
+| ----------- | --------------- |
+| Current     | **\`v1.0.0\`** |
+| Previous    | **[\`v0.9.0\`](https://github.com/owner/repo/compare/v0.9.0...v1.0.0)** |
+| Title       | **\`Stable\`** |
+| Date        | **\`2024-06-15\`** |
+
+"
+`;

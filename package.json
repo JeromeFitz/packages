@@ -34,17 +34,14 @@
     "format:prettier:base": "prettier \"./**/package.json\" \"**.{html,md,mdx,yml,yaml}\" \"!pnpm-lock.yaml\" --ignore-unknown",
     "format:prettier:check": "pnpm format:prettier:base --check",
     "format:prettier:write": "pnpm format:prettier:base --write",
-    "generate:releaseRules": "node ./packages/semantic/scripts/generateReleaseRules.js && pnpm run format:lint",
     "preinstall": "npx only-allow pnpm",
     "lint": "pnpm run lint:biome && pnpm run format:prettier:check && pnpm run lint:packages",
     "lint:biome": "biome lint",
     "lint:packages": "syncpack lint",
     "prepare": "pnpm is-ci || pnpm dlx husky@9.1.7",
-    "semantic-release": "pnpm semantic-release:mono",
-    "semantic-release:dry": "pnpm semantic-release:mono --dry-run",
-    "semantic-release:mono": "pnpm turbo run build --filter=\"@jeromefitz/semantic\" && pnpm --filter=\"@jeromefitz/*\" --filter=\"ccommit\" -r --workspace-concurrency=1 exec -- npx --no-install semantic-release",
-    "test": "turbo run test --filter=[HEAD^1]",
-    "test:all": "turbo run test",
+    "semantic-release": "turbo run semantic-release --concurrency=1 --cache-dir='.cache-turbo'",
+    "semantic-release:dry": "turbo run semantic-release:dry --concurrency=1 --cache-dir='.cache-turbo'",
+    "test": "turbo run test",
     "turbo": "TURBO_TELEMETRY_DISABLED=1 turbo"
   },
   "dependencies": {
@@ -66,7 +63,8 @@
     "syncpack": "15.3.1",
     "tsdown": "0.22.0",
     "turbo": "2.9.14",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "vitest": "4.1.9"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",

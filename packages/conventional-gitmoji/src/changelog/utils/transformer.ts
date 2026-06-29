@@ -1,116 +1,68 @@
 import GraphemeSplitter from 'grapheme-splitter'
-import { pullAt as _pullAt } from 'lodash-es'
 
-import { typeSpecs } from '../../index'
+import getGitmojiConventional from '../../utils/getGitmojiConventional'
+import getTypeSpecs from '../../utils/getTypeSpecs'
 
+// Derive typeSpecs from the utils directly (not the package barrel) to avoid a
+// circular import: index -> changelog -> writerOpts -> transformer -> index.
+const typeSpecs = getTypeSpecs(getGitmojiConventional())
 const splitter = new GraphemeSplitter()
 
-const transformer = (commit: any, _context: any) => {
-  // console.dir(`~~> transformer`)
-  // console.dir(commit)
-  const { type: _type } = commit
-  let type = _type
-  /**
-   * @note rewrite types
-   */
-  let typeSpecIndex = typeSpecs.findIndex(
-    ({ code: c, emoji: e, type: t, value: v }) => {
-      if (type === null) return
-      return (
-        // @hack(semantic) strip colon from :type: for stricter comparison
-        // biome-ignore lint/complexity/noUselessEscapeInRegex: migrate
-        type.replace(/\:/g, '') === c.replace(/\:/g, '') ||
-        type === t ||
-        type === v ||
-        type === e
-      )
-    },
+const stripColons = (value: string) => value.replace(/:/g, '')
+
+const findTypeSpecIndex = (type: null | string) => {
+  if (type === null) return -1
+
+  // Match against any known form: de-colon'd shortcode, conventional word,
+  // value, or gitmoji.
+  const direct = typeSpecs.findIndex(
+    ({ code, emoji, type: word, value }) =>
+      stripColons(type) === stripColons(code) ||
+      type === word ||
+      type === value ||
+      type === emoji,
   )
+  if (direct !== -1) return direct
 
-  /**
-   * @hack
-   * - if type is not present, attempt fallback
-   * - if type is not present or fallback
-   *    => typeSpecIndex => exit
-   */
-  if (typeSpecIndex === -1) {
-    type = splitter.splitGraphemes(_type)[0]
-    typeSpecIndex = typeSpecs.findIndex(({ emoji: e }) => {
-      if (type === null) return
-      return type[0] === e[0] || type[0] === splitter.splitGraphemes(e)[0]
-    })
-  }
+  // Fallback: the type may be a gitmoji glued to other text — match on the
+  // first grapheme.
+  const first = splitter.splitGraphemes(type)[0]
+  return typeSpecs.findIndex(
+    ({ emoji }) =>
+      first[0] === emoji[0] || first[0] === splitter.splitGraphemes(emoji)[0],
+  )
+}
 
+export interface TransformCommit {
+  type: string | null
+  hash?: string | null
+  subject: string | null
+  notes: unknown[]
+  [key: string]: unknown
+}
+
+const transformer = (commit: TransformCommit, _context: unknown) => {
+  const typeSpecIndex = findTypeSpecIndex(commit.type)
   if (typeSpecIndex === -1) return
+  if (commit.subject == null) return
+
   const typeSpec = typeSpecs[typeSpecIndex]
 
-  /**
-   * @todo put this into configuration
-   * - array of types to check against
-   * - check against title? [skip notes]
-   *
-   * @note if typeSpec does not have releaseNotes => exit
-   *       this could mean they are not for public consumption
-   */
-  // if (!typeSpec.releaseNotes) return
+  // Drop the leading gitmoji (and the space after it) from the subject.
+  const graphemes = splitter.splitGraphemes(commit.subject)
+  const subject = (
+    graphemes[0] === typeSpec.emoji ? graphemes.slice(2).join('') : commit.subject
+  ).trim()
 
-  /**
-   * @note type
-   * @todo turn on/off emoji, "section" descriptive enough?
-   */
-  commit.type = `${typeSpec.emoji}  ${typeSpec.description}`
-  commit.typeSpecIndex = typeSpecIndex
-  commit.typeSpec = typeSpec
-
-  /**
-   * @todo can only `groupBy` one field (type) at the moment
-   *       below is pre-work to `groupBy` order => type
-   *       so that we could further group in the release notes
-   */
-  // // @note(semver) semantic-versioning future-proofing
-  // //               moving to => breaking | feature | fix
-  // if (typeSpec.semver === 'breaking' || typeSpec.semver === 'major') {
-  //   commit.order = 1
-  // }
-  // if (typeSpec.semver === 'feature' || typeSpec.semver === 'minor') {
-  //   commit.order = 3
-  // }
-  // if (typeSpec.semver === 'fix' || typeSpec.semver === 'patch') {
-  //   commit.order = 5
-  // }
-  // if (typeSpec.semver === null) {
-  //   commit.order = 7
-  // }
-  // if (!Boolean(typeSpec.semver)) {
-  //   commit.order = 9
-  // }
-
-  /**
-   * @note hash
-   */
-  if (typeof commit.hash === 'string') {
-    commit.hash = commit.hash.substring(0, 7)
+  return {
+    ...commit,
+    hash:
+      typeof commit.hash === 'string' ? commit.hash.substring(0, 7) : commit.hash,
+    subject,
+    type: `${typeSpec.emoji}  ${typeSpec.description}`,
+    typeSpec,
+    typeSpecIndex,
   }
-
-  /**
-   * @note subject
-   */
-  const subjectTemp = splitter.splitGraphemes(commit.subject)
-  const isEmojiMatch = subjectTemp[0] === typeSpec.emoji
-  const subject = isEmojiMatch
-    ? commit.subject
-        .replace(_pullAt(subjectTemp, [0]), '')
-        .replace(_pullAt(subjectTemp, [0]), '')
-    : commit.subject
-
-  commit.subject = subject.trim()
-
-  /**
-   * @note return the new mutated `commit`
-   */
-  // console.dir(`> transformer: end`)
-  // console.dir(commit)
-  return commit
 }
 
 export default transformer

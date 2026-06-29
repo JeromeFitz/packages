@@ -1,0 +1,14 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`github > default output snapshot 1`] = `
+[
+  "@semantic-release/github",
+  {
+    "addReleases": false,
+    "assets": undefined,
+    "labels": false,
+    "releasedLabels": false,
+    "successComment": false,
+  },
+]
+`;

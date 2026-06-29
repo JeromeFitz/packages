@@ -1,7 +1,12 @@
+import type { MarkdownContext, RenderMeta, TransformedCommit } from '../types'
+
 import { format as _format } from 'date-fns'
 
-const header = (context, _commits, meta) => {
-  // @todo(release-notes) pass as option
+const header = (
+  context: MarkdownContext,
+  _commits: TransformedCommit[],
+  meta: RenderMeta,
+): string => {
   const { currentTag, date, linkCompare, previousTag, title } = context
   const { repositoryUrl } = meta
 
@@ -11,9 +16,7 @@ const header = (context, _commits, meta) => {
 | Current     | **\`${currentTag}\`** |\n`
 
   if (linkCompare) {
-    const linkCompareUrl =
-      // biome-ignore lint/style/useTemplate: migrate
-      repositoryUrl + '/compare/' + previousTag + '...' + currentTag
+    const linkCompareUrl = `${repositoryUrl}/compare/${previousTag}...${currentTag}`
     markdown += `| Previous    | **[\`${previousTag}\`](${linkCompareUrl})** |\n`
   }
   if (title) {
@@ -23,7 +26,7 @@ const header = (context, _commits, meta) => {
     markdown += `| Date        | **\`${_format(date, 'yyyy-MM-dd')}\`** |\n`
   }
 
-  markdown += `\n`
+  markdown += '\n'
   return markdown
 }
 

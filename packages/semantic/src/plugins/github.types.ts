@@ -9,7 +9,6 @@ interface GithubPluginOptions {
   labels?: string[]
   proxy?: string
   releasedLabels?: string[]
-  successComment?: string
 }
 
 export type { GithubPluginOptions }

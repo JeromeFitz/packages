@@ -14,16 +14,13 @@ const git = (options: GitPluginOptions): PluginSpec => {
     '@semantic-release/git',
     {
       assets:
-        typeof options.gitAssets === 'boolean'
+        options.gitAssets === false
           ? false
-          : ['package.json']
-              // biome-ignore lint/complexity/noExtraBooleanCast: migrate
-              .concat(!!options.gitAssets ? options.gitAssets : [])
-              .filter((a) => a),
-      message: options.message
-        ? options.message
-        : // biome-ignore lint/suspicious/noTemplateCurlyInString: migrate
-          '🔖️ `${nextRelease.gitTag}` [skip ci] \n\n${nextRelease.notes}',
+          : ['package.json', ...(options.gitAssets ?? [])],
+      message:
+        options.message ??
+        // biome-ignore lint/suspicious/noTemplateCurlyInString: template processed by semantic-release at runtime
+        '🔖️ `${nextRelease.gitTag}` [skip ci] \n\n${nextRelease.notes}',
     },
   ]
 }

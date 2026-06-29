@@ -1,23 +1,7 @@
-import _map from 'lodash-es/map.js'
-
-import { getConfig } from './packages/semantic/dist/index.mjs'
-import releaseBranchTypes from './scripts/release-branch-types/index.cjs'
-
-const branchTypes = _map(
-  releaseBranchTypes,
-  (releaseBranchType, releaseBranchTypeIndex) => {
-    return _map(releaseBranchType, (branchType) => {
-      return (
-        !!branchType && {
-          name: `${releaseBranchTypeIndex}/${branchType}`,
-          prerelease: branchType,
-        }
-      )
-    })[0]
-  },
-).filter((branchType) => !!branchType)
-
-const branches = [{ name: 'main' }, ...branchTypes]
+const branches = [
+  { name: 'main' },
+  { name: 'refactor/semantic', prerelease: 'canary' },
+]
 
 const config = {
   branches,
@@ -27,9 +11,4 @@ const config = {
   },
 }
 
-// const _config = getConfig(config)
-
-const _config = config
-const _getConfig = getConfig
-
-export { _config as config, _getConfig as getConfig }
+export { config }
