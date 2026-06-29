@@ -1,7 +1,6 @@
 const branches = [
   { name: 'main' },
-  // add ad-hoc prerelease branches here as needed:
-  // { name: 'your-branch-name', prerelease: 'canary' },
+  { name: 'refactor/semantic', prerelease: 'canary' },
 ]
 
 const config = {
