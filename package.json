@@ -12,6 +12,7 @@
   },
   "license": "MIT",
   "private": true,
+  "packageManager": "pnpm@11.9.0",
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
@@ -22,7 +23,6 @@
       "version": ">=24.17.0 <25"
     }
   },
-  "packageManager": "pnpm@11.9.0",
   "scripts": {
     "biome:check": "biome check",
     "biome:write": "biome check --write",
