@@ -109,6 +109,9 @@
         "*.mjs",
         "package.json"
       ],
+      "outputs": [
+        "dist/**"
+      ],
       "outputLogs": "new-only"
     },
     "@jeromefitz/semantic#lint": {
