@@ -1,5 +1,8 @@
 allowBuilds:
   '@biomejs/biome': true
+  sharp: true
+  syncpack: true
+  turbo: true
 autoInstallPeers: false
 dedupePeerDependents: false
 enablePrePostScripts: true
@@ -33,7 +36,6 @@ packages:
   - '!packages/spotify'
 patchedDependencies:
   '@semantic-release/commit-analyzer@13.0.1': patches/@semantic-release__commit-analyzer@13.0.0.patch
-provenance: true
 publicHoistPattern:
   - '*biome*'
   - '*ccommit*'
@@ -42,7 +44,7 @@ publicHoistPattern:
   - '*types*'
   - '@storybook*'
   - '@mdx-js/react'
+registry: https://registry.npmjs.org/
 saveExact: true
 strictPeerDependencies: false
-registry: https://registry.npmjs.org/
 tagVersionPrefix: ''
