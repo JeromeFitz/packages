@@ -84,7 +84,6 @@
     "github-slugger": "2.0.0"
   },
   "devDependencies": {
-    "@jeromefitz/semantic": "workspace:*",
     "@jeromefitz/utils": "workspace:*",
     "@types/lodash-es": "4.17.12",
     "lodash-es": "4.18.0"
