@@ -41,8 +41,8 @@
     "prepare": "pnpm is-ci || pnpm dlx husky@9.1.7",
     "semantic-release": "pnpm semantic-release:mono",
     "semantic-release:dry": "pnpm semantic-release:mono:dry",
-    "semantic-release:mono": "turbo run semantic-release --concurrency=1",
-    "semantic-release:mono:dry": "turbo run semantic-release:dry --concurrency=1",
+    "semantic-release:mono": "turbo run semantic-release --concurrency=1 --cache-dir='.cache-turbo'",
+    "semantic-release:mono:dry": "turbo run semantic-release:dry --concurrency=1 --cache-dir='.cache-turbo'",
     "test": "turbo run test",
     "turbo": "TURBO_TELEMETRY_DISABLED=1 turbo"
   },
