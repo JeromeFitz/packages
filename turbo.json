@@ -3,6 +3,9 @@
   "globalEnv": [
     "GH_TOKEN"
   ],
+  "globalPassThroughEnv": [
+    "NPM_TOKEN"
+  ],
   "tasks": {
     "//#biome:check": {
       "outputLogs": "new-only"
