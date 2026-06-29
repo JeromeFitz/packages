@@ -5,7 +5,7 @@ import { get as _get, set as _set } from 'lodash-es'
 type TransformFn = (
   commit: ParsedCommit,
   context: unknown,
-) => TransformedCommit | undefined
+) => Record<string, unknown> | undefined
 
 type TransformMap = Record<
   string,
@@ -22,7 +22,9 @@ function processCommit(
   const commit: ParsedCommit | TransformedCommit = structuredClone(chunk)
 
   if (typeof transform === 'function') {
-    const result = transform(commit as ParsedCommit, context)
+    const result = transform(commit as ParsedCommit, context) as
+      | TransformedCommit
+      | undefined
     if (result) result.raw = chunk
     return result
   }

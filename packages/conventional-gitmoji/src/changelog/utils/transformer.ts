@@ -35,8 +35,8 @@ const findTypeSpecIndex = (type: null | string) => {
 
 export interface TransformCommit {
   type: string | null
-  hash: string | null
-  subject: string
+  hash?: string | null
+  subject: string | null
   notes: unknown[]
   [key: string]: unknown
 }
@@ -44,6 +44,7 @@ export interface TransformCommit {
 const transformer = (commit: TransformCommit, _context: unknown) => {
   const typeSpecIndex = findTypeSpecIndex(commit.type)
   if (typeSpecIndex === -1) return
+  if (commit.subject == null) return
 
   const typeSpec = typeSpecs[typeSpecIndex]
 
