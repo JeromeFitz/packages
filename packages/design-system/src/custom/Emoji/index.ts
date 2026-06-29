@@ -1,2 +1,2 @@
-export { Emoji } from './Emoji'
-export { EmojiParser } from './EmojiParser'
+export { Emoji } from "./Emoji";
+export { EmojiParser } from "./EmojiParser";

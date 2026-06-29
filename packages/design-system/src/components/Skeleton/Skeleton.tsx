@@ -1,82 +1,82 @@
-import { keyframes, styled } from '../../lib/stitches.config'
+import { keyframes, styled } from "../../lib/stitches.config";
 
 const pulse = keyframes({
-  '0%': { opacity: 0 },
-  '100%': { opacity: '100%' },
-})
+  "0%": { opacity: 0 },
+  "100%": { opacity: "100%" },
+});
 
-const Skeleton = styled('div', {
-  '&::after': {
-    animationDirection: 'alternate',
-    animationDuration: '750ms',
-    animationIterationCount: 'infinite',
+const Skeleton = styled("div", {
+  "&::after": {
+    animationDirection: "alternate",
+    animationDuration: "750ms",
+    animationIterationCount: "infinite",
     animationName: `${pulse}`,
-    animationTimingFunction: 'ease-in-out',
-    backgroundColor: '$slate6',
-    borderRadius: 'inherit',
+    animationTimingFunction: "ease-in-out",
+    backgroundColor: "$slate6",
+    borderRadius: "inherit",
     bottom: 0,
     content: '""',
     left: 0,
-    position: 'absolute',
+    position: "absolute",
     right: 0,
     top: 0,
   },
-  backgroundColor: '$slate4',
+  backgroundColor: "$slate4",
   defaultVariants: {
-    variant: 'text',
+    variant: "text",
   },
 
-  overflow: 'hidden',
+  overflow: "hidden",
 
-  position: 'relative',
+  position: "relative",
   variants: {
     variant: {
       avatar1: {
-        borderRadius: '$round',
-        height: '$3',
-        width: '$3',
+        borderRadius: "$round",
+        height: "$3",
+        width: "$3",
       },
       avatar2: {
-        borderRadius: '$round',
-        height: '$5',
-        width: '$5',
+        borderRadius: "$round",
+        height: "$5",
+        width: "$5",
       },
       avatar3: {
-        borderRadius: '$round',
-        height: '$6',
-        width: '$6',
+        borderRadius: "$round",
+        height: "$6",
+        width: "$6",
       },
       avatar4: {
-        borderRadius: '$round',
-        height: '$7',
-        width: '$7',
+        borderRadius: "$round",
+        height: "$7",
+        width: "$7",
       },
       avatar5: {
-        borderRadius: '$round',
-        height: '$8',
-        width: '$8',
+        borderRadius: "$round",
+        height: "$8",
+        width: "$8",
       },
       avatar6: {
-        borderRadius: '$round',
-        height: '$9',
-        width: '$9',
+        borderRadius: "$round",
+        height: "$9",
+        width: "$9",
       },
       button: {
-        borderRadius: '$1',
-        height: '$5',
-        width: '$8',
+        borderRadius: "$1",
+        height: "$5",
+        width: "$8",
       },
       heading: {
-        height: '$3',
+        height: "$3",
       },
       text: {
-        height: '$1',
+        height: "$1",
       },
       title: {
-        height: '$5',
+        height: "$5",
       },
     },
   },
-})
+});
 
-export { Skeleton }
+export { Skeleton };

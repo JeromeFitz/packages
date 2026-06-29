@@ -4,10 +4,10 @@
  */
 
 // @todo(next) upgrade to new image
-import NextImage from 'next/legacy/image'
+import NextImage from "next/legacy/image";
 
-import { Box } from '../../components/Box'
-import { styled } from '../../lib/stitches.config'
+import { Box } from "../../components/Box";
+import { styled } from "../../lib/stitches.config";
 
 /**
  * @niceRec
@@ -15,25 +15,25 @@ import { styled } from '../../lib/stitches.config'
 const IMAGE__PLACEHOLDER = {
   meta: {
     base64:
-      'data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAEAAQDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAeEAABBAIDAQAAAAAAAAAAAAABAAMEBQIGEyIxYf/EABUBAQEAAAAAAAAAAAAAAAAAAAEF/8QAGREBAQEBAQEAAAAAAAAAAAAAAQIDABGR/9oADAMBAAIRAxEAPwCfGlwqbX9eZZoaWSXq1mQ47LjczmWeYJPYnz4iIquet1ItPDlA+Enzv//Z',
+      "data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAEAAQDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAeEAABBAIDAQAAAAAAAAAAAAABAAMEBQIGEyIxYf/EABUBAQEAAAAAAAAAAAAAAAAAAAEF/8QAGREBAQEBAQEAAAAAAAAAAAAAAQIDABGR/9oADAMBAAIRAxEAPwCfGlwqbX9eZZoaWSXq1mQ47LjczmWeYJPYnz4iIquet1ItPDlA+Enzv//Z",
     img: {
       height: 640,
-      src: 'https://i.scdn.co/image/ab67616d0000b273a33ac83de4bc24bbf75c8b60',
-      type: 'jpg',
+      src: "https://i.scdn.co/image/ab67616d0000b273a33ac83de4bc24bbf75c8b60",
+      type: "jpg",
       width: 640,
     },
-    slug: 'httpsiscdncoimageab67616d0000b273a33ac83de4bc24bbf75c8b60',
-    url: 'https://i.scdn.co/image/ab67616d0000b273a33ac83de4bc24bbf75c8b60',
+    slug: "httpsiscdncoimageab67616d0000b273a33ac83de4bc24bbf75c8b60",
+    url: "https://i.scdn.co/image/ab67616d0000b273a33ac83de4bc24bbf75c8b60",
   },
-}
+};
 
-const EmptyContent = styled('div', {
-  '& ::selection': {
-    backgroundColor: '$blueA5',
+const EmptyContent = styled("div", {
+  "& ::selection": {
+    backgroundColor: "$blueA5",
   },
-  height: '100%',
-  left: '50%',
-  position: 'absolute',
+  height: "100%",
+  left: "50%",
+  position: "absolute",
   // width: '80%',
   // bc: '$loContrast',
   // bc: 'transparent',
@@ -41,18 +41,18 @@ const EmptyContent = styled('div', {
   // py: 10,
   // px: 10,
   // marginTop: -15,
-  top: '50%',
-  transform: 'translate(-50%, -50%)',
+  top: "50%",
+  transform: "translate(-50%, -50%)",
 
   // boxShadow: '0px 5px 30px -5px rgba(0, 0, 0, 0.1)',
-  width: '100%',
-})
+  width: "100%",
+});
 
-function HeroImage({ alt = '', meta = IMAGE__PLACEHOLDER.meta }) {
-  const { base64, img } = meta
+function HeroImage({ alt = "", meta = IMAGE__PLACEHOLDER.meta }) {
+  const { base64, img } = meta;
   return (
     <EmptyContent>
-      <Box css={{ height: '100%', my: '0' }}>
+      <Box css={{ height: "100%", my: "0" }}>
         <NextImage
           alt={alt}
           blurDataURL={base64}
@@ -63,12 +63,12 @@ function HeroImage({ alt = '', meta = IMAGE__PLACEHOLDER.meta }) {
           placeholder="blur"
           priority={false}
           quality={100}
-          sizes={'(min-width: 1280) 80vh, 60vh'}
+          sizes={"(min-width: 1280) 80vh, 60vh"}
           {...img}
         />
       </Box>
     </EmptyContent>
-  )
+  );
 }
 
-export { HeroImage }
+export { HeroImage };

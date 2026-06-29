@@ -1,4 +1,4 @@
-import { DATA_TYPES } from '../../constants/index'
+import { DATA_TYPES } from "../../constants/index";
 
 /**
  * @info dataType
@@ -52,11 +52,11 @@ import { DATA_TYPES } from '../../constants/index'
  *
  */
 const getDataType = ({ hasMeta, isIndex, isPage }) => {
-  if (isPage) return DATA_TYPES.SLUG
-  if (isIndex && !hasMeta) return DATA_TYPES.LISTING
-  if (isIndex && hasMeta) return DATA_TYPES.LISTING_BY_DATE
-  if (hasMeta) return DATA_TYPES.SLUG_BY_ROUTE
-  return DATA_TYPES.SLUG
-}
+  if (isPage) return DATA_TYPES.SLUG;
+  if (isIndex && !hasMeta) return DATA_TYPES.LISTING;
+  if (isIndex && hasMeta) return DATA_TYPES.LISTING_BY_DATE;
+  if (hasMeta) return DATA_TYPES.SLUG_BY_ROUTE;
+  return DATA_TYPES.SLUG;
+};
 
-export default getDataType
+export default getDataType;

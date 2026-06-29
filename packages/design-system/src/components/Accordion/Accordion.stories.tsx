@@ -1,14 +1,9 @@
-import type { Meta, StoryFn } from '@storybook/react'
+import type { Meta, StoryFn } from "@storybook/react";
 
-import { Text } from '../index'
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from './Accordion'
+import { Text } from "../index";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./Accordion";
 
-const dummyContent = <Text css={{ p: '$3' }}>Dummy Content Here</Text>
+const dummyContent = <Text css={{ p: "$3" }}>Dummy Content Here</Text>;
 
 export default {
   argTypes: {
@@ -26,12 +21,12 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'MDX Content is TBD',
+        component: "MDX Content is TBD",
       },
     },
   },
-  title: 'Accordion',
-} as Meta<typeof Accordion>
+  title: "Accordion",
+} as Meta<typeof Accordion>;
 
 const Template: StoryFn<typeof Accordion> = ({ children, ...args }) => (
   // <Alert {...args}>{children}</Alert>
@@ -45,13 +40,13 @@ const Template: StoryFn<typeof Accordion> = ({ children, ...args }) => (
       <AccordionContent>{children}</AccordionContent>
     </AccordionItem>
   </Accordion>
-)
+);
 
 export const Default = {
   args: {
     children: dummyContent,
-    title: 'Title of Accordion',
+    title: "Title of Accordion",
   },
 
   render: Template,
-}
+};

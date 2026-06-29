@@ -1,21 +1,21 @@
 # name: 'Init'
-name: '💽️  '
-description: 'Localized Init'
-author: 'JeromeFitz'
+name: "💽️  "
+description: "Localized Init"
+author: "JeromeFitz"
 
 runs:
-  using: 'composite'
+  using: "composite"
   steps:
-    - name: '🔧  pnpm: Install'
+    - name: "🔧  pnpm: Install"
       id: pnpm-setup
       uses: pnpm/action-setup@v5
       with:
         run_install: false
 
-    - name: '💽️  Node ${{ inputs.node-version }}'
+    - name: "💽️  Node ${{ inputs.node-version }}"
       id: node-setup
       uses: actions/setup-node@v6
       with:
         cache-dependency-path: pnpm-lock.yaml
-        cache: 'pnpm'
+        cache: "pnpm"
         node-version-file: .nvmrc

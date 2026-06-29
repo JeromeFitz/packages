@@ -1,20 +1,20 @@
-import parserBabel from '@babel/eslint-parser'
-import eslint from '@eslint/js'
+import parserBabel from "@babel/eslint-parser";
+import eslint from "@eslint/js";
 
-import { RULES } from './_lib.js'
+import { RULES } from "./_lib.js";
 
 const configBase = [
   eslint.configs.recommended,
   {
     ignores: [
-      '.next/*',
-      'dist/*',
-      'node_modules/*',
-      '**/.next/*',
-      '**/dist/*',
-      '**/node_modules/*',
+      ".next/*",
+      "dist/*",
+      "node_modules/*",
+      "**/.next/*",
+      "**/dist/*",
+      "**/node_modules/*",
     ],
-    name: '@jeromefitz/eslint-config:ignores',
+    name: "@jeromefitz/eslint-config:ignores",
   },
   {
     languageOptions: {
@@ -25,14 +25,14 @@ const configBase = [
         },
         ecmaVersion: 2022,
         requireConfigFile: false,
-        sourceType: 'module',
+        sourceType: "module",
       },
     },
-    name: '@jeromefitz/eslint-config:base',
+    name: "@jeromefitz/eslint-config:base",
     rules: {
       complexity: [RULES.ERROR, 10],
     },
   },
-]
+];
 
-export { configBase }
+export { configBase };

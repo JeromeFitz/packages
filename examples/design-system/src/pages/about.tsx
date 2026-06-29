@@ -8,42 +8,38 @@ import {
   Separator,
   Text,
   VisuallyHidden,
-} from '@jeromefitz/design-system/src/components'
-
-import NextLink from 'next/link'
+} from "@jeromefitz/design-system/src/components";
+import NextLink from "next/link";
 
 function Home({}) {
   return (
     <>
-      <PageHeading
-        description="Sample page for menu routing testing."
-        title="About"
-      />
+      <PageHeading description="Sample page for menu routing testing." title="About" />
       <VisuallyHidden>
         <Text>Not visible.</Text>
       </VisuallyHidden>
       <Separator decorative my="4" size="full" />
       <Icon.Pencil />
-      <Icon.GitHub css={{ color: '$colors$brand' }} />
-      <Icon.GitHub css={{ color: '$colors$warning' }} />
+      <Icon.GitHub css={{ color: "$colors$brand" }} />
+      <Icon.GitHub css={{ color: "$colors$warning" }} />
       <Icon.ExternalLink />
       <Separator decorative my="4" size="full" />
       <Icon.Return
         style={{
-          height: '1rem',
-          marginRight: '10px',
-          marginTop: '3px',
-          width: '1rem',
+          height: "1rem",
+          marginRight: "10px",
+          marginTop: "3px",
+          width: "1rem",
         }}
       />
       <Icon.Map />
-      <Icon.Map css={{ color: '$colors$brand' }} />
-      <Icon.Ticket css={{ color: '$colors$brand' }} />
+      <Icon.Map css={{ color: "$colors$brand" }} />
+      <Icon.Ticket css={{ color: "$colors$brand" }} />
       <Separator decorative my="4" size="full" />
       <Box
         as="section"
         css={{
-          py: '$4',
+          py: "$4",
         }}
         id="blockquote"
       >
@@ -54,8 +50,8 @@ function Home({}) {
         </Blockquote>
         {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
         {/* @ts-ignore */}
-        <Blockquote css={{ backgroundColor: 'green' }}>
-          <Text as="p" css={{ color: '$loContrast' }}>
+        <Blockquote css={{ backgroundColor: "green" }}>
+          <Text as="p" css={{ color: "$loContrast" }}>
             Lorem ipsum dolor.
           </Text>
         </Blockquote>
@@ -74,7 +70,7 @@ function Home({}) {
         <Link>Back to Index</Link>
       </NextLink>
     </>
-  )
+  );
 }
 
-export default Home
+export default Home;

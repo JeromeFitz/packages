@@ -1,9 +1,9 @@
-import type { Meta, StoryFn } from '@storybook/react'
+import type { Meta, StoryFn } from "@storybook/react";
 
-import { PageHeading } from './PageHeading'
+import { PageHeading } from "./PageHeading";
 
-const dummyTitle = 'Lorem ipsum dolor sit amet.'
-const dummyDescription = 'Lorem ipsum dolor sit amet.'
+const dummyTitle = "Lorem ipsum dolor sit amet.";
+const dummyDescription = "Lorem ipsum dolor sit amet.";
 
 export default {
   argTypes: {
@@ -17,24 +17,22 @@ export default {
       control: false,
     },
     size: {
-      control: { type: 'select' },
-      options: ['1', '2', '3', '4'],
+      control: { type: "select" },
+      options: ["1", "2", "3", "4"],
     },
   },
   component: PageHeading,
   parameters: {
     docs: {
       description: {
-        component: 'MDX Content is TBD',
+        component: "MDX Content is TBD",
       },
     },
   },
-  title: 'PageHeading',
-} as Meta<typeof PageHeading>
+  title: "PageHeading",
+} as Meta<typeof PageHeading>;
 
-const Template: StoryFn<typeof PageHeading> = ({ ...args }) => (
-  <PageHeading {...args} />
-)
+const Template: StoryFn<typeof PageHeading> = ({ ...args }) => <PageHeading {...args} />;
 
 export const Default = {
   args: {
@@ -43,4 +41,4 @@ export const Default = {
   },
 
   render: Template,
-}
+};

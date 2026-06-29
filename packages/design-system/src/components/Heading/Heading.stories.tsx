@@ -1,8 +1,8 @@
-import type { Meta, StoryFn } from '@storybook/react'
+import type { Meta, StoryFn } from "@storybook/react";
 
-import { Heading } from './Heading'
+import { Heading } from "./Heading";
 
-const dummyContent = 'Lorem ipsum dolor sit amet.'
+const dummyContent = "Lorem ipsum dolor sit amet.";
 
 export default {
   argTypes: {
@@ -16,30 +16,30 @@ export default {
       control: false,
     },
     size: {
-      control: { type: 'select' },
-      options: ['1', '2', '3', '4'],
+      control: { type: "select" },
+      options: ["1", "2", "3", "4"],
     },
   },
   component: Heading,
   parameters: {
     docs: {
       description: {
-        component: 'MDX Content is TBD',
+        component: "MDX Content is TBD",
       },
     },
   },
-  title: 'Heading',
-} as Meta<typeof Heading>
+  title: "Heading",
+} as Meta<typeof Heading>;
 
 const Template: StoryFn<typeof Heading> = ({ children, ...args }) => (
   <Heading {...args}> {children}</Heading>
-)
+);
 
 export const Default = {
   args: {
     children: dummyContent,
-    size: '3',
+    size: "3",
   },
 
   render: Template,
-}
+};

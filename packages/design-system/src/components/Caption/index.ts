@@ -1,1 +1,1 @@
-export { Caption } from './Caption'
+export { Caption } from "./Caption";

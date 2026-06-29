@@ -1,1 +1,1 @@
-export { FocusArea } from './FocusArea'
+export { FocusArea } from "./FocusArea";

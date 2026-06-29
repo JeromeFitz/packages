@@ -1,8 +1,8 @@
-import { styled } from '../../lib/stitches.config'
+import { styled } from "../../lib/stitches.config";
 
-const Box = styled('div', {
+const Box = styled("div", {
   // @reset
-  boxSizing: 'border-box',
-})
+  boxSizing: "border-box",
+});
 
-export { Box }
+export { Box };

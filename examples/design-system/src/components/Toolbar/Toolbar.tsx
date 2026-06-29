@@ -7,7 +7,7 @@ import {
   ToolbarSeparator,
   ToolbarToggleGroup,
   ToolbarToggleItem,
-} from '@jeromefitz/design-system/src/components'
+} from "@jeromefitz/design-system/src/components";
 
 // import { NavigationMenu } from '../NavigationMenu'
 
@@ -25,11 +25,7 @@ const ToolbarDemo = () => (
       </ToolbarToggleItem>
     </ToolbarToggleGroup>
     <ToolbarSeparator />
-    <ToolbarToggleGroup
-      aria-label="Text alignment"
-      defaultValue="center"
-      type="single"
-    >
+    <ToolbarToggleGroup aria-label="Text alignment" defaultValue="center" type="single">
       <ToolbarToggleItem aria-label="Left aligned" value="left">
         <Icon.TextAlignLeft />
       </ToolbarToggleItem>
@@ -44,11 +40,11 @@ const ToolbarDemo = () => (
     <ToolbarLink css={{ marginRight: 10 }} href="#" target="_blank">
       Edited 2 hours ago
     </ToolbarLink>
-    <ToolbarButton css={{ marginLeft: 'auto' }}>Share</ToolbarButton>
+    <ToolbarButton css={{ marginLeft: "auto" }}>Share</ToolbarButton>
     {/* <Box css={{ marginLeft: 'auto', marginRight: '$9' }}>
       <NavigationMenu />
     </Box> */}
   </Toolbar>
-)
+);
 
-export { ToolbarDemo as Toolbar }
+export { ToolbarDemo as Toolbar };

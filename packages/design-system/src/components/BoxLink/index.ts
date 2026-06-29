@@ -1,1 +1,1 @@
-export { BoxLink } from './BoxLink'
+export { BoxLink } from "./BoxLink";

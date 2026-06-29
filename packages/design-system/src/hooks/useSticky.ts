@@ -1,29 +1,29 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 
 const useSticky = (fixRef: {
-  current: { getBoundingClientRect: () => { (): any; new (): any; top: any } }
+  current: { getBoundingClientRect: () => { (): any; new (): any; top: any } };
 }) => {
-  const [isFix, setIsFix] = useState(false)
+  const [isFix, setIsFix] = useState(false);
 
   useEffect(() => {
-    const stickyPosY = fixRef.current.getBoundingClientRect().top
+    const stickyPosY = fixRef.current.getBoundingClientRect().top;
 
     const onScroll = () => {
       if (window.scrollY > stickyPosY) {
-        setIsFix(true)
+        setIsFix(true);
       } else {
-        setIsFix(false)
+        setIsFix(false);
       }
-    }
-    window.addEventListener('scroll', onScroll, true)
+    };
+    window.addEventListener("scroll", onScroll, true);
 
     return () => {
-      window.removeEventListener('scroll', onScroll, true)
-    }
-  }, [fixRef])
+      window.removeEventListener("scroll", onScroll, true);
+    };
+  }, [fixRef]);
 
   return {
     isFix,
-  }
-}
-export default useSticky
+  };
+};
+export default useSticky;

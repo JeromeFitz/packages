@@ -1,1 +1,1 @@
-export { TabLink } from './TabLink'
+export { TabLink } from "./TabLink";

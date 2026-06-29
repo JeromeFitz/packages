@@ -16,14 +16,13 @@ import {
   SelectTrigger,
   SelectValue,
   SelectViewport,
-} from '@jeromefitz/design-system/src/components'
+} from "@jeromefitz/design-system/src/components";
+import { useState } from "react";
 
-import { useState } from 'react'
-
-const defaultValue = 'blueberry'
+const defaultValue = "blueberry";
 
 const SelectDemo = () => {
-  const [selectValue, selectValueSet] = useState(defaultValue)
+  const [selectValue, selectValueSet] = useState(defaultValue);
 
   return (
     <Box>
@@ -181,7 +180,7 @@ const SelectDemo = () => {
         </SelectContent>
       </Select>
     </Box>
-  )
-}
+  );
+};
 
-export { SelectDemo as Select }
+export { SelectDemo as Select };

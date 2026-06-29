@@ -1,67 +1,65 @@
-import type { ElementRef } from 'react'
+import merge from "lodash/merge";
+import type { ElementRef } from "react";
+import { forwardRef } from "react";
 
-import type { CSS } from '../../lib/stitches.config'
+import type { CSS } from "../../lib/stitches.config";
+import { Text } from "../index";
 import type {
   ParagraphProps,
   ParagraphSizeVariants,
   // ParagraphWeightVariants,
   TextSizeVariants,
   // TextWeightVariants,
-} from './Paragraph.types'
-
-import merge from 'lodash/merge'
-import { forwardRef } from 'react'
-
-import { Text } from '../index'
-import { DEFAULT_TAG } from './Paragraph.types'
+} from "./Paragraph.types";
+import { DEFAULT_TAG } from "./Paragraph.types";
 
 const Paragraph = forwardRef<ElementRef<typeof DEFAULT_TAG>, ParagraphProps>(
   (props, forwardedRef) => {
-    const { size = '1', weight = '4', ...textProps } = props
+    const { size = "1", weight = "4", ...textProps } = props;
 
     // This is the mapping of Paragraph Variants to Text SizeVariants
-    const textSize: Record<ParagraphSizeVariants, TextSizeVariants['size']> = {
-      '1': { '@bp2': '4', '@initial': '3' },
-      '2': { '@bp2': '5', '@initial': '4' },
-      '3': { '@bp2': '6', '@initial': '5' },
-      '4': { '@bp2': '7', '@initial': '6' },
-      '5': { '@bp2': '8', '@initial': '7' },
-      '6': { '@bp2': '9', '@initial': '8' },
-    }
+    const textSize: Record<ParagraphSizeVariants, TextSizeVariants["size"]> = {
+      "1": { "@bp2": "4", "@initial": "3" },
+      "2": { "@bp2": "5", "@initial": "4" },
+      "3": { "@bp2": "6", "@initial": "5" },
+      "4": { "@bp2": "7", "@initial": "6" },
+      "5": { "@bp2": "8", "@initial": "7" },
+      "6": { "@bp2": "9", "@initial": "8" },
+    };
 
     // This is the mapping of Paragraph Variants to Text CSS
     const textCss: Record<ParagraphSizeVariants, CSS> = {
       1: {
-        '@bp2': { lineHeight: '1.5' },
-        color: '$typefacePrimary',
-        lineHeight: '1.25',
+        "@bp2": { lineHeight: "1.5" },
+        color: "$typefacePrimary",
+        lineHeight: "1.25",
       },
       2: {
-        '@bp2': { lineHeight: '1.5' },
-        color: '$typefaceSecondary',
-        lineHeight: '1.25',
+        "@bp2": { lineHeight: "1.5" },
+        color: "$typefaceSecondary",
+        lineHeight: "1.25",
       },
       3: {
-        '@bp2': { lineHeight: '1.5' },
-        color: '$typefaceTertiary',
-        lineHeight: '1.25',
+        "@bp2": { lineHeight: "1.5" },
+        color: "$typefaceTertiary",
+        lineHeight: "1.25",
       },
       4: {
-        '@bp2': { lineHeight: '1.5' },
-        color: '$typefaceTertiary',
-        lineHeight: '1.25',
+        "@bp2": { lineHeight: "1.5" },
+        color: "$typefaceTertiary",
+        lineHeight: "1.25",
       },
       5: {
-        '@bp2': { lineHeight: '1.5' },
-        color: '$typefaceTertiary',
-        lineHeight: '1.25',
+        "@bp2": { lineHeight: "1.5" },
+        color: "$typefaceTertiary",
+        lineHeight: "1.25",
       },
       6: {
-        '@bp2': { lineHeight: '1.5' },
-        color: '$typefaceTertiary',
-        lineHeight: '1.25',
+        "@bp2": { lineHeight: "1.5" },
+        color: "$typefaceTertiary",
+        lineHeight: "1.25",
       },
-    }
+    };
 
     // // This is the mapping of Paragraph Variants to Text WeightVariants
     // const textWeight: Record<ParagraphWeightVariants, TextWeightVariants['weight']> = {
@@ -87,10 +85,10 @@ const Paragraph = forwardRef<ElementRef<typeof DEFAULT_TAG>, ParagraphProps>(
         size={textSize[size]}
         weight={weight}
       />
-    )
+    );
   },
-)
+);
 
-Paragraph.displayName = 'Paragraph'
+Paragraph.displayName = "Paragraph";
 
-export { Paragraph }
+export { Paragraph };

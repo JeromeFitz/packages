@@ -18,15 +18,15 @@ Since `node@22.6.0` you can call [`.ts` directly now](https://github.com/lint-st
 With `pnpm` you can do that via the `pnpm-workspace.yaml`:
 
 ```yaml
-nodeOptions: '--experimental-strip-types --disable-warning=ExperimentalWarning'
+nodeOptions: "--experimental-strip-types --disable-warning=ExperimentalWarning"
 ```
 
 ## lint-staged.config
 
 ```ts
-import config from '@jeromefitz/lint-staged'
+import config from "@jeromefitz/lint-staged";
 
-export default config
+export default config;
 ```
 
 ## What It Do

@@ -7,5 +7,5 @@ export {
   CardMeta,
   CardTitle,
   css_card,
-} from './Show'
-export { CardOuter, CardSpotify, ImageBlur } from './Spotify'
+} from "./Show";
+export { CardOuter, CardSpotify, ImageBlur } from "./Spotify";

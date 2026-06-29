@@ -1,1 +1,1 @@
-export { Blockquote } from './Blockquote'
+export { Blockquote } from "./Blockquote";

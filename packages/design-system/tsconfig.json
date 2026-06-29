@@ -40,11 +40,5 @@
   },
   "exclude": ["node_modules", "tests/*.test.ts"],
   "extends": "@jeromefitz/tsconfig/src/next.json",
-  "include": [
-    ".storybook/*.ts",
-    ".storybook/*.tsx",
-    "src",
-    "index.d.ts",
-    "next-env.d.ts"
-  ]
+  "include": [".storybook/*.ts", ".storybook/*.tsx", "src", "index.d.ts", "next-env.d.ts"]
 }

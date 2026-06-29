@@ -1,8 +1,8 @@
-import type { Meta, StoryFn } from '@storybook/react'
+import type { Meta, StoryFn } from "@storybook/react";
 
-import { Announce } from './Announce'
+import { Announce } from "./Announce";
 
-const dummyContent = 'Hello'
+const dummyContent = "Hello";
 
 export default {
   argTypes: {
@@ -20,16 +20,16 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'MDX Content is TBD',
+        component: "MDX Content is TBD",
       },
     },
   },
-  title: 'Announce',
-} as Meta<typeof Announce>
+  title: "Announce",
+} as Meta<typeof Announce>;
 
 const Template: StoryFn<typeof Announce> = ({ children, ...args }) => (
   <Announce {...args}>{children}</Announce>
-)
+);
 
 export const Default = {
   args: {
@@ -37,4 +37,4 @@ export const Default = {
   },
 
   render: Template,
-}
+};

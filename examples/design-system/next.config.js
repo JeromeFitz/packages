@@ -7,10 +7,10 @@ const nextConfig = {
   },
   experimental: {
     appDir: false,
-    transpilePackages: ['@jeromefitz/design-system'],
+    transpilePackages: ["@jeromefitz/design-system"],
   },
   swcMinify: true,
-}
+};
 
 /**
  * @note
@@ -18,4 +18,4 @@ const nextConfig = {
  */
 // const plugins = []
 // module.exports = plugins.reduce((config, plugin) => plugin(config), nextConfig)
-module.exports = nextConfig
+module.exports = nextConfig;

@@ -36,59 +36,59 @@ pnpm add @jeromefitz/eslint-config --save-dev
 ### Base
 
 ```ts
-import { configBase } from '@jeromefitz/eslint-config/base.js'
+import { configBase } from "@jeromefitz/eslint-config/base.js";
 
 // ...
 
-const config = [...configBase]
+const config = [...configBase];
 ```
 
 ### Jest
 
 ```js
-import { configJest } from '@jeromefitz/eslint-config/jest.js'
+import { configJest } from "@jeromefitz/eslint-config/jest.js";
 
 // ...
 
-const config = [...configJest]
+const config = [...configJest];
 ```
 
 ### Next
 
 ```js
-import { configNext } from '@jeromefitz/eslint-config/next.js'
+import { configNext } from "@jeromefitz/eslint-config/next.js";
 
 // ...
 
-const config = [...configNext]
+const config = [...configNext];
 ```
 
 ### React
 
 ```js
-import { configReact } from '@jeromefitz/eslint-config/react.js'
+import { configReact } from "@jeromefitz/eslint-config/react.js";
 
 // ...
 
-const config = [...configReact]
+const config = [...configReact];
 ```
 
 ### Tailwind
 
 ```js
-import { configTailwind } from '@jeromefitz/eslint-config/tailwind.js'
+import { configTailwind } from "@jeromefitz/eslint-config/tailwind.js";
 
 // ...
 
-const config = [...configTailwind]
+const config = [...configTailwind];
 ```
 
 ### Typescript
 
 ```js
-import { configTypescript } from '@jeromefitz/eslint-config/typescript.js'
+import { configTypescript } from "@jeromefitz/eslint-config/typescript.js";
 
 // ...
 
-const config = [...configTypescript]
+const config = [...configTypescript];
 ```

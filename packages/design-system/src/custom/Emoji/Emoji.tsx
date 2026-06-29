@@ -1,13 +1,13 @@
-import { find as findEmoji } from 'node-emoji'
+import { find as findEmoji } from "node-emoji";
 
-import { styled } from '../../lib/stitches.config'
+import { styled } from "../../lib/stitches.config";
 
 // import { Box } from '../../components'
 
-const Box = styled('div', {
+const Box = styled("div", {
   // @reset
-  boxSizing: 'border-box',
-})
+  boxSizing: "border-box",
+});
 
 const EmojiHtml = ({ emoji, label, margin }) => {
   return (
@@ -16,14 +16,14 @@ const EmojiHtml = ({ emoji, label, margin }) => {
       as="span"
       // @hack(emoji) this breaks the underline on links
       css={{
-        fontStyle: 'normal',
-        mr: margin ? '$1' : '0',
+        fontStyle: "normal",
+        mr: margin ? "$1" : "0",
       }}
       role="img"
       style={{
-        WebkitBackgroundClip: 'text',
+        WebkitBackgroundClip: "text",
         // @note(WebkitTextFillColor) any color will break out of transparency
-        WebkitTextFillColor: 'inherit',
+        WebkitTextFillColor: "inherit",
       }}
     >
       {emoji}
@@ -31,22 +31,20 @@ const EmojiHtml = ({ emoji, label, margin }) => {
       {` `}
       {` `}
     </Box>
-  )
-}
+  );
+};
 
 const Emoji = ({ character, margin = false }) => {
-  const emojiFound = findEmoji(character)
+  const emojiFound = findEmoji(character);
 
   if (emojiFound === undefined) {
-    return (
-      <EmojiHtml emoji={character} label={'emoji unsupported'} margin={margin} />
-    )
+    return <EmojiHtml emoji={character} label={"emoji unsupported"} margin={margin} />;
   }
 
-  const { emoji, key } = emojiFound
-  const label = `emoji ${key.replace(/_/gi, ' ')}`
+  const { emoji, key } = emojiFound;
+  const label = `emoji ${key.replace(/_/gi, " ")}`;
 
-  return <EmojiHtml emoji={emoji} label={label} margin={margin} />
-}
+  return <EmojiHtml emoji={emoji} label={label} margin={margin} />;
+};
 
-export { Emoji }
+export { Emoji };

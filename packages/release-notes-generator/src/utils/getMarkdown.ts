@@ -1,6 +1,5 @@
-import type { MarkdownContext, RenderMeta, TransformedCommit } from '../types'
-
-import { commit, contributor, footer, header } from '../templates/index'
+import { commit, contributor, footer, header } from "../templates/index";
+import type { MarkdownContext, RenderMeta, TransformedCommit } from "../types";
 
 const getMarkdown = async (
   context: MarkdownContext,
@@ -8,20 +7,20 @@ const getMarkdown = async (
 ): Promise<string> => {
   const repositoryUrl = context.repository
     ? `${context.host}/${context.owner}/${context.repository}`
-    : ''
+    : "";
 
-  const meta: RenderMeta = { repositoryUrl }
+  const meta: RenderMeta = { repositoryUrl };
 
-  let markdown = header(context, commits, meta)
-  markdown += '\n'
-  markdown += commit(context, commits, meta)
-  markdown += '\n'
-  markdown += await contributor(context, commits, meta)
-  markdown += '\n'
-  markdown += footer(context, commits, meta)
-  markdown += '\n'
+  let markdown = header(context, commits, meta);
+  markdown += "\n";
+  markdown += commit(context, commits, meta);
+  markdown += "\n";
+  markdown += await contributor(context, commits, meta);
+  markdown += "\n";
+  markdown += footer(context, commits, meta);
+  markdown += "\n";
 
-  return markdown
-}
+  return markdown;
+};
 
-export { getMarkdown }
+export { getMarkdown };

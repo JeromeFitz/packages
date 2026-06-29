@@ -1,11 +1,11 @@
-import type { PluginSpec } from 'semantic-release'
+import type { PluginSpec } from "semantic-release";
 
-import type { GithubPluginOptions } from './github.types'
+import type { GithubPluginOptions } from "./github.types";
 
 const github = (options: GithubPluginOptions = {}): PluginSpec => {
-  const { githubAssets, ...config } = options
+  const { githubAssets, ...config } = options;
   return [
-    '@semantic-release/github',
+    "@semantic-release/github",
     {
       addReleases: false,
       assets: githubAssets,
@@ -14,7 +14,7 @@ const github = (options: GithubPluginOptions = {}): PluginSpec => {
       successComment: false,
       ...config,
     },
-  ]
-}
+  ];
+};
 
-export { github }
+export { github };

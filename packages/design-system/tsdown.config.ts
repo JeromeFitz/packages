@@ -1,9 +1,8 @@
-import type { Options } from 'tsdown'
+import type { Options } from "tsdown";
+import { defineConfig } from "tsdown";
 
-import { defineConfig } from 'tsdown'
-
-import { config as _config } from '../../tsdown.config.ts'
-import pkg from './package.json'
+import { config as _config } from "../../tsdown.config.ts";
+import pkg from "./package.json";
 
 /**
  * @note
@@ -20,11 +19,11 @@ import pkg from './package.json'
  *
  */
 const entry = [
-  'src/index.ts',
-  'src/components/**/index.ts',
-  'src/custom/**/index.ts',
-  'src/lib/stitches.config.ts',
-  'src/lib/globalStyles.ts',
+  "src/index.ts",
+  "src/components/**/index.ts",
+  "src/custom/**/index.ts",
+  "src/lib/stitches.config.ts",
+  "src/lib/globalStyles.ts",
   // 'src/components/Card/Show.tsx',
   // 'src/components/Hero/HeroImage.tsx',
   // 'src/custom/Emoji/index.ts',
@@ -36,7 +35,7 @@ const entry = [
   // //
   // 'src/components/**',
   // '!src/components/**/*.md',
-]
+];
 
 /**
  * @todo(tsup) tsdown does this automatically we can remove
@@ -45,9 +44,9 @@ const external = [
   ...Object.keys(pkg.dependencies || {}),
   ...Object.keys(pkg.devDependencies || {}),
   ...Object.keys(pkg.peerDependencies || {}),
-]
+];
 
-const inject = ['./react-shim.js']
+const inject = ["./react-shim.js"];
 
 const config: Options = {
   ..._config,
@@ -55,9 +54,9 @@ const config: Options = {
   external,
   inject,
   minify: true,
-  tsconfig: 'tsconfig.json',
-}
+  tsconfig: "tsconfig.json",
+};
 
 export default defineConfig({
   ...config,
-})
+});

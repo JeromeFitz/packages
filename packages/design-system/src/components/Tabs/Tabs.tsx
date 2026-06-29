@@ -1,14 +1,12 @@
 /**
  * https://www.radix-ui.com/primitives/docs/components/tabs
  */
-import type { ElementRef } from 'react'
+import type { ElementRef } from "react";
+import { forwardRef } from "react";
 
-import type { TabsListProps } from './Tabs.types'
-
-import { forwardRef } from 'react'
-
-import { Separator } from '../index'
-import { StyledTabsList } from './Tabs.styles'
+import { Separator } from "../index";
+import { StyledTabsList } from "./Tabs.styles";
+import type { TabsListProps } from "./Tabs.types";
 
 const TabsList = forwardRef<ElementRef<typeof StyledTabsList>, TabsListProps>(
   (props, forwardedRef) => (
@@ -17,7 +15,7 @@ const TabsList = forwardRef<ElementRef<typeof StyledTabsList>, TabsListProps>(
       <Separator />
     </>
   ),
-)
-TabsList.displayName = 'TabsList'
+);
+TabsList.displayName = "TabsList";
 
-export { TabsList }
+export { TabsList };

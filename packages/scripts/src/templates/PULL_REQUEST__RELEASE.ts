@@ -1,4 +1,4 @@
-import { space } from '../utils/getChars'
+import { space } from "../utils/getChars";
 
 const PULL_REQUEST = {
   gitflow: `### 🔀️ ${space} **Gitflow Automation:** \`{version} => {base}\`
@@ -13,6 +13,6 @@ const PULL_REQUEST = {
 
   📝️ **Note:** _This PR was automatically generated._ :octocat:
   `,
-}
+};
 
-export default PULL_REQUEST
+export default PULL_REQUEST;

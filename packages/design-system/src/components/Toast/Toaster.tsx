@@ -1,18 +1,11 @@
-import type { IToast, IToastVariant } from './Toast.types.ts'
+import { forwardRef, useImperativeHandle, useState } from "react";
 
-import { forwardRef, useImperativeHandle, useState } from 'react'
-
-import { Button, Icon } from '../index.ts'
-import {
-  Toast,
-  ToastAction,
-  ToastClose,
-  ToastDescription,
-  ToastTitle,
-} from './Toast.tsx'
+import { Button, Icon } from "../index.ts";
+import { Toast, ToastAction, ToastClose, ToastDescription, ToastTitle } from "./Toast.tsx";
+import type { IToast, IToastVariant } from "./Toast.types.ts";
 
 const Toaster = forwardRef((props, forwardedRef) => {
-  const [toasts, toastsSet] = useState<IToast[]>([])
+  const [toasts, toastsSet] = useState<IToast[]>([]);
 
   const handleToast = (
     // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
@@ -20,30 +13,16 @@ const Toaster = forwardRef((props, forwardedRef) => {
     toastVariant: IToastVariant,
   ) => {
     // @todo(types) + defaults
-    let action,
-      actionComponent,
-      actionText,
-      close,
-      closeComponent,
-      description,
-      title
+    let action, actionComponent, actionText, close, closeComponent, description, title;
 
-    let variant = toastVariant
+    let variant = toastVariant;
 
-    if (typeof toast === 'string') {
-      description = toast
+    if (typeof toast === "string") {
+      description = toast;
     } else {
       // eslint-disable-next-line @typescript-eslint/no-extra-semi
-      ;({
-        action,
-        actionComponent,
-        actionText,
-        close,
-        closeComponent,
-        description,
-        title,
-        variant,
-      } = toast)
+      ({ action, actionComponent, actionText, close, closeComponent, description, title, variant } =
+        toast);
     }
 
     toastsSet((prev) => [
@@ -59,22 +38,22 @@ const Toaster = forwardRef((props, forwardedRef) => {
         title,
         variant,
       },
-    ])
-  }
+    ]);
+  };
 
   const removeToastByKey = (key: string) => {
-    toastsSet((prev) => prev.filter((p) => p.key !== key))
-  }
+    toastsSet((prev) => prev.filter((p) => p.key !== key));
+  };
 
   // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
   const createToast = (toast: Partial<IToast> | string) => {
-    handleToast(toast, 'default')
-  }
+    handleToast(toast, "default");
+  };
 
   useImperativeHandle(forwardedRef, () => ({
     createToast,
     removeToastByKey,
-  }))
+  }));
 
   return (
     <>
@@ -96,13 +75,13 @@ const Toaster = forwardRef((props, forwardedRef) => {
           variant,
           ...toastProps
         }) => {
-          const actionVisible = !!action && !!actionText
-          const closeVisible = !actionVisible && !!close
+          const actionVisible = !!action && !!actionText;
+          const closeVisible = !actionVisible && !!close;
           return (
             <Toast
               key={key}
               onOpenChange={() => {
-                removeToastByKey(key)
+                removeToastByKey(key);
               }}
               // eslint-disable-next-line @typescript-eslint/ban-ts-comment
               // @ts-ignore
@@ -132,12 +111,12 @@ const Toaster = forwardRef((props, forwardedRef) => {
                 </ToastClose>
               )}
             </Toast>
-          )
+          );
         },
       )}
     </>
-  )
-})
-Toaster.displayName = 'Toaster'
+  );
+});
+Toaster.displayName = "Toaster";
 
-export { Toaster }
+export { Toaster };

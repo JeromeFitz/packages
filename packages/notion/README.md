@@ -25,11 +25,11 @@ You will need a few values set up in Notion and identified in a configuration fi
 This API extends `@notionhq/client` so you will extend this one instead.
 
 ```tsx
-import { Client } from '@jeromefitz/notion'
+import { Client } from "@jeromefitz/notion";
 
-import { notionConfig as config } from '~config/websites'
+import { notionConfig as config } from "~config/websites";
 
-const notion = new Client({ auth: process.env.NOTION_API_KEY, config })
+const notion = new Client({ auth: process.env.NOTION_API_KEY, config });
 ```
 
 You need to pass `config` which informs the package of all the wonderful Notion stuff you have. Will fill this out as I go (I hope haha).
@@ -77,16 +77,16 @@ Custom setup to get `pathVariables` from `next`:
 
 ```tsx
 export const getStaticProps = async ({ preview = false, ...props }) => {
-  const { catchAll } = props.params
+  const { catchAll } = props.params;
   // @todo(next)
-  const clear = false
-  const pathVariables = notion.custom.getPathVariables({ catchAll })
+  const clear = false;
+  const pathVariables = notion.custom.getPathVariables({ catchAll });
   /**
    * @cache
    * - pages = TRUE
    * - pages/api = FALSE
    */
-  const cache = true
+  const cache = true;
   const data = await getDataReturn({
     data: await getCatchAll({
       cache,
@@ -96,16 +96,16 @@ export const getStaticProps = async ({ preview = false, ...props }) => {
       preview,
     }),
     pathVariables,
-  })
+  });
   return {
     props: { preview, ...data, ...pathVariables, ...props },
     revalidate,
-  }
-}
+  };
+};
 
 export const getStaticPaths = () => {
-  return getStaticPathsCatchAll()
-}
+  return getStaticPathsCatchAll();
+};
 ```
 
 **`getCatchAll.ts`**:

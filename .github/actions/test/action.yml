@@ -1,20 +1,20 @@
 # name: 'Test'
-name: '🧪  '
-description: 'Localized Test'
-author: 'JeromeFitz'
+name: "🧪  "
+description: "Localized Test"
+author: "JeromeFitz"
 
 inputs:
   TURBO_TEAM:
-    description: 'ID for Turbo'
+    description: "ID for Turbo"
     required: true
   TURBO_TOKEN:
-    description: 'ID for Turbo'
+    description: "ID for Turbo"
     required: true
 
 runs:
-  using: 'composite'
+  using: "composite"
   steps:
-    - name: '🧪  Test'
+    - name: "🧪  Test"
       id: test
       shell: bash
       env:

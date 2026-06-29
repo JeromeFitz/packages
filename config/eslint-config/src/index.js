@@ -1,1 +1,1 @@
-export { configBase } from './base.js'
+export { configBase } from "./base.js";

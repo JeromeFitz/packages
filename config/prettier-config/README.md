@@ -23,7 +23,7 @@ This package is now a wrapper for `prettier-plugin-pkg` basically.
 ## Usage
 
 ```ts
-import config from '@jeromefitz/prettier-config'
+import config from "@jeromefitz/prettier-config";
 
-export default config
+export default config;
 ```

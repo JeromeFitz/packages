@@ -1,4 +1,4 @@
-import type { IReleaseRule } from '../types/index'
+import type { IReleaseRule } from "../types/index";
 
 /**
  * @note
@@ -14,35 +14,35 @@ import type { IReleaseRule } from '../types/index'
 
 const types: IReleaseRule = {
   chore: {
-    branch: 'chore',
-    code: ':computer_disk:',
-    commit: 'chore',
-    description: 'Changes that don’t modify src or test files',
-    emoji: '💽️',
-    entity: '&#x1f4bd;',
-    name: 'computer-disk',
+    branch: "chore",
+    code: ":computer_disk:",
+    commit: "chore",
+    description: "Changes that don’t modify src or test files",
+    emoji: "💽️",
+    entity: "&#x1f4bd;",
+    name: "computer-disk",
     semver: null,
   },
   rollforward: {
     branch: null,
-    code: ':fast_forward:',
-    commit: 'rollforward',
-    description: 'Create rollforward version.',
-    emoji: '⏩️',
-    entity: '&#23E9;',
-    name: 'rollforward',
+    code: ":fast_forward:",
+    commit: "rollforward",
+    description: "Create rollforward version.",
+    emoji: "⏩️",
+    entity: "&#23E9;",
+    name: "rollforward",
     semver: null,
   },
-  'run-build': {
+  "run-build": {
     branch: null,
-    code: ':rocket:',
-    commit: 'run-build',
-    description: 'Custom type for CI/CD to hook into run build override.',
-    emoji: '🚀️',
-    entity: '&#1F680;',
-    name: 'run-build',
-    semver: 'patch',
+    code: ":rocket:",
+    commit: "run-build",
+    description: "Custom type for CI/CD to hook into run build override.",
+    emoji: "🚀️",
+    entity: "&#1F680;",
+    name: "run-build",
+    semver: "patch",
   },
-}
+};
 
-export default types
+export default types;

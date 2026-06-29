@@ -1,9 +1,9 @@
-import { styled } from '../../lib/stitches.config'
+import { styled } from "../../lib/stitches.config";
 
-const Image = styled('img', {
-  maxWidth: '100%',
+const Image = styled("img", {
+  maxWidth: "100%",
   // @reset
-  verticalAlign: 'middle',
-})
+  verticalAlign: "middle",
+});
 
-export { Image }
+export { Image };

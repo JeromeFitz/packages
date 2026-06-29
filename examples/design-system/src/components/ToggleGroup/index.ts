@@ -1,1 +1,1 @@
-export { ToggleGroup } from './ToggleGroup'
+export { ToggleGroup } from "./ToggleGroup";

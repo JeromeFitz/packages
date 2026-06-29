@@ -1,56 +1,56 @@
-import { styled } from '../../lib/stitches.config'
+import { styled } from "../../lib/stitches.config";
 
-const Alert = styled('div', {
-  '&::after': {
-    boxSizing: 'border-box',
+const Alert = styled("div", {
+  "&::after": {
+    boxSizing: "border-box",
   },
-  '&::before': {
-    boxSizing: 'border-box',
+  "&::before": {
+    boxSizing: "border-box",
   },
-  border: '2px solid',
+  border: "2px solid",
 
-  borderRadius: '$2',
+  borderRadius: "$2",
   // @reset
-  boxSizing: 'border-box',
+  boxSizing: "border-box",
 
-  color: '$hiContrast',
+  color: "$hiContrast",
 
   defaultVariants: {
-    variant: 'loContrast',
+    variant: "loContrast",
   },
   variants: {
     variant: {
       brand: {
-        backgroundColor: '$brand3',
-        borderColor: '$brand6',
-        color: '$brand11',
+        backgroundColor: "$brand3",
+        borderColor: "$brand6",
+        color: "$brand11",
       },
       error: {
-        backgroundColor: '$errorBackground',
-        borderColor: '$errorBorder',
-        color: '$errorText',
+        backgroundColor: "$errorBackground",
+        borderColor: "$errorBorder",
+        color: "$errorText",
       },
       info: {
-        backgroundColor: '$infoBackground',
-        borderColor: '$infoBorder',
-        color: '$infoText',
+        backgroundColor: "$infoBackground",
+        borderColor: "$infoBorder",
+        color: "$infoText",
       },
       loContrast: {
         // backgroundColor: '$loContrast',
-        borderColor: '$hiContrast',
+        borderColor: "$hiContrast",
       },
       success: {
-        backgroundColor: '$successBackground',
-        borderColor: '$successBorder',
-        color: '$successText',
+        backgroundColor: "$successBackground",
+        borderColor: "$successBorder",
+        color: "$successText",
       },
       warning: {
-        backgroundColor: '$warningBackground',
-        borderColor: '$warningBorder',
-        color: '$warningText',
+        backgroundColor: "$warningBackground",
+        borderColor: "$warningBorder",
+        color: "$warningText",
       },
     },
   },
-})
+});
 
-export { Alert }
+export { Alert };

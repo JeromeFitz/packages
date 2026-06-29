@@ -7,4 +7,4 @@ export {
   MenuRadioGroup,
   MenuRadioItem,
   MenuSeparator,
-} from './Menu'
+} from "./Menu";

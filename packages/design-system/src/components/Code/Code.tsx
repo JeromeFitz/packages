@@ -1,12 +1,12 @@
-import { styled } from '../../lib/stitches.config'
+import { styled } from "../../lib/stitches.config";
 
-const Code = styled('code', {
+const Code = styled("code", {
   defaultVariants: {
     // variant: 'gray',
   },
-  fontFamily: '$mono',
-  fontSize: 'max(12px, 85%)',
-  padding: '0 3px 2px 3px',
+  fontFamily: "$mono",
+  fontSize: "max(12px, 85%)",
+  padding: "0 3px 2px 3px",
 
   variants: {
     variant: {
@@ -16,7 +16,7 @@ const Code = styled('code', {
       // },
     },
   },
-  whiteSpace: 'nowrap',
-})
+  whiteSpace: "nowrap",
+});
 
-export { Code }
+export { Code };

@@ -1,5 +1,5 @@
-import config from './base'
+import config from "./base";
 
 export default {
   ...config,
-}
+};

@@ -1,7 +1,7 @@
 interface NPMPluginOptions {
-  npmPublish?: boolean
-  pkgRoot?: string
-  tarballDir?: false | string
+  npmPublish?: boolean;
+  pkgRoot?: string;
+  tarballDir?: false | string;
 }
 
-export type { NPMPluginOptions }
+export type { NPMPluginOptions };

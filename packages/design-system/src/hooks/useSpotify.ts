@@ -1,29 +1,29 @@
-import useSWR from 'swr'
+import useSWR from "swr";
 
-type TimeRange = 'long_term' | 'medium_term' | 'short_term'
+type TimeRange = "long_term" | "medium_term" | "short_term";
 interface InitialStoreProps {
-  limit: number
-  time_range: TimeRange
+  limit: number;
+  time_range: TimeRange;
 }
 
-const key = 'spotify'
+const key = "spotify";
 const initialStore: InitialStoreProps = {
   limit: 10,
-  time_range: 'short_term',
-}
+  time_range: "short_term",
+};
 
 function useSpotify() {
   const { data, error, mutate } = useSWR(key, {
     fallbackData: initialStore,
-  })
+  });
 
   const setSpotifyLimit = async (data: any, value: number) => {
-    await mutate({ ...data, limit: value })
-  }
+    await mutate({ ...data, limit: value });
+  };
 
   const setSpotifyTimeRange = async (data: any, value: TimeRange) => {
-    await mutate({ ...data, time_range: value })
-  }
+    await mutate({ ...data, time_range: value });
+  };
 
   return {
     data,
@@ -32,7 +32,7 @@ function useSpotify() {
     key,
     setSpotifyLimit,
     setSpotifyTimeRange,
-  }
+  };
 }
 
-export default useSpotify
+export default useSpotify;

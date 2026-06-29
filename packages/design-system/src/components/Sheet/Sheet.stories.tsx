@@ -1,9 +1,8 @@
-import type { Meta, StoryFn } from '@storybook/react'
+import type { Meta, StoryFn } from "@storybook/react";
+import { useState } from "react";
 
-import { useState } from 'react'
-
-import { Button, Text } from '../index'
-import { Sheet, SheetContent, SheetTrigger } from './Sheet'
+import { Button, Text } from "../index";
+import { Sheet, SheetContent, SheetTrigger } from "./Sheet";
 
 export default {
   argTypes: {
@@ -14,30 +13,30 @@ export default {
       control: false,
     },
     side: {
-      control: { type: 'select' },
-      options: ['top', 'right', 'bottom', 'left'],
+      control: { type: "select" },
+      options: ["top", "right", "bottom", "left"],
     },
     state: {
-      control: { type: 'radio' },
-      options: [null, 'active', 'waiting'],
+      control: { type: "radio" },
+      options: [null, "active", "waiting"],
     },
   },
   component: Sheet,
   parameters: {
     docs: {
       description: {
-        component: 'MDX Content is TBD',
+        component: "MDX Content is TBD",
       },
     },
   },
-  title: 'Sheet',
-} as Meta<typeof Sheet>
+  title: "Sheet",
+} as Meta<typeof Sheet>;
 
 const Template: StoryFn<typeof Sheet> = ({ ...args }) => {
-  const [isSheetOpen, isSheetOpenSet] = useState(false)
+  const [isSheetOpen, isSheetOpenSet] = useState(false);
   const handleIsSheetOpen = (newMenuState: boolean) => {
-    isSheetOpenSet(newMenuState)
-  }
+    isSheetOpenSet(newMenuState);
+  };
   return (
     <Sheet onOpenChange={handleIsSheetOpen} open={isSheetOpen}>
       <SheetTrigger asChild>
@@ -52,10 +51,10 @@ const Template: StoryFn<typeof Sheet> = ({ ...args }) => {
         <Text>Text Goes Here</Text>
       </SheetContent>
     </Sheet>
-  )
-}
+  );
+};
 
 export const Default = {
   args: {},
   render: Template,
-}
+};

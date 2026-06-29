@@ -1,6 +1,6 @@
 <!-- Jest -->
 <script>
-  window.global = window
+  window.global = window;
 </script>
 <!-- Typeface -->
 <link
@@ -13,10 +13,10 @@
 <style>
   @font-face {
     font-display: swap;
-    font-family: 'Inter';
+    font-family: "Inter";
     font-style: normal;
     font-weight: 100 900;
-    src: url('/static/fonts/inter/inter-var.woff2') format('woff2');
+    src: url("/static/fonts/inter/inter-var.woff2") format("woff2");
   }
   :root {
     --fonts-mono: var(--fonts-fallback-mono) !important;
@@ -24,31 +24,30 @@
     --fonts-serif: var(--fonts-fallback-serif) !important;
   }
   * {
-    box-sizing: 'border-box';
+    box-sizing: "border-box";
   }
   *:before {
-    box-sizing: 'border-box';
+    box-sizing: "border-box";
   }
   *:after {
-    box-sizing: 'border-box';
+    box-sizing: "border-box";
   }
 
   body {
     background-color: var(--colors-body);
-    font-feature-settings:
-      'calt', 'zero', 'ss03', 'cv01', 'cv05', 'cv08', 'cv09', 'cv10', 'salt';
+    font-feature-settings: "calt", "zero", "ss03", "cv01", "cv05", "cv08", "cv09", "cv10", "salt";
     font-family: var(--fonts-sans);
     margin: 0;
-    -webkit-text-size-adjust: '100%';
+    -webkit-text-size-adjust: "100%";
   }
 
   body.loading * {
-    transition: 'none !important';
+    transition: "none !important";
   }
 
   svg {
-    display: 'block';
-    vertical-align: 'middle';
+    display: "block";
+    vertical-align: "middle";
   }
 
   pre,
@@ -58,12 +57,12 @@
   }
 
   #__next {
-    position: 'relative';
+    position: "relative";
     z-index: 0;
   }
 
-  .light-theme [data-hide='dark'],
-  .dark-theme [data-hide='light'] {
-    display: 'none';
+  .light-theme [data-hide="dark"],
+  .dark-theme [data-hide="light"] {
+    display: "none";
   }
 </style>

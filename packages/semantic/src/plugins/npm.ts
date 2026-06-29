@@ -1,18 +1,18 @@
-import type { PluginSpec } from 'semantic-release'
+import type { PluginSpec } from "semantic-release";
 
-import type { NPMPluginOptions } from './npm.types'
+import type { NPMPluginOptions } from "./npm.types";
 
 const npm = (options?: NPMPluginOptions): PluginSpec => {
   if (
     !options ||
-    (typeof options.pkgRoot !== 'string' &&
-      typeof options.npmPublish !== 'boolean' &&
-      typeof options.tarballDir === 'undefined')
+    (typeof options.pkgRoot !== "string" &&
+      typeof options.npmPublish !== "boolean" &&
+      typeof options.tarballDir === "undefined")
   )
-    return '@semantic-release/npm'
+    return "@semantic-release/npm";
 
   return [
-    '@semantic-release/npm',
+    "@semantic-release/npm",
     {
       // npmPublish: true,
       // tarballDir: 'release',
@@ -20,7 +20,7 @@ const npm = (options?: NPMPluginOptions): PluginSpec => {
       // @ref https://prateeksurana.me/blog/why-using-object-spread-with-reduce-bad-idea/
       ...options,
     },
-  ]
-}
+  ];
+};
 
-export { npm }
+export { npm };

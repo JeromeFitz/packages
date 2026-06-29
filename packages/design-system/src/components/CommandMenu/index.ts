@@ -1,4 +1,4 @@
-export { CommandMenu, CommandMenuItem } from './CommandMenu'
+export { CommandMenu, CommandMenuItem } from "./CommandMenu";
 export {
   Command,
   CommandBadge,
@@ -11,4 +11,4 @@ export {
   CommandSeparator,
   CommandShortCuts,
   CommandTopShine,
-} from './CommandMenu.styles'
+} from "./CommandMenu.styles";

@@ -49,17 +49,17 @@ And then the rest of the traditional configuration values for `semantic-release`
 You can look at this monorepo as it re-uses a lot of code ethroughout via `release.config`
 
 ```js
-const { getConfig } = require('@jeromefitz/semantic')
+const { getConfig } = require("@jeromefitz/semantic");
 
-const { name } = require('./package.json')
+const { name } = require("./package.json");
 
 const configPassed = {
   tagFormat: `${name}@\${version}`,
-}
+};
 
-const config = getConfig(configPassed)
+const config = getConfig(configPassed);
 
-module.exports = config
+module.exports = config;
 ```
 
 ## Scripts

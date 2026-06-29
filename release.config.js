@@ -1,11 +1,11 @@
-const branches = [{ name: 'main' }, { name: 'feat/oxc', prerelease: 'canary' }]
+const branches = [{ name: "main" }, { name: "feat/oxc", prerelease: "canary" }];
 
 const config = {
   branches,
   contributorsProhibitList: {
     email: [],
-    login: ['BotJerome', 'JeromeFitz'],
+    login: ["BotJerome", "JeromeFitz"],
   },
-}
+};
 
-export { config }
+export { config };

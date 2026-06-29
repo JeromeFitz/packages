@@ -6,5 +6,5 @@ export {
   SheetPortal,
   SheetTitle,
   SheetTrigger,
-} from './Sheet'
-export { StyledCloseButton, StyledContent, StyledOverlay } from './Sheet.styles'
+} from "./Sheet";
+export { StyledCloseButton, StyledContent, StyledOverlay } from "./Sheet.styles";

@@ -5,4 +5,4 @@ export {
   TooltipPortal,
   TooltipProvider,
   TooltipTrigger,
-} from './Tooltip'
+} from "./Tooltip";

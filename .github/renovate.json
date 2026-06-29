@@ -75,11 +75,7 @@
     },
     {
       "assignees": ["JeromeFitz"],
-      "labels": [
-        "📦 Dependencies",
-        "📦 Dependencies 💥 Breaking 💥",
-        "🛑️ Do Not Merge"
-      ],
+      "labels": ["📦 Dependencies", "📦 Dependencies 💥 Breaking 💥", "🛑️ Do Not Merge"],
       "matchUpdateTypes": ["major"],
       "reviewers": ["JeromeFitz"]
     },

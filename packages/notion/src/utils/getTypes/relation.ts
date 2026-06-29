@@ -1,18 +1,18 @@
-import { map as _map } from 'lodash-es'
+import { map as _map } from "lodash-es";
 
-import getTypes from '../../utils/getTypes/index'
+import getTypes from "../../utils/getTypes/index";
 
 const relation = (data: any) => {
-  if (data.type === 'rollup') {
+  if (data.type === "rollup") {
     return (
-      data.rollup.type === 'array' &&
+      data.rollup.type === "array" &&
       _map(data.rollup.array, (item: any) => {
-        return getTypes[item.type](item)
+        return getTypes[item.type](item);
       })[0]
-    )
+    );
   } else {
-    return _map(data.relation, (relation: any) => relation.id)
+    return _map(data.relation, (relation: any) => relation.id);
   }
-}
+};
 
-export default relation
+export default relation;

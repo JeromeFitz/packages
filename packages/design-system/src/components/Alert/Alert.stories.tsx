@@ -1,9 +1,9 @@
-import type { Meta, StoryFn } from '@storybook/react'
+import type { Meta, StoryFn } from "@storybook/react";
 
-import { Text } from '../index'
-import { Alert } from './Alert'
+import { Text } from "../index";
+import { Alert } from "./Alert";
 
-const dummyContent = <Text css={{ p: '$3' }}>Dummy Content Here</Text>
+const dummyContent = <Text css={{ p: "$3" }}>Dummy Content Here</Text>;
 
 export default {
   argTypes: {
@@ -17,28 +17,28 @@ export default {
       control: false,
     },
     size: {
-      control: { type: 'select' },
-      options: ['1'],
+      control: { type: "select" },
+      options: ["1"],
     },
     variant: {
-      control: { type: 'select' },
-      options: ['loContrast', 'brand', 'error', 'info', 'success', 'warning'],
+      control: { type: "select" },
+      options: ["loContrast", "brand", "error", "info", "success", "warning"],
     },
   },
   component: Alert,
   parameters: {
     docs: {
       description: {
-        component: 'MDX Content is TBD',
+        component: "MDX Content is TBD",
       },
     },
   },
-  title: 'Alert',
-} as Meta<typeof Alert>
+  title: "Alert",
+} as Meta<typeof Alert>;
 
 const Template: StoryFn<typeof Alert> = ({ children, ...args }) => (
   <Alert {...args}>{children}</Alert>
-)
+);
 
 export const Default = {
   args: {
@@ -46,4 +46,4 @@ export const Default = {
   },
 
   render: Template,
-}
+};

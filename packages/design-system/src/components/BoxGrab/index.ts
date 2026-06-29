@@ -1,1 +1,1 @@
-export { BoxGrab } from './BoxGrab'
+export { BoxGrab } from "./BoxGrab";

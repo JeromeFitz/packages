@@ -1,70 +1,70 @@
-import { styled } from '../../lib/stitches.config'
+import { styled } from "../../lib/stitches.config";
 
-const Banner = styled('div', {
-  '@media (prefers-reduced-motion: no-preference)': {
-    transition: 'background-color 0.25s ease-in-out',
+const Banner = styled("div", {
+  "@media (prefers-reduced-motion: no-preference)": {
+    transition: "background-color 0.25s ease-in-out",
   },
-  '&::after': {
-    boxSizing: 'border-box',
+  "&::after": {
+    boxSizing: "border-box",
   },
-  '&::before': {
-    boxSizing: 'border-box',
+  "&::before": {
+    boxSizing: "border-box",
   },
-  '&:hover': { backgroundColor: '$colors$brand4' },
-  alignItems: 'center',
-  backgroundColor: '$colors$brand3',
+  "&:hover": { backgroundColor: "$colors$brand4" },
+  alignItems: "center",
+  backgroundColor: "$colors$brand3",
   // @reset
-  boxSizing: 'border-box',
+  boxSizing: "border-box",
 
   compoundVariants: [
     {
-      border: 'true',
+      border: "true",
       css: {
-        borderColor: '$colors$brand11',
+        borderColor: "$colors$brand11",
       },
-      variant: 'brand',
+      variant: "brand",
     },
     {
-      border: 'true',
+      border: "true",
       css: {
-        borderColor: '$slate6',
+        borderColor: "$slate6",
       },
-      variant: 'loContrast',
+      variant: "loContrast",
     },
   ],
 
   defaultVariants: {
-    size: '1',
+    size: "1",
   },
-  display: 'flex',
+  display: "flex",
 
-  gap: '$3',
-  justifyContent: 'center',
+  gap: "$3",
+  justifyContent: "center",
   variants: {
     border: {
       true: {
-        borderRadius: '$pill',
+        borderRadius: "$pill",
       },
     },
     rounded: {
       true: {
-        borderRadius: '$pill',
+        borderRadius: "$pill",
       },
     },
     size: {
-      '1': {
-        px: '$4',
-        py: '$1',
+      "1": {
+        px: "$4",
+        py: "$1",
       },
     },
     variant: {
       loContrast: {
-        backgroundColor: '$loContrast',
+        backgroundColor: "$loContrast",
         // @todo(design) make a choice here
         // '&:hover': { backgroundColor: '$loContrast' },
       },
     },
   },
-})
+});
 
-export { Banner }
+export { Banner };

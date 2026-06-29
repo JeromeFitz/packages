@@ -1,6 +1,5 @@
-import type { TransformCommit } from './transformer'
-
-import transformer from './transformer'
+import type { TransformCommit } from "./transformer";
+import transformer from "./transformer";
 
 /**
  * @note (semantic)
@@ -17,14 +16,13 @@ import transformer from './transformer'
  */
 
 const writerOpts = {
-  commitGroupsSort: ['order', 'title'],
-  commitsSort: ['scope', 'subject'],
-  groupBy: 'type',
-  noteGroupsSort: ['title'],
-  notesSort: ['title'],
+  commitGroupsSort: ["order", "title"],
+  commitsSort: ["scope", "subject"],
+  groupBy: "type",
+  noteGroupsSort: ["title"],
+  notesSort: ["title"],
   // @todo pass config from changelog here?
-  transform: (commit: TransformCommit, context: unknown) =>
-    transformer(commit, context),
-}
+  transform: (commit: TransformCommit, context: unknown) => transformer(commit, context),
+};
 
-export default writerOpts
+export default writerOpts;

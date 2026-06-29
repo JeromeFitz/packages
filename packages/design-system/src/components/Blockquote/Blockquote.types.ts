@@ -1,7 +1,7 @@
-import type { ReactNode } from 'react'
+import type { ReactNode } from "react";
 
 type BlockquoteProps = {
-  children?: ReactNode
-}
+  children?: ReactNode;
+};
 
-export type { BlockquoteProps }
+export type { BlockquoteProps };

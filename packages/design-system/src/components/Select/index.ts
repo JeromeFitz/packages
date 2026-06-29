@@ -13,4 +13,4 @@ export {
   SelectTrigger,
   SelectValue,
   SelectViewport,
-} from './Select'
+} from "./Select";

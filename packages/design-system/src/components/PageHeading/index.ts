@@ -1,6 +1,1 @@
-export {
-  PageHeading,
-  SkeletonDescription,
-  SkeletonHeading,
-  SkeletonTitle,
-} from './PageHeading'
+export { PageHeading, SkeletonDescription, SkeletonHeading, SkeletonTitle } from "./PageHeading";

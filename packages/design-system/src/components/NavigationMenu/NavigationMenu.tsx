@@ -1,12 +1,10 @@
 /**
  * https://www.radix-ui.com/primitives/docs/components/navigation-menu
  */
-import type { ComponentProps, ElementRef } from 'react'
+import type { ComponentProps, ElementRef } from "react";
+import { forwardRef } from "react";
 
-import type { CSS } from '../../lib/stitches.config'
-
-import { forwardRef } from 'react'
-
+import type { CSS } from "../../lib/stitches.config";
 import {
   NavigationMenuArrow,
   NavigationMenuCaret,
@@ -14,16 +12,16 @@ import {
   NavigationMenuListItemFocus,
   NavigationMenuListItemSelect,
   NavigationMenuTrigger,
-} from './NavigationMenu.styles'
+} from "./NavigationMenu.styles";
 
 /**
  * @core
  */
 // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
 type StyledTriggerWithCaretProps = ComponentProps<typeof NavigationMenuTrigger> & {
-  children?: any
-  css?: CSS
-}
+  children?: any;
+  css?: CSS;
+};
 
 const StyledTriggerWithCaret = forwardRef<
   ElementRef<typeof NavigationMenuTrigger>,
@@ -35,7 +33,7 @@ const StyledTriggerWithCaret = forwardRef<
     {children}
     <NavigationMenuCaret aria-hidden css={css} />
   </NavigationMenuTrigger>
-))
+));
 
 const StyledIndicatorWithArrow = forwardRef((props, forwardedRef) => (
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -43,11 +41,11 @@ const StyledIndicatorWithArrow = forwardRef((props, forwardedRef) => (
   <NavigationMenuIndicator {...props} ref={forwardedRef}>
     <NavigationMenuArrow />
   </NavigationMenuIndicator>
-))
+));
 
 // @core
-const NavigationMenuTriggerWithCaret = StyledTriggerWithCaret
-const NavigationMenuIndicatorWithArrow = StyledIndicatorWithArrow
+const NavigationMenuTriggerWithCaret = StyledTriggerWithCaret;
+const NavigationMenuIndicatorWithArrow = StyledIndicatorWithArrow;
 
 /**
  * @custom
@@ -58,19 +56,14 @@ const Focused = forwardRef((props: any, forwardedRef) => (
     transition={{
       layout: {
         duration: 0.2,
-        ease: 'easeOut',
+        ease: "easeOut",
       },
     }}
     {...props}
   />
-))
+));
 const Selected = forwardRef((props: any, forwardedRef) => (
   <NavigationMenuListItemSelect ref={forwardedRef} {...props} />
-))
+));
 
-export {
-  Focused,
-  NavigationMenuIndicatorWithArrow,
-  NavigationMenuTriggerWithCaret,
-  Selected,
-}
+export { Focused, NavigationMenuIndicatorWithArrow, NavigationMenuTriggerWithCaret, Selected };

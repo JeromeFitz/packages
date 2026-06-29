@@ -1,17 +1,16 @@
-import type { FC } from 'react'
+import type { FC } from "react";
 
-import type { BlockquoteProps } from './Blockquote.types'
-
-import { BlockquoteContent, BlockquoteWrapper } from './Blockquote.styles'
+import { BlockquoteContent, BlockquoteWrapper } from "./Blockquote.styles";
+import type { BlockquoteProps } from "./Blockquote.types";
 
 const Blockquote: FC = ({ children, ...rest }: BlockquoteProps) => {
   return (
     <BlockquoteWrapper {...rest}>
       <BlockquoteContent>{children}</BlockquoteContent>
     </BlockquoteWrapper>
-  )
-}
+  );
+};
 
-Blockquote.displayName = 'Blockquote'
+Blockquote.displayName = "Blockquote";
 
-export { Blockquote }
+export { Blockquote };

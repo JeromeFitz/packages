@@ -1,14 +1,12 @@
 /**
  * https://www.radix-ui.com/primitives/docs/components/checkbox
  */
-import type { ElementRef } from 'react'
+import type { ElementRef } from "react";
+import { forwardRef } from "react";
 
-import type { CheckboxProps } from './Checkbox.types'
-
-import { forwardRef } from 'react'
-
-import { Icon } from '../Icon'
-import { StyledCheckbox, StyledIndicator } from './Checkbox.styles'
+import { Icon } from "../Icon";
+import { StyledCheckbox, StyledIndicator } from "./Checkbox.styles";
+import type { CheckboxProps } from "./Checkbox.types";
 
 const Checkbox = forwardRef<ElementRef<typeof StyledCheckbox>, CheckboxProps>(
   (props, forwardedRef) => (
@@ -18,8 +16,8 @@ const Checkbox = forwardRef<ElementRef<typeof StyledCheckbox>, CheckboxProps>(
       </StyledIndicator>
     </StyledCheckbox>
   ),
-)
+);
 
-Checkbox.displayName = 'Checkbox'
+Checkbox.displayName = "Checkbox";
 
-export { Checkbox }
+export { Checkbox };

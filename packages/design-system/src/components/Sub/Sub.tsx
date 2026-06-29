@@ -1,10 +1,10 @@
-import { styled } from '../../lib/stitches.config'
+import { styled } from "../../lib/stitches.config";
 
-const Sub = styled('sub', {
+const Sub = styled("sub", {
   fontFeatureSettings: '"subs"',
-  fontSize: '100%',
-  lineHeight: '1',
-  verticalAlign: 'baseline',
-})
+  fontSize: "100%",
+  lineHeight: "1",
+  verticalAlign: "baseline",
+});
 
-export { Sub }
+export { Sub };

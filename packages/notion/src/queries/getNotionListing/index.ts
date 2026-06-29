@@ -1,9 +1,8 @@
-import { sortObject } from '@jeromefitz/utils'
+import { sortObject } from "@jeromefitz/utils";
+import { map as _map, omit as _omit } from "lodash-es";
 
-import { map as _map, omit as _omit } from 'lodash-es'
-
-import { PROPERTIES } from '../../constants/index'
-import { dataNormalized } from '../../utils/index'
+import { PROPERTIES } from "../../constants/index";
+import { dataNormalized } from "../../utils/index";
 
 const getNotionListing = async ({
   config,
@@ -13,28 +12,27 @@ const getNotionListing = async ({
   pathVariables,
   routeType,
 }) => {
-  const { NOTION } = config
+  const { NOTION } = config;
 
-  let info: any = {}
+  let info: any = {};
 
-  const page_id = NOTION[routeType.toUpperCase()].page_id__seo
+  const page_id = NOTION[routeType.toUpperCase()].page_id__seo;
   const _info = await getPagesById({
     page_id,
-  })
+  });
   // @refactor(404)
   if (!_info) {
-    return {}
+    return {};
   }
-  if (_info?.object === 'page') {
-    info = _omit(_info, 'properties')
+  if (_info?.object === "page") {
+    info = _omit(_info, "properties");
     info.properties = sortObject(
       dataNormalized({ config, data: _info, pageId: info.id, pathVariables }),
-    )
+    );
   }
 
   const property =
-    NOTION[routeType.toUpperCase()].infoType.notion ??
-    PROPERTIES.datePublished.notion
+    NOTION[routeType.toUpperCase()].infoType.notion ?? PROPERTIES.datePublished.notion;
 
   /**
    * @todo Can we make the date dynamic?
@@ -49,10 +47,10 @@ const getNotionListing = async ({
    */
   const timestamp =
     property === PROPERTIES.datePublished.notion
-      ? new Date('2020-01-01').toISOString()
-      : new Date().toISOString()
+      ? new Date("2020-01-01").toISOString()
+      : new Date().toISOString();
 
-  const content = await getBlocksByIdChildren({ block_id: info.id })
+  const content = await getBlocksByIdChildren({ block_id: info.id });
   const _items: any = await getDatabasesByIdQuery({
     database_id: NOTION[routeType.toUpperCase()].database_id,
     filter: {
@@ -65,29 +63,29 @@ const getNotionListing = async ({
         },
       ],
     },
-  })
-  const results: any[] = []
+  });
+  const results: any[] = [];
   _map(_items.results, (item) => {
-    let itemInit = item
-    itemInit = _omit(itemInit, 'properties')
+    let itemInit = item;
+    itemInit = _omit(itemInit, "properties");
     itemInit.properties = sortObject(
       dataNormalized({ config, data: item, pageId: item.id, pathVariables }),
-    )
-    results.push(itemInit)
+    );
+    results.push(itemInit);
     // console.dir(`> last_edited_time`)
     // console.dir(item.id)
     // console.dir(item.last_edited_time)
     // console.dir(`---`)
-  })
-  const items = _omit(_items, 'results')
-  items.results = results
+  });
+  const items = _omit(_items, "results");
+  items.results = results;
 
   /**
    * @note(plaiceholder)
    *
    * Pass empty `images` object for SSR/API takeover
    */
-  return { content, images: {}, info, items }
-}
+  return { content, images: {}, info, items };
+};
 
-export default getNotionListing
+export default getNotionListing;

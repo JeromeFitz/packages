@@ -1,5 +1,5 @@
-import { AppBar } from '../AppBar'
-import { Banner } from '../Banner'
+import { AppBar } from "../AppBar";
+import { Banner } from "../Banner";
 
 const Header = () => {
   return (
@@ -7,7 +7,7 @@ const Header = () => {
       <Banner />
       <AppBar />
     </>
-  )
-}
+  );
+};
 
-export { Header }
+export { Header };

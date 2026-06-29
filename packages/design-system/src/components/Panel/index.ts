@@ -1,2 +1,2 @@
-export { Panel } from './Panel'
-export { panelStyles } from './Panel.styles'
+export { Panel } from "./Panel";
+export { panelStyles } from "./Panel.styles";

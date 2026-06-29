@@ -20,15 +20,15 @@ const {
   SPOTIFY_CLIENT_ID: clientId,
   SPOTIFY_CLIENT_SECRET: clientSecret,
   SPOTIFY_REFRESH_TOKEN: refreshToken,
-} = process.env
+} = process.env;
 
 const credentials = {
   clientId,
   clientSecret,
   refreshToken,
-}
+};
 
-const spotify: ClientProps = new Client({ ...credentials })
+const spotify: ClientProps = new Client({ ...credentials });
 ```
 
 This will get the Authorization Token for the Bearer and consistently apply for API calls on your behalf.
@@ -50,7 +50,7 @@ spotify.get.topArtists({
   offset,
   time_range,
   withImages: true,
-})
+});
 ```
 
 ## ✨️ Customizations

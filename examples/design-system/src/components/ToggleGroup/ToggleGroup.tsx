@@ -1,8 +1,4 @@
-import {
-  Icon,
-  ToggleGroup,
-  ToggleGroupItem,
-} from '@jeromefitz/design-system/src/components'
+import { Icon, ToggleGroup, ToggleGroupItem } from "@jeromefitz/design-system/src/components";
 
 const ToggleGroupDemo = () => (
   <ToggleGroup aria-label="Text alignment" defaultValue="center" type="single">
@@ -16,6 +12,6 @@ const ToggleGroupDemo = () => (
       <Icon.TextAlignRight />
     </ToggleGroupItem>
   </ToggleGroup>
-)
+);
 
-export { ToggleGroupDemo as ToggleGroup }
+export { ToggleGroupDemo as ToggleGroup };

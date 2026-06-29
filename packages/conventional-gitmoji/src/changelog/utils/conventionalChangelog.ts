@@ -1,6 +1,6 @@
-import parserOpts from './parserOpts'
-import writerOpts from './writerOpts'
+import parserOpts from "./parserOpts";
+import writerOpts from "./writerOpts";
 
-const conventionalChangelog = { parserOpts, writerOpts }
+const conventionalChangelog = { parserOpts, writerOpts };
 
-export default conventionalChangelog
+export default conventionalChangelog;

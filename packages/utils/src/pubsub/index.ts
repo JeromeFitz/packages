@@ -1,48 +1,48 @@
 // swr-esque
-import { isArray as _isArray } from 'lodash-es'
+import { isArray as _isArray } from "lodash-es";
 
-type Callback = (data?: any) => void
+type Callback = (data?: any) => void;
 
 interface Unsubscribe {
-  unsubscribe(): void
+  unsubscribe(): void;
 }
 
 const pubsub = () => {
-  const subscribers: Record<string, Callback[]> = {}
+  const subscribers: Record<string, Callback[]> = {};
 
   const publish = (eventName: string, data?: any) => {
     if (!_isArray(subscribers[eventName])) {
-      return
+      return;
     }
 
     subscribers[eventName].forEach((callback: Callback) => {
-      callback(data)
-    })
-  }
+      callback(data);
+    });
+  };
 
   const subscribe = (eventName: string, callback: Callback): Unsubscribe => {
     if (!_isArray(subscribers[eventName])) {
-      subscribers[eventName] = []
+      subscribers[eventName] = [];
     }
-    subscribers[eventName].push(callback)
+    subscribers[eventName].push(callback);
 
-    const index = subscribers[eventName].length - 1
+    const index = subscribers[eventName].length - 1;
 
     return {
       unsubscribe(): void {
-        subscribers[eventName].splice(index, 1)
+        subscribers[eventName].splice(index, 1);
       },
-    }
-  }
+    };
+  };
 
   return {
     publish,
     subscribe,
-  }
-}
+  };
+};
 
-export type { Unsubscribe }
-export default pubsub()
+export type { Unsubscribe };
+export default pubsub();
 
 /**
  * @example

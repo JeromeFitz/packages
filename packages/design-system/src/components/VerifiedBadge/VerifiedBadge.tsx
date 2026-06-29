@@ -1,35 +1,32 @@
-import type { ComponentProps, ElementRef } from 'react'
+import type { ComponentProps, ElementRef } from "react";
+import { forwardRef } from "react";
 
-import type { CSS } from '../../lib/stitches.config'
+import type { CSS } from "../../lib/stitches.config";
+import { styled } from "../../lib/stitches.config";
+import { Flex, Icon } from "../index";
 
-import { forwardRef } from 'react'
-
-import { styled } from '../../lib/stitches.config'
-import { Flex, Icon } from '../index'
-
-const StyledVerifiedBadge = styled('div', Flex, {
-  alignItems: 'center',
-  backgroundColor: '$blue9',
-  borderRadius: '$round',
-  color: 'white',
+const StyledVerifiedBadge = styled("div", Flex, {
+  alignItems: "center",
+  backgroundColor: "$blue9",
+  borderRadius: "$round",
+  color: "white",
   flexShrink: 0,
-  height: '$3',
-  justifyContent: 'center',
-  width: '$3',
-})
+  height: "$3",
+  justifyContent: "center",
+  width: "$3",
+});
 
 // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
 type VerifiedBadgeProps = ComponentProps<typeof StyledVerifiedBadge> & {
-  css?: CSS
-}
+  css?: CSS;
+};
 
-const VerifiedBadge = forwardRef<
-  ElementRef<typeof StyledVerifiedBadge>,
-  VerifiedBadgeProps
->((props, forwardedRef) => (
-  <StyledVerifiedBadge {...props} ref={forwardedRef}>
-    <Icon.Check />
-  </StyledVerifiedBadge>
-))
+const VerifiedBadge = forwardRef<ElementRef<typeof StyledVerifiedBadge>, VerifiedBadgeProps>(
+  (props, forwardedRef) => (
+    <StyledVerifiedBadge {...props} ref={forwardedRef}>
+      <Icon.Check />
+    </StyledVerifiedBadge>
+  ),
+);
 
-export { VerifiedBadge }
+export { VerifiedBadge };

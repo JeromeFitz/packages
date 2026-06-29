@@ -1,9 +1,8 @@
-import { sortObject } from '@jeromefitz/utils'
+import { sortObject } from "@jeromefitz/utils";
+import { omit as _omit } from "lodash-es";
 
-import { omit as _omit } from 'lodash-es'
-
-import { QUERIES } from '../../constants/index'
-import { dataNormalized } from '../../utils/index'
+import { QUERIES } from "../../constants/index";
+import { dataNormalized } from "../../utils/index";
 
 const getNotionSlug = async ({
   config,
@@ -14,12 +13,12 @@ const getNotionSlug = async ({
   routeType,
   slug,
 }) => {
-  const { NOTION } = config
+  const { NOTION } = config;
 
-  const DB_TYPE = routeType?.toUpperCase()
-  const isValid = Object.keys(NOTION).includes(DB_TYPE)
+  const DB_TYPE = routeType?.toUpperCase();
+  const isValid = Object.keys(NOTION).includes(DB_TYPE);
 
-  if (!isValid) return { content: {}, images: {}, info: {}, items: {} }
+  if (!isValid) return { content: {}, images: {}, info: {}, items: {} };
 
   const __info: any = await getDatabasesByIdQuery({
     database_id: NOTION[DB_TYPE].database_id,
@@ -31,22 +30,22 @@ const getNotionSlug = async ({
         },
       ],
     },
-  })
+  });
 
-  const _info = __info?.object === 'list' && __info.results[0]
+  const _info = __info?.object === "list" && __info.results[0];
   // @refactor(404)
   if (!_info) {
-    return {}
+    return {};
   }
 
-  const info = _omit(_info, 'properties')
+  const info = _omit(_info, "properties");
   info.properties = sortObject(
     dataNormalized({ config, data: _info, pageId: info.id, pathVariables }),
-  )
+  );
 
-  const _content = await getBlocksByIdChildren({ block_id: info.id })
-  const blocks = [...(await getDeepFetchAllChildren({ blocks: _content.results }))]
-  const content = blocks
+  const _content = await getBlocksByIdChildren({ block_id: info.id });
+  const blocks = [...(await getDeepFetchAllChildren({ blocks: _content.results }))];
+  const content = blocks;
 
   /**
    * @question if this is reached, there are no `items`
@@ -59,7 +58,7 @@ const getNotionSlug = async ({
    *
    * Pass empty `images` object for SSR/API takeover
    */
-  return { content, images: {}, info, items: {} }
-}
+  return { content, images: {}, info, items: {} };
+};
 
-export default getNotionSlug
+export default getNotionSlug;

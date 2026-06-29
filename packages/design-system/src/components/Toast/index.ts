@@ -6,5 +6,5 @@ export {
   ToastProvider,
   ToastTitle,
   ToastViewport,
-} from './Toast'
-export { Toaster } from './Toaster'
+} from "./Toast";
+export { Toaster } from "./Toaster";

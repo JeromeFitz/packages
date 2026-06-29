@@ -1,6 +1,6 @@
 interface GitPluginOptions {
-  gitAssets?: false | string[]
-  message?: string
+  gitAssets?: false | string[];
+  message?: string;
 }
 
-export type { GitPluginOptions }
+export type { GitPluginOptions };

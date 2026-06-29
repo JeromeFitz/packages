@@ -1,5 +1,3 @@
-import type { KeyboardEvent } from 'react'
-
 import {
   Box,
   Command,
@@ -16,75 +14,75 @@ import {
   CommandTopShine,
   Flex,
   Icon,
-} from '@jeromefitz/design-system/src/components'
-
+} from "@jeromefitz/design-system/src/components";
+import type { KeyboardEvent } from "react";
 // import { useCommandState as useCmdk } from 'cmdk'
-import { useCallback, useRef, useState } from 'react'
+import { useCallback, useRef, useState } from "react";
 
-import { Settings } from './Settings'
-import { Shows } from './Shows'
+import { Settings } from "./Settings";
+import { Shows } from "./Shows";
 
 function CommandMenuData() {
   // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
-  const ref = useRef<HTMLDivElement | null>(null)
-  const [inputValue, setInputValue] = useState('')
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [inputValue, setInputValue] = useState("");
 
-  const [pages, setPages] = useState<string[]>(['home'])
-  const activePage = pages[pages.length - 1]
-  const isHome = activePage === 'home'
+  const [pages, setPages] = useState<string[]>(["home"]);
+  const activePage = pages[pages.length - 1];
+  const isHome = activePage === "home";
 
   const popPage = useCallback(() => {
     setPages((pages) => {
-      const x = [...pages]
-      x.splice(-1, 1)
-      return x
-    })
-  }, [])
+      const x = [...pages];
+      x.splice(-1, 1);
+      return x;
+    });
+  }, []);
 
   function bounce() {
     if (ref.current) {
-      ref.current.style.transform = 'scale(0.96)'
+      ref.current.style.transform = "scale(0.96)";
       setTimeout(() => {
         if (ref.current) {
-          ref.current.style.transform = ''
+          ref.current.style.transform = "";
         }
-      }, 125)
+      }, 125);
 
-      setInputValue('')
+      setInputValue("");
     }
   }
 
   return (
     <Box
       css={{
-        '@bp1': {
-          maxWidth: '640px',
+        "@bp1": {
+          maxWidth: "640px",
           // padding: '0 $3',
         },
-        margin: '0 auto',
-        maxWidth: '100%',
-        padding: '0',
-        width: '100%',
+        margin: "0 auto",
+        maxWidth: "100%",
+        padding: "0",
+        width: "100%",
       }}
     >
       <Command
         loop
         onClick={() => {
-          bounce()
+          bounce();
         }}
         onKeyDown={(e: KeyboardEvent) => {
-          if (e.key === 'Enter') {
-            bounce()
+          if (e.key === "Enter") {
+            bounce();
           }
 
           if (isHome || inputValue.length) {
-            return
+            return;
           }
 
-          if (e.key === 'Backspace') {
-            e.preventDefault()
-            popPage()
-            bounce()
+          if (e.key === "Backspace") {
+            e.preventDefault();
+            popPage();
+            bounce();
           }
         }}
         ref={ref}
@@ -100,25 +98,25 @@ function CommandMenuData() {
         <CommandInput
           autoFocus
           onValueChange={(value) => {
-            setInputValue(value)
+            setInputValue(value);
           }}
           placeholder="Type a command or search..."
         />
         <CommandLoader cmdk-loader="" />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
-          {activePage === 'home' && (
+          {activePage === "home" && (
             <Home
               // searchSettings={() => setPages([...pages, 'settings'])}
-              searchShows={() => setPages([...pages, 'shows'])}
+              searchShows={() => setPages([...pages, "shows"])}
             />
           )}
-          {activePage === 'shows' && <Shows />}
+          {activePage === "shows" && <Shows />}
           {/* <SubItem>Test</SubItem> */}
         </CommandList>
       </Command>
     </Box>
-  )
+  );
 }
 // const SubItem = (props) => {
 //   const cmd = useCmdk((state) => state)
@@ -137,9 +135,9 @@ function Home({ searchShows }: { searchShows: Function }) {
       <CommandGroup heading="Shows">
         <CommandMenuItem
           onSelect={() => {
-            searchShows()
+            searchShows();
           }}
-          value={'search-shows'}
+          value={"search-shows"}
         >
           <Flex gap="3">
             <Icon.MagnifyingGlass />
@@ -149,9 +147,9 @@ function Home({ searchShows }: { searchShows: Function }) {
 
         <CommandMenuItem
           onSelect={() => {
-            searchShows()
+            searchShows();
           }}
-          value={'search-podcasts'}
+          value={"search-podcasts"}
         >
           <Flex gap="3">
             <Icon.MagnifyingGlass />
@@ -160,13 +158,13 @@ function Home({ searchShows }: { searchShows: Function }) {
         </CommandMenuItem>
       </CommandGroup>
       <CommandGroup heading="Pages">
-        <CommandMenuItem value={'about'}>
+        <CommandMenuItem value={"about"}>
           <Flex gap="3">
             <Icon.IdCard />
             About
           </Flex>
         </CommandMenuItem>
-        <CommandMenuItem value={'books'}>
+        <CommandMenuItem value={"books"}>
           <Flex gap="3">
             <Icon.BookOpen />
             Books
@@ -177,7 +175,7 @@ function Home({ searchShows }: { searchShows: Function }) {
         <Settings />
       </CommandGroup>
     </>
-  )
+  );
 }
 
-export { CommandMenuData }
+export { CommandMenuData };

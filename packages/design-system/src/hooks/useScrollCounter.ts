@@ -1,17 +1,17 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 
 const useScrollCounter = (offset: number) => {
-  const [reached, setReached] = useState(false)
+  const [reached, setReached] = useState(false);
 
   useEffect(() => {
-    const showTitle = () => setReached(window.scrollY > offset)
-    window.addEventListener('scroll', showTitle)
+    const showTitle = () => setReached(window.scrollY > offset);
+    window.addEventListener("scroll", showTitle);
     return () => {
-      window.removeEventListener('scroll', showTitle)
-    }
-  }, [offset])
+      window.removeEventListener("scroll", showTitle);
+    };
+  }, [offset]);
 
-  return reached
-}
+  return reached;
+};
 
-export default useScrollCounter
+export default useScrollCounter;

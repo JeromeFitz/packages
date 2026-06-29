@@ -15,90 +15,90 @@
  */
 
 // @todo(next) upgrade to new image
-import NextImage from 'next/legacy/image'
+import NextImage from "next/legacy/image";
 
-import { Box } from '../../components/Box'
-import { Flex } from '../../components/Flex'
-import { styled } from '../../lib/stitches.config'
+import { Box } from "../../components/Box";
+import { Flex } from "../../components/Flex";
+import { styled } from "../../lib/stitches.config";
 
-const CardContainer = styled('div', {
-  display: 'flex',
-  height: '100%',
-})
+const CardContainer = styled("div", {
+  display: "flex",
+  height: "100%",
+});
 
-const ImageContainer = styled('div', {
-  borderRadius: '$4',
-  height: '100%',
-  position: 'relative',
-})
+const ImageContainer = styled("div", {
+  borderRadius: "$4",
+  height: "100%",
+  position: "relative",
+});
 
-const ImageBlur = styled('div', {
-  borderRadius: '$4',
-  filter: 'blur(0.25rem) saturate(160%)',
-  height: '99.9%',
+const ImageBlur = styled("div", {
+  borderRadius: "$4",
+  filter: "blur(0.25rem) saturate(160%)",
+  height: "99.9%",
   left: 0,
-  opacity: '.5',
-  position: 'absolute',
+  opacity: ".5",
+  position: "absolute",
   top: 0,
-  transform: 'scale(1.01)',
-  width: '99.9%',
-})
+  transform: "scale(1.01)",
+  width: "99.9%",
+});
 
 const Image = styled(NextImage, {
   borderBottomLeftRadius: 0,
-  borderRadius: '$4',
+  borderRadius: "$4",
   borderTopLeftRadius: 0,
-  position: 'relative',
-})
+  position: "relative",
+});
 
 const CardSpotify = ({
   base64,
   children,
   image,
-  imageLabel = 'Spotify Description Coming Soon',
+  imageLabel = "Spotify Description Coming Soon",
   slug,
 }) => {
   return (
     <CardOuter>
-      <Box as="div" css={{ borderRadius: '$4', position: 'relative' }}>
+      <Box as="div" css={{ borderRadius: "$4", position: "relative" }}>
         <ImageBlur
           css={{
             backgroundImage: `url(${base64})`,
-            backgroundSize: 'cover',
-            borderRadius: '$4',
+            backgroundSize: "cover",
+            borderRadius: "$4",
           }}
         />
         <Flex
           as="div"
           css={{
-            '@bp1': { flexDirection: 'row' },
-            borderRadius: '$4',
-            display: 'flex',
-            flexDirection: 'column',
-            minHeight: '100%',
-            overflow: 'hidden',
-            position: 'relative',
-            width: '100%',
+            "@bp1": { flexDirection: "row" },
+            borderRadius: "$4",
+            display: "flex",
+            flexDirection: "column",
+            minHeight: "100%",
+            overflow: "hidden",
+            position: "relative",
+            width: "100%",
           }}
         >
           <Flex
             as="div"
             css={{
-              '@bp1': {
+              "@bp1": {
                 borderBottomRightRadius: 0,
                 borderTopRightRadius: 0,
-                px: '$5',
-                py: '$8',
-                width: '40%',
+                px: "$5",
+                py: "$8",
+                width: "40%",
               },
-              bc: '$colors$gray3',
+              bc: "$colors$gray3",
               borderBottomLeftRadius: 0,
               borderBottomRightRadius: 0,
-              borderRadius: '$4',
-              display: 'flex',
-              flexDirection: 'column',
-              px: '$3',
-              py: '$5',
+              borderRadius: "$4",
+              display: "flex",
+              flexDirection: "column",
+              px: "$3",
+              py: "$5",
             }}
           >
             {children}
@@ -106,16 +106,16 @@ const CardSpotify = ({
           <Flex
             as="div"
             css={{
-              '@bp1': { width: '60%' },
+              "@bp1": { width: "60%" },
               // borderRadius: '0.75rem',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              overflow: 'hidden',
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              overflow: "hidden",
             }}
             style={{
               backgroundImage: `url(${base64})`,
-              backgroundSize: 'cover',
+              backgroundSize: "cover",
             }}
           >
             <Image
@@ -130,15 +130,15 @@ const CardSpotify = ({
         </Flex>
       </Box>
     </CardOuter>
-  )
-}
+  );
+};
 
 const CardOuter = ({ children }) => {
   return (
     <CardContainer>
       <ImageContainer>{children}</ImageContainer>
     </CardContainer>
-  )
-}
+  );
+};
 
-export { CardOuter, CardSpotify, ImageBlur }
+export { CardOuter, CardSpotify, ImageBlur };

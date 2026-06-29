@@ -1,9 +1,4 @@
-/**
- * https://www.radix-ui.com/primitives/docs/components/tooltip
- */
-import type { TooltipProps } from './Tooltip.types'
-
-import { Box, Text } from '../index'
+import { Box, Text } from "../index";
 import {
   TooltipArrow,
   TooltipContent,
@@ -11,7 +6,11 @@ import {
   TooltipProvider,
   TooltipRoot,
   TooltipTrigger,
-} from './Tooltip.styles'
+} from "./Tooltip.styles";
+/**
+ * https://www.radix-ui.com/primitives/docs/components/tooltip
+ */
+import type { TooltipProps } from "./Tooltip.types";
 
 function Tooltip({
   children,
@@ -27,29 +26,23 @@ function Tooltip({
       <TooltipRoot defaultOpen={defaultOpen} onOpenChange={onOpenChange} open={open}>
         <TooltipTrigger asChild>{children}</TooltipTrigger>
         <TooltipPortal>
-          <TooltipContent
-            align="center"
-            side="top"
-            sideOffset={5}
-            {...props}
-            multiline={multiline}
-          >
+          <TooltipContent align="center" side="top" sideOffset={5} {...props} multiline={multiline}>
             <Text
               as="p"
               css={{
-                color: '$loContrast',
-                lineHeight: multiline ? '20px' : (undefined as any),
+                color: "$loContrast",
+                lineHeight: multiline ? "20px" : (undefined as any),
               }}
               size="1"
             >
               {content}
             </Text>
-            <Box css={{ color: '$transparentExtreme' }}>
+            <Box css={{ color: "$transparentExtreme" }}>
               <TooltipArrow
                 height={5}
                 offset={5}
                 style={{
-                  fill: 'currentColor',
+                  fill: "currentColor",
                 }}
                 width={11}
               />
@@ -58,7 +51,7 @@ function Tooltip({
         </TooltipPortal>
       </TooltipRoot>
     </TooltipProvider>
-  )
+  );
 }
 
-export { Tooltip }
+export { Tooltip };

@@ -1,26 +1,26 @@
 # name: 'Release'
-name: '🏷️  '
-description: 'Localized Release'
-author: 'JeromeFitz'
+name: "🏷️  "
+description: "Localized Release"
+author: "JeromeFitz"
 
 inputs:
   GH_TOKEN:
-    description: 'Github Token'
+    description: "Github Token"
     required: true
   NPM_TOKEN:
-    description: 'NPM Token'
+    description: "NPM Token"
     required: true
   TURBO_TEAM:
-    description: 'ID for Turbo'
+    description: "ID for Turbo"
     required: true
   TURBO_TOKEN:
-    description: 'ID for Turbo'
+    description: "ID for Turbo"
     required: true
 
 runs:
-  using: 'composite'
+  using: "composite"
   steps:
-    - name: '🏗️  Build'
+    - name: "🏗️  Build"
       id: release-build
       shell: bash
       env:
@@ -29,12 +29,12 @@ runs:
       run: |
         pnpm turbo run build \
           --cache-dir=".cache-turbo"
-    - name: '🔍 Audit'
+    - name: "🔍 Audit"
       id: audit
       shell: bash
       run: |
         pnpm audit signatures
-    - name: '🏷️  Release'
+    - name: "🏷️  Release"
       id: release
       shell: bash
       env:

@@ -1,15 +1,13 @@
-import type { ElementRef } from 'react'
-
-import type { RadioCardProps } from './RadioCard.types'
-
-import { forwardRef } from 'react'
+import type { ElementRef } from "react";
+import { forwardRef } from "react";
 
 import {
   RadioCardGroup,
   StyledRadio,
   StyledRadioButton,
   StyledRadioIndicator,
-} from './RadioCard.styles'
+} from "./RadioCard.styles";
+import type { RadioCardProps } from "./RadioCard.types";
 
 const RadioCard = forwardRef<ElementRef<typeof StyledRadio>, RadioCardProps>(
   (props, forwardedRef) => (
@@ -20,8 +18,8 @@ const RadioCard = forwardRef<ElementRef<typeof StyledRadio>, RadioCardProps>(
       {props.children}
     </StyledRadio>
   ),
-)
+);
 
-RadioCard.displayName = 'RadioCard'
+RadioCard.displayName = "RadioCard";
 
-export { RadioCard, RadioCardGroup }
+export { RadioCard, RadioCardGroup };

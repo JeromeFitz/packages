@@ -11,8 +11,8 @@ export {
   CardTitle,
   css_card,
   ImageBlur,
-} from './Card'
-export { Emoji, EmojiParser } from './Emoji'
+} from "./Card";
+export { Emoji, EmojiParser } from "./Emoji";
 // export {
 //   Tooltip,
 //   TooltipArrow,

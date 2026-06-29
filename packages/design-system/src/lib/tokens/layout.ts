@@ -6,6 +6,6 @@ const grid = {
   //   'var(--default-gutter) minmax(auto, var(--max-width-medium)) var(--default-gutter)',
   // '--layout-small':
   //   'var(--default-gutter) minmax(auto, var(--max-width-small)) var(--default-gutter)',
-}
+};
 
-export { grid }
+export { grid };

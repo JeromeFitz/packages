@@ -3,7 +3,7 @@ import {
   NavigationMenuIndicatorWithArrow,
   NavigationMenuTriggerWithCaret,
   Selected,
-} from './NavigationMenu'
+} from "./NavigationMenu";
 import {
   NavigationMenu,
   NavigationMenuCaret,
@@ -22,7 +22,7 @@ import {
   NavigationMenuTrigger,
   NavigationMenuViewport,
   NavigationMenuViewportPosition,
-} from './NavigationMenu.styles'
+} from "./NavigationMenu.styles";
 
 export {
   Focused,
@@ -46,4 +46,4 @@ export {
   NavigationMenuViewport,
   NavigationMenuViewportPosition,
   Selected,
-}
+};

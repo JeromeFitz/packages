@@ -1,11 +1,10 @@
 /* eslint-disable complexity */
-import type { Agent } from 'node:http'
-import { URL as _URL, URLSearchParams } from 'node:url'
+import type { Agent } from "node:http";
+import { URL as _URL, URLSearchParams } from "node:url";
 
-import { noop as _noop, asyncForEach } from '@jeromefitz/utils'
-
-import fetch from 'isomorphic-unfetch'
-import _omit from 'lodash/omit.js'
+import { noop as _noop, asyncForEach } from "@jeromefitz/utils";
+import fetch from "isomorphic-unfetch";
+import _omit from "lodash/omit.js";
 
 import {
   API_VERSION,
@@ -16,20 +15,20 @@ import {
   PACKAGE_NAME,
   PACKAGE_VERSION,
   URL,
-} from './constants/index.js'
+} from "./constants/index.js";
 
 // @todo(types)
 export interface ClientOptions {
-  accessToken: string
+  accessToken: string;
   /** Silently ignored in the browser */
-  agent?: Agent
-  baseUrl?: string
-  clientId: string
-  clientSecret: string
-  fetch?: any
-  refreshToken: string
-  spotifyVersion?: string
-  timeoutMs?: number
+  agent?: Agent;
+  baseUrl?: string;
+  clientId: string;
+  clientSecret: string;
+  fetch?: any;
+  refreshToken: string;
+  spotifyVersion?: string;
+  timeoutMs?: number;
 }
 
 // type PlaiceholderImage = {
@@ -40,202 +39,195 @@ export interface ClientOptions {
 // }
 
 export interface RequestParameters {
-  accessToken?: string
-  body?: Record<string, unknown>
-  method: Method
-  path: string
-  query?: QueryParams
+  accessToken?: string;
+  body?: Record<string, unknown>;
+  method: Method;
+  path: string;
+  query?: QueryParams;
 }
 
 // @todo(NICE-129) eslint
 // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 type ClientProps = {
-  get: GetProps
-}
+  get: GetProps;
+};
 
 interface CredentialProps {
-  clientId: string
-  clientSecret: string
-  refreshToken: string
+  clientId: string;
+  clientSecret: string;
+  refreshToken: string;
 }
 
 // @todo(NICE-129) eslint
 // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 type GetProps = {
-  nowPlaying({ withImages }: NowPlayingProps): any
-  recentlyPlayed({ limit, withImages }: RecentlyPlayedProps): any
-  topArtists({ limit, offset, time_range, withImages }: QueryProps): any
-  topTracks({ limit, offset, time_range, withImages }: QueryProps): any
-}
+  nowPlaying({ withImages }: NowPlayingProps): any;
+  recentlyPlayed({ limit, withImages }: RecentlyPlayedProps): any;
+  topArtists({ limit, offset, time_range, withImages }: QueryProps): any;
+  topTracks({ limit, offset, time_range, withImages }: QueryProps): any;
+};
 
-type Method = 'DELETE' | 'GET' | 'PATCH' | 'POST'
+type Method = "DELETE" | "GET" | "PATCH" | "POST";
 
 interface NowPlayingProps {
-  withImages?: boolean
+  withImages?: boolean;
 }
 
-type QueryParams = Record<string, number | string> | URLSearchParams
+type QueryParams = Record<string, number | string> | URLSearchParams;
 
 interface QueryProps {
-  ids?: string
-  limit?: number
-  offset?: number
-  time_range?: TimeRangeProps
-  withImages?: boolean
+  ids?: string;
+  limit?: number;
+  offset?: number;
+  time_range?: TimeRangeProps;
+  withImages?: boolean;
 }
 
 interface RecentlyPlayedProps {
-  after?: number
-  before?: number
-  ids?: string
-  limit?: number
-  withImages?: boolean
+  after?: number;
+  before?: number;
+  ids?: string;
+  limit?: number;
+  withImages?: boolean;
 }
 
-type TimeRangeProps = 'long_term' | 'medium_term' | 'short_term'
+type TimeRangeProps = "long_term" | "medium_term" | "short_term";
 
-type WithAccessToken<P> = P & { accessToken?: string }
+type WithAccessToken<P> = P & { accessToken?: string };
 // @todo(types)
 class Client {
-  static readonly defaultSpotifyVersion = API_VERSION
+  static readonly defaultSpotifyVersion = API_VERSION;
   // @todo(types)
   public readonly get: GetProps = {
     // @todo(types)
     nowPlaying: async (args: WithAccessToken<QueryProps>): Promise<any> => {
       const res: any = await this.request({
         accessToken: args?.accessToken,
-        body: '',
-        method: 'GET',
+        body: "",
+        method: "GET",
         path: ENDPOINTS.NOW_PLAYING,
-        query: '',
-      })
+        query: "",
+      });
       // @hack(spotify) lol, error handling, wut
       if (res?.status === 204 || res?.status > 400) {
-        return { status: res?.status }
+        return { status: res?.status };
       }
 
       return await this.getNowPlaying({
         data: res,
         withImages: args?.withImages ?? true,
-      })
+      });
     },
     // @todo(types)
     recentlyPlayed: async (args: WithAccessToken<QueryProps>): Promise<any> => {
       const res: any = await this.request({
         accessToken: args?.accessToken,
-        body: '',
-        method: 'GET',
+        body: "",
+        method: "GET",
         path: ENDPOINTS.RECENTLY_PLAYED,
-        query: _omit(args, ['accessToken', 'withImages']),
-      })
+        query: _omit(args, ["accessToken", "withImages"]),
+      });
       // @hack(spotify) lol, error handling, wut
       if (res?.status === 204 || res?.status > 400) {
-        return { status: res?.status }
+        return { status: res?.status };
       }
 
       return await this.getRecentlyPlayed({
         data: res,
         withImages: args?.withImages ?? true,
-      })
+      });
     },
     // @todo(types)
     topArtists: async (args: WithAccessToken<QueryProps>): Promise<any> => {
       const res: any = await this.request({
         accessToken: args?.accessToken,
-        body: '',
-        method: 'GET',
+        body: "",
+        method: "GET",
         path: ENDPOINTS.TOP_ARTISTS,
-        query: _omit(args, ['accessToken', 'withImages']),
-      })
+        query: _omit(args, ["accessToken", "withImages"]),
+      });
       // @hack(spotify) lol, error handling, wut
       if (res?.status === 204 || res?.status > 400) {
-        return { status: res?.status }
+        return { status: res?.status };
       }
 
       return await this.getTopArtists({
         data: res,
         withImages: args?.withImages ?? true,
-      })
+      });
     },
     // @todo(types)
     topTracks: async (args: WithAccessToken<QueryProps>): Promise<any> => {
       const res: any = await this.request({
         accessToken: args?.accessToken,
-        body: '',
-        method: 'GET',
+        body: "",
+        method: "GET",
         path: ENDPOINTS.TOP_TRACKS,
-        query: _omit(args, ['accessToken', 'withImages']),
-      })
+        query: _omit(args, ["accessToken", "withImages"]),
+      });
       // @hack(spotify) lol, error handling, wut
       if (res?.status === 204 || res?.status > 400) {
-        return { status: res?.status }
+        return { status: res?.status };
       }
 
       return await this.getTopTracks({
         data: res,
         withImages: args?.withImages ?? true,
-      })
+      });
     },
-  }
-  #accessToken: string
-  #agent: Agent | undefined
+  };
+  #accessToken: string;
+  #agent: Agent | undefined;
   //
-  #clientId: string
-  #clientSecret: string
-  #fetch: any
-  #prefixUrl: string
-  #refreshToken: string
+  #clientId: string;
+  #clientSecret: string;
+  #fetch: any;
+  #prefixUrl: string;
+  #refreshToken: string;
 
   // @todo(NICE-129) eslint
   // eslint-disable-next-line no-unused-private-class-members
-  #spotifyVersion: string
+  #spotifyVersion: string;
 
-  #userAgent: string
+  #userAgent: string;
 
   public constructor(options: ClientOptions) {
-    this.#prefixUrl =
-      (options?.baseUrl ?? URL.BASE) + `/${Client.defaultSpotifyVersion}/`
-    this.#spotifyVersion = options?.spotifyVersion ?? Client.defaultSpotifyVersion
-    this.#fetch = options?.fetch ?? fetch
-    this.#agent = options?.agent
-    this.#userAgent = `${PACKAGE_NAME}@${PACKAGE_VERSION}`
+    this.#prefixUrl = (options?.baseUrl ?? URL.BASE) + `/${Client.defaultSpotifyVersion}/`;
+    this.#spotifyVersion = options?.spotifyVersion ?? Client.defaultSpotifyVersion;
+    this.#fetch = options?.fetch ?? fetch;
+    this.#agent = options?.agent;
+    this.#userAgent = `${PACKAGE_NAME}@${PACKAGE_VERSION}`;
     // @todo(error-handling)
-    this.#clientId = options?.clientId
-    this.#clientSecret = options?.clientSecret
-    this.#refreshToken = options?.refreshToken
-    this.#accessToken = options?.accessToken ?? ''
+    this.#clientId = options?.clientId;
+    this.#clientSecret = options?.clientSecret;
+    this.#refreshToken = options?.refreshToken;
+    this.#accessToken = options?.accessToken ?? "";
   }
 
   // @todo(types)
-  public async request({
-    accessToken,
-    body,
-    method,
-    path,
-    query,
-  }: any): Promise<any> {
+  public async request({ accessToken, body, method, path, query }: any): Promise<any> {
     // @todo(logging) INFO => request start
     const bodyAsJsonString =
-      !body || Object.entries(body).length === 0 ? undefined : JSON.stringify(body)
+      !body || Object.entries(body).length === 0 ? undefined : JSON.stringify(body);
 
-    const url = new _URL(`${this.#prefixUrl}${path}`)
+    const url = new _URL(`${this.#prefixUrl}${path}`);
     if (query) {
       for (const [key, value] of Object.entries(query)) {
         if (value !== undefined) {
-          url.searchParams.append(key, String(value))
+          url.searchParams.append(key, String(value));
         }
       }
     }
 
-    const accessTokenHeader = await this.accessTokenAsHeaders(accessToken)
+    const accessTokenHeader = await this.accessTokenAsHeaders(accessToken);
     const headers: any = {
       ...accessTokenHeader,
       // 'Spotify-Version': this.#spotifyVersion,
-      'user-agent': this.#userAgent,
-    }
+      "user-agent": this.#userAgent,
+    };
 
     if (bodyAsJsonString !== undefined) {
-      headers['content-type'] = 'application/json'
+      headers["content-type"] = "application/json";
     }
 
     // @todo(NICE-129) eslint
@@ -247,7 +239,7 @@ class Client {
         body: bodyAsJsonString,
         headers,
         method,
-      })
+      });
 
       /**
        * @todo(error-handling)
@@ -256,11 +248,11 @@ class Client {
        */
       if (response?.status === 204 || response?.status > 400) {
         // @todo(logging) buildRequestError(response, responseText)
-        return { status: response?.status }
+        return { status: response?.status };
       }
 
       // @todo(logging) INFO => request success
-      return await response.json()
+      return await response.json();
     } catch (error: unknown) {
       // if (!isSpotifyClientError(error)) {
       //   throw error
@@ -271,84 +263,82 @@ class Client {
       //   // @todo(logging) DEBUG => response fail
       // }
 
-      throw error
+      throw error;
     }
   }
 
   // @todo(types)
   private async accessTokenAsHeaders(accessToken?: string) {
-    const headers: Record<string, string> = {}
+    const headers: Record<string, string> = {};
     const accessTokenValue =
       (accessToken ?? this.#accessToken.length > 1)
         ? this.#accessToken
-        : await this.getAccessToken()
+        : await this.getAccessToken();
     if (accessTokenValue !== undefined) {
-      headers.authorization = `Bearer ${accessTokenValue}`
+      headers.authorization = `Bearer ${accessTokenValue}`;
     }
-    return headers
+    return headers;
   }
 
   // @todo(types)
   private async getAccessToken() {
-    const basic = Buffer.from(`${this.#clientId}:${this.#clientSecret}`).toString(
-      'base64',
-    )
+    const basic = Buffer.from(`${this.#clientId}:${this.#clientSecret}`).toString("base64");
     const res = await this.#fetch(URL.TOKEN, {
       body: new URLSearchParams({
-        grant_type: 'refresh_token',
+        grant_type: "refresh_token",
         refresh_token: this.#refreshToken,
       }),
-      cache: 'no-cache',
+      cache: "no-cache",
       headers: {
         Authorization: `Basic ${basic}`,
-        'Content-Type': 'application/x-www-form-urlencoded',
+        "Content-Type": "application/x-www-form-urlencoded",
       },
-      method: 'POST',
-    })
+      method: "POST",
+    });
     // @hack(spotify) lol, error handling, wut
     if (res?.status === 204 || res?.status > 400) {
-      return { status: res?.status }
+      return { status: res?.status };
     }
-    const { access_token } = await res.json()
+    const { access_token } = await res.json();
 
-    this.#accessToken = access_token
-    return access_token
+    this.#accessToken = access_token;
+    return access_token;
   }
 
   // @todo(types)
   private async getArtistsGenres(args: WithAccessToken<QueryProps>) {
     const res: any = await this.request({
       accessToken: args?.accessToken,
-      body: '',
-      method: 'GET',
+      body: "",
+      method: "GET",
       path: ENDPOINTS.ARTISTS,
-      query: _omit(args, ['accessToken', 'withImages']),
-    })
+      query: _omit(args, ["accessToken", "withImages"]),
+    });
     // @hack(spotify) lol, error handling, wut
     if (res?.status === 204 || res?.status > 400) {
-      return { status: res?.status }
+      return { status: res?.status };
     }
 
-    return [...new Set(res?.artists.flatMap(({ genres }) => genres))]
+    return [...new Set(res?.artists.flatMap(({ genres }) => genres))];
   }
 
   // @todo(types)
   private async getNowPlaying({ data, withImages }) {
-    if (!data) return { status: 404 }
-    const { item } = data
-    const { album: _album, artists } = item
-    const track = _omit(item, OMIT_FIELDS)
-    const album = _omit(_album, OMIT_FIELDS)
-    const artist = artists.map(({ name }) => name).join(', ')
+    if (!data) return { status: 404 };
+    const { item } = data;
+    const { album: _album, artists } = item;
+    const track = _omit(item, OMIT_FIELDS);
+    const album = _omit(_album, OMIT_FIELDS);
+    const artist = artists.map(({ name }) => name).join(", ");
     const genres = await this.getArtistsGenres({
-      ids: artists.map(({ id }) => id).join(','),
-    })
+      ids: artists.map(({ id }) => id).join(","),
+    });
 
-    let image = {}
+    let image = {};
     if (withImages) {
-      const url = item?.album?.images[0].url
-      const { getImage } = await import('./utils/index.js')
-      image = await getImage(url)
+      const url = item?.album?.images[0].url;
+      const { getImage } = await import("./utils/index.js");
+      image = await getImage(url);
     }
 
     return {
@@ -362,22 +352,22 @@ class Client {
         artist,
         genres,
       },
-    }
+    };
   }
 
   // @todo(types)
   private async getRecentlyPlayed({ data, withImages }) {
-    if (!data) return { status: 404 }
-    const items: any[] = []
+    if (!data) return { status: 404 };
+    const items: any[] = [];
     await asyncForEach(data.items, async (item: any) => {
-      const track = _omit(item.track, OMIT_FIELDS)
-      const { played_at } = item
-      const { album: _album, artists } = item.track
-      const album: any = _omit(_album, OMIT_FIELDS)
-      const artist = artists.map(({ name }) => name).join(', ')
+      const track = _omit(item.track, OMIT_FIELDS);
+      const { played_at } = item;
+      const { album: _album, artists } = item.track;
+      const album: any = _omit(_album, OMIT_FIELDS);
+      const artist = artists.map(({ name }) => name).join(", ");
       const genres = await this.getArtistsGenres({
-        ids: artists.map(({ id }) => id).join(','),
-      })
+        ids: artists.map(({ id }) => id).join(","),
+      });
       items.push({
         // ...item,
         album,
@@ -386,62 +376,62 @@ class Client {
         genres,
         played_at,
         ...track,
-      })
-    }).catch(_noop)
+      });
+    }).catch(_noop);
 
     if (withImages) {
       await asyncForEach(items, async (item: any, itemIndex: number) => {
-        const album: any = item?.album
-        const url = album?.images[0].url
-        const { getImage } = await import('./utils/index.js')
-        const image = await getImage(url)
+        const album: any = item?.album;
+        const url = album?.images[0].url;
+        const { getImage } = await import("./utils/index.js");
+        const image = await getImage(url);
         items[itemIndex] = {
           ...item,
           album: {
             ...album,
             image,
           },
-        }
-      }).catch(_noop)
+        };
+      }).catch(_noop);
     }
 
     return {
       ...data,
       items,
-    }
+    };
   }
 
   // @todo(types)
   private async getTopArtists({ data, withImages }) {
-    if (!withImages) return data
-    const items: any[] = []
+    if (!withImages) return data;
+    const items: any[] = [];
     await asyncForEach(data.items, async (artist: any) => {
-      const url = artist?.images[0].url
-      const { getImage } = await import('./utils/index.js')
-      const image = await getImage(url)
+      const url = artist?.images[0].url;
+      const { getImage } = await import("./utils/index.js");
+      const image = await getImage(url);
       items.push({
         ...artist,
         image,
-      })
-    }).catch(_noop)
+      });
+    }).catch(_noop);
 
     return {
       ...data,
       items,
-    }
+    };
   }
 
   // @todo(types)
   private async getTopTracks({ data, withImages }) {
-    const items: any[] = []
+    const items: any[] = [];
     await asyncForEach(data.items, async (item: any) => {
-      const { album: _album, artists } = item
-      const track: any = _omit(item, OMIT_FIELDS)
-      const album: any = _omit(_album, OMIT_FIELDS)
-      const artist: any = artists.map(({ name }) => name).join(', ')
+      const { album: _album, artists } = item;
+      const track: any = _omit(item, OMIT_FIELDS);
+      const album: any = _omit(_album, OMIT_FIELDS);
+      const artist: any = artists.map(({ name }) => name).join(", ");
       const genres: any = await this.getArtistsGenres({
-        ids: artists.map(({ id }) => id).join(','),
-      })
+        ids: artists.map(({ id }) => id).join(","),
+      });
       items.push({
         ...item,
         album,
@@ -449,31 +439,31 @@ class Client {
         artists,
         genres,
         ...track,
-      })
-    }).catch(_noop)
+      });
+    }).catch(_noop);
 
     if (withImages) {
       await asyncForEach(items, async (item: any, itemIndex: number) => {
-        const album: any = item?.album
-        const url = album?.images[0].url
-        const { getImage } = await import('./utils/index.js')
-        const image = await getImage(url)
+        const album: any = item?.album;
+        const url = album?.images[0].url;
+        const { getImage } = await import("./utils/index.js");
+        const image = await getImage(url);
         items[itemIndex] = {
           ...item,
           album: {
             ...album,
             image,
           },
-        }
-      }).catch(_noop)
+        };
+      }).catch(_noop);
     }
 
     return {
       ...data,
       items,
-    }
+    };
   }
 }
 
-export default Client
-export type { ClientProps, CredentialProps }
+export default Client;
+export type { ClientProps, CredentialProps };

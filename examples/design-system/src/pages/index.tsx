@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 // @ts-ignore
-import { Box, PageHeading, Text } from '@jeromefitz/design-system/src/components'
+import { Box, PageHeading, Text } from "@jeromefitz/design-system/src/components";
 import {
   Tooltip,
   TooltipArrow,
@@ -9,13 +9,13 @@ import {
   TooltipPortal,
   TooltipProvider,
   TooltipTrigger,
-} from '@jeromefitz/design-system/src/custom/Tooltip'
+} from "@jeromefitz/design-system/src/custom/Tooltip";
 
 // import { LoadingDots } from '../components/LoadingDots'
-import { NavigationMenu } from '../components/NavigationMenu'
+import { NavigationMenu } from "../components/NavigationMenu";
 // import { Select } from '../components/Select'
 // import { Switch } from '../components/Switch'
-import { Toast } from '../components/Toast'
+import { Toast } from "../components/Toast";
 
 // import { ToggleGroup } from '../components/ToggleGroup'
 // import { Toolbar } from '../components/Toolbar'
@@ -24,11 +24,8 @@ import { Toast } from '../components/Toast'
 function Home({}) {
   return (
     <>
-      <PageHeading
-        description="An example of in-progress work."
-        title="Design System"
-      />
-      <Box css={{ width: '10%' }}>
+      <PageHeading description="An example of in-progress work." title="Design System" />
+      <Box css={{ width: "10%" }}>
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
@@ -37,7 +34,7 @@ function Home({}) {
             <TooltipPortal>
               <TooltipContent
                 align="end"
-                css={{ '@bp1': { display: 'inline-flex' }, display: 'none' }}
+                css={{ "@bp1": { display: "inline-flex" }, display: "none" }}
               >
                 <>Tooltip Content</>
                 <TooltipArrow />
@@ -57,7 +54,7 @@ function Home({}) {
         {LOTS_O_TEXT}
       </Text> */}
     </>
-  )
+  );
 }
 
-export default Home
+export default Home;

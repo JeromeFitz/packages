@@ -1,15 +1,15 @@
-const globalCss = {}
+const globalCss = {};
 
 const globalRoot = {
   // '--fonts-sans': 'Inter',
   // '--colors-body': 'yellow',
-}
+};
 
 const globalStyles = {
-  ':root': {
+  ":root": {
     ...globalRoot,
   },
   ...globalCss,
-}
+};
 
-export { globalStyles }
+export { globalStyles };
