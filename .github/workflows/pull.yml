@@ -93,6 +93,11 @@ jobs:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
+      - name: '🧪  Test'
+        id: pull-test
+        shell: bash
+        run: pnpm test
+
       # https://docs.github.com/en/actions/learn-github-actions/expressions
       - name: '📛  Commit Message'
         id: pull-commit-message
@@ -106,8 +111,3 @@ jobs:
           BUILD_COMMAND: 'build'
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-
-      - name: '🧪  Test'
-        id: pull-test
-        shell: bash
-        run: pnpm test
