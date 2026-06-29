@@ -12,7 +12,7 @@ const config: UserConfig = {
   minify: true,
   onSuccess: 'pnpm run copy',
   outDir: 'dist',
-  publint: true,
+  publint: false,
   sourcemap: false,
   target: ['node24'],
   treeshake: false,
