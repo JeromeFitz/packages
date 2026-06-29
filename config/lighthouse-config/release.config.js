@@ -16,14 +16,8 @@ const pkg = require('./package.json')
 
 const { name } = pkg
 
-const branches = [
-  ...configDefault.branches,
-  { name: 'refactor/NICE-54', prerelease: 'canary' },
-]
-
 const configPassed = {
   ...configDefault,
-  branches,
   tagFormat: `${name}@\${version}`,
 }
 
