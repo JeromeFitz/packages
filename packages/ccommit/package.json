@@ -1,8 +1,31 @@
 {
   "name": "ccommit",
   "version": "0.0.0",
-  "private": false,
+  "type": "module",
   "description": "😜 ➕ 👔 🟰  ccommit \n  Conventional Commit Generator that interprets commit types from gitmoji and conventional",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeromeFitz/packages.git",
+    "directory": "packages/ccommit"
+  },
+  "homepage": "https://github.com/JeromeFitz/packages/tree/main/packages/ccommit#readme",
+  "author": {
+    "name": "Jerome Fitzgerald",
+    "email": "j@jeromefitzgerald.com",
+    "url": "https://jeromefitzgerald.com"
+  },
+  "license": "MIT",
+  "private": false,
+  "engines": {
+    "node": ">=24"
+  },
+  "bin": {
+    "ccommit": "./dist/index.mjs"
+  },
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
   "keywords": [
     "commit",
     "conventional changelog",
@@ -14,31 +37,6 @@
     "gitmoji",
     "semver"
   ],
-  "homepage": "https://github.com/JeromeFitz/packages/tree/main/packages/ccommit#readme",
-  "license": "MIT",
-  "author": {
-    "name": "Jerome Fitzgerald",
-    "email": "j@jeromefitzgerald.com",
-    "url": "https://jeromefitzgerald.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JeromeFitz/packages.git",
-    "directory": "packages/ccommit"
-  },
-  "bin": {
-    "ccommit": "./dist/index.mjs"
-  },
-  "type": "module",
-  "sideEffects": false,
-  "exports": {
-    ".": "./dist/index.mjs",
-    "./package.json": "./package.json"
-  },
-  "publishConfig": {
-    "provenance": true,
-    "registry": "https://registry.npmjs.org/"
-  },
   "scripts": {
     "build": "tsdown",
     "clean": "rm -rf .turbo && rm -rf dist",
@@ -62,7 +60,9 @@
   "devDependencies": {
     "is-ci": "4.1.0"
   },
-  "engines": {
-    "node": ">=24"
-  }
+  "publishConfig": {
+    "provenance": true,
+    "registry": "https://registry.npmjs.org/"
+  },
+  "sideEffects": false
 }

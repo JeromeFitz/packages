@@ -1,14 +1,15 @@
-import type { UserConfig } from "tsdown";
-import { defineConfig } from "tsdown";
+import type { UserConfig } from 'tsdown'
 
-import { config as _config } from "../../tsdown.config.ts";
+import { defineConfig } from 'tsdown'
 
-const entry = ["src/**"];
+import { config as _config } from '../../tsdown.config.ts'
+
+const entry = ['src/**']
 const config: UserConfig = {
   ..._config,
   entry,
-};
+}
 
 export default defineConfig({
   ...config,
-});
+})

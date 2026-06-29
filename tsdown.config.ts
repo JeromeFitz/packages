@@ -1,5 +1,6 @@
-import type { UserConfig } from "tsdown";
-import { defineConfig } from "tsdown";
+import type { UserConfig } from 'tsdown'
+
+import { defineConfig } from 'tsdown'
 
 const config: UserConfig = {
   attw: false,
@@ -7,15 +8,15 @@ const config: UserConfig = {
   dts: true,
   exports: true,
   failOnWarn: true,
-  logLevel: "error",
+  logLevel: 'error',
   minify: true,
-  onSuccess: "pnpm run copy",
-  outDir: "dist",
+  onSuccess: 'pnpm run copy',
+  outDir: 'dist',
   publint: true,
   sourcemap: false,
-  target: ["node24"],
+  target: ['node24'],
   treeshake: false,
-};
+}
 
-export { config };
-export default defineConfig({ ...config });
+export { config }
+export default defineConfig({ ...config })

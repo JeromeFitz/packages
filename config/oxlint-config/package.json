@@ -51,8 +51,8 @@
     "semantic-release:dry": "semantic-release --dry-run"
   },
   "peerDependencies": {
-    "oxlint": "^1.71.0",
-    "globals": "^17.7.0"
+    "globals": "^17.7.0",
+    "oxlint": "^1.71.0"
   },
   "dependencies": {
     "@typescript-eslint/utils": "8.62.0",
