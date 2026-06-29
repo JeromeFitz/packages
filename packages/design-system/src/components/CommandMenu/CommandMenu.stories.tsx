@@ -1,12 +1,11 @@
-import type { Meta, StoryFn } from '@storybook/react'
-import type { KeyboardEvent } from 'react'
-
+import type { Meta, StoryFn } from "@storybook/react";
+import type { KeyboardEvent } from "react";
 // import { useCommandState as useCmdk } from 'cmdk'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from "react";
 
-import shows from '../../../../../examples/design-system/src/components/CommandMenu/data/shows.json'
-import useDelayedRender from '../../hooks/useDelayedRender.ts'
-import { Box, Flex, Icon } from '../index.ts'
+import shows from "../../../../../examples/design-system/src/components/CommandMenu/data/shows.json";
+import useDelayedRender from "../../hooks/useDelayedRender.ts";
+import { Box, Flex, Icon } from "../index.ts";
 import {
   Command,
   CommandBadge,
@@ -19,8 +18,8 @@ import {
   CommandTopShine,
   // CommandShortCuts,
   // CommandItem,
-} from './CommandMenu.styles.tsx'
-import { CommandMenu, CommandMenuItem } from './CommandMenu.tsx'
+} from "./CommandMenu.styles.tsx";
+import { CommandMenu, CommandMenuItem } from "./CommandMenu.tsx";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 
@@ -35,19 +34,19 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'MDX Content is TBD',
+        component: "MDX Content is TBD",
       },
     },
   },
-  title: 'CommandMenu',
-} as Meta<typeof CommandMenu>
+  title: "CommandMenu",
+} as Meta<typeof CommandMenu>;
 
 function Settings() {
   return (
     <>
       <CommandMenuItem
         onSelect={() => {
-          console.dir(`Toggle: Theme`)
+          console.dir(`Toggle: Theme`);
         }}
       >
         <Flex gap="3">
@@ -57,7 +56,7 @@ function Settings() {
       </CommandMenuItem>
       <CommandMenuItem
         onSelect={() => {
-          console.dir(`Toggle: Audio`)
+          console.dir(`Toggle: Audio`);
         }}
       >
         <Flex gap="3">
@@ -66,13 +65,13 @@ function Settings() {
         </Flex>
       </CommandMenuItem>
     </>
-  )
+  );
 }
 
 function Shows() {
-  const loading = !shows
+  const loading = !shows;
   // const loading = false
-  const empty = !!loading
+  const empty = !!loading;
 
   return (
     <>
@@ -87,21 +86,18 @@ function Shows() {
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            const { description, id, slug, title } = show
+            const { description, id, slug, title } = show;
 
             return (
-              <CommandMenuItem
-                key={id}
-                onSelect={() => console.dir(`slug: /shows/${slug}`)}
-              >
+              <CommandMenuItem key={id} onSelect={() => console.dir(`slug: /shows/${slug}`)}>
                 <Flex gap="3">
                   <Icon.Star />
                   {title}
                 </Flex>
               </CommandMenuItem>
-            )
+            );
           })}
-          <CommandMenuItem onSelect={() => console.dir('slug: /shows')}>
+          <CommandMenuItem onSelect={() => console.dir("slug: /shows")}>
             <Flex gap="3">
               <Icon.ListBullet /> View All
             </Flex>
@@ -109,71 +105,70 @@ function Shows() {
         </>
       )}
     </>
-  )
+  );
 }
 
 function CommandMenuData() {
-  const ref = useRef<HTMLDivElement | null>(null)
-  const [inputValue, setInputValue] = useState('')
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [inputValue, setInputValue] = useState("");
 
-  const [pages, setPages] = useState<string[]>(['home'])
-  const activePage = pages[pages.length - 1]
-  const isHome = activePage === 'home'
+  const [pages, setPages] = useState<string[]>(["home"]);
+  const activePage = pages[pages.length - 1];
+  const isHome = activePage === "home";
 
   // @ts-ignore
-  // biome-ignore lint/correctness/noUndeclaredVariables: migrate
   const popPage = useCallback(() => {
     setPages((pages) => {
-      const x = [...pages]
-      x.splice(-1, 1)
-      return x
-    })
-  }, [])
+      const x = [...pages];
+      x.splice(-1, 1);
+      return x;
+    });
+  }, []);
 
   function bounce() {
     if (ref.current) {
-      ref.current.style.transform = 'scale(0.96)'
+      ref.current.style.transform = "scale(0.96)";
       setTimeout(() => {
         if (ref.current) {
-          ref.current.style.transform = ''
+          ref.current.style.transform = "";
         }
-      }, 125)
+      }, 125);
 
-      setInputValue('')
+      setInputValue("");
     }
   }
 
   return (
     <Box
       css={{
-        '@bp1': {
-          maxWidth: '640px',
+        "@bp1": {
+          maxWidth: "640px",
           // padding: '0 $3',
         },
-        margin: '0 auto',
-        maxWidth: '100%',
-        padding: '0',
-        width: '100%',
+        margin: "0 auto",
+        maxWidth: "100%",
+        padding: "0",
+        width: "100%",
       }}
     >
       <Command
         loop
         onClick={() => {
-          bounce()
+          bounce();
         }}
         onKeyDown={(e: KeyboardEvent) => {
-          if (e.key === 'Enter') {
-            bounce()
+          if (e.key === "Enter") {
+            bounce();
           }
 
           if (isHome || inputValue.length) {
-            return
+            return;
           }
 
-          if (e.key === 'Backspace') {
-            e.preventDefault()
-            popPage()
-            bounce()
+          if (e.key === "Backspace") {
+            e.preventDefault();
+            popPage();
+            bounce();
           }
         }}
         ref={ref}
@@ -184,49 +179,49 @@ function CommandMenuData() {
             /**
              * @hack(cmdk) tidy this up please
              */
-            const isLink = p === 'home' && pages?.length > 1
+            const isLink = p === "home" && pages?.length > 1;
             return (
               <CommandBadge
-                as={isLink ? 'a' : 'div'}
+                as={isLink ? "a" : "div"}
                 cmdk-badge=""
                 css={{
-                  '@hover': {
-                    '&:hover': {
-                      cursor: isLink ? 'pointer' : 'default',
+                  "@hover": {
+                    "&:hover": {
+                      cursor: isLink ? "pointer" : "default",
                     },
                   },
                 }}
                 key={p}
                 onClick={() => {
-                  isLink && popPage()
+                  isLink && popPage();
                 }}
               >
                 {p}
               </CommandBadge>
-            )
+            );
           })}
         </div>
         <CommandInput
           autoFocus
           onValueChange={(value) => {
-            setInputValue(value)
+            setInputValue(value);
           }}
           placeholder="Type a command or search..."
         />
         <CommandLoader cmdk-loader="" />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
-          {activePage === 'home' && (
+          {activePage === "home" && (
             <Home
               // searchSettings={() => setPages([...pages, 'settings'])}
-              searchShows={() => setPages([...pages, 'shows'])}
+              searchShows={() => setPages([...pages, "shows"])}
             />
           )}
-          {activePage === 'shows' && <Shows />}
+          {activePage === "shows" && <Shows />}
         </CommandList>
       </Command>
     </Box>
-  )
+  );
 }
 
 /* eslint-disable @typescript-eslint/ban-types */
@@ -236,7 +231,7 @@ function Home({ searchShows }: { searchShows: Function }) {
       <CommandGroup heading="Shows">
         <CommandMenuItem
           onSelect={() => {
-            searchShows()
+            searchShows();
           }}
         >
           <Flex gap="3">
@@ -246,7 +241,7 @@ function Home({ searchShows }: { searchShows: Function }) {
         </CommandMenuItem>
         <CommandMenuItem
           onSelect={() => {
-            searchShows()
+            searchShows();
           }}
         >
           <Flex gap="3">
@@ -291,39 +286,36 @@ function Home({ searchShows }: { searchShows: Function }) {
         <Settings />
       </CommandGroup>
     </>
-  )
+  );
 }
 
-const Template: StoryFn<typeof CommandMenu> = ({
-  children = CommandMenuData,
-  ...args
-}) => {
-  const [open, setOpen] = useState(args?.open)
+const Template: StoryFn<typeof CommandMenu> = ({ children = CommandMenuData, ...args }) => {
+  const [open, setOpen] = useState(args?.open);
 
   useEffect(() => {
     const down = (e) => {
-      if (e.key === 'k' && e.metaKey) {
-        e.preventDefault()
-        setOpen((open) => !open)
+      if (e.key === "k" && e.metaKey) {
+        e.preventDefault();
+        setOpen((open) => !open);
       }
-    }
+    };
 
-    document.addEventListener('keydown', down)
-    return () => document.removeEventListener('keydown', down)
-  }, [args?.open])
+    document.addEventListener("keydown", down);
+    return () => document.removeEventListener("keydown", down);
+  }, [args?.open]);
 
   const { mounted } = useDelayedRender(open, {
     exitDelay: 125,
-  })
+  });
 
   return (
     <CommandMenu onOpenChange={setOpen} open={mounted}>
       {children()}
     </CommandMenu>
-  )
-}
+  );
+};
 
 export const Default = {
   args: {},
   render: Template,
-}
+};

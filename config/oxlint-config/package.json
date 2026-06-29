@@ -1,20 +1,25 @@
 {
   "name": "@jeromefitz/oxlint-config",
   "version": "0.0.0",
-  "type": "module",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jeromefitz/packages.git",
-    "directory": "config/oxlint"
-  },
+  "private": true,
+  "license": "MIT",
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
     "url": "https://jeromefitzgerald.com"
   },
-  "license": "MIT",
-  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeromefitz/packages.git",
+    "directory": "config/oxlint"
+  },
+  "files": [
+    "dist/**"
+  ],
+  "type": "module",
+  "sideEffects": false,
   "exports": {
+    ".": "./dist/index.mjs",
     "./categories": "./dist/categories.mjs",
     "./config": "./dist/config.mjs",
     "./globals": "./dist/globals.mjs",
@@ -38,9 +43,6 @@
     "./plugins.vitest": "./dist/plugins.vitest.mjs",
     "./package.json": "./package.json"
   },
-  "files": [
-    "src/**"
-  ],
   "scripts": {
     "build": "tsdown",
     "clean": "rm -rf ./.turbo ./dist",
@@ -51,10 +53,6 @@
     "semantic-release": "semantic-release",
     "semantic-release:dry": "semantic-release --dry-run"
   },
-  "peerDependencies": {
-    "globals": "^17.7.0",
-    "oxlint": "^1.71.0"
-  },
   "dependencies": {
     "@typescript-eslint/utils": "8.62.0",
     "eslint": "10.6.0",
@@ -64,5 +62,11 @@
     "oxlint": "1.71.0",
     "oxlint-tsgolint": "0.23.0"
   },
-  "sideEffects": false
+  "devDependencies": {
+    "is-in-ci": "2.0.0"
+  },
+  "peerDependencies": {
+    "globals": "^17.7.0",
+    "oxlint": "^1.71.0"
+  }
 }

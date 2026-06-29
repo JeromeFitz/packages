@@ -1,21 +1,21 @@
-import { last as _last } from 'lodash-es'
+import { last as _last } from "lodash-es";
 
 /**
  * @note this should be in the website repo as it’s custom
  * *cough* more custom than _waves vaguely all-around_ all of this
  */
 const getTitle = (title: string) => {
-  const _title: string = _last(title.split('_')) ?? ''
+  const _title: string = _last(title.split("_")) ?? "";
 
-  // biome-ignore lint/complexity/noExtraBooleanCast: migrate
+  // oxlint-disable-next-line no-extra-boolean-cast
   if (!!_title) {
     return _title
-      .replace('Past', 'Cast Emeritus')
-      .replace('Musical', 'Musical Director')
-      .replace('Technical', 'Technical Director')
+      .replace("Past", "Cast Emeritus")
+      .replace("Musical", "Musical Director")
+      .replace("Technical", "Technical Director");
   }
 
-  return _title
-}
+  return _title;
+};
 
-export default getTitle
+export default getTitle;

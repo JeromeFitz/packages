@@ -1,13 +1,13 @@
-import isCI from 'is-ci'
+import isCI from "is-in-ci";
 
 if (!isCI) {
-  const dotenv = await import('dotenv')
-  dotenv.config({ path: './.env' })
+  const dotenv = await import("dotenv");
+  dotenv.config({ path: "./.env" });
 }
 
-const isOverride = process.env.GIT_CZ__OVERRIDE_TEST
+const isOverride = process.env.GIT_CZ__OVERRIDE_TEST;
 
-const enabled = isOverride
+const enabled = isOverride;
 
 /**
  * @note lol, this will not get picked up in release releaseNotes
@@ -16,60 +16,60 @@ const enabled = isOverride
 const _types = {
   override: {
     branch: false,
-    code: ':sunrise_over_mountains:',
-    commit: 'override',
-    description: 'Custom type => override.',
-    emoji: '🌄️',
-    entity: '&#1F304;',
-    name: 'override',
+    code: ":sunrise_over_mountains:",
+    commit: "override",
+    description: "Custom type => override.",
+    emoji: "🌄️",
+    entity: "&#1F304;",
+    name: "override",
     semver: null,
   },
-}
+};
 
 const commit = isOverride
   ? {
-      after: { branchName: ' ', emoji: '  ', scope: ') ' },
-      before: { branchName: '', emoji: '', scope: '(' },
-      format: '{emoji}{scope}{branchName}{subject}',
+      after: { branchName: " ", emoji: "  ", scope: ") " },
+      before: { branchName: "", emoji: "", scope: "(" },
+      format: "{emoji}{scope}{branchName}{subject}",
       maxMessageLength: 64,
       minMessageLength: 3,
       questions: [
-        'branchFlag',
-        'commitBreakingFlag',
-        'commitBreaking',
+        "branchFlag",
+        "commitBreakingFlag",
+        "commitBreaking",
         // 'commitScopes',
-        'commitTypes',
-        'commitSubject',
-        'commitBodyFlag',
-        'commitBody',
+        "commitTypes",
+        "commitSubject",
+        "commitBodyFlag",
+        "commitBody",
       ],
       // @question dynamic?
       scopes: [
-        '',
-        'cc', // ccommit
-        'cs', // codestyle
-        'ds', // design-system
-        'gitmoji', // conventional-gitmoji
-        'notion', // notion
-        'scripts', // scripts
-        'semantic', // semantic
-        'spotify', // spotify
-        'utils', // u
+        "",
+        "cc", // ccommit
+        "cs", // codestyle
+        "ds", // design-system
+        "gitmoji", // conventional-gitmoji
+        "notion", // notion
+        "scripts", // scripts
+        "semantic", // semantic
+        "spotify", // spotify
+        "utils", // u
       ],
     }
-  : {}
+  : {};
 
 const branch = isOverride
   ? {
-      format: '{branchType}{branchName}',
-      prefix: '',
-      questions: ['branchFlag', 'branchTypes', 'branchName'],
-      url: 'https://github.com/JeromeFitz/packages/issues/',
+      format: "{branchType}{branchName}",
+      prefix: "",
+      questions: ["branchFlag", "branchTypes", "branchName"],
+      url: "https://github.com/JeromeFitz/packages/issues/",
     }
-  : {}
+  : {};
 
-const types = isOverride ? _types : {}
+const types = isOverride ? _types : {};
 
-const changelog = { branch, commit, enabled, types }
+const changelog = { branch, commit, enabled, types };
 
-export default changelog
+export default changelog;

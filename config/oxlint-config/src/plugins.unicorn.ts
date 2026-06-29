@@ -1,4 +1,4 @@
-import type { DummyRuleMap } from 'oxlint'
+import type { DummyRuleMap } from "oxlint";
 
 /**
  * @note(oxlint) migration
@@ -26,24 +26,24 @@ const overridesTemporary: DummyRuleMap = {
   /**
    * suspicious
    */
-}
+};
 
 const overrides: DummyRuleMap = {
   /**
    * style
    */
-  'unicorn/filename-case': [
-    'error',
+  "unicorn/filename-case": [
+    "error",
     {
-      case: 'kebabCase',
+      case: "kebabCase",
       multipleFileExtensions: false,
     },
   ],
-}
+};
 
 const rules: DummyRuleMap = {
   ...overridesTemporary,
   ...overrides,
-}
+};
 
-export { rules as unicorn }
+export { rules as unicorn };

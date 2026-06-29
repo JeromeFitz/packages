@@ -1,48 +1,49 @@
-import { map as _map } from 'lodash-es'
+import { map as _map } from "lodash-es";
 
-import { LOOKUP, PROPERTIES_LOOKUP } from '../../constants/index'
-import { getTypes } from '../../utils/index'
+import { LOOKUP, PROPERTIES_LOOKUP } from "../../constants/index";
+import { getTypes } from "../../utils/index";
 
 /**
  * @todo(notion)
  *
  * Refactor to remove `config` as a parameter, or move this to `queries`
  */
+// oxlint-disable-next-line complexity
 const dataNormalized = ({ config, data, pageId, pathVariables }) => {
-  const { NOTION } = config
-  const DATA_NORMALIZED = {}
-  if (!data?.properties) return DATA_NORMALIZED
-  const { properties } = data
+  const { NOTION } = config;
+  const DATA_NORMALIZED = {};
+  if (!data?.properties) return DATA_NORMALIZED;
+  const { properties } = data;
 
   // @hack(notion) not great
-  let routeType = ''
+  let routeType = "";
   if (pathVariables) {
-    const { meta, routeType: _routeType } = pathVariables
+    const { meta, routeType: _routeType } = pathVariables;
     routeType =
       _routeType === NOTION?.PODCASTS?.routeType && meta.length > 1
         ? NOTION?.EPISODES?.routeType
-        : _routeType
+        : _routeType;
   }
 
-  const items = routeType ? LOOKUP[routeType.toUpperCase()] : PROPERTIES_LOOKUP
+  const items = routeType ? LOOKUP[routeType.toUpperCase()] : PROPERTIES_LOOKUP;
 
   _map(items, (item) => {
-    let dataToNormalize: any
+    let dataToNormalize: any;
 
-    const dataFromNotion = properties[item.notion]
+    const dataFromNotion = properties[item.notion];
     /**
      * @note(notion)
      * ensure key populates in api
      * only populate w/ data if exists in notion
      */
-    DATA_NORMALIZED[item.key] = null
+    DATA_NORMALIZED[item.key] = null;
     if (dataFromNotion) {
-      dataToNormalize = getTypes[item.type](dataFromNotion, pageId)
-      DATA_NORMALIZED[item.key] = dataToNormalize ? dataToNormalize : null
+      dataToNormalize = getTypes[item.type](dataFromNotion, pageId);
+      DATA_NORMALIZED[item.key] = dataToNormalize ? dataToNormalize : null;
     }
-  })
+  });
 
-  return DATA_NORMALIZED
-}
+  return DATA_NORMALIZED;
+};
 
-export default dataNormalized
+export default dataNormalized;

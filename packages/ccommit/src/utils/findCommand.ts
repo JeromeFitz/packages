@@ -1,17 +1,10 @@
-/** biome-ignore-all lint/suspicious/noConsole: migrate */
-import process from 'node:process'
+import process from "node:process";
 
-import {
-  COMMIT_FORMATS,
-  COMMIT_MODES,
-  FLAGS,
-  LOGS,
-  OPTIONS,
-} from '~ccommit/lib/index'
-import { generateLog, getStagedFiles } from '~ccommit/utils/index'
+import { COMMIT_FORMATS, COMMIT_MODES, FLAGS, LOGS, OPTIONS } from "~ccommit/lib/index";
+import { generateLog, getStagedFiles } from "~ccommit/utils/index";
 
 const getOptionsForCommand = (command: string, flags: any): any => {
-  const commandsWithOptions = [FLAGS.COMMIT, FLAGS.HOOK]
+  const commandsWithOptions = [FLAGS.COMMIT, FLAGS.HOOK];
 
   // @ts-ignore
   if (commandsWithOptions.includes(command)) {
@@ -31,32 +24,32 @@ const getOptionsForCommand = (command: string, flags: any): any => {
       skip: flags[FLAGS.SKIP],
       title: flags[OPTIONS.TITLE],
       type: flags[OPTIONS.TYPE],
-    }
+    };
 
-    return options
+    return options;
   }
 
-  return null
-}
+  return null;
+};
 
 // @todo(lint) complexity: 11
-// biome-ignore lint/complexity/noExcessiveCognitiveComplexity: migrate
+// oxlint-disable-next-line complexity
 const findCommand = (cli: any, options: any): void => {
-  const flags = cli.flags
+  const flags = cli.flags;
   const commandFlag = Object.keys(flags)
     .map((flag) => flags[flag] && flag)
-    .find((flag) => options[flag])
+    .find((flag) => options[flag]);
 
-  const filesChanged = getStagedFiles()
+  const filesChanged = getStagedFiles();
 
   if (!flags[FLAGS.DRYRUN] && !filesChanged) {
-    console.log(generateLog(LOGS.TYPES.ERROR, LOGS.MESSAGES.STAGED_FILES))
-    process.exit(2)
+    console.log(generateLog(LOGS.TYPES.ERROR, LOGS.MESSAGES.STAGED_FILES));
+    process.exit(2);
   }
 
   if (flags[FLAGS.COMMIT] && flags[FLAGS.HOOK]) {
-    console.log(generateLog(LOGS.TYPES.ERROR, LOGS.MESSAGES.MODE_CONFLICT))
-    process.exit(2)
+    console.log(generateLog(LOGS.TYPES.ERROR, LOGS.MESSAGES.MODE_CONFLICT));
+    process.exit(2);
   }
 
   if (
@@ -65,26 +58,23 @@ const findCommand = (cli: any, options: any): void => {
     flags[OPTIONS.TITLE] ||
     flags[OPTIONS.TYPE]
   ) {
-    flags[FLAGS.SKIP] = true
+    flags[FLAGS.SKIP] = true;
   }
 
   if (flags[FLAGS.SKIP]) {
     if (flags[OPTIONS.TITLE] && flags[OPTIONS.TYPE]) {
-      flags[FLAGS.SKIP] = true
+      flags[FLAGS.SKIP] = true;
     } else {
-      flags[FLAGS.SKIP] = false
-      console.log(
-        generateLog(LOGS.TYPES.ERROR, LOGS.MESSAGES.COMMAND_LINE_WITHOUT_REQUIRED),
-      )
-      flags[OPTIONS.TITLE] = undefined
-      flags[OPTIONS.TYPE] = undefined
+      flags[FLAGS.SKIP] = false;
+      console.log(generateLog(LOGS.TYPES.ERROR, LOGS.MESSAGES.COMMAND_LINE_WITHOUT_REQUIRED));
+      flags[OPTIONS.TITLE] = undefined;
+      flags[OPTIONS.TYPE] = undefined;
     }
   }
 
-  const commandOptions = getOptionsForCommand(commandFlag, flags)
+  const commandOptions = getOptionsForCommand(commandFlag, flags);
 
-  // biome-ignore lint/correctness/noVoidTypeReturn: migrate
-  return options[commandFlag] ? options[commandFlag](commandOptions) : cli.showHelp()
-}
+  return options[commandFlag] ? options[commandFlag](commandOptions) : cli.showHelp();
+};
 
-export { findCommand }
+export { findCommand };

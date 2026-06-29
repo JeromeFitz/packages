@@ -1,28 +1,24 @@
 /*!
  * reference: https://github.com/carloscuesta/gitmoji-cli
  */
-import fs from 'node:fs'
-import process from 'node:process'
+import fs from "node:fs";
+import process from "node:process";
 
-import { execa } from 'execa'
+import { execa } from "execa";
 
 const cancelIfRebasing = (): Promise<void> =>
-  execa('git', ['rev-parse', '--absolute-git-dir']).then(
-    ({ stdout: gitDirectory }) => {
-      // see https://stackoverflow.com/questions/3921409/how-to-know-if-there-is-a-git-rebase-in-progress
-      // to understand how a rebase is detected
-      if (
-        // biome-ignore lint/style/useTemplate: migrate
-        fs.existsSync(gitDirectory + '/rebase-merge') ||
-        // biome-ignore lint/style/useTemplate: migrate
-        fs.existsSync(gitDirectory + '/rebase-apply')
-      ) {
-        process.exit(0)
-      }
-    },
-  )
+  execa("git", ["rev-parse", "--absolute-git-dir"]).then(({ stdout: gitDirectory }) => {
+    // see https://stackoverflow.com/questions/3921409/how-to-know-if-there-is-a-git-rebase-in-progress
+    // to understand how a rebase is detected
+    if (
+      fs.existsSync(gitDirectory + "/rebase-merge") ||
+      fs.existsSync(gitDirectory + "/rebase-apply")
+    ) {
+      process.exit(0);
+    }
+  });
 
-const COMMIT_MESSAGE_SOURCE = 4
+const COMMIT_MESSAGE_SOURCE = 4;
 
 const cancelIfAmending = (): Promise<void> =>
   new Promise<void>((resolve) => {
@@ -31,18 +27,17 @@ const cancelIfAmending = (): Promise<void> =>
       the commit message source is passed as second argument and corresponding 4 for ccommit
       `gitmoji --hook $1 $2`
     */
-    const commitMessageSource: string = process.argv[COMMIT_MESSAGE_SOURCE]
+    const commitMessageSource: string = process.argv[COMMIT_MESSAGE_SOURCE];
     if (
       commitMessageSource &&
-      (commitMessageSource.startsWith('commit') ||
-        commitMessageSource.startsWith('merge'))
+      (commitMessageSource.startsWith("commit") || commitMessageSource.startsWith("merge"))
     ) {
-      process.exit(0)
+      process.exit(0);
     }
-    resolve()
-  })
+    resolve();
+  });
 
 // I avoid Promise.all to avoid race condition in future cancel callbacks
-const cancelIfNeeded = (): Promise<void> => cancelIfAmending().then(cancelIfRebasing)
+const cancelIfNeeded = (): Promise<void> => cancelIfAmending().then(cancelIfRebasing);
 
-export { COMMIT_MESSAGE_SOURCE, cancelIfAmending, cancelIfNeeded, cancelIfRebasing }
+export { COMMIT_MESSAGE_SOURCE, cancelIfAmending, cancelIfNeeded, cancelIfRebasing };

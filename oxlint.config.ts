@@ -1,6 +1,5 @@
-import { config } from '@jeromefitz/oxlint-config'
-
-import { defineConfig } from 'oxlint'
+import { config } from "@jeromefitz/oxlint-config";
+import { defineConfig } from "oxlint";
 
 export default defineConfig({
   ...config,
@@ -10,14 +9,14 @@ export default defineConfig({
   },
   options: {
     maxWarnings: 50,
-    reportUnusedDisableDirectives: 'allow',
+    reportUnusedDisableDirectives: "allow",
     typeAware: false,
     typeCheck: false,
   },
   settings: {
     react: {
       // renovate: datasource=npm depName=react
-      version: '19.2.7',
+      version: "19.2.7",
     },
   },
-})
+});

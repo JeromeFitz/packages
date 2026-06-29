@@ -1,8 +1,6 @@
-import type { DocumentContext } from 'next/document'
-
-import { getCssText, reset } from '@jeromefitz/design-system/src/lib/stitches.config'
-
-import Document, { Head, Html, Main, NextScript } from 'next/document'
+import { getCssText, reset } from "@jeromefitz/design-system/src/lib/stitches.config";
+import type { DocumentContext } from "next/document";
+import Document, { Head, Html, Main, NextScript } from "next/document";
 
 /**
  * @note
@@ -13,10 +11,10 @@ import Document, { Head, Html, Main, NextScript } from 'next/document'
  * ref: https://github.com/radix-ui/design-system/pull/360
  */
 const getCssAndReset = () => {
-  const css = getCssText()
-  reset()
-  return css
-}
+  const css = getCssText();
+  reset();
+  return css;
+};
 
 class MyDocument extends Document<DocumentContext> {
   render() {
@@ -27,19 +25,15 @@ class MyDocument extends Document<DocumentContext> {
           <meta content="no" name="msapplication-tap-highlight" />
           <meta content="nofish" name="superfish" />
           <meta content="origin-when-cross-origin" name="referrer" />
-          <style
-            // biome-ignore lint/security/noDangerouslySetInnerHtml: migrate
-            dangerouslySetInnerHTML={{ __html: getCssAndReset() }}
-            id="stitches"
-          />
+          <style dangerouslySetInnerHTML={{ __html: getCssAndReset() }} id="stitches" />
         </Head>
         <body>
           <Main />
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
 
-export default MyDocument
+export default MyDocument;

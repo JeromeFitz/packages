@@ -1,28 +1,30 @@
 {
   "name": "@jeromefitz/semantic",
   "version": "0.0.0",
-  "type": "module",
+  "private": false,
   "description": "Semantic Versioning, Conventional Commits with CI/CD for GitHub Actions.",
-  "repository": {
-    "directory": "packages/semantic",
-    "type": "git",
-    "url": "git+https://github.com/JeromeFitz/packages.git"
-  },
+  "license": "MIT",
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
     "url": "https://jeromefitzgerald.com"
   },
-  "license": "MIT",
-  "private": false,
-  "engines": {
-    "node": ">=24"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeromeFitz/packages.git",
+    "directory": "packages/semantic"
   },
+  "type": "module",
+  "sideEffects": false,
   "exports": {
     ".": "./dist/index.mjs",
     "./getConfig": "./dist/getConfig.mjs",
     "./release.config": "./dist/release.config.mjs",
     "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "provenance": true,
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "build": "tsdown",
@@ -30,14 +32,10 @@
     "clean:install": "pnpm run clean && rm -rf node_modules",
     "copy": "mkdir -p ./dist && ./scripts/copy.sh",
     "dev": "tsdown --watch",
-    "lint": "pnpm run lint:typescript",
-    "lint:typescript": "tsc --noEmit --declaration",
+    "lint:ts": "tsc --noEmit --declaration",
     "semantic-release": "semantic-release",
     "semantic-release:dry": "semantic-release --dry-run",
     "test": "vitest run"
-  },
-  "peerDependencies": {
-    "@jeromefitz/conventional-gitmoji": "^5.0.0"
   },
   "dependencies": {
     "@semantic-release/commit-analyzer": "13.0.1",
@@ -49,9 +47,10 @@
   "devDependencies": {
     "@jeromefitz/conventional-gitmoji": "workspace:*"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "provenance": true
+  "peerDependencies": {
+    "@jeromefitz/conventional-gitmoji": "^5.0.0"
   },
-  "sideEffects": false
+  "engines": {
+    "node": ">=24"
+  }
 }

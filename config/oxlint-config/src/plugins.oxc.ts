@@ -1,4 +1,4 @@
-import type { DummyRuleMap } from 'oxlint'
+import type { DummyRuleMap } from "oxlint";
 
 /**
  * @note(oxlint) migration
@@ -24,10 +24,10 @@ const overridesTemporary: DummyRuleMap = {
   /**
    * restriction
    */
-  'oxc/no-async-await': 'off', // x178
-  'oxc/no-barrel-file': 'off', // x3
-  'oxc/no-optional-chaining': 'off', // x308
-  'oxc/no-rest-spread-properties': 'off', // x567
+  "oxc/no-async-await": "off", // x178
+  "oxc/no-barrel-file": "off", // x3
+  "oxc/no-optional-chaining": "off", // x308
+  "oxc/no-rest-spread-properties": "off", // x567
 
   /**
    * style
@@ -36,13 +36,13 @@ const overridesTemporary: DummyRuleMap = {
   /**
    * suspicious
    */
-}
+};
 
-const overrides: DummyRuleMap = {}
+const overrides: DummyRuleMap = {};
 
 const rules: DummyRuleMap = {
   ...overridesTemporary,
   ...overrides,
-}
+};
 
-export { rules as oxc }
+export { rules as oxc };

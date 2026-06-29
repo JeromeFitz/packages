@@ -1,7 +1,14 @@
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll.biome": "explicit",
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll.biome": "never",
+    "source.fixAll.eslint": "never",
+    "source.fixAll.oxc": "explicit",
+    "source.fixAll.stylelint": "never",
+    "source.organizeImports": "never"
   },
-  "editor.formatOnSave": true
+  "editor.defaultFormatter": "oxc.oxc-vscode",
+  "editor.formatOnSave": true,
+  "oxc.disableNestedConfig": false,
+  "oxc.enable": true,
+  "oxc.typeAware": false
 }

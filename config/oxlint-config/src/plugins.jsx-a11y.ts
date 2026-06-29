@@ -1,4 +1,4 @@
-import type { DummyRuleMap } from 'oxlint'
+import type { DummyRuleMap } from "oxlint";
 
 /**
  * @note(oxlint) migration
@@ -8,8 +8,8 @@ const overridesTemporary: DummyRuleMap = {
   /**
    * correctness
    */
-  'jsx-a11y/control-has-associated-label': 'off', // x1
-  'jsx-a11y/prefer-tag-over-role': 'off', // x181
+  "jsx-a11y/control-has-associated-label": "off", // x1
+  "jsx-a11y/prefer-tag-over-role": "off", // x181
 
   /**
    * nursery
@@ -29,13 +29,13 @@ const overridesTemporary: DummyRuleMap = {
   /**
    * suspicious
    */
-}
+};
 
-const overrides: DummyRuleMap = {}
+const overrides: DummyRuleMap = {};
 
 const rules: DummyRuleMap = {
   ...overridesTemporary,
   ...overrides,
-}
+};
 
-export { rules as jsxA11y }
+export { rules as jsxA11y };

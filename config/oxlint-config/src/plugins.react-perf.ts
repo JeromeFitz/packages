@@ -1,4 +1,4 @@
-import type { DummyRuleMap } from 'oxlint'
+import type { DummyRuleMap } from "oxlint";
 
 /**
  * @note(oxlint) migration
@@ -20,10 +20,10 @@ const overridesTemporary: DummyRuleMap = {
   /**
    * perf
    */
-  'react-perf/jsx-no-jsx-as-prop': 'off', // x15
-  'react-perf/jsx-no-new-array-as-prop': 'off', // x7
-  'react-perf/jsx-no-new-function-as-prop': 'off', // x13
-  'react-perf/jsx-no-new-object-as-prop': 'off', // x342
+  "react-perf/jsx-no-jsx-as-prop": "off", // x15
+  "react-perf/jsx-no-new-array-as-prop": "off", // x7
+  "react-perf/jsx-no-new-function-as-prop": "off", // x13
+  "react-perf/jsx-no-new-object-as-prop": "off", // x342
 
   /**
    * restriction
@@ -36,13 +36,13 @@ const overridesTemporary: DummyRuleMap = {
   /**
    * suspicious
    */
-}
+};
 
-const overrides: DummyRuleMap = {}
+const overrides: DummyRuleMap = {};
 
 const rules: DummyRuleMap = {
   ...overridesTemporary,
   ...overrides,
-}
+};
 
-export { rules as reactPerf }
+export { rules as reactPerf };

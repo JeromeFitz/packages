@@ -1,16 +1,15 @@
-// import isCI from 'is-ci'
-import type { Options } from 'tsdown'
+// import isCI from 'is-in-ci'
+import type { Options } from "tsdown";
+import { defineConfig } from "tsdown";
 
-import { defineConfig } from 'tsdown'
+import { config as _config } from "../../tsdown.config.ts";
 
-import { config as _config } from '../../tsdown.config.ts'
-
-const entry = ['src/**']
+const entry = ["src/**"];
 const config: Options = {
   ..._config,
   entry,
-}
+};
 
 export default defineConfig({
   ...config,
-})
+});

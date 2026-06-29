@@ -1,77 +1,72 @@
-/** biome-ignore-all lint/suspicious/noConsole: migrate */
-import process from 'node:process'
+import process from "node:process";
 
-import enquirer from 'enquirer'
-
-import { COMMIT_MODES, FIND_BY, LOGS } from '~ccommit/lib/index'
+import enquirer from "enquirer";
+import { COMMIT_MODES, FIND_BY, LOGS } from "~ccommit/lib/index";
 import {
   cancelIfNeeded,
   findBy,
   formatCommitSubject,
   generateLog,
   registerHookInterruptionHandler,
-} from '~ccommit/utils/index'
+} from "~ccommit/utils/index";
 
-import questions from './questions'
-import withClient from './withClient'
-import withHook from './withHook'
+import questions from "./questions";
+import withClient from "./withClient";
+import withHook from "./withHook";
 
-const { prompt } = enquirer
+const { prompt } = enquirer;
 
-// biome-ignore lint/style/useConsistentTypeDefinitions: migrate
 export type CommitOptions = {
-  message?: string
-  mode: typeof COMMIT_MODES.CLIENT
+  message?: string;
+  mode: typeof COMMIT_MODES.CLIENT;
   // mode: typeof COMMIT_MODES.CLIENT | typeof COMMIT_MODES.HOOK
-  scope?: string
-  skip: boolean
-  title?: string
-}
+  scope?: string;
+  skip: boolean;
+  title?: string;
+};
 
 /**
  * @todo(ccommit) this is a hacky way to bypass the generator :X
  */
 const promptAndCommit = async (options: CommitOptions) => {
-  let data: any = {}
+  let data: any = {};
 
   if (options.skip) {
-    data = options
+    data = options;
     // @note(ccommit) very type is an actual type
-    data.gitmoji = findBy(data.type, FIND_BY.TYPE, FIND_BY.EMOJI)
+    data.gitmoji = findBy(data.type, FIND_BY.TYPE, FIND_BY.EMOJI);
     if (!data.gitmoji) {
-      console.log(
-        generateLog(LOGS.TYPES.ERROR, LOGS.MESSAGES.TYPE_INCORRECT, data.type),
-      )
-      process.exit(2)
+      console.log(generateLog(LOGS.TYPES.ERROR, LOGS.MESSAGES.TYPE_INCORRECT, data.type));
+      process.exit(2);
     }
   } else {
     // @ts-ignore
     await prompt(questions)
       .then((answers: any) => {
-        answers.type = findBy(answers.gitmoji, FIND_BY.EMOJI, FIND_BY.TYPE)
-        return answers
+        answers.type = findBy(answers.gitmoji, FIND_BY.EMOJI, FIND_BY.TYPE);
+        return answers;
       })
       .then((answers) => {
-        data = answers
+        data = answers;
       })
-      .catch(console.error)
+      .catch(console.error);
   }
 
-  // biome-ignore lint/complexity/noExtraBooleanCast: migrate
-  data.subject = !!data ? formatCommitSubject(options, data) : ''
+  // oxlint-disable-next-line no-extra-boolean-cast
+  data.subject = !!data ? formatCommitSubject(options, data) : "";
 
   if (options.mode === COMMIT_MODES.HOOK) {
-    return withHook(data, options)
+    return withHook(data, options);
   } else {
-    return withClient(data, options)
+    return withClient(data, options);
   }
-}
+};
 const commit = (options: CommitOptions) => {
   if (options.mode === COMMIT_MODES.HOOK) {
-    registerHookInterruptionHandler()
-    return cancelIfNeeded().then(() => promptAndCommit(options))
+    registerHookInterruptionHandler();
+    return cancelIfNeeded().then(() => promptAndCommit(options));
   }
-  return promptAndCommit(options)
-}
+  return promptAndCommit(options);
+};
 
-export default commit
+export default commit;

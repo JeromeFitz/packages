@@ -1,4 +1,4 @@
-// biome-ignore lint/complexity/noExtraBooleanCast: migrate
-const title = (data: any) => (!!data?.title ? data?.title[0]?.plain_text : null)
+// oxlint-disable-next-line no-extra-boolean-cast
+const title = (data: any) => (!!data?.title ? data?.title[0]?.plain_text : null);
 
-export default title
+export default title;

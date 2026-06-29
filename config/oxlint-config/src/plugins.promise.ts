@@ -1,14 +1,10 @@
-import type { DummyRuleMap } from 'oxlint'
+import type { DummyRuleMap } from "oxlint";
 
 /**
  * @note(oxlint) migration
  * slowly move to only having overrides where necessary
  */
 const overridesTemporary: DummyRuleMap = {
-  /**
-   * suspicious
-   */
-  'promise/always-return': 'off', // x1
   /**
    * correctness
    */
@@ -32,15 +28,20 @@ const overridesTemporary: DummyRuleMap = {
   /**
    * style
    */
-  'promise/avoid-new': 'off', // x1
-  'promise/prefer-await-to-then': 'off', // x3
-}
+  "promise/avoid-new": "off", // x1
+  "promise/prefer-await-to-then": "off", // x3
 
-const overrides: DummyRuleMap = {}
+  /**
+   * suspicious
+   */
+  "promise/always-return": "off", // x1
+};
+
+const overrides: DummyRuleMap = {};
 
 const rules: DummyRuleMap = {
   ...overridesTemporary,
   ...overrides,
-}
+};
 
-export { rules as promise }
+export { rules as promise };

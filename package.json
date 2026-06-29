@@ -1,31 +1,22 @@
 {
   "name": "@jeromefitz/packages",
-  "type": "module",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JeromeFitz/packages.git"
-  },
+  "private": true,
+  "license": "MIT",
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
     "url": "https://jeromefitzgerald.com"
   },
-  "license": "MIT",
-  "private": true,
-  "packageManager": "pnpm@11.9.0",
-  "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "version": "11.9.0"
-    },
-    "runtime": {
-      "name": "node",
-      "version": ">=24.17.0 <25"
-    }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeromeFitz/packages.git"
+  },
+  "type": "module",
+  "publishConfig": {
+    "provenance": true,
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "biome:check": "biome check",
-    "biome:write": "biome check --write",
     "build": "turbo run build --filter=[HEAD^1]",
     "build:all": "turbo run build",
     "clean": "turbo run clean --filter=[HEAD^1]",
@@ -33,18 +24,14 @@
     "clean:install": "turbo run clean && ./scripts/clean.sh",
     "commit": "ALLOW_EMPTY=--allow-empty git commit --allow-empty",
     "dev": "turbo run dev --no-cache --parallel --continue",
-    "format": "pnpm format:biome:write && pnpm format:prettier:write",
-    "format:biome:base": "biome format",
-    "format:biome:check": "pnpm format:biome:base",
-    "format:biome:write": "pnpm format:biome:base --write",
-    "format:prettier:base": "prettier \"./**/package.json\" \"**.{html,md,mdx,yml,yaml}\" \"!pnpm-lock.yaml\" --ignore-unknown",
-    "format:prettier:check": "pnpm format:prettier:base --check",
-    "format:prettier:write": "pnpm format:prettier:base --write",
-    "preinstall": "npx only-allow pnpm",
-    "lint": "pnpm run lint:biome && pnpm run format:prettier:check && pnpm run lint:packages",
-    "lint:biome": "biome lint",
+    "format": "oxfmt --check",
+    "format:fix": "oxfmt .",
+    "lint": "oxlint .",
+    "lint:ci": "oxlint . --format=github --quiet",
+    "lint:fix": "oxlint --fix .",
     "lint:packages": "syncpack lint",
-    "prepare": "pnpm is-ci || pnpm dlx husky@9.1.7",
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "pnpm is-in-ci || pnpm dlx husky@9.1.7",
     "semantic-release": "turbo run semantic-release --concurrency=1 --cache-dir='.cache-turbo'",
     "semantic-release:dry": "turbo run semantic-release:dry --concurrency=1 --cache-dir='.cache-turbo'",
     "test": "turbo run test",
@@ -52,7 +39,6 @@
   },
   "dependencies": {
     "@arethetypeswrong/core": "0.18.2",
-    "@biomejs/biome": "2.4.15",
     "@jeromefitz/conventional-gitmoji": "workspace:*",
     "@jeromefitz/oxlint-config": "workspace:*",
     "@jeromefitz/prettier-config": "workspace:*",
@@ -62,7 +48,7 @@
     "@types/node": "24.12.0",
     "ccommit": "workspace:*",
     "dotenv": "17.4.2",
-    "is-ci": "4.1.0",
+    "is-in-ci": "2.0.0",
     "lint-staged": "17.0.5",
     "lodash-es": "4.18.0",
     "oxfmt": "0.56.0",
@@ -74,8 +60,15 @@
     "typescript": "5.9.3",
     "vitest": "4.1.9"
   },
-  "publishConfig": {
-    "provenance": true,
-    "registry": "https://registry.npmjs.org/"
-  }
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.9.0"
+    },
+    "runtime": {
+      "name": "node",
+      "version": ">=24.17.0 <25"
+    }
+  },
+  "packageManager": "pnpm@11.9.0"
 }

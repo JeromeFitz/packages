@@ -1,23 +1,21 @@
 {
   "name": "@jeromefitz/scripts",
   "version": "0.0.0",
-  "type": "module",
+  "private": false,
   "description": "Scripts",
-  "repository": {
-    "directory": "packages/scripts",
-    "type": "git",
-    "url": "git+https://github.com/JeromeFitz/packages.git"
-  },
+  "license": "MIT",
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
     "url": "https://jeromefitzgerald.com"
   },
-  "license": "MIT",
-  "private": false,
-  "engines": {
-    "node": ">=24"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeromeFitz/packages.git",
+    "directory": "packages/scripts"
   },
+  "type": "module",
+  "sideEffects": false,
   "exports": {
     ".": "./dist/index.mjs",
     "./data/labels": "./dist/data/labels.mjs",
@@ -30,29 +28,30 @@
     "./utils/getPackageJson": "./dist/utils/getPackageJson.mjs",
     "./package.json": "./package.json"
   },
+  "publishConfig": {
+    "provenance": true,
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "build": "tsdown",
     "clean": "rm -rf .turbo && rm -rf dist",
     "clean:install": "pnpm run clean && rm -rf node_modules",
     "copy": "mkdir -p ./dist && ./scripts/copy.sh",
     "dev": "tsdown --watch",
-    "lint": "pnpm run lint:typescript",
-    "lint:typescript": "tsc --noEmit --declaration",
+    "lint:ts": "tsc --noEmit --declaration",
     "semantic-release": "semantic-release",
     "semantic-release:dry": "semantic-release --dry-run"
   },
   "dependencies": {
     "@octokit/rest": "22.0.1",
     "colorize-template": "1.0.0",
-    "is-ci": "4.1.0",
+    "is-in-ci": "2.0.0",
     "picocolors": "1.1.1"
   },
   "devDependencies": {},
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "provenance": true
+  "engines": {
+    "node": ">=24"
   },
-  "sideEffects": false,
   "inlinedDependencies": {
     "dotenv": "17.4.2"
   }

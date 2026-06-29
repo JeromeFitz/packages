@@ -1,4 +1,4 @@
-import type { DummyRuleMap } from 'oxlint'
+import type { DummyRuleMap } from "oxlint";
 
 /**
  * @note(oxlint) migration
@@ -14,14 +14,9 @@ const overridesTemporary: DummyRuleMap = {
   /**
    * pedantic
    */
-  'typescript/ban-ts-comment': 'off', // x110
-
-  /**
-   * style
-   */
-  'typescript/consistent-indexed-object-style': 'off', // x2
-  'typescript/consistent-type-definitions': 'off', // x26
-  'typescript/consistent-type-imports': 'off', // x3
+  "typescript/ban-ts-comment": "off", // x110
+  "typescript/prefer-enum-initializers": "off", // x3
+  "typescript/prefer-ts-expect-error": "off", // x109
 
   /**
    * perf
@@ -29,31 +24,36 @@ const overridesTemporary: DummyRuleMap = {
   /**
    * restriction
    */
-  'typescript/explicit-function-return-type': 'off', // x644
-  'typescript/explicit-member-accessibility': 'off', // x8
-  'typescript/explicit-module-boundary-types': 'off', // x599
-  'typescript/no-dynamic-delete': 'off', // x5
-  'typescript/no-explicit-any': 'off', // x484
-  'typescript/no-inferrable-types': 'off', // x2
-  'typescript/no-non-null-assertion': 'off', // x2
-  'typescript/no-require-imports': 'off', // x15
-  'typescript/no-var-requires': 'off', // x4
-  'typescript/prefer-enum-initializers': 'off', // x3
-  'typescript/prefer-for-of': 'off', // x1
-  'typescript/prefer-ts-expect-error': 'off', // x109
+  "typescript/explicit-function-return-type": "off", // x644
+  "typescript/explicit-member-accessibility": "off", // x8
+  "typescript/explicit-module-boundary-types": "off", // x599
+  "typescript/no-dynamic-delete": "off", // x5
+  "typescript/no-explicit-any": "off", // x484
+  "typescript/no-non-null-assertion": "off", // x2
+  "typescript/no-require-imports": "off", // x15
+  "typescript/no-var-requires": "off", // x4
+
+  /**
+   * style
+   */
+  "typescript/consistent-indexed-object-style": "off", // x2
+  "typescript/consistent-type-definitions": "off", // x26
+  "typescript/consistent-type-imports": "off", // x3
+  "typescript/no-inferrable-types": "off", // x2
+  "typescript/prefer-for-of": "off", // x1
 
   /**
    * suspicious
    */
-}
+};
 
 const overrides: DummyRuleMap = {
   // "no-nested-ternary": "off",
-}
+};
 
 const rules: DummyRuleMap = {
   ...overridesTemporary,
   ...overrides,
-}
+};
 
-export { rules as typescript }
+export { rules as typescript };

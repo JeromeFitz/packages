@@ -1,25 +1,23 @@
-import type { MutableRefObject } from 'react'
-
-import { useEffect, useState } from 'react'
+import type { MutableRefObject } from "react";
+import { useEffect, useState } from "react";
 
 function useOnScreen(ref: MutableRefObject<undefined>) {
-  const [isIntersecting, setIntersecting] = useState(false)
+  const [isIntersecting, setIntersecting] = useState(false);
 
   useEffect(() => {
-    if (!ref.current) return null
+    if (!ref.current) return null;
 
-    const observer = new IntersectionObserver(([entry]) =>
-      setIntersecting(entry.isIntersecting),
-    )
+    const observer = new IntersectionObserver(([entry]) => setIntersecting(entry.isIntersecting));
 
-    observer.observe(ref.current)
+    observer.observe(ref.current);
 
     return () => {
-      observer.disconnect()
-    }
-  }, [])
+      observer.disconnect();
+    };
+    // oxlint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  return isIntersecting
+  return isIntersecting;
 }
 
-export default useOnScreen
+export default useOnScreen;

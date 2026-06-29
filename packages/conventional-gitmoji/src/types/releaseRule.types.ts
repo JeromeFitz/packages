@@ -1,20 +1,19 @@
-import type { ICommit } from './commit.types'
+import type { ICommit } from "./commit.types";
 
-type IReleaseRule = Partial<Record<ICommit, IReleaseRuleProps>>
+type IReleaseRule = Partial<Record<ICommit, IReleaseRuleProps>>;
 
-// biome-ignore lint/style/useConsistentTypeDefinitions: migrate
 type IReleaseRuleProps = {
-  branch: null | string
-  code: string
-  commit: ICommit
-  description: string
-  emoji: string
-  entity: string
-  name: string
-  semver: 'breaking' | 'feature' | 'fix' | 'major' | 'minor' | 'patch' | null
+  branch: null | string;
+  code: string;
+  commit: ICommit;
+  description: string;
+  emoji: string;
+  entity: string;
+  name: string;
+  semver: "breaking" | "feature" | "fix" | "major" | "minor" | "patch" | null;
   // @note(breaking) can we move away from this dupe key currently required in getTypeSpecs?
-  type?: ICommit
-  value?: ICommit
-}
+  type?: ICommit;
+  value?: ICommit;
+};
 
-export type { IReleaseRule, IReleaseRuleProps }
+export type { IReleaseRule, IReleaseRuleProps };

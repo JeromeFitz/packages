@@ -1,4 +1,4 @@
-name: '  ▶️  Pull'
+name: "  ▶️  Pull"
 
 on:
   pull_request:
@@ -27,7 +27,7 @@ env:
 
 jobs:
   pull:
-    name: '👷️  CI'
+    name: "👷️  CI"
     if: github.event.pull_request.draft == false && !contains(github.event.head_commit.message, '[skip ci]')
     timeout-minutes: 20
     runs-on: ubuntu-latest
@@ -44,7 +44,7 @@ jobs:
       IS_ACTOR_DEPENDABOT: ${{ github.actor == 'dependabot[bot]' }}
       IS_ACTOR_RENOVATE: ${{ github.actor == 'renovate[bot]' }}
     steps:
-      - name: '🐙️  Checkout'
+      - name: "🐙️  Checkout"
         id: pull-checkout
         uses: actions/checkout@v6
         with:
@@ -52,7 +52,7 @@ jobs:
           fetch-depth: 10
           persist-credentials: false
 
-      - name: '💽️  Init'
+      - name: "💽️  Init"
         id: pull-init
         uses: ./.github/actions/init
 
@@ -72,28 +72,25 @@ jobs:
       #   run: |
       #     echo 'Note: true is a string 😑'
 
-      - name: '📦  Install'
+      - name: "📦  Install"
         id: pull-install
         uses: ./.github/actions/install
 
-      - name: '🔺️  Cache (turbo)'
+      - name: "🔺️  Cache (turbo)"
         id: pull-cache-turbo
         uses: ./.github/actions/cache-turbo
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
-      - name: '☣️ Biome CI'
-        run: pnpm exec biome ci .
-
-      - name: '🚨️  Lint'
+      - name: "🚨️  Lint"
         id: pull-lint
         uses: ./.github/actions/lint
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
-      - name: '🧪  Test'
+      - name: "🧪  Test"
         id: pull-test
         uses: ./.github/actions/test
         with:
@@ -101,15 +98,15 @@ jobs:
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
       # https://docs.github.com/en/actions/learn-github-actions/expressions
-      - name: '📛  Commit Message'
+      - name: "📛  Commit Message"
         id: pull-commit-message
         run: |
           echo "message=$(git log --no-merges -1 --oneline)" >> $GITHUB_OUTPUT
 
-      - name: '🏗️  Build'
+      - name: "🏗️  Build"
         id: pull-build
         uses: ./.github/actions/build
         with:
-          BUILD_COMMAND: 'build'
+          BUILD_COMMAND: "build"
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}

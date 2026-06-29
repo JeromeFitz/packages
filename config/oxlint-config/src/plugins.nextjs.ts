@@ -1,4 +1,4 @@
-import type { DummyRuleMap } from 'oxlint'
+import type { DummyRuleMap } from "oxlint";
 
 /**
  * @note(oxlint) migration
@@ -8,9 +8,9 @@ const overridesTemporary: DummyRuleMap = {
   /**
    * correctness
    */
-  'nextjs/no-async-client-component': 'off', // x2
-  'nextjs/no-html-link-for-pages': 'off', // x2
-  'nextjs/no-img-element': 'off', // x3
+  "nextjs/no-async-client-component": "off", // x2
+  "nextjs/no-html-link-for-pages": "off", // x2
+  "nextjs/no-img-element": "off", // x3
 
   /**
    * nursery
@@ -35,13 +35,13 @@ const overridesTemporary: DummyRuleMap = {
   /**
    * suspicious
    */
-}
+};
 
-const overrides: DummyRuleMap = {}
+const overrides: DummyRuleMap = {};
 
 const rules: DummyRuleMap = {
   ...overridesTemporary,
   ...overrides,
-}
+};
 
-export { rules as nextjs }
+export { rules as nextjs };
