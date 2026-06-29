@@ -1,3 +1,5 @@
+import type { TransformCommit } from './transformer'
+
 import transformer from './transformer'
 
 /**
@@ -21,7 +23,8 @@ const writerOpts = {
   noteGroupsSort: ['title'],
   notesSort: ['title'],
   // @todo pass config from changelog here?
-  transform: (commit: any, context: any) => transformer(commit, context),
+  transform: (commit: TransformCommit, context: unknown) =>
+    transformer(commit, context),
 }
 
 export default writerOpts

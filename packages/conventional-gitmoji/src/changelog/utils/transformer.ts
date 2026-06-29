@@ -33,7 +33,15 @@ const findTypeSpecIndex = (type: null | string) => {
   )
 }
 
-const transformer = (commit: any, _context: any) => {
+export interface TransformCommit {
+  type: string | null
+  hash: string | null
+  subject: string
+  notes: unknown[]
+  [key: string]: unknown
+}
+
+const transformer = (commit: TransformCommit, _context: unknown) => {
   const typeSpecIndex = findTypeSpecIndex(commit.type)
   if (typeSpecIndex === -1) return
 
