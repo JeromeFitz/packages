@@ -24,10 +24,11 @@
   ],
   "includePaths": ["config/**", "packages/**"],
   "labels": ["📦️ Dependencies"],
-  "node": {
-    "enabled": false
-  },
   "packageRules": [
+    {
+      "enabled": false,
+      "matchCategories": ["node"]
+    },
     {
       "enabled": false,
       "matchCategories": ["node"]
@@ -89,11 +90,9 @@
     {
       "commitMessageAction": "(deps-dev)",
       "commitMessagePrefix": "📦",
-      "excludePackageNames": [],
       "groupName": "storybook 📙 ",
       "groupSlug": "storybook",
-      "matchPackageNames": ["storybook"],
-      "matchPackagePatterns": ["^@storybook/"]
+      "matchPackageNames": ["storybook", "/^@storybook//"]
     },
     {
       "assignees": ["JeromeFitz"],
@@ -101,8 +100,8 @@
       "commitMessagePrefix": "⬆️",
       "groupName": "radix-ui 🌐 ",
       "groupSlug": "radix-ui",
-      "matchPackagePatterns": ["^@radix-ui/"],
-      "reviewers": ["JeromeFitz"]
+      "reviewers": ["JeromeFitz"],
+      "matchPackageNames": ["/^@radix-ui//"]
     },
     {
       "commitMessageAction": "(deps)",
