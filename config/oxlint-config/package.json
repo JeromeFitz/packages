@@ -22,6 +22,7 @@
     "./js-plugins": "./dist/js-plugins.mjs",
     "./js-plugins.playwright": "./dist/js-plugins.playwright.mjs",
     "./js-plugins.testing-library": "./dist/js-plugins.testing-library.mjs",
+    "./overrides": "./dist/overrides.mjs",
     "./plugins": "./dist/plugins.mjs",
     "./plugins.eslint": "./dist/plugins.eslint.mjs",
     "./plugins.import": "./dist/plugins.import.mjs",

@@ -1,8 +1,4 @@
-import {
-  config,
-  overridePlaywright,
-  overrideVitest,
-} from '@jeromefitz/oxlint-config'
+import { config } from '@jeromefitz/oxlint-config'
 
 import { defineConfig } from 'oxlint'
 
@@ -18,7 +14,6 @@ export default defineConfig({
     typeAware: false,
     typeCheck: false,
   },
-  overrides: [overridePlaywright, overrideVitest],
   settings: {
     react: {
       // renovate: datasource=npm depName=react
