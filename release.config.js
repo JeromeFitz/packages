@@ -1,7 +1,4 @@
-const branches = [
-  { name: 'main' },
-  { name: 'refactor/semantic', prerelease: 'canary' },
-]
+const branches = [{ name: 'main' }, { name: 'feat/oxc', prerelease: 'canary' }]
 
 const config = {
   branches,

@@ -1,0 +1,47 @@
+{
+  "name": "@jeromefitz/oxlint-config",
+  "version": "0.0.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeromefitz/packages.git",
+    "directory": "config/oxlint"
+  },
+  "author": {
+    "name": "Jerome Fitzgerald",
+    "email": "j@jeromefitzgerald.com",
+    "url": "https://jeromefitzgerald.com"
+  },
+  "license": "MIT",
+  "private": true,
+  "exports": {
+    ".": {
+      "import": "./src/config.ts",
+      "types": "./src/config.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src/**"
+  ],
+  "scripts": {
+    "clean": "rm -rf ./.turbo ./dist",
+    "clean:install": "pnpm clean && rm -rf ./node_modules",
+    "copy": "mkdir -p ./dist && ./scripts/copy.sh",
+    "lint:ts": "tsc --noEmit --declaration"
+  },
+  "peerDependencies": {
+    "oxlint": "^1.71.0",
+    "globals": "^17.7.0"
+  },
+  "dependencies": {
+    "@typescript-eslint/utils": "8.62.0",
+    "eslint": "10.6.0",
+    "eslint-plugin-playwright": "2.10.4",
+    "eslint-plugin-testing-library": "7.16.2",
+    "globals": "17.7.0",
+    "oxlint": "1.71.0",
+    "oxlint-tsgolint": "0.23.0"
+  },
+  "sideEffects": false
+}

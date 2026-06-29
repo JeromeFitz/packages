@@ -37,13 +37,19 @@ packages:
 patchedDependencies:
   '@semantic-release/commit-analyzer@13.0.1': patches/@semantic-release__commit-analyzer@13.0.0.patch
 publicHoistPattern:
+  - '@mdx-js/react'
+  - '@storybook*'
   - '*biome*'
   - '*ccommit*'
+  - '*eslint*'
   - '*lint-staged*'
+  - '*oxfmt*'
+  - '*oxlint*'
+  - '*playwright*'
   - '*prettier*'
+  - '*semantic*'
+  - '*testing-library*'
   - '*types*'
-  - '@storybook*'
-  - '@mdx-js/react'
 registry: https://registry.npmjs.org/
 saveExact: true
 strictPeerDependencies: false
