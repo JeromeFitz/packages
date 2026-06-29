@@ -20,6 +20,15 @@ inputs:
 runs:
   using: 'composite'
   steps:
+    - name: '🏗️  Build'
+      id: release-build
+      shell: bash
+      env:
+        TURBO_TEAM: ${{ inputs.TURBO_TEAM }}
+        TURBO_TOKEN: ${{ inputs.TURBO_TOKEN }}
+      run: |
+        pnpm run build:all \
+          --cache-dir=".cache-turbo"
     - name: '🔍 Audit'
       id: audit
       shell: bash

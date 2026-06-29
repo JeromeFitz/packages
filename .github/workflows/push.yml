@@ -102,15 +102,6 @@ jobs:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
-      - name: '🏗️  Build ALL'
-        id: push-build-all
-        if: ${{ contains(steps.push-commit-message.outputs.message, '[b]') }}
-        uses: ./.github/actions/build
-        with:
-          BUILD_COMMAND: 'build:all'
-          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-
       - name: '🏷️  Release'
         id: push-release
         if: ${{ contains(steps.push-commit-message.outputs.message, '[b]') }}
