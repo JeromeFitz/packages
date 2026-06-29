@@ -27,10 +27,10 @@
     "semantic-release": "semantic-release",
     "semantic-release:dry": "semantic-release --dry-run"
   },
+  "devDependencies": {},
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "provenance": true
   },
-  "sideEffects": false,
-  "devDependencies": {}
+  "sideEffects": false
 }

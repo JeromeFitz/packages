@@ -38,10 +38,10 @@
     "prettier": "3.8.4",
     "prettier-plugin-pkg": "0.22.1"
   },
+  "devDependencies": {},
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "provenance": true
   },
-  "sideEffects": false,
-  "devDependencies": {}
+  "sideEffects": false
 }

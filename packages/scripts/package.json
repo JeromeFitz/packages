@@ -47,6 +47,7 @@
     "is-ci": "4.1.0",
     "picocolors": "1.1.1"
   },
+  "devDependencies": {},
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "provenance": true
@@ -54,6 +55,5 @@
   "sideEffects": false,
   "inlinedDependencies": {
     "dotenv": "17.4.2"
-  },
-  "devDependencies": {}
+  }
 }
