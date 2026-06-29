@@ -4,6 +4,8 @@
     "GH_TOKEN"
   ],
   "globalPassThroughEnv": [
+    "ACTIONS_ID_TOKEN_REQUEST_TOKEN",
+    "ACTIONS_ID_TOKEN_REQUEST_URL",
     "NPM_TOKEN"
   ],
   "tasks": {
