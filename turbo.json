@@ -56,16 +56,10 @@
       "outputLogs": "new-only"
     },
     "semantic-release": {
-      "cache": false,
-      "dependsOn": [
-        "@jeromefitz/semantic#build"
-      ]
+      "cache": false
     },
     "semantic-release:dry": {
-      "cache": false,
-      "dependsOn": [
-        "@jeromefitz/semantic#build"
-      ]
+      "cache": false
     },
     "test": {
       "dependsOn": [
