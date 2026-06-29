@@ -95,8 +95,10 @@ jobs:
 
       - name: '🧪  Test'
         id: pull-test
-        shell: bash
-        run: pnpm test
+        uses: JeromeFitz/packages/.github/actions/test@main
+        with:
+          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
       # https://docs.github.com/en/actions/learn-github-actions/expressions
       - name: '📛  Commit Message'
