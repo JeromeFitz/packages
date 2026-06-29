@@ -10,6 +10,12 @@ inputs:
   NPM_TOKEN:
     description: 'NPM Token'
     required: true
+  TURBO_TEAM:
+    description: 'ID for Turbo'
+    required: true
+  TURBO_TOKEN:
+    description: 'ID for Turbo'
+    required: true
 
 runs:
   using: 'composite'
@@ -25,5 +31,7 @@ runs:
       env:
         GH_TOKEN: ${{ inputs.GH_TOKEN }}
         NPM_TOKEN: ${{ inputs.NPM_TOKEN }}
+        TURBO_TEAM: ${{ inputs.TURBO_TEAM }}
+        TURBO_TOKEN: ${{ inputs.TURBO_TOKEN }}
       run: |
         pnpm run semantic-release

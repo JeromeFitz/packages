@@ -118,3 +118,5 @@ jobs:
         with:
           GH_TOKEN: ${{ env.GH_BOT_TOKEN }}
           NPM_TOKEN: ${{ env.NPM_TOKEN }}
+          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
