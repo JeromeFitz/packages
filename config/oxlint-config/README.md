@@ -1,0 +1,3 @@
+# `@jeromefitz/oxlint-config`
+
+Lorem
