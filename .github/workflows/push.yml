@@ -71,9 +71,6 @@ jobs:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
-      - name: "☣️ Biome CI"
-        run: pnpm exec biome ci .
-
       - name: "🚨️  Lint"
         id: push-lint
         uses: ./.github/actions/lint
