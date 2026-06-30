@@ -24,14 +24,8 @@ packages:
   - "config/*"
   - "examples/*"
   - "packages/*"
-  - "!config/eslint-config"
-  - "!config/jest-config"
-  - "!config/jest-presets"
-  - "!config/lint-staged"
-  - "!config/lighthouse-config"
   - "!examples/design-system"
   - "!packages/design-system"
-  - "!packages/spotify"
 patchedDependencies:
   "@semantic-release/commit-analyzer@13.0.1": patches/@semantic-release__commit-analyzer@13.0.0.patch
 publicHoistPattern:
