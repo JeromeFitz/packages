@@ -20,18 +20,8 @@ pnpm add ccommit --save-dev
 
 ```
 
-<!--
-```bash
-
-# npm
-npm install ccommit --save-dev
-
-# yarn
-yarn add ccommit --dev
-```
--->
-
-> **📝 Note:** This is my preference as I try to limit globals wherever possible.
+> [!NOTE]
+> My preference as I try to limit globals wherever possible.
 
 ### Global
 
@@ -40,20 +30,8 @@ yarn add ccommit --dev
 pnpm add ccommit --global
 ```
 
-<!--
-```bash
-# npm
-npm install ccommit --g
-
-# yarn
-yarn global add ccommit
-
-# homebrew
-brew install ccommit
-```
--->
-
-> **📝 Note:** For non-node projects this _can_ be helpful, but again, try to limit globals.
+> [!NOTE]
+> For non-node projects this _can_ be helpful, but again, try to limit globals.
 
 ### Client
 
@@ -67,14 +45,8 @@ pnpm ccommit -c
 ccommit -c
 ```
 
-<!--
-```bash
-# packages
-# node ./packages/ccommit/dist/index.js -c
-```
- -->
-
-> **📝 Note:** Choose `local` or `global`
+> [!NOTE]
+> Choose `local` or `global`
 
 ### Hook
 
@@ -89,14 +61,8 @@ pnpm ccommit --hook || true
 ccommit --hook || true
 ```
 
-<!--
-```bash
-# packages
-# node ./packages/ccommit/dist/index.js --hook || true
-```
- -->
-
-> **📝 Note:** Choose `local` or `global`
+> [!NOTE]
+> Choose `local` or `global`
 
 ## Options
 
@@ -149,18 +115,6 @@ ccommit --hook || true
   - feat(scope): ✨ ABC-123 subject
   - fix-ci(github): 💚 subject
   - fix: 🐛 subject
-
-<!--
-### Custom
-
-🍕 Creating a `custom` configuration can be ideal if you want more control, or have more specific business needs for your application. Using `cosmiconfig` you can create:
-
-- `.ccommit`
-- `.ccommit.json`
-- `.ccommit.js`
-
-By providing configuration options for your project.
--->
 
 ## Roadmap
 

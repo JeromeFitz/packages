@@ -1,3 +1,4 @@
 # `@jeromefitz/oxlint-config`
 
-Lorem
+> [!NOTE]
+> Not a published package.
