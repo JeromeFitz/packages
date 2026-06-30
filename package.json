@@ -34,8 +34,9 @@
     "prepare": "pnpm is-in-ci || pnpm dlx husky@9.1.7",
     "semantic-release": "turbo run semantic-release --concurrency=1 --cache-dir='.cache-turbo'",
     "semantic-release:dry": "turbo run semantic-release:dry --concurrency=1 --cache-dir='.cache-turbo'",
-    "test": "turbo run test",
-    "turbo": "TURBO_TELEMETRY_DISABLED=1 turbo"
+    "turbo": "TURBO_TELEMETRY_DISABLED=1 turbo",
+    "validate": "pnpm turbo //#quality lint:ts && pnpm run lint:packages",
+    "validate:full": "pnpm turbo //#quality lint:ts test:unit && pnpm run lint:packages"
   },
   "dependencies": {
     "@arethetypeswrong/core": "0.18.2",
@@ -58,6 +59,9 @@
     "turbo": "2.9.14",
     "typescript": "5.9.3",
     "vitest": "4.1.9"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "4.1.9"
   },
   "devEngines": {
     "packageManager": {

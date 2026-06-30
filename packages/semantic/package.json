@@ -34,7 +34,9 @@
     "lint:ts": "tsc --noEmit --declaration",
     "semantic-release": "semantic-release",
     "semantic-release:dry": "semantic-release --dry-run",
-    "test": "vitest run"
+    "test:unit": "NODE_NO_WARNINGS=1 vitest run",
+    "test:unit:coverage": "NODE_NO_WARNINGS=1 vitest run --coverage",
+    "test:watch": "NODE_NO_WARNINGS=1 vitest run --watch"
   },
   "dependencies": {
     "@semantic-release/commit-analyzer": "13.0.1",

@@ -46,9 +46,11 @@
     "semantic-release:dry": {
       "cache": false
     },
-    "test": {
-      "dependsOn": ["lint", "build"],
-      "outputLogs": "new-only",
+    "test:unit": {
+      "dependsOn": ["^build"]
+    },
+    "test:unit:coverage": {
+      "dependsOn": ["^build"],
       "outputs": ["coverage/**"]
     }
   },
