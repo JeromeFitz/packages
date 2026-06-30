@@ -234,9 +234,6 @@ importers:
       '@jeromefitz/oxlint-config':
         specifier: workspace:*
         version: link:config/oxlint-config
-      '@jeromefitz/prettier-config':
-        specifier: workspace:*
-        version: link:config/prettier-config
       '@jeromefitz/release-notes-generator':
         specifier: workspace:*
         version: link:packages/release-notes-generator

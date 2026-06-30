@@ -2,7 +2,7 @@
 
 > [!IMPORTANT]
 >
-> There will be no further development and will eventually be removed from codebase.
+> No further development. Slated for removal from codebase.
 
 Custom `lint-staged` setup that can be extended and incorporates:
 

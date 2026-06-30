@@ -41,7 +41,6 @@
     "@arethetypeswrong/core": "0.18.2",
     "@jeromefitz/conventional-gitmoji": "workspace:*",
     "@jeromefitz/oxlint-config": "workspace:*",
-    "@jeromefitz/prettier-config": "workspace:*",
     "@jeromefitz/release-notes-generator": "workspace:*",
     "@jeromefitz/semantic": "workspace:*",
     "@jeromefitz/tsconfig": "workspace:*",

@@ -42,7 +42,6 @@ publicHoistPattern:
   - "*oxfmt*"
   - "*oxlint*"
   - "*playwright*"
-  - "*prettier*"
   - "*semantic*"
   - "*testing-library*"
   - "*types*"

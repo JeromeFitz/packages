@@ -1,8 +1,8 @@
 # @jeromefitz/prettier-config
 
-> [!INFO]
+> [!IMPORTANT]
 >
-> Moving to [`biome`](https://biomejs.dev).
+> No further development. Slated for removal from codebase.
 
 This package is now a wrapper for `prettier-plugin-pkg` basically.
 
