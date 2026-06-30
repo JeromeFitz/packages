@@ -30,7 +30,6 @@
     "build": "tsdown",
     "clean": "rm -rf .turbo && rm -rf dist",
     "clean:install": "pnpm run clean && rm -rf node_modules",
-    "copy": "mkdir -p ./dist && ./scripts/copy.sh",
     "dev": "tsdown --watch",
     "lint:ts": "tsc --noEmit --declaration",
     "semantic-release": "semantic-release",
