@@ -1,18 +1,19 @@
 {
   "name": "@jeromefitz/jest-config",
   "version": "0.0.0",
-  "type": "module",
+  "private": false,
   "description": "Jest Configuration",
-  "repository": "jeromefitz/packages.git",
+  "license": "MIT",
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
     "url": "https://jeromefitzgerald.com"
   },
-  "license": "MIT",
-  "private": false,
-  "engines": {
-    "node": ">=20"
+  "repository": "jeromefitz/packages.git",
+  "type": "module",
+  "sideEffects": false,
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "build": "pnpm run clean && pnpm run copy",
@@ -21,10 +22,6 @@
     "copy": "mkdir -p ./dist && ./scripts/copy.sh",
     "semantic-release": "semantic-release",
     "semantic-release:dry": "semantic-release --dry-run"
-  },
-  "peerDependencies": {
-    "@jeromefitz/jest-presets": "^1.0.0",
-    "next": "^15.5.14 || ^16.0.0"
   },
   "dependencies": {
     "@testing-library/dom": "10.4.1",
@@ -40,8 +37,11 @@
     "next": "15.5.18",
     "react": "19.2.6"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+  "peerDependencies": {
+    "@jeromefitz/jest-presets": "^1.0.0",
+    "next": "^15.5.14 || ^16.0.0"
   },
-  "sideEffects": false
+  "engines": {
+    "node": ">=20"
+  }
 }

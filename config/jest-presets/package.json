@@ -1,19 +1,16 @@
 {
   "name": "@jeromefitz/jest-presets",
   "version": "0.0.0",
-  "type": "module",
+  "private": false,
   "description": "Jest Presets Configuration",
-  "repository": "jeromefitz/packages.git",
+  "license": "MIT",
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
     "url": "https://jeromefitzgerald.com"
   },
-  "license": "MIT",
-  "private": false,
-  "engines": {
-    "node": ">=20"
-  },
+  "repository": "jeromefitz/packages.git",
+  "type": "module",
   "main": "./src/jest/node/jest-preset.js",
   "scripts": {
     "build": "pnpm run clean && pnpm run copy",
@@ -25,5 +22,8 @@
   },
   "dependencies": {
     "ts-jest": "29.4.6"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }

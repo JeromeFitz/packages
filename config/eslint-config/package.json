@@ -1,18 +1,19 @@
 {
   "name": "@jeromefitz/eslint-config",
   "version": "0.0.0",
-  "type": "module",
+  "private": false,
   "description": "ESLint Configuration",
-  "repository": "jeromefitz/packages.git",
+  "license": "MIT",
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
     "url": "https://jeromefitzgerald.com"
   },
-  "license": "MIT",
-  "private": false,
-  "engines": {
-    "node": ">=20"
+  "repository": "jeromefitz/packages.git",
+  "type": "module",
+  "sideEffects": false,
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "build": "pnpm run clean && pnpm run copy",
@@ -45,8 +46,7 @@
     "tailwindcss": "4.1.18",
     "typescript": "5.9.3"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
-  "sideEffects": false
+  "engines": {
+    "node": ">=20"
+  }
 }

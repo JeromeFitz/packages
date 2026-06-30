@@ -1,22 +1,23 @@
 {
   "name": "@jeromefitz/lint-staged",
   "version": "0.0.0",
-  "type": "module",
+  "private": false,
   "description": "Lint Staged Configuration",
-  "repository": "jeromefitz/packages.git",
+  "license": "MIT",
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
     "url": "https://jeromefitzgerald.com"
   },
-  "license": "MIT",
-  "private": false,
-  "engines": {
-    "node": ">=22.6.0"
-  },
+  "repository": "jeromefitz/packages.git",
+  "type": "module",
+  "sideEffects": false,
   "exports": {
     ".": "./dist/lint-staged.config.mjs",
     "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "build": "tsdown",
@@ -32,8 +33,7 @@
     "lint-staged": "17.0.5",
     "micromatch": "4.0.8"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
-  "sideEffects": false
+  "engines": {
+    "node": ">=22.6.0"
+  }
 }

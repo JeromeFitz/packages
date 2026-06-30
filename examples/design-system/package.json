@@ -1,22 +1,22 @@
 {
   "name": "@examples/design-system",
   "version": "0.0.0",
+  "private": false,
   "description": "Example: Design System Playground to test Components",
-  "repository": "jeromefitz/packages.git",
+  "keywords": [
+    "design system",
+    "radix-ui"
+  ],
+  "license": "MIT",
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
     "url": "https://jeromefitzgerald.com"
   },
-  "license": "MIT",
-  "private": false,
-  "engines": {
-    "node": ">=20"
+  "repository": "jeromefitz/packages.git",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
-  "keywords": [
-    "design system",
-    "radix-ui"
-  ],
   "scripts": {
     "dev:web": "next dev -p 3001",
     "semantic-release": "echo SKIP semantic-release"
@@ -32,7 +32,7 @@
     "react": "19.2.6",
     "react-dom": "19.2.6"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+  "engines": {
+    "node": ">=20"
   }
 }
