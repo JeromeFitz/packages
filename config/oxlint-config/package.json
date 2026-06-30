@@ -50,6 +50,7 @@
     "copy": "mkdir -p ./dist && ./scripts/copy.sh",
     "lint": "pnpm run lint:ts",
     "lint:ts": "tsc --noEmit --declaration",
+    "prepare": "pnpm is-in-ci || pnpm build",
     "semantic-release": "semantic-release",
     "semantic-release:dry": "semantic-release --dry-run"
   },
