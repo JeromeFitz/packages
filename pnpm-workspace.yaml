@@ -24,8 +24,6 @@ packages:
   - "config/*"
   - "examples/*"
   - "packages/*"
-  - "!examples/design-system"
-  - "!packages/design-system"
 patchedDependencies:
   "@semantic-release/commit-analyzer@13.0.1": patches/@semantic-release__commit-analyzer@13.0.0.patch
 publicHoistPattern:

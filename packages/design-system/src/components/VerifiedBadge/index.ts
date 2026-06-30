@@ -1,1 +1,0 @@
-export { VerifiedBadge } from "./VerifiedBadge";
