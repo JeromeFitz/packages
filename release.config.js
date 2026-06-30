@@ -1,4 +1,4 @@
-const branches = [{ name: "main" }, { name: "feat/oxc", prerelease: "canary" }];
+const branches = [{ name: "main" }, { name: "oxc/kebab", prerelease: "canary" }];
 
 const config = {
   branches,
@@ -6,6 +6,7 @@ const config = {
     email: [],
     login: ["BotJerome", "JeromeFitz"],
   },
+  pkgRoot: ".",
 };
 
 export { config };

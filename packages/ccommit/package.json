@@ -56,7 +56,6 @@
     "dev": "tsdown --watch",
     "dry:run": "pnpm run build && node ./dist/index.js -c -n",
     "lint:ts": "tsc --noEmit --declaration",
-    "prepare": "pnpm is-in-ci || pnpm build",
     "semantic-release": "semantic-release",
     "semantic-release:dry": "semantic-release --dry-run"
   },

@@ -1,0 +1,358 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`getConfig > default config snapshot 1`] = `
+{
+  "branches": [
+    {
+      "name": "main",
+    },
+    {
+      "name": "canary",
+      "prerelease": "canary",
+    },
+  ],
+  "extends": [
+    "semantic-release-commit-filter",
+  ],
+  "plugins": [
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "config": "@jeromefitz/conventional-gitmoji",
+        "releaseRules": [
+          {
+            "release": "patch",
+            "type": "access",
+          },
+          {
+            "release": "patch",
+            "type": "♿️",
+          },
+          {
+            "release": "patch",
+            "type": "analytics",
+          },
+          {
+            "release": "patch",
+            "type": "📈",
+          },
+          {
+            "release": "patch",
+            "type": "animation",
+          },
+          {
+            "release": "patch",
+            "type": "💫",
+          },
+          {
+            "release": "patch",
+            "type": "assets",
+          },
+          {
+            "release": "patch",
+            "type": "🍱",
+          },
+          {
+            "release": "major",
+            "type": "breaking",
+          },
+          {
+            "release": "major",
+            "type": "💥",
+          },
+          {
+            "release": "patch",
+            "type": "catch",
+          },
+          {
+            "release": "patch",
+            "type": "🥅",
+          },
+          {
+            "release": "patch",
+            "type": "clean",
+          },
+          {
+            "release": "patch",
+            "type": "🗑️",
+          },
+          {
+            "release": "patch",
+            "type": "compat",
+          },
+          {
+            "release": "patch",
+            "type": "👽️",
+          },
+          {
+            "release": "patch",
+            "type": "config",
+          },
+          {
+            "release": "patch",
+            "type": "🔧",
+          },
+          {
+            "release": "patch",
+            "type": "db",
+          },
+          {
+            "release": "patch",
+            "type": "🗃️",
+          },
+          {
+            "release": "patch",
+            "type": "dep-add",
+          },
+          {
+            "release": "patch",
+            "type": "➕",
+          },
+          {
+            "release": "patch",
+            "type": "dep-rm",
+          },
+          {
+            "release": "patch",
+            "type": "➖",
+          },
+          {
+            "release": "patch",
+            "type": "dep-up",
+          },
+          {
+            "release": "patch",
+            "type": "📦️",
+          },
+          {
+            "release": "patch",
+            "type": "downgrade",
+          },
+          {
+            "release": "patch",
+            "type": "⬇️",
+          },
+          {
+            "release": "patch",
+            "type": "egg",
+          },
+          {
+            "release": "patch",
+            "type": "🥚",
+          },
+          {
+            "release": "patch",
+            "type": "experiment",
+          },
+          {
+            "release": "patch",
+            "type": "⚗️",
+          },
+          {
+            "release": "minor",
+            "type": "feat",
+          },
+          {
+            "release": "minor",
+            "type": "✨",
+          },
+          {
+            "release": "patch",
+            "type": "fix",
+          },
+          {
+            "release": "patch",
+            "type": "🐛",
+          },
+          {
+            "release": "patch",
+            "type": "flags",
+          },
+          {
+            "release": "patch",
+            "type": "🚩",
+          },
+          {
+            "release": "patch",
+            "type": "hotfix",
+          },
+          {
+            "release": "patch",
+            "type": "🚑️",
+          },
+          {
+            "release": "patch",
+            "type": "i18n",
+          },
+          {
+            "release": "patch",
+            "type": "🌐",
+          },
+          {
+            "release": "patch",
+            "type": "init",
+          },
+          {
+            "release": "patch",
+            "type": "🎉",
+          },
+          {
+            "release": "patch",
+            "type": "iphone",
+          },
+          {
+            "release": "patch",
+            "type": "📱",
+          },
+          {
+            "release": "patch",
+            "type": "logic",
+          },
+          {
+            "release": "patch",
+            "type": "👔",
+          },
+          {
+            "release": "patch",
+            "type": "patch",
+          },
+          {
+            "release": "patch",
+            "type": "🩹",
+          },
+          {
+            "release": "patch",
+            "type": "perf",
+          },
+          {
+            "release": "patch",
+            "type": "⚡️",
+          },
+          {
+            "release": "patch",
+            "type": "pushpin",
+          },
+          {
+            "release": "patch",
+            "type": "📌",
+          },
+          {
+            "release": "patch",
+            "type": "revert",
+          },
+          {
+            "release": "patch",
+            "type": "⏪️",
+          },
+          {
+            "release": "patch",
+            "type": "roles",
+          },
+          {
+            "release": "patch",
+            "type": "🛂",
+          },
+          {
+            "release": "patch",
+            "type": "run-build",
+          },
+          {
+            "release": "patch",
+            "type": "🚀️",
+          },
+          {
+            "release": "patch",
+            "type": "security",
+          },
+          {
+            "release": "patch",
+            "type": "🔒️",
+          },
+          {
+            "release": "patch",
+            "type": "seo",
+          },
+          {
+            "release": "patch",
+            "type": "🔍️",
+          },
+          {
+            "release": "patch",
+            "type": "texts",
+          },
+          {
+            "release": "patch",
+            "type": "💬",
+          },
+          {
+            "release": "patch",
+            "type": "types",
+          },
+          {
+            "release": "patch",
+            "type": "🏷️",
+          },
+          {
+            "release": "patch",
+            "type": "typo",
+          },
+          {
+            "release": "patch",
+            "type": "✏️",
+          },
+          {
+            "release": "patch",
+            "type": "ui",
+          },
+          {
+            "release": "patch",
+            "type": "💄",
+          },
+          {
+            "release": "patch",
+            "type": "upgrade",
+          },
+          {
+            "release": "patch",
+            "type": "⬆️",
+          },
+          {
+            "release": "patch",
+            "type": "ux",
+          },
+          {
+            "release": "patch",
+            "type": "🚸",
+          },
+        ],
+      },
+    ],
+    "@jeromefitz/release-notes-generator",
+    [
+      "@semantic-release/npm",
+      {
+        "npmPublish": undefined,
+        "pkgRoot": ".",
+        "tarballDir": undefined,
+      },
+    ],
+    [
+      "@semantic-release/github",
+      {
+        "addReleases": undefined,
+        "assets": undefined,
+        "assignees": undefined,
+        "failComment": undefined,
+        "failTitle": undefined,
+        "githubApiPathPrefix": undefined,
+        "githubUrl": undefined,
+        "labels": undefined,
+        "proxy": undefined,
+        "releasedLabels": undefined,
+        "successComment": false,
+      },
+    ],
+  ],
+  "tagFormat": "v\${version}",
+}
+`;
