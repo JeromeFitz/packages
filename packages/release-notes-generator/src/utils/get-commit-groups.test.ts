@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import type { TransformedCommit } from "../types";
-import { getCommitGroups } from "./getCommitGroups";
+import { getCommitGroups } from "./get-commit-groups";
 
 function makeCommit(overrides: Partial<TransformedCommit> = {}): TransformedCommit {
   return {

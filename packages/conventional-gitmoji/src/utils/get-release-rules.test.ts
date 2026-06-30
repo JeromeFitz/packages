@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
 
-import getGitmojiConventional from "./getGitmojiConventional";
-import getReleaseRules from "./getReleaseRules";
-import getTypeSpecs from "./getTypeSpecs";
+import getGitmojiConventional from "./get-gitmoji-conventional";
+import getReleaseRules from "./get-release-rules";
+import getTypeSpecs from "./get-type-specs";
 
 /**
  * Characterization tests — lock current behavior before the purity refactor.

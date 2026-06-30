@@ -11,8 +11,8 @@ import {
 } from "~ccommit/utils/index";
 
 import questions from "./questions";
-import withClient from "./withClient";
-import withHook from "./withHook";
+import withClient from "./with-client";
+import withHook from "./with-hook";
 
 const { prompt } = enquirer;
 

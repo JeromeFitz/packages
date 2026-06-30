@@ -2,7 +2,7 @@ import { parserOpts, writerOpts } from "@jeromefitz/conventional-gitmoji";
 import type { PluginSpec } from "semantic-release";
 
 import { commitAnalyzer, git, github, npm } from "./index";
-import type { PluginOptions } from "./pluginOptions.types";
+import type { PluginOptions } from "./plugin-options.types";
 
 const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec[] => {
   const options: PluginOptions = {

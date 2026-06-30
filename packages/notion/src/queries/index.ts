@@ -1,14 +1,14 @@
-import getBlocksByIdChildren from "./getBlocksByIdChildren/index";
-import getDatabasesByIdQuery from "./getDatabasesByIdQuery/index";
-import getDeepFetchAllChildren from "./getDeepFetchAllChildren/index";
-import getInfoType from "./getInfoType/index";
-import getNotionListing from "./getNotionListing/index";
-import getNotionListingByDate from "./getNotionListingByDate/index";
-import getNotionSlug from "./getNotionSlug/index";
-import getNotionSlugByRoute from "./getNotionSlugByRoute/index";
-import getPagesById from "./getPagesById/index";
-import getPathVariables from "./getPathVariables/index";
-import getQuery from "./getQuery/index";
+import getBlocksByIdChildren from "./get-blocks-by-id-children/index";
+import getDatabasesByIdQuery from "./get-databases-by-id-query/index";
+import getDeepFetchAllChildren from "./get-deep-fetch-all-children/index";
+import getInfoType from "./get-info-type/index";
+import getNotionListingByDate from "./get-notion-listing-by-date/index";
+import getNotionListing from "./get-notion-listing/index";
+import getNotionSlugByRoute from "./get-notion-slug-by-route/index";
+import getNotionSlug from "./get-notion-slug/index";
+import getPagesById from "./get-pages-by-id/index";
+import getPathVariables from "./get-path-variables/index";
+import getQuery from "./get-query/index";
 
 export {
   getBlocksByIdChildren,

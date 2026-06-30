@@ -42,14 +42,13 @@ const rules: DummyRuleMap = {
   "no-unused-vars": "off",
   "no-useless-catch": "off",
   "jsx-a11y/no-autofocus": "off",
-  "unicorn/filename-case": "off",
   "unicorn/no-empty-file": "off",
 };
 
 const config: OxlintConfig = {
   categories,
   globals,
-  ignorePatterns,
+  ignorePatterns: [...ignorePatterns, "**/templates/PULL_REQUEST__RELEASE.ts"],
   jsPlugins,
   overrides,
   plugins,

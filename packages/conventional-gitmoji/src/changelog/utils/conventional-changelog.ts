@@ -1,5 +1,5 @@
-import parserOpts from "./parserOpts";
-import writerOpts from "./writerOpts";
+import parserOpts from "./parser-opts";
+import writerOpts from "./writer-opts";
 
 const conventionalChangelog = { parserOpts, writerOpts };
 

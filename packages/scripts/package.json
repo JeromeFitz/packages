@@ -22,10 +22,10 @@
     "./data/milestones": "./dist/data/milestones.mjs",
     "./github/label": "./dist/github/label.mjs",
     "./github/milestone": "./dist/github/milestone.mjs",
-    "./github/pullRequest": "./dist/github/pullRequest.mjs",
+    "./github/pull-request": "./dist/github/pull-request.mjs",
     "./templates/PULL_REQUEST__RELEASE": "./dist/templates/PULL_REQUEST__RELEASE.mjs",
-    "./utils/getChars": "./dist/utils/getChars.mjs",
-    "./utils/getPackageJson": "./dist/utils/getPackageJson.mjs",
+    "./utils/get-chars": "./dist/utils/get-chars.mjs",
+    "./utils/get-package-json": "./dist/utils/get-package-json.mjs",
     "./package.json": "./package.json"
   },
   "publishConfig": {

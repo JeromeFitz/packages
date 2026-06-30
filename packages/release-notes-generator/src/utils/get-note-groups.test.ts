@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import type { Note } from "../types";
-import { getNoteGroups } from "./getNoteGroups";
+import { getNoteGroups } from "./get-note-groups";
 
 const note = (title: string, text: string, scope?: string): Note => ({
   scope,

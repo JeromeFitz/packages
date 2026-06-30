@@ -1,10 +1,10 @@
 import { describe, expect, it } from "vitest";
 
 import changelog from "./index";
-import recommendedBumpOpts from "./utils/conventionalRecommendedBump";
-import parserOpts from "./utils/parserOpts";
+import recommendedBumpOpts from "./utils/conventional-recommended-bump";
+import parserOpts from "./utils/parser-opts";
 import transformer from "./utils/transformer";
-import writerOpts from "./utils/writerOpts";
+import writerOpts from "./utils/writer-opts";
 
 /**
  * Characterization tests — lock the changelog pipeline's current behavior before

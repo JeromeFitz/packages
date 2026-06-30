@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import type { ParsedCommit, TransformedCommit } from "../types";
-import { processCommit } from "./processCommit";
+import { processCommit } from "./process-commit";
 
 const baseCommit: ParsedCommit = {
   author: { email: "test@example.com", name: "Test User" },

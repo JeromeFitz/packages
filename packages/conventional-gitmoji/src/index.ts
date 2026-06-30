@@ -1,8 +1,8 @@
 import conventionalChangelog from "./changelog/index";
 import type { ICommit, IReleaseRule, IReleaseRuleProps } from "./types/index";
-import getGitmojiConventional from "./utils/getGitmojiConventional";
-import getReleaseRules from "./utils/getReleaseRules";
-import getTypeSpecs from "./utils/getTypeSpecs";
+import getGitmojiConventional from "./utils/get-gitmoji-conventional";
+import getReleaseRules from "./utils/get-release-rules";
+import getTypeSpecs from "./utils/get-type-specs";
 
 const { parserOpts, writerOpts } = conventionalChangelog;
 const types = getGitmojiConventional();
