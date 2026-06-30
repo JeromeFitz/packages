@@ -21,5 +21,5 @@ runs:
         TURBO_TEAM: ${{ inputs.TURBO_TEAM }}
         TURBO_TOKEN: ${{ inputs.TURBO_TOKEN }}
       run: |
-        pnpm turbo run test \
+        pnpm turbo run test:unit:coverage \
           --cache-dir=".cache-turbo"

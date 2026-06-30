@@ -97,6 +97,39 @@ jobs:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
+      - name: "📊  Coverage (conventional-gitmoji)"
+        id: pull-coverage-conventional-gitmoji
+        if: always()
+        uses: davelosert/vitest-coverage-report-action@v2
+        with:
+          github-token: ${{ secrets.GH_BOT_TOKEN }}
+          name: "@jeromefitz/conventional-gitmoji"
+          json-final-path: packages/conventional-gitmoji/coverage/coverage-final.json
+          json-summary-path: packages/conventional-gitmoji/coverage/coverage-summary.json
+          vite-config-path: packages/conventional-gitmoji/vitest.config.ts
+
+      - name: "📊  Coverage (release-notes-generator)"
+        id: pull-coverage-release-notes-generator
+        if: always()
+        uses: davelosert/vitest-coverage-report-action@v2
+        with:
+          github-token: ${{ secrets.GH_BOT_TOKEN }}
+          name: "@jeromefitz/release-notes-generator"
+          json-final-path: packages/release-notes-generator/coverage/coverage-final.json
+          json-summary-path: packages/release-notes-generator/coverage/coverage-summary.json
+          vite-config-path: packages/release-notes-generator/vitest.config.ts
+
+      - name: "📊  Coverage (semantic)"
+        id: pull-coverage-semantic
+        if: always()
+        uses: davelosert/vitest-coverage-report-action@v2
+        with:
+          github-token: ${{ secrets.GH_BOT_TOKEN }}
+          name: "@jeromefitz/semantic"
+          json-final-path: packages/semantic/coverage/coverage-final.json
+          json-summary-path: packages/semantic/coverage/coverage-summary.json
+          vite-config-path: packages/semantic/vitest.config.ts
+
       # https://docs.github.com/en/actions/learn-github-actions/expressions
       - name: "📛  Commit Message"
         id: pull-commit-message
