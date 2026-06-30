@@ -22,46 +22,197 @@
   "type": "module",
   "sideEffects": false,
   "exports": {
-    ".": "./dist/index.mjs",
-    "./constants": "./dist/constants/index.mjs",
-    "./queries": "./dist/queries/index.mjs",
-    "./queries/get-blocks-by-id-children": "./dist/queries/get-blocks-by-id-children/index.mjs",
-    "./queries/get-databases-by-id-query": "./dist/queries/get-databases-by-id-query/index.mjs",
-    "./queries/get-deep-fetch-all-children": "./dist/queries/get-deep-fetch-all-children/index.mjs",
-    "./queries/get-info-type": "./dist/queries/get-info-type/index.mjs",
-    "./queries/get-notion-listing": "./dist/queries/get-notion-listing/index.mjs",
-    "./queries/get-notion-listing-by-date": "./dist/queries/get-notion-listing-by-date/index.mjs",
-    "./queries/get-notion-slug": "./dist/queries/get-notion-slug/index.mjs",
-    "./queries/get-notion-slug-by-route": "./dist/queries/get-notion-slug-by-route/index.mjs",
-    "./queries/get-pages-by-id": "./dist/queries/get-pages-by-id/index.mjs",
-    "./queries/get-path-variables": "./dist/queries/get-path-variables/index.mjs",
-    "./queries/get-query": "./dist/queries/get-query/index.mjs",
-    "./schema": "./dist/schema/index.mjs",
-    "./utils": "./dist/utils/index.mjs",
-    "./utils/add-time": "./dist/utils/add-time/index.mjs",
-    "./utils/data-normalized": "./dist/utils/data-normalized/index.mjs",
-    "./utils/data-normalized-results": "./dist/utils/data-normalized-results/index.mjs",
-    "./utils/get-data-type": "./dist/utils/get-data-type/index.mjs",
-    "./utils/get-title": "./dist/utils/get-title/index.mjs",
-    "./utils/get-types": "./dist/utils/get-types/index.mjs",
-    "./utils/get-types/_unsupported": "./dist/utils/get-types/_unsupported.mjs",
-    "./utils/get-types/checkbox": "./dist/utils/get-types/checkbox.mjs",
-    "./utils/get-types/date": "./dist/utils/get-types/date.mjs",
-    "./utils/get-types/email": "./dist/utils/get-types/email.mjs",
-    "./utils/get-types/files": "./dist/utils/get-types/files.mjs",
-    "./utils/get-types/multi-select": "./dist/utils/get-types/multi-select.mjs",
-    "./utils/get-types/number": "./dist/utils/get-types/number.mjs",
-    "./utils/get-types/people": "./dist/utils/get-types/people.mjs",
-    "./utils/get-types/phone-number": "./dist/utils/get-types/phone-number.mjs",
-    "./utils/get-types/relation": "./dist/utils/get-types/relation.mjs",
-    "./utils/get-types/rich-text": "./dist/utils/get-types/rich-text.mjs",
-    "./utils/get-types/rollup": "./dist/utils/get-types/rollup.mjs",
-    "./utils/get-types/select": "./dist/utils/get-types/select.mjs",
-    "./utils/get-types/title": "./dist/utils/get-types/title.mjs",
-    "./utils/get-types/url": "./dist/utils/get-types/url.mjs",
+    ".": {
+      "development": "./src/index.ts",
+      "default": "./dist/index.mjs"
+    },
+    "./constants": {
+      "development": "./src/constants/index.ts",
+      "default": "./dist/constants/index.mjs"
+    },
+    "./queries": {
+      "development": "./src/queries/index.ts",
+      "default": "./dist/queries/index.mjs"
+    },
+    "./queries/get-blocks-by-id-children": {
+      "development": "./src/queries/get-blocks-by-id-children/index.ts",
+      "default": "./dist/queries/get-blocks-by-id-children/index.mjs"
+    },
+    "./queries/get-databases-by-id-query": {
+      "development": "./src/queries/get-databases-by-id-query/index.ts",
+      "default": "./dist/queries/get-databases-by-id-query/index.mjs"
+    },
+    "./queries/get-deep-fetch-all-children": {
+      "development": "./src/queries/get-deep-fetch-all-children/index.ts",
+      "default": "./dist/queries/get-deep-fetch-all-children/index.mjs"
+    },
+    "./queries/get-info-type": {
+      "development": "./src/queries/get-info-type/index.ts",
+      "default": "./dist/queries/get-info-type/index.mjs"
+    },
+    "./queries/get-notion-listing": {
+      "development": "./src/queries/get-notion-listing/index.ts",
+      "default": "./dist/queries/get-notion-listing/index.mjs"
+    },
+    "./queries/get-notion-listing-by-date": {
+      "development": "./src/queries/get-notion-listing-by-date/index.ts",
+      "default": "./dist/queries/get-notion-listing-by-date/index.mjs"
+    },
+    "./queries/get-notion-slug": {
+      "development": "./src/queries/get-notion-slug/index.ts",
+      "default": "./dist/queries/get-notion-slug/index.mjs"
+    },
+    "./queries/get-notion-slug-by-route": {
+      "development": "./src/queries/get-notion-slug-by-route/index.ts",
+      "default": "./dist/queries/get-notion-slug-by-route/index.mjs"
+    },
+    "./queries/get-pages-by-id": {
+      "development": "./src/queries/get-pages-by-id/index.ts",
+      "default": "./dist/queries/get-pages-by-id/index.mjs"
+    },
+    "./queries/get-path-variables": {
+      "development": "./src/queries/get-path-variables/index.ts",
+      "default": "./dist/queries/get-path-variables/index.mjs"
+    },
+    "./queries/get-query": {
+      "development": "./src/queries/get-query/index.ts",
+      "default": "./dist/queries/get-query/index.mjs"
+    },
+    "./schema": {
+      "development": "./src/schema/index.ts",
+      "default": "./dist/schema/index.mjs"
+    },
+    "./utils": {
+      "development": "./src/utils/index.ts",
+      "default": "./dist/utils/index.mjs"
+    },
+    "./utils/add-time": {
+      "development": "./src/utils/add-time/index.ts",
+      "default": "./dist/utils/add-time/index.mjs"
+    },
+    "./utils/data-normalized": {
+      "development": "./src/utils/data-normalized/index.ts",
+      "default": "./dist/utils/data-normalized/index.mjs"
+    },
+    "./utils/data-normalized-results": {
+      "development": "./src/utils/data-normalized-results/index.ts",
+      "default": "./dist/utils/data-normalized-results/index.mjs"
+    },
+    "./utils/get-data-type": {
+      "development": "./src/utils/get-data-type/index.ts",
+      "default": "./dist/utils/get-data-type/index.mjs"
+    },
+    "./utils/get-title": {
+      "development": "./src/utils/get-title/index.ts",
+      "default": "./dist/utils/get-title/index.mjs"
+    },
+    "./utils/get-types": {
+      "development": "./src/utils/get-types/index.ts",
+      "default": "./dist/utils/get-types/index.mjs"
+    },
+    "./utils/get-types/_unsupported": {
+      "development": "./src/utils/get-types/_unsupported.ts",
+      "default": "./dist/utils/get-types/_unsupported.mjs"
+    },
+    "./utils/get-types/checkbox": {
+      "development": "./src/utils/get-types/checkbox.ts",
+      "default": "./dist/utils/get-types/checkbox.mjs"
+    },
+    "./utils/get-types/date": {
+      "development": "./src/utils/get-types/date.ts",
+      "default": "./dist/utils/get-types/date.mjs"
+    },
+    "./utils/get-types/email": {
+      "development": "./src/utils/get-types/email.ts",
+      "default": "./dist/utils/get-types/email.mjs"
+    },
+    "./utils/get-types/files": {
+      "development": "./src/utils/get-types/files.ts",
+      "default": "./dist/utils/get-types/files.mjs"
+    },
+    "./utils/get-types/multi-select": {
+      "development": "./src/utils/get-types/multi-select.ts",
+      "default": "./dist/utils/get-types/multi-select.mjs"
+    },
+    "./utils/get-types/number": {
+      "development": "./src/utils/get-types/number.ts",
+      "default": "./dist/utils/get-types/number.mjs"
+    },
+    "./utils/get-types/people": {
+      "development": "./src/utils/get-types/people.ts",
+      "default": "./dist/utils/get-types/people.mjs"
+    },
+    "./utils/get-types/phone-number": {
+      "development": "./src/utils/get-types/phone-number.ts",
+      "default": "./dist/utils/get-types/phone-number.mjs"
+    },
+    "./utils/get-types/relation": {
+      "development": "./src/utils/get-types/relation.ts",
+      "default": "./dist/utils/get-types/relation.mjs"
+    },
+    "./utils/get-types/rich-text": {
+      "development": "./src/utils/get-types/rich-text.ts",
+      "default": "./dist/utils/get-types/rich-text.mjs"
+    },
+    "./utils/get-types/rollup": {
+      "development": "./src/utils/get-types/rollup.ts",
+      "default": "./dist/utils/get-types/rollup.mjs"
+    },
+    "./utils/get-types/select": {
+      "development": "./src/utils/get-types/select.ts",
+      "default": "./dist/utils/get-types/select.mjs"
+    },
+    "./utils/get-types/title": {
+      "development": "./src/utils/get-types/title.ts",
+      "default": "./dist/utils/get-types/title.mjs"
+    },
+    "./utils/get-types/url": {
+      "development": "./src/utils/get-types/url.ts",
+      "default": "./dist/utils/get-types/url.mjs"
+    },
     "./package.json": "./package.json"
   },
   "publishConfig": {
+    "exports": {
+      ".": "./dist/index.mjs",
+      "./constants": "./dist/constants/index.mjs",
+      "./queries": "./dist/queries/index.mjs",
+      "./queries/get-blocks-by-id-children": "./dist/queries/get-blocks-by-id-children/index.mjs",
+      "./queries/get-databases-by-id-query": "./dist/queries/get-databases-by-id-query/index.mjs",
+      "./queries/get-deep-fetch-all-children": "./dist/queries/get-deep-fetch-all-children/index.mjs",
+      "./queries/get-info-type": "./dist/queries/get-info-type/index.mjs",
+      "./queries/get-notion-listing": "./dist/queries/get-notion-listing/index.mjs",
+      "./queries/get-notion-listing-by-date": "./dist/queries/get-notion-listing-by-date/index.mjs",
+      "./queries/get-notion-slug": "./dist/queries/get-notion-slug/index.mjs",
+      "./queries/get-notion-slug-by-route": "./dist/queries/get-notion-slug-by-route/index.mjs",
+      "./queries/get-pages-by-id": "./dist/queries/get-pages-by-id/index.mjs",
+      "./queries/get-path-variables": "./dist/queries/get-path-variables/index.mjs",
+      "./queries/get-query": "./dist/queries/get-query/index.mjs",
+      "./schema": "./dist/schema/index.mjs",
+      "./utils": "./dist/utils/index.mjs",
+      "./utils/add-time": "./dist/utils/add-time/index.mjs",
+      "./utils/data-normalized": "./dist/utils/data-normalized/index.mjs",
+      "./utils/data-normalized-results": "./dist/utils/data-normalized-results/index.mjs",
+      "./utils/get-data-type": "./dist/utils/get-data-type/index.mjs",
+      "./utils/get-title": "./dist/utils/get-title/index.mjs",
+      "./utils/get-types": "./dist/utils/get-types/index.mjs",
+      "./utils/get-types/_unsupported": "./dist/utils/get-types/_unsupported.mjs",
+      "./utils/get-types/checkbox": "./dist/utils/get-types/checkbox.mjs",
+      "./utils/get-types/date": "./dist/utils/get-types/date.mjs",
+      "./utils/get-types/email": "./dist/utils/get-types/email.mjs",
+      "./utils/get-types/files": "./dist/utils/get-types/files.mjs",
+      "./utils/get-types/multi-select": "./dist/utils/get-types/multi-select.mjs",
+      "./utils/get-types/number": "./dist/utils/get-types/number.mjs",
+      "./utils/get-types/people": "./dist/utils/get-types/people.mjs",
+      "./utils/get-types/phone-number": "./dist/utils/get-types/phone-number.mjs",
+      "./utils/get-types/relation": "./dist/utils/get-types/relation.mjs",
+      "./utils/get-types/rich-text": "./dist/utils/get-types/rich-text.mjs",
+      "./utils/get-types/rollup": "./dist/utils/get-types/rollup.mjs",
+      "./utils/get-types/select": "./dist/utils/get-types/select.mjs",
+      "./utils/get-types/title": "./dist/utils/get-types/title.mjs",
+      "./utils/get-types/url": "./dist/utils/get-types/url.mjs",
+      "./package.json": "./package.json"
+    },
     "provenance": true,
     "registry": "https://registry.npmjs.org/"
   },

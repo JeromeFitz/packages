@@ -21,25 +21,92 @@
   "type": "module",
   "sideEffects": false,
   "exports": {
-    ".": "./dist/index.mjs",
-    "./assert-never": "./dist/assert-never/index.mjs",
-    "./async-for-each": "./dist/async-for-each/index.mjs",
-    "./avoid-rate-limit": "./dist/avoid-rate-limit/index.mjs",
-    "./is-object": "./dist/is-object/index.mjs",
-    "./is-object-empty": "./dist/is-object-empty/index.mjs",
-    "./is-undefined": "./dist/is-undefined/index.mjs",
-    "./lpad": "./dist/lpad/index.mjs",
-    "./noop": "./dist/noop/index.mjs",
-    "./omit": "./dist/omit/index.mjs",
-    "./pick": "./dist/pick/index.mjs",
-    "./pubsub": "./dist/pubsub/index.mjs",
-    "./range-map": "./dist/range-map/index.mjs",
-    "./set-char-at": "./dist/set-char-at/index.mjs",
-    "./sort-object": "./dist/sort-object/index.mjs",
-    "./string-to-uuid": "./dist/string-to-uuid/index.mjs",
+    ".": {
+      "development": "./src/index.ts",
+      "default": "./dist/index.mjs"
+    },
+    "./assert-never": {
+      "development": "./src/assert-never/index.ts",
+      "default": "./dist/assert-never/index.mjs"
+    },
+    "./async-for-each": {
+      "development": "./src/async-for-each/index.ts",
+      "default": "./dist/async-for-each/index.mjs"
+    },
+    "./avoid-rate-limit": {
+      "development": "./src/avoid-rate-limit/index.ts",
+      "default": "./dist/avoid-rate-limit/index.mjs"
+    },
+    "./is-object": {
+      "development": "./src/is-object/index.ts",
+      "default": "./dist/is-object/index.mjs"
+    },
+    "./is-object-empty": {
+      "development": "./src/is-object-empty/index.ts",
+      "default": "./dist/is-object-empty/index.mjs"
+    },
+    "./is-undefined": {
+      "development": "./src/is-undefined/index.ts",
+      "default": "./dist/is-undefined/index.mjs"
+    },
+    "./lpad": {
+      "development": "./src/lpad/index.ts",
+      "default": "./dist/lpad/index.mjs"
+    },
+    "./noop": {
+      "development": "./src/noop/index.ts",
+      "default": "./dist/noop/index.mjs"
+    },
+    "./omit": {
+      "development": "./src/omit/index.ts",
+      "default": "./dist/omit/index.mjs"
+    },
+    "./pick": {
+      "development": "./src/pick/index.ts",
+      "default": "./dist/pick/index.mjs"
+    },
+    "./pubsub": {
+      "development": "./src/pubsub/index.ts",
+      "default": "./dist/pubsub/index.mjs"
+    },
+    "./range-map": {
+      "development": "./src/range-map/index.ts",
+      "default": "./dist/range-map/index.mjs"
+    },
+    "./set-char-at": {
+      "development": "./src/set-char-at/index.ts",
+      "default": "./dist/set-char-at/index.mjs"
+    },
+    "./sort-object": {
+      "development": "./src/sort-object/index.ts",
+      "default": "./dist/sort-object/index.mjs"
+    },
+    "./string-to-uuid": {
+      "development": "./src/string-to-uuid/index.ts",
+      "default": "./dist/string-to-uuid/index.mjs"
+    },
     "./package.json": "./package.json"
   },
   "publishConfig": {
+    "exports": {
+      ".": "./dist/index.mjs",
+      "./assert-never": "./dist/assert-never/index.mjs",
+      "./async-for-each": "./dist/async-for-each/index.mjs",
+      "./avoid-rate-limit": "./dist/avoid-rate-limit/index.mjs",
+      "./is-object": "./dist/is-object/index.mjs",
+      "./is-object-empty": "./dist/is-object-empty/index.mjs",
+      "./is-undefined": "./dist/is-undefined/index.mjs",
+      "./lpad": "./dist/lpad/index.mjs",
+      "./noop": "./dist/noop/index.mjs",
+      "./omit": "./dist/omit/index.mjs",
+      "./pick": "./dist/pick/index.mjs",
+      "./pubsub": "./dist/pubsub/index.mjs",
+      "./range-map": "./dist/range-map/index.mjs",
+      "./set-char-at": "./dist/set-char-at/index.mjs",
+      "./sort-object": "./dist/sort-object/index.mjs",
+      "./string-to-uuid": "./dist/string-to-uuid/index.mjs",
+      "./package.json": "./package.json"
+    },
     "provenance": true,
     "registry": "https://registry.npmjs.org/"
   },

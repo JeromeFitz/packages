@@ -17,28 +17,107 @@
   "type": "module",
   "sideEffects": false,
   "exports": {
-    ".": "./dist/index.mjs",
-    "./changelog": "./dist/changelog/index.mjs",
-    "./changelog/config": "./dist/changelog/config.mjs",
-    "./changelog/utils/conventional-changelog": "./dist/changelog/utils/conventional-changelog.mjs",
-    "./changelog/utils/conventional-recommended-bump": "./dist/changelog/utils/conventional-recommended-bump.mjs",
-    "./changelog/utils/git-raw-commit": "./dist/changelog/utils/git-raw-commit.mjs",
-    "./changelog/utils/parser-opts": "./dist/changelog/utils/parser-opts.mjs",
-    "./changelog/utils/transformer": "./dist/changelog/utils/transformer.mjs",
-    "./changelog/utils/writer-opts": "./dist/changelog/utils/writer-opts.mjs",
-    "./config/rewrites": "./dist/config/rewrites.mjs",
-    "./config/types": "./dist/config/types.mjs",
-    "./types": "./dist/types/index.mjs",
-    "./types/commit": "./dist/types/commit.mjs",
-    "./types/commit.types": "./dist/types/commit.types.mjs",
-    "./types/release-rule": "./dist/types/release-rule.mjs",
-    "./types/release-rule.types": "./dist/types/release-rule.types.mjs",
-    "./utils/get-gitmoji-conventional": "./dist/utils/get-gitmoji-conventional.mjs",
-    "./utils/get-release-rules": "./dist/utils/get-release-rules.mjs",
-    "./utils/get-type-specs": "./dist/utils/get-type-specs.mjs",
+    ".": {
+      "development": "./src/index.ts",
+      "default": "./dist/index.mjs"
+    },
+    "./changelog": {
+      "development": "./src/changelog/index.ts",
+      "default": "./dist/changelog/index.mjs"
+    },
+    "./changelog/config": {
+      "development": "./src/changelog/config.ts",
+      "default": "./dist/changelog/config.mjs"
+    },
+    "./changelog/utils/conventional-changelog": {
+      "development": "./src/changelog/utils/conventional-changelog.ts",
+      "default": "./dist/changelog/utils/conventional-changelog.mjs"
+    },
+    "./changelog/utils/conventional-recommended-bump": {
+      "development": "./src/changelog/utils/conventional-recommended-bump.ts",
+      "default": "./dist/changelog/utils/conventional-recommended-bump.mjs"
+    },
+    "./changelog/utils/git-raw-commit": {
+      "development": "./src/changelog/utils/git-raw-commit.ts",
+      "default": "./dist/changelog/utils/git-raw-commit.mjs"
+    },
+    "./changelog/utils/parser-opts": {
+      "development": "./src/changelog/utils/parser-opts.ts",
+      "default": "./dist/changelog/utils/parser-opts.mjs"
+    },
+    "./changelog/utils/transformer": {
+      "development": "./src/changelog/utils/transformer.ts",
+      "default": "./dist/changelog/utils/transformer.mjs"
+    },
+    "./changelog/utils/writer-opts": {
+      "development": "./src/changelog/utils/writer-opts.ts",
+      "default": "./dist/changelog/utils/writer-opts.mjs"
+    },
+    "./config/rewrites": {
+      "development": "./src/config/rewrites.ts",
+      "default": "./dist/config/rewrites.mjs"
+    },
+    "./config/types": {
+      "development": "./src/config/types.ts",
+      "default": "./dist/config/types.mjs"
+    },
+    "./types": {
+      "development": "./src/types/index.ts",
+      "default": "./dist/types/index.mjs"
+    },
+    "./types/commit": {
+      "development": "./src/types/commit.ts",
+      "default": "./dist/types/commit.mjs"
+    },
+    "./types/commit.types": {
+      "development": "./src/types/commit.types.ts",
+      "default": "./dist/types/commit.types.mjs"
+    },
+    "./types/release-rule": {
+      "development": "./src/types/release-rule.ts",
+      "default": "./dist/types/release-rule.mjs"
+    },
+    "./types/release-rule.types": {
+      "development": "./src/types/release-rule.types.ts",
+      "default": "./dist/types/release-rule.types.mjs"
+    },
+    "./utils/get-gitmoji-conventional": {
+      "development": "./src/utils/get-gitmoji-conventional.ts",
+      "default": "./dist/utils/get-gitmoji-conventional.mjs"
+    },
+    "./utils/get-release-rules": {
+      "development": "./src/utils/get-release-rules.ts",
+      "default": "./dist/utils/get-release-rules.mjs"
+    },
+    "./utils/get-type-specs": {
+      "development": "./src/utils/get-type-specs.ts",
+      "default": "./dist/utils/get-type-specs.mjs"
+    },
     "./package.json": "./package.json"
   },
   "publishConfig": {
+    "exports": {
+      ".": "./dist/index.mjs",
+      "./changelog": "./dist/changelog/index.mjs",
+      "./changelog/config": "./dist/changelog/config.mjs",
+      "./changelog/utils/conventional-changelog": "./dist/changelog/utils/conventional-changelog.mjs",
+      "./changelog/utils/conventional-recommended-bump": "./dist/changelog/utils/conventional-recommended-bump.mjs",
+      "./changelog/utils/git-raw-commit": "./dist/changelog/utils/git-raw-commit.mjs",
+      "./changelog/utils/parser-opts": "./dist/changelog/utils/parser-opts.mjs",
+      "./changelog/utils/transformer": "./dist/changelog/utils/transformer.mjs",
+      "./changelog/utils/writer-opts": "./dist/changelog/utils/writer-opts.mjs",
+      "./config/rewrites": "./dist/config/rewrites.mjs",
+      "./config/types": "./dist/config/types.mjs",
+      "./types": "./dist/types/index.mjs",
+      "./types/commit": "./dist/types/commit.mjs",
+      "./types/commit.types": "./dist/types/commit.types.mjs",
+      "./types/release-rule": "./dist/types/release-rule.mjs",
+      "./types/release-rule.types": "./dist/types/release-rule.types.mjs",
+      "./utils/get-gitmoji-conventional": "./dist/utils/get-gitmoji-conventional.mjs",
+      "./utils/get-release-rules": "./dist/utils/get-release-rules.mjs",
+      "./utils/get-type-specs": "./dist/utils/get-type-specs.mjs",
+      "./package.json": "./package.json"
+    },
     "provenance": true,
     "registry": "https://registry.npmjs.org/"
   },

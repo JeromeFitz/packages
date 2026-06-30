@@ -13,23 +13,135 @@
     "url": "git+https://github.com/jeromefitz/packages.git",
     "directory": "config/oxlint"
   },
-  "files": [
-    "src/**"
-  ],
   "type": "module",
   "sideEffects": false,
   "exports": {
     ".": {
-      "import": "./src/config.ts",
-      "types": "./src/config.ts"
+      "development": "./src/config.ts",
+      "default": "./dist/index.mjs"
+    },
+    "./categories": {
+      "development": "./src/categories.ts",
+      "default": "./dist/categories.mjs"
+    },
+    "./config": {
+      "development": "./src/config.ts",
+      "default": "./dist/config.mjs"
+    },
+    "./globals": {
+      "development": "./src/globals.ts",
+      "default": "./dist/globals.mjs"
+    },
+    "./ignore-patterns": {
+      "development": "./src/ignore-patterns.ts",
+      "default": "./dist/ignore-patterns.mjs"
+    },
+    "./js-plugins": {
+      "development": "./src/js-plugins.ts",
+      "default": "./dist/js-plugins.mjs"
+    },
+    "./js-plugins.playwright": {
+      "development": "./src/js-plugins.playwright.ts",
+      "default": "./dist/js-plugins.playwright.mjs"
+    },
+    "./js-plugins.testing-library": {
+      "development": "./src/js-plugins.testing-library.ts",
+      "default": "./dist/js-plugins.testing-library.mjs"
+    },
+    "./overrides": {
+      "development": "./src/overrides.ts",
+      "default": "./dist/overrides.mjs"
+    },
+    "./plugins": {
+      "development": "./src/plugins.ts",
+      "default": "./dist/plugins.mjs"
+    },
+    "./plugins.eslint": {
+      "development": "./src/plugins.eslint.ts",
+      "default": "./dist/plugins.eslint.mjs"
+    },
+    "./plugins.import": {
+      "development": "./src/plugins.import.ts",
+      "default": "./dist/plugins.import.mjs"
+    },
+    "./plugins.jsx-a11y": {
+      "development": "./src/plugins.jsx-a11y.ts",
+      "default": "./dist/plugins.jsx-a11y.mjs"
+    },
+    "./plugins.nextjs": {
+      "development": "./src/plugins.nextjs.ts",
+      "default": "./dist/plugins.nextjs.mjs"
+    },
+    "./plugins.node": {
+      "development": "./src/plugins.node.ts",
+      "default": "./dist/plugins.node.mjs"
+    },
+    "./plugins.oxc": {
+      "development": "./src/plugins.oxc.ts",
+      "default": "./dist/plugins.oxc.mjs"
+    },
+    "./plugins.promise": {
+      "development": "./src/plugins.promise.ts",
+      "default": "./dist/plugins.promise.mjs"
+    },
+    "./plugins.react": {
+      "development": "./src/plugins.react.ts",
+      "default": "./dist/plugins.react.mjs"
+    },
+    "./plugins.react-perf": {
+      "development": "./src/plugins.react-perf.ts",
+      "default": "./dist/plugins.react-perf.mjs"
+    },
+    "./plugins.typescript": {
+      "development": "./src/plugins.typescript.ts",
+      "default": "./dist/plugins.typescript.mjs"
+    },
+    "./plugins.unicorn": {
+      "development": "./src/plugins.unicorn.ts",
+      "default": "./dist/plugins.unicorn.mjs"
+    },
+    "./plugins.vitest": {
+      "development": "./src/plugins.vitest.ts",
+      "default": "./dist/plugins.vitest.mjs"
     },
     "./package.json": "./package.json"
   },
+  "publishConfig": {
+    "exports": {
+      ".": "./dist/index.mjs",
+      "./categories": "./dist/categories.mjs",
+      "./config": "./dist/config.mjs",
+      "./globals": "./dist/globals.mjs",
+      "./ignore-patterns": "./dist/ignore-patterns.mjs",
+      "./js-plugins": "./dist/js-plugins.mjs",
+      "./js-plugins.playwright": "./dist/js-plugins.playwright.mjs",
+      "./js-plugins.testing-library": "./dist/js-plugins.testing-library.mjs",
+      "./overrides": "./dist/overrides.mjs",
+      "./plugins": "./dist/plugins.mjs",
+      "./plugins.eslint": "./dist/plugins.eslint.mjs",
+      "./plugins.import": "./dist/plugins.import.mjs",
+      "./plugins.jsx-a11y": "./dist/plugins.jsx-a11y.mjs",
+      "./plugins.nextjs": "./dist/plugins.nextjs.mjs",
+      "./plugins.node": "./dist/plugins.node.mjs",
+      "./plugins.oxc": "./dist/plugins.oxc.mjs",
+      "./plugins.promise": "./dist/plugins.promise.mjs",
+      "./plugins.react": "./dist/plugins.react.mjs",
+      "./plugins.react-perf": "./dist/plugins.react-perf.mjs",
+      "./plugins.typescript": "./dist/plugins.typescript.mjs",
+      "./plugins.unicorn": "./dist/plugins.unicorn.mjs",
+      "./plugins.vitest": "./dist/plugins.vitest.mjs",
+      "./package.json": "./package.json"
+    }
+  },
   "scripts": {
-    "clean": "rm -rf ./.turbo",
+    "build": "tsdown",
+    "clean": "rm -rf .turbo && rm -rf dist",
     "clean:install": "pnpm clean && rm -rf ./node_modules",
+    "dev": "tsdown --watch",
     "lint": "pnpm run lint:ts",
-    "lint:ts": "tsc --noEmit --declaration"
+    "lint:ts": "tsc --noEmit --declaration",
+    "semantic-release": "semantic-release",
+    "semantic-release:dry": "semantic-release --dry-run"
   },
   "dependencies": {
     "@typescript-eslint/utils": "8.62.0",

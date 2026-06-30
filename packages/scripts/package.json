@@ -17,18 +17,57 @@
   "type": "module",
   "sideEffects": false,
   "exports": {
-    ".": "./dist/index.mjs",
-    "./data/labels": "./dist/data/labels.mjs",
-    "./data/milestones": "./dist/data/milestones.mjs",
-    "./github/label": "./dist/github/label.mjs",
-    "./github/milestone": "./dist/github/milestone.mjs",
-    "./github/pull-request": "./dist/github/pull-request.mjs",
-    "./templates/PULL_REQUEST__RELEASE": "./dist/templates/PULL_REQUEST__RELEASE.mjs",
-    "./utils/get-chars": "./dist/utils/get-chars.mjs",
-    "./utils/get-package-json": "./dist/utils/get-package-json.mjs",
+    ".": {
+      "development": "./src/index.ts",
+      "default": "./dist/index.mjs"
+    },
+    "./data/labels": {
+      "development": "./src/data/labels.ts",
+      "default": "./dist/data/labels.mjs"
+    },
+    "./data/milestones": {
+      "development": "./src/data/milestones.ts",
+      "default": "./dist/data/milestones.mjs"
+    },
+    "./github/label": {
+      "development": "./src/github/label.ts",
+      "default": "./dist/github/label.mjs"
+    },
+    "./github/milestone": {
+      "development": "./src/github/milestone.ts",
+      "default": "./dist/github/milestone.mjs"
+    },
+    "./github/pull-request": {
+      "development": "./src/github/pull-request.ts",
+      "default": "./dist/github/pull-request.mjs"
+    },
+    "./templates/PULL_REQUEST__RELEASE": {
+      "development": "./src/templates/PULL_REQUEST__RELEASE.ts",
+      "default": "./dist/templates/PULL_REQUEST__RELEASE.mjs"
+    },
+    "./utils/get-chars": {
+      "development": "./src/utils/get-chars.ts",
+      "default": "./dist/utils/get-chars.mjs"
+    },
+    "./utils/get-package-json": {
+      "development": "./src/utils/get-package-json.ts",
+      "default": "./dist/utils/get-package-json.mjs"
+    },
     "./package.json": "./package.json"
   },
   "publishConfig": {
+    "exports": {
+      ".": "./dist/index.mjs",
+      "./data/labels": "./dist/data/labels.mjs",
+      "./data/milestones": "./dist/data/milestones.mjs",
+      "./github/label": "./dist/github/label.mjs",
+      "./github/milestone": "./dist/github/milestone.mjs",
+      "./github/pull-request": "./dist/github/pull-request.mjs",
+      "./templates/PULL_REQUEST__RELEASE": "./dist/templates/PULL_REQUEST__RELEASE.mjs",
+      "./utils/get-chars": "./dist/utils/get-chars.mjs",
+      "./utils/get-package-json": "./dist/utils/get-package-json.mjs",
+      "./package.json": "./package.json"
+    },
     "provenance": true,
     "registry": "https://registry.npmjs.org/"
   },

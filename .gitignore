@@ -41,3 +41,6 @@ tsconfig.tsbuildinfo
 .vscode/**
 !.vscode/extensions.json
 !.vscode/settings.default.json
+# Generated LICENSE copies ----
+config/*/LICENSE
+packages/*/LICENSE
