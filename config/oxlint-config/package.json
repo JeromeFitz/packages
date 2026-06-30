@@ -14,45 +14,22 @@
     "directory": "config/oxlint"
   },
   "files": [
-    "dist/**"
+    "src/**"
   ],
   "type": "module",
   "sideEffects": false,
   "exports": {
-    ".": "./dist/index.mjs",
-    "./categories": "./dist/categories.mjs",
-    "./config": "./dist/config.mjs",
-    "./globals": "./dist/globals.mjs",
-    "./ignore-patterns": "./dist/ignore-patterns.mjs",
-    "./js-plugins": "./dist/js-plugins.mjs",
-    "./js-plugins.playwright": "./dist/js-plugins.playwright.mjs",
-    "./js-plugins.testing-library": "./dist/js-plugins.testing-library.mjs",
-    "./overrides": "./dist/overrides.mjs",
-    "./plugins": "./dist/plugins.mjs",
-    "./plugins.eslint": "./dist/plugins.eslint.mjs",
-    "./plugins.import": "./dist/plugins.import.mjs",
-    "./plugins.jsx-a11y": "./dist/plugins.jsx-a11y.mjs",
-    "./plugins.nextjs": "./dist/plugins.nextjs.mjs",
-    "./plugins.node": "./dist/plugins.node.mjs",
-    "./plugins.oxc": "./dist/plugins.oxc.mjs",
-    "./plugins.promise": "./dist/plugins.promise.mjs",
-    "./plugins.react": "./dist/plugins.react.mjs",
-    "./plugins.react-perf": "./dist/plugins.react-perf.mjs",
-    "./plugins.typescript": "./dist/plugins.typescript.mjs",
-    "./plugins.unicorn": "./dist/plugins.unicorn.mjs",
-    "./plugins.vitest": "./dist/plugins.vitest.mjs",
+    ".": {
+      "import": "./src/config.ts",
+      "types": "./src/config.ts"
+    },
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "tsdown",
-    "clean": "rm -rf ./.turbo ./dist",
+    "clean": "rm -rf ./.turbo",
     "clean:install": "pnpm clean && rm -rf ./node_modules",
-    "copy": "mkdir -p ./dist && ./scripts/copy.sh",
     "lint": "pnpm run lint:ts",
-    "lint:ts": "tsc --noEmit --declaration",
-    "prepare": "pnpm is-in-ci || pnpm build",
-    "semantic-release": "semantic-release",
-    "semantic-release:dry": "semantic-release --dry-run"
+    "lint:ts": "tsc --noEmit --declaration"
   },
   "dependencies": {
     "@typescript-eslint/utils": "8.62.0",

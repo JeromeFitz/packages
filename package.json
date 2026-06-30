@@ -46,6 +46,7 @@
     "@jeromefitz/semantic": "workspace:*",
     "@jeromefitz/tsconfig": "workspace:*",
     "@types/node": "24.12.0",
+    "@vitest/coverage-v8": "4.1.9",
     "ccommit": "workspace:*",
     "dotenv": "17.4.2",
     "is-in-ci": "2.0.0",
@@ -59,9 +60,6 @@
     "turbo": "2.9.14",
     "typescript": "5.9.3",
     "vitest": "4.1.9"
-  },
-  "devDependencies": {
-    "@vitest/coverage-v8": "4.1.9"
   },
   "devEngines": {
     "packageManager": {
