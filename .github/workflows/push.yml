@@ -13,7 +13,6 @@ on:
       - refactor/**
       - release/**
       - NICE-**
-      - oxc/**
 
 concurrency:
   group: push-${{ github.ref }}-1
