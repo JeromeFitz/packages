@@ -10,11 +10,6 @@ Monorepo (via [📦 pnpm](https://github.com/pnpm/pnpm) and [🔺 turbo](https:/
 
 ### 🔧 Configuration
 
-Originally was all-in-one as `@jeromefitz/codestyle`, these have been broken out for separate maintainability and ala-carte implementation.
-
-**Spoiler:** They are opinionated, but can be overriden, extended, or ignored. 🙈
-
-- [`@jeromefitz/prettier-config`](https://github.com/JeromeFitz/packages/tree/main/config/prettier-config)
 - [`@jeromefitz/tsconfig`](https://github.com/JeromeFitz/packages/tree/main/config/tsconfig)
 
 ### ⚡ Release Management Tools
@@ -33,7 +28,7 @@ Originally was all-in-one as `@jeromefitz/codestyle`, these have been broken out
 - [`@jeromefitz/semantic`](https://github.com/JeromeFitz/packages/tree/main/packages/semantic)
   - Automatic Semantic Versioning through [`semantic-release`](https://github.com/semantic-release/semantic-release) with support for `gitmoji`.
 - [`@jeromefitz/release-notes-generator`](https://github.com/JeromeFitz/packages/tree/main/packages/release-notes-generator)
-  - You guessed it, a custom release-notes-generator.
+  - You guessed it, a custom release-notes-generator. This does not use `handlebars` basically.
   - 📝 See the latest output at [the releases page](https://github.com/JeromeFitz/packages/releases).
 
 ### 🎲 Misc
@@ -58,13 +53,15 @@ Originally was all-in-one as `@jeromefitz/codestyle`, these have been broken out
 
 ### 🪦 Deprecated
 
+- `@jeromefitz/codestyle`
+- `@jeromefitz/design-system`
 - `@jeromefitz/eslint-config`
+- `@jeromefitz/git-cz`
 - `@jeromefitz/jest-config`
 - `@jeromefitz/jest-presets`
 - `@jeromefitz/lighthouse-config`
 - `@jeromefitz/lint-staged`
-- `@jeromefitz/git-cz`
-- `@jeromefitz/design-system`
+- `@jeromefitz/prettier-config`
 - `@jeromefitz/spotify`
 
 ## 👷️ CI/CD Overview
@@ -83,30 +80,9 @@ Originally was all-in-one as `@jeromefitz/codestyle`, these have been broken out
 
 ## :octocat: CI/CD Workflows
 
-- ⚗️ `**pull**`:
-  - Branch(es):
-    - `main|canary|develop`
-  - Script(s):
-    - `lint|test|build`
-- 🔀️ `**push**`:
-  - Branch(es):
-    - `main|canary|develop`
-    - `(ci|feature|fix|refactor|release)/**`
-  - Script(s):
-    - `lint|test|build|semantic-release`
-  - Note(s):
-    - `[b]` necessary for `semantic-release`
-      - Pre-relase branches (aka `!main`):
-        - Handled in root `release.config`
-        - Can be overriden in any package
-    - `[b]` necessary for `build` when not on `main`
-- 🌃️ `**weekly**`:
-  - Branch(es):
-    - `main`
-  - Script(s):
-    - `lint|test|build|semantic-release`
-  - Note(s):
-    - `[b]` not necessary for `semantic-release`
+- `pull`: PRs into `main`
+- `push`: `main` + Ability for `x.y.z-canary.#` builds via: `./release.config.js`
+- `weekly`: If `main` did not trigger a build (**Renovate**/`[skip ci]`) check to see if it should
 
 ## 🥳 Contributing
 
