@@ -25,7 +25,16 @@
     },
     "build": {
       "dependsOn": ["^build"],
-      "inputs": ["src/**", "*.cjs", "*.js", "*.mjs", "*.ts", "package.json"],
+      "inputs": [
+        "../../oxlint.config.ts",
+        "../../tsdown.config.ts",
+        "src/**",
+        "*.cjs",
+        "*.js",
+        "*.mjs",
+        "*.ts",
+        "package.json"
+      ],
       "outputLogs": "new-only",
       "outputs": ["dist/**", ".next/**"]
     },

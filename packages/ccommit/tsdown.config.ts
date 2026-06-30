@@ -35,7 +35,7 @@ const config: UserConfig = {
   onSuccess: () => {
     rewriteDistExports();
     const license = readFileSync("../../LICENSE", "utf8");
-    writeFileSync("./dist/index.js.LICENSE.txt", `${license}\n${GITMOJI_CLI_LICENSE}`);
+    writeFileSync("./dist/index.mjs.LICENSE.txt", `${license}\n${GITMOJI_CLI_LICENSE}`);
   },
   treeshake: true,
 };
