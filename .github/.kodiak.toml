@@ -7,8 +7,8 @@ version = 1
 #auto_approve_usernames = ["renovate"]
 
 [merge]
-automerge_label = [" 🥳️ LGTM", "🥳️ LGTM","🥳️  LGTM","LGTM"]
-blocking_labels = [" 🚧️ WIP", "🚧️ WIP","🚧️  WIP","WIP"]
+automerge_label = [" 🥳️ LGTM", "🥳️ LGTM", "🥳️  LGTM", "LGTM"]
+blocking_labels = [" 🚧️ WIP", "🚧️ WIP", "🚧️  WIP", "WIP"]
 delete_branch_on_merge = true
 method = "squash"
 optimistic_updates = true

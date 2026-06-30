@@ -1,18 +1,18 @@
-import type { Note, NoteGroup } from '../types'
+import type { Note, NoteGroup } from "../types";
 
 function getNoteGroups(notes: Note[]): NoteGroup[] {
-  const groups = new Map<string, NoteGroup>()
+  const groups = new Map<string, NoteGroup>();
 
   for (const note of notes) {
-    const existing = groups.get(note.title)
+    const existing = groups.get(note.title);
     if (existing) {
-      existing.notes.push(note)
+      existing.notes.push(note);
     } else {
-      groups.set(note.title, { notes: [note], title: note.title })
+      groups.set(note.title, { notes: [note], title: note.title });
     }
   }
 
-  return [...groups.values()]
+  return [...groups.values()];
 }
 
-export { getNoteGroups }
+export { getNoteGroups };

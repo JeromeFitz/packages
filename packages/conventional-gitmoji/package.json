@@ -1,23 +1,21 @@
 {
   "name": "@jeromefitz/conventional-gitmoji",
   "version": "0.0.0",
-  "type": "module",
+  "private": false,
   "description": "Helper package for dual gitmoji / conventional commits",
-  "repository": {
-    "directory": "packages/conventional-gitmoji",
-    "type": "git",
-    "url": "git+https://github.com/JeromeFitz/packages.git"
-  },
+  "license": "MIT",
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
     "url": "https://jeromefitzgerald.com"
   },
-  "license": "MIT",
-  "private": false,
-  "engines": {
-    "node": ">=24"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeromeFitz/packages.git",
+    "directory": "packages/conventional-gitmoji"
   },
+  "type": "module",
+  "sideEffects": false,
   "exports": {
     ".": "./dist/index.mjs",
     "./changelog": "./dist/changelog/index.mjs",
@@ -40,21 +38,21 @@
     "./utils/getTypeSpecs": "./dist/utils/getTypeSpecs.mjs",
     "./package.json": "./package.json"
   },
+  "publishConfig": {
+    "provenance": true,
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "build": "tsdown",
     "clean": "rm -rf .turbo && rm -rf dist",
     "clean:install": "pnpm run clean && rm -rf node_modules",
-    "copy": "mkdir -p ./dist && ./scripts/copy.sh",
     "dev": "tsdown --watch",
-    "generate:types": "node ./scripts/generateTypes.mjs && pnpm exec biome format --write --no-errors-on-unmatched",
-    "lint": "pnpm run lint:typescript",
-    "lint:typescript": "tsc --noEmit --declaration",
+    "lint:ts": "tsc --noEmit --declaration",
     "semantic-release": "semantic-release",
     "semantic-release:dry": "semantic-release --dry-run",
-    "test": "vitest run"
-  },
-  "peerDependencies": {
-    "lodash-es": "^4.18.0"
+    "test:unit": "NODE_NO_WARNINGS=1 vitest run",
+    "test:unit:coverage": "NODE_NO_WARNINGS=1 vitest run --coverage",
+    "test:watch": "NODE_NO_WARNINGS=1 vitest run --watch"
   },
   "dependencies": {
     "fast-json-stable-stringify": "2.1.0",
@@ -66,11 +64,12 @@
     "gitmojis": "3.15.0",
     "lodash-es": "4.18.0"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "provenance": true
+  "peerDependencies": {
+    "lodash-es": "^4.18.0"
   },
-  "sideEffects": false,
+  "engines": {
+    "node": ">=24"
+  },
   "inlinedDependencies": {
     "gitmojis": "3.15.0"
   }

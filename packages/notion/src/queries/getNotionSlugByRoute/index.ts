@@ -1,9 +1,8 @@
-import { sortObject } from '@jeromefitz/utils'
+import { sortObject } from "@jeromefitz/utils";
+import { omit as _omit, size as _size } from "lodash-es";
 
-import { omit as _omit, size as _size } from 'lodash-es'
-
-import { DATA_TYPES, PROPERTIES, QUERIES } from '../../constants/index'
-import { addTime, dataNormalized } from '../../utils/index'
+import { DATA_TYPES, PROPERTIES, QUERIES } from "../../constants/index";
+import { addTime, dataNormalized } from "../../utils/index";
 
 /**
  * @note Determine if PARENT|CHILD should be returned:
@@ -27,20 +26,18 @@ const getNotionSlugByRoute__getDataByParentRouteType = async ({
   routeType,
   // slug,
 }) => {
-  const { NOTION } = config
-  const { meta } = pathVariables
+  const { NOTION } = config;
+  const { meta } = pathVariables;
 
-  const ROUTE_TYPE = routeType.toUpperCase()
+  const ROUTE_TYPE = routeType.toUpperCase();
 
-  const [parentSlug, slug] = meta
-  const isChild = _size(meta) === 2
+  const [parentSlug, slug] = meta;
+  const isChild = _size(meta) === 2;
 
-  const CHILD = NOTION[ROUTE_TYPE]?.hasChild?.toUpperCase()
+  const CHILD = NOTION[ROUTE_TYPE]?.hasChild?.toUpperCase();
 
   const __info: any = await getDatabasesByIdQuery({
-    database_id:
-      NOTION[isChild ? NOTION[CHILD].routeType.toUpperCase() : ROUTE_TYPE]
-        .database_id,
+    database_id: NOTION[isChild ? NOTION[CHILD].routeType.toUpperCase() : ROUTE_TYPE].database_id,
     filter: {
       and: [
         {
@@ -49,19 +46,19 @@ const getNotionSlugByRoute__getDataByParentRouteType = async ({
         },
       ],
     },
-  })
+  });
 
-  const _info = __info?.object === 'list' && __info.results[0]
+  const _info = __info?.object === "list" && __info.results[0];
   // @refactor(404)
   if (!_info) {
-    return { content: {}, images: {}, info: {}, items: {} }
+    return { content: {}, images: {}, info: {}, items: {} };
   }
-  const info = _omit(_info, 'properties')
+  const info = _omit(_info, "properties");
   info.properties = sortObject(
     dataNormalized({ config, data: _info, pageId: info.id, pathVariables }),
-  )
-  const content = await getBlocksByIdChildren({ block_id: info.id })
-  let items = {}
+  );
+  const content = await getBlocksByIdChildren({ block_id: info.id });
+  let items = {};
 
   /**
    * @note if PARENT then get CHILDREN via `items`
@@ -73,11 +70,11 @@ const getNotionSlugByRoute__getDataByParentRouteType = async ({
         databaseType: NOTION[CHILD].routeType.toUpperCase(),
         podcasts: info.id,
       },
-    })
+    });
   }
 
-  return { content, images: {}, info, items }
-}
+  return { content, images: {}, info, items };
+};
 
 /**
  * @note This is unique because the following are different:
@@ -98,23 +95,20 @@ const getNotionSlugByRoute__getDataByListingDate = async ({
   routeType,
   slug,
 }) => {
-  const dateTimestamp = new Date().toISOString()
+  const dateTimestamp = new Date().toISOString();
 
-  const { NOTION } = config
-  const { meta } = pathVariables
+  const { NOTION } = config;
+  const { meta } = pathVariables;
 
-  const [year, month, day] = meta
+  const [year, month, day] = meta;
   /**
    * @hack uh... nothing to see here, haha
    */
   const timestampQuery = new Date(
-    `${year ? year : dateTimestamp.slice(0, 4)}-${month ? month : '01'}-${
-      day ? day : '01'
-    }`,
-  )
+    `${year ? year : dateTimestamp.slice(0, 4)}-${month ? month : "01"}-${day ? day : "01"}`,
+  );
   const property =
-    NOTION[routeType.toUpperCase()]?.infoType?.notion ??
-    PROPERTIES.datePublished.notion
+    NOTION[routeType.toUpperCase()]?.infoType?.notion ?? PROPERTIES.datePublished.notion;
 
   const __info: any = await getDatabasesByIdQuery({
     database_id: NOTION[routeType.toUpperCase()].database_id,
@@ -122,13 +116,13 @@ const getNotionSlugByRoute__getDataByListingDate = async ({
       and: [
         {
           date: {
-            on_or_after: addTime(timestampQuery, ''),
+            on_or_after: addTime(timestampQuery, ""),
           },
           property,
         },
         {
           date: {
-            before: addTime(timestampQuery, 'day'),
+            before: addTime(timestampQuery, "day"),
           },
           property,
         },
@@ -138,22 +132,22 @@ const getNotionSlugByRoute__getDataByListingDate = async ({
         },
       ],
     },
-  })
+  });
 
-  const _info = __info?.object === 'list' && __info.results[0]
+  const _info = __info?.object === "list" && __info.results[0];
   // @refactor(404)
   if (!_info) {
-    return { content: {}, images: {}, info: {}, items: {} }
+    return { content: {}, images: {}, info: {}, items: {} };
   }
 
-  const info = _omit(_info, 'properties')
+  const info = _omit(_info, "properties");
   info.properties = sortObject(
     dataNormalized({ config, data: _info, pageId: info.id, pathVariables }),
-  )
-  const content = await getBlocksByIdChildren({ block_id: info.id })
+  );
+  const content = await getBlocksByIdChildren({ block_id: info.id });
 
-  return { content, images: {}, info, items: {} }
-}
+  return { content, images: {}, info, items: {} };
+};
 
 const getNotionSlugByRoute = async ({
   config,
@@ -164,7 +158,7 @@ const getNotionSlugByRoute = async ({
   routeType,
   slug,
 }) => {
-  const { NOTION, ROUTE_TYPES_BY_DATA_TYPES } = config
+  const { NOTION, ROUTE_TYPES_BY_DATA_TYPES } = config;
 
   /**
    * @custom (notion) DATA_TYPES.SLUG_BY_ROUTE -- but customized:
@@ -182,18 +176,14 @@ const getNotionSlugByRoute = async ({
       pathVariables,
       routeType,
       // slug,
-    })
+    });
   }
 
   /**
    * @custom (notion) DATA_TYPES.LISTING_BY_DATE
    *
    */
-  if (
-    ROUTE_TYPES_BY_DATA_TYPES[DATA_TYPES.LISTING_BY_DATE].includes(
-      routeType.toUpperCase(),
-    )
-  ) {
+  if (ROUTE_TYPES_BY_DATA_TYPES[DATA_TYPES.LISTING_BY_DATE].includes(routeType.toUpperCase())) {
     return await getNotionSlugByRoute__getDataByListingDate({
       config,
       getBlocksByIdChildren,
@@ -202,10 +192,10 @@ const getNotionSlugByRoute = async ({
       pathVariables,
       routeType,
       slug,
-    })
+    });
   }
 
-  return { content: {}, images: {}, info: {}, items: {} }
-}
+  return { content: {}, images: {}, info: {}, items: {} };
+};
 
-export default getNotionSlugByRoute
+export default getNotionSlugByRoute;

@@ -1,10 +1,8 @@
-import type { PluginSpec } from 'semantic-release'
+import { parserOpts, writerOpts } from "@jeromefitz/conventional-gitmoji";
+import type { PluginSpec } from "semantic-release";
 
-import type { PluginOptions } from './pluginOptions.types'
-
-import { parserOpts, writerOpts } from '@jeromefitz/conventional-gitmoji'
-
-import { commitAnalyzer, git, github, npm } from './index'
+import { commitAnalyzer, git, github, npm } from "./index";
+import type { PluginOptions } from "./pluginOptions.types";
 
 const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec[] => {
   const options: PluginOptions = {
@@ -13,22 +11,22 @@ const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec[] => {
     enableNpm: true,
     enableReleaseNotes: false,
     enableReleaseNotesCustom: true,
-    pkgRoot: './dist',
+    pkgRoot: "./dist",
     ...optionsPassed,
-  }
+  };
 
   const releaseNotesConfig: PluginSpec = [
-    '@semantic-release/release-notes-generator',
+    "@semantic-release/release-notes-generator",
     {
-      config: '@jeromefitz/conventional-gitmoji',
+      config: "@jeromefitz/conventional-gitmoji",
       parserOpts,
       writerOpts,
     },
-  ]
-  const releaseNotesCustomConfig: PluginSpec = '@jeromefitz/release-notes-generator'
+  ];
+  const releaseNotesCustomConfig: PluginSpec = "@jeromefitz/release-notes-generator";
 
-  const { npmPublish, pkgRoot, tarballDir } = options
-  const npmConfig = npm({ npmPublish, pkgRoot, tarballDir })
+  const { npmPublish, pkgRoot, tarballDir } = options;
+  const npmConfig = npm({ npmPublish, pkgRoot, tarballDir });
 
   const {
     addReleases,
@@ -41,7 +39,7 @@ const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec[] => {
     labels,
     proxy,
     releasedLabels,
-  } = options
+  } = options;
   const githubConfig = github({
     addReleases,
     assignees,
@@ -53,9 +51,9 @@ const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec[] => {
     labels,
     proxy,
     releasedLabels,
-  })
+  });
 
-  const gitConfig = git(options)
+  const gitConfig = git(options);
 
   return [
     commitAnalyzer(options.releaseRules),
@@ -64,7 +62,7 @@ const getPluginOptions = (optionsPassed?: PluginOptions): PluginSpec[] => {
     ...(options.enableNpm ? [npmConfig] : []),
     ...(options.enableGithub ? [githubConfig] : []),
     ...(options.enableGit ? [gitConfig] : []),
-  ]
-}
+  ];
+};
 
-export { getPluginOptions }
+export { getPluginOptions };

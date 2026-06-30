@@ -1,6 +1,6 @@
-import type { PluginSpec } from 'semantic-release'
+import type { PluginSpec } from "semantic-release";
 
-import type { GitPluginOptions } from './git.types'
+import type { GitPluginOptions } from "./git.types";
 
 /**
  * @note
@@ -11,18 +11,18 @@ import type { GitPluginOptions } from './git.types'
  */
 const git = (options: GitPluginOptions): PluginSpec => {
   return [
-    '@semantic-release/git',
+    "@semantic-release/git",
     {
-      assets:
-        options.gitAssets === false
-          ? false
-          : ['package.json', ...(options.gitAssets ?? [])],
+      assets: options.gitAssets === false ? false : ["package.json", ...(options.gitAssets ?? [])],
       message:
         options.message ??
-        // biome-ignore lint/suspicious/noTemplateCurlyInString: template processed by semantic-release at runtime
-        '🔖️ `${nextRelease.gitTag}` [skip ci] \n\n${nextRelease.notes}',
+        /**
+         * @note(semantic-release) template processed at runtime
+         */
+        // oxlint-disable-next-line no-template-curly-in-string
+        "🔖️ `${nextRelease.gitTag}` [skip ci] \n\n${nextRelease.notes}",
     },
-  ]
-}
+  ];
+};
 
-export { git }
+export { git };

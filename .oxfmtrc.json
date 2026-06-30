@@ -1,0 +1,25 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "ignorePatterns": [
+    ".vscode/settings.json",
+    "**/_placeholder",
+    "**/.cache-turbo",
+    "**/.cache",
+    "**/.husky",
+    "**/.idea",
+    "**/.lighthouseci",
+    "**/.next",
+    "**/.swc",
+    "**/.turbo",
+    "**/*.d.ts",
+    "**/coverage",
+    "**/dist",
+    "**/e2e-report",
+    "**/e2e-results",
+    "**/node_modules",
+    "**/pnpm-lock.yaml",
+    "**/zzz"
+  ],
+  "sortImports": true,
+  "sortPackageJson": { "sortScripts": true }
+}

@@ -1,33 +1,33 @@
-/** biome-ignore-all lint/suspicious/noConsole: migrate */
-import fs from 'node:fs'
-import { join } from 'node:path'
-import process from 'node:process'
+import fs from "node:fs";
+import { join } from "node:path";
+import process from "node:process";
 
-import { getGitRootDir, printDryRun } from '~ccommit/utils/index'
+import { getGitRootDir, printDryRun } from "~ccommit/utils/index";
 
-const commitMsgFile = join(getGitRootDir(), '.git', 'COMMIT_EDITMSG')
+const commitMsgFile = join(getGitRootDir(), ".git", "COMMIT_EDITMSG");
 
+// oxlint-disable-next-line complexity
 const withHook = (answers, options) => {
   try {
-    let commitMessage = answers?.subject
-    if (answers?.message && answers?.message !== '\n') {
-      commitMessage += `\n\n${answers.message}`
+    let commitMessage = answers?.subject;
+    if (answers?.message && answers?.message !== "\n") {
+      commitMessage += `\n\n${answers.message}`;
     }
-    if (answers?.messageBreaking && answers?.messageBreaking !== '\n') {
-      commitMessage += `\n\n${answers.messageBreaking}`
+    if (answers?.messageBreaking && answers?.messageBreaking !== "\n") {
+      commitMessage += `\n\n${answers.messageBreaking}`;
     }
 
     if (options?.dryrun) {
-      printDryRun(commitMessage)
+      printDryRun(commitMessage);
     } else {
-      fs.writeFileSync(commitMsgFile, commitMessage)
+      fs.writeFileSync(commitMsgFile, commitMessage);
     }
   } catch (error) {
-    console.error(error)
-    process.exit(1)
+    console.error(error);
+    process.exit(1);
   } finally {
-    process.exit(0)
+    process.exit(0);
   }
-}
+};
 
-export default withHook
+export default withHook;

@@ -3,11 +3,10 @@
 /*!
  * For license information please see index.js.LICENSE.txt
  */
-import meow from 'meow'
-
-import { commit, list } from '~ccommit/commands/index'
-import { COMMANDS, COMMIT_FORMATS, FLAGS, OPTIONS } from '~ccommit/lib/index'
-import { findCommand } from '~ccommit/utils/index'
+import meow from "meow";
+import { commit, list } from "~ccommit/commands/index";
+import { COMMANDS, COMMIT_FORMATS, FLAGS, OPTIONS } from "~ccommit/lib/index";
+import { findCommand } from "~ccommit/utils/index";
 
 const cli = meow(
   `
@@ -38,30 +37,30 @@ const cli = meow(
   {
     flags: {
       // Flags
-      [FLAGS.BREAKING]: { default: false, shortFlag: 'b', type: 'boolean' },
-      [FLAGS.COMMIT]: { shortFlag: 'c', type: 'boolean' },
-      [FLAGS.DRYRUN]: { shortFlag: 'n', type: 'boolean' },
-      [FLAGS.EMOJI]: { default: true, shortFlag: 'e', type: 'boolean' },
-      [FLAGS.HELP]: { shortFlag: 'h', type: 'boolean' },
-      [FLAGS.HOOK]: { shortFlag: 'u', type: 'boolean' },
-      [FLAGS.LIST]: { shortFlag: 'l', type: 'boolean' },
-      [FLAGS.SKIP]: { default: false, type: 'boolean' },
-      [FLAGS.VERSION]: { shortFlag: 'v', type: 'boolean' },
+      [FLAGS.BREAKING]: { default: false, shortFlag: "b", type: "boolean" },
+      [FLAGS.COMMIT]: { shortFlag: "c", type: "boolean" },
+      [FLAGS.DRYRUN]: { shortFlag: "n", type: "boolean" },
+      [FLAGS.EMOJI]: { default: true, shortFlag: "e", type: "boolean" },
+      [FLAGS.HELP]: { shortFlag: "h", type: "boolean" },
+      [FLAGS.HOOK]: { shortFlag: "u", type: "boolean" },
+      [FLAGS.LIST]: { shortFlag: "l", type: "boolean" },
+      [FLAGS.SKIP]: { default: false, type: "boolean" },
+      [FLAGS.VERSION]: { shortFlag: "v", type: "boolean" },
       // Options
-      [OPTIONS.FORMAT]: { default: COMMIT_FORMATS.GITMOJI, type: 'string' },
-      [OPTIONS.MESSAGE]: { type: 'string' },
-      [OPTIONS.SCOPE]: { type: 'string' },
-      [OPTIONS.TITLE]: { type: 'string' },
-      [OPTIONS.TYPE]: { type: 'string' },
+      [OPTIONS.FORMAT]: { default: COMMIT_FORMATS.GITMOJI, type: "string" },
+      [OPTIONS.MESSAGE]: { type: "string" },
+      [OPTIONS.SCOPE]: { type: "string" },
+      [OPTIONS.TITLE]: { type: "string" },
+      [OPTIONS.TYPE]: { type: "string" },
     },
     importMeta: import.meta,
   },
-)
+);
 
 const commands = {
   [COMMANDS.COMMIT]: (options: any) => commit(options),
   [COMMANDS.HOOK]: (options: any) => commit(options),
   [COMMANDS.LIST]: () => list(),
-}
+};
 
-findCommand(cli, commands)
+findCommand(cli, commands);

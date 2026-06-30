@@ -1,3 +1,3 @@
-const checkbox = (data: any) => data.checkbox || false
+const checkbox = (data: any) => data.checkbox || false;
 
-export default checkbox
+export default checkbox;

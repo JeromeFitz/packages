@@ -6,17 +6,17 @@
 ## Usage
 
 ```sh
-yarn install @jeromefitz/conventional-gitmoji
+pnpm add @jeromefitz/conventional-gitmoji
 ```
 
 ```ts
-import { releaseRules, typeSpecs, types } from '@jeromefitz/conventional-gitmoji`
+import { releaseRules, typeSpecs, types } from "@jeromefitz/conventional-gitmoji";
 ```
 
 - `releaseRules`: informs `@semantic-release/commit-analyzer`
 - `typeSpecs`: informs `@jeromefitz/release-notes-generator` (via `writerOpts`)
   - `@hack`: This informs three different ways to ensure we catch the change from `gitmoji` to `conventional`
-- `types`: informs `@jeromefitz/git-cz` for the `gitmoji` theme.
+- `types`: informs [`ccommit`](https://github.com/JeromeFitz/packages/tree/main/packages/ccommit) for the `gitmoji` theme.
 
 ### Commit Analyzer
 

@@ -10,34 +10,31 @@ import {
   join as _join,
   last as _last,
   size as _size,
-} from 'lodash-es'
+} from "lodash-es";
 
 // import { DATA_TYPES } from '../../constants/index'
-import { getDataType } from '../../utils/index'
+import { getDataType } from "../../utils/index";
 
 const getPathVariables = ({ catchAll, config }) => {
-  const { NOTION, PAGES__HOMEPAGE, ROUTE_META, ROUTE_TYPES } = config
-  const size: number = _size(catchAll)
-  const first: any = _first(catchAll)
-  const FIRST = first.toUpperCase()
-  const last: any = _last(catchAll)
+  const { NOTION, PAGES__HOMEPAGE, ROUTE_META, ROUTE_TYPES } = config;
+  const size: number = _size(catchAll);
+  const first: any = _first(catchAll);
+  const FIRST = first.toUpperCase();
+  const last: any = _last(catchAll);
   // const LAST = last.toUpperCase()
 
   const meta =
-    size > 1 && _includes(ROUTE_META, FIRST)
-      ? _drop(catchAll)
-      : _drop(_dropRight(catchAll))
+    size > 1 && _includes(ROUTE_META, FIRST) ? _drop(catchAll) : _drop(_dropRight(catchAll));
 
   const routeType =
-    first === last && !_includes(ROUTE_TYPES, FIRST) ? NOTION.PAGES.routeType : first
-  // biome-ignore lint/correctness/useParseIntRadix: migrate
-  const slug = first !== last && !_isInteger(parseInt(last)) ? last : first
+    first === last && !_includes(ROUTE_TYPES, FIRST) ? NOTION.PAGES.routeType : first;
+  const slug = first !== last && !_isInteger(parseInt(last)) ? last : first;
 
-  const isPage = routeType === NOTION.PAGES.routeType.toLowerCase()
-  const isIndex = slug === first
-  const hasMeta = !!meta && _size(meta) !== 0
+  const isPage = routeType === NOTION.PAGES.routeType.toLowerCase();
+  const isIndex = slug === first;
+  const hasMeta = !!meta && _size(meta) !== 0;
 
-  const url = isPage && first === PAGES__HOMEPAGE ? '' : _join(catchAll, '/')
+  const url = isPage && first === PAGES__HOMEPAGE ? "" : _join(catchAll, "/");
 
   const pathVariables = {
     hasMeta,
@@ -47,17 +44,17 @@ const getPathVariables = ({ catchAll, config }) => {
     routeType,
     slug,
     url,
-  }
+  };
 
   // console.dir(`> pathVariables`)
   // console.dir(pathVariables)
 
-  const dataType = getDataType(pathVariables)
+  const dataType = getDataType(pathVariables);
 
   return {
     ...pathVariables,
     dataType,
-  }
-}
+  };
+};
 
-export default getPathVariables
+export default getPathVariables;

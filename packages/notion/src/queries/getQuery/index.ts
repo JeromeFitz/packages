@@ -1,41 +1,39 @@
-import type { SortItem } from '../../schema/index'
+import { avoidRateLimit, isObjectEmpty } from "@jeromefitz/utils";
+import { map as _map, omit as _omit, size as _size } from "lodash-es";
 
-import { avoidRateLimit, isObjectEmpty } from '@jeromefitz/utils'
-
-import { map as _map, omit as _omit, size as _size } from 'lodash-es'
-
-import { PROPERTIES } from '../../constants/index'
-import dataNormalizedResults from '../../utils/dataNormalizedResults/index'
+import { PROPERTIES } from "../../constants/index";
+import type { SortItem } from "../../schema/index";
+import dataNormalizedResults from "../../utils/dataNormalizedResults/index";
 
 // const useCache = process.env.NEXT_PUBLIC__NOTION_USE_CACHE
 // const useCache = false
 
 const SORTS: SortItem[] = [
   {
-    direction: 'ascending',
+    direction: "ascending",
     property: PROPERTIES.slug.notion,
   },
-]
+];
 
 // @todo(complexity) 12
-// biome-ignore lint/complexity/noExcessiveCognitiveComplexity: migrate
+// oxlint-disable-next-line complexity
 const getQuery = async ({ config, notionDatabasesQuery, reqQuery }) => {
-  const { NOTION } = config
-  const { databaseType } = reqQuery
-  const routeType = databaseType
-  let hasError = false
+  const { NOTION } = config;
+  const { databaseType } = reqQuery;
+  const routeType = databaseType;
+  let hasError = false;
 
   /**
    * @setup
    */
-  const DATABASE_TYPE = databaseType.toUpperCase()
-  const database_id = NOTION[DATABASE_TYPE].database_id
-  if (!database_id) return []
+  const DATABASE_TYPE = databaseType.toUpperCase();
+  const database_id = NOTION[DATABASE_TYPE].database_id;
+  if (!database_id) return [];
 
   // @todo(types) any
   let data: any = {},
-    items: any = {}
-  let filter: any, sorts: any
+    items: any = {};
+  let filter: any, sorts: any;
 
   /**
    * @todo(notion) move this to the api so it can be re-used
@@ -48,16 +46,17 @@ const getQuery = async ({ config, notionDatabasesQuery, reqQuery }) => {
    *  with Relations & Rollups rather than this customization
    */
 
-  if (databaseType === 'EPISODES') {
-    sorts = SORTS
-    const { podcasts } = reqQuery
+  if (databaseType === "EPISODES") {
+    sorts = SORTS;
+    const { podcasts } = reqQuery;
 
     // @todo(types)
-    const filterTagEpisodesByPodcasts: any = []
-    const podcastIds: any = []
+    const filterTagEpisodesByPodcasts: any = [];
+    const podcastIds: any = [];
 
-    // biome-ignore lint/correctness/noUnsafeOptionalChaining: migrate
-    !!podcasts && podcastIds.push(...podcasts?.split(','))
+    // oxlint-disable-next-line no-unused-expressions
+    !!podcasts && podcastIds.push(...podcasts?.split(","));
+    // oxlint-disable-next-line no-unused-expressions
     _size(podcastIds) > 0 &&
       _map(podcastIds, (id) =>
         filterTagEpisodesByPodcasts.push({
@@ -66,11 +65,11 @@ const getQuery = async ({ config, notionDatabasesQuery, reqQuery }) => {
             contains: id,
           },
         }),
-      )
-    filter = { or: [...filterTagEpisodesByPodcasts] }
+      );
+    filter = { or: [...filterTagEpisodesByPodcasts] };
   } else {
     // console.dir(`no filter`)
-    hasError = true
+    hasError = true;
   }
 
   // /**
@@ -85,11 +84,11 @@ const getQuery = async ({ config, notionDatabasesQuery, reqQuery }) => {
   // }
 
   if (!hasError && (!data || isObjectEmpty(data))) {
-    await avoidRateLimit(0)
+    await avoidRateLimit(0);
     // @todo(types) any
-    let contentData: Pick<any, number | string | symbol>
+    let contentData: Pick<any, number | string | symbol>;
 
-    // biome-ignore lint/complexity/noExtraBooleanCast: migrate
+    // oxlint-disable-next-line no-extra-boolean-cast
     if (!!filter) {
       // @hack(notion)-do-not-return'
       if (filter?.or.length === 0) {
@@ -97,28 +96,28 @@ const getQuery = async ({ config, notionDatabasesQuery, reqQuery }) => {
           and: [
             {
               property: PROPERTIES.slug.notion,
-              rich_text: { equals: '@hack(notion)-do-not-return' },
+              rich_text: { equals: "@hack(notion)-do-not-return" },
             },
           ],
-        }
+        };
       }
       contentData = await notionDatabasesQuery({
         database_id,
         filter,
         sorts,
-      })
+      });
 
-      data = contentData
+      data = contentData;
       items = dataNormalizedResults({
         config,
         results: contentData.results,
         routeType,
-      })
-      data = _omit(data, 'results')
-      data.results = items
+      });
+      data = _omit(data, "results");
+      data.results = items;
     } else {
       // console.dir(`no filter`)
-      hasError = true
+      hasError = true;
     }
 
     // /**
@@ -135,7 +134,7 @@ const getQuery = async ({ config, notionDatabasesQuery, reqQuery }) => {
     // }
   }
 
-  return data
-}
+  return data;
+};
 
-export default getQuery
+export default getQuery;

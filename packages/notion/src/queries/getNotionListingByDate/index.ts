@@ -1,29 +1,20 @@
-import type { SortItem } from '../../schema/index'
+import { sortObject } from "@jeromefitz/utils";
+import { map as _map, omit as _omit, size as _size } from "lodash-es";
 
-import { sortObject } from '@jeromefitz/utils'
+import { PROPERTIES, QUERIES } from "../../constants/index";
+import type { SortItem } from "../../schema/index";
+import { addTime, dataNormalized } from "../../utils/index";
 
-import { map as _map, omit as _omit, size as _size } from 'lodash-es'
-
-import { PROPERTIES, QUERIES } from '../../constants/index'
-import { addTime, dataNormalized } from '../../utils/index'
-
-const getNotionListingByDate__getFilter = ({
-  config,
-  pathVariables,
-  routeType,
-  slug,
-}) => {
-  const { NOTION } = config
-  const { meta } = pathVariables
-  const [year, month, day] = meta
-  const metaCount = _size(meta)
+const getNotionListingByDate__getFilter = ({ config, pathVariables, routeType, slug }) => {
+  const { NOTION } = config;
+  const { meta } = pathVariables;
+  const [year, month, day] = meta;
+  const metaCount = _size(meta);
   // @hack nothing to see here, haha
-  const dateTimestamp = new Date().toISOString()
+  const dateTimestamp = new Date().toISOString();
   const timestampQuery = new Date(
-    `${year ? year : dateTimestamp.slice(0, 4)}-${month ? month : '01'}-${
-      day ? day : '01'
-    }`,
-  )
+    `${year ? year : dateTimestamp.slice(0, 4)}-${month ? month : "01"}-${day ? day : "01"}`,
+  );
 
   /**
    * @filter
@@ -34,8 +25,7 @@ const getNotionListingByDate__getFilter = ({
    * ? = yyyy/mm/dd/slug (SLUG_BY_ROUTE takes this over)
    */
   const property =
-    NOTION[routeType.toUpperCase()]?.infoType?.notion ??
-    PROPERTIES.datePublished.notion
+    NOTION[routeType.toUpperCase()]?.infoType?.notion ?? PROPERTIES.datePublished.notion;
 
   switch (metaCount) {
     /**
@@ -46,18 +36,18 @@ const getNotionListingByDate__getFilter = ({
         and: [
           {
             date: {
-              on_or_after: addTime(timestampQuery, ''),
+              on_or_after: addTime(timestampQuery, ""),
             },
             property,
           },
           {
             date: {
-              before: addTime(timestampQuery, 'year'),
+              before: addTime(timestampQuery, "year"),
             },
             property,
           },
         ],
-      }
+      };
 
     /**
      * @note yyyy/mm
@@ -67,18 +57,18 @@ const getNotionListingByDate__getFilter = ({
         and: [
           {
             date: {
-              on_or_after: addTime(timestampQuery, ''),
+              on_or_after: addTime(timestampQuery, ""),
             },
             property,
           },
           {
             date: {
-              before: addTime(timestampQuery, 'month'),
+              before: addTime(timestampQuery, "month"),
             },
             property,
           },
         ],
-      }
+      };
 
     /**
      * @note yyyy/mm/dd
@@ -88,18 +78,18 @@ const getNotionListingByDate__getFilter = ({
         and: [
           {
             date: {
-              on_or_after: addTime(timestampQuery, ''),
+              on_or_after: addTime(timestampQuery, ""),
             },
             property,
           },
           {
             date: {
-              before: addTime(timestampQuery, 'day'),
+              before: addTime(timestampQuery, "day"),
             },
             property,
           },
         ],
-      }
+      };
 
     /**
      * @note yyyy/mm/dd/slug
@@ -111,13 +101,13 @@ const getNotionListingByDate__getFilter = ({
         and: [
           {
             date: {
-              on_or_after: addTime(timestampQuery, ''),
+              on_or_after: addTime(timestampQuery, ""),
             },
             property,
           },
           {
             date: {
-              before: addTime(timestampQuery, 'day'),
+              before: addTime(timestampQuery, "day"),
             },
             property,
           },
@@ -126,9 +116,9 @@ const getNotionListingByDate__getFilter = ({
             rich_text: { equals: slug },
           },
         ],
-      }
+      };
   }
-}
+};
 
 const getNotionListingByDate = async ({
   config,
@@ -139,62 +129,62 @@ const getNotionListingByDate = async ({
   routeType,
   slug,
 }) => {
-  const { NOTION } = config
+  const { NOTION } = config;
 
   let content: any = {},
-    info: any = {}
+    info: any = {};
 
-  const page_id = NOTION[routeType.toUpperCase()].page_id__seo
+  const page_id = NOTION[routeType.toUpperCase()].page_id__seo;
   const _info = await getPagesById({
     page_id,
-  })
-  if (_info.object === 'page') {
-    info = _omit(_info, 'properties')
+  });
+  if (_info.object === "page") {
+    info = _omit(_info, "properties");
     info.properties = sortObject(
       dataNormalized({ config, data: _info, pageId: _info.id, pathVariables }),
-    )
+    );
   }
 
-  content = await getBlocksByIdChildren({ block_id: info.id })
+  content = await getBlocksByIdChildren({ block_id: info.id });
 
   const sorts: SortItem[] = [
     {
-      direction: 'descending',
+      direction: "descending",
       property: PROPERTIES.datePublished.notion,
     },
-  ]
+  ];
   const filter = getNotionListingByDate__getFilter({
     config,
     pathVariables,
     routeType,
     slug,
-  })
+  });
 
-  const database_id = NOTION[routeType.toUpperCase()].database_id
+  const database_id = NOTION[routeType.toUpperCase()].database_id;
 
   const ___items: any = await getDatabasesByIdQuery({
     database_id,
     filter,
     sorts,
-  })
-  const __items: any[] = []
+  });
+  const __items: any[] = [];
   _map(___items.results, (i) => {
-    const item = _omit(i, 'properties')
+    const item = _omit(i, "properties");
     item.properties = sortObject(
       dataNormalized({ config, data: i, pageId: item.id, pathVariables }),
-    )
-    !!item && __items.push(item)
-  })
-  const _items = _omit(___items, 'results')
-  _items.results = __items
-  const items = _omit(_items, 'data')
+    );
+    !!item && __items.push(item);
+  });
+  const _items = _omit(___items, "results");
+  _items.results = __items;
+  const items = _omit(_items, "data");
 
   /**
    * @note(plaiceholder)
    *
    * Pass empty `images` object for SSR/API takeover
    */
-  return { content, images: {}, info, items }
-}
+  return { content, images: {}, info, items };
+};
 
-export default getNotionListingByDate
+export default getNotionListingByDate;

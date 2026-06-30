@@ -1,4 +1,3 @@
-// biome-ignore lint/suspicious/noEmptyBlockStatements: migrate
-const noop = () => {}
+const noop = () => {};
 
-export default noop
+export default noop;

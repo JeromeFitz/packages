@@ -23,7 +23,15 @@ if [ ! "$HUSKY__PRE_COMMIT__LINT_STAGED" = "0" ]; then
         printf '%s\n' "ERROR: Some staged files have unstaged changes" >&2
         exit 1;
     fi
-    pnpm exec biome check --write --staged --no-errors-on-unmatched --files-ignore-unknown=true
+
+    pnpm exec oxfmt --no-error-on-unmatched-pattern
+
+    # safe fixes only: https://oxc.rs/docs/guide/usage/linter/automatic-fixes.html
+    NODE_NO_WARNINGS=1 pnpm exec oxlint --fix
+
+    if git diff --name-only --cached | grep package.json --quiet; then
+        pnpm syncpack lint --config .syncpackrc.js
+    fi
+
     git update-index --again
-    pnpm lint:packages
 fi

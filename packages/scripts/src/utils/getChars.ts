@@ -1,3 +1,3 @@
-const space = '&nbsp;'
+const space = "&nbsp;";
 
-export { space }
+export { space };

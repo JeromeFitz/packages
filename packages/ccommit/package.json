@@ -1,31 +1,8 @@
 {
   "name": "ccommit",
   "version": "0.0.0",
-  "type": "module",
-  "description": "😜 ➕ 👔 🟰  ccommit \n  Conventional Commit Generator that interprets commit types from gitmoji and conventional",
-  "repository": {
-    "directory": "packages/ccommit",
-    "type": "git",
-    "url": "git+https://github.com/JeromeFitz/packages.git"
-  },
-  "homepage": "https://github.com/JeromeFitz/packages/tree/main/packages/ccommit#readme",
-  "author": {
-    "name": "Jerome Fitzgerald",
-    "email": "j@jeromefitzgerald.com",
-    "url": "https://jeromefitzgerald.com"
-  },
-  "license": "MIT",
   "private": false,
-  "engines": {
-    "node": ">=24"
-  },
-  "bin": {
-    "ccommit": "./dist/index.mjs"
-  },
-  "exports": {
-    ".": "./dist/index.mjs",
-    "./package.json": "./package.json"
-  },
+  "description": "😜 ➕ 👔 🟰  ccommit \n  Conventional Commit Generator that interprets commit types from gitmoji and conventional",
   "keywords": [
     "commit",
     "conventional changelog",
@@ -37,16 +14,39 @@
     "gitmoji",
     "semver"
   ],
+  "homepage": "https://github.com/JeromeFitz/packages/tree/main/packages/ccommit#readme",
+  "license": "MIT",
+  "author": {
+    "name": "Jerome Fitzgerald",
+    "email": "j@jeromefitzgerald.com",
+    "url": "https://jeromefitzgerald.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeromeFitz/packages.git",
+    "directory": "packages/ccommit"
+  },
+  "bin": {
+    "ccommit": "./dist/index.mjs"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "provenance": true,
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "build": "tsdown",
     "clean": "rm -rf .turbo && rm -rf dist",
     "clean:install": "pnpm run clean && rm -rf node_modules",
-    "copy": "mkdir -p ./dist && ./scripts/copy.sh",
     "dev": "tsdown --watch",
     "dry:run": "pnpm run build && node ./dist/index.js -c -n",
-    "lint": "pnpm run lint:typescript",
-    "lint:typescript": "tsc --noEmit --declaration",
-    "prepare": "is-ci || pnpm run build",
+    "lint:ts": "tsc --noEmit --declaration",
+    "prepare": "pnpm is-in-ci || pnpm build",
     "semantic-release": "semantic-release",
     "semantic-release:dry": "semantic-release --dry-run"
   },
@@ -58,11 +58,10 @@
     "meow": "14.1.0"
   },
   "devDependencies": {
-    "is-ci": "4.1.0"
+    "@types/node": "24.12.0",
+    "is-in-ci": "2.0.0"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "provenance": true
-  },
-  "sideEffects": false
+  "engines": {
+    "node": ">=24"
+  }
 }

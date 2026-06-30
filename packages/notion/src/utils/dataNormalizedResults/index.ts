@@ -1,8 +1,7 @@
-import { sortObject } from '@jeromefitz/utils'
+import { sortObject } from "@jeromefitz/utils";
+import { map as _map, omit as _omit } from "lodash-es";
 
-import { map as _map, omit as _omit } from 'lodash-es'
-
-import { dataNormalized } from '../../utils/index'
+import { dataNormalized } from "../../utils/index";
 
 /**
  * @todo(notion)
@@ -11,9 +10,9 @@ import { dataNormalized } from '../../utils/index'
  *  or move this to `queries`
  */
 const dataNormalizedResults = ({ config, results, routeType }) => {
-  const normalizedResults: any[] = []
+  const normalizedResults: any[] = [];
   _map(results, (result) => {
-    const normalizedResult = _omit(result, 'properties')
+    const normalizedResult = _omit(result, "properties");
     normalizedResult.properties = sortObject(
       dataNormalized({
         config,
@@ -21,10 +20,10 @@ const dataNormalizedResults = ({ config, results, routeType }) => {
         pageId: result?.id,
         pathVariables: routeType,
       }),
-    )
-    normalizedResults.push(normalizedResult)
-  })
-  return normalizedResults
-}
+    );
+    normalizedResults.push(normalizedResult);
+  });
+  return normalizedResults;
+};
 
-export default dataNormalizedResults
+export default dataNormalizedResults;

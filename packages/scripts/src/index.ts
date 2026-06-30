@@ -1,10 +1,10 @@
-import labels from './data/labels'
-import milestones from './data/milestones'
-import githubLabel from './github/label'
-import githubMilestone from './github/milestone'
-import githubPullRequest from './github/pullRequest'
-import templatePullRequestRelease from './templates/PULL_REQUEST__RELEASE'
-import { space } from './utils/getChars'
+import labels from "./data/labels";
+import milestones from "./data/milestones";
+import githubLabel from "./github/label";
+import githubMilestone from "./github/milestone";
+import githubPullRequest from "./github/pullRequest";
+import templatePullRequestRelease from "./templates/PULL_REQUEST__RELEASE";
+import { space } from "./utils/getChars";
 
 export {
   githubLabel,
@@ -14,4 +14,4 @@ export {
   milestones,
   space,
   templatePullRequestRelease,
-}
+};

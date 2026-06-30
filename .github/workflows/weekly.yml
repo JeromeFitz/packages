@@ -1,4 +1,4 @@
-name: '  🌃️  Weekly'
+name: "  🌃️  Weekly"
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
@@ -12,7 +12,7 @@ on:
     #        │ │ │ │ │
     #        │ │ │ │ │
     #        * * * * *
-    - cron: '0 0 * * 1'
+    - cron: "0 0 * * 1"
 
 env:
   GH_BOT_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
@@ -24,7 +24,7 @@ env:
 
 jobs:
   pull:
-    name: '👷️  CI'
+    name: "👷️  CI"
     if: github.ref == 'refs/heads/main'
     permissions:
       contents: write
@@ -42,46 +42,43 @@ jobs:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
     steps:
-      - name: '🐙️  Checkout'
+      - name: "🐙️  Checkout"
         id: pull-checkout
         uses: actions/checkout@v6
         with:
           fetch-depth: 100
           persist-credentials: false
 
-      - name: '💽️  Init'
+      - name: "💽️  Init"
         id: weekly-init
         uses: ./.github/actions/init
 
-      - name: '📦  Install'
+      - name: "📦  Install"
         id: weekly-install
         uses: ./.github/actions/install
 
-      - name: '🔺️  Cache (turbo)'
+      - name: "🔺️  Cache (turbo)"
         id: pull-cache-turbo
         uses: ./.github/actions/cache-turbo
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
-      - name: '☣️ Biome CI'
-        run: pnpm exec biome ci .
-
-      - name: '🚨️  Lint'
+      - name: "🚨️  Lint"
         id: weekly-lint
         uses: ./.github/actions/lint
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
-      - name: '🧪  Test'
+      - name: "🧪  Test"
         id: weekly-test
         uses: ./.github/actions/test
         with:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
-      - name: '🏷️  Release'
+      - name: "🏷️  Release"
         id: weekly-release
         uses: ./.github/actions/release
         with:

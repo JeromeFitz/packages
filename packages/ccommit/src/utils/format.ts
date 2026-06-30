@@ -1,10 +1,9 @@
-/** biome-ignore-all lint/suspicious/noConsole: migrate */
-import { COMMIT_FORMATS, FORMAT, TYPE } from '~ccommit/lib/index'
+import { COMMIT_FORMATS, FORMAT, TYPE } from "~ccommit/lib/index";
 
 const formatCliEmoji = ({ emoji, emojiLength }) =>
-  emojiLength === 0 ? `${emoji}     ` : `${emoji}    `
+  emojiLength === 0 ? `${emoji}     ` : `${emoji}    `;
 
-const formatCliType = (type) => type?.padEnd(TYPE.MAX)
+const formatCliType = (type) => type?.padEnd(TYPE.MAX);
 
 const formatCliTypes = (commitTypes: any) => {
   // console.log(`EMOJI  TYPE            DESCRIPTION`)
@@ -15,25 +14,22 @@ const formatCliTypes = (commitTypes: any) => {
         emoji,
         emojiLength,
       })} ${formatCliType(type)} ${description}`,
-    )
-  })
-}
+    );
+  });
+};
 
+// oxlint-disable-next-line complexity
 const formatCommitSubject = (options, answers) => {
-  const format = FORMAT[options?.format]
+  const format = FORMAT[options?.format];
 
   // @note(ccommit) two spaces after emoji
-  const emoji = answers?.gitmoji ? `${answers?.gitmoji}  ` : ''
+  const emoji = answers?.gitmoji ? `${answers?.gitmoji}  ` : "";
 
   let scope = answers?.scope
-    ? `(${answers?.scope
-        .replace(/ {2}/g, '--')
-        .replace(/ /g, '-')
-        .toLowerCase()
-        .trim()})`
-    : ''
+    ? `(${answers?.scope.replace(/ {2}/g, "--").replace(/ /g, "-").toLowerCase().trim()})`
+    : "";
   // @note(ccommit) only add space to scope if format is: gitmoji
-  scope = scope && options?.format === COMMIT_FORMATS.GITMOJI ? `${scope} ` : scope
+  scope = scope && options?.format === COMMIT_FORMATS.GITMOJI ? `${scope} ` : scope;
 
   /**
    * @todo(ccommit) breaking identification in commit subject
@@ -47,9 +43,9 @@ const formatCommitSubject = (options, answers) => {
   return format
     .replace(/\{emoji\}/g, emoji)
     .replace(/\{scope\}/g, scope)
-    .replace(/\{breaking\}/g, '')
+    .replace(/\{breaking\}/g, "")
     .replace(/\{title\}/g, answers?.title)
-    .replace(/\{type\}/g, answers?.type)
-}
+    .replace(/\{type\}/g, answers?.type);
+};
 
-export { formatCliEmoji, formatCliType, formatCliTypes, formatCommitSubject }
+export { formatCliEmoji, formatCliType, formatCliTypes, formatCommitSubject };

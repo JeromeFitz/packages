@@ -1,11 +1,10 @@
 {
   "recommendations": [
-    "biomejs.biome",
     "dangmai.workspace-default-settings",
     "davidanson.vscode-markdownlint",
     "eamodio.gitlens",
     "editorconfig.editorconfig",
-    "esbenp.prettier-vscode",
-    "mgmcdermott.vscode-language-babel"
+    "mgmcdermott.vscode-language-babel",
+    "oxc.oxc-vscode"
   ]
 }

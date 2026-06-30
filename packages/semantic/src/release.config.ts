@@ -1,5 +1,5 @@
-import { getConfig } from './getConfig'
+import { getConfig } from "./getConfig";
 
-const config = getConfig()
+const config = getConfig();
 
-export default config
+export default config;

@@ -1,24 +1,24 @@
 # name: 'Build'
-name: '🏗️  '
-description: 'Localized Build'
-author: 'JeromeFitz'
+name: "🏗️  "
+description: "Localized Build"
+author: "JeromeFitz"
 
 inputs:
   BUILD_COMMAND:
-    description: 'Dynamic Build String for Run Script'
-    default: 'build'
+    description: "Dynamic Build String for Run Script"
+    default: "build"
     required: true
   TURBO_TOKEN:
-    description: 'Turbo Token'
+    description: "Turbo Token"
     required: true
   TURBO_TEAM:
-    description: 'Turbo Team'
+    description: "Turbo Team"
     required: true
 
 runs:
-  using: 'composite'
+  using: "composite"
   steps:
-    - name: '🏗️  Build'
+    - name: "🏗️  Build"
       id: build
       shell: bash
       env:

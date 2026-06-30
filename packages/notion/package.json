@@ -1,23 +1,26 @@
 {
   "name": "@jeromefitz/notion",
   "version": "0.0.0",
-  "type": "module",
+  "private": false,
   "description": "Notion: Custom Client for jeromefitzgerald.com",
-  "repository": {
-    "directory": "packages/notion",
-    "type": "git",
-    "url": "git+https://github.com/JeromeFitz/packages.git"
-  },
+  "keywords": [
+    "next",
+    "next.js",
+    "notion"
+  ],
+  "license": "MIT",
   "author": {
     "name": "Jerome Fitzgerald",
     "email": "j@jeromefitzgerald.com",
     "url": "https://jeromefitzgerald.com"
   },
-  "license": "MIT",
-  "private": false,
-  "engines": {
-    "node": ">=24"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeromeFitz/packages.git",
+    "directory": "packages/notion"
   },
+  "type": "module",
+  "sideEffects": false,
   "exports": {
     ".": "./dist/index.mjs",
     "./constants": "./dist/constants/index.mjs",
@@ -58,25 +61,18 @@
     "./utils/getTypes/url": "./dist/utils/getTypes/url.mjs",
     "./package.json": "./package.json"
   },
-  "keywords": [
-    "next",
-    "next.js",
-    "notion"
-  ],
+  "publishConfig": {
+    "provenance": true,
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "build": "tsdown",
     "clean": "rm -rf .turbo && rm -rf dist",
     "clean:install": "pnpm run clean && rm -rf node_modules",
-    "copy": "mkdir -p ./dist && ./scripts/copy.sh",
     "dev": "tsdown --watch",
-    "lint": "pnpm run lint:typescript",
-    "lint:typescript": "tsc --noEmit --declaration",
+    "lint:ts": "tsc --noEmit --declaration",
     "semantic-release": "semantic-release",
     "semantic-release:dry": "semantic-release --dry-run"
-  },
-  "peerDependencies": {
-    "@jeromefitz/utils": "^4.0.0",
-    "lodash-es": "^4.18.0"
   },
   "dependencies": {
     "@notionhq/client": "4.0.2",
@@ -88,9 +84,11 @@
     "@types/lodash-es": "4.17.12",
     "lodash-es": "4.18.0"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "provenance": true
+  "peerDependencies": {
+    "@jeromefitz/utils": "^4.0.0",
+    "lodash-es": "^4.18.0"
   },
-  "sideEffects": false
+  "engines": {
+    "node": ">=24"
+  }
 }

@@ -1,12 +1,12 @@
 # name: 'Install'
-name: '📦️  '
-description: 'Localized Install'
-author: 'JeromeFitz'
+name: "📦️  "
+description: "Localized Install"
+author: "JeromeFitz"
 
 runs:
-  using: 'composite'
+  using: "composite"
   steps:
-    - name: '📦️  Dependencies'
+    - name: "📦️  Dependencies"
       id: dependencies
       shell: bash
       run: |

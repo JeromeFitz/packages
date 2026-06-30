@@ -1,44 +1,42 @@
 {
-  "$schema": "https://turbo.build/schema.json",
-  "globalEnv": [
-    "GH_TOKEN"
-  ],
+  "$schema": "https://turborepo.org/schema.json",
+  "globalDependencies": ["pnpm-workspace.yaml"],
+  "globalEnv": ["GH_TOKEN"],
   "globalPassThroughEnv": [
     "ACTIONS_ID_TOKEN_REQUEST_TOKEN",
     "ACTIONS_ID_TOKEN_REQUEST_URL",
     "NPM_TOKEN"
   ],
   "tasks": {
-    "//#biome:check": {
-      "outputLogs": "new-only"
+    "//#quality": {
+      "dependsOn": ["//#lint:ci", "//#format"]
     },
-    "//#biome:write": {
-      "cache": false,
-      "outputLogs": "new-only"
+    "//#quality:fix": {
+      "dependsOn": ["//#lint:fix", "//#format:fix"]
     },
-    "//#lint": {
-      "dependsOn": [
-        "@jeromefitz/prettier-config#build"
-      ],
-      "outputLogs": "new-only"
+    "//#lint": {},
+    "//#lint:ci": {},
+    "//#lint:fix": {
+      "cache": false
+    },
+    "//#format": {},
+    "//#format:fix": {
+      "cache": false
     },
     "build": {
-      "dependsOn": [
-        "^build"
-      ],
+      "dependsOn": ["^build"],
       "inputs": [
-        "scripts/copy.sh",
+        "../../oxlint.config.ts",
+        "../../tsdown.config.ts",
         "src/**",
         "*.cjs",
         "*.js",
         "*.mjs",
+        "*.ts",
         "package.json"
       ],
       "outputLogs": "new-only",
-      "outputs": [
-        "dist/**",
-        ".next/**"
-      ]
+      "outputs": ["dist/**", ".next/**"]
     },
     "clean": {
       "cache": false
@@ -46,18 +44,9 @@
     "dev": {
       "cache": false
     },
-    "lint": {
-      "dependsOn": [
-        "@jeromefitz/prettier-config#build"
-      ],
-      "inputs": [
-        "biome.json",
-        "src/**",
-        "*.cjs",
-        "*.js",
-        "*.mjs",
-        "package.json"
-      ],
+    "lint:ts": {
+      "dependsOn": ["^build"],
+      "inputs": ["src/**/*.ts", "src/**/*.tsx", "*.ts", "tsconfig.json", "vercel.json"],
       "outputLogs": "new-only"
     },
     "semantic-release": {
@@ -66,75 +55,12 @@
     "semantic-release:dry": {
       "cache": false
     },
-    "test": {
-      "dependsOn": [
-        "lint",
-        "build"
-      ],
-      "outputLogs": "new-only",
-      "outputs": [
-        "coverage/**"
-      ]
+    "test:unit": {
+      "dependsOn": ["^build"]
     },
-    "@jeromefitz/notion#lint": {
-      "dependsOn": [
-        "@jeromefitz/utils#build"
-      ],
-      "inputs": [
-        "src/**",
-        "*.cjs",
-        "*.js",
-        "*.mjs",
-        "package.json"
-      ],
-      "outputLogs": "new-only"
-    },
-    "@jeromefitz/notion#build": {
-      "dependsOn": [
-        "@jeromefitz/utils#build"
-      ],
-      "inputs": [
-        "src/**",
-        "*.cjs",
-        "*.js",
-        "*.mjs",
-        "package.json"
-      ],
-      "outputs": [
-        "dist/**"
-      ],
-      "outputLogs": "new-only"
-    },
-    "@jeromefitz/semantic#build": {
-      "dependsOn": [
-        "@jeromefitz/conventional-gitmoji#build",
-        "@jeromefitz/release-notes-generator#build"
-      ],
-      "inputs": [
-        "src/**",
-        "*.cjs",
-        "*.js",
-        "*.mjs",
-        "package.json"
-      ],
-      "outputs": [
-        "dist/**"
-      ],
-      "outputLogs": "new-only"
-    },
-    "@jeromefitz/semantic#lint": {
-      "dependsOn": [
-        "@jeromefitz/conventional-gitmoji#build",
-        "@jeromefitz/release-notes-generator#build"
-      ],
-      "inputs": [
-        "src/**",
-        "*.cjs",
-        "*.js",
-        "*.mjs",
-        "package.json"
-      ],
-      "outputLogs": "new-only"
+    "test:unit:coverage": {
+      "dependsOn": ["^build"],
+      "outputs": ["coverage/**"]
     }
   },
   "ui": "stream"

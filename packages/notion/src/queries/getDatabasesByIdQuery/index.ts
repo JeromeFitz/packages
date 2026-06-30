@@ -1,15 +1,14 @@
-import type { SortMock } from '../../schema/index'
-
-import { PROPERTIES } from '../../constants/index'
+import { PROPERTIES } from "../../constants/index";
+import type { SortMock } from "../../schema/index";
 
 const sortDefault: SortMock = {
   sorts: [
     {
-      direction: 'ascending',
+      direction: "ascending",
       property: PROPERTIES.slug.notion,
     },
   ],
-}
+};
 
 // @todo(types)
 const getDatabasesByIdQuery = async ({
@@ -18,12 +17,12 @@ const getDatabasesByIdQuery = async ({
   getDatabasesQuery,
   sorts = sortDefault?.sorts,
 }) => {
-  if (!database_id) return []
+  if (!database_id) return [];
   return await getDatabasesQuery({
     database_id,
     filter,
     sorts,
-  })
-}
+  });
+};
 
-export default getDatabasesByIdQuery
+export default getDatabasesByIdQuery;

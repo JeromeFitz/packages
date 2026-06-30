@@ -1,6 +1,6 @@
-import { Client as _Client } from '@notionhq/client'
+import { Client as _Client } from "@notionhq/client";
 
-import { DATA_TYPES } from './constants/index'
+import { DATA_TYPES } from "./constants/index";
 import {
   getBlocksByIdChildren,
   getDatabasesByIdQuery,
@@ -13,41 +13,37 @@ import {
   getPagesById,
   getPathVariables,
   getQuery,
-} from './queries/index'
+} from "./queries/index";
 
-// biome-ignore lint/style/useConsistentTypeDefinitions: migrate
 type ClientProps = {
-  custom: CustomProps
-  dataTypes: DataTypesProps
-}
+  custom: CustomProps;
+  dataTypes: DataTypesProps;
+};
 
-// biome-ignore lint/style/useConsistentTypeDefinitions: migrate
 type CredentialProps = {
-  auth: string
-  config: any
-}
+  auth: string;
+  config: any;
+};
 
-// biome-ignore lint/style/useConsistentTypeDefinitions: migrate
 type CustomProps = {
-  getBlocksByIdChildren: any
-  getDatabasesByIdQuery: any
-  getDeepFetchAllChildren: any
-  getInfoType: any
-  getPagesById: any
-  getPathVariables: any
-  getQuery: any
-}
+  getBlocksByIdChildren: any;
+  getDatabasesByIdQuery: any;
+  getDeepFetchAllChildren: any;
+  getInfoType: any;
+  getPagesById: any;
+  getPathVariables: any;
+  getQuery: any;
+};
 
-// biome-ignore lint/style/useConsistentTypeDefinitions: migrate
 type DataTypesProps = {
-  LISTING: any
-  LISTING_BY_DATE: any
-  SLUG: any
-  SLUG_BY_ROUTE: any
-}
+  LISTING: any;
+  LISTING_BY_DATE: any;
+  SLUG: any;
+  SLUG_BY_ROUTE: any;
+};
 
 class Client extends _Client {
-  #config?: any
+  #config?: any;
 
   // @todo(notion) throw error if `config` is not passed
   public readonly custom = {
@@ -70,14 +66,13 @@ class Client extends _Client {
       }),
 
     getInfoType: (props) => {
-      return getInfoType({ ...props, config: this.#config })
+      return getInfoType({ ...props, config: this.#config });
     },
 
     getPagesById: async (props) =>
       await getPagesById({ ...props, getPagesRetrieve: this.pages.retrieve }),
 
-    getPathVariables: (props) =>
-      getPathVariables({ ...props, config: this.#config }),
+    getPathVariables: (props) => getPathVariables({ ...props, config: this.#config }),
 
     getQuery: async (props) =>
       await getQuery({
@@ -85,18 +80,14 @@ class Client extends _Client {
         config: this.#config,
         notionDatabasesQuery: this.databases.query,
       }),
-  }
+  };
 
   /**
    * @info details at: ../../utils/getDataType
    *
    */
   public readonly dataTypes = {
-    [DATA_TYPES.LISTING]: async (props: {
-      pathVariables: any
-      routeType: any
-      slug?: any
-    }) => {
+    [DATA_TYPES.LISTING]: async (props: { pathVariables: any; routeType: any; slug?: any }) => {
       // console.dir(`📦️ [@jeromefitz/notion] => ${DATA_TYPES.LISTING}`)
       return await getNotionListing({
         ...props,
@@ -104,13 +95,13 @@ class Client extends _Client {
         getBlocksByIdChildren: this.custom.getBlocksByIdChildren,
         getDatabasesByIdQuery: this.custom.getDatabasesByIdQuery,
         getPagesById: this.custom.getPagesById,
-      })
+      });
     },
 
     [DATA_TYPES.LISTING_BY_DATE]: async (props: {
-      pathVariables: any
-      routeType: any
-      slug: any
+      pathVariables: any;
+      routeType: any;
+      slug: any;
     }) => {
       // console.dir(`📦️ [@jeromefitz/notion] => ${DATA_TYPES.LISTING_BY_DATE}`)
       return await getNotionListingByDate({
@@ -119,14 +110,10 @@ class Client extends _Client {
         getBlocksByIdChildren: this.custom.getBlocksByIdChildren,
         getDatabasesByIdQuery: this.custom.getDatabasesByIdQuery,
         getPagesById: this.custom.getPagesById,
-      })
+      });
     },
 
-    [DATA_TYPES.SLUG]: async (props: {
-      pathVariables: any
-      routeType: any
-      slug: any
-    }) => {
+    [DATA_TYPES.SLUG]: async (props: { pathVariables: any; routeType: any; slug: any }) => {
       // console.dir(`📦️ [@jeromefitz/notion] => ${DATA_TYPES.SLUG}`)
       return await getNotionSlug({
         ...props,
@@ -134,13 +121,13 @@ class Client extends _Client {
         getBlocksByIdChildren: this.custom.getBlocksByIdChildren,
         getDatabasesByIdQuery: this.custom.getDatabasesByIdQuery,
         getDeepFetchAllChildren: this.custom.getDeepFetchAllChildren,
-      })
+      });
     },
 
     [DATA_TYPES.SLUG_BY_ROUTE]: async (props: {
-      pathVariables: any
-      routeType: any
-      slug: any
+      pathVariables: any;
+      routeType: any;
+      slug: any;
     }) => {
       // console.dir(`📦️ [@jeromefitz/notion] => ${DATA_TYPES.SLUG_BY_ROUTE}`)
       return await getNotionSlugByRoute({
@@ -149,16 +136,16 @@ class Client extends _Client {
         getBlocksByIdChildren: this.custom.getBlocksByIdChildren,
         getDatabasesByIdQuery: this.custom.getDatabasesByIdQuery,
         getQuery: this.custom.getQuery,
-      })
+      });
     },
-  }
+  };
 
   // public constructor(options?: ClientOptions) {
   public constructor(options?: any) {
-    super(options)
-    this.#config = options?.config
+    super(options);
+    this.#config = options?.config;
   }
 }
 
-export type { ClientProps, CredentialProps }
-export { Client }
+export type { ClientProps, CredentialProps };
+export { Client };
