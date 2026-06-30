@@ -332,7 +332,7 @@ exports[`getConfig > default config snapshot 1`] = `
       "@semantic-release/npm",
       {
         "npmPublish": undefined,
-        "pkgRoot": ".",
+        "pkgRoot": "./dist",
         "tarballDir": undefined,
       },
     ],

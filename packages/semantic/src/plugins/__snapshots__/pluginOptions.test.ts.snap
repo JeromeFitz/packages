@@ -319,7 +319,7 @@ exports[`getPluginOptions > default plugins snapshot 1`] = `
     "@semantic-release/npm",
     {
       "npmPublish": undefined,
-      "pkgRoot": "./dist",
+      "pkgRoot": ".",
       "tarballDir": undefined,
     },
   ],

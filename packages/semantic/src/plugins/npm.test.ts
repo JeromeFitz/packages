@@ -21,7 +21,7 @@ describe("npm", () => {
 
   describe("returns tuple when any option is set", () => {
     it("pkgRoot string", () => {
-      const result = npm({ pkgRoot: "./dist" });
+      const result = npm({ pkgRoot: "." });
       expect(Array.isArray(result)).toBe(true);
       expect(result).toMatchSnapshot();
     });
@@ -42,7 +42,7 @@ describe("npm", () => {
     it("all options set", () => {
       const result = npm({
         npmPublish: true,
-        pkgRoot: "./dist",
+        pkgRoot: ".",
         tarballDir: "release",
       });
       expect(result).toMatchSnapshot();
