@@ -1,5 +1,6 @@
 import colors from "ansi-colors";
-import { LOGS } from "~ccommit/lib/index";
+
+import { LOGS } from "../lib/index.ts";
 
 type GenerateLog = (type: string, message: string, replace?: string) => void;
 /**

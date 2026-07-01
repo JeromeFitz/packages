@@ -1,5 +1,5 @@
-import commitTypes from "~ccommit/data/types";
-import { formatCliTypes } from "~ccommit/utils/index";
+import commitTypes from "../../data/types.ts";
+import { formatCliTypes } from "../../utils/index.ts";
 
 const list = () => formatCliTypes(commitTypes);
 

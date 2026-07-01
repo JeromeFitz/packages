@@ -30,7 +30,7 @@ if [ ! "$HUSKY__PRE_COMMIT__LINT_STAGED" = "0" ]; then
     NODE_NO_WARNINGS=1 pnpm exec oxlint --fix
 
     if git diff --name-only --cached | grep package.json --quiet; then
-        pnpm syncpack lint --config .syncpackrc.js
+        pnpm syncpack lint
     fi
 
     git update-index --again

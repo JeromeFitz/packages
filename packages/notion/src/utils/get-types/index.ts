@@ -4,12 +4,12 @@ import date from "./date";
 import email from "./email";
 import files from "./files";
 // import images from './images'
-import multi_select from "./multi_select";
+import multi_select from "./multi-select";
 import number from "./number";
 import people from "./people";
-import phone_number from "./phone_number";
+import phone_number from "./phone-number";
 import relation from "./relation";
-import rich_text from "./rich_text";
+import rich_text from "./rich-text";
 import rollup from "./rollup";
 import select from "./select";
 import title from "./title";

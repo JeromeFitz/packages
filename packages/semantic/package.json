@@ -14,15 +14,33 @@
     "url": "git+https://github.com/JeromeFitz/packages.git",
     "directory": "packages/semantic"
   },
+  "files": [
+    "dist"
+  ],
   "type": "module",
   "sideEffects": false,
   "exports": {
-    ".": "./dist/index.mjs",
-    "./getConfig": "./dist/getConfig.mjs",
-    "./release.config": "./dist/release.config.mjs",
+    ".": {
+      "development": "./src/index.ts",
+      "default": "./dist/index.mjs"
+    },
+    "./get-config": {
+      "development": "./src/get-config.ts",
+      "default": "./dist/get-config.mjs"
+    },
+    "./release.config": {
+      "development": "./src/release.config.ts",
+      "default": "./dist/release.config.mjs"
+    },
     "./package.json": "./package.json"
   },
   "publishConfig": {
+    "exports": {
+      ".": "./dist/index.mjs",
+      "./get-config": "./dist/get-config.mjs",
+      "./release.config": "./dist/release.config.mjs",
+      "./package.json": "./package.json"
+    },
     "provenance": true,
     "registry": "https://registry.npmjs.org/"
   },

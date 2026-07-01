@@ -13,21 +13,35 @@
     "url": "git+https://github.com/jeromefitz/packages.git",
     "directory": "config/oxlint"
   },
-  "files": [
-    "src/**"
-  ],
   "type": "module",
   "sideEffects": false,
   "exports": {
-    ".": {
-      "import": "./src/config.ts",
-      "types": "./src/config.ts"
-    },
+    ".": "./src/config.ts",
+    "./categories": "./src/categories.ts",
+    "./config": "./src/config.ts",
+    "./globals": "./src/globals.ts",
+    "./ignore-patterns": "./src/ignore-patterns.ts",
+    "./js-plugins": "./src/js-plugins.ts",
+    "./js-plugins.playwright": "./src/js-plugins.playwright.ts",
+    "./js-plugins.testing-library": "./src/js-plugins.testing-library.ts",
+    "./overrides": "./src/overrides.ts",
+    "./plugins": "./src/plugins.ts",
+    "./plugins.eslint": "./src/plugins.eslint.ts",
+    "./plugins.import": "./src/plugins.import.ts",
+    "./plugins.jsx-a11y": "./src/plugins.jsx-a11y.ts",
+    "./plugins.nextjs": "./src/plugins.nextjs.ts",
+    "./plugins.node": "./src/plugins.node.ts",
+    "./plugins.oxc": "./src/plugins.oxc.ts",
+    "./plugins.promise": "./src/plugins.promise.ts",
+    "./plugins.react": "./src/plugins.react.ts",
+    "./plugins.react-perf": "./src/plugins.react-perf.ts",
+    "./plugins.typescript": "./src/plugins.typescript.ts",
+    "./plugins.unicorn": "./src/plugins.unicorn.ts",
+    "./plugins.vitest": "./src/plugins.vitest.ts",
     "./package.json": "./package.json"
   },
   "scripts": {
-    "clean": "rm -rf ./.turbo",
-    "clean:install": "pnpm clean && rm -rf ./node_modules",
+    "clean:install": "rm -rf ./node_modules",
     "lint": "pnpm run lint:ts",
     "lint:ts": "tsc --noEmit --declaration"
   },
@@ -39,9 +53,6 @@
     "globals": "17.7.0",
     "oxlint": "1.72.0",
     "oxlint-tsgolint": "0.23.0"
-  },
-  "devDependencies": {
-    "is-in-ci": "2.0.0"
   },
   "peerDependencies": {
     "globals": "^17.7.0",

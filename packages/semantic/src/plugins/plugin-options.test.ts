@@ -1,7 +1,7 @@
 import type { PluginSpec } from "semantic-release";
 import { describe, expect, it } from "vitest";
 
-import { getPluginOptions } from "./pluginOptions";
+import { getPluginOptions } from "./plugin-options";
 
 const pluginName = (p: PluginSpec): string => (Array.isArray(p) ? String(p[0]) : String(p));
 

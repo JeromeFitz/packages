@@ -1,7 +1,7 @@
 import GraphemeSplitter from "grapheme-splitter";
 
-import getGitmojiConventional from "../../utils/getGitmojiConventional";
-import getTypeSpecs from "../../utils/getTypeSpecs";
+import getGitmojiConventional from "../../utils/get-gitmoji-conventional";
+import getTypeSpecs from "../../utils/get-type-specs";
 
 // Derive typeSpecs from the utils directly (not the package barrel) to avoid a
 // circular import: index -> changelog -> writerOpts -> transformer -> index.

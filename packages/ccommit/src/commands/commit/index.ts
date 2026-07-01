@@ -1,3 +1,3 @@
-import commit from "./commit";
+import commit from "./commit.ts";
 
 export default commit;

@@ -14,10 +14,10 @@ import type {
   SRContext,
   TransformedCommit,
 } from "./types";
-import { getCommitGroups } from "./utils/getCommitGroups";
-import { getMarkdown } from "./utils/getMarkdown";
-import { getNoteGroups } from "./utils/getNoteGroups";
-import { processCommit } from "./utils/processCommit";
+import { getCommitGroups } from "./utils/get-commit-groups";
+import { getMarkdown } from "./utils/get-markdown";
+import { getNoteGroups } from "./utils/get-note-groups";
+import { processCommit } from "./utils/process-commit";
 
 const commitLinkDefault = "commit";
 const issueLinkDefault = "issues";

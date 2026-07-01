@@ -3,7 +3,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import type { UserConfig } from "tsdown";
 import { defineConfig } from "tsdown";
 
-import { config as _config, rewriteDistExports } from "../../tsdown.config.ts";
+import { config as _config } from "../../tsdown.config.ts";
 
 const GITMOJI_CLI_LICENSE = `MIT License
 
@@ -33,7 +33,6 @@ const config: UserConfig = {
   ..._config,
   entry,
   onSuccess: () => {
-    rewriteDistExports();
     const license = readFileSync("../../LICENSE", "utf8");
     writeFileSync("./dist/index.mjs.LICENSE.txt", `${license}\n${GITMOJI_CLI_LICENSE}`);
   },

@@ -1,17 +1,20 @@
 .github
 .gitignore
 .gitkeep
-# !bin/
-# !binaries/
-# data/
-# !dist/
+.next/
+.turbo/
+coverage/
 node_modules/
 scripts/
 src/
 test/
 .env
 .gitkeep
-jsconfig.json
 release.config.cjs
+release.config.mjs
 release.config.js
+release.config.ts
 tsconfig.json
+tsdown.config.ts
+vite.config.ts
+vitest.config.ts

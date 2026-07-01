@@ -3,7 +3,7 @@ import { map as _map, omit as _omit, size as _size } from "lodash-es";
 
 import { PROPERTIES } from "../../constants/index";
 import type { SortItem } from "../../schema/index";
-import dataNormalizedResults from "../../utils/dataNormalizedResults/index";
+import dataNormalizedResults from "../../utils/data-normalized-results/index";
 
 // const useCache = process.env.NEXT_PUBLIC__NOTION_USE_CACHE
 // const useCache = false

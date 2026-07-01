@@ -5,7 +5,7 @@ exports[`npm > returns tuple when any option is set > all options set 1`] = `
   "@semantic-release/npm",
   {
     "npmPublish": true,
-    "pkgRoot": "./dist",
+    "pkgRoot": ".",
     "tarballDir": "release",
   },
 ]
@@ -15,7 +15,7 @@ exports[`npm > returns tuple when any option is set > pkgRoot string 1`] = `
 [
   "@semantic-release/npm",
   {
-    "pkgRoot": "./dist",
+    "pkgRoot": ".",
   },
 ]
 `;

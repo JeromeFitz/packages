@@ -2,7 +2,7 @@
   "name": "ccommit",
   "version": "0.0.0",
   "private": false,
-  "description": "😜 ➕ 👔 🟰  ccommit \n  Conventional Commit Generator that interprets commit types from gitmoji and conventional",
+  "description": "😜 ➕ 👔 🟰  ccommit \n  Conventional Commit Generator that translates conventional commits to gitmoji.",
   "keywords": [
     "commit",
     "conventional changelog",
@@ -27,15 +27,28 @@
     "directory": "packages/ccommit"
   },
   "bin": {
-    "ccommit": "./dist/index.mjs"
+    "ccommit": "./src/index.ts"
   },
+  "files": [
+    "dist"
+  ],
   "type": "module",
   "sideEffects": false,
   "exports": {
-    ".": "./dist/index.mjs",
+    ".": {
+      "development": "./src/index.ts",
+      "default": "./dist/index.mjs"
+    },
     "./package.json": "./package.json"
   },
   "publishConfig": {
+    "bin": {
+      "ccommit": "./dist/index.mjs"
+    },
+    "exports": {
+      ".": "./dist/index.mjs",
+      "./package.json": "./package.json"
+    },
     "provenance": true,
     "registry": "https://registry.npmjs.org/"
   },
@@ -46,7 +59,6 @@
     "dev": "tsdown --watch",
     "dry:run": "pnpm run build && node ./dist/index.js -c -n",
     "lint:ts": "tsc --noEmit --declaration",
-    "prepare": "pnpm is-in-ci || pnpm build",
     "semantic-release": "semantic-release",
     "semantic-release:dry": "semantic-release --dry-run"
   },

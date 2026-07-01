@@ -1,4 +1,4 @@
-const branches = [{ name: "main" }, { name: "feat/oxc", prerelease: "canary" }];
+const branches = [{ name: "main" }, { name: "feat/kebab-case", prerelease: "canary" }];
 
 const config = {
   branches,

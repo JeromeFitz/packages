@@ -1,7 +1,7 @@
 import { map as _map, sortBy as _sortBy } from "lodash-es";
 
 import type { RollupFunction } from "../../schema/index";
-import getTypes from "../../utils/getTypes/index";
+import getTypes from "../../utils/get-types/index";
 
 /**
  * @note(notion) https://github.com/JeromeFitz/packages/issues/631
