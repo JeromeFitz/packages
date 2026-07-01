@@ -19,7 +19,6 @@ const rewriteDistExportsPlugin: TsdownPlugin = {
     const attwConfig = typeof config.attw === "object" ? config.attw : {};
     const attwProfile = ((attwConfig as Record<string, unknown>).profile as string) ?? "esm-only";
     const attwIgnoreRules = ((attwConfig as Record<string, unknown>).ignoreRules as string[]) ?? [];
-    if (!wantAttw && !wantPublint) return;
 
     const seen = new Set<string>();
 

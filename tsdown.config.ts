@@ -1,9 +1,14 @@
 import type { UserConfig } from "tsdown";
 import { defineConfig } from "tsdown";
 
+import { rewriteDistExportsPlugin } from "./scripts/tsdown.rewrite-dist-exports.plugin.ts";
+
 const config: UserConfig = {
-  attw: false,
-  copy: [{ from: "../../LICENSE", to: "." }],
+  attw: true,
+  copy: [
+    { from: "../../LICENSE", to: "dist" },
+    { from: "README.md", to: "dist" },
+  ],
   deps: { alwaysBundle: [], neverBundle: [] },
   dts: true,
   exports: { devExports: "development" },
@@ -11,7 +16,8 @@ const config: UserConfig = {
   logLevel: "error",
   minify: true,
   outDir: "dist",
-  publint: false,
+  plugins: [rewriteDistExportsPlugin],
+  publint: true,
   sourcemap: false,
   target: ["node24"],
   treeshake: false,

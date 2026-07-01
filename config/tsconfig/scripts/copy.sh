@@ -32,3 +32,11 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 else
   sed -i -e "s|dist/tsconfig|tsconfig|g" dist/package.json
 fi
+
+###
+# @note(build): dist/ is the package root at publish time; these fields
+# are either meaningless there or actively wrong (e.g. "files": ["dist"]
+# would tell npm to look for a "dist" folder inside dist itself)
+###
+jq 'del(.publishConfig, .files, .scripts, .devDependencies)' dist/package.json > dist/package.json.tmp
+mv dist/package.json.tmp dist/package.json

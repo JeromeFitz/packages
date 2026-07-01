@@ -6,7 +6,6 @@ const config = {
     email: [],
     login: ["BotJerome", "JeromeFitz"],
   },
-  pkgRoot: ".",
 };
 
 export { config };
