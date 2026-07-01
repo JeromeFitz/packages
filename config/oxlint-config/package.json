@@ -46,12 +46,12 @@
     "lint:ts": "tsc --noEmit --declaration"
   },
   "dependencies": {
-    "@typescript-eslint/utils": "8.62.0",
+    "@typescript-eslint/utils": "8.62.1",
     "eslint": "10.6.0",
     "eslint-plugin-playwright": "2.10.4",
     "eslint-plugin-testing-library": "7.16.2",
     "globals": "17.7.0",
-    "oxlint": "1.71.0",
+    "oxlint": "1.72.0",
     "oxlint-tsgolint": "0.23.0"
   },
   "peerDependencies": {
