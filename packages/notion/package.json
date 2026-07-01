@@ -229,7 +229,7 @@
     "semantic-release:dry": "semantic-release --dry-run"
   },
   "dependencies": {
-    "@notionhq/client": "4.0.2",
+    "@notionhq/client": "5.22.0",
     "date-fns": "4.4.0",
     "github-slugger": "2.0.0"
   },
