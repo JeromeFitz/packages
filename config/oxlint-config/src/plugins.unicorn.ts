@@ -30,6 +30,10 @@ const overridesTemporary: DummyRuleMap = {
 
 const overrides: DummyRuleMap = {
   /**
+   * restriction
+   */
+  "unicorn/prefer-node-protocol": "error",
+  /**
    * style
    */
   "unicorn/filename-case": [
