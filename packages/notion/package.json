@@ -19,6 +19,9 @@
     "url": "git+https://github.com/JeromeFitz/packages.git",
     "directory": "packages/notion"
   },
+  "files": [
+    "dist"
+  ],
   "type": "module",
   "sideEffects": false,
   "exports": {

@@ -29,6 +29,9 @@
   "bin": {
     "ccommit": "./src/index.ts"
   },
+  "files": [
+    "dist"
+  ],
   "type": "module",
   "sideEffects": false,
   "exports": {

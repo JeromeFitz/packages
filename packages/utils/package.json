@@ -18,6 +18,9 @@
     "url": "git+https://github.com/JeromeFitz/packages.git",
     "directory": "packages/utils"
   },
+  "files": [
+    "dist"
+  ],
   "type": "module",
   "sideEffects": false,
   "exports": {
