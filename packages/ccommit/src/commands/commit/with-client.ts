@@ -1,8 +1,9 @@
 import process from "node:process";
 
 import { execa } from "execa";
-import { LOGS } from "~ccommit/lib/index";
-import { generateLog, printDryRun } from "~ccommit/utils/index";
+
+import { LOGS } from "../../lib/index.ts";
+import { generateLog, printDryRun } from "../../utils/index.ts";
 
 const withClient = async (answers, options) => {
   try {

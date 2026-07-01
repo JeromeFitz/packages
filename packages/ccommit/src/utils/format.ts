@@ -1,4 +1,4 @@
-import { COMMIT_FORMATS, FORMAT, TYPE } from "~ccommit/lib/index";
+import { COMMIT_FORMATS, FORMAT, TYPE } from "../lib/index.ts";
 
 const formatCliEmoji = ({ emoji, emojiLength }) =>
   emojiLength === 0 ? `${emoji}     ` : `${emoji}    `;

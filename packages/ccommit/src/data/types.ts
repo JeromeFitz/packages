@@ -1,5 +1,5 @@
 // @todo(ccommit) cache + generation from: @jeromefitz/conventional-gitmoji
-import { SEMVER } from "~ccommit/lib/index";
+import { SEMVER } from "../lib/index.ts";
 
 // @hack(ccommit) emojiLength is to help with formatting until can do it programmatically
 const types = [

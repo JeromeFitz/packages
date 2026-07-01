@@ -4,9 +4,10 @@
  * For license information please see index.js.LICENSE.txt
  */
 import meow from "meow";
-import { commit, list } from "~ccommit/commands/index";
-import { COMMANDS, COMMIT_FORMATS, FLAGS, OPTIONS } from "~ccommit/lib/index";
-import { findCommand } from "~ccommit/utils/index";
+
+import { commit, list } from "./commands/index.ts";
+import { COMMANDS, COMMIT_FORMATS, FLAGS, OPTIONS } from "./lib/index.ts";
+import { findCommand } from "./utils/index.ts";
 
 const cli = meow(
   `

@@ -1,5 +1,5 @@
-import { LOGS, TITLE } from "~ccommit/lib/index";
-import { generateCount } from "~ccommit/utils/index";
+import { LOGS, TITLE } from "../lib/index.ts";
+import { generateCount } from "./index.ts";
 
 const getCharsLeft = (str: string) => {
   const chars = str.length;

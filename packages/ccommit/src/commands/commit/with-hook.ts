@@ -2,7 +2,7 @@ import fs from "node:fs";
 import { join } from "node:path";
 import process from "node:process";
 
-import { getGitRootDir, printDryRun } from "~ccommit/utils/index";
+import { getGitRootDir, printDryRun } from "../../utils/index.ts";
 
 const commitMsgFile = join(getGitRootDir(), ".git", "COMMIT_EDITMSG");
 

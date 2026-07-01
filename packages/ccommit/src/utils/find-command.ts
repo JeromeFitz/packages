@@ -1,7 +1,7 @@
 import process from "node:process";
 
-import { COMMIT_FORMATS, COMMIT_MODES, FLAGS, LOGS, OPTIONS } from "~ccommit/lib/index";
-import { generateLog, getStagedFiles } from "~ccommit/utils/index";
+import { COMMIT_FORMATS, COMMIT_MODES, FLAGS, LOGS, OPTIONS } from "../lib/index.ts";
+import { generateLog, getStagedFiles } from "./index.ts";
 
 const getOptionsForCommand = (command: string, flags: any): any => {
   const commandsWithOptions = [FLAGS.COMMIT, FLAGS.HOOK];

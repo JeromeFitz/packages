@@ -1,7 +1,8 @@
 import colors from "ansi-colors";
-import commitTypes from "~ccommit/data/types";
-import { SCOPE, TITLE } from "~ccommit/lib/index";
-import { formatCliEmoji, formatCliType, getCharsLeft, getIssueTracker } from "~ccommit/utils/index";
+
+import commitTypes from "../../data/types.ts";
+import { SCOPE, TITLE } from "../../lib/index.ts";
+import { formatCliEmoji, formatCliType, getCharsLeft, getIssueTracker } from "../../utils/index.ts";
 
 const getTypes = () =>
   commitTypes.map(({ description, emoji, emojiLength, type }) => ({

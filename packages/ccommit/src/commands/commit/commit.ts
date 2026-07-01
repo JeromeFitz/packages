@@ -1,18 +1,18 @@
 import process from "node:process";
 
 import enquirer from "enquirer";
-import { COMMIT_MODES, FIND_BY, LOGS } from "~ccommit/lib/index";
+
+import { COMMIT_MODES, FIND_BY, LOGS } from "../../lib/index.ts";
 import {
   cancelIfNeeded,
   findBy,
   formatCommitSubject,
   generateLog,
   registerHookInterruptionHandler,
-} from "~ccommit/utils/index";
-
-import questions from "./questions";
-import withClient from "./with-client";
-import withHook from "./with-hook";
+} from "../../utils/index.ts";
+import questions from "./questions.ts";
+import withClient from "./with-client.ts";
+import withHook from "./with-hook.ts";
 
 const { prompt } = enquirer;
 
