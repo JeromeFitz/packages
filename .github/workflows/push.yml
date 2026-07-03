@@ -7,6 +7,7 @@ on:
       - canary
       - develop
       - ci/**
+      - deps/**
       - feat/**
       - feature/**
       - fix/**

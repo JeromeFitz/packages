@@ -45,6 +45,26 @@ type DataTypesProps = {
 class Client extends _Client {
   #config?: any;
 
+  #getDataSourceId = async (database_id: string): Promise<string> => {
+    const database = await this.databases.retrieve({ database_id });
+    const data_source_id = "data_sources" in database ? database.data_sources[0]?.id : undefined;
+    if (!data_source_id) {
+      throw new Error(`No data source found for Notion database ${database_id}`);
+    }
+    return data_source_id;
+  };
+
+  #queryDatabase = async ({
+    database_id,
+    ...rest
+  }: {
+    database_id: string;
+    [key: string]: any;
+  }) => {
+    const data_source_id = await this.#getDataSourceId(database_id);
+    return await this.dataSources.query({ data_source_id, ...rest });
+  };
+
   // @todo(notion) throw error if `config` is not passed
   public readonly custom = {
     getBlocksByIdChildren: async (props) =>
@@ -56,7 +76,7 @@ class Client extends _Client {
     getDatabasesByIdQuery: async (props) =>
       await getDatabasesByIdQuery({
         ...props,
-        getDatabasesQuery: this.databases.query,
+        getDatabasesQuery: this.#queryDatabase,
       }),
 
     getDeepFetchAllChildren: async (props) =>
@@ -78,7 +98,7 @@ class Client extends _Client {
       await getQuery({
         ...props,
         config: this.#config,
-        notionDatabasesQuery: this.databases.query,
+        notionDatabasesQuery: this.#queryDatabase,
       }),
   };
 
