@@ -226,7 +226,10 @@
     "dev": "tsdown --watch",
     "lint:ts": "tsc --noEmit --declaration",
     "semantic-release": "semantic-release",
-    "semantic-release:dry": "semantic-release --dry-run"
+    "semantic-release:dry": "semantic-release --dry-run",
+    "test:unit": "NODE_NO_WARNINGS=1 vitest run",
+    "test:unit:coverage": "NODE_NO_WARNINGS=1 vitest run --coverage",
+    "test:watch": "NODE_NO_WARNINGS=1 vitest run --watch"
   },
   "dependencies": {
     "@notionhq/client": "5.22.0",
