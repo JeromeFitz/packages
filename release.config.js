@@ -1,4 +1,4 @@
-const branches = [{ name: "main" }, { name: "feat/kebab-case", prerelease: "canary" }];
+const branches = [{ name: "main" }, { name: "deps/notionhq-client-5.x", prerelease: "canary" }];
 
 const config = {
   branches,

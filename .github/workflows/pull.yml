@@ -108,6 +108,17 @@ jobs:
           json-summary-path: packages/conventional-gitmoji/coverage/coverage-summary.json
           vite-config-path: packages/conventional-gitmoji/vitest.config.ts
 
+      - name: "📊  Coverage (notion)"
+        id: pull-coverage-notion
+        if: always()
+        uses: davelosert/vitest-coverage-report-action@v2
+        with:
+          github-token: ${{ secrets.GH_BOT_TOKEN }}
+          name: "@jeromefitz/notion"
+          json-final-path: packages/notion/coverage/coverage-final.json
+          json-summary-path: packages/notion/coverage/coverage-summary.json
+          vite-config-path: packages/notion/vitest.config.ts
+
       - name: "📊  Coverage (release-notes-generator)"
         id: pull-coverage-release-notes-generator
         if: always()
