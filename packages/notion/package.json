@@ -232,7 +232,7 @@
     "test:watch": "NODE_NO_WARNINGS=1 vitest run --watch"
   },
   "dependencies": {
-    "@notionhq/client": "5.22.0",
+    "@notionhq/client": "5.23.0",
     "date-fns": "4.4.0",
     "github-slugger": "2.0.0"
   },
