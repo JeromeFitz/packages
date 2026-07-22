@@ -46,7 +46,7 @@
     "lint:ts": "tsc --noEmit --declaration"
   },
   "dependencies": {
-    "@typescript-eslint/utils": "8.64.0",
+    "@typescript-eslint/utils": "8.65.0",
     "eslint": "10.7.0",
     "eslint-plugin-playwright": "2.10.5",
     "eslint-plugin-testing-library": "7.16.2",
