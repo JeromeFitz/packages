@@ -50,7 +50,7 @@
     "eslint": "10.8.0",
     "eslint-plugin-playwright": "2.10.5",
     "eslint-plugin-testing-library": "7.16.2",
-    "globals": "17.7.0",
+    "globals": "17.8.0",
     "oxlint": "1.75.0",
     "oxlint-tsgolint": "0.25.0"
   },
