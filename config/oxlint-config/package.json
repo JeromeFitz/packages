@@ -48,7 +48,7 @@
   "dependencies": {
     "@typescript-eslint/utils": "8.65.0",
     "eslint": "10.8.0",
-    "eslint-plugin-playwright": "2.10.5",
+    "eslint-plugin-playwright": "2.11.0",
     "eslint-plugin-testing-library": "7.16.2",
     "globals": "17.8.0",
     "oxlint": "1.75.0",
