@@ -365,8 +365,8 @@ importers:
   packages/notion:
     dependencies:
       '@notionhq/client':
-        specifier: 5.26.0
-        version: 5.26.0
+        specifier: 5.27.0
+        version: 5.27.0
       date-fns:
         specifier: 4.4.0
         version: 4.4.0
@@ -640,8 +640,8 @@ packages:
       '@emnapi/core': ^1.7.1
       '@emnapi/runtime': ^1.7.1
 
-  '@notionhq/client@5.26.0':
-    resolution: {integrity: sha512-Oc3438nQ5YmZkVO7YJG8fcTYl0V46CirdCvO33azZ9f7ZfD2rsHE4fUVANJiBB9Xf1sqpCs82nd8oKPxeXLmMg==}
+  '@notionhq/client@5.27.0':
+    resolution: {integrity: sha512-JnkLtAzSDrEnvtZ8dQ5L4KO+xyL5g01xK5qmKTmhJ5KFY8LWsMyFG033vHCj0mFcsz9thAMjfcAQz/SWxiexag==}
     engines: {node: '>=18'}
 
   '@octokit/auth-token@6.0.0':
@@ -3487,7 +3487,7 @@ snapshots:
       '@tybys/wasm-util': 0.10.3
     optional: true
 
-  '@notionhq/client@5.26.0': {}
+  '@notionhq/client@5.27.0': {}
 
   '@octokit/auth-token@6.0.0': {}
 
