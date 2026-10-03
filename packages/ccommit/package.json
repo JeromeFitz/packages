@@ -70,7 +70,7 @@
     "meow": "14.1.0"
   },
   "devDependencies": {
-    "@types/node": "24.19.0",
+    "@types/node": "24.19.1",
     "is-in-ci": "2.0.0"
   },
   "engines": {
