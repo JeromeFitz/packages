@@ -52,7 +52,7 @@
     "conventional-commits-parser": "7.1.4",
     "date-fns": "4.4.0",
     "read-package-up": "12.0.0",
-    "semver": "7.8.5"
+    "semver": "7.8.6"
   },
   "devDependencies": {
     "@jeromefitz/conventional-gitmoji": "workspace:*",
