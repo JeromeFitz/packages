@@ -6,6 +6,10 @@ author: "JeromeFitz"
 runs:
   using: "composite"
   steps:
+    - name: "📦 Config"
+      shell: bash
+      run: |
+        echo "PNPM_CONFIG_PROGRESS=false" >> "$GITHUB_ENV"
     - name: "📦️  Dependencies"
       id: dependencies
       shell: bash

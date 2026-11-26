@@ -8,14 +8,14 @@ runs:
   steps:
     - name: "🔧  pnpm: Install"
       id: pnpm-setup
-      uses: pnpm/action-setup@v5
+      uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6.1.1
       with:
         run_install: false
 
     - name: "💽️  Node ${{ inputs.node-version }}"
       id: node-setup
-      uses: actions/setup-node@v6
+      uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
       with:
         cache-dependency-path: pnpm-lock.yaml
         cache: "pnpm"
-        node-version-file: .nvmrc
+        node-version-file: .node-version
