@@ -46,7 +46,7 @@
       "matchPackageNames": ["/^actions/"]
     },
     {
-      "allowedVersions": "<25",
+      "allowedVersions": "<27",
       "commitMessageAction": "(deps-dev)",
       "commitMessagePrefix": "📦",
       "matchDepTypes": ["devDependencies", "dependencies"],

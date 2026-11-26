@@ -45,7 +45,7 @@
     "@jeromefitz/release-notes-generator": "workspace:*",
     "@jeromefitz/semantic": "workspace:*",
     "@jeromefitz/tsconfig": "workspace:*",
-    "@types/node": "24.12.0",
+    "@types/node": "26.6.6",
     "@vitest/coverage-v8": "4.1.9",
     "ccommit": "workspace:*",
     "dotenv": "17.4.2",
@@ -62,14 +62,10 @@
     "vitest": "4.1.9"
   },
   "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "version": "11.9.0"
-    },
     "runtime": {
       "name": "node",
-      "version": ">=24.17.0 <25"
+      "version": "26.13.1"
     }
   },
-  "packageManager": "pnpm@11.9.0"
+  "packageManager": "pnpm@12.23.0"
 }
