@@ -13,7 +13,6 @@ const overridesTemporary: DummyRuleMap = {
   /**
    * nursery
    */
-  "react/react-compiler": "off", // x21
 
   /**
    * pedantic

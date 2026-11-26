@@ -51,7 +51,7 @@
     "eslint-plugin-playwright": "2.12.2",
     "eslint-plugin-testing-library": "7.16.3",
     "globals": "17.14.0",
-    "oxlint": "1.78.0",
+    "oxlint": "1.95.0",
     "oxlint-tsgolint": "0.25.0"
   },
   "peerDependencies": {
