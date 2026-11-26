@@ -285,13 +285,8 @@ importers:
         specifier: 17.14.0
         version: 17.14.0
       oxlint:
-<<<<<<< HEAD
         specifier: 1.95.0
-        version: 1.95.0(oxlint-tsgolint@0.25.0)
-=======
-        specifier: 1.78.0
-        version: 1.78.0(oxlint-tsgolint@7.0.2008)
->>>>>>> 90a5a585 (⬆️ (deps) oxlint-tsgolint@7.0.2008)
+        version: 1.95.0(oxlint-tsgolint@7.0.2008)
       oxlint-tsgolint:
         specifier: 7.0.2008
         version: 7.0.2008
@@ -1220,10 +1215,6 @@ packages:
     peerDependencies:
       typescript: '>=4.8.4 <6.1.0'
 
-  '@typescript-eslint/scope-manager@8.73.0':
-    resolution: {integrity: sha512-/TjD738Iq2rzj5z0ixVOi+TsvgjAzZPLPaH1yWdDBytR/HTR5gMpyYWZeCe5WTQZLwk3ho8AV7U3muoQCRtXBQ==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-
   '@typescript-eslint/scope-manager@8.74.0':
     resolution: {integrity: sha512-kpOdpu4CpWN5U38ox3f727DwWRBtUAVhyUJtqTBYe5gf2wYoxac7PgKP14txrxN7ICVtcjlLdzjqfRgpSnDKvQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
@@ -1233,10 +1224,6 @@ packages:
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       typescript: '>=4.8.4 <6.1.0'
-
-  '@typescript-eslint/types@8.73.0':
-    resolution: {integrity: sha512-O/1ytYzflF16QDKXx4/qOXg1IuZp+n7hr9t+S0nv7N/2Tl8rJiNCshztV1gcSUvHbPtoX3+zmNbtSAyVbzxVfw==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@typescript-eslint/types@8.74.0':
     resolution: {integrity: sha512-MpnMrJCVNpP1iVL8NiHkQZgQqIMBH5ewDGUPBh1pqQXwFtMFjsl1M03QcYPXmv6stCKEiF0PN7CGbU1ZbXFzEA==}
@@ -1258,10 +1245,6 @@ packages:
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0 || ^10.0.0
       typescript: '>=4.8.4 <6.1.0'
-
-  '@typescript-eslint/visitor-keys@8.73.0':
-    resolution: {integrity: sha512-k4lsFVpRZICbltkIEEH4hZRkwXkqDF1GHBpClKQOHQY+RkoZAAuyc1ci3I6p+CB6v3U4jaHIUshc4RzzQXZWLg==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@typescript-eslint/visitor-keys@8.74.0':
     resolution: {integrity: sha512-XSZmOtMUbWCBIM+2BK134FyMFxmll1mW2mPLk/PSwYQYzGIPMgJAqL929U4qXVizLv7Xq5b7r41/o7Ombuwk0g==}
@@ -3322,7 +3305,7 @@ snapshots:
 
   '@babel/generator@8.0.0-rc.6':
     dependencies:
-      '@babel/parser': 8.0.0
+      '@babel/parser': 8.0.0-rc.6
       '@babel/types': 8.0.0
       '@jridgewell/gen-mapping': 0.3.13
       '@jridgewell/trace-mapping': 0.3.31
@@ -3995,11 +3978,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/scope-manager@8.73.0':
-    dependencies:
-      '@typescript-eslint/types': 8.73.0
-      '@typescript-eslint/visitor-keys': 8.73.0
-
   '@typescript-eslint/scope-manager@8.74.0':
     dependencies:
       '@typescript-eslint/types': 8.74.0
@@ -4008,8 +3986,6 @@ snapshots:
   '@typescript-eslint/tsconfig-utils@8.74.0(typescript@5.9.3)':
     dependencies:
       typescript: 5.9.3
-
-  '@typescript-eslint/types@8.73.0': {}
 
   '@typescript-eslint/types@8.74.0': {}
 
@@ -4039,11 +4015,6 @@ snapshots:
     transitivePeerDependencies:
       - '@typescript/native'
       - supports-color
-
-  '@typescript-eslint/visitor-keys@8.73.0':
-    dependencies:
-      '@typescript-eslint/types': 8.73.0
-      eslint-visitor-keys: 5.0.1
 
   '@typescript-eslint/visitor-keys@8.74.0':
     dependencies:
@@ -4425,7 +4396,7 @@ snapshots:
 
   eslint-plugin-testing-library@7.16.3(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@5.9.3):
     dependencies:
-      '@typescript-eslint/scope-manager': 8.73.0
+      '@typescript-eslint/scope-manager': 8.74.0
       '@typescript-eslint/utils': 8.74.0(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@5.9.3)
       eslint: 10.15.0(supports-color@7.2.0)
     transitivePeerDependencies:
@@ -5129,8 +5100,7 @@ snapshots:
       '@oxlint-tsgolint/win32-arm64': 7.0.2008
       '@oxlint-tsgolint/win32-x64': 7.0.2008
 
-<<<<<<< HEAD
-  oxlint@1.95.0(oxlint-tsgolint@0.25.0):
+  oxlint@1.95.0(oxlint-tsgolint@7.0.2008):
     optionalDependencies:
       '@oxlint/binding-android-arm-eabi': 1.95.0
       '@oxlint/binding-android-arm64': 1.95.0
@@ -5151,31 +5121,7 @@ snapshots:
       '@oxlint/binding-win32-arm64-msvc': 1.95.0
       '@oxlint/binding-win32-ia32-msvc': 1.95.0
       '@oxlint/binding-win32-x64-msvc': 1.95.0
-      oxlint-tsgolint: 0.25.0
-=======
-  oxlint@1.78.0(oxlint-tsgolint@7.0.2008):
-    optionalDependencies:
-      '@oxlint/binding-android-arm-eabi': 1.78.0
-      '@oxlint/binding-android-arm64': 1.78.0
-      '@oxlint/binding-darwin-arm64': 1.78.0
-      '@oxlint/binding-darwin-x64': 1.78.0
-      '@oxlint/binding-freebsd-x64': 1.78.0
-      '@oxlint/binding-linux-arm-gnueabihf': 1.78.0
-      '@oxlint/binding-linux-arm-musleabihf': 1.78.0
-      '@oxlint/binding-linux-arm64-gnu': 1.78.0
-      '@oxlint/binding-linux-arm64-musl': 1.78.0
-      '@oxlint/binding-linux-ppc64-gnu': 1.78.0
-      '@oxlint/binding-linux-riscv64-gnu': 1.78.0
-      '@oxlint/binding-linux-riscv64-musl': 1.78.0
-      '@oxlint/binding-linux-s390x-gnu': 1.78.0
-      '@oxlint/binding-linux-x64-gnu': 1.78.0
-      '@oxlint/binding-linux-x64-musl': 1.78.0
-      '@oxlint/binding-openharmony-arm64': 1.78.0
-      '@oxlint/binding-win32-arm64-msvc': 1.78.0
-      '@oxlint/binding-win32-ia32-msvc': 1.78.0
-      '@oxlint/binding-win32-x64-msvc': 1.78.0
       oxlint-tsgolint: 7.0.2008
->>>>>>> 90a5a585 (⬆️ (deps) oxlint-tsgolint@7.0.2008)
 
   p-each-series@3.0.0: {}
 
