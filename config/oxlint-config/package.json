@@ -52,7 +52,7 @@
     "eslint-plugin-testing-library": "7.16.3",
     "globals": "17.14.0",
     "oxlint": "1.95.0",
-    "oxlint-tsgolint": "7.0.2008"
+    "oxlint-tsgolint": "7.0.2009"
   },
   "peerDependencies": {
     "globals": "^17.7.0",
